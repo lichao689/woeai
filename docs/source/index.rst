@@ -72,7 +72,6 @@ how to :ref:`installation` the project.
 
 .. toctree::
 
-   GroupNews
    Teaching
    People
    NumericalWindTunnel

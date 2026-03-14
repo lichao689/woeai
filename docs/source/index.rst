@@ -1,5 +1,5 @@
-Welcome to the Group of Wind & Ocean Engineering empowered by AI (WOEAI)! 
-====================================================================
+Welcome to the Group of Wind & Ocean Engineering empowered by AI (WOEAI)!
+=========================================================================
 
 
 
@@ -87,10 +87,12 @@ how to :ref:`installation` the project.
 与我联系 Contact Me
 =====================
 
-- mail: lichaosz@hit.edu.cn
+- **网站 Website**: https://winddee.cn
+- **邮箱 Email**: lichaosz@hit.edu.cn
+- **地址 Address**: 哈尔滨工业大学（深圳）土木与环境工程学院
 
 .. image:: ../_static/lcWeChatMatrixCode01.png
-   :alt: scan me for wechat
+   :alt: 微信二维码 WeChat QR Code
    :width: 166px
    :align: left
 

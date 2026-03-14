@@ -11,11 +11,3 @@
 
 
 
-
-
-
-
-.. autosummary::
-   :toctree: generated
-
-   lumache

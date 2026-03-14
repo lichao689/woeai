@@ -22,10 +22,3 @@
 4. 复杂地形风场 Complex Terrain Wind Field
 -------------------------------------------
 
-
-
-
-.. autosummary::
-   :toctree: generated
-
-   lumache

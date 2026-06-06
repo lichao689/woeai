@@ -52,21 +52,6 @@ Welcome to the Group of Wind & Ocean Engineering empowered by AI (WOEAI)!
 - :doc:`OffshoreWindEnergy`
 
 
-
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
-
-**test**
-
-Check out the :doc:`NumericalWindTunnel` section for further information, including
-how to :ref:`installation` the project.
-
-.. note::
-
-   This project is under active development.
-
 目录 Contents
 ===============
 
@@ -79,12 +64,10 @@ how to :ref:`installation` the project.
    OffshoreWindEnergy
    Projects
    Publications
-   usage
-   api
 
 
-与我联系 Contact Me
-=====================
+联系方式 Contact
+================
 
 - **网站 Website**: https://winddee.cn
 - **邮箱 Email**: lichaosz@hit.edu.cn

@@ -1,83 +1,64 @@
-Welcome to the Group of Wind & Ocean Engineering empowered by AI (WOEAI)!
-=========================================================================
-
-
-
-团队介绍 Group Introduction
-============================
-
-将人工智能技术赋能建筑和海洋工程结构防灾减灾，夯实理论基础，结合工程实际，兼取数值模拟与物理试验之长探寻未知世界客观规律，推动行业进步、践行科研价值。
-
-围绕陆上强风与海洋环境与工程结构的相互作用，包括工程结构风灾，海上风电，城镇风环境等领域，
-
-
-
-
-招生纳新 Recruit
-===================
-
-- 硕士研究生 3~4名/年；
-- 博士研究生 1~2名/年；
-- 博士后 1-2名/年。
-
-
-博士后 postdoctoral recruitment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-希望你
-
-1.	年龄在35岁以下（含35岁，即未到36岁生日）； 
-2.	获得土木工程或海洋工程及其相关的博士学位，且获学位时间一般不超过3年；
-3.	已在国际期刊发表SCI一篇及以上。
-
-待遇
-
-1.	年薪：32万以上（含18万元深圳市政府免税补贴）；
-2.	福利：享受五险一金、可租住深圳市人才公寓（或享受深圳市政府租房补贴）、落户深圳（配偶、子女可随迁）；
-3.	出站留深奖励：博士后出站留深工作可享受深圳市政府30万元科研资助；
-4.	科研条件：课题组提供优良的科研环境、境内外合作交流机会、充足的科研支持，并协助博士后本人作为负责人申请中国博士后科学基金、国家自然科学基金等项目。
-
-
-
-.. attention::
-   欢迎踏实上进，有强烈求知欲望，创新探索精神，愿意为工程技术创新付出努力的同学加入。
-
-   尤其欢迎有读博意愿的同学加入。
-
-科研兴趣 Research Interests
-===========================
-
-- :doc:`NumericalWindTunnel`
-- :doc:`WindResistance`
-- :doc:`OffshoreWindEnergy`
-
-
-目录 Contents
-===============
-
-.. toctree::
-
-   Teaching
-   People
-   NumericalWindTunnel
-   WindResistance
-   OffshoreWindEnergy
-   Projects
-   Publications
-
-
-联系方式 Contact
+Welcome to WOEAI
 ================
 
-- **网站 Website**: https://winddee.cn
-- **邮箱 Email**: lichaosz@hit.edu.cn
-- **地址 Address**: 哈尔滨工业大学（深圳）土木与环境工程学院
+Wind & Ocean Engineering empowered by AI (WOEAI) is a research group at
+Harbin Institute of Technology, Shenzhen. The group studies AI-enabled wind and
+ocean engineering for disaster prevention and mitigation in building, city,
+offshore wind, and marine-structure contexts.
 
-.. image:: ../_static/lcWeChatMatrixCode01.png
-   :alt: 微信二维码 WeChat QR Code
-   :width: 166px
-   :align: left
+WOEAI combines numerical simulation, physical testing, engineering projects,
+and theoretical work to understand wind and ocean environmental actions on
+engineering structures.
 
+加入 WOEAI Recruitment
+========================
 
+团队长期欢迎踏实上进、有强烈求知欲、具备创新探索精神，并愿意面向工程技术创新持续投入的学生和青年研究人员加入。
 
+- 硕士、博士、博士后方向围绕数值风洞、结构抗风、海上风电及 AI 赋能工程方法展开。
+- 既有公开信息显示，团队每年接收硕士、博士和博士后；具体年度名额、条件与政策以学校和团队当年公开信息为准。
+- 尤其欢迎有长期科研兴趣和读博意愿的同学联系交流。
 
+.. seealso::
+
+   :doc:`Recruitment`
+
+产业合作 Industry Collaboration
+===============================
+
+WOEAI 面向风工程、海上风电和 AI 赋能工程建模中的复杂问题开展研究与工程实践。既有项目覆盖高层建筑风致响应、输电线路台风风场、浮式海上风机基础、风浪联合模型试验等方向。
+
+合作信息以公开项目类别和能力方向呈现；未公开确认的合作方名称、当前合作状态和项目细节不会在网站中直接发布。
+
+.. seealso::
+
+   :doc:`IndustryCollaboration`
+
+学术可信度 Academic Credibility
+================================
+
+团队负责人李朝教授长期从事风工程、风能与海洋工程结构相关研究，主持和参与多项国家、省市及企业咨询项目，并在相关期刊和会议发表论文。
+
+站点中的人员、研究方向、项目和论文页面用于提供可追溯的学术与工程证据。
+
+.. seealso::
+
+   :doc:`Research`
+   :doc:`People`
+   :doc:`Projects`
+   :doc:`Publications`
+
+目录 Contents
+=============
+
+.. toctree::
+   :maxdepth: 2
+
+   Recruitment
+   IndustryCollaboration
+   Contact
+   Research
+   People
+   Projects
+   Publications
+   Teaching

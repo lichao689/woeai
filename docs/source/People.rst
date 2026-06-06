@@ -62,7 +62,7 @@
 在校硕士生 Master Students
 -------------------------------
 
-For example:
+名单将根据团队公开信息持续更新。
 
 
 毕业博士生 Graduated PhD Students
@@ -95,8 +95,7 @@ For example:
 毕业硕士生 Graduated Master Students
 -----------------------------------------
 
-
-
+名单将根据团队公开信息持续更新。
 
 
 

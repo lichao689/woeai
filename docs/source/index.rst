@@ -1,6 +1,11 @@
 Welcome to WOEAI
 ================
 
+.. image:: ../_static/logoGroup.png
+   :alt: WOEAI group logo
+   :width: 260px
+   :align: right
+
 Wind & Ocean Engineering empowered by AI (WOEAI) is a research group at
 Harbin Institute of Technology, Shenzhen. The group studies AI-enabled wind and
 ocean engineering for disaster prevention and mitigation in building, city,

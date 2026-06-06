@@ -1,16 +1,45 @@
-/* Custom styles to increase page width in Read the Docs theme */
+/* WOEAI site presentation refinements for the Read the Docs theme. */
 
-/* Increase the width of the main content container */
 .wy-nav-content {
-    max-width: 1200px !important;  /* Default is 800px */
+    max-width: 1160px !important;
+    line-height: 1.75;
 }
 
-/* Adjust the table width to match the new container width */
 .wy-table-responsive table td, .wy-table-responsive table th {
     white-space: normal;
 }
 
-/* Make sure code blocks don't overflow */
 .highlight {
     overflow-x: auto;
+}
+
+.rst-content h1,
+.rst-content h2 {
+    letter-spacing: 0;
+}
+
+.rst-content h1 {
+    margin-bottom: 0.75em;
+}
+
+.rst-content h2 {
+    border-bottom: 1px solid #d7e3ea;
+    padding-bottom: 0.25em;
+}
+
+.rst-content .admonition,
+.rst-content .seealso {
+    border-radius: 4px;
+}
+
+.rst-content img.align-right {
+    margin: 0 0 1.25rem 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .rst-content img.align-right {
+        float: none;
+        display: block;
+        margin: 0 auto 1rem;
+    }
 }

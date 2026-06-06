@@ -78,6 +78,5 @@ sitemap_url_scheme = "{link}"
 # 关闭"查看页面源代码"链接
 html_show_sourcelink = False
 
-# -- Favicon 配置
-# html_favicon = "../_static/favicon.ico"  # 如有 favicon 可取消注释
+html_favicon = "../_static/logo.svg"
 

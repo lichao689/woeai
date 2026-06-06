@@ -53,16 +53,15 @@ If recruitment terms are not confirmed, publish the general invitation and conta
 
 ### Existing Repository Facts
 
-From `docs/source/index.rst`:
+From `docs/source/Contact.rst`:
 
 - Website: https://winddee.cn
 - Email: lichaosz@hit.edu.cn
-- Address: 哈尔滨工业大学（深圳）土木与环境工程学院
+- Address: 哈尔滨工业大学（深圳）智能土木与海洋工程学院
 - WeChat QR image: `docs/_static/lcWeChatMatrixCode01.png`
 
 ### Needs Owner Confirmation
 
-- Whether the school name should now be 智能土木与海洋工程学院, matching the 2025 position line in `People.rst`.
 - Whether WeChat QR code is intended for all public visitors, applicants only, or should be moved to contact page only.
 
 ## People

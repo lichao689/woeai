@@ -3,7 +3,7 @@
 
 - **网站 Website**: https://winddee.cn
 - **邮箱 Email**: lichaosz@hit.edu.cn
-- **地址 Address**: 哈尔滨工业大学（深圳）土木与环境工程学院
+- **地址 Address**: 哈尔滨工业大学（深圳）智能土木与海洋工程学院
 
 .. image:: ../_static/lcWeChatMatrixCode01.png
    :alt: 微信二维码 WeChat QR Code

@@ -1,16 +1,15 @@
 项目实践 Project Evidence
 =========================
 
-本页是团队公开项目实践的证据库，用于支撑 :doc:`Research`、:doc:`TechnicalCollaboration` 和三个具体科研方向页。项目名称和承担角色按现有公开信息呈现；未公开确认的企业名称、当前合作状态和项目细节不在本页展开。
+本页是团队公开项目实践的证据库，用于支撑 :doc:`Research`、:doc:`TechnicalCollaboration`、:doc:`BuildingStructuralWindResistance` 和 :doc:`FloatingOffshoreWindEnergy`。项目名称和承担角色按现有公开信息呈现；未公开确认的企业名称、当前合作状态和项目细节不在本页展开。
 
 如果只想快速判断合作相关性，可先看下面的按方向索引；如果需要完整核验，可继续查看政府项目和企业项目记录。
 
 能力地图 Capability Map
 --------------------------
 
-- **数值风洞与风场模拟**: 大气边界层湍流生成、复杂地形风场、微尺度台风风场、风洞试验与风振分析。
-- **结构抗风**: 高层建筑气动外形优化、输电线路和输电塔风场与响应分析。
-- **海上风电**: 浮式风机系统优化、半潜式基础结构设计、风浪联合模型试验、运动和振动控制。
+- **建筑结构抗风**: 数值风洞与湍流入流、城市风环境、复杂地形风场、高层建筑气动外形优化、风洞试验与风振分析。
+- **海上漂浮风电**: 浮式风机系统优化、浮式混凝土平台结构设计、风浪联合模型试验、数值风浪流水池、运动和振动控制。
 
 按科研方向索引 Direction Index
 ------------------------------
@@ -95,6 +94,5 @@
 ----------------------
 
 - :doc:`TechnicalCollaboration`
-- :doc:`NumericalWindTunnel`
-- :doc:`WindResistance`
-- :doc:`OffshoreWindEnergy`
+- :doc:`BuildingStructuralWindResistance`
+- :doc:`FloatingOffshoreWindEnergy`

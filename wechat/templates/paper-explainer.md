@@ -15,6 +15,8 @@ revision_note:
 source_checked: false
 copyright_checked: false
 public_safety_checked: false
+formula_preview_checked: false
+figure_preview_checked: false
 ---
 
 # 论文解读 | <填写中文标题>
@@ -40,6 +42,12 @@ public_safety_checked: false
 
 最值得读者注意的结果是:
 
+## 公式说明
+
+- 使用公式: no formulas used
+- 公众号公式呈现方式:
+- 公式移动端预览结论:
+
 ## 工程意义
 
 对工程技术负责人有启发的是:
@@ -51,8 +59,10 @@ public_safety_checked: false
 ## 图示与素材来源
 
 - 使用图片: no images used
+- 图片优先来源: 论文原始高清图
 - 图示来源或生成方式:
 - 版权说明:
+- 清晰度预览结论:
 
 ## 延伸阅读
 

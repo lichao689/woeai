@@ -26,12 +26,14 @@ figure_preview_checked: false
 - Zotero:
 - PDF / 作者稿:
 
-## 图片计划
+## 图片使用记录
 
 1. Figure:
    - 用途:
    - 图片状态:
+   - 素材文件:
    - 来源/版权:
+   - 抽取方式:
    - 公众号图注:
    - 移动端预览:
 
@@ -52,7 +54,7 @@ figure_preview_checked: false
 ## 发布前任务
 
 - [ ] 核对作者、期刊、页码、DOI、公式和图题。
-- [ ] 导入已确认可用的原始高清图。
+- [ ] 从 PDF 或作者稿抽取并导入已确认可用的原始高清图。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
 

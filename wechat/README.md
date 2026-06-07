@@ -29,12 +29,13 @@ Use `wechat/articles/draft-public-safe/` only for drafts that are safe to expose
 
 Use `wechat/backlog/selected-papers.yml` to track selected papers and publication state.
 
-- `wechat_status`: one of `selected`, `drafting`, `reviewing`, `ready_to_publish`, `published`, `rewrite`, `republish`, or `archived`.
-- `publication_mode`: one of `first_publish`, `rewrite`, or `republish`.
+- `repost_priority`: one of `high`, `medium`, or `low`; use higher priorities first when starting the next article.
+- `wechat_status`: one of `selected`, `drafting`, `reviewing`, `ready_to_publish`, `published`, or `archived`.
+- `publication_mode`: one of `first_publish`, `rewrite`, or `republish`; this records the publication intent, while `wechat_status` records workflow progress.
 - `previous_published_url`: the earlier public WeChat URL, if this article is being rewritten or republished.
 - `latest_published_url`: the newest public WeChat URL after publication.
 - `revision_note`: short public-safe note explaining why a historical paper is being rewritten or republished.
-- `publication_history`: optional public-safe list of previous publication dates and URLs.
+- `publication_history`: optional public-safe list with entries shaped as `published_at`, `mode`, `url`, and `note`.
 
 ## Workflow
 

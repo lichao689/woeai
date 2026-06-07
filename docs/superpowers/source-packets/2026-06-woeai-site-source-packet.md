@@ -13,6 +13,8 @@ Outcome priority: 招生 Recruitment > 技术合作 Technical collaboration > �
 - If a fact is unverified, either omit it from public pages or use a public-safe updating statement.
 - Public page copy should preserve bilingual Chinese/English headings where the surrounding page already uses them.
 - Do not reproduce local institution, college, address, title, or employment-history claims for the group leader on public pages. Use the official university profile link instead: https://homepage.hit.edu.cn/lichao.
+- Student names and current/graduated status may remain when used only as academic member context. Do not add student institution, college, address, personal contact, private biography, photo, student ID, demographic detail, or non-academic personal information.
+- Public contact channels are the website URL, personal email `lichaosz@qq.com`, official university profile, and homepage WeChat QR code. Do not add further personal contact details without explicit confirmation.
 
 ## Recruitment
 
@@ -52,13 +54,13 @@ If recruitment terms are not confirmed, publish the general invitation and conta
 From the homepage contact section in `docs/source/index.rst`:
 
 - Website: https://winddee.cn
-- Email: lichaosz@hit.edu.cn
+- Email: lichaosz@qq.com
 - Official university profile: https://homepage.hit.edu.cn/lichao
 - WeChat QR image: `docs/_static/lcWeChatMatrixCode01.png`
 
 ### Needs Owner Confirmation
 
-- Whether WeChat QR code is intended for all public visitors, applicants only, or should stay in the homepage contact section.
+- Whether any future contact channel beyond email and WeChat may be disclosed.
 
 ## People
 
@@ -79,7 +81,7 @@ From `docs/source/People.rst`:
 
 ### Public-Safe Fallback
 
-For empty student/alumni sections, use "名单将根据团队公开信息持续更新。" or hide the empty section.
+For empty student/alumni sections, use "名单将根据团队公开信息持续更新。" or hide the empty section. Keep published member information academic-only.
 
 ## Industry Cooperation
 

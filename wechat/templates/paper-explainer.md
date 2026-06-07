@@ -62,4 +62,4 @@ public_safety_checked: false
 ## 联系入口
 
 - Website: https://winddee.cn
-- Email: lichaosz@hit.edu.cn
+- Email: lichaosz@qq.com

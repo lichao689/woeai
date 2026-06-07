@@ -20,6 +20,10 @@ _Avoid_: marketing page, archive dump
 The canonical way to reference the group leader's institution-hosted official information. Link to `https://homepage.hit.edu.cn/lichao` instead of reproducing local institution, college, address, title, or employment-history claims on the public site.
 _Avoid_: local institution identity copy, college-address claims, school-official wording on the personal/group website
 
+**Public Contact Channels**:
+The public contact channels for WOEAI are the website URL, the personal email address `lichaosz@qq.com`, the Official Profile Link, and the WeChat QR code already used on the homepage. These channels may be published, but they should not be expanded into additional personal contact details without explicit confirmation.
+_Avoid_: workplace address as contact, alternate private contact, unconfirmed phone or messaging IDs
+
 **Technical Collaboration**:
 The canonical public label for external engineering cooperation and consulting-oriented work. Use `技术合作 Technical Collaboration` for the navigation path and page title.
 _Avoid_: 产业合作 Industry Collaboration as the public navigation label
@@ -60,6 +64,10 @@ _Avoid_: student paper marker, student coauthor marker, first-author separator m
 A public People-page label that indicates whether a student member is current or graduated. It supplements the degree-level grouping and must not change the member's public name.
 _Avoid_: status in the name, current/graduated as the primary student category
 
+**Academic Member Listing**:
+A public member listing that supports academic context only. It may show a student's public name, degree-level group, and Member Status Tag, but should not add institution, college, address, personal contact, private biography, photo, student ID, demographic detail, or non-academic personal information.
+_Avoid_: unit-bearing student profile, contact directory, private student record
+
 **Research Family**:
 The canonical public first-level research taxonomy for WOEAI. Use exactly two public research families: `建筑结构抗风` and `海上漂浮风电`. Method names such as `数值风洞` are subdirections, not first-level public families.
 _Avoid_: treating `数值风洞`, `结构抗风`, or `海上风电` as peer first-level directions after this taxonomy change
@@ -89,6 +97,10 @@ Domain Expert: No. Only Public Journal Papers should appear; general library ref
 Dev: Should the site describe the group leader's current institution and college locally?
 
 Domain Expert: No. Use the Official Profile Link for institution-hosted official information and keep this site focused on WOEAI research, recruitment, collaboration, and academic outputs.
+
+Dev: Should the homepage keep the WeChat QR code?
+
+Domain Expert: Yes. Keep it as a Public Contact Channel alongside `lichaosz@qq.com`, but do not add further personal contact details unless explicitly confirmed.
 
 Dev: Should we restrict the list to first-author or corresponding-author work?
 
@@ -125,6 +137,10 @@ Domain Expert: No. Emphasize Publication Metric Values while keeping labels read
 Dev: Should the People page split students into current and graduated categories?
 
 Domain Expert: No. Use degree-level groups such as PhD Students and Master Students, then add Member Status Tags for current or graduated status.
+
+Dev: Should student names and current/graduated status be removed for privacy?
+
+Domain Expert: No. Keep Academic Member Listings when they support academic context, but do not add units, contact details, photos, IDs, or private biographical information.
 
 Dev: Should WOEAI use semantic versioning for public site updates?
 

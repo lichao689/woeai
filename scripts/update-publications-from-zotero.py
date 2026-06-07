@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import functools
 import hashlib
 import html
 import json
@@ -27,6 +28,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS_PATH = ROOT / "docs/source/Publications.rst"
 SNAPSHOT_PATH = ROOT / "docs/superpowers/source-packets/2026-06-publications-zotero-snapshot.json"
+PEOPLE_PATH = ROOT / "docs/source/People.rst"
 
 BASE_URL = "http://127.0.0.1:23119/api/users/0"
 API_HEADERS = {"Zotero-API-Version": "3"}
@@ -42,6 +44,16 @@ CSL_INSTALLED_PATH = Path(
     "jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01.csl"
 )
 CSL_SHA256 = "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
+
+METRIC_LABELS = ("影响因子", "中科院分区", "引用次数")
+STUDENT_SECTION_MARKERS = ("PhD Students", "Master Students", "博士生", "硕士生")
+STUDENT_NAME_ALIASES = {
+    "周盛涛": ["Zhou Shengtao", "Shengtao Zhou"],
+    "王靖含": ["Wang Jinghan", "Jinghan Wang"],
+    "赵子涵": ["Zhao Zihan", "Zihan Zhao"],
+    "张文通": ["Zhang Wentong", "Wentong Zhang"],
+    "郑舜云": ["Zheng Shunyun", "Shunyun Zheng"],
+}
 
 
 PINYIN_SURNAMES = {
@@ -255,6 +267,82 @@ def creator_display_name(creator: dict[str, Any]) -> str:
     return " ".join(part for part in [creator.get("firstName"), creator.get("lastName")] if part)
 
 
+def creator_csl_display_name(creator: dict[str, Any]) -> str:
+    if creator.get("name"):
+        return str(creator["name"])
+    first = str(creator.get("firstName") or "").strip()
+    last = str(creator.get("lastName") or "").strip()
+    if contains_cjk(first) or contains_cjk(last):
+        return f"{last}{first}"
+    return " ".join(part for part in [last, first] if part)
+
+
+def normalize_author_name(value: str) -> str:
+    value = unicodedata.normalize("NFKC", value).casefold()
+    return re.sub(r"[^0-9a-z\u4e00-\u9fff]+", "", value)
+
+
+def people_name_variants(line: str) -> set[str]:
+    variants = {line.strip()}
+    match = re.match(
+        r"(?P<chinese>[\u4e00-\u9fff·]+)(?:\s+(?P<latin>[A-Za-z][A-Za-z .'\-]+))?$",
+        line.strip(),
+    )
+    if match:
+        chinese = match.group("chinese")
+        latin = (match.group("latin") or "").strip()
+        variants.add(chinese)
+        if latin:
+            variants.add(latin)
+        variants.update(STUDENT_NAME_ALIASES.get(chinese, []))
+    return {variant for variant in variants if variant}
+
+
+def is_section_underline(line: str, char: str) -> bool:
+    stripped = line.strip()
+    return len(stripped) >= 3 and set(stripped) == {char}
+
+
+@functools.lru_cache(maxsize=1)
+def load_student_author_names() -> set[str]:
+    if not PEOPLE_PATH.exists():
+        return set()
+    lines = PEOPLE_PATH.read_text(encoding="utf-8").splitlines()
+    names: set[str] = set()
+    in_student_section = False
+    for index, line in enumerate(lines):
+        stripped = line.strip()
+        next_line = lines[index + 1].strip() if index + 1 < len(lines) else ""
+        if next_line and is_section_underline(next_line, "-"):
+            in_student_section = any(marker in stripped for marker in STUDENT_SECTION_MARKERS)
+            continue
+        if not in_student_section:
+            continue
+        if not stripped or is_section_underline(stripped, "-") or is_section_underline(stripped, "~"):
+            continue
+        if "名单将" in stripped:
+            continue
+        if next_line and is_section_underline(next_line, "~"):
+            for variant in people_name_variants(stripped):
+                names.add(normalize_author_name(variant))
+    return names
+
+
+def student_first_author_display(item: dict[str, Any]) -> str | None:
+    creators = item["data"].get("creators") or []
+    if not creators:
+        return None
+    first_author = creators[0]
+    variants = {
+        creator_display_name(first_author),
+        creator_csl_display_name(first_author),
+    }
+    student_names = load_student_author_names()
+    if any(normalize_author_name(variant) in student_names for variant in variants):
+        return creator_csl_display_name(first_author)
+    return None
+
+
 def creator_family_token(creator: dict[str, Any]) -> str:
     family = creator.get("lastName") or creator.get("name") or ""
     if not family and creator.get("firstName"):
@@ -338,9 +426,43 @@ def bold_group_leader(value: str) -> str:
     return value
 
 
+def bold_journal_title(value: str, item: dict[str, Any]) -> str:
+    journal = item["data"].get("publicationTitle")
+    if not journal:
+        return value
+    escaped_journal = rst_escape(str(journal))
+    marker = f"[J]. {escaped_journal}"
+    if marker not in value:
+        return value
+    return value.replace(marker, f"[J]. **{escaped_journal}**", 1)
+
+
+def bold_metric_values(value: str) -> str:
+    labels = "|".join(re.escape(label) for label in METRIC_LABELS)
+    pattern = re.compile(rf"(?P<label>{labels}):\s*(?P<metric>.+?)(?=\.\s*(?:{labels}):|\.$)")
+
+    def replace(match: re.Match[str]) -> str:
+        metric = match.group("metric").strip()
+        return f"{match.group('label')}: **{metric}**"
+
+    return pattern.sub(replace, value)
+
+
+def mark_student_first_author(value: str, item: dict[str, Any]) -> str:
+    first_author = student_first_author_display(item)
+    if not first_author:
+        return value
+    escaped_author = rst_escape(first_author)
+    pattern = re.compile(rf"^{re.escape(escaped_author)}(?=;|,)")
+    return pattern.sub(f":student-first-author:`{escaped_author}`", value, count=1)
+
+
 def rendered_entry(item: dict[str, Any], number: int) -> str:
     text = strip_bib_html(item.get("bib") or "")
     text = rst_escape(text)
+    text = bold_journal_title(text, item)
+    text = bold_metric_values(text)
+    text = mark_student_first_author(text, item)
     text = bold_group_leader(text)
     return f"[{number}] {text}"
 
@@ -489,6 +611,8 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
     ]
     return "\n".join(
         [
+            ".. role:: student-first-author",
+            "",
             "学术成果 Academic Outputs",
             "===============================",
             "",
@@ -496,6 +620,7 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "---------------",
             "",
             "- **Li Chao** / **李朝** 为便于阅读加粗显示。",
+            "- :student-first-author:`学生第一作者` 表示该论文第一作者为团队公开成员名单中的在校或毕业学生；硕士、博士均适用。",
             "- 本页期刊论文按当前公开成果记录生成；影响因子、Q 分区、中科院分区和引用次数等指标仅在来源记录可用时显示。",
             "- Publication Numbers 为当前页面排序下的展示编号；方向页中的论文引用使用稳定锚点链接到本页对应条目。",
             "",
@@ -586,6 +711,7 @@ def snapshot(items: list[dict[str, Any]], old_anchor_map: dict[str, str]) -> dic
                 "publicationTitle": item["data"].get("publicationTitle"),
                 "doi": item["data"].get("DOI"),
                 "creators": [creator_display_name(creator) for creator in item["data"].get("creators") or []],
+                "student_first_author": student_first_author_display(item),
                 "rendered": strip_bib_html(item.get("bib") or ""),
                 "metrics": metrics_text(strip_bib_html(item.get("bib") or "")),
             }

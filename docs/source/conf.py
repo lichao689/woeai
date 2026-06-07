@@ -78,5 +78,5 @@ sitemap_url_scheme = "{link}"
 # 关闭"查看页面源代码"链接
 html_show_sourcelink = False
 
-html_favicon = "../_static/logo.svg"
+html_favicon = "../_static/favicon.png"
 

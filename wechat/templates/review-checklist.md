@@ -11,7 +11,7 @@
 
 - [ ] No publisher PDF figure is copied without confirmed reuse rights.
 - [ ] All diagrams are original, redrawn, generated for this article, or public-safe.
-- [ ] Image source is recorded in the article notes or asset metadata.
+- [ ] Image source is recorded in the article's `图示与素材来源` section or asset metadata.
 
 ## Public Safety
 

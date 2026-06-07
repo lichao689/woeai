@@ -167,5 +167,10 @@ wechat/review-notes/
 wechat/wechat-preview-html/
 wechat/source-images/
 wechat/secrets/
+wechat/.env*
+wechat/**/*.env*
+wechat/**/*token*.json
+wechat/**/*cookie*.json
+!wechat/**/*.env.example
 *.wechat-token
 *.appsecret

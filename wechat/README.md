@@ -25,6 +25,17 @@ Do not commit:
 
 Use `wechat/articles/draft-public-safe/` only for drafts that are safe to expose before publication. Keep private working material under ignored local paths such as `wechat/.local/`.
 
+## Backlog State Model
+
+Use `wechat/backlog/selected-papers.yml` to track selected papers and publication state.
+
+- `wechat_status`: one of `selected`, `drafting`, `reviewing`, `ready_to_publish`, `published`, `rewrite`, `republish`, or `archived`.
+- `publication_mode`: one of `first_publish`, `rewrite`, or `republish`.
+- `previous_published_url`: the earlier public WeChat URL, if this article is being rewritten or republished.
+- `latest_published_url`: the newest public WeChat URL after publication.
+- `revision_note`: short public-safe note explaining why a historical paper is being rewritten or republished.
+- `publication_history`: optional public-safe list of previous publication dates and URLs.
+
 ## Workflow
 
 1. Select a paper in `wechat/backlog/selected-papers.yml`.
@@ -33,4 +44,4 @@ Use `wechat/articles/draft-public-safe/` only for drafts that are safe to expose
 4. Complete the source, copyright, and public-safety checklist.
 5. Render the Markdown in a WeChat Markdown editor such as doocs/md.
 6. Publish manually in the WeChat backend.
-7. Record the published URL in `wechat/backlog/selected-papers.yml` and, when useful, in `wechat/index.yml`.
+7. Record the published URL and state fields in `wechat/backlog/selected-papers.yml` and, when useful, in `wechat/index.yml`.

@@ -7,11 +7,14 @@ publication_ref:
 zotero_key:
 doi:
 original_year:
+publication_mode: first_publish
 wechat_status: not_started
+previous_published_url:
+latest_published_url:
+revision_note:
 source_checked: false
 copyright_checked: false
 public_safety_checked: false
-published_url:
 ---
 
 # 论文解读 | <填写中文标题>
@@ -44,6 +47,12 @@ published_url:
 ## 适用边界
 
 这篇论文没有证明或不应被夸大的地方是:
+
+## 图示与素材来源
+
+- 使用图片: no images used
+- 图示来源或生成方式:
+- 版权说明:
 
 ## 延伸阅读
 

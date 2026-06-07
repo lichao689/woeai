@@ -58,16 +58,27 @@ figure_preview_checked: false
 
 ## 图示与素材来源
 
-- 使用图片: no images used
+- 使用图片: planned, pending source image insertion
 - 图片优先来源: 论文原始高清图
 - 图示来源或生成方式:
 - 版权说明:
 - 清晰度预览结论:
 
+### 计划配图
+
+1. Figure:
+   - 用途:
+   - 图片状态:
+   - 公众号图注:
+
 ## 延伸阅读
 
 - WOEAI 相关方向页:
 - WOEAI 相关论文:
+
+## 阅读原文
+
+- DOI:
 
 ## 联系入口
 

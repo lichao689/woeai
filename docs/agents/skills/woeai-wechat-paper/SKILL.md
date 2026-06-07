@@ -24,6 +24,8 @@ Read these files before drafting:
 
 If the task mentions Zotero, DOI, a PDF, or a paper title, inspect those sources when available. Do not invent missing bibliographic facts.
 
+When a local PDF or author manuscript is available, inspect the original paper body, figures, captions, and conclusion instead of relying only on a public abstract.
+
 ## Article Unit
 
 Use one selected paper per article.
@@ -93,11 +95,14 @@ Write for technically literate readers who may include prospective students, col
 
 Tone:
 
+- Use the author's perspective and voice. The article should read like WOEAI or the authors are explaining their own paper to readers.
+- Prefer `我们在这项研究中...`, `这项工作...`, and `这篇论文...` over third-party phrases such as `从公开摘要可确认...`.
 - Scholarly first.
 - Engineering relevance second.
 - No hype.
 - No unsupported partner names or project claims.
 - Keep limitations visible.
+- Avoid standing outside the paper as a detached reviewer unless explicitly writing a review note.
 
 ## Formula Handling
 
@@ -135,7 +140,22 @@ Every figure needs:
 - mobile clarity preview result,
 - `figure_preview_checked: false` until final WeChat backend preview.
 
-Do not commit unapproved source images. Keep private or unapproved image work under ignored local paths such as `wechat/.local/`.
+For a normal paper article, include several figure positions when the original paper has suitable figures. Choose figures that help readers understand:
+
+- the method or workflow,
+- the study object or geometry,
+- the validation evidence,
+- the final engineering or platform application.
+
+Do not leave the article imageless unless the paper truly has no suitable figure or the user requests text-only output.
+
+Do not commit unapproved source images. Keep private or unapproved image work under ignored local paths such as `wechat/.local/`. If image rights are not yet confirmed, include public-safe figure slots and captions in the draft, and mark the source image as pending author or reuse confirmation.
+
+## Original Article Link
+
+Add a `阅读原文` section near the end of the article.
+
+For the first workflow version, use the DOI URL as the reading link. Do not imply that the repository hosts the full paper PDF unless a public author manuscript or approved download link is actually available.
 
 ## Draft Quality Gates
 
@@ -145,7 +165,8 @@ Before calling a draft ready:
 - Research family and subdirection match `wechat/topics/`.
 - No invented collaboration, partner, project, facility, award, or metric claims appear.
 - Important formulas are not images and have explanations.
-- Figures have source, rights, and clarity notes.
+- The article includes suitable figure positions from the original paper when available, with source, rights, and clarity notes.
+- The article includes a DOI-based `阅读原文` link.
 - `wechat/templates/review-checklist.md` is satisfied or remaining items are explicitly marked for human review.
 - `scripts/check-public-safe-content.py` passes.
 - `./scripts/check-docs.sh` passes before claiming repository changes are complete.

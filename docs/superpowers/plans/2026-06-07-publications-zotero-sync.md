@@ -33,6 +33,7 @@ The script should call the Zotero local API with `include=data,bib` and the CSL 
 - Do not query the web to fill missing metrics.
 - Do not maintain a metrics override file in this cycle.
 - If a paper has no available metric, omit that metric from the public entry instead of adding a placeholder.
+- Bold the value after each Publication Metric label while leaving the label itself unbolded, for example `影响因子: **2.5 (Q2)**. 中科院分区: **3**. 引用次数: **1**.`
 
 ### Output Format
 
@@ -44,9 +45,17 @@ The script should call the Zotero local API with `include=data,bib` and the CSL 
 - Post-process CSL output only for:
   - visible Publication Numbers,
   - `Li Chao` / `李朝` bolding,
+  - journal-title bolding using Zotero `publicationTitle` only,
+  - Publication Metric Value bolding,
+  - Student First Author marking,
   - RST escaping,
   - RST anchor insertion,
   - site-specific highlight/reference synchronization.
+- Bold only the Zotero `publicationTitle` journal name in the rendered citation. Do not include publisher names that the CSL style may render after the journal title.
+- Use a custom RST role and CSS class for Student First Author underlining instead of raw HTML.
+- Apply Student First Author underlining only to the first author's displayed name, not to the semicolon, author-list separators, title, or full entry.
+- A Student First Author is determined from public student names on `docs/source/People.rst`, including current and graduated master's and doctoral students when their names are available.
+- When `People.rst` has only Chinese names for historical students, the script may use a small alias table to match the CSL/Zotero English author rendering. Future student entries should prefer `中文名 English Name` so the script can read both forms directly.
 
 ### Numbering
 
@@ -108,6 +117,9 @@ rg -n ':ref:`[^`]+<ref-' docs/source
 Also inspect the generated `Publications.html` for:
 
 - author bolding,
+- Student First Author underlining,
+- journal-title bolding,
+- Publication Metric Value bolding,
 - line wrapping,
 - DOI rendering,
 - omitted unavailable metrics,

@@ -28,6 +28,10 @@ _Avoid_: 研究成果 Publications as a mixed-language page title
 Per-paper credibility indicators shown with a Public Journal Paper, including impact factor, journal quartile, Chinese Academy of Sciences division, and citation count. They must come from a confirmed source because they can change over time.
 _Avoid_: inferred metrics, stale metrics
 
+**Publication Metric Value**:
+The value shown after a Publication Metric label, such as the impact-factor value with journal quartile, Chinese Academy of Sciences division number, or citation count. It is the public evidence value, not the metric label itself.
+_Avoid_: metric label, inferred value
+
 **Unavailable Publication Metric**:
 A Publication Metric that does not exist for a specific Public Journal Paper or is not supplied by the confirmed source used for the update. It should be omitted rather than fabricated or marked as a public placeholder.
 _Avoid_: missing proof, made-up metric
@@ -39,6 +43,14 @@ _Avoid_: publication id, permanent reference key
 **Representative Publication**:
 A Public Journal Paper selected for highlights or direction pages because it strongly supports recruitment, technical collaboration, or academic credibility for a research theme. It is a curated subset, not a complete list of outputs.
 _Avoid_: every recent paper, exhaustive topic list
+
+**Student First Author**:
+The first author of a Public Journal Paper who is listed publicly as the group leader's current or graduated student. This includes both master's and doctoral students when their public names are available.
+_Avoid_: coauthor student, undocumented student status, degree-level-only student marker
+
+**Student First Author Marker**:
+A visual marker applied only to the Student First Author's displayed name in a Public Journal Paper entry. It marks the person, not the full author list, separator punctuation, or paper title.
+_Avoid_: student paper marker, student coauthor marker, first-author separator marker
 
 ## Example Dialogue
 
@@ -65,3 +77,15 @@ Domain Expert: No. Publication Numbers can change when the page is regenerated; 
 Dev: Should every new paper appear in the highlights?
 
 Domain Expert: No. Highlights should use Representative Publications; the full list belongs in the journal-paper section.
+
+Dev: Should student authorship marking include only doctoral students?
+
+Domain Expert: No. Student First Author marking applies to both master's and doctoral students when the public People page provides the names.
+
+Dev: Should a private student relationship be marked if the public People page does not name the student?
+
+Domain Expert: No. Student First Author marking should be source-bounded to public People-page names and confirmed aliases.
+
+Dev: Should Publication Metric labels be visually emphasized?
+
+Domain Expert: No. Emphasize Publication Metric Values while keeping labels readable as labels.

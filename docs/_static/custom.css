@@ -36,6 +36,13 @@
     margin: 0 0 1.25rem 1.5rem;
 }
 
+.rst-content .student-first-author {
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.14em;
+    text-decoration-skip-ink: auto;
+}
+
 @media screen and (max-width: 768px) {
     .rst-content img.align-right {
         float: none;

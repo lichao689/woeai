@@ -1,24 +1,3 @@
----
-title: 论文解读 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测
-status: draft-public-safe
-research_family: 建筑结构抗风
-subdirection: 数值风洞与湍流入流
-publication_ref: ref-zhao2026-BS
-zotero_key: CGKPKZ8I
-doi: 10.1007/s12273-025-1379-7
-original_year: 2026
-publication_mode: first_publish
-wechat_status: drafting
-previous_published_url:
-latest_published_url:
-revision_note:
-source_checked: false
-copyright_checked: false
-public_safety_checked: false
-formula_preview_checked: false
-figure_preview_checked: false
----
-
 # 论文解读 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测
 
 城市风环境评估经常遇到一个现实矛盾：我们希望看清建筑群、街区和局部地形对风场的影响，但如果每一个规划片区、每一次方案调整都重新开展高分辨率 CFD 计算，工程应用的时间成本会非常高。
@@ -35,7 +14,7 @@ figure_preview_checked: false
 - 年份: 2026
 - 卷期页码: 19(2): 333-357
 - DOI: https://doi.org/10.1007/s12273-025-1379-7
-- WOEAI 官网条目: https://winddee.cn/Publications.html#ref-zhao2026-BS
+- WOEAI 官网条目: https://winddee.cn/zh-cn/latest/Publications.html#ref-zhao2026-BS
 - WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍流入流
 
 ## 研究问题
@@ -50,17 +29,6 @@ figure_preview_checked: false
 2. 如何保证分块计算不会破坏相邻区块之间的风场连续性？
 3. 如何把计算结果从“论文中的数值结果”推进到“可查询、可展示、可用于工程判断的数据库”？
 
-## 配图 1: 方法总体框架
-
-【待上传原文图 Fig. 1: Workflow of the proposed framework】
-
-- 用途: 作为文章首图，展示从城市区块划分、CFD 计算、数据库构建到 WebGIS 应用的完整链路。
-- 图片来源: 论文原始高清图优先；当前公开草稿不提交图片文件。
-- 版权状态: pending author-owned source or reuse confirmation
-- 公众号图注建议: 图 1 预计算 CFD 数据库框架：将城市微尺度风场计算前置，并面向快速预测和工程应用调用。
-
-这张图适合作为公众号文章的第一张图，因为它能让读者一眼看出这项工作的核心不是单个 CFD 算例，而是一套从建模、计算、数据库到应用平台的完整流程。
-
 ## 方法贡献
 
 我们的核心思路是建立一个**基于区块的城市微尺度风场预计算 CFD 数据库**。
@@ -68,17 +36,6 @@ figure_preview_checked: false
 具体来说，研究以深圳部分区域为示例，先基于 GIS 建筑轮廓、地形数据和自动化建模流程生成城市建筑与地形模型，然后将研究区域划分为 `1 km × 1 km` 的区块。每个区块在考虑周边建筑与地形影响后开展 CFD 计算，得到风速、风压等结果，并进一步整理为风速比和风压系数数据库。
 
 这个框架的工程含义在于：如果一个城市片区已经完成了标准化的高分辨率计算，那么后续在不同风向、不同高度或不同应用场景下，就可以更快调用已有数据库，而不是每次都重新搭建完整计算任务。
-
-## 配图 2: 深圳建筑区块划分
-
-【待上传原文图 Fig. 2: Schematic diagram of block division of buildings in Shenzhen】
-
-- 用途: 展示 `1 km × 1 km` 分块策略，让读者理解“预计算数据库”不是抽象概念，而是建立在明确空间单元上的工程组织方式。
-- 图片来源: 论文原始高清图优先；当前公开草稿不提交图片文件。
-- 版权状态: pending author-owned source or reuse confirmation
-- 公众号图注建议: 图 2 深圳建筑区块划分示意：城市区域被组织为可计算、可拼接、可入库的微尺度风场单元。
-
-这张图可以帮助读者理解为什么“区块”是这篇论文的关键词。区块划分让城市风场数据库有了空间索引，也让后续的 WebGIS 展示和工程调用更自然。
 
 ## 关键发现
 
@@ -102,32 +59,17 @@ figure_preview_checked: false
 
 在高风速条件下，热力影响相对减弱，CFD 与实测数据之间的平均相对误差进入可接受范围。论文中给出的结果显示，在 `11 m/s` 风速阈值下，三个气象站的平均风速相对误差在 `90°` 风向下控制在 `17%` 以下，在 `120°` 风向下控制在 `20%` 以下。
 
-## 配图 3: 气象站位置与观测环境
-
-【待上传原文图 Fig. 21: Locations and observation environment of meteorological automatic stations】
-
-- 用途: 展示论文并非只做数值演示，而是引入了城市实测气象站数据进行验证。
-- 图片来源: 论文原始高清图优先；当前公开草稿不提交图片文件。
-- 版权状态: pending author-owned source or reuse confirmation
-- 公众号图注建议: 图 3 气象自动站位置与观测环境：用现场监测数据检验区块 CFD 数据库的预测能力。
-
-这张图可以把读者从“计算框架”带到“真实城市观测”。对工程应用而言，是否有实测数据验证，往往决定了方法能否被认真看待。
-
 ## 公式说明
 
 本篇公众号文章保留一个最容易解释、也最贴近验证逻辑的公式：风速比相对误差。
 
 ```text
-E = (K_CFD - K_m) / K_m × 100%
+E = (K_CFD - K_m) / K_m x 100%
 ```
 
 其中，`K_CFD` 是 CFD 模拟得到的风速比，`K_m` 是现场实测得到的风速比，`E` 是二者之间的相对误差。
 
 这条公式的含义很直接：我们不是只看某个风速值是否相同，而是比较“局地测点相对于参考点的风速比例”是否一致。这样可以更好地评估微尺度风场结构是否被 CFD 数据库捕捉到。
-
-- 使用公式: yes
-- 公众号公式呈现方式: 直接文本公式；不渲染为图片
-- 公式移动端预览结论: pending WeChat backend mobile preview
 
 ## 工程意义
 
@@ -143,17 +85,6 @@ E = (K_CFD - K_m) / K_m × 100%
 
 对 WOEAI 的研究方向来说，这项工作也连接了几个长期关注的问题：数值风洞、湍流入流、城市复杂风场、工程软件平台，以及 AI 赋能的快速建模与预测。
 
-## 配图 4: WebGIS 风速与风压数据展示
-
-【待上传原文图 Fig. 25: Visual representation of wind speed and wind pressure data on WebGIS】
-
-- 用途: 展示预计算数据库如何从 CFD 结果进一步进入可视化平台和工程应用界面。
-- 图片来源: 论文原始高清图优先；当前公开草稿不提交图片文件。
-- 版权状态: pending author-owned source or reuse confirmation
-- 公众号图注建议: 图 4 WebGIS 平台中的风速和风压数据展示：让预计算 CFD 数据库具备查询、展示和工程沟通能力。
-
-这张图适合作为文章后半部分的应用图。它能告诉读者：论文并不止步于数值计算，而是尝试把数据组织成平台能力。
-
 ## 适用边界
 
 这项工作并不意味着所有城市风环境问题都可以被“一键精确预测”。预计算 CFD 数据库的可靠性仍然依赖几个前提：
@@ -168,35 +99,12 @@ E = (K_CFD - K_m) / K_m × 100%
 
 ## 图示与素材来源
 
-- 使用图片: planned, pending source image insertion
-- 图片优先来源: 论文原始高清图
-- 图示来源或生成方式: 已根据论文 PDF 图题选择 Fig. 1、Fig. 2、Fig. 21、Fig. 25 作为公众号优先配图；图片文件待从作者原始高清图或具备复用权限的原文图中导入
-- 版权说明: pending author-owned source or reuse confirmation
-- 清晰度预览结论: pending WeChat backend mobile preview
-
-### 计划配图
-
-1. Figure: Fig. 1 Workflow of the proposed framework
-   - 用途: 方法总览首图
-   - 图片状态: pending original high-resolution figure
-   - 公众号图注: 预计算 CFD 数据库框架：将城市微尺度风场计算前置，并面向快速预测和工程应用调用。
-2. Figure: Fig. 2 Schematic diagram of block division of buildings in Shenzhen
-   - 用途: 解释 `1 km × 1 km` 区块数据库
-   - 图片状态: pending original high-resolution figure
-   - 公众号图注: 深圳建筑区块划分示意：城市区域被组织为可计算、可拼接、可入库的微尺度风场单元。
-3. Figure: Fig. 21 Locations and observation environment of meteorological automatic stations
-   - 用途: 展示实测验证数据来源
-   - 图片状态: pending original high-resolution figure
-   - 公众号图注: 气象自动站位置与观测环境：用现场监测数据检验区块 CFD 数据库的预测能力。
-4. Figure: Fig. 25 Visual representation of wind speed and wind pressure data on WebGIS
-   - 用途: 展示 WebGIS 平台应用效果
-   - 图片状态: pending original high-resolution figure
-   - 公众号图注: WebGIS 平台中的风速和风压数据展示：让预计算 CFD 数据库具备查询、展示和工程沟通能力。
+本文公开仓库版本暂不附图。适合公众号正文使用的图包括论文方法流程、深圳建筑区块划分、气象站位置与 WebGIS 展示界面；这些图应在确认作者自有来源或复用权限后，再加入公众号后台。
 
 ## 延伸阅读
 
-- WOEAI 建筑结构抗风方向: https://winddee.cn/BuildingStructuralWindResistance.html
-- WOEAI 学术成果条目: https://winddee.cn/Publications.html#ref-zhao2026-BS
+- WOEAI 建筑结构抗风方向: https://winddee.cn/zh-cn/latest/BuildingStructuralWindResistance.html
+- WOEAI 学术成果条目: https://winddee.cn/zh-cn/latest/Publications.html#ref-zhao2026-BS
 
 ## 阅读原文
 
@@ -208,12 +116,3 @@ E = (K_CFD - K_m) / K_m × 100%
 
 - Website: https://winddee.cn
 - Email: lichaosz@qq.com
-
-## 发布前人工复核项
-
-- [ ] 用 Zotero/PDF 核对作者、期刊、页码、DOI、公式和图题。
-- [ ] 从作者原始高清图或确认可复用的原文图中导入 Fig. 1、Fig. 2、Fig. 21、Fig. 25。
-- [ ] 确认每张图的复用权限或作者自有来源状态。
-- [ ] 在公众号后台手机预览图片清晰度。
-- [ ] 确认公式以直接文本/公众号支持格式呈现，不使用公式图片。
-- [ ] 用公众号后台预览检查标题、段落长度和深色模式显示。

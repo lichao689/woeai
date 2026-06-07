@@ -14,11 +14,11 @@
 精选证据 Selected Highlights
 ----------------------------
 
-- AI 与城市风模拟: :ref:`[72] precomputed CFD database for urban microscale wind <ref-zhao2026-BS>`、:ref:`[74] satellite-imagery urban geometry reconstruction <ref-zhao2026-BE>`、:ref:`[61] 3D Gaussian Splatting building geometry <ref-zhao2025-SCS>`。
-- AI 与结构响应预测: :ref:`[64] graph neural networks for tall-building response <ref-tang2025-JBE>`、:ref:`[68] 2D vectorial response extremes <ref-yang2025-JBE>`。
-- 数值风洞与入流湍流: :ref:`[51] vector-potential random flow generation <ref-li2024-POF>`、:ref:`[50] coherence-improved and mass-balanced inflow turbulence <ref-chen2024-JCP>`。
-- 结构抗风: :ref:`[69] implanted-pole tuned liquid damper <ref-he2025-POF>`、:ref:`[57] tower-line coupling under strong winds <ref-liu2024-JWEIA>`。
-- 海上风电: :ref:`[71] reinforced-concrete semi-submersible platform optimization <ref-he2026-OE-structural>`、:ref:`[66] equivalent static wave loads for semi-submersible turbines <ref-zheng2025-OE>`、:ref:`[48] floating wind turbine substructure optimization <ref-zhou2023-AE>`。
+- 建筑结构抗风 / 数值风洞与湍流入流: :ref:`[51] vector-potential random flow generation <ref-li2024-POF>`、:ref:`[50] coherence-improved and mass-balanced inflow turbulence <ref-chen2024-JCP>`、:ref:`[55] weak recycling inflow turbulence generator <ref-wang2024-ES>`。
+- 建筑结构抗风 / 城市风环境与复杂地形风场: :ref:`[72] precomputed CFD database for urban microscale wind <ref-zhao2026-BS>`、:ref:`[74] satellite-imagery urban geometry reconstruction <ref-zhao2026-BE>`、:ref:`[61] 3D Gaussian Splatting building geometry <ref-zhao2025-SCS>`。
+- 建筑结构抗风 / 高层建筑抗风与优化: :ref:`[64] graph neural networks for tall-building response <ref-tang2025-JBE>`、:ref:`[68] 2D vectorial response extremes <ref-yang2025-JBE>`、:ref:`[69] implanted-pole tuned liquid damper <ref-he2025-POF>`。
+- 海上漂浮风电 / 系统分析与结构设计: :ref:`[71] reinforced-concrete semi-submersible platform optimization <ref-he2026-OE-structural>`、:ref:`[48] floating wind turbine substructure optimization <ref-zhou2023-AE>`、:ref:`[33] concrete and steel support structure comparison <ref-li2022-SOS>`。
+- 海上漂浮风电 / 数值风浪流水池: :ref:`[66] equivalent static wave loads for semi-submersible turbines <ref-zheng2025-OE>`、:ref:`[42] wind tunnel and wave flume testing <ref-zheng2023-JRSE>`。
 
 期刊论文 Journal Papers
 ------------------------

@@ -207,7 +207,8 @@ Before calling a draft ready:
 - The separate review note records source evidence, image/copyright status, formula preview status, and remaining human-review items.
 - `wechat/templates/review-checklist.md` is satisfied or remaining items are explicitly marked in the review note.
 - `scripts/check-public-safe-content.py` passes.
-- `./scripts/check-docs.sh` passes before claiming repository changes are complete.
+- Markdown/path checks pass for the article and review files, including checking that reader-facing image links resolve to public-safe assets when images are inserted.
+- `./scripts/check-docs.sh` is not required for pure WeChat article/review updates because those files are not Sphinx pages. Run docs checks only when the task also changes Sphinx pages, Sphinx config, website data generation, publication pages, or other site-build inputs.
 
 Use `PYTHON_BIN=/opt/homebrew/bin/python3.12 ./scripts/check-docs.sh` on this Mac if the default `python3` is older than 3.12.
 

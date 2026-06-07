@@ -720,18 +720,19 @@ def build_publications_rst(items: list[dict[str, Any]]) -> str:
     return "\n".join(sections).rstrip() + "\n"
 
 
-def research_link_entry(item: dict[str, Any], research_map: dict[str, dict[str, str]]) -> str:
-    title = " ".join(str(item["data"].get("title") or "Untitled").split())
-    title = rst_escape(title)
-    year = extract_year(item["data"].get("date"))
-    year_text = str(year) if year else "更早"
-    return f"- ({year_text}) :ref:`[{item['publication_number']}] {title} <{item['anchor']}>`"
+def research_full_entry(item: dict[str, Any]) -> str:
+    entry = rendered_entry(item, item["publication_number"])
+    number = f"[{item['publication_number']}]"
+    linked_number = f":ref:`{number} <{item['anchor']}>`"
+    return entry.replace(number, linked_number, 1)
 
 
 def build_publications_by_research_rst(
     items: list[dict[str, Any]], research_map: dict[str, dict[str, str]]
 ) -> str:
     sections = [
+        ".. role:: student-first-author",
+        "",
         "按研究方向浏览学术成果 Publications by Research Direction",
         "=" * 80,
         "",
@@ -744,7 +745,7 @@ def build_publications_by_research_rst(
                 row = research_map[item["key"]]
                 if row["research_family"] != family or row.get("subdirection") != subdirection:
                     continue
-                sections.extend([research_link_entry(item, research_map), ""])
+                sections.extend([research_full_entry(item), ""])
     return "\n".join(sections).rstrip() + "\n"
 
 

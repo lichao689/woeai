@@ -53,7 +53,7 @@ Unknown public facts should be written as `to be confirmed` in private planning 
 Use only these public research families and subdirections unless the user explicitly updates the taxonomy:
 
 - `建筑结构抗风`
-  - `数值风洞与湍流入流`
+  - `数值风洞与湍动入流`
   - `高层建筑抗风与优化`
 - `海上漂浮风电`
   - `浮式风机系统一体化分析与优化`

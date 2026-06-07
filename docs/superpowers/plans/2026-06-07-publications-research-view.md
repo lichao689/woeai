@@ -40,7 +40,7 @@
 - `Research Family` 的第一层级只能使用两个公开研究方向：
   - `建筑结构抗风`
   - `海上漂浮风电`
-- `数值风洞与湍流入流`、`高层建筑抗风与优化`、`浮式风机系统一体化分析与优化`、`浮式混凝土平台结构设计`、`数值风浪流水池` 等属于 subdirection，不应变成第一层级。
+- `数值风洞与湍动入流`、`高层建筑抗风与优化`、`浮式风机系统一体化分析与优化`、`浮式混凝土平台结构设计`、`数值风浪流水池` 等属于 subdirection，不应变成第一层级。
 - `Representative Publication` 是精选子集，不能替代完整方向分类。
 
 ## 推荐信息架构
@@ -89,7 +89,7 @@
 2026
 ~~~~
 
-- :ref:`[74] A novel framework for urban geometry rapid reconstruction ... <ref-zhao2026-BE>` （数值风洞与湍流入流）
+- :ref:`[74] A novel framework for urban geometry rapid reconstruction ... <ref-zhao2026-BE>` （数值风洞与湍动入流）
 
 海上漂浮风电
 ------------
@@ -122,7 +122,7 @@
   "items": {
     "CGKPKZ8I": {
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "note": "urban microscale wind, precomputed CFD database"
     },
     "EMID6LAJ": {

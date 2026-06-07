@@ -9,11 +9,12 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS = ROOT / "docs/source/Publications.rst"
 PUBLICATIONS_BY_RESEARCH = ROOT / "docs/source/PublicationsByResearch.rst"
+INDEX = ROOT / "docs/source/index.rst"
 RESEARCH_MAP = ROOT / "docs/data/publication-research-map.json"
 
 RESEARCH_FAMILIES = ("建筑结构抗风", "海上漂浮风电")
 RESEARCH_STRUCTURE = {
-    "建筑结构抗风": ("数值风洞与湍流入流", "高层建筑抗风与优化"),
+    "建筑结构抗风": ("数值风洞与湍动入流", "高层建筑抗风与优化"),
     "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
 }
 
@@ -36,9 +37,12 @@ def section_between(text: str, title: str, next_titles: tuple[str, ...]) -> str:
 class PublicationsResearchViewTests(unittest.TestCase):
     def test_publications_page_links_to_research_view(self) -> None:
         text = PUBLICATIONS.read_text(encoding="utf-8")
+        index_text = INDEX.read_text(encoding="utf-8")
 
         self.assertIn("浏览方式 View Options", text)
         self.assertIn(":doc:`PublicationsByResearch`", text)
+        self.assertIn("按研究方向浏览 Publications by Research Direction <PublicationsByResearch>", text)
+        self.assertNotIn("\n   PublicationsByResearch\n", index_text)
 
     def test_research_view_groups_every_publication_by_family_then_subdirection(self) -> None:
         publications_text = PUBLICATIONS.read_text(encoding="utf-8")

@@ -50,7 +50,7 @@ Do not turn every article into a multi-paper theme essay. Related papers may app
 
 建筑结构抗风:
 
-- `数值风洞与湍流入流`
+- `数值风洞与湍动入流`
 - `高层建筑抗风与优化`
 
 海上漂浮风电:

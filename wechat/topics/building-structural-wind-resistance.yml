@@ -3,7 +3,7 @@ label_cn: 建筑结构抗风
 label_en: Building Structural Wind Resistance
 subdirections:
   - id: numerical-wind-tunnel-and-turbulent-inflow
-    label_cn: 数值风洞与湍流入流
+    label_cn: 数值风洞与湍动入流
     includes:
       - 城市风环境
       - 复杂地形风场

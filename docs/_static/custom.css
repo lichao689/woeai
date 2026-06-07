@@ -43,6 +43,27 @@
     text-decoration-skip-ink: auto;
 }
 
+.rst-content .member-status-current,
+.rst-content .member-status-graduated {
+    display: inline-block;
+    margin: 0.2rem 0 0.75rem;
+    padding: 0.05rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.86em;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.rst-content .member-status-current {
+    color: #1b5f8c;
+    background: #e8f4fb;
+}
+
+.rst-content .member-status-graduated {
+    color: #4f5963;
+    background: #edf1f4;
+}
+
 @media screen and (max-width: 768px) {
     .rst-content img.align-right {
         float: none;

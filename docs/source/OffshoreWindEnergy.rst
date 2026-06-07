@@ -16,6 +16,18 @@
 - :ref:`Wind tunnel and wave flume testing for a 10 MW Y-shaped semi-submersible wind turbine <ref-zheng2023-JRSE>`；
 - :ref:`Concrete and steel support structure comparison for a Y-shaped semi-submersible floating wind turbine <ref-li2022-SOS>`。
 
+相关项目实践 Related Projects
+--------------------------------
+
+- 面向多设计阶段的浮式风机系统一体化分析与优化方法；
+- FRP-钢复合筋-海水海砂混凝土的半潜式风机基础结构设计方法；
+- 浮式海上风机的平衡及振动控制系统研究；
+- 柱稳型海上浮式风机基础的关键技术开发；
+- 钢筋混凝土半潜式浮力风机系统的风浪联合模型试验研究；
+- 基于钢筋混凝土结构的海上风电机组局部浮力基础的初步方案设计。
+
+完整项目记录见 :ref:`projects-offshore-wind`。
+
 浮式风机基础主尺寸优化
 ----------------------
 
@@ -48,4 +60,4 @@
 
 公开项目记录中包含浮式海上风机平衡及振动控制系统研究。该方向与 :doc:`WindResistance` 中的结构响应、减振控制问题共享动力学建模和响应预测方法。
 
-项目记录见 :doc:`Projects`，论文记录见 :doc:`Publications`。
+论文记录见 :doc:`Publications`。

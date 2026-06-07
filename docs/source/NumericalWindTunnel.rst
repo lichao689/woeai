@@ -24,10 +24,21 @@
 - :ref:`Temporal super-resolution of wind in urban energy applications <ref-tang2026-RE>`，面向城市风场时间超分辨率重建；
 - :ref:`3D Gaussian Splatting building geometry framework <ref-zhao2025-SCS>`，面向城市风模拟中的建筑几何构建。
 
-复杂地形与工程实践 Complex Terrain And Practice
------------------------------------------------
+复杂地形 Complex Terrain
+------------------------
 
-既有项目记录中包含数值大气湍流边界层生成方法、复杂地形下微尺度台风风场、再生能源发电厂风洞试验及风振分析等工程问题。相关项目见 :doc:`Projects`。
+复杂地形风场研究关注地形、边界层和局部风环境之间的尺度连接，可服务输电线路、城市片区和能源设施等工程场景。
+
+相关项目实践 Related Projects
+--------------------------------
+
+- 数值大气湍流边界层生成方法的改进与验证；
+- 基于粗糙壁面修正的平衡大气边界层紊流风场大涡模拟研究；
+- 三维自平衡紊流边界层风场的大涡模拟研究；
+- 微地形下输电线路微尺度台风风场特性及模型研究；
+- 再生能源发电厂风洞试验及风振分析。
+
+完整项目记录见 :ref:`projects-numerical-wind-tunnel`。
 
 与其他方向的连接
 ----------------

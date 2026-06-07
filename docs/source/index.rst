@@ -93,8 +93,9 @@ WOEAI 面向风工程、海上风电和 AI 赋能工程建模中的复杂问题�
    :hidden:
    :maxdepth: 2
 
-   TechnicalCollaboration
+   首页 Home <self>
    Research
+   TechnicalCollaboration
    People
    Projects
    Publications

@@ -1,6 +1,9 @@
 团队成员 People
 ===================
 
+.. role:: member-status-current
+.. role:: member-status-graduated
+
 
 团队负责人 Group Leader
 ------------------------
@@ -34,72 +37,82 @@
 - 1999/09-2003/07 获工学学士学位（土木工程（建筑工程方向）），哈尔滨工业大学
 
 
-在校博士生 PhD Students
-----------------------------
+博士生 PhD Students
+-------------------
 
 
 何欣 He Xin
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+:member-status-current:`在校 Current`
+
 
 刘尚佩 Liu Shangpei
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:member-status-current:`在校 Current`
 
 
 杨军辉 Yang Junhui
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+:member-status-current:`在校 Current`
+
 
 丁意恒 Ding Yihang
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+:member-status-current:`在校 Current`
+
 裴若鹏 Pei Ruopeng
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+:member-status-current:`在校 Current`
 
 
-在校硕士生 Master Students
--------------------------------
-
-名单将根据团队公开信息持续更新。
-
-
-毕业博士生 Graduated PhD Students
-------------------------------------
 
 周盛涛 Zhou Shengtao
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:member-status-graduated:`毕业 Graduated`
 
 
 
 王靖含 Wang Jinghan
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+:member-status-graduated:`毕业 Graduated`
+
 
 
 赵子涵 Zhao Zihan
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:member-status-graduated:`毕业 Graduated`
 
 
 
 张文通 Zhang Wentong
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+:member-status-graduated:`毕业 Graduated`
+
 
 
 郑舜云 Zheng Shunyun
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+:member-status-graduated:`毕业 Graduated`
+
 陈铃伟 Chen Lingwei
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-
-毕业硕士生 Graduated Master Students
------------------------------------------
-
-名单将根据团队公开信息持续更新。
+:member-status-graduated:`毕业 Graduated`
 
 
 
+硕士生 Master Students
+----------------------
 
+- :member-status-current:`在校 Current` 名单将根据团队公开信息持续更新。
+- :member-status-graduated:`毕业 Graduated` 名单将根据团队公开信息持续更新。

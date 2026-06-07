@@ -13,6 +13,7 @@ import sys
 if sys.version_info < (3, 12):
     raise SystemExit("Python 3.12+ is required for WOEAI docs checks")
 PY
+"${PYTHON_BIN}" -m unittest discover -s "${ROOT_DIR}/tests"
 "${PYTHON_BIN}" -m venv "${VENV_DIR}"
 "${VENV_DIR}/bin/python" -m pip install --upgrade pip
 "${VENV_DIR}/bin/python" -m pip install -r "${ROOT_DIR}/docs/requirements.txt"

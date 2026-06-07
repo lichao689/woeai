@@ -25,6 +25,22 @@ Use the repository-owned check script before committing changes:
 The script creates a temporary virtual environment, installs
 ``docs/requirements.txt``, and runs Sphinx with warnings treated as failures.
 
+Site Build ID
+-------------
+
+This repository is a public documentation site, not a package with API
+compatibility releases. Before publishing a site update, refresh the Sphinx
+metadata with a Beijing-time Site Build ID:
+
+.. code-block:: bash
+
+   ./scripts/bump-site-release.py
+   ./scripts/check-docs.sh
+
+``docs/source/conf.py`` stores ``release`` as ``YYYY.MM.DD-HHMM`` and
+``version`` as ``YYYY.MM.DD``. Do not change ``.readthedocs.yaml`` ``version:
+"2"`` for this purpose; that value is the ReadTheDocs configuration schema.
+
 Content Rules
 -------------
 
@@ -47,4 +63,5 @@ Key Paths
 - ``docs/source/Publications.rst``: academic-output proof.
 - ``docs/source/Projects.rst``: project proof.
 - ``docs/requirements.txt``: documentation build dependencies.
+- ``scripts/bump-site-release.py``: refreshes the Sphinx Site Build ID.
 - ``scripts/check-docs.sh``: strict local verification.

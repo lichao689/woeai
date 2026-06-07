@@ -4,7 +4,7 @@ Date: 2026-06-06
 
 Purpose: source boundary for the first WOEAI website upgrade cycle.
 
-Outcome priority: 招生 Recruitment > 产业合作 Industry collaboration > 学术可信度 Academic credibility
+Outcome priority: 招生 Recruitment > 技术合作 Technical collaboration > 学术可信度 Academic credibility
 
 ## Source Rules
 
@@ -53,7 +53,7 @@ If recruitment terms are not confirmed, publish the general invitation and conta
 
 ### Existing Repository Facts
 
-From `docs/source/Contact.rst`:
+From the homepage contact section in `docs/source/index.rst`:
 
 - Website: https://winddee.cn
 - Email: lichaosz@hit.edu.cn
@@ -62,7 +62,7 @@ From `docs/source/Contact.rst`:
 
 ### Needs Owner Confirmation
 
-- Whether WeChat QR code is intended for all public visitors, applicants only, or should be moved to contact page only.
+- Whether WeChat QR code is intended for all public visitors, applicants only, or should stay in the homepage contact section.
 
 ## People
 
@@ -100,7 +100,7 @@ From `docs/source/Projects.rst`:
 - Which enterprise project descriptions are approved for partner-facing copy.
 - Whether any partner names may be disclosed.
 - Preferred cooperation contact workflow.
-- Whether the group wants a public "industry collaboration" page or a strengthened `Projects.rst` only.
+- Whether the group wants a public "technical collaboration" page or a strengthened `Projects.rst` only.
 
 ### Public-Safe Fallback
 
@@ -153,6 +153,6 @@ Images available under `docs/_static/`:
 - Current master student list.
 - Graduated master student list.
 - Partner names.
-- Active industry cooperation status.
+- Active technical collaboration status.
 - Facilities, lab area, instrument lists, computing resources, and student outcomes.
 - Analytics ownership and whether Google Analytics ID is valid.

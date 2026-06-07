@@ -10,10 +10,11 @@
 
 相关证据包括：
 
-- :ref:`Long-term dynamic optimization of floating wind turbine substructure designs <ref-zhou20230>`；
-- :ref:`Efficient optimization design method of jacket structures for offshore wind turbines <ref-zheng20230>`；
-- :ref:`Wind tunnel and wave flume testing for a 10 MW Y-shaped semi-submersible wind turbine <ref-zheng20231>`；
-- :ref:`Concrete and steel support structure comparison for a Y-shaped semi-submersible floating wind turbine <ref-li20220>`。
+- :ref:`Reinforced-concrete semi-submersible platform structural design and optimization <ref-he2026-OE-structural>`；
+- :ref:`Equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine <ref-zheng2025-OE>`；
+- :ref:`Long-term dynamic optimization of floating wind turbine substructure designs <ref-zhou2023-AE>`；
+- :ref:`Wind tunnel and wave flume testing for a 10 MW Y-shaped semi-submersible wind turbine <ref-zheng2023-JRSE>`；
+- :ref:`Concrete and steel support structure comparison for a Y-shaped semi-submersible floating wind turbine <ref-li2022-SOS>`。
 
 浮式风机基础主尺寸优化
 ----------------------

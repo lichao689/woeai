@@ -5,7 +5,7 @@
 
 **Goal:** Upgrade the WOEAI repository from a tutorial-derived Sphinx site into a maintainable, verifiable, bilingual research group website that future agents can safely evolve.
 
-**Autoplan-approved outcome priority:** 1. 招生 Recruitment. 2. 产业合作 Industry collaboration. 3. 学术可信度 Academic credibility.
+**Autoplan-approved outcome priority:** 1. 招生 Recruitment. 2. 技术合作 Technical collaboration. 3. 学术可信度 Academic credibility.
 
 **Plan status:** revised after autoplan review. The execution plan below incorporates the required review changes; the `GSTACK REVIEW REPORT` at the end remains as the audit trail.
 
@@ -53,7 +53,7 @@ Verified behavior:
 
 ### Strategic Reading
 
-The site is not primarily a software documentation site. It is a public research group presence for "Wind & Ocean Engineering empowered by AI". The important audiences are ordered by the confirmed outcome priority:
+The site is not primarily a software documentation site. It is a public research group presence for "Wind and Ocean Engineering with AI". The important audiences are ordered by the confirmed outcome priority:
 
 - Prospective master, PhD, and postdoctoral applicants.
 - Industry partners looking for engineering capability and project evidence.
@@ -77,7 +77,7 @@ The best upgrade path is therefore outcome-first, source-grounded, and guardrail
 3. Clean the public site so it no longer shows template residue.
 4. Make the repository unambiguous for future agents.
 5. Add one-command verification.
-6. Build recruitment, industry cooperation, and academic credibility journeys in that order.
+6. Build recruitment, technical collaboration, and academic credibility journeys in that order.
 7. Improve presentation within Sphinx only after the journey and content structure are coherent.
 
 ---
@@ -104,10 +104,9 @@ The best upgrade path is therefore outcome-first, source-grounded, and guardrail
 - `.github/workflows/docs.yml`: CI verification for strict Sphinx HTML build.
 - `docs/superpowers/research/2026-06-woeai-peer-site-benchmark.md`: benchmark and theme decision record.
 - `docs/superpowers/source-packets/2026-06-woeai-site-source-packet.md`: source packet for recruitment, cooperation, people, and public claims.
-- `docs/source/Recruitment.rst`: dedicated recruitment page split from homepage.
-- `docs/source/IndustryCollaboration.rst`: dedicated industry cooperation page or partner path.
+- `docs/source/index.rst`: homepage with recruitment and contact content.
+- `docs/source/TechnicalCollaboration.rst`: dedicated technical collaboration page or partner path.
 - `docs/source/Research.rst`: overview page linking the three research directions.
-- `docs/source/Contact.rst`: dedicated contact page with website, email, address, and QR code.
 
 ### Files to Modify
 
@@ -145,7 +144,7 @@ Deletion note: if the team wants to preserve `usage.html` or `api.html` for old 
 - If a public claim cannot be sourced from existing repository content or the source packet, either omit it, mark the section as updating, or ask the site owner.
 - Strict Sphinx HTML build is the release gate. Until `scripts/check-docs.sh` exists, run the direct venv commands shown in Phase 0.
 - After `scripts/check-docs.sh` exists, run it after every task, followed by `git diff --check`.
-- Keep `招生 Recruitment`, `产业合作 Industry Collaboration`, and `学术可信度 Academic Credibility` in that order across homepage hierarchy, navigation, and acceptance criteria.
+- Keep `招生 Recruitment` and `技术合作 Technical Collaboration` as the visible homepage journeys. Represent `学术可信度 Academic Credibility` through the opening group introduction and factual proof pages rather than a standalone homepage section.
 
 ---
 
@@ -203,7 +202,7 @@ Do not commit this task unless the plan file itself was revised and intentionall
 
 **Required content:**
 
-- Confirmed outcome priority: `招生 > 产业合作 > 学术可信度`.
+- Confirmed outcome priority: `招生 > 技术合作 > 学术可信度`.
 - 5 to 8 peer lab or professor websites, with at least 3 Chinese university or research-group recruiting pages if available.
 - For each benchmark: first-viewport message, recruitment path, cooperation path, proof signals, contact path, and visual/theme notes.
 - Recommendation: stay with `sphinx-rtd-theme`, build a custom Sphinx homepage, move to `pydata-sphinx-theme`, or defer a custom static site.
@@ -231,7 +230,7 @@ git commit -m "docs: benchmark peer research group sites"
 - Recruitment: current master, PhD, and postdoctoral opening expectations.
 - Postdoctoral terms: age, degree timing, publication expectations, salary, subsidies, benefits, and whether each item is current.
 - Contact expectations: email, website, address, QR code, response path.
-- Industry cooperation: approved project examples, partner-facing capability wording, cooperation contact path.
+- Technical collaboration: approved project examples, partner-facing capability wording, cooperation contact path.
 - People: current students, alumni, titles, and any sections that must remain hidden or marked updating.
 - Academic proof: publication highlights, project highlights, facilities/images if available, PI quote if approved.
 - Unknowns: every missing fact that must not be invented.
@@ -400,7 +399,7 @@ git commit -m "build: add strict docs check"
 
 - State that commands run from repo root.
 - State that content claims require source packet or existing repository evidence.
-- State that `招生 > 产业合作 > 学术可信度` is the site priority.
+- State that `招生 > 技术合作 > 学术可信度` is the site priority.
 - State that strict Sphinx HTML build is mandatory.
 - State that images belong under `docs/_static/`.
 - State that `docs/source/conf.py` controls SEO, sitemap, theme, logo, analytics, and base URL.
@@ -547,12 +546,11 @@ git commit -m "build: publish html docs only"
 
 ## Phase 3: Recruitment And Collaboration Journeys
 
-### Task 3.1: Create Source-Grounded Recruitment Page
+### Task 3.1: Fold Source-Grounded Recruitment Into Homepage
 
 **Files:**
 
-- Create: `docs/source/Recruitment.rst`
-- Modify: `docs/source/index.rst` only if moving content out of the homepage.
+- Modify: `docs/source/index.rst`
 
 **Required content order:**
 
@@ -567,7 +565,7 @@ git commit -m "build: publish html docs only"
 
 ```bash
 ./scripts/check-docs.sh
-! rg -n "source pending|TODO|TBD|待补充" docs/source/Recruitment.rst
+! rg -n "source pending|TODO|TBD|待补充" docs/source/index.rst
 git diff --check
 ```
 
@@ -576,15 +574,15 @@ Expected: build succeeds. Any updating text must be intentionally public-safe, n
 - [ ] Commit:
 
 ```bash
-git add docs/source/Recruitment.rst docs/source/index.rst
-git commit -m "docs: add recruitment page"
+git add docs/source/index.rst
+git commit -m "docs: add homepage recruitment section"
 ```
 
-### Task 3.2: Create Industry Cooperation Path
+### Task 3.2: Create Technical Collaboration Path
 
 **Files:**
 
-- Create: `docs/source/IndustryCollaboration.rst`
+- Create: `docs/source/TechnicalCollaboration.rst`
 - Modify: `docs/source/Projects.rst`
 
 **Required content:**
@@ -603,27 +601,26 @@ Do not name confidential partners or imply active cooperation unless source pack
 
 ```bash
 ./scripts/check-docs.sh
-! rg -n "TODO|TBD|source pending" docs/source/IndustryCollaboration.rst docs/source/Projects.rst
+! rg -n "TODO|TBD|source pending" docs/source/TechnicalCollaboration.rst docs/source/Projects.rst
 git diff --check
 ```
 
 - [ ] Commit:
 
 ```bash
-git add docs/source/IndustryCollaboration.rst docs/source/Projects.rst
-git commit -m "docs: add industry collaboration path"
+git add docs/source/TechnicalCollaboration.rst docs/source/Projects.rst
+git commit -m "docs: add technical collaboration path"
 ```
 
-### Task 3.3: Create Contact Page
+### Task 3.3: Fold Contact Into Homepage
 
 **Files:**
 
-- Create: `docs/source/Contact.rst`
 - Modify: `docs/source/index.rst`
 
 **Required content source:**
 
-Move website, email, address, and WeChat QR code from `index.rst`.
+Use website, email, address, and WeChat QR code as the homepage contact section.
 
 **Required wording:**
 
@@ -633,7 +630,7 @@ Use institutional language such as `联系方式 Contact`, not `Contact Me`.
 
 ```bash
 ./scripts/check-docs.sh
-! rg -n "Contact Me|与我联系" docs/source/index.rst docs/source/Contact.rst
+! rg -n "Contact Me|与我联系" docs/source/index.rst
 git diff --check
 ```
 
@@ -642,8 +639,8 @@ Expected: build succeeds and `rg` has no output.
 - [ ] Commit:
 
 ```bash
-git add docs/source/Contact.rst docs/source/index.rst
-git commit -m "docs: add contact page"
+git add docs/source/index.rst
+git commit -m "docs: add homepage contact section"
 ```
 
 ### Task 3.4: Add Research Overview Before Homepage References It
@@ -686,23 +683,21 @@ git commit -m "docs: add research overview page"
 
 **Homepage target structure:**
 
-1. Site title: `Wind & Ocean Engineering empowered by AI (WOEAI)`.
+1. Site title: `Wind and Ocean Engineering with AI (WOEAI)`.
 2. One short mission paragraph using existing group wording.
 3. Recruitment first: positions, fit, and contact link.
-4. Industry cooperation second: capability summary and project/contact links.
-5. Academic credibility third: research areas, representative publications/projects, people.
-6. Public toctree with every referenced page already present.
+4. Technical collaboration second: capability summary and project/contact links.
+5. Academic credibility represented through intro copy and links to research areas, representative publications/projects, and people.
+6. Hidden toctree with every referenced page already present.
 
-**Required toctree order:**
+**Required hidden toctree order:**
 
 ```rst
 .. toctree::
+   :hidden:
    :maxdepth: 2
-   :caption: Site Navigation
 
-   Recruitment
-   IndustryCollaboration
-   Contact
+   TechnicalCollaboration
    Research
    People
    Projects
@@ -951,7 +946,7 @@ git commit -m "docs: add publication highlights"
 **Files:**
 
 - Modify: `docs/source/Projects.rst`
-- Modify: `docs/source/IndustryCollaboration.rst` if project wording changes.
+- Modify: `docs/source/TechnicalCollaboration.rst` if project wording changes.
 
 **Required changes:**
 
@@ -959,7 +954,7 @@ git commit -m "docs: add publication highlights"
 - Remove trailing whitespace.
 - Preserve years, levels, titles, and roles.
 - Keep project grouping by government and enterprise project types.
-- Link project evidence back to industry cooperation capabilities.
+- Link project evidence back to technical collaboration capabilities.
 
 **Verification:**
 
@@ -974,7 +969,7 @@ Expected: no trailing whitespace and build succeeds.
 - [ ] Commit:
 
 ```bash
-git add docs/source/Projects.rst docs/source/IndustryCollaboration.rst
+git add docs/source/Projects.rst docs/source/TechnicalCollaboration.rst
 git commit -m "docs: strengthen project evidence"
 ```
 
@@ -1088,7 +1083,7 @@ git commit -m "docs: tighten site metadata"
   | xargs -0 rg -n "Lumache|Documentation coming soon|pip install woeai|For example|This project is under active development|Contact Me|TODO|TBD"
 test ! -e /tmp/woeai-sphinx-html/usage.html
 test ! -e /tmp/woeai-sphinx-html/api.html
-rg -n "Recruitment|IndustryCollaboration|Contact|Research" /tmp/woeai-sphinx-html/index.html
+rg -n "Recruitment|TechnicalCollaboration|Contact|Research" /tmp/woeai-sphinx-html/index.html
 git diff --check
 ```
 
@@ -1142,7 +1137,7 @@ Use the Phase 0 benchmark decision:
 
 ## Acceptance Criteria for the First Upgrade Cycle
 
-- Outcome priority is visible in homepage hierarchy and navigation: recruitment first, industry cooperation second, academic credibility third.
+- Outcome priority is visible in homepage hierarchy and navigation: recruitment first, technical collaboration second, academic credibility third.
 - `docs/superpowers/research/2026-06-woeai-peer-site-benchmark.md` records benchmark and theme decision.
 - `docs/superpowers/source-packets/2026-06-woeai-site-source-packet.md` records sources or public-safe fallbacks for every persuasive claim.
 - `README.rst` describes WOEAI and local docs build, not the ReadTheDocs tutorial.
@@ -1152,7 +1147,7 @@ Use the Phase 0 benchmark decision:
 - `pyproject.toml` no longer misrepresents the project as an installable package.
 - PDF policy is resolved early; default first-cycle policy is HTML-only.
 - Generated HTML contains no `Lumache`, `Documentation coming soon`, `pip install woeai`, `For example`, `Contact Me`, or tutorial `Usage/API` pages.
-- Homepage has source-grounded paths to `Recruitment`, `IndustryCollaboration`, `Contact`, and `Research`.
+- Homepage includes source-grounded recruitment and contact sections, plus paths to `TechnicalCollaboration` and `Research`.
 - Research direction pages contain evidence-backed content, not only headings.
 - GroupNews is source-safe or absent from public navigation.
 - Publication author markup renders cleanly for all corresponding-author markers, not only Li Chao.
@@ -1166,7 +1161,7 @@ Use the Phase 0 benchmark decision:
 
 **Restore point:** `/Users/lichao/.gstack/projects/lichao689-woeai/main-autoplan-restore-20260606-121604.md`
 
-**User-confirmed premise:** the website upgrade should optimize for `招生 Recruitment` first, `产业合作 Industry collaboration` second, and `学术可信度 Academic credibility` third.
+**User-confirmed premise:** the website upgrade should optimize for `招生 Recruitment` first, `技术合作 Technical collaboration` second, and `学术可信度 Academic credibility` third.
 
 **Premise change accepted during review:**
 
@@ -1212,7 +1207,7 @@ The execution plan above now incorporates the review findings instead of leaving
 | Eng Review | Build order, tests, implementation safety | 1 | Incorporated | `Research` toctree order could break `-W`; build dir could leave stale HTML; publication cleanup was too narrow; PDF policy was deferred too late. |
 | DX Review | First-run setup and future-agent maintainability | 1 | Incorporated | Needed Python version check, clean build script, explicit directory creation, README/pyproject/conf.py signal cleanup, and repo-root command convention. |
 
-**Consensus:** Keep Sphinx/ReadTheDocs only as a first-cycle publishing backbone, but revise the plan so recruitment and industry cooperation drive the information architecture.
+**Consensus:** Keep Sphinx/ReadTheDocs only as a first-cycle publishing backbone, but revise the plan so recruitment and technical collaboration drive the information architecture.
 
 **Blocking before implementation:** no separate appendix action remains. The blockers are integrated into the phase tasks above and should be executed in order.
 

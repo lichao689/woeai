@@ -1,0 +1,67 @@
+# WOEAI Public Website
+
+This context defines the public-facing language for the WOEAI research group website. It keeps publication and proof-page terms precise so public claims stay source-bounded.
+
+## Language
+
+**WOEAI Full Name**:
+The canonical expanded English name is `Wind and Ocean Engineering with AI (WOEAI)`. Use it on first mention in public identity surfaces, then use `WOEAI` in short navigation, buttons, and repeated prose. In body copy, `AI-enabled wind and ocean engineering` can describe the research approach when a sentence needs a natural descriptive phrase rather than the brand name.
+_Avoid_: ampersand-form expansions, empowered-by-AI phrasing as the canonical name
+
+**Public Journal Paper**:
+A journal article that belongs to the group leader's curated public publication record and is suitable for the website's journal-paper list. It is narrower than the broader research library and broader than only first-author or corresponding-author papers.
+_Avoid_: reference-library item, collected paper, first-author-only paper
+
+**Proof Page**:
+A factual public page whose purpose is to support recruitment, technical collaboration, and academic credibility with verifiable records.
+_Avoid_: marketing page, archive dump
+
+**Technical Collaboration**:
+The canonical public label for external engineering cooperation and consulting-oriented work. Use `技术合作 Technical Collaboration` for the navigation path and page title.
+_Avoid_: 产业合作 Industry Collaboration as the public navigation label
+
+**Academic Outputs**:
+The canonical public label for the proof page that contains journal papers and selected highlights. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists.
+_Avoid_: 研究成果 Publications as a mixed-language page title
+
+**Publication Metrics**:
+Per-paper credibility indicators shown with a Public Journal Paper, including impact factor, journal quartile, Chinese Academy of Sciences division, and citation count. They must come from a confirmed source because they can change over time.
+_Avoid_: inferred metrics, stale metrics
+
+**Unavailable Publication Metric**:
+A Publication Metric that does not exist for a specific Public Journal Paper or is not supplied by the confirmed source used for the update. It should be omitted rather than fabricated or marked as a public placeholder.
+_Avoid_: missing proof, made-up metric
+
+**Publication Number**:
+The visible list number assigned to a Public Journal Paper according to the current complete ordering of the publications page. It is not a stable identifier; cross-page references should rely on explicit RST anchors.
+_Avoid_: publication id, permanent reference key
+
+**Representative Publication**:
+A Public Journal Paper selected for highlights or direction pages because it strongly supports recruitment, technical collaboration, or academic credibility for a research theme. It is a curated subset, not a complete list of outputs.
+_Avoid_: every recent paper, exhaustive topic list
+
+## Example Dialogue
+
+Dev: Should every Zotero journal article appear on the website?
+
+Domain Expert: No. Only Public Journal Papers should appear; general library references are not group output.
+
+Dev: Should we restrict the list to first-author or corresponding-author work?
+
+Domain Expert: No. First-author or corresponding-author papers can be highlighted separately, but the public journal-paper list should use the broader curated public publication record.
+
+Dev: Can we fill missing impact factors and citation counts from memory?
+
+Domain Expert: No. Publication Metrics need a confirmed source before they are shown on a Proof Page.
+
+Dev: If a paper has no available impact factor, should we still publish the paper?
+
+Domain Expert: Yes. A complete citation can be published without every Publication Metric when the metric is genuinely unavailable.
+
+Dev: Can another page link to publication number 61 as a permanent identifier?
+
+Domain Expert: No. Publication Numbers can change when the page is regenerated; use the paper's RST anchor for stable links.
+
+Dev: Should every new paper appear in the highlights?
+
+Domain Expert: No. Highlights should use Representative Publications; the full list belongs in the journal-paper section.

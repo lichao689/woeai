@@ -1,0 +1,1543 @@
+{
+  "generated_at": "2026-06-07T07:39:25.599336+00:00",
+  "source_boundary": {
+    "zotero_filter": {
+      "inPublications": true,
+      "itemType": "journalArticle"
+    },
+    "count": 74
+  },
+  "csl_style": {
+    "id": "http://www.zotero.org/styles/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01",
+    "source_path": "/Users/lichao/Drive/Myfiles/96 常用备份/SoftConfig/zotero/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcFav-01.csl",
+    "installed_path": "/Users/lichao/Zotero/styles/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01.csl",
+    "sha256": "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
+  },
+  "anchor_rule": "ref-{first-author}{year}-{journal-initialism}; collisions append deterministic title token",
+  "ordering": "publication year desc, parsed date desc, normalized title asc",
+  "old_anchor_map": {},
+  "items": [
+    {
+      "zotero_key": "RLAA46YB",
+      "publication_number": 74,
+      "anchor": "ref-zhao2026-BE",
+      "old_anchor": "ref-zhao2026-BE",
+      "year": 2026,
+      "date": "2026/6",
+      "title": "A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment",
+      "publicationTitle": "Building and Environment",
+      "doi": "10.1016/j.buildenv.2026.114811",
+      "creators": [
+        "Peisheng Zhao",
+        "Chao Li",
+        "Lingwei Chen",
+        "Jinghan Wang",
+        "Sirou Wang",
+        "Xiaolu Wang"
+      ],
+      "rendered": "Zhao Peisheng; Li Chao; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. Building and Environment, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: 7.6 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 7.6 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "4FX43CFT",
+      "publication_number": 73,
+      "anchor": "ref-he2026-OE",
+      "old_anchor": "ref-he2026-OE",
+      "year": 2026,
+      "date": "2026/4",
+      "title": "Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks",
+      "publicationTitle": "Ocean Engineering",
+      "doi": "10.1016/j.oceaneng.2026.124728",
+      "creators": [
+        "Xin He",
+        "Chao Li",
+        "Lingwei Chen",
+        "Gang Hu",
+        "Jinping Ou"
+      ],
+      "rendered": "He Xin; Li Chao; Chen Lingwei; Hu Gang; Ou Jinping, Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks[J]. Ocean Engineering, 2026, 353: 124728. https://doi.org/10.1016/j.oceaneng.2026.124728. 中科院分区: 2.",
+      "metrics": "中科院分区: 2."
+    },
+    {
+      "zotero_key": "CGKPKZ8I",
+      "publication_number": 72,
+      "anchor": "ref-zhao2026-BS",
+      "old_anchor": "ref-zhao2026-BS",
+      "year": 2026,
+      "date": "2026/2",
+      "title": "A fast prediction framework for urban microscale wind environment based on precomputed CFD database",
+      "publicationTitle": "Building Simulation",
+      "doi": "10.1007/s12273-025-1379-7",
+      "creators": [
+        "Peisheng Zhao",
+        "Chao Li",
+        "Chao Yang",
+        "Zhichen Han",
+        "Lingwei Chen",
+        "Gang Hu",
+        "Lixiao Li",
+        "Xiaolu Wang"
+      ],
+      "rendered": "Zhao Peisheng; Li Chao; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. Building Simulation, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: 5.9 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 5.9 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "EMID6LAJ",
+      "publication_number": 71,
+      "anchor": "ref-he2026-OE-structural",
+      "old_anchor": "ref-he2026-OE-structural",
+      "year": 2026,
+      "date": "2026/2",
+      "title": "Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete",
+      "publicationTitle": "Ocean Engineering",
+      "doi": "10.1016/j.oceaneng.2025.123951",
+      "creators": [
+        "Weiwen He",
+        "Chao Li",
+        "Shunyun Zheng",
+        "Shengtao Zhou",
+        "Shangpei Liu",
+        "Jinping Ou"
+      ],
+      "rendered": "He Weiwen; Li Chao; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. Ocean Engineering, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: 5.5 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "XM44D697",
+      "publication_number": 70,
+      "anchor": "ref-tang2026-RE",
+      "old_anchor": "ref-tang2026-RE",
+      "year": 2026,
+      "date": "2026/1",
+      "title": "A novel framework for temporal super-resolution of wind in urban energy applications",
+      "publicationTitle": "Renewable Energy",
+      "doi": "10.1016/j.renene.2025.124336",
+      "creators": [
+        "Lingxiao Tang",
+        "Chao Li",
+        "Zihan Zhao",
+        "Lingwei Chen",
+        "Mingming Zhang"
+      ],
+      "rendered": "Tang Lingxiao; Li Chao; Zhao Zihan; Chen Lingwei; Zhang Mingming, A novel framework for temporal super-resolution of wind in urban energy applications[J]. Renewable Energy, 2026, 256: 124336. https://doi.org/10.1016/j.renene.2025.124336. 影响因子: 9.1 (Q1). 中科院分区: 1. 引用次数: 1.",
+      "metrics": "影响因子: 9.1 (Q1). 中科院分区: 1. 引用次数: 1."
+    },
+    {
+      "zotero_key": "ES37XMDV",
+      "publication_number": 69,
+      "anchor": "ref-he2025-POF",
+      "old_anchor": "ref-he2025-POF",
+      "year": 2025,
+      "date": "2025/10/1",
+      "title": "Numerical investigation of nonlinear sloshing features and vibration mitigation efficiency of the implanted pole tuned liquid damper",
+      "publicationTitle": "Physics of Fluids",
+      "doi": "10.1063/5.0293483",
+      "creators": [
+        "Xin He",
+        "Chao Li",
+        "Lingwei Chen",
+        "Gang Hu",
+        "Jinping Ou"
+      ],
+      "rendered": "He Xin; Li Chao; Chen Lingwei; Hu Gang; Ou Jinping, Numerical investigation of nonlinear sloshing features and vibration mitigation efficiency of the implanted pole tuned liquid damper[J]. Physics of Fluids, 2025, 37(10): 103314. https://doi.org/10.1063/5.0293483. 中科院分区: 2.",
+      "metrics": "中科院分区: 2."
+    },
+    {
+      "zotero_key": "YZ2D62NB",
+      "publication_number": 68,
+      "anchor": "ref-yang2025-JBE",
+      "old_anchor": "ref-yang2025-JBE",
+      "year": 2025,
+      "date": "2025/10",
+      "title": "Statistical extremes of 2D vectorial response for wind-excited tall buildings",
+      "publicationTitle": "Journal of Building Engineering",
+      "doi": "10.1016/j.jobe.2025.113635",
+      "creators": [
+        "Junhui Yang",
+        "Chao Li",
+        "Zhu Zhang",
+        "Lingwei Chen",
+        "Xin He",
+        "Qingxing Zheng",
+        "Jianjun Zhang"
+      ],
+      "rendered": "Yang Junhui; Li Chao; Zhang Zhu; Chen Lingwei; He Xin; Zheng Qingxing; Zhang Jianjun, Statistical extremes of 2D vectorial response for wind-excited tall buildings[J]. Journal of Building Engineering, 2025, 111: 113635. https://doi.org/10.1016/j.jobe.2025.113635. 影响因子: 7.4 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 7.4 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "Y9QYBEKI",
+      "publication_number": 67,
+      "anchor": "ref-wang2025-POF",
+      "old_anchor": "ref-wang2025-POF",
+      "year": 2025,
+      "date": "2025/8/1",
+      "title": "Evaluation of urban wind effects on flight path planning of delivery drones using computational fluid dynamics simulations",
+      "publicationTitle": "Physics of Fluids",
+      "doi": "10.1063/5.0281373",
+      "creators": [
+        "Jinghan Wang",
+        "Xinyu He",
+        "Shan Jiang",
+        "P. W. Chan",
+        "Chao Li",
+        "Jinping Ou",
+        "Penghao Duan",
+        "Lishuai Li"
+      ],
+      "rendered": "Wang Jinghan; He Xinyu; Jiang Shan; Chan P W; Li Chao; Ou Jinping; Duan Penghao; Li Lishuai, Evaluation of urban wind effects on flight path planning of delivery drones using computational fluid dynamics simulations[J]. Physics of Fluids, 2025, 37(8): 87124. https://doi.org/10.1063/5.0281373. 影响因子: 4.3 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "5W2SZJUT",
+      "publication_number": 66,
+      "anchor": "ref-zheng2025-OE",
+      "old_anchor": "ref-zheng2025-OE",
+      "year": 2025,
+      "date": "2025/7",
+      "title": "Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine",
+      "publicationTitle": "Ocean Engineering",
+      "doi": "10.1016/j.oceaneng.2025.121336",
+      "creators": [
+        "Shunyun Zheng",
+        "Shangpei Liu",
+        "Chao Li",
+        "Xiaolu Wang",
+        "Jinping Ou"
+      ],
+      "rendered": "Zheng Shunyun; Liu Shangpei; Li Chao; Wang Xiaolu; Ou Jinping, Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine[J]. Ocean Engineering, 2025, 332: 121336. https://doi.org/10.1016/j.oceaneng.2025.121336. 影响因子: 5.5 (Q1). 中科院分区: 2. 引用次数: 2.",
+      "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2. 引用次数: 2."
+    },
+    {
+      "zotero_key": "H4RZBAIG",
+      "publication_number": 65,
+      "anchor": "ref-zheng2025-QHDXXB",
+      "old_anchor": "ref-zheng2025-QHDXXB",
+      "year": 2025,
+      "date": "2025-06-11",
+      "title": "中心与偏心布置半潜风机动力特性的模型试验",
+      "publicationTitle": "清华大学学报（自然科学版）",
+      "doi": "10.16511/j.cnki.qhdxxb.2025.27.037",
+      "creators": [
+        "郑舜云",
+        "周盛涛",
+        "石兵",
+        "李朝",
+        "胡钢",
+        "曾宇",
+        "李利孝"
+      ],
+      "rendered": "郑舜云; 周盛涛; 石兵; 李朝; 胡钢; 曾宇; 李利孝, 中心与偏心布置半潜风机动力特性的模型试验[J]. 清华大学学报（自然科学版）, 2025: 1～14.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "4BCF65NB",
+      "publication_number": 64,
+      "anchor": "ref-tang2025-JBE",
+      "old_anchor": "ref-tang2025-JBE",
+      "year": 2025,
+      "date": "2025/6",
+      "title": "Training and application of graph neural networks for predicting structural responses targeted at tall building structures",
+      "publicationTitle": "Journal of Building Engineering",
+      "doi": "10.1016/j.jobe.2025.112131",
+      "creators": [
+        "Ao Tang",
+        "Chao Li",
+        "Junhui Yang",
+        "Heqiang Zhang",
+        "Qingxing Zheng",
+        "Jianjun Zhang"
+      ],
+      "rendered": "Tang Ao; Li Chao; Yang Junhui; Zhang Heqiang; Zheng Qingxing; Zhang Jianjun, Training and application of graph neural networks for predicting structural responses targeted at tall building structures[J]. Journal of Building Engineering, 2025, 103: 112131. https://doi.org/10.1016/j.jobe.2025.112131. 影响因子: 7.4 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 7.4 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "39Z372P2",
+      "publication_number": 63,
+      "anchor": "ref-gong2025-POF",
+      "old_anchor": "ref-gong2025-POF",
+      "year": 2025,
+      "date": "2025/5/1",
+      "title": "A synthetic approach for high-fidelity aerodynamic performance optimization of large-scale wind turbine blades based on hybrid deep learning networks",
+      "publicationTitle": "Physics of Fluids",
+      "doi": "10.1063/5.0264659",
+      "creators": [
+        "Jingliang Gong",
+        "Haijun Zhou",
+        "Chulong Yuan",
+        "Xigui Huang",
+        "Gang Hu",
+        "Chao Li",
+        "Lixiao Li"
+      ],
+      "rendered": "Gong Jingliang; Zhou Haijun; Yuan Chulong; Huang Xigui; Hu Gang; Li Chao; Li Lixiao, A synthetic approach for high-fidelity aerodynamic performance optimization of large-scale wind turbine blades based on hybrid deep learning networks[J]. Physics of Fluids, AIP Publishing, 2025, 37(5). https://doi.org/10.1063/5.0264659. 影响因子: 4.3 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "6KEYN5GF",
+      "publication_number": 62,
+      "anchor": "ref-yan2025-POF",
+      "old_anchor": "ref-yan2025-POF",
+      "year": 2025,
+      "date": "2025/4/1",
+      "title": "Deep reinforcement learning-based active flow control for a tall building",
+      "publicationTitle": "Physics of Fluids",
+      "doi": "10.1063/5.0267175",
+      "creators": [
+        "Lei Yan",
+        "Huaiqiang Cai",
+        "Qiulei Wang",
+        "Lingwei Chen",
+        "Chao Li",
+        "Gang Hu"
+      ],
+      "rendered": "Yan Lei; Cai Huaiqiang; Wang Qiulei; Chen Lingwei; Li Chao; Hu Gang, Deep reinforcement learning-based active flow control for a tall building[J]. Physics of Fluids, 2025, 37(4): 045132. https://doi.org/10.1063/5.0267175. 影响因子: 4.3 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "V6PLJENN",
+      "publication_number": 61,
+      "anchor": "ref-zhao2025-SCS",
+      "old_anchor": "ref-zhao2025-SCS",
+      "year": 2025,
+      "date": "2025/4",
+      "title": "A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations",
+      "publicationTitle": "Sustainable Cities and Society",
+      "doi": "10.1016/j.scs.2025.106237",
+      "creators": [
+        "Peisheng Zhao",
+        "Chao Li",
+        "Jianxun Jiang",
+        "Lingwei Chen",
+        "Xiaolu Wang"
+      ],
+      "rendered": "Zhao Peisheng; Li Chao; Jiang Jianxun; Chen Lingwei; Wang Xiaolu, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. Sustainable Cities and Society, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: 12.0 (Q1). 中科院分区: 1. 引用次数: 6.",
+      "metrics": "影响因子: 12.0 (Q1). 中科院分区: 1. 引用次数: 6."
+    },
+    {
+      "zotero_key": "PTQVD6AJ",
+      "publication_number": 60,
+      "anchor": "ref-liang2025-OE",
+      "old_anchor": "ref-liang2025-OE",
+      "year": 2025,
+      "date": "2025/3",
+      "title": "Fatigue analysis of monopile-supported offshore wind turbine under varied supported conditions",
+      "publicationTitle": "Ocean Engineering",
+      "doi": "10.1016/j.oceaneng.2024.120279",
+      "creators": [
+        "Jun Liang",
+        "Ying Wang",
+        "Chao Li",
+        "Jinping Ou"
+      ],
+      "rendered": "Liang Jun; Wang Ying; Li Chao; Ou Jinping, Fatigue analysis of monopile-supported offshore wind turbine under varied supported conditions[J]. Ocean Engineering, 2025, 320: 120279. https://doi.org/10.1016/j.oceaneng.2024.120279. 影响因子: 5.5 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "78XMAPMX",
+      "publication_number": 59,
+      "anchor": "ref-chen2024-POF",
+      "old_anchor": "ref-chen2024-POF",
+      "year": 2024,
+      "date": "2024/12/1",
+      "title": "Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment",
+      "publicationTitle": "Physics of Fluids",
+      "doi": "10.1063/5.0240163",
+      "creators": [
+        "Lingwei Chen",
+        "Chao Li",
+        "Jinghan Wang",
+        "Xin He",
+        "Xiangjie Wang",
+        "Gang Hu",
+        "Xiaolu Wang"
+      ],
+      "rendered": "Chen Lingwei; Li Chao; Wang Jinghan; He Xin; Wang Xiangjie; Hu Gang; Wang Xiaolu, Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment[J]. Physics of Fluids, 2024, 36(12): 127120. https://doi.org/10.1063/5.0240163. 影响因子: 4.3 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "FVGTMSEA",
+      "publication_number": 58,
+      "anchor": "ref-tang2024-POF",
+      "old_anchor": "ref-tang2024-POF",
+      "year": 2024,
+      "date": "2024/12/1",
+      "title": "Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework",
+      "publicationTitle": "Physics of Fluids",
+      "doi": "10.1063/5.0237112",
+      "creators": [
+        "Lingxiao Tang",
+        "Chao Li",
+        "Zihan Zhao",
+        "Yiqing Xiao",
+        "Shenpeng Chen"
+      ],
+      "rendered": "Tang Lingxiao; Li Chao; Zhao Zihan; Xiao Yiqing; Chen Shenpeng, Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework[J]. Physics of Fluids, 2024, 36(12): 125110. https://doi.org/10.1063/5.0237112. 影响因子: 4.3 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "UXCUW2AL",
+      "publication_number": 57,
+      "anchor": "ref-liu2024-JWEIA",
+      "old_anchor": "ref-liu2024-JWEIA",
+      "year": 2024,
+      "date": "2024/12",
+      "title": "Engineering method for quantifying the coupling effect of transmission tower-line system under strong winds",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2024.105954",
+      "creators": [
+        "Shizeng Liu",
+        "Wentong Zhang",
+        "Qiang Li",
+        "Shicheng Yan",
+        "Shihong Zhang",
+        "Chao Li",
+        "Lixiao Li"
+      ],
+      "rendered": "Liu Shizeng; Zhang Wentong; Li Qiang; Yan Shicheng; Zhang Shihong; Li Chao; Li Lixiao, Engineering method for quantifying the coupling effect of transmission tower-line system under strong winds[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2024, 255: 105954. https://doi.org/10.1016/j.jweia.2024.105954. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "KT6UR5JW",
+      "publication_number": 56,
+      "anchor": "ref-li2024-DX",
+      "old_anchor": "ref-li2024-DX",
+      "year": 2024,
+      "date": "2024-12",
+      "title": "中国共产党精神谱系视域下土木工程课程思政建设的探索与实践",
+      "publicationTitle": "大学",
+      "doi": null,
+      "creators": [
+        "李朝",
+        "于洪涛",
+        "邹笃建"
+      ],
+      "rendered": "李朝; 于洪涛; 邹笃建, 中国共产党精神谱系视域下土木工程课程思政建设的探索与实践[J]. 大学, 2024, (651): 110～114.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "3HGIR6QR",
+      "publication_number": 55,
+      "anchor": "ref-wang2024-ES",
+      "old_anchor": "ref-wang2024-ES",
+      "year": 2024,
+      "date": "2024/11",
+      "title": "A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES",
+      "publicationTitle": "Engineering Structures",
+      "doi": "10.1016/j.engstruct.2024.118742",
+      "creators": [
+        "Jinghan Wang",
+        "Chao Li",
+        "Lingwei Chen",
+        "Shengtao Zhou",
+        "Gang Hu",
+        "Jinping Ou"
+      ],
+      "rendered": "Wang Jinghan; Li Chao; Chen Lingwei; Zhou Shengtao; Hu Gang; Ou Jinping, A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES[J]. Engineering Structures, 2024, 318: 118742. https://doi.org/10.1016/j.engstruct.2024.118742. 影响因子: 6.4 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 6.4 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "YMKXLNSP",
+      "publication_number": 54,
+      "anchor": "ref-he2024-JBE",
+      "old_anchor": "ref-he2024-JBE",
+      "year": 2024,
+      "date": "2024/11",
+      "title": "Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper",
+      "publicationTitle": "Journal of Building Engineering",
+      "doi": "10.1016/j.jobe.2024.110660",
+      "creators": [
+        "Xin He",
+        "Chao Li",
+        "Lingwei Chen",
+        "Junhui Yang",
+        "Gang Hu",
+        "Jinping Ou"
+      ],
+      "rendered": "He Xin; Li Chao; Chen Lingwei; Yang Junhui; Hu Gang; Ou Jinping, Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper[J]. Journal of Building Engineering, 2024, 96: 110660. https://doi.org/10.1016/j.jobe.2024.110660. 影响因子: 7.4 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 7.4 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "68N5CKGN",
+      "publication_number": 53,
+      "anchor": "ref-jiang2024-POF",
+      "old_anchor": "ref-jiang2024-POF",
+      "year": 2024,
+      "date": "2024/8/1",
+      "title": "Identification of no-fly zones for delivery drone path planning in various urban wind environments",
+      "publicationTitle": "Physics of Fluids",
+      "doi": "10.1063/5.0221281",
+      "creators": [
+        "Shan Jiang",
+        "Jinghan Wang",
+        "Chao Li",
+        "Jinping Ou",
+        "Penghao Duan",
+        "Lishuai Li"
+      ],
+      "rendered": "Jiang Shan; Wang Jinghan; Li Chao; Ou Jinping; Duan Penghao; Li Lishuai, Identification of no-fly zones for delivery drone path planning in various urban wind environments[J]. Physics of Fluids, 2024, 36(8): 085166. https://doi.org/10.1063/5.0221281. 影响因子: 4.3 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "B7KQW96B",
+      "publication_number": 52,
+      "anchor": "ref-zhang2024-OE",
+      "old_anchor": "ref-zhang2024-OE",
+      "year": 2024,
+      "date": "2024/5",
+      "title": "Bilevel optimization of non-uniform offshore wind farm layout and cable routing for the refined LCOE using an enhanced PSO",
+      "publicationTitle": "Ocean Engineering",
+      "doi": "10.1016/j.oceaneng.2024.117244",
+      "creators": [
+        "Dongqin Zhang",
+        "Zhenqing Liu",
+        "Yang Liang",
+        "Chao Li",
+        "Jize Zhang",
+        "Gang Hu"
+      ],
+      "rendered": "Zhang Dongqin; Liu Zhenqing; Liang Yang; Li Chao; Zhang Jize; Hu Gang, Bilevel optimization of non-uniform offshore wind farm layout and cable routing for the refined LCOE using an enhanced PSO[J]. Ocean Engineering, 2024, 299: 117244. https://doi.org/10.1016/j.oceaneng.2024.117244. 影响因子: 5.5 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "2YG78T62",
+      "publication_number": 51,
+      "anchor": "ref-li2024-POF",
+      "old_anchor": "ref-li2024-POF",
+      "year": 2024,
+      "date": "2024/3/1",
+      "title": "A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra",
+      "publicationTitle": "Physics of Fluids",
+      "doi": "10.1063/5.0194006",
+      "creators": [
+        "Chao Li",
+        "Lingwei Chen",
+        "Jinghan Wang",
+        "Wentong Zhang",
+        "Xiangjie Wang",
+        "Zhuoran Wang",
+        "Gang Hu"
+      ],
+      "rendered": "Li Chao; Chen Lingwei; Wang Jinghan; Zhang Wentong; Wang Xiangjie; Wang Zhuoran; Hu Gang, A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra[J]. Physics of Fluids, 2024, 36(3): 035127. https://doi.org/10.1063/5.0194006. 影响因子: 4.3 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "Y76UWP9R",
+      "publication_number": 50,
+      "anchor": "ref-chen2024-JCP",
+      "old_anchor": "ref-chen2024-JCP",
+      "year": 2024,
+      "date": "2024/2",
+      "title": "A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation",
+      "publicationTitle": "Journal of Computational Physics",
+      "doi": "10.1016/j.jcp.2023.112706",
+      "creators": [
+        "Lingwei Chen",
+        "Chao Li",
+        "Jinghan Wang",
+        "Gang Hu",
+        "Yiqing Xiao"
+      ],
+      "rendered": "Chen Lingwei; Li Chao; Wang Jinghan; Hu Gang; Xiao Yiqing, A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation[J]. Journal of Computational Physics, 2024, 498: 112706. https://doi.org/10.1016/j.jcp.2023.112706. 影响因子: 3.8 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 3.8 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "WSTSZ48A",
+      "publication_number": 49,
+      "anchor": "ref-liu2024-E",
+      "old_anchor": "ref-liu2024-E",
+      "year": 2024,
+      "date": "2024-01",
+      "title": "Dynamic Failure Mode Analysis for a Transmission Tower-Line System Induced by Strong Winds",
+      "publicationTitle": "Energies",
+      "doi": "10.3390/en17184679",
+      "creators": [
+        "Shizeng Liu",
+        "Wentong Zhang",
+        "Qiang Li",
+        "Shicheng Yan",
+        "Shihong Zhang",
+        "Chao Li",
+        "Lixiao Li"
+      ],
+      "rendered": "Liu Shizeng; Zhang Wentong; Li Qiang; Yan Shicheng; Zhang Shihong; Li Chao; Li Lixiao, Dynamic Failure Mode Analysis for a Transmission Tower-Line System Induced by Strong Winds[J]. Energies, Multidisciplinary Digital Publishing Institute, 2024, 17(18): 4679. https://doi.org/10.3390/en17184679. 影响因子: 3.2 (Q3). 中科院分区: 3.",
+      "metrics": "影响因子: 3.2 (Q3). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "3LWVP7B7",
+      "publication_number": 48,
+      "anchor": "ref-zhou2023-AE",
+      "old_anchor": "ref-zhou2023-AE",
+      "year": 2023,
+      "date": "2023/12",
+      "title": "Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization",
+      "publicationTitle": "Applied Energy",
+      "doi": "10.1016/j.apenergy.2023.121941",
+      "creators": [
+        "Shengtao Zhou",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Xiaolu Wang",
+        "Wenyuan Xiang",
+        "Qing Sun"
+      ],
+      "rendered": "Zhou Shengtao; Li Chao; Xiao Yiqing; Wang Xiaolu; Xiang Wenyuan; Sun Qing, Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization[J]. Applied Energy, 2023, 352: 121941. https://doi.org/10.1016/j.apenergy.2023.121941. 影响因子: 11.0 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 11.0 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "FVQQHCGS",
+      "publication_number": 47,
+      "anchor": "ref-zhao2023-BS",
+      "old_anchor": "ref-zhao2023-BS",
+      "year": 2023,
+      "date": "2023/9",
+      "title": "Multiscale simulation of the urban wind environment under typhoon weather conditions",
+      "publicationTitle": "Building Simulation",
+      "doi": "10.1007/s12273-023-0991-7",
+      "creators": [
+        "Zihan Zhao",
+        "Yiqing Xiao",
+        "Chao Li",
+        "P. W. Chan",
+        "Gang Hu",
+        "Qingfeng Zhou"
+      ],
+      "rendered": "Zhao Zihan; Xiao Yiqing; Li Chao; Chan P W; Hu Gang; Zhou Qingfeng, Multiscale simulation of the urban wind environment under typhoon weather conditions[J]. Building Simulation, 2023, 16(9): 1713～1734. https://doi.org/10.1007/s12273-023-0991-7. 影响因子: 5.9 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 5.9 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "F83EIB5E",
+      "publication_number": 46,
+      "anchor": "ref-zhang2023-JWEIA",
+      "old_anchor": "ref-zhang2023-JWEIA",
+      "year": 2023,
+      "date": "2023/9",
+      "title": "Numerical study of flow characteristics of tornado-like vortices considering both swirl ratio and aspect ratio",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2023.105468",
+      "creators": [
+        "Dongqin Zhang",
+        "Zhenqing Liu",
+        "Xinye Jiang",
+        "Wenjun Jiang",
+        "Huanxiang Gao",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Gang Hu"
+      ],
+      "rendered": "Zhang Dongqin; Liu Zhenqing; Jiang Xinye; Jiang Wenjun; Gao Huanxiang; Li Chao; Xiao Yiqing; Hu Gang, Numerical study of flow characteristics of tornado-like vortices considering both swirl ratio and aspect ratio[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2023, 240: 105468. https://doi.org/10.1016/j.jweia.2023.105468. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "5GPZ54VV",
+      "publication_number": 45,
+      "anchor": "ref-zheng2023-MS",
+      "old_anchor": "ref-zheng2023-MS",
+      "year": 2023,
+      "date": "2023/5",
+      "title": "Efficient optimization design method of jacket structures for offshore wind turbines",
+      "publicationTitle": "Marine Structures",
+      "doi": "10.1016/j.marstruc.2023.103372",
+      "creators": [
+        "Shunyun Zheng",
+        "Chao Li",
+        "Yiqing Xiao"
+      ],
+      "rendered": "Zheng Shunyun; Li Chao; Xiao Yiqing, Efficient optimization design method of jacket structures for offshore wind turbines[J]. Marine Structures, 2023, 89: 103372. https://doi.org/10.1016/j.marstruc.2023.103372. 影响因子: 5.1 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 5.1 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "TYK2GQCU",
+      "publication_number": 44,
+      "anchor": "ref-zhang2023-S",
+      "old_anchor": "ref-zhang2023-S",
+      "year": 2023,
+      "date": "2023/2",
+      "title": "Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra",
+      "publicationTitle": "Structures",
+      "doi": "10.1016/j.istruc.2022.12.073",
+      "creators": [
+        "Wentong Zhang",
+        "Chao Li",
+        "Gaixia Liu",
+        "Yiqing Xiao"
+      ],
+      "rendered": "Zhang Wentong; Li Chao; Liu Gaixia; Xiao Yiqing, Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra[J]. Structures, 2023, 48: 1634～1650. https://doi.org/10.1016/j.istruc.2022.12.073. 影响因子: 4.3 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "GKUAVJEK",
+      "publication_number": 43,
+      "anchor": "ref-wang2023-JWEIA",
+      "old_anchor": "ref-wang2023-JWEIA",
+      "year": 2023,
+      "date": "2023/2",
+      "title": "Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2023.105326",
+      "creators": [
+        "Jinghan Wang",
+        "Chao Li",
+        "Shenghong Huang",
+        "Qingxing Zheng",
+        "Yiqing Xiao",
+        "Jinping Ou"
+      ],
+      "rendered": "Wang Jinghan; Li Chao; Huang Shenghong; Zheng Qingxing; Xiao Yiqing; Ou Jinping, Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2023, 233: 105326. https://doi.org/10.1016/j.jweia.2023.105326. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "TQ9RNRCC",
+      "publication_number": 42,
+      "anchor": "ref-zheng2023-JRSE",
+      "old_anchor": "ref-zheng2023-JRSE",
+      "year": 2023,
+      "date": "2023/1/1",
+      "title": "Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine",
+      "publicationTitle": "Journal of Renewable and Sustainable Energy",
+      "doi": "10.1063/5.0131279",
+      "creators": [
+        "Shunyun Zheng",
+        "Chao Li",
+        "Peicen Wang",
+        "Shengtao Zhou",
+        "Yiqing Xiao"
+      ],
+      "rendered": "Zheng Shunyun; Li Chao; Wang Peicen; Zhou Shengtao; Xiao Yiqing, Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine[J]. Journal of Renewable and Sustainable Energy, 2023, 15(1): 013305. https://doi.org/10.1063/5.0131279. 影响因子: 1.9 (Q4). 中科院分区: 4.",
+      "metrics": "影响因子: 1.9 (Q4). 中科院分区: 4."
+    },
+    {
+      "zotero_key": "QN2824VG",
+      "publication_number": 41,
+      "anchor": "ref-zhang2023-ES",
+      "old_anchor": "ref-zhang2023-ES",
+      "year": 2023,
+      "date": "2023/1",
+      "title": "Reconstruction of dynamic wind forces on a transmission steel lattice tower using aeroelastic wind tunnel test data",
+      "publicationTitle": "Engineering Structures",
+      "doi": "10.1016/j.engstruct.2022.115167",
+      "creators": [
+        "Wentong Zhang",
+        "Chao Li",
+        "Gaixia Liu",
+        "Yiqing Xiao"
+      ],
+      "rendered": "Zhang Wentong; Li Chao; Liu Gaixia; Xiao Yiqing, Reconstruction of dynamic wind forces on a transmission steel lattice tower using aeroelastic wind tunnel test data[J]. Engineering Structures, 2023, 275: 115167. https://doi.org/10.1016/j.engstruct.2022.115167. 影响因子: 6.4 (Q1). 中科院分区: 1. 引用次数: 9.",
+      "metrics": "影响因子: 6.4 (Q1). 中科院分区: 1. 引用次数: 9."
+    },
+    {
+      "zotero_key": "52JRBI8E",
+      "publication_number": 40,
+      "anchor": "ref-xiang2023-CBGC",
+      "old_anchor": "ref-xiang2023-CBGC",
+      "year": 2023,
+      "date": "2023",
+      "title": "半潜式浮式风机长期动力响应的全局敏感性分析",
+      "publicationTitle": "船舶工程",
+      "doi": "10.13788/j.cnki.cbgc.2023.S1.12",
+      "creators": [
+        "文元 向",
+        "盛涛 周",
+        "清 孙",
+        "朝 李",
+        "仪清 肖"
+      ],
+      "rendered": "向文元; 周盛涛; 孙清; 李朝; 肖仪清, 半潜式浮式风机长期动力响应的全局敏感性分析[J]. 船舶工程, 2023, 45(S1): 59～66.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "FT67Z85H",
+      "publication_number": 39,
+      "anchor": "ref-feng2023-HKXYGC",
+      "old_anchor": "ref-feng2023-HKXYGC",
+      "year": 2023,
+      "date": "2023",
+      "title": "基于数值风洞试验的核电厂微地形风场分析与验证",
+      "publicationTitle": "核科学与工程",
+      "doi": null,
+      "creators": [
+        "冯丙辰",
+        "肖扬",
+        "李朝",
+        "肖仪清"
+      ],
+      "rendered": "冯丙辰; 肖扬; 李朝; 肖仪清, 基于数值风洞试验的核电厂微地形风场分析与验证[J]. 核科学与工程, 2023, 第43卷增刊.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "R2C3HY74",
+      "publication_number": 38,
+      "anchor": "ref-zhao2023-GYJZ",
+      "old_anchor": "ref-zhao2023-GYJZ",
+      "year": 2023,
+      "date": "2023",
+      "title": "基于首次超越破坏的输电塔强风易损性分析",
+      "publicationTitle": "工业建筑",
+      "doi": "21213/dfdg234",
+      "creators": [
+        "赵子涵",
+        "肖凯",
+        "肖仪清",
+        "李朝",
+        "张文通"
+      ],
+      "rendered": "赵子涵; 肖凯; 肖仪清; 李朝; 张文通, 基于首次超越破坏的输电塔强风易损性分析[J]. 工业建筑, 2023: 1～10.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "NLWWLBHY",
+      "publication_number": 37,
+      "anchor": "ref-zhou2023-CBGC",
+      "old_anchor": "ref-zhou2023-CBGC",
+      "year": 2023,
+      "date": "2023",
+      "title": "浮式风机动力系统的线性耦合动力学分析",
+      "publicationTitle": "船舶工程",
+      "doi": "10.13788/j.cnki.cbgc.2023.S1.10",
+      "creators": [
+        "盛涛 周",
+        "文元 向",
+        "清 孙",
+        "朝 李",
+        "仪清 肖"
+      ],
+      "rendered": "周盛涛; 向文元; 孙清; 李朝; 肖仪清, 浮式风机动力系统的线性耦合动力学分析[J]. 船舶工程, 2023, 45(S1): 46～52.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "IPVYARZP",
+      "publication_number": 36,
+      "anchor": "ref-gao2022-BE",
+      "old_anchor": "ref-gao2022-BE",
+      "year": 2022,
+      "date": "2022/12",
+      "title": "Pedestrian level wind flow field of elevated tall buildings with dense tandem arrangement",
+      "publicationTitle": "Building and Environment",
+      "doi": "10.1016/j.buildenv.2022.109745",
+      "creators": [
+        "Huanxiang Gao",
+        "Junle Liu",
+        "Pengfei Lin",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Gang Hu"
+      ],
+      "rendered": "Gao Huanxiang; Liu Junle; Lin Pengfei; Li Chao; Xiao Yiqing; Hu Gang, Pedestrian level wind flow field of elevated tall buildings with dense tandem arrangement[J]. Building and Environment, 2022, 226: 109745. https://doi.org/10.1016/j.buildenv.2022.109745. 影响因子: 7.6 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 7.6 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "DH7XTK83",
+      "publication_number": 35,
+      "anchor": "ref-hu2022-SCHM",
+      "old_anchor": "ref-hu2022-SCHM",
+      "year": 2022,
+      "date": "2022/11",
+      "title": "Operational modal analysis and continuous dynamic monitoring of high‐rise building based on wireless distributed synchronized data acquisition system",
+      "publicationTitle": "Structural Control and Health Monitoring",
+      "doi": "10.1002/stc.3063",
+      "creators": [
+        "Wei‐Hua Hu",
+        "Zeng‐Mao Xu",
+        "Xiao‐Han Bian",
+        "De‐Hui Tang",
+        "Wei Lu",
+        "Chao Li",
+        "Jun Teng",
+        "Álvaro Cunha"
+      ],
+      "rendered": "Hu Wei‐Hua; Xu Zeng‐Mao; Bian Xiao‐Han; Tang De‐Hui; Lu Wei; Li Chao; Teng Jun; Cunha Álvaro, Operational modal analysis and continuous dynamic monitoring of high‐rise building based on wireless distributed synchronized data acquisition system[J]. Structural Control and Health Monitoring, 2022, 29(11): e3063. https://doi.org/10.1002/stc.3063. 影响因子: 5.1 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 5.1 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "DD8PJ6PS",
+      "publication_number": 34,
+      "anchor": "ref-chen2022-JWEIA",
+      "old_anchor": "ref-chen2022-JWEIA",
+      "year": 2022,
+      "date": "2022/10",
+      "title": "Consistency improved random flow generation method for large eddy simulation of atmospheric boundary layer",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2022.105147",
+      "creators": [
+        "Lingwei Chen",
+        "Chao Li",
+        "Jinghan Wang",
+        "Gang Hu",
+        "Qingxing Zheng",
+        "Qingfeng Zhou",
+        "Yiqing Xiao"
+      ],
+      "rendered": "Chen Lingwei; Li Chao; Wang Jinghan; Hu Gang; Zheng Qingxing; Zhou Qingfeng; Xiao Yiqing, Consistency improved random flow generation method for large eddy simulation of atmospheric boundary layer[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2022, 229: 105147. https://doi.org/10.1016/j.jweia.2022.105147. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "5AT7UEWV",
+      "publication_number": 33,
+      "anchor": "ref-li2022-SOS",
+      "old_anchor": "ref-li2022-SOS",
+      "year": 2022,
+      "date": "2022/8/3",
+      "title": "Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures",
+      "publicationTitle": "Ships and Offshore Structures",
+      "doi": "10.1080/17445302.2021.1937801",
+      "creators": [
+        "Chao Li",
+        "Shengtao Zhou",
+        "Baohua Shan",
+        "Gang Hu",
+        "Xiaoping Song",
+        "Yongqing Liu",
+        "Yimin Hu",
+        "Xiao Yiqing"
+      ],
+      "rendered": "Li Chao; Zhou Shengtao; Shan Baohua; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin; Yiqing Xiao, Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures[J]. Ships and Offshore Structures, Taylor & Francis, 2022, 17(8): 1663～1683. https://doi.org/10.1080/17445302.2021.1937801. 影响因子: 1.8 (Q2). 中科院分区: 3.",
+      "metrics": "影响因子: 1.8 (Q2). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "F73D398X",
+      "publication_number": 32,
+      "anchor": "ref-wang2022-POF",
+      "old_anchor": "ref-wang2022-POF",
+      "year": 2022,
+      "date": "2022/8/1",
+      "title": "DRLinFluids: An open-source Python platform of coupling deep reinforcement learning and OpenFOAM",
+      "publicationTitle": "Physics of Fluids",
+      "doi": "10.1063/5.0103113",
+      "creators": [
+        "Qiulei Wang",
+        "Lei Yan",
+        "Gang Hu",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Hao Xiong",
+        "Jean Rabault",
+        "Bernd R. Noack"
+      ],
+      "rendered": "Wang Qiulei; Yan Lei; Hu Gang; Li Chao; Xiao Yiqing; Xiong Hao; Rabault Jean; Noack Bernd R, DRLinFluids: An open-source Python platform of coupling deep reinforcement learning and OpenFOAM[J]. Physics of Fluids, American Institute of Physics, 2022, 34(8): 081801. https://doi.org/10.1063/5.0103113. 影响因子: 4.3 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "H9YSVNMM",
+      "publication_number": 31,
+      "anchor": "ref-abdullahi2022-OE",
+      "old_anchor": "ref-abdullahi2022-OE",
+      "year": 2022,
+      "date": "2022/2",
+      "title": "Long term effect of operating loads on large monopile-supported offshore wind turbines in sand",
+      "publicationTitle": "Ocean Engineering",
+      "doi": "10.1016/j.oceaneng.2021.110404",
+      "creators": [
+        "Aliyu Abdullahi",
+        "Subhamoy Bhattacharya",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Ying Wang"
+      ],
+      "rendered": "Abdullahi Aliyu; Bhattacharya Subhamoy; Li Chao; Xiao Yiqing; Wang Ying, Long term effect of operating loads on large monopile-supported offshore wind turbines in sand[J]. Ocean Engineering, 2022, 245: 110404. https://doi.org/10.1016/j.oceaneng.2021.110404. 影响因子: 5.5 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "F9AB6YN4",
+      "publication_number": 30,
+      "anchor": "ref-zhang2022-ES",
+      "old_anchor": "ref-zhang2022-ES",
+      "year": 2022,
+      "date": "2022/2",
+      "title": "Wind load investigation of self-supported lattice transmission tower based on wind tunnel tests",
+      "publicationTitle": "Engineering Structures",
+      "doi": "10.1016/j.engstruct.2021.113575",
+      "creators": [
+        "Wentong Zhang",
+        "Yiqing Xiao",
+        "Chao Li",
+        "Qingxing Zheng",
+        "Yanan Tang"
+      ],
+      "rendered": "Zhang Wentong; Xiao Yiqing; Li Chao; Zheng Qingxing; Tang Yanan, Wind load investigation of self-supported lattice transmission tower based on wind tunnel tests[J]. Engineering Structures, 2022, 252: 113575. https://doi.org/10.1016/j.engstruct.2021.113575. 影响因子: 6.4 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 6.4 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "93A562VW",
+      "publication_number": 29,
+      "anchor": "ref-lin2022-JWEIA",
+      "old_anchor": "ref-lin2022-JWEIA",
+      "year": 2022,
+      "date": "2022/1",
+      "title": "Machine learning-enabled estimation of crosswind load effect on tall buildings",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2021.104860",
+      "creators": [
+        "Pengfei Lin",
+        "Fei Ding",
+        "Gang Hu",
+        "Chao Li",
+        "Yiqing Xiao",
+        "K.T. Tse",
+        "K.C.S. Kwok",
+        "Ahsan Kareem"
+      ],
+      "rendered": "Lin Pengfei; Ding Fei; Hu Gang; Li Chao; Xiao Yiqing; Tse K T; Kwok K C S; Kareem Ahsan, Machine learning-enabled estimation of crosswind load effect on tall buildings[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2022, 220: 104860. https://doi.org/10.1016/j.jweia.2021.104860. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "WUGUPVR4",
+      "publication_number": 28,
+      "anchor": "ref-yang2022-AS",
+      "old_anchor": "ref-yang2022-AS",
+      "year": 2022,
+      "date": "2022-01",
+      "title": "Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses",
+      "publicationTitle": "Applied Sciences",
+      "doi": "10.3390/app12083729",
+      "creators": [
+        "Junhui Yang",
+        "Junfeng Zhang",
+        "Chao Li"
+      ],
+      "rendered": "Yang Junhui; Zhang Junfeng; Li Chao, Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses[J]. Applied Sciences, 2022, 12(8): 3729. https://doi.org/10.3390/app12083729. 影响因子: 2.5 (Q2). 中科院分区: 3.",
+      "metrics": "影响因子: 2.5 (Q2). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "SXU5CL43",
+      "publication_number": 27,
+      "anchor": "ref-wang2021-ABE",
+      "old_anchor": "ref-wang2021-ABE",
+      "year": 2021,
+      "date": "2021/12",
+      "title": "Aerodynamic characteristics of a square cylinder with corner fins",
+      "publicationTitle": "Advances in Bridge Engineering",
+      "doi": "10.1186/s43251-021-00042-x",
+      "creators": [
+        "Qiulei Wang",
+        "Qi Jiang",
+        "Gang Hu",
+        "Xiao Chen",
+        "Chao Li",
+        "Yiqing Xiao"
+      ],
+      "rendered": "Wang Qiulei; Jiang Qi; Hu Gang; Chen Xiao; Li Chao; Xiao Yiqing, Aerodynamic characteristics of a square cylinder with corner fins[J]. Advances in Bridge Engineering, 2021, 2(1): 20. https://doi.org/10.1186/s43251-021-00042-x. 影响因子: 2.1 (Q2). 中科院分区: 3.",
+      "metrics": "影响因子: 2.1 (Q2). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "3VYYMGTH",
+      "publication_number": 26,
+      "anchor": "ref-zhao2021-EFM",
+      "old_anchor": "ref-zhao2021-EFM",
+      "year": 2021,
+      "date": "2021/8",
+      "title": "Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions",
+      "publicationTitle": "Environmental Fluid Mechanics",
+      "doi": "10.1007/s10652-021-09796-4",
+      "creators": [
+        "Zihan Zhao",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Jinghan Wang",
+        "Gang Hu",
+        "Kai Xiao"
+      ],
+      "rendered": "Zhao Zihan; Li Chao; Xiao Yiqing; Wang Jinghan; Hu Gang; Xiao Kai, Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions[J]. Environmental Fluid Mechanics, 2021, 21(4): 759～790. https://doi.org/10.1007/s10652-021-09796-4. 影响因子: 2.1 (Q2). 中科院分区: 3.",
+      "metrics": "影响因子: 2.1 (Q2). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "VEJ6LL7P",
+      "publication_number": 25,
+      "anchor": "ref-zhao2021-AR",
+      "old_anchor": "ref-zhao2021-AR",
+      "year": 2021,
+      "date": "2021/6",
+      "title": "New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain",
+      "publicationTitle": "Atmospheric Research",
+      "doi": "10.1016/j.atmosres.2021.105507",
+      "creators": [
+        "Zihan Zhao",
+        "Yiqing Xiao",
+        "Chao Li",
+        "Jinghan Wang",
+        "Gang Hu"
+      ],
+      "rendered": "Zhao Zihan; Xiao Yiqing; Li Chao; Wang Jinghan; Hu Gang, New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain[J]. Atmospheric Research, 2021, 254: 105507. https://doi.org/10.1016/j.atmosres.2021.105507. 影响因子: 4.4 (Q2). 中科院分区: 2.",
+      "metrics": "影响因子: 4.4 (Q2). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "5G6YFN8Y",
+      "publication_number": 24,
+      "anchor": "ref-lin2021-JWEIA",
+      "old_anchor": "ref-lin2021-JWEIA",
+      "year": 2021,
+      "date": "2021/4",
+      "title": "Machine learning-based prediction of crosswind vibrations of rectangular cylinders",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2021.104549",
+      "creators": [
+        "Pengfei Lin",
+        "Gang Hu",
+        "Chao Li",
+        "Lixiao Li",
+        "Yiqing Xiao",
+        "K.T. Tse",
+        "K.C.S. Kwok"
+      ],
+      "rendered": "Lin Pengfei; Hu Gang; Li Chao; Li Lixiao; Xiao Yiqing; Tse K T; Kwok K C S, Machine learning-based prediction of crosswind vibrations of rectangular cylinders[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2021, 211: 104549. https://doi.org/10.1016/j.jweia.2021.104549. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "H8SGIEYU",
+      "publication_number": 23,
+      "anchor": "ref-zhou2021-OE",
+      "old_anchor": "ref-zhou2021-OE",
+      "year": 2021,
+      "date": "2021/2",
+      "title": "Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics",
+      "publicationTitle": "Ocean Engineering",
+      "doi": "10.1016/j.oceaneng.2021.108585",
+      "creators": [
+        "Shengtao Zhou",
+        "Kolja Müller",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Po Wen Cheng"
+      ],
+      "rendered": "Zhou Shengtao; Müller Kolja; Li Chao; Xiao Yiqing; Cheng Po Wen, Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics[J]. Ocean Engineering, 2021, 221: 108585. https://doi.org/10.1016/j.oceaneng.2021.108585. 影响因子: 5.5 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "JGSIKX3F",
+      "publication_number": 22,
+      "anchor": "ref-zhao2021-TYNXB",
+      "old_anchor": "ref-zhao2021-TYNXB",
+      "year": 2021,
+      "date": "2021",
+      "title": "基于NWP/CFD嵌套的复杂地形风场模拟研究",
+      "publicationTitle": "太阳能学报",
+      "doi": null,
+      "creators": [
+        "子涵 赵",
+        "朝 李",
+        "仪清 肖",
+        "凯 肖",
+        "晓鹏 吴",
+        "晓萍 宋"
+      ],
+      "rendered": "赵子涵; 李朝; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. 太阳能学报, 2021, 42(2): 205～210.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "3ZY69PVB",
+      "publication_number": 21,
+      "anchor": "ref-li2020-JWEIA",
+      "old_anchor": "ref-li2020-JWEIA",
+      "year": 2020,
+      "date": "2020/11",
+      "title": "RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2020.104281",
+      "creators": [
+        "Chao Li",
+        "Jinghan Wang",
+        "Gang Hu",
+        "Lixiao Li",
+        "Yiqing Xiao"
+      ],
+      "rendered": "Li Chao; Wang Jinghan; Hu Gang; Li Lixiao; Xiao Yiqing, RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2020, 206: 104281. https://doi.org/10.1016/j.jweia.2020.104281. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "74H4VLG2",
+      "publication_number": 20,
+      "anchor": "ref-zhou2020-RE",
+      "old_anchor": "ref-zhou2020-RE",
+      "year": 2020,
+      "date": "2020/8",
+      "title": "Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines: A case study by using surrogate models",
+      "publicationTitle": "Renewable Energy",
+      "doi": "10.1016/j.renene.2020.04.014",
+      "creators": [
+        "Shengtao Zhou",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Po Wen Cheng"
+      ],
+      "rendered": "Zhou Shengtao; Li Chao; Xiao Yiqing; Cheng Po Wen, Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines: A case study by using surrogate models[J]. Renewable Energy, 2020, 156: 260～278. https://doi.org/10.1016/j.renene.2020.04.014. 影响因子: 9.1 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 9.1 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "I4I82574",
+      "publication_number": 19,
+      "anchor": "ref-hu2019-JOFAS",
+      "old_anchor": "ref-hu2019-JOFAS",
+      "year": 2019,
+      "date": "2019/11",
+      "title": "Wind energy harvesting performance of tandem circular cylinders with triangular protrusions",
+      "publicationTitle": "Journal of Fluids and Structures",
+      "doi": "10.1016/j.jfluidstructs.2019.102780",
+      "creators": [
+        "Gang Hu",
+        "Fengxi Liu",
+        "Lixiao Li",
+        "Chao Li",
+        "Yiqing Xiao",
+        "K.C.S. Kwok"
+      ],
+      "rendered": "Hu Gang; Liu Fengxi; Li Lixiao; Li Chao; Xiao Yiqing; Kwok K C S, Wind energy harvesting performance of tandem circular cylinders with triangular protrusions[J]. Journal of Fluids and Structures, 2019, 91: 102780. https://doi.org/10.1016/j.jfluidstructs.2019.102780. 影响因子: 3.5 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 3.5 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "HPU9VCE6",
+      "publication_number": 18,
+      "anchor": "ref-peng2019-JWEIA",
+      "old_anchor": "ref-peng2019-JWEIA",
+      "year": 2019,
+      "date": "2019/10",
+      "title": "High-solidity straight-bladed vertical axis wind turbine: Numerical simulation and validation",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2019.103960",
+      "creators": [
+        "Yi-Xin Peng",
+        "You-Lin Xu",
+        "Songye Zhu",
+        "Chao Li"
+      ],
+      "rendered": "Peng Yi-Xin; Xu You-Lin; Zhu Songye; Li Chao, High-solidity straight-bladed vertical axis wind turbine: Numerical simulation and validation[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2019, 193: 103960. https://doi.org/10.1016/j.jweia.2019.103960. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "WHSVAKCD",
+      "publication_number": 17,
+      "anchor": "ref-li2019-JWEIA",
+      "old_anchor": "ref-li2019-JWEIA",
+      "year": 2019,
+      "date": "2019/7",
+      "title": "Observed sub-hectometer-scale low level jets in surface-layer velocity profiles of landfalling typhoons",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2019.04.016",
+      "creators": [
+        "Lixiao Li",
+        "Ahsan Kareem",
+        "Julian Hunt",
+        "Feng Xing",
+        "Pakwai Chan",
+        "Yiqing Xiao",
+        "Chao Li"
+      ],
+      "rendered": "Li Lixiao; Kareem Ahsan; Hunt Julian; Xing Feng; Chan Pakwai; Xiao Yiqing; Li Chao, Observed sub-hectometer-scale low level jets in surface-layer velocity profiles of landfalling typhoons[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2019, 190: 151～165. https://doi.org/10.1016/j.jweia.2019.04.016. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "F6KEY453",
+      "publication_number": 16,
+      "anchor": "ref-lin2019-E",
+      "old_anchor": "ref-lin2019-E",
+      "year": 2019,
+      "date": "2019-01",
+      "title": "Structural Analysis of Large-Scale Vertical-Axis Wind Turbines, Part I: Wind Load Simulation",
+      "publicationTitle": "Energies",
+      "doi": "10.3390/en12132573",
+      "creators": [
+        "Jinghua Lin",
+        "You-Lin Xu",
+        "Yong Xia",
+        "Chao Li"
+      ],
+      "rendered": "Lin Jinghua; Xu You-Lin; Xia Yong; Li Chao, Structural Analysis of Large-Scale Vertical-Axis Wind Turbines, Part I: Wind Load Simulation[J]. Energies, Multidisciplinary Digital Publishing Institute, 2019, 12(13): 2573. https://doi.org/10.3390/en12132573. 影响因子: 3.2 (Q3). 中科院分区: 3.",
+      "metrics": "影响因子: 3.2 (Q3). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "DNXNTCJ9",
+      "publication_number": 15,
+      "anchor": "ref-zhou2019-WHLGDXXB",
+      "old_anchor": "ref-zhou2019-WHLGDXXB",
+      "year": 2019,
+      "date": "2019",
+      "title": "超高层建筑风荷载的数值模拟",
+      "publicationTitle": "武汉理工大学学报",
+      "doi": null,
+      "creators": [
+        "颖 周",
+        "枢果 梁",
+        "朝 李"
+      ],
+      "rendered": "周颖; 梁枢果; 李朝, 超高层建筑风荷载的数值模拟[J]. 武汉理工大学学报, 2019, 41(1): 56～62, 89.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "C75QWNRE",
+      "publication_number": 14,
+      "anchor": "ref-hu2018-EJMBF",
+      "old_anchor": "ref-hu2018-EJMBF",
+      "year": 2018,
+      "date": "2018/3",
+      "title": "Vortex induced vibration of an inclined finite-length square cylinder",
+      "publicationTitle": "European Journal of Mechanics - B/Fluids",
+      "doi": "10.1016/j.euromechflu.2017.12.004",
+      "creators": [
+        "Gang Hu",
+        "Chao Li",
+        "K.T. Tse",
+        "K.C.S. Kwok"
+      ],
+      "rendered": "Hu Gang; Li Chao; Tse K T; Kwok K C S, Vortex induced vibration of an inclined finite-length square cylinder[J]. European Journal of Mechanics - B/Fluids, 2018, 68: 144～152. https://doi.org/10.1016/j.euromechflu.2017.12.004. 影响因子: 2.5 (Q2). 中科院分区: 3.",
+      "metrics": "影响因子: 2.5 (Q2). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "YJN53AF9",
+      "publication_number": 13,
+      "anchor": "ref-li2018-AE",
+      "old_anchor": "ref-li2018-AE",
+      "year": 2018,
+      "date": "2018/2",
+      "title": "Optimization of blade pitch in H-rotor vertical axis wind turbines through computational fluid dynamics simulations",
+      "publicationTitle": "Applied Energy",
+      "doi": "10.1016/j.apenergy.2017.12.035",
+      "creators": [
+        "Chao Li",
+        "Yiqing Xiao",
+        "You-lin Xu",
+        "Yi-xin Peng",
+        "Gang Hu",
+        "Songye Zhu"
+      ],
+      "rendered": "Li Chao; Xiao Yiqing; Xu You-lin; Peng Yi-xin; Hu Gang; Zhu Songye, Optimization of blade pitch in H-rotor vertical axis wind turbines through computational fluid dynamics simulations[J]. Applied Energy, 2018, 212: 1107～1125. https://doi.org/10.1016/j.apenergy.2017.12.035. 影响因子: 11.0 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 11.0 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "YF5RIBAN",
+      "publication_number": 12,
+      "anchor": "ref-xiao2018-KXJSYGC",
+      "old_anchor": "ref-xiao2018-KXJSYGC",
+      "year": 2018,
+      "date": "2018",
+      "title": "复杂地形下基于计算流体动力学的风速比计算",
+      "publicationTitle": "科学技术与工程",
+      "doi": null,
+      "creators": [
+        "凯 肖",
+        "子涵 赵",
+        "啸宇 罗",
+        "朝 李",
+        "继 钟",
+        "仪清 肖"
+      ],
+      "rendered": "肖凯; 赵子涵; 罗啸宇; 李朝; 钟继; 肖仪清, 复杂地形下基于计算流体动力学的风速比计算[J]. 科学技术与工程, 2018, 18(33): 1～6.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "DRCNU3JT",
+      "publication_number": 11,
+      "anchor": "ref-zhou2017-E",
+      "old_anchor": "ref-zhou2017-E",
+      "year": 2017,
+      "date": "2017-12",
+      "title": "Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions",
+      "publicationTitle": "Energies",
+      "doi": "10.3390/en10122097",
+      "creators": [
+        "Shengtao Zhou",
+        "Baohua Shan",
+        "Yiqing Xiao",
+        "Chao Li",
+        "Gang Hu",
+        "Xiaoping Song",
+        "Yongqing Liu",
+        "Yimin Hu"
+      ],
+      "rendered": "Zhou Shengtao; Shan Baohua; Xiao Yiqing; Li Chao; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin, Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions[J]. Energies, Multidisciplinary Digital Publishing Institute, 2017, 10(12): 2097. https://doi.org/10.3390/en10122097. 影响因子: 3.2 (Q3). 中科院分区: 3.",
+      "metrics": "影响因子: 3.2 (Q3). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "77THBZDM",
+      "publication_number": 10,
+      "anchor": "ref-li2017-BS",
+      "old_anchor": "ref-li2017-BS",
+      "year": 2017,
+      "date": "2017/8",
+      "title": "Effects of inflow conditions on mountainous/urban wind environment simulation",
+      "publicationTitle": "Building Simulation",
+      "doi": "10.1007/s12273-017-0348-1",
+      "creators": [
+        "Chao Li",
+        "Shengtao Zhou",
+        "Yiqing Xiao",
+        "Qin Huang",
+        "Lixiao Li",
+        "P. W. Chan"
+      ],
+      "rendered": "Li Chao; Zhou Shengtao; Xiao Yiqing; Huang Qin; Li Lixiao; Chan P W, Effects of inflow conditions on mountainous/urban wind environment simulation[J]. Building Simulation, 2017, 10(4): 573～588. https://doi.org/10.1007/s12273-017-0348-1. 影响因子: 5.9 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 5.9 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "NJ4KP6WJ",
+      "publication_number": 9,
+      "anchor": "ref-li2017-AS",
+      "old_anchor": "ref-li2017-AS",
+      "year": 2017,
+      "date": "2017-06",
+      "title": "Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine",
+      "publicationTitle": "Applied Sciences",
+      "doi": "10.3390/app7060509",
+      "creators": [
+        "Chao Li",
+        "Tongyi Zhuang",
+        "Shengtao Zhou",
+        "Yiqing Xiao",
+        "Gang Hu"
+      ],
+      "rendered": "Li Chao; Zhuang Tongyi; Zhou Shengtao; Xiao Yiqing; Hu Gang, Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine[J]. Applied Sciences, Multidisciplinary Digital Publishing Institute, 2017, 7(6): 509. https://doi.org/10.3390/app7060509. 影响因子: 2.5 (Q2). 中科院分区: 3.",
+      "metrics": "影响因子: 2.5 (Q2). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "88ZT9SGP",
+      "publication_number": 8,
+      "anchor": "ref-zhang2015-E",
+      "old_anchor": "ref-zhang2015-E",
+      "year": 2015,
+      "date": "2015-03",
+      "title": "Applicability of Wake Models to Predictions of Turbine-Induced Velocity Deficit and Wind Farm Power Generation",
+      "publicationTitle": "Energies",
+      "doi": "10.3390/en15197431",
+      "creators": [
+        "Dongqin Zhang",
+        "Yang Liang",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Gang Hu"
+      ],
+      "rendered": "Zhang Dongqin; Liang Yang; Li Chao; Xiao Yiqing; Hu Gang, Applicability of Wake Models to Predictions of Turbine-Induced Velocity Deficit and Wind Farm Power Generation[J]. Energies, Multidisciplinary Digital Publishing Institute, 2015, 15(19): 7431. https://doi.org/10.3390/en15197431. 影响因子: 3.2 (Q3). 中科院分区: 3.",
+      "metrics": "影响因子: 3.2 (Q3). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "D5KH2XJN",
+      "publication_number": 7,
+      "anchor": "ref-pei2013-MPE",
+      "old_anchor": "ref-pei2013-MPE",
+      "year": 2013,
+      "date": "2013-12-21",
+      "title": "Slope stability analysis based on measured strains along soil nails using FBG sensing technology",
+      "publicationTitle": "Mathematical Problems in Engineering",
+      "doi": null,
+      "creators": [
+        "Hua-Fu Pei",
+        "Chao Li",
+        "Hong-Hu Zhu",
+        "Yu-Jie Wang"
+      ],
+      "rendered": "Pei Hua-Fu; Li Chao; Zhu Hong-Hu; Wang Yu-Jie, Slope stability analysis based on measured strains along soil nails using FBG sensing technology[J]. Mathematical Problems in Engineering, Hindawi, 2013, 2013: e561360. https://doi.org/10.1155/2013/561360. 影响因子: 0. 中科院分区: 0.",
+      "metrics": "影响因子: 0. 中科院分区: 0."
+    },
+    {
+      "zotero_key": "U5FHR599",
+      "publication_number": 6,
+      "anchor": "ref-li2013-RE",
+      "old_anchor": "ref-li2013-RE",
+      "year": 2013,
+      "date": "2013/3",
+      "title": "2.5D large eddy simulation of vertical axis wind turbine in consideration of high angle of attack flow",
+      "publicationTitle": "Renewable Energy",
+      "doi": "10.1016/j.renene.2012.09.011",
+      "creators": [
+        "Chao Li",
+        "Songye Zhu",
+        "You-lin Xu",
+        "Yiqing Xiao"
+      ],
+      "rendered": "Li Chao; Zhu Songye; Xu You-lin; Xiao Yiqing, 2.5D large eddy simulation of vertical axis wind turbine in consideration of high angle of attack flow[J]. Renewable Energy, 2013, 51(8.7 (Q1)): 317～330. https://doi.org/10.1016/j.renene.2012.09.011. 影响因子: 9.1 (Q1). 中科院分区: 1.",
+      "metrics": "影响因子: 9.1 (Q1). 中科院分区: 1."
+    },
+    {
+      "zotero_key": "2ND9BWQV",
+      "publication_number": 5,
+      "anchor": "ref-li2012-JWEIA",
+      "old_anchor": "ref-li2012-JWEIA",
+      "year": 2012,
+      "date": "2012/3",
+      "title": "A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets",
+      "publicationTitle": "Journal of Wind Engineering and Industrial Aerodynamics",
+      "doi": "10.1016/j.jweia.2011.12.004",
+      "creators": [
+        "Chao Li",
+        "Q.S. Li",
+        "Y.Q. Xiao",
+        "J.P. Ou"
+      ],
+      "rendered": "Li Chao; Li Q S; Xiao Y Q; Ou J P, A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2012, 102: 48～60. https://doi.org/10.1016/j.jweia.2011.12.004. 影响因子: 4.9 (Q1). 中科院分区: 2.",
+      "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
+    },
+    {
+      "zotero_key": "LASEFQSH",
+      "publication_number": 4,
+      "anchor": "ref-li2012-GCLX",
+      "old_anchor": "ref-li2012-GCLX",
+      "year": 2012,
+      "date": "2012",
+      "title": "基于超越阈值概率的行人风环境数值评估",
+      "publicationTitle": "工程力学",
+      "doi": null,
+      "creators": [
+        "朝 李",
+        "仪清 肖",
+        "军 滕",
+        "进萍 欧",
+        "宜言 陈"
+      ],
+      "rendered": "李朝; 肖仪清; 滕军; 欧进萍; 陈宜言, 基于超越阈值概率的行人风环境数值评估[J]. 工程力学, 2012, 29(12): 15～21.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "9N6EYMBU",
+      "publication_number": 3,
+      "anchor": "ref-li2010-WAS",
+      "old_anchor": "ref-li2010-WAS",
+      "year": 2010,
+      "date": "2010/1/25",
+      "title": "Large eddy simulation of wind loads on a long-span spatial lattice roof",
+      "publicationTitle": "Wind and Structures An International Journal",
+      "doi": "10.12989/was.2010.13.1.057",
+      "creators": [
+        "Chao Li",
+        "Q.S. Li",
+        "S.H. Huang",
+        "J.Y. Fu",
+        "Y.Q. Xiao"
+      ],
+      "rendered": "Li Chao; Li Q S; Huang S H; Fu J Y; Xiao Y Q, Large eddy simulation of wind loads on a long-span spatial lattice roof[J]. Wind and Structures An International Journal, Techno-Press, 2010, 13(1): 57～82. https://doi.org/10.12989/was.2010.13.1.057. 影响因子: 1.9 (Q3). 中科院分区: 3.",
+      "metrics": "影响因子: 1.9 (Q3). 中科院分区: 3."
+    },
+    {
+      "zotero_key": "KPY4XV4Z",
+      "publication_number": 2,
+      "anchor": "ref-teng2010-GCKZYGJGZ",
+      "old_anchor": "ref-teng2010-GCKZYGJGZ",
+      "year": 2010,
+      "date": "2010",
+      "title": "开口空间结构表面风压分布规律研究",
+      "publicationTitle": "工程抗震与加固改造",
+      "doi": null,
+      "creators": [
+        "军 滕",
+        "秀英 李",
+        "朝 李"
+      ],
+      "rendered": "滕军; 李秀英; 李朝, 开口空间结构表面风压分布规律研究[J]. 工程抗震与加固改造, 2010, 32(6): 18～24.",
+      "metrics": ""
+    },
+    {
+      "zotero_key": "SC8R2QZE",
+      "publication_number": 1,
+      "anchor": "ref-xiao2009-HNLGDXXB",
+      "old_anchor": null,
+      "year": 2009,
+      "date": "2009",
+      "title": "复杂地形风能评估的CFD方法",
+      "publicationTitle": "华南理工大学学报(自然科学版)",
+      "doi": null,
+      "creators": [
+        "仪清 肖",
+        "朝 李",
+        "进萍 欧",
+        "丽莉 宋",
+        "秋胜 李"
+      ],
+      "rendered": "肖仪清; 李朝; 欧进萍; 宋丽莉; 李秋胜, 复杂地形风能评估的CFD方法[J]. 华南理工大学学报(自然科学版), 2009, 37(9): 30～35.",
+      "metrics": ""
+    }
+  ]
+}

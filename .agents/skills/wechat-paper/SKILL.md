@@ -42,7 +42,7 @@ Never include:
 - Zotero API keys or private library credentials.
 - private partner names or unpublished project details.
 - private review notes.
-- publisher-owned figures unless reuse rights or author-owned source status are confirmed.
+- publisher-owned figures unless reuse rights or author-owned source status are confirmed. For WOEAI WeChat paper articles, the normal scope is the user's own authored papers; once author status is confirmed, figures in that paper PDF may be used directly.
 - local WeChat preview HTML.
 - source images that are not approved for public release.
 
@@ -96,7 +96,7 @@ The reader-facing Markdown must not contain:
 - source evidence notes,
 - credential or preview workflow notes.
 
-If images are not ready, omit image placeholders from the reader-facing article and record the recommended figures in the review note. If images are ready and public-safe, insert normal Markdown image links in the reader-facing article.
+For author-confirmed WOEAI papers, extract suitable figures directly from the paper PDF or author manuscript, store them under `wechat/assets/public-safe/<publication_ref>/`, and insert normal Markdown image links in the reader-facing article. If images are genuinely not ready, omit image placeholders from the reader-facing article and record the reason in the review note.
 
 ## Article Structure
 
@@ -144,16 +144,27 @@ If the formula cannot be reliably represented in the current publishing workflow
 
 ## Figure Handling
 
-Prefer the paper's original high-resolution figures when reuse is permitted and the figure remains clear on mobile.
+Prefer the paper's original high-resolution figures and use them directly when the paper is authored by the user/WOEAI and author status has been confirmed.
 
 Use the clearest legally safe source:
 
+- PDF-embedded original figures extracted from the paper file,
 - author-owned original figure export,
 - author manuscript figure,
 - supplementary material,
 - publisher figure with confirmed reuse rights.
 
 Redraw only when the original figure is unavailable, legally unsafe, low-resolution, or unsuitable for WeChat display.
+
+For the user's own papers, do not leave the public article imageless while waiting for separate figure approval. Extract figures from the PDF first, then let the review note track the source, extraction method, and mobile preview status.
+
+Recommended extraction order:
+
+1. Use `pdfimages -all` to inspect and extract embedded PDF images.
+2. If the PDF stores a figure as ordered strips, stitch those extracted strips back into a complete figure before using page-render cropping.
+3. Use page-render cropping only when the figure is vector-only, not recoverable from embedded images, or needs surrounding vector labels.
+4. Store final public-safe assets in `wechat/assets/public-safe/<publication_ref>/`.
+5. Keep temporary extraction files under ignored local paths such as `wechat/.local/<publication_ref>/`.
 
 Every figure needs:
 
@@ -172,9 +183,9 @@ For a normal paper article, include several figure positions when the original p
 
 Do not leave the article imageless unless the paper truly has no suitable figure or the user requests text-only output.
 
-Do not commit unapproved source images. Keep private or unapproved image work under ignored local paths such as `wechat/.local/`.
+Do not commit unapproved source images for papers outside the user's authored-paper scope. Keep private or unapproved image work under ignored local paths such as `wechat/.local/`.
 
-If image rights or final high-resolution assets are not ready, put figure recommendations in the review note. Do not put visible `待上传原文图` placeholders into the reader-facing article.
+If image rights or final high-resolution assets are not ready for a non-authored or unclear paper, put figure recommendations in the review note. Do not put visible `待上传原文图` placeholders into the reader-facing article.
 
 ## Original Article Link
 
@@ -191,7 +202,7 @@ Before calling a draft ready:
 - No invented collaboration, partner, project, facility, award, or metric claims appear.
 - The reader-facing article has no YAML front matter, pending fields, figure plans, private notes, or human checklist.
 - Important formulas are not images and have explanations.
-- Suitable figure recommendations from the original paper are recorded in the review note; confirmed public-safe images are inserted into the article when available.
+- For author-confirmed papers, suitable PDF figures are extracted into `wechat/assets/public-safe/<publication_ref>/` and inserted into the article. For non-authored or unclear papers, suitable figure recommendations are recorded in the review note until rights are confirmed.
 - The article includes a DOI-based `阅读原文` link.
 - The separate review note records source evidence, image/copyright status, formula preview status, and remaining human-review items.
 - `wechat/templates/review-checklist.md` is satisfied or remaining items are explicitly marked in the review note.

@@ -86,3 +86,4 @@ tracking WeChat Official Account articles from WOEAI journal papers.
 | 日期 | 规则 | 适用范围 | 来源 | 备注 |
 |---|---|---|---|---|
 | 2026-06-07 | 后续 agents 可以读取、维护并修改根目录的 `CONTEXT.md`，把它作为 WOEAI 公共网站的项目词汇表与语义约束来源。 | 全项目 | 对话 | 新增 |
+| 2026-06-07 | WOEAI 公众号论文文章只面向作者本人论文；生成公众号正文时，可以直接使用该论文 PDF 中的原始图片，并应优先将 PDF 图片抽取为公众号正文图片，而不是只记录待插图计划。 | WOEAI 公众号论文文章 | 对话 | 新增 |

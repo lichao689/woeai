@@ -9,10 +9,10 @@
 
 ## Copyright
 
-- [ ] Paper figures are reused only when reuse rights or author-owned source status are confirmed.
-- [ ] Original high-resolution paper figures are preferred when they are legally safe and clear on mobile.
+- [ ] The paper is authored by the user/WOEAI, or reuse rights/source status are otherwise confirmed.
+- [ ] Original high-resolution paper figures are extracted from the PDF or author manuscript when they are legally safe and clear on mobile.
 - [ ] Redrawn figures are used only when original figures are unavailable, legally unsafe, low-resolution, or unsuitable for WeChat display.
-- [ ] Image source is recorded in the article's `图示与素材来源` section or asset metadata.
+- [ ] Image source and extraction method are recorded in the separate `.review.md` file.
 
 ## Formulas And Figures
 

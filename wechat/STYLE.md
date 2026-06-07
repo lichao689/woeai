@@ -14,8 +14,10 @@ Do not turn every article into a multi-paper theme essay. Related papers may app
 4. `关键发现`
 5. `工程意义`
 6. `适用边界`
-7. `延伸阅读`
-8. `联系入口`
+7. `图文说明` when a separate figure summary is useful
+8. `延伸阅读`
+9. `阅读原文`
+10. `联系入口`
 
 ## Tone
 
@@ -35,10 +37,12 @@ Do not turn every article into a multi-paper theme essay. Related papers may app
 
 ## Figure Handling
 
-- Prefer the paper's original high-resolution figures when reuse is permitted and the figure is clear enough for mobile reading.
-- Use the clearest available source: author manuscript figure, publisher figure with confirmed reuse rights, supplementary material, or author-owned original export.
+- WOEAI WeChat paper articles are generated for the user's own authored papers unless the user explicitly says otherwise.
+- For author-confirmed papers, extract suitable original figures directly from the paper PDF or author manuscript and insert them into the reader-facing Markdown.
+- Prefer `pdfimages -all` extraction from the PDF. If a figure is stored as ordered image strips, stitch those strips back into a complete figure before using page-render cropping.
+- Store final public-safe article figures under `wechat/assets/public-safe/<publication_ref>/`.
 - Redraw a figure only when the original figure is unavailable, legally unsafe to reuse, too low-resolution, or visually unsuitable for a WeChat article.
-- Every figure must have a source note in the article draft. If rights are not confirmed, keep the figure out of the public draft.
+- Record figure source, extraction method, and copyright status in the separate `.review.md` file, not as internal notes inside the reader-facing article.
 - Check every figure in the WeChat backend mobile preview, not only in a Markdown editor preview.
 
 ## Research Family Labels

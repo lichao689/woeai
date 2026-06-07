@@ -69,11 +69,11 @@ The canonical complete Academic Outputs view in `docs/source/Publications.rst`. 
 _Avoid_: treating the direction view as the full bibliography, maintaining duplicate long citations
 
 **Thematic Publication View**:
-The alternate Academic Outputs browsing view in `docs/source/PublicationsByResearch.rst`. It groups the same Public Journal Papers by Research Family first, then by publication year descending, and links each short entry back to the stable anchor in the Chronological Publication View.
-_Avoid_: JavaScript-only tabs, duplicate DOI/metric text, first-level subdirection sections
+The alternate Academic Outputs browsing view in `docs/source/PublicationsByResearch.rst`. It groups the same Public Journal Papers by Research Family first and subdirection second. Inside each subdirection, paper entries are listed by publication year in descending order with the year shown inline, and each short entry links back to the stable anchor in the Chronological Publication View.
+_Avoid_: JavaScript-only tabs, duplicate DOI/metric text, publication-year section headings inside subdirections
 
 **Publication Research Mapping**:
-The machine-readable mapping from Zotero item keys to Research Family and optional subdirection, stored at `docs/data/publication-research-map.json`. Every Public Journal Paper must have exactly one canonical Research Family before the thematic view can be generated.
+The machine-readable mapping from Zotero item keys to Research Family and subdirection, stored at `docs/data/publication-research-map.json`. Every Public Journal Paper must have exactly one canonical Research Family and one canonical subdirection before the thematic view can be generated.
 _Avoid_: Publication Number as mapping key, selected WeChat paper list as full mapping source, unmapped public papers
 
 **Student First Author**:
@@ -164,7 +164,7 @@ Domain Expert: No. Keep the Chronological Publication View as the full bibliogra
 
 Dev: Can the thematic publication page use subdirections as first-level headings?
 
-Domain Expert: No. The first level must be Research Family: `建筑结构抗风` and `海上漂浮风电`. Subdirections can appear as tags inside those sections.
+Domain Expert: No. The first level must be Research Family: `建筑结构抗风` and `海上漂浮风电`. Subdirections are second-level headings inside those sections, and papers under each subdirection are listed directly in descending publication-year order.
 
 Dev: Should student authorship marking include only doctoral students?
 

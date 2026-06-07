@@ -159,3 +159,13 @@ dmypy.json
 cython_debug/
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
+
+### WOEAI WeChat local-only material ###
+wechat/.local/
+wechat/private/
+wechat/review-notes/
+wechat/wechat-preview-html/
+wechat/source-images/
+wechat/secrets/
+*.wechat-token
+*.appsecret

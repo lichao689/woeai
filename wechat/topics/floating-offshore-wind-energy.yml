@@ -1,0 +1,10 @@
+id: floating-offshore-wind-energy
+label_cn: 海上漂浮风电
+label_en: Floating Offshore Wind Energy
+subdirections:
+  - id: integrated-floating-wind-turbine-analysis-and-optimization
+    label_cn: 浮式风机系统一体化分析与优化
+  - id: floating-concrete-platform-structural-design
+    label_cn: 浮式混凝土平台结构设计
+  - id: numerical-wind-wave-current-basin
+    label_cn: 数值风浪流水池

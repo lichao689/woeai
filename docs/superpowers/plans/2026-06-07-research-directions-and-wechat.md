@@ -315,15 +315,27 @@ PY
 
 Expected: `All planned publication refs exist`.
 
-- [ ] **Step 4: Run a focused Sphinx build check**
+- [ ] **Step 4: Confirm Sphinx build is intentionally deferred**
 
 Run:
 
 ```bash
-./scripts/check-docs.sh
+python3 - <<'PY'
+from pathlib import Path
+for path in [
+    Path("docs/source/BuildingStructuralWindResistance.rst"),
+    Path("docs/source/FloatingOffshoreWindEnergy.rst"),
+]:
+    text = path.read_text()
+    if ":doc:`Projects`" not in text or ":ref:`" not in text:
+        raise SystemExit(f"{path} does not contain expected site links")
+print("New direction pages are ready for toctree wiring in Task 3")
+PY
 ```
 
-Expected: `WOEAI docs build succeeded: /tmp/woeai-sphinx-html`.
+Expected: `New direction pages are ready for toctree wiring in Task 3`.
+
+Do not run the strict Sphinx build in Task 2. The new pages are not connected to the `Research.rst` toctree until Task 3, so strict Sphinx consistency checking is expected to fail before Task 3 wires the pages into navigation.
 
 - [ ] **Step 5: Commit the new direction pages**
 

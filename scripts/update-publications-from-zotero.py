@@ -49,6 +49,10 @@ CSL_SHA256 = "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
 
 METRIC_LABELS = ("影响因子", "中科院分区", "引用次数")
 RESEARCH_FAMILY_ORDER = ("建筑结构抗风", "海上漂浮风电")
+RESEARCH_SUBDIRECTION_ORDER = {
+    "建筑结构抗风": ("数值风洞与湍流入流", "高层建筑抗风与优化"),
+    "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
+}
 STUDENT_SECTION_MARKERS = ("PhD Students", "Master Students", "博士生", "硕士生")
 STUDENT_NAME_ALIASES = {
     "周盛涛": ["Zhou Shengtao", "Shengtao Zhou"],
@@ -598,6 +602,10 @@ def validate_research_map(items: list[dict[str, Any]], research_map: dict[str, d
         family = research_map[key].get("research_family", "")
         if family not in RESEARCH_FAMILY_ORDER:
             errors.append(f"{key} has invalid research_family: {family or '<missing>'}")
+            continue
+        subdirection = research_map[key].get("subdirection", "")
+        if subdirection not in RESEARCH_SUBDIRECTION_ORDER[family]:
+            errors.append(f"{key} has invalid subdirection for {family}: {subdirection or '<missing>'}")
 
     if errors:
         raise ZoteroError("\n".join(errors))
@@ -709,9 +717,9 @@ def build_publications_rst(items: list[dict[str, Any]]) -> str:
 def research_link_entry(item: dict[str, Any], research_map: dict[str, dict[str, str]]) -> str:
     title = " ".join(str(item["data"].get("title") or "Untitled").split())
     title = rst_escape(title)
-    subdirection = research_map[item["key"]].get("subdirection", "").strip()
-    suffix = f" （{subdirection}）" if subdirection else ""
-    return f"- :ref:`[{item['publication_number']}] {title} <{item['anchor']}>`{suffix}"
+    year = extract_year(item["data"].get("date"))
+    year_text = str(year) if year else "更早"
+    return f"- ({year_text}) :ref:`[{item['publication_number']}] {title} <{item['anchor']}>`"
 
 
 def build_publications_by_research_rst(
@@ -724,16 +732,13 @@ def build_publications_by_research_rst(
     ]
     for family in RESEARCH_FAMILY_ORDER:
         sections.extend([family, "-" * 12, ""])
-        current_year: int | None = None
-        for item in items:
-            if research_map[item["key"]]["research_family"] != family:
-                continue
-            year = extract_year(item["data"].get("date"))
-            if year != current_year:
-                current_year = year
-                title = str(year) if year else "更早 Early"
-                sections.extend([title, "~" * 12, ""])
-            sections.extend([research_link_entry(item, research_map), ""])
+        for subdirection in RESEARCH_SUBDIRECTION_ORDER[family]:
+            sections.extend([subdirection, "~" * 40, ""])
+            for item in items:
+                row = research_map[item["key"]]
+                if row["research_family"] != family or row.get("subdirection") != subdirection:
+                    continue
+                sections.extend([research_link_entry(item, research_map), ""])
     return "\n".join(sections).rstrip() + "\n"
 
 

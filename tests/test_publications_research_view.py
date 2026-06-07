@@ -24,7 +24,38 @@ def publication_anchors(text: str) -> set[str]:
 
 
 def research_ref_targets(text: str) -> list[str]:
-    return re.findall(r":ref:`[^`<]+ <(ref-[^>]+)>`", text)
+    return re.findall(r":ref:`\[\d+\] <(ref-[^>]+)>`", text)
+
+
+def normalize_publication_entry(line: str) -> str:
+    return re.sub(r"^:ref:`\[(\d+)\] <ref-[^>]+>`", r"[\1]", line)
+
+
+def publication_entries(text: str) -> list[str]:
+    entries = re.findall(r"^(?:\[\d+\]|:ref:`\[\d+\] <ref-[^>]+>`).+$", text, flags=re.M)
+    return [normalize_publication_entry(entry) for entry in entries]
+
+
+def publication_numbers(text: str) -> list[int]:
+    numbers: list[int] = []
+    for line in re.findall(r"^(?:\[\d+\]|:ref:`\[\d+\] <ref-[^>]+>`).+$", text, flags=re.M):
+        match = re.match(r"^(?:\[(\d+)\]|:ref:`\[(\d+)\] <ref-[^>]+>`)", line)
+        if match:
+            numbers.append(int(match.group(1) or match.group(2)))
+    return numbers
+
+
+def publication_number_years(text: str) -> dict[int, int]:
+    years: dict[int, int] = {}
+    current_year = 0
+    for line in text.splitlines():
+        if re.fullmatch(r"\d{4}", line):
+            current_year = int(line)
+            continue
+        match = re.match(r"^\[(\d+)\] ", line)
+        if match:
+            years[int(match.group(1))] = current_year
+    return years
 
 
 def section_between(text: str, title: str, next_titles: tuple[str, ...]) -> str:
@@ -48,13 +79,15 @@ class PublicationsResearchViewTests(unittest.TestCase):
         publications_text = PUBLICATIONS.read_text(encoding="utf-8")
         research_text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
 
-        source_anchors = publication_anchors(publications_text)
-        linked_anchors = research_ref_targets(research_text)
-        self.assertEqual(set(linked_anchors), source_anchors)
-        self.assertEqual(len(linked_anchors), len(source_anchors))
+        chronological_entries = publication_entries(publications_text)
+        thematic_entries = publication_entries(research_text)
+        self.assertEqual(set(thematic_entries), set(chronological_entries))
+        self.assertEqual(len(thematic_entries), len(chronological_entries))
+        self.assertEqual(set(research_ref_targets(research_text)), publication_anchors(publications_text))
 
         family_positions = [research_text.index(f"\n{family}\n") for family in RESEARCH_FAMILIES]
         self.assertEqual(family_positions, sorted(family_positions))
+        number_years = publication_number_years(publications_text)
 
         for family, subdirections in RESEARCH_STRUCTURE.items():
             other_families = tuple(candidate for candidate in RESEARCH_FAMILIES if candidate != family)
@@ -66,16 +99,18 @@ class PublicationsResearchViewTests(unittest.TestCase):
             for index, subdirection in enumerate(subdirections):
                 next_subdirections = subdirections[index + 1 :]
                 subdirection_section = section_between(family_section, subdirection, next_subdirections)
-                years = [int(year) for year in re.findall(r"^- \((\d{4})\) ", subdirection_section, flags=re.M)]
+                numbers = publication_numbers(subdirection_section)
+                years = [number_years[number] for number in numbers]
                 self.assertEqual(years, sorted(years, reverse=True), subdirection)
 
-    def test_research_view_is_a_short_index_not_a_duplicate_bibliography(self) -> None:
+    def test_research_view_uses_the_same_publication_expression_as_chronological_view(self) -> None:
+        publications_text = PUBLICATIONS.read_text(encoding="utf-8")
         text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
 
-        self.assertNotIn("https://doi.org/", text)
-        self.assertNotIn("影响因子:", text)
-        self.assertNotIn("中科院分区:", text)
-        self.assertNotIn("引用次数:", text)
+        self.assertEqual(set(publication_entries(text)), set(publication_entries(publications_text)))
+        self.assertIn("https://doi.org/", text)
+        self.assertIn("影响因子:", text)
+        self.assertIn("中科院分区:", text)
 
     def test_research_mapping_uses_canonical_public_families(self) -> None:
         mapping = json.loads(RESEARCH_MAP.read_text(encoding="utf-8"))

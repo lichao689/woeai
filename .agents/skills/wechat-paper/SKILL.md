@@ -1,9 +1,9 @@
 ---
-name: woeai-wechat-paper
-description: Use when generating, reviewing, or updating WOEAI WeChat Official Account articles from published journal papers. Applies to one-paper-one-article drafts, historical paper reposts, formula and figure handling, backlog updates, and public-safe publication workflows in this repository.
+name: wechat-paper
+description: Use when generating, reviewing, or updating WOEAI WeChat Official Account articles from published journal papers. Applies to one-paper-one-article drafts, historical paper reposts, formula and figure handling, two-file article/review outputs, backlog updates, and public-safe publication workflows in this repository.
 ---
 
-# WOEAI WeChat Paper Article Skill
+# WeChat Paper Article Skill
 
 Use this skill when a task asks to create, revise, review, or track a WeChat Official Account article based on a published WOEAI journal paper.
 

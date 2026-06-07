@@ -64,6 +64,18 @@ _Avoid_: publication id, permanent reference key
 A Public Journal Paper selected for highlights or direction pages because it strongly supports recruitment, technical collaboration, or academic credibility for a research theme. It is a curated subset, not a complete list of outputs.
 _Avoid_: every recent paper, exhaustive topic list
 
+**Chronological Publication View**:
+The canonical complete Academic Outputs view in `docs/source/Publications.rst`. It lists Public Journal Papers by publication year in descending order and owns the full citation text, DOI, Publication Metrics, Student First Author Marker, anchors, and current Publication Numbers.
+_Avoid_: treating the direction view as the full bibliography, maintaining duplicate long citations
+
+**Thematic Publication View**:
+The alternate Academic Outputs browsing view in `docs/source/PublicationsByResearch.rst`. It groups the same Public Journal Papers by Research Family first, then by publication year descending, and links each short entry back to the stable anchor in the Chronological Publication View.
+_Avoid_: JavaScript-only tabs, duplicate DOI/metric text, first-level subdirection sections
+
+**Publication Research Mapping**:
+The machine-readable mapping from Zotero item keys to Research Family and optional subdirection, stored at `docs/data/publication-research-map.json`. Every Public Journal Paper must have exactly one canonical Research Family before the thematic view can be generated.
+_Avoid_: Publication Number as mapping key, selected WeChat paper list as full mapping source, unmapped public papers
+
 **Student First Author**:
 The first author of a Public Journal Paper who is listed publicly as the group leader's current or graduated student. This includes both master's and doctoral students when their public names are available.
 _Avoid_: coauthor student, undocumented student status, degree-level-only student marker
@@ -145,6 +157,14 @@ Domain Expert: No. Publication Numbers can change when the page is regenerated; 
 Dev: Should every new paper appear in the highlights?
 
 Domain Expert: No. Highlights should use Representative Publications; the full list belongs in the journal-paper section.
+
+Dev: Should the Academic Outputs page maintain two complete citation lists?
+
+Domain Expert: No. Keep the Chronological Publication View as the full bibliography and use the Thematic Publication View as a short index that links back to stable publication anchors.
+
+Dev: Can the thematic publication page use subdirections as first-level headings?
+
+Domain Expert: No. The first level must be Research Family: `建筑结构抗风` and `海上漂浮风电`. Subdirections can appear as tags inside those sections.
 
 Dev: Should student authorship marking include only doctoral students?
 

@@ -27,6 +27,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS_PATH = ROOT / "docs/source/Publications.rst"
+PUBLICATIONS_BY_RESEARCH_PATH = ROOT / "docs/source/PublicationsByResearch.rst"
+RESEARCH_MAP_PATH = ROOT / "docs/data/publication-research-map.json"
 SNAPSHOT_PATH = ROOT / "docs/superpowers/source-packets/2026-06-publications-zotero-snapshot.json"
 PEOPLE_PATH = ROOT / "docs/source/People.rst"
 
@@ -46,6 +48,7 @@ CSL_INSTALLED_PATH = Path(
 CSL_SHA256 = "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
 
 METRIC_LABELS = ("影响因子", "中科院分区", "引用次数")
+RESEARCH_FAMILY_ORDER = ("建筑结构抗风", "海上漂浮风电")
 STUDENT_SECTION_MARKERS = ("PhD Students", "Master Students", "博士生", "硕士生")
 STUDENT_NAME_ALIASES = {
     "周盛涛": ["Zhou Shengtao", "Shengtao Zhou"],
@@ -555,6 +558,51 @@ def fetch_publication_items() -> list[dict[str, Any]]:
     return enriched
 
 
+def load_research_map() -> dict[str, dict[str, str]]:
+    if not RESEARCH_MAP_PATH.exists():
+        raise ZoteroError(f"Publication research map is missing: {RESEARCH_MAP_PATH}")
+    try:
+        payload = json.loads(RESEARCH_MAP_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ZoteroError(f"Publication research map is invalid JSON: {exc}") from exc
+    items = payload.get("items")
+    if not isinstance(items, dict):
+        raise ZoteroError("Publication research map must contain an object at items.")
+    normalized: dict[str, dict[str, str]] = {}
+    for key, value in items.items():
+        if not isinstance(value, dict):
+            raise ZoteroError(f"Publication research map entry for {key} must be an object.")
+        normalized[str(key)] = {str(field): str(raw) for field, raw in value.items() if raw is not None}
+    return normalized
+
+
+def validate_research_map(items: list[dict[str, Any]], research_map: dict[str, dict[str, str]]) -> None:
+    item_keys = {item["key"] for item in items}
+    map_keys = set(research_map)
+    errors: list[str] = []
+
+    missing = [item for item in items if item["key"] not in research_map]
+    if missing:
+        errors.append("Missing publication research mapping:")
+        errors.extend(
+            f"- {item['key']} | {extract_year(item['data'].get('date'))} | {item['data'].get('title')}"
+            for item in missing
+        )
+
+    unknown = sorted(map_keys - item_keys)
+    if unknown:
+        errors.append("Publication research map contains keys not in current Public Journal Papers:")
+        errors.extend(f"- {key}" for key in unknown)
+
+    for key in sorted(item_keys & map_keys):
+        family = research_map[key].get("research_family", "")
+        if family not in RESEARCH_FAMILY_ORDER:
+            errors.append(f"{key} has invalid research_family: {family or '<missing>'}")
+
+    if errors:
+        raise ZoteroError("\n".join(errors))
+
+
 def build_lookup(items: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
     return {item["key"]: item for item in items}
 
@@ -624,6 +672,12 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "- 本页期刊论文按当前公开成果记录生成；影响因子、Q 分区、中科院分区和引用次数等指标仅在来源记录可用时显示。",
             "- Publication Numbers 为当前页面排序下的展示编号；方向页中的论文引用使用稳定锚点链接到本页对应条目。",
             "",
+            "浏览方式 View Options",
+            "---------------------",
+            "",
+            "- 当前页：按发表年份倒序浏览完整期刊论文清单。",
+            "- :doc:`PublicationsByResearch`：按研究方向浏览，方向内按发表年份倒序聚合。",
+            "",
             "精选证据 Selected Highlights",
             "----------------------------",
             "",
@@ -658,6 +712,44 @@ def build_publications_rst(items: list[dict[str, Any]]) -> str:
     return "\n".join(sections).rstrip() + "\n"
 
 
+def research_link_entry(item: dict[str, Any], research_map: dict[str, dict[str, str]]) -> str:
+    title = " ".join(str(item["data"].get("title") or "Untitled").split())
+    title = rst_escape(title)
+    subdirection = research_map[item["key"]].get("subdirection", "").strip()
+    suffix = f" （{subdirection}）" if subdirection else ""
+    return f"- :ref:`[{item['publication_number']}] {title} <{item['anchor']}>`{suffix}"
+
+
+def build_publications_by_research_rst(
+    items: list[dict[str, Any]], research_map: dict[str, dict[str, str]]
+) -> str:
+    sections = [
+        "按研究方向浏览学术成果 Publications by Research Direction",
+        "=" * 80,
+        "",
+        "阅读说明 Notes",
+        "---------------",
+        "",
+        "- 本页用于按研究方向浏览公开期刊论文；完整引文、DOI 和指标请查看对应论文在 :doc:`Publications` 中的条目。",
+        "- 研究方向采用本站公开 taxonomy；方向内按发表年份倒序排列。",
+        "- 论文编号仅用于和完整列表快速对应；稳定引用依赖论文锚点链接。",
+        "",
+    ]
+    for family in RESEARCH_FAMILY_ORDER:
+        sections.extend([family, "-" * 12, ""])
+        current_year: int | None = None
+        for item in items:
+            if research_map[item["key"]]["research_family"] != family:
+                continue
+            year = extract_year(item["data"].get("date"))
+            if year != current_year:
+                current_year = year
+                title = str(year) if year else "更早 Early"
+                sections.extend([title, "~" * 12, ""])
+            sections.extend([research_link_entry(item, research_map), ""])
+    return "\n".join(sections).rstrip() + "\n"
+
+
 def merge_old_anchors(items: list[dict[str, Any]]) -> dict[str, str]:
     old_rows = old_publication_records()
     by_doi = {row["doi"]: row["anchor"] for row in old_rows if row["doi"]}
@@ -683,7 +775,9 @@ def metrics_text(rendered: str) -> str:
     return match.group(1) if match else ""
 
 
-def snapshot(items: list[dict[str, Any]], old_anchor_map: dict[str, str]) -> dict[str, Any]:
+def snapshot(
+    items: list[dict[str, Any]], old_anchor_map: dict[str, str], research_map: dict[str, dict[str, str]]
+) -> dict[str, Any]:
     return {
         "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
         "source_boundary": {
@@ -712,6 +806,8 @@ def snapshot(items: list[dict[str, Any]], old_anchor_map: dict[str, str]) -> dic
                 "doi": item["data"].get("DOI"),
                 "creators": [creator_display_name(creator) for creator in item["data"].get("creators") or []],
                 "student_first_author": student_first_author_display(item),
+                "research_family": research_map[item["key"]].get("research_family"),
+                "subdirection": research_map[item["key"]].get("subdirection"),
                 "rendered": strip_bib_html(item.get("bib") or ""),
                 "metrics": metrics_text(strip_bib_html(item.get("bib") or "")),
             }
@@ -724,23 +820,32 @@ def write_outputs(args: argparse.Namespace) -> None:
     verify_style()
     items = fetch_publication_items()
     old_anchor_map = merge_old_anchors(items)
+    research_map = load_research_map()
+    validate_research_map(items, research_map)
     page = build_publications_rst(items)
-    snap = snapshot(items, old_anchor_map)
+    by_research_page = build_publications_by_research_rst(items, research_map)
+    snap = snapshot(items, old_anchor_map, research_map)
 
     if args.dry_run:
         print(f"Would write {PUBLICATIONS_PATH}")
+        print(f"Would write {PUBLICATIONS_BY_RESEARCH_PATH}")
         print(f"Would write {SNAPSHOT_PATH}")
         print(f"Items: {len(items)}")
         print(f"Anchor replacements: {len(old_anchor_map)}")
+        for family in RESEARCH_FAMILY_ORDER:
+            count = sum(1 for item in items if research_map[item["key"]]["research_family"] == family)
+            print(f"{family}: {count}")
         return
 
     PUBLICATIONS_PATH.write_text(page, encoding="utf-8")
+    PUBLICATIONS_BY_RESEARCH_PATH.write_text(by_research_page, encoding="utf-8")
     SNAPSHOT_PATH.parent.mkdir(parents=True, exist_ok=True)
     SNAPSHOT_PATH.write_text(
         json.dumps(snap, ensure_ascii=False, indent=2, sort_keys=False) + "\n",
         encoding="utf-8",
     )
     print(f"Wrote {PUBLICATIONS_PATH}")
+    print(f"Wrote {PUBLICATIONS_BY_RESEARCH_PATH}")
     print(f"Wrote {SNAPSHOT_PATH}")
     print(f"Items: {len(items)}")
     print(f"Anchor replacements: {len(old_anchor_map)}")

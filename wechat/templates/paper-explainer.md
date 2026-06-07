@@ -1,23 +1,6 @@
----
-title:
-status: draft-public-safe
-research_family:
-subdirection:
-publication_ref:
-zotero_key:
-doi:
-original_year:
-publication_mode: first_publish
-wechat_status: selected
-previous_published_url:
-latest_published_url:
-revision_note:
-source_checked: false
-copyright_checked: false
-public_safety_checked: false
----
-
 # 论文解读 | <填写中文标题>
+
+<开篇导语。使用作者视角，说明这项研究为什么值得读者关注。>
 
 ## 论文信息
 
@@ -30,34 +13,36 @@ public_safety_checked: false
 
 ## 研究问题
 
-这篇论文解决的工程或科学问题是:
+<说明这篇论文解决的工程或科学问题。>
 
 ## 方法贡献
 
-论文提出或改进的方法是:
+<说明论文提出或改进的方法。>
 
 ## 关键发现
 
-最值得读者注意的结果是:
+<说明最值得读者注意的结果。>
+
+## 公式说明
+
+<如有必要，使用公众号流程支持的直接公式格式。不要使用公式图片。>
 
 ## 工程意义
 
-对工程技术负责人有启发的是:
+<说明这项工作对工程技术负责人、潜在合作方或学生读者有什么启发。>
 
 ## 适用边界
 
-这篇论文没有证明或不应被夸大的地方是:
-
-## 图示与素材来源
-
-- 使用图片: no images used
-- 图示来源或生成方式:
-- 版权说明:
+<说明这篇论文没有证明或不应被夸大的地方。>
 
 ## 延伸阅读
 
 - WOEAI 相关方向页:
 - WOEAI 相关论文:
+
+## 阅读原文
+
+- DOI:
 
 ## 联系入口
 

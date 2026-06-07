@@ -99,6 +99,52 @@ class PublicSafeContentTests(unittest.TestCase):
             self.assertIn("wechat/token.json:1: possible secret pattern (refresh_token)", stderr)
             self.assertIn("wechat/.env:1: possible secret pattern (zotero_api_key)", stderr)
 
+    def test_reader_facing_draft_rejects_editor_only_content(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "repo"
+            wechat_root = root / "wechat"
+            draft_dir = wechat_root / "articles" / "draft-public-safe"
+            draft_dir.mkdir(parents=True)
+            (draft_dir / "ref-example.md").write_text(
+                "---\n"
+                "status: draft-public-safe\n"
+                "---\n\n"
+                "# Title\n\n"
+                "【待上传原文图 Fig. 1】\n\n"
+                "### 计划配图\n\n"
+                "## 发布前人工复核项\n",
+                encoding="utf-8",
+            )
+
+            result, _stdout, stderr = self.run_checker(root, wechat_root)
+
+            self.assertEqual(result, 1)
+            self.assertIn("reader draft contains editor-only content (yaml_front_matter)", stderr)
+            self.assertIn("reader draft contains editor-only content (pending_placeholder)", stderr)
+            self.assertIn("reader draft contains editor-only content (figure_plan)", stderr)
+            self.assertIn("reader draft contains editor-only content (pre_publish_checklist)", stderr)
+
+    def test_review_template_may_contain_editor_workflow_fields(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "repo"
+            wechat_root = root / "wechat"
+            review_dir = wechat_root / "articles" / "review"
+            review_dir.mkdir(parents=True)
+            (review_dir / "ref-example.review.md").write_text(
+                "---\n"
+                "formula_preview_checked: false\n"
+                "---\n\n"
+                "## 发布前任务\n\n"
+                "- 图片状态: pending original high-resolution figure\n",
+                encoding="utf-8",
+            )
+
+            result, stdout, stderr = self.run_checker(root, wechat_root)
+
+            self.assertEqual(result, 0)
+            self.assertIn("Public-safety check passed", stdout)
+            self.assertEqual(stderr, "")
+
 
 if __name__ == "__main__":
     unittest.main()

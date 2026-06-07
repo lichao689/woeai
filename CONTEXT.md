@@ -52,6 +52,22 @@ _Avoid_: coauthor student, undocumented student status, degree-level-only studen
 A visual marker applied only to the Student First Author's displayed name in a Public Journal Paper entry. It marks the person, not the full author list, separator punctuation, or paper title.
 _Avoid_: student paper marker, student coauthor marker, first-author separator marker
 
+**Research Family**:
+The canonical public first-level research taxonomy for WOEAI. Use exactly two public research families: `建筑结构抗风` and `海上漂浮风电`. Method names such as `数值风洞` are subdirections, not first-level public families.
+_Avoid_: treating `数值风洞`, `结构抗风`, or `海上风电` as peer first-level directions after this taxonomy change
+
+**建筑结构抗风**:
+The first canonical public research family. It covers building and structural wind-resistance research, including `数值风洞与湍流入流` and `高层建筑抗风与优化` as subdirections. Urban wind environment and complex terrain wind fields belong under `数值风洞与湍流入流`. Wind-induced vibration control, flow control, and historical tower-line wind-resistance proof belong under `高层建筑抗风与优化` when they are needed as supporting evidence.
+_Avoid_: expanding this into a broad all-structures direction in current public navigation
+
+**海上漂浮风电**:
+The second canonical public research family. It covers floating offshore wind research, including `浮式风机系统一体化分析与优化`, `浮式混凝土平台结构设计`, and `数值风浪流水池` as subdirections.
+_Avoid_: generic `海上风电` when the public page is specifically about floating offshore wind
+
+**One-Paper WeChat Article**:
+A WeChat Official Account article whose core unit is one selected paper. It should explain the paper's problem, method, findings, boundaries, engineering significance, DOI, WOEAI publication anchor, and related direction pages.
+_Avoid_: forcing every article into a multi-paper theme essay
+
 ## Example Dialogue
 
 Dev: Should every Zotero journal article appear on the website?

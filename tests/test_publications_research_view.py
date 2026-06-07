@@ -12,6 +12,10 @@ PUBLICATIONS_BY_RESEARCH = ROOT / "docs/source/PublicationsByResearch.rst"
 RESEARCH_MAP = ROOT / "docs/data/publication-research-map.json"
 
 RESEARCH_FAMILIES = ("建筑结构抗风", "海上漂浮风电")
+RESEARCH_STRUCTURE = {
+    "建筑结构抗风": ("数值风洞与湍流入流", "高层建筑抗风与优化"),
+    "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
+}
 
 
 def publication_anchors(text: str) -> set[str]:
@@ -22,6 +26,13 @@ def research_ref_targets(text: str) -> list[str]:
     return re.findall(r":ref:`[^`<]+ <(ref-[^>]+)>`", text)
 
 
+def section_between(text: str, title: str, next_titles: tuple[str, ...]) -> str:
+    start = text.index(f"\n{title}\n")
+    following = [text.index(f"\n{next_title}\n", start + 1) for next_title in next_titles if f"\n{next_title}\n" in text[start + 1 :]]
+    end = min(following) if following else len(text)
+    return text[start:end]
+
+
 class PublicationsResearchViewTests(unittest.TestCase):
     def test_publications_page_links_to_research_view(self) -> None:
         text = PUBLICATIONS.read_text(encoding="utf-8")
@@ -29,7 +40,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertIn("浏览方式 View Options", text)
         self.assertIn(":doc:`PublicationsByResearch`", text)
 
-    def test_research_view_groups_every_publication_by_family_then_descending_year(self) -> None:
+    def test_research_view_groups_every_publication_by_family_then_subdirection(self) -> None:
         publications_text = PUBLICATIONS.read_text(encoding="utf-8")
         research_text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
 
@@ -41,12 +52,18 @@ class PublicationsResearchViewTests(unittest.TestCase):
         family_positions = [research_text.index(f"\n{family}\n") for family in RESEARCH_FAMILIES]
         self.assertEqual(family_positions, sorted(family_positions))
 
-        for family, start in zip(RESEARCH_FAMILIES, family_positions, strict=True):
-            next_positions = [pos for pos in family_positions if pos > start]
-            end = min(next_positions) if next_positions else len(research_text)
-            section = research_text[start:end]
-            years = [int(year) for year in re.findall(r"^(\d{4})$", section, flags=re.M)]
-            self.assertEqual(years, sorted(years, reverse=True), family)
+        for family, subdirections in RESEARCH_STRUCTURE.items():
+            other_families = tuple(candidate for candidate in RESEARCH_FAMILIES if candidate != family)
+            family_section = section_between(research_text, family, other_families)
+            subdirection_positions = [family_section.index(f"\n{subdirection}\n") for subdirection in subdirections]
+            self.assertEqual(subdirection_positions, sorted(subdirection_positions), family)
+            self.assertNotRegex(family_section, r"^\d{4}$", family)
+
+            for index, subdirection in enumerate(subdirections):
+                next_subdirections = subdirections[index + 1 :]
+                subdirection_section = section_between(family_section, subdirection, next_subdirections)
+                years = [int(year) for year in re.findall(r"^- \((\d{4})\) ", subdirection_section, flags=re.M)]
+                self.assertEqual(years, sorted(years, reverse=True), subdirection)
 
     def test_research_view_is_a_short_index_not_a_duplicate_bibliography(self) -> None:
         text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")

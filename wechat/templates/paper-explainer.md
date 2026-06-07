@@ -8,7 +8,7 @@ zotero_key:
 doi:
 original_year:
 publication_mode: first_publish
-wechat_status: not_started
+wechat_status: selected
 previous_published_url:
 latest_published_url:
 revision_note:

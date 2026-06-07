@@ -16,6 +16,7 @@ Outcome priority: 招生 Recruitment > 技术合作 Technical collaboration > �
 - Student names and current/graduated status may remain when used only as academic member context. Do not add student institution, college, address, personal contact, private biography, photo, student ID, demographic detail, or non-academic personal information.
 - Public contact channels are the website URL, personal email `lichaosz@qq.com`, official university profile, and homepage WeChat QR code. Do not add further personal contact details without explicit confirmation.
 - The site should keep a concise Privacy Notice. It should cover static-site boundaries, platform logs, email and WeChat contact information, the absence of tracking scripts, and the request channel for correction or deletion.
+- The homepage Site Statement should say the site is used for academic output display and technical-collaboration exchange. Do not include recruitment purpose, institution names, or official-position claims in that statement.
 
 ## Recruitment
 
@@ -59,6 +60,7 @@ From the homepage contact section in `docs/source/index.rst`:
 - Official university profile: https://homepage.hit.edu.cn/lichao
 - Privacy notice page: `docs/source/Privacy.rst`
 - WeChat QR image: `docs/_static/lcWeChatMatrixCode01.png`
+- Site statement: used for academic output display and technical-collaboration exchange; does not represent any organization's official position.
 
 ### Needs Owner Confirmation
 

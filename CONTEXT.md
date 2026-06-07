@@ -28,6 +28,10 @@ _Avoid_: workplace address as contact, alternate private contact, unconfirmed ph
 The public page that explains the website's personal-information handling boundary. It should say that the website itself does not provide forms, accounts, comments, analytics, or tracking scripts; platform logs are handled by GitHub or Read the Docs under their own policies; information sent through Public Contact Channels is used only for replies, recruitment communication, technical-collaboration communication, and academic exchange.
 _Avoid_: legal guarantee, platform-log control claim, consent-heavy wording for functions the site does not run
 
+**Site Statement**:
+The concise homepage statement for site purpose, non-official status, and content-use boundary. It should say the site is for academic output display and technical-collaboration exchange, and that it does not represent any organization or institution's official position.
+_Avoid_: recruitment purpose in the statement, local institution name, legal guarantee, broad public-relations language
+
 **Technical Collaboration**:
 The canonical public label for external engineering cooperation and consulting-oriented work. Use `技术合作 Technical Collaboration` for the navigation path and page title.
 _Avoid_: 产业合作 Industry Collaboration as the public navigation label
@@ -109,6 +113,10 @@ Domain Expert: Yes. Keep it as a Public Contact Channel alongside `lichaosz@qq.c
 Dev: Should the site include a privacy policy?
 
 Domain Expert: Yes. Add a concise Privacy Notice that covers static-site boundaries, platform logs, email and WeChat messages, no tracking scripts, and requests through the public email address.
+
+Dev: What purpose should the homepage statement give for the website?
+
+Domain Expert: Say it is used for academic output display and technical-collaboration exchange. Do not include recruitment in the statement.
 
 Dev: Should we restrict the list to first-author or corresponding-author work?
 

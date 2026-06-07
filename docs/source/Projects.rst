@@ -1,7 +1,7 @@
 项目实践 Projects
 =================
 
-本页整理团队公开项目记录，用于支撑 :doc:`IndustryCollaboration`、:doc:`Research` 和三个研究方向页。项目名称和承担角色按现有公开信息呈现；未公开确认的企业名称不在本页展开。
+本页整理团队公开项目记录，用于支撑 :doc:`TechnicalCollaboration`、:doc:`Research` 和三个研究方向页。项目名称和承担角色按现有公开信息呈现；未公开确认的企业名称不在本页展开。
 
 能力地图 Capability Map
 --------------------------
@@ -53,7 +53,7 @@
 相关页面 Related Pages
 ----------------------
 
-- :doc:`IndustryCollaboration`
+- :doc:`TechnicalCollaboration`
 - :doc:`NumericalWindTunnel`
 - :doc:`WindResistance`
 - :doc:`OffshoreWindEnergy`

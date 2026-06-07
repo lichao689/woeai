@@ -8,9 +8,10 @@
 
 高层建筑相关研究包括风致荷载评估、结构响应预测、气动外形优化和减振控制。近期论文和项目证据包括：
 
-- :ref:`Graph neural networks for predicting tall-building structural responses <ref-tang20250>`；
-- :ref:`Tuned liquid damper nonlinear sloshing and vibration control <ref-he20240>`；
-- :ref:`Large eddy simulation methods for high-rise building wind load assessment <ref-chen20240>`；
+- :ref:`Graph neural networks for predicting tall-building structural responses <ref-tang2025-JBE>`；
+- :ref:`Statistical extremes of 2D vectorial response for wind-excited tall buildings <ref-yang2025-JBE>`；
+- :ref:`Implanted-pole tuned liquid damper nonlinear sloshing and vibration mitigation <ref-he2025-POF>`；
+- :ref:`Large eddy simulation methods for high-rise building wind load assessment <ref-chen2024-POF>`；
 - 高层建筑气动外形优化相关项目见 :doc:`Projects`。
 
 输电塔线体系 Transmission Tower-Line Systems
@@ -18,9 +19,9 @@
 
 输电塔线体系研究关注强风下的动力响应、失效模式、风荷载重构和微地形台风风场问题。相关证据包括：
 
-- :ref:`Engineering method for tower-line coupling effects under strong winds <ref-liu20240>`；
-- :ref:`Dynamic failure mode analysis for tower-line systems <ref-liu20241>`；
-- :ref:`Dynamic wind force reconstruction from aeroelastic wind tunnel test data <ref-zhang20230>`；
+- :ref:`Engineering method for tower-line coupling effects under strong winds <ref-liu2024-JWEIA>`；
+- :ref:`Dynamic failure mode analysis for tower-line systems <ref-liu2024-E>`；
+- :ref:`Dynamic wind force reconstruction from aeroelastic wind tunnel test data <ref-zhang2023-ES>`；
 - 输电线路微尺度台风风场相关企业项目见 :doc:`Projects`。
 
 方法连接 Method Connection

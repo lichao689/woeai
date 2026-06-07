@@ -2,8 +2,8 @@
 
 # -- Project information
 
-project = 'Wind & Ocean Engineering empowered by AI'
-copyright = '2025, Wind & Ocean Engineering empowered by AI Group'
+project = 'Wind and Ocean Engineering with AI'
+copyright = '2025, Wind and Ocean Engineering with AI Group'
 author = 'Chao Li <lichaosz@qq.com>'
 
 release = '0.1'
@@ -11,12 +11,12 @@ version = '0.1.0'
 
 # -- SEO Meta Tags
 html_meta = {
-    'description': 'WOEAI - 哈尔滨工业大学（深圳）风与海洋工程人工智能赋能团队。面向招生、产业合作、数值风洞、结构抗风与海上风电研究。',
-    'keywords': 'WOEAI, 招生, 产业合作, 风工程, 海洋工程, 海上风电, 数值风洞, 结构抗风, 哈尔滨工业大学, HIT, 李朝',
+    'description': 'WOEAI - 哈尔滨工业大学（深圳）Wind and Ocean Engineering with AI 研究团队。面向招生、技术合作、数值风洞、结构抗风与海上风电研究。',
+    'keywords': 'WOEAI, 招生, 技术合作, 风工程, 海洋工程, 海上风电, 数值风洞, 结构抗风, 哈尔滨工业大学, HIT, 李朝',
     'author': 'Chao Li',
     'viewport': 'width=device-width, initial-scale=1.0',
-    'og:title': 'WOEAI - 风与海洋工程人工智能赋能团队',
-    'og:description': '面向招生、产业合作与学术研究的风与海洋工程人工智能赋能团队网站',
+    'og:title': 'WOEAI - Wind and Ocean Engineering with AI',
+    'og:description': '面向招生、技术合作与学术研究的风与海洋工程 AI 研究团队网站',
     'og:type': 'website',
     'og:url': 'https://winddee.cn',
     'og:image': 'https://winddee.cn/_static/logoGroup.png',
@@ -47,7 +47,7 @@ html_static_path = ['../_static']
 html_css_files = ['custom.css']
 
 html_logo = "../_static/logoGroup.png"  # Logo 文件需放置于 _static 目录
-html_title = "Wind & Ocean Engineering empowered by AI"
+html_title = "Wind and Ocean Engineering with AI"
 
 html_theme_options = {
     'logo_only': False,

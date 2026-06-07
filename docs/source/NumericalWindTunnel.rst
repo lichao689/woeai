@@ -8,9 +8,9 @@
 
 团队围绕大气边界层湍流生成、散度自由速度场合成和大涡模拟入口条件开展方法研究。相关论文包括：
 
-- :ref:`A novel vector potential random flow generation method <ref-li20240>`，用于合成满足散度自由约束的均匀各向同性湍流；
-- :ref:`A coherence-improved and mass-balanced inflow turbulence generation method <ref-chen20241>`，用于大涡模拟中的入口湍流生成；
-- :ref:`A new controllable weak recycling inflow turbulence generator <ref-wang20240>`，用于建筑风效应评估中的 LES 入流。
+- :ref:`A novel vector potential random flow generation method <ref-li2024-POF>`，用于合成满足散度自由约束的均匀各向同性湍流；
+- :ref:`A coherence-improved and mass-balanced inflow turbulence generation method <ref-chen2024-JCP>`，用于大涡模拟中的入口湍流生成；
+- :ref:`A new controllable weak recycling inflow turbulence generator <ref-wang2024-ES>`，用于建筑风效应评估中的 LES 入流。
 
 城市风环境 Urban Wind Environment
 ---------------------------------
@@ -19,9 +19,10 @@
 
 相关证据包括：
 
-- :ref:`3D Gaussian Splatting building geometry framework <ref-zhao20250>`，面向城市风模拟中的建筑几何构建；
-- :ref:`Super-resolution reconstruction of wind fields <ref-tang20240>`，面向风场超分辨率重建；
-- :ref:`Multiscale simulation of urban wind environment under typhoon weather <ref-zhao20230>`。
+- :ref:`Precomputed CFD database framework for urban microscale wind prediction <ref-zhao2026-BS>`，面向城市微尺度风环境快速预测；
+- :ref:`Satellite-imagery urban geometry reconstruction framework <ref-zhao2026-BE>`，面向城市风环境评估中的建筑几何快速重建；
+- :ref:`Temporal super-resolution of wind in urban energy applications <ref-tang2026-RE>`，面向城市风场时间超分辨率重建；
+- :ref:`3D Gaussian Splatting building geometry framework <ref-zhao2025-SCS>`，面向城市风模拟中的建筑几何构建。
 
 复杂地形与工程实践 Complex Terrain And Practice
 -----------------------------------------------

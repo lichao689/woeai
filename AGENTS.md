@@ -5,11 +5,13 @@ a Sphinx documentation site, not as an application package.
 
 ## Outcome Priority
 
-Use this order when deciding homepage placement, navigation weight, and copy
-tradeoffs:
+Use this order when deciding navigation weight and copy tradeoffs. On the
+homepage, keep recruitment and technical collaboration as visible conversion
+paths; represent academic credibility through the opening group introduction
+and factual proof pages rather than a standalone homepage section.
 
 1. 招生 Recruitment
-2. 产业合作 Industry Collaboration
+2. 技术合作 Technical Collaboration
 3. 学术可信度 Academic Credibility
 
 ## Required Checks
@@ -35,16 +37,17 @@ environment and builds HTML with Sphinx warnings treated as failures.
 - Keep recruitment copy direct and useful. It may explain research directions,
   expected backgrounds, contact path, and application materials when those are
   source-supported.
-- Keep industry collaboration copy capability-based unless named partners or
+- Keep technical collaboration copy capability-based unless named partners or
   cases are explicitly source-backed.
 
 ## Site Structure
 
 - `docs/source/index.rst` owns the homepage and top-level navigation.
-- `docs/source/Recruitment.rst` should be the first conversion path.
-- `docs/source/IndustryCollaboration.rst` should be the second conversion path.
+- Recruitment content and contact information belong on `docs/source/index.rst`,
+  not standalone top-level pages.
+- `docs/source/TechnicalCollaboration.rst` should be the second conversion path.
 - `docs/source/Research.rst` should connect research themes to direction pages
-  and publications.
+  and academic outputs.
 - `docs/source/People.rst`, `docs/source/Projects.rst`, and
   `docs/source/Publications.rst` are proof pages and should stay factual.
 
@@ -55,3 +58,26 @@ environment and builds HTML with Sphinx warnings treated as failures.
 - Keep template residue out of the public site.
 - Do not add Python package metadata unless the repository intentionally becomes
   an installable package in a future plan.
+
+## Agent skills
+
+### Issue tracker
+
+Issues and PRDs are tracked as local markdown files under
+`.scratch/<feature-slug>/`. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The repo uses the default five triage states: `needs-triage`, `needs-info`,
+`ready-for-agent`, `ready-for-human`, and `wontfix`. See
+`docs/agents/triage-labels.md`.
+
+### Domain docs
+
+This is a single-context docs-site repo. See `docs/agents/domain.md`.
+
+## 动态更新规则
+
+| 日期 | 规则 | 适用范围 | 来源 | 备注 |
+|---|---|---|---|---|
+| 2026-06-07 | 后续 agents 可以读取、维护并修改根目录的 `CONTEXT.md`，把它作为 WOEAI 公共网站的项目词汇表与语义约束来源。 | 全项目 | 对话 | 新增 |

@@ -6,17 +6,25 @@
 阅读说明 Notes
 ---------------
 
-- :student-first-author:`学生第一作者` 表示该论文第一作者为团队的在校或毕业学生。
-- 本页期刊论文按当前公开成果记录生成；影响因子、JCR分区、中科院分区和引用次数等指标仅在来源记录可用时显示。
+- **Li Chao** / **李朝** 为便于阅读加粗显示。
+- :student-first-author:`学生第一作者` 表示该论文第一作者为团队公开成员名单中的在校或毕业学生；硕士、博士均适用。
+- 本页期刊论文按当前公开成果记录生成；影响因子、Q 分区、中科院分区和引用次数等指标仅在来源记录可用时显示。
+- Publication Numbers 为当前页面排序下的展示编号；方向页中的论文引用使用稳定锚点链接到本页对应条目。
+
+浏览方式 View Options
+---------------------
+
+- 当前页：按发表年份倒序浏览完整期刊论文清单。
+- :doc:`PublicationsByResearch`：按研究方向浏览，方向内按发表年份倒序聚合。
 
 精选证据 Selected Highlights
 ----------------------------
 
-- 建筑结构抗风 / 数值风洞与湍流入流: :ref:`[51] vector-potential random flow generation <ref-li2024-POF>`、:ref:`[50] coherence-improved and mass-balanced inflow turbulence <ref-chen2024-JCP>`、:ref:`[55] weak recycling inflow turbulence generator <ref-wang2024-ES>`。
-- 建筑结构抗风 / 城市风环境与复杂地形风场: :ref:`[72] precomputed CFD database for urban microscale wind <ref-zhao2026-BS>`、:ref:`[74] satellite-imagery urban geometry reconstruction <ref-zhao2026-BE>`、:ref:`[61] 3D Gaussian Splatting building geometry <ref-zhao2025-SCS>`。
-- 建筑结构抗风 / 高层建筑抗风与优化: :ref:`[64] graph neural networks for tall-building response <ref-tang2025-JBE>`、:ref:`[68] 2D vectorial response extremes <ref-yang2025-JBE>`、:ref:`[69] implanted-pole tuned liquid damper <ref-he2025-POF>`。
-- 海上漂浮风电 / 系统分析与结构设计: :ref:`[71] reinforced-concrete semi-submersible platform optimization <ref-he2026-OE-structural>`、:ref:`[48] floating wind turbine substructure optimization <ref-zhou2023-AE>`、:ref:`[33] concrete and steel support structure comparison <ref-li2022-SOS>`。
-- 海上漂浮风电 / 数值风浪流水池: :ref:`[66] equivalent static wave loads for semi-submersible turbines <ref-zheng2025-OE>`、:ref:`[42] wind tunnel and wave flume testing <ref-zheng2023-JRSE>`。
+- AI 与城市风模拟: :ref:`[72] precomputed CFD database for urban microscale wind <ref-zhao2026-BS>`、:ref:`[74] satellite-imagery urban geometry reconstruction <ref-zhao2026-BE>`、:ref:`[61] 3D Gaussian Splatting building geometry <ref-zhao2025-SCS>`。
+- AI 与结构响应预测: :ref:`[64] graph neural networks for tall-building response <ref-tang2025-JBE>`、:ref:`[68] 2D vectorial response extremes <ref-yang2025-JBE>`。
+- 数值风洞与入流湍流: :ref:`[51] vector-potential random flow generation <ref-li2024-POF>`、:ref:`[50] coherence-improved and mass-balanced inflow turbulence <ref-chen2024-JCP>`。
+- 结构抗风: :ref:`[69] implanted-pole tuned liquid damper <ref-he2025-POF>`、:ref:`[57] tower-line coupling under strong winds <ref-liu2024-JWEIA>`。
+- 海上风电: :ref:`[71] reinforced-concrete semi-submersible platform optimization <ref-he2026-OE-structural>`、:ref:`[66] equivalent static wave loads for semi-submersible turbines <ref-zheng2025-OE>`、:ref:`[48] floating wind turbine substructure optimization <ref-zhou2023-AE>`。
 
 期刊论文 Journal Papers
 ------------------------

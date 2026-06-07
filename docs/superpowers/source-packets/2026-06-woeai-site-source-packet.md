@@ -15,6 +15,7 @@ Outcome priority: 招生 Recruitment > 技术合作 Technical collaboration > �
 - Do not reproduce local institution, college, address, title, or employment-history claims for the group leader on public pages. Use the official university profile link instead: https://homepage.hit.edu.cn/lichao.
 - Student names and current/graduated status may remain when used only as academic member context. Do not add student institution, college, address, personal contact, private biography, photo, student ID, demographic detail, or non-academic personal information.
 - Public contact channels are the website URL, personal email `lichaosz@qq.com`, official university profile, and homepage WeChat QR code. Do not add further personal contact details without explicit confirmation.
+- The site should keep a concise Privacy Notice. It should cover static-site boundaries, platform logs, email and WeChat contact information, the absence of tracking scripts, and the request channel for correction or deletion.
 
 ## Recruitment
 
@@ -56,6 +57,7 @@ From the homepage contact section in `docs/source/index.rst`:
 - Website: https://winddee.cn
 - Email: lichaosz@qq.com
 - Official university profile: https://homepage.hit.edu.cn/lichao
+- Privacy notice page: `docs/source/Privacy.rst`
 - WeChat QR image: `docs/_static/lcWeChatMatrixCode01.png`
 
 ### Needs Owner Confirmation
@@ -152,4 +154,4 @@ Images available under `docs/_static/`:
 - Partner names.
 - Active technical collaboration status.
 - Facilities, lab area, instrument lists, computing resources, and student outcomes.
-- Analytics ownership and whether Google Analytics ID is valid.
+- Whether any future analytics or third-party tracking tool should be added. If added, update the Privacy Notice before publication.

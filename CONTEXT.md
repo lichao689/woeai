@@ -24,6 +24,10 @@ _Avoid_: local institution identity copy, college-address claims, school-officia
 The public contact channels for WOEAI are the website URL, the personal email address `lichaosz@qq.com`, the Official Profile Link, and the WeChat QR code already used on the homepage. These channels may be published, but they should not be expanded into additional personal contact details without explicit confirmation.
 _Avoid_: workplace address as contact, alternate private contact, unconfirmed phone or messaging IDs
 
+**Privacy Notice**:
+The public page that explains the website's personal-information handling boundary. It should say that the website itself does not provide forms, accounts, comments, analytics, or tracking scripts; platform logs are handled by GitHub or Read the Docs under their own policies; information sent through Public Contact Channels is used only for replies, recruitment communication, technical-collaboration communication, and academic exchange.
+_Avoid_: legal guarantee, platform-log control claim, consent-heavy wording for functions the site does not run
+
 **Technical Collaboration**:
 The canonical public label for external engineering cooperation and consulting-oriented work. Use `技术合作 Technical Collaboration` for the navigation path and page title.
 _Avoid_: 产业合作 Industry Collaboration as the public navigation label
@@ -101,6 +105,10 @@ Domain Expert: No. Use the Official Profile Link for institution-hosted official
 Dev: Should the homepage keep the WeChat QR code?
 
 Domain Expert: Yes. Keep it as a Public Contact Channel alongside `lichaosz@qq.com`, but do not add further personal contact details unless explicitly confirmed.
+
+Dev: Should the site include a privacy policy?
+
+Domain Expert: Yes. Add a concise Privacy Notice that covers static-site boundaries, platform logs, email and WeChat messages, no tracking scripts, and requests through the public email address.
 
 Dev: Should we restrict the list to first-author or corresponding-author work?
 

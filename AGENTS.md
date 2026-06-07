@@ -76,11 +76,10 @@ The repo uses the default five triage states: `needs-triage`, `needs-info`,
 
 This is a single-context docs-site repo. See `docs/agents/domain.md`.
 
-### WOEAI WeChat paper articles
+### WeChat paper articles
 
-Use `docs/agents/skills/woeai-wechat-paper/SKILL.md` when generating,
-reviewing, or tracking WeChat Official Account articles from WOEAI journal
-papers.
+Use `.agents/skills/wechat-paper/SKILL.md` when generating, reviewing, or
+tracking WeChat Official Account articles from WOEAI journal papers.
 
 ## 动态更新规则
 

@@ -664,14 +664,6 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "学术成果 Academic Outputs",
             "===============================",
             "",
-            "阅读说明 Notes",
-            "---------------",
-            "",
-            "- **Li Chao** / **李朝** 为便于阅读加粗显示。",
-            "- :student-first-author:`学生第一作者` 表示该论文第一作者为团队公开成员名单中的在校或毕业学生；硕士、博士均适用。",
-            "- 本页期刊论文按当前公开成果记录生成；影响因子、Q 分区、中科院分区和引用次数等指标仅在来源记录可用时显示。",
-            "- Publication Numbers 为当前页面排序下的展示编号；方向页中的论文引用使用稳定锚点链接到本页对应条目。",
-            "",
             "浏览方式 View Options",
             "---------------------",
             "",
@@ -685,6 +677,8 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             "期刊论文 Journal Papers",
             "------------------------",
+            "",
+            "- :student-first-author:`学生第一作者` 表示该论文第一作者为团队在校或毕业学生。",
             "",
         ]
     )
@@ -726,13 +720,6 @@ def build_publications_by_research_rst(
     sections = [
         "按研究方向浏览学术成果 Publications by Research Direction",
         "=" * 80,
-        "",
-        "阅读说明 Notes",
-        "---------------",
-        "",
-        "- 本页用于按研究方向浏览公开期刊论文；完整引文、DOI 和指标请查看对应论文在 :doc:`Publications` 中的条目。",
-        "- 研究方向采用本站公开 taxonomy；方向内按发表年份倒序排列。",
-        "- 论文编号仅用于和完整列表快速对应；稳定引用依赖论文锚点链接。",
         "",
     ]
     for family in RESEARCH_FAMILY_ORDER:

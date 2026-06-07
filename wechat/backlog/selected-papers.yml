@@ -1,0 +1,163 @@
+schema_version: 1
+description: Public-safe backlog of selected WOEAI papers for one-paper WeChat articles.
+selection_policy:
+  - Use one selected paper per article.
+  - Include historical papers when they still support current WOEAI research identity, recruitment, technical collaboration, or academic credibility.
+  - Confirm final inclusion before writing each article.
+items:
+  - publication_ref: ref-zhao2026-BS
+    zotero_key: CGKPKZ8I
+    title: A fast prediction framework for urban microscale wind environment based on precomputed CFD database
+    research_family: 建筑结构抗风
+    subdirection: 数值风洞与湍流入流
+    original_year: 2026
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-zhao2026-BE
+    zotero_key: RLAA46YB
+    title: A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment
+    research_family: 建筑结构抗风
+    subdirection: 数值风洞与湍流入流
+    original_year: 2026
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-zhao2025-SCS
+    zotero_key: V6PLJENN
+    title: A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations
+    research_family: 建筑结构抗风
+    subdirection: 数值风洞与湍流入流
+    original_year: 2025
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-li2024-POF
+    zotero_key: 2YG78T62
+    title: A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra
+    research_family: 建筑结构抗风
+    subdirection: 数值风洞与湍流入流
+    original_year: 2024
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-chen2024-JCP
+    zotero_key: Y76UWP9R
+    title: A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation
+    research_family: 建筑结构抗风
+    subdirection: 数值风洞与湍流入流
+    original_year: 2024
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-tang2025-JBE
+    zotero_key: 4BCF65NB
+    title: Training and application of graph neural networks for predicting structural responses targeted at tall building structures
+    research_family: 建筑结构抗风
+    subdirection: 高层建筑抗风与优化
+    original_year: 2025
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-yang2025-JBE
+    zotero_key: YZ2D62NB
+    title: Statistical extremes of 2D vectorial response for wind-excited tall buildings
+    research_family: 建筑结构抗风
+    subdirection: 高层建筑抗风与优化
+    original_year: 2025
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-he2025-POF
+    zotero_key: ES37XMDV
+    title: Numerical investigation of nonlinear sloshing features and vibration mitigation efficiency of the implanted pole tuned liquid damper
+    research_family: 建筑结构抗风
+    subdirection: 高层建筑抗风与优化
+    original_year: 2025
+    repost_priority: medium
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-he2026-OE-structural
+    zotero_key: EMID6LAJ
+    title: Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete
+    research_family: 海上漂浮风电
+    subdirection: 浮式混凝土平台结构设计
+    original_year: 2026
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-zheng2025-OE
+    zotero_key: 5W2SZJUT
+    title: Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine
+    research_family: 海上漂浮风电
+    subdirection: 数值风浪流水池
+    original_year: 2025
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-zhou2023-AE
+    zotero_key: 3LWVP7B7
+    title: Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization
+    research_family: 海上漂浮风电
+    subdirection: 浮式风机系统一体化分析与优化
+    original_year: 2023
+    repost_priority: high
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []
+  - publication_ref: ref-li2022-SOS
+    zotero_key: 5AT7UEWV
+    title: Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures
+    research_family: 海上漂浮风电
+    subdirection: 浮式混凝土平台结构设计
+    original_year: 2022
+    repost_priority: medium
+    wechat_status: selected
+    publication_mode: first_publish
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: ""
+    publication_history: []

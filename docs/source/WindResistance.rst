@@ -24,6 +24,15 @@
 - :ref:`Dynamic wind force reconstruction from aeroelastic wind tunnel test data <ref-zhang2023-ES>`；
 - 输电线路微尺度台风风场相关企业项目见 :doc:`Projects`。
 
+相关项目实践 Related Projects
+--------------------------------
+
+- 考虑风致荷载及响应的高层建筑气动外形优化研究；
+- 微地形下输电线路微尺度台风风场特性及模型研究；
+- 再生能源发电厂风洞试验及风振分析。
+
+完整项目记录见 :ref:`projects-structural-wind`。
+
 方法连接 Method Connection
 --------------------------
 

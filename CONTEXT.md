@@ -69,8 +69,8 @@ The canonical complete Academic Outputs view in `docs/source/Publications.rst`. 
 _Avoid_: treating the direction view as the full bibliography, maintaining duplicate long citations
 
 **Thematic Publication View**:
-The alternate Academic Outputs browsing view in `docs/source/PublicationsByResearch.rst`. It groups the same Public Journal Papers by Research Family first and subdirection second. Inside each subdirection, paper entries are listed by publication year in descending order with the year shown inline, and each short entry links back to the stable anchor in the Chronological Publication View.
-_Avoid_: JavaScript-only tabs, duplicate DOI/metric text, publication-year section headings inside subdirections
+The alternate Academic Outputs browsing view in `docs/source/PublicationsByResearch.rst`. It groups the same Public Journal Papers by Research Family first and subdirection second. Inside each subdirection, paper entries are listed by publication year in descending order with the year shown inline, and each short entry links back to the stable anchor in the Chronological Publication View. It should be registered under the Chronological Publication View's toctree so it appears as part of Academic Outputs in the left navigation, not as a separate root-level site directory.
+_Avoid_: JavaScript-only tabs, duplicate DOI/metric text, publication-year section headings inside subdirections, root-level navigation entry for the thematic view
 
 **Publication Research Mapping**:
 The machine-readable mapping from Zotero item keys to Research Family and subdirection, stored at `docs/data/publication-research-map.json`. Every Public Journal Paper must have exactly one canonical Research Family and one canonical subdirection before the thematic view can be generated.
@@ -97,7 +97,7 @@ The canonical public first-level research taxonomy for WOEAI. Use exactly two pu
 _Avoid_: treating `数值风洞`, `结构抗风`, or `海上风电` as peer first-level directions after this taxonomy change
 
 **建筑结构抗风**:
-The first canonical public research family. It covers building and structural wind-resistance research, including `数值风洞与湍流入流` and `高层建筑抗风与优化` as subdirections. Urban wind environment and complex terrain wind fields belong under `数值风洞与湍流入流`. Wind-induced vibration control, flow control, and historical tower-line wind-resistance proof belong under `高层建筑抗风与优化` when they are needed as supporting evidence.
+The first canonical public research family. It covers building and structural wind-resistance research, including `数值风洞与湍动入流` and `高层建筑抗风与优化` as subdirections. Urban wind environment and complex terrain wind fields belong under `数值风洞与湍动入流`. Wind-induced vibration control, flow control, and historical tower-line wind-resistance proof belong under `高层建筑抗风与优化` when they are needed as supporting evidence.
 _Avoid_: expanding this into a broad all-structures direction in current public navigation
 
 **海上漂浮风电**:

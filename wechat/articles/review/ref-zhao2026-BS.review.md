@@ -3,7 +3,7 @@ publication_ref: ref-zhao2026-BS
 zotero_key: CGKPKZ8I
 doi: 10.1007/s12273-025-1379-7
 research_family: 建筑结构抗风
-subdirection: 数值风洞与湍流入流
+subdirection: 数值风洞与湍动入流
 publication_mode: first_publish
 wechat_status: drafting
 source_checked: false

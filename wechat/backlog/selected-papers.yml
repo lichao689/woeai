@@ -9,7 +9,7 @@ items:
     zotero_key: CGKPKZ8I
     title: "A fast prediction framework for urban microscale wind environment based on precomputed CFD database"
     research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍流入流
+    subdirection: 数值风洞与湍动入流
     original_year: 2026
     repost_priority: high
     wechat_status: drafting
@@ -22,7 +22,7 @@ items:
     zotero_key: RLAA46YB
     title: "A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment"
     research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍流入流
+    subdirection: 数值风洞与湍动入流
     original_year: 2026
     repost_priority: high
     wechat_status: selected
@@ -35,7 +35,7 @@ items:
     zotero_key: V6PLJENN
     title: "A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations"
     research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍流入流
+    subdirection: 数值风洞与湍动入流
     original_year: 2025
     repost_priority: high
     wechat_status: selected
@@ -48,7 +48,7 @@ items:
     zotero_key: 2YG78T62
     title: "A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra"
     research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍流入流
+    subdirection: 数值风洞与湍动入流
     original_year: 2024
     repost_priority: high
     wechat_status: selected
@@ -61,7 +61,7 @@ items:
     zotero_key: Y76UWP9R
     title: "A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation"
     research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍流入流
+    subdirection: 数值风洞与湍动入流
     original_year: 2024
     repost_priority: high
     wechat_status: selected

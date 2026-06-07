@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T13:47:15.565167+00:00",
+  "generated_at": "2026-06-07T13:53:27.760641+00:00",
   "source_boundary": {
     "zotero_filter": {
       "inPublications": true,
@@ -37,7 +37,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Zhao Peisheng; Li Chao; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. Building and Environment, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: 7.6 (Q1). 中科院分区: 1.",
       "metrics": "影响因子: 7.6 (Q1). 中科院分区: 1."
     },
@@ -86,7 +86,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Zhao Peisheng; Li Chao; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. Building Simulation, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: 5.9 (Q1). 中科院分区: 1.",
       "metrics": "影响因子: 5.9 (Q1). 中科院分区: 1."
     },
@@ -133,7 +133,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Tang Lingxiao; Li Chao; Zhao Zihan; Chen Lingwei; Zhang Mingming, A novel framework for temporal super-resolution of wind in urban energy applications[J]. Renewable Energy, 2026, 256: 124336. https://doi.org/10.1016/j.renene.2025.124336. 影响因子: 9.1 (Q1). 中科院分区: 1. 引用次数: 1.",
       "metrics": "影响因子: 9.1 (Q1). 中科院分区: 1. 引用次数: 1."
     },
@@ -207,7 +207,7 @@
       ],
       "student_first_author": "Wang Jinghan",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Wang Jinghan; He Xinyu; Jiang Shan; Chan P W; Li Chao; Ou Jinping; Duan Penghao; Li Lishuai, Evaluation of urban wind effects on flight path planning of delivery drones using computational fluid dynamics simulations[J]. Physics of Fluids, 2025, 37(8): 87124. https://doi.org/10.1063/5.0281373. 影响因子: 4.3 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
     },
@@ -351,7 +351,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Zhao Peisheng; Li Chao; Jiang Jianxun; Chen Lingwei; Wang Xiaolu, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. Sustainable Cities and Society, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: 12.0 (Q1). 中科院分区: 1. 引用次数: 6.",
       "metrics": "影响因子: 12.0 (Q1). 中科院分区: 1. 引用次数: 6."
     },
@@ -398,7 +398,7 @@
       ],
       "student_first_author": "Chen Lingwei",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Chen Lingwei; Li Chao; Wang Jinghan; He Xin; Wang Xiangjie; Hu Gang; Wang Xiaolu, Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment[J]. Physics of Fluids, 2024, 36(12): 127120. https://doi.org/10.1063/5.0240163. 影响因子: 4.3 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
     },
@@ -421,7 +421,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Tang Lingxiao; Li Chao; Zhao Zihan; Xiao Yiqing; Chen Shenpeng, Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework[J]. Physics of Fluids, 2024, 36(12): 125110. https://doi.org/10.1063/5.0237112. 影响因子: 4.3 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
     },
@@ -491,7 +491,7 @@
       ],
       "student_first_author": "Wang Jinghan",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Wang Jinghan; Li Chao; Chen Lingwei; Zhou Shengtao; Hu Gang; Ou Jinping, A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES[J]. Engineering Structures, 2024, 318: 118742. https://doi.org/10.1016/j.engstruct.2024.118742. 影响因子: 6.4 (Q1). 中科院分区: 1.",
       "metrics": "影响因子: 6.4 (Q1). 中科院分区: 1."
     },
@@ -539,7 +539,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Jiang Shan; Wang Jinghan; Li Chao; Ou Jinping; Duan Penghao; Li Lishuai, Identification of no-fly zones for delivery drone path planning in various urban wind environments[J]. Physics of Fluids, 2024, 36(8): 085166. https://doi.org/10.1063/5.0221281. 影响因子: 4.3 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
     },
@@ -588,7 +588,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Li Chao; Chen Lingwei; Wang Jinghan; Zhang Wentong; Wang Xiangjie; Wang Zhuoran; Hu Gang, A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra[J]. Physics of Fluids, 2024, 36(3): 035127. https://doi.org/10.1063/5.0194006. 影响因子: 4.3 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
     },
@@ -611,7 +611,7 @@
       ],
       "student_first_author": "Chen Lingwei",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Chen Lingwei; Li Chao; Wang Jinghan; Hu Gang; Xiao Yiqing, A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation[J]. Journal of Computational Physics, 2024, 498: 112706. https://doi.org/10.1016/j.jcp.2023.112706. 影响因子: 3.8 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 3.8 (Q1). 中科院分区: 2."
     },
@@ -684,7 +684,7 @@
       ],
       "student_first_author": "Zhao Zihan",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Zhao Zihan; Xiao Yiqing; Li Chao; Chan P W; Hu Gang; Zhou Qingfeng, Multiscale simulation of the urban wind environment under typhoon weather conditions[J]. Building Simulation, 2023, 16(9): 1713～1734. https://doi.org/10.1007/s12273-023-0991-7. 影响因子: 5.9 (Q1). 中科院分区: 1.",
       "metrics": "影响因子: 5.9 (Q1). 中科院分区: 1."
     },
@@ -710,7 +710,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Zhang Dongqin; Liu Zhenqing; Jiang Xinye; Jiang Wenjun; Gao Huanxiang; Li Chao; Xiao Yiqing; Hu Gang, Numerical study of flow characteristics of tornado-like vortices considering both swirl ratio and aspect ratio[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2023, 240: 105468. https://doi.org/10.1016/j.jweia.2023.105468. 影响因子: 4.9 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
     },
@@ -777,7 +777,7 @@
       ],
       "student_first_author": "Wang Jinghan",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Wang Jinghan; Li Chao; Huang Shenghong; Zheng Qingxing; Xiao Yiqing; Ou Jinping, Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2023, 233: 105326. https://doi.org/10.1016/j.jweia.2023.105326. 影响因子: 4.9 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
     },
@@ -867,7 +867,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "冯丙辰; 肖扬; 李朝; 肖仪清, 基于数值风洞试验的核电厂微地形风场分析与验证[J]. 核科学与工程, 2023, 第43卷增刊.",
       "metrics": ""
     },
@@ -937,7 +937,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Gao Huanxiang; Liu Junle; Lin Pengfei; Li Chao; Xiao Yiqing; Hu Gang, Pedestrian level wind flow field of elevated tall buildings with dense tandem arrangement[J]. Building and Environment, 2022, 226: 109745. https://doi.org/10.1016/j.buildenv.2022.109745. 影响因子: 7.6 (Q1). 中科院分区: 1.",
       "metrics": "影响因子: 7.6 (Q1). 中科院分区: 1."
     },
@@ -988,7 +988,7 @@
       ],
       "student_first_author": "Chen Lingwei",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Chen Lingwei; Li Chao; Wang Jinghan; Hu Gang; Zheng Qingxing; Zhou Qingfeng; Xiao Yiqing, Consistency improved random flow generation method for large eddy simulation of atmospheric boundary layer[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2022, 229: 105147. https://doi.org/10.1016/j.jweia.2022.105147. 影响因子: 4.9 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
     },
@@ -1040,7 +1040,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Wang Qiulei; Yan Lei; Hu Gang; Li Chao; Xiao Yiqing; Xiong Hao; Rabault Jean; Noack Bernd R, DRLinFluids: An open-source Python platform of coupling deep reinforcement learning and OpenFOAM[J]. Physics of Fluids, American Institute of Physics, 2022, 34(8): 081801. https://doi.org/10.1063/5.0103113. 影响因子: 4.3 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
     },
@@ -1181,7 +1181,7 @@
       ],
       "student_first_author": "Zhao Zihan",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Zhao Zihan; Li Chao; Xiao Yiqing; Wang Jinghan; Hu Gang; Xiao Kai, Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions[J]. Environmental Fluid Mechanics, 2021, 21(4): 759～790. https://doi.org/10.1007/s10652-021-09796-4. 影响因子: 2.1 (Q2). 中科院分区: 3.",
       "metrics": "影响因子: 2.1 (Q2). 中科院分区: 3."
     },
@@ -1204,7 +1204,7 @@
       ],
       "student_first_author": "Zhao Zihan",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Zhao Zihan; Xiao Yiqing; Li Chao; Wang Jinghan; Hu Gang, New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain[J]. Atmospheric Research, 2021, 254: 105507. https://doi.org/10.1016/j.atmosres.2021.105507. 影响因子: 4.4 (Q2). 中科院分区: 2.",
       "metrics": "影响因子: 4.4 (Q2). 中科院分区: 2."
     },
@@ -1276,7 +1276,7 @@
       ],
       "student_first_author": "赵子涵",
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "赵子涵; 李朝; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. 太阳能学报, 2021, 42(2): 205～210.",
       "metrics": ""
     },
@@ -1299,7 +1299,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Li Chao; Wang Jinghan; Hu Gang; Li Lixiao; Xiao Yiqing, RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2020, 206: 104281. https://doi.org/10.1016/j.jweia.2020.104281. 影响因子: 4.9 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
     },
@@ -1392,7 +1392,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Li Lixiao; Kareem Ahsan; Hunt Julian; Xing Feng; Chan Pakwai; Xiao Yiqing; Li Chao, Observed sub-hectometer-scale low level jets in surface-layer velocity profiles of landfalling typhoons[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2019, 190: 151～165. https://doi.org/10.1016/j.jweia.2019.04.016. 影响因子: 4.9 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
     },
@@ -1505,7 +1505,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "肖凯; 赵子涵; 罗啸宇; 李朝; 钟继; 肖仪清, 复杂地形下基于计算流体动力学的风速比计算[J]. 科学技术与工程, 2018, 18(33): 1～6.",
       "metrics": ""
     },
@@ -1555,7 +1555,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Li Chao; Zhou Shengtao; Xiao Yiqing; Huang Qin; Li Lixiao; Chan P W, Effects of inflow conditions on mountainous/urban wind environment simulation[J]. Building Simulation, 2017, 10(4): 573～588. https://doi.org/10.1007/s12273-017-0348-1. 影响因子: 5.9 (Q1). 中科院分区: 1.",
       "metrics": "影响因子: 5.9 (Q1). 中科院分区: 1."
     },
@@ -1667,7 +1667,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "Li Chao; Li Q S; Xiao Y Q; Ou J P, A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2012, 102: 48～60. https://doi.org/10.1016/j.jweia.2011.12.004. 影响因子: 4.9 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
     },
@@ -1690,7 +1690,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "李朝; 肖仪清; 滕军; 欧进萍; 陈宜言, 基于超越阈值概率的行人风环境数值评估[J]. 工程力学, 2012, 29(12): 15～21.",
       "metrics": ""
     },
@@ -1757,7 +1757,7 @@
       ],
       "student_first_author": null,
       "research_family": "建筑结构抗风",
-      "subdirection": "数值风洞与湍流入流",
+      "subdirection": "数值风洞与湍动入流",
       "rendered": "肖仪清; 李朝; 欧进萍; 宋丽莉; 李秋胜, 复杂地形风能评估的CFD方法[J]. 华南理工大学学报(自然科学版), 2009, 37(9): 30～35.",
       "metrics": ""
     }

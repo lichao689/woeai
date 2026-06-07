@@ -50,7 +50,7 @@ CSL_SHA256 = "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
 METRIC_LABELS = ("影响因子", "中科院分区", "引用次数")
 RESEARCH_FAMILY_ORDER = ("建筑结构抗风", "海上漂浮风电")
 RESEARCH_SUBDIRECTION_ORDER = {
-    "建筑结构抗风": ("数值风洞与湍流入流", "高层建筑抗风与优化"),
+    "建筑结构抗风": ("数值风洞与湍动入流", "高层建筑抗风与优化"),
     "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
 }
 STUDENT_SECTION_MARKERS = ("PhD Students", "Master Students", "博士生", "硕士生")
@@ -677,6 +677,12 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             "- 当前页：按发表年份倒序浏览完整期刊论文清单。",
             "- :doc:`PublicationsByResearch`：按研究方向浏览，方向内按发表年份倒序聚合。",
+            "",
+            ".. toctree::",
+            "   :hidden:",
+            "   :maxdepth: 1",
+            "",
+            "   按研究方向浏览 Publications by Research Direction <PublicationsByResearch>",
             "",
             "精选证据 Selected Highlights",
             "----------------------------",

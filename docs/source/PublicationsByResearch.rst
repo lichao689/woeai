@@ -4,7 +4,7 @@
 建筑结构抗风
 ------------
 
-数值风洞与湍流入流
+数值风洞与湍动入流
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - (2026) :ref:`[74] A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment <ref-zhao2026-BE>`

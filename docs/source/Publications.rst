@@ -9,6 +9,12 @@
 - 当前页：按发表年份倒序浏览完整期刊论文清单。
 - :doc:`PublicationsByResearch`：按研究方向浏览，方向内按发表年份倒序聚合。
 
+.. toctree::
+   :hidden:
+   :maxdepth: 1
+
+   按研究方向浏览 Publications by Research Direction <PublicationsByResearch>
+
 精选证据 Selected Highlights
 ----------------------------
 

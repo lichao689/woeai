@@ -16,6 +16,10 @@ _Avoid_: reference-library item, collected paper, first-author-only paper
 A factual public page whose purpose is to support recruitment, technical collaboration, and academic credibility with verifiable records.
 _Avoid_: marketing page, archive dump
 
+**Official Profile Link**:
+The canonical way to reference the group leader's institution-hosted official information. Link to `https://homepage.hit.edu.cn/lichao` instead of reproducing local institution, college, address, title, or employment-history claims on the public site.
+_Avoid_: local institution identity copy, college-address claims, school-official wording on the personal/group website
+
 **Technical Collaboration**:
 The canonical public label for external engineering cooperation and consulting-oriented work. Use `技术合作 Technical Collaboration` for the navigation path and page title.
 _Avoid_: 产业合作 Industry Collaboration as the public navigation label
@@ -81,6 +85,10 @@ _Avoid_: package version, API compatibility version, ReadTheDocs config version
 Dev: Should every Zotero journal article appear on the website?
 
 Domain Expert: No. Only Public Journal Papers should appear; general library references are not group output.
+
+Dev: Should the site describe the group leader's current institution and college locally?
+
+Domain Expert: No. Use the Official Profile Link for institution-hosted official information and keep this site focused on WOEAI research, recruitment, collaboration, and academic outputs.
 
 Dev: Should we restrict the list to first-author or corresponding-author work?
 

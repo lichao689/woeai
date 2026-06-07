@@ -3,16 +3,16 @@
 # -- Project information
 
 project = 'Wind and Ocean Engineering with AI'
-copyright = '2025, Wind and Ocean Engineering with AI Group'
-author = 'Chao Li <lichaosz@qq.com>'
+copyright = '2026, Chao Li'
+author = 'Chao Li'
 
 release = '2026.06.07-1711'
 version = '2026.06.07'
 
 # -- SEO Meta Tags
 html_meta = {
-    'description': 'WOEAI - 哈尔滨工业大学（深圳）Wind and Ocean Engineering with AI 研究团队。面向招生、技术合作，以及由数值风洞、湍流入流和 AI 赋能工程方法支撑的建筑结构抗风、海上漂浮风电研究。',
-    'keywords': 'WOEAI, 招生, 技术合作, 建筑结构抗风, 海上漂浮风电, 数值风洞, 湍流入流, 高层建筑抗风, 浮式风机, 浮式混凝土平台, 风浪流水池, 哈尔滨工业大学, HIT, 李朝',
+    'description': 'WOEAI - Wind and Ocean Engineering with AI。面向招生、技术合作，以及由数值风洞、湍流入流和 AI 赋能工程方法支撑的建筑结构抗风、海上漂浮风电研究。',
+    'keywords': 'WOEAI, 招生, 技术合作, 建筑结构抗风, 海上漂浮风电, 数值风洞, 湍流入流, 高层建筑抗风, 浮式风机, 浮式混凝土平台, 风浪流水池, 李朝',
     'author': 'Chao Li',
     'viewport': 'width=device-width, initial-scale=1.0',
     'og:title': 'WOEAI - Wind and Ocean Engineering with AI',

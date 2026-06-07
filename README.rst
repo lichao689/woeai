@@ -1,8 +1,8 @@
 WOEAI Website
 =============
 
-This repository publishes the WOEAI group website for Wind and Ocean
-Engineering with AI at Harbin Institute of Technology, Shenzhen.
+This repository publishes the WOEAI website for Wind and Ocean Engineering with
+AI.
 
 The site is a Sphinx documentation project, not a Python package. Its public
 purpose is ordered as:

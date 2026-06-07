@@ -50,9 +50,8 @@ WOEAI 欢迎对风工程、海洋工程、海上风电、结构防灾减灾和 A
 
 可重点关注以下方向：
 
-- :doc:`NumericalWindTunnel`: 大气边界层湍流风场生成、城市风环境、复杂地形风场等；
-- :doc:`WindResistance`: 高层结构、输电塔等工程结构的强风响应与抗风问题；
-- :doc:`OffshoreWindEnergy`: 浮式海上风机基础、系统动力学、结构设计与运动控制。
+- :doc:`BuildingStructuralWindResistance`: 建筑结构抗风，包括数值风洞与湍流入流、高层建筑抗风与优化；
+- :doc:`FloatingOffshoreWindEnergy`: 海上漂浮风电，包括浮式风机系统一体化分析与优化、浮式混凝土平台结构设计、数值风浪流水池。
 
 博士后 Postdoctoral Researchers
 -------------------------------

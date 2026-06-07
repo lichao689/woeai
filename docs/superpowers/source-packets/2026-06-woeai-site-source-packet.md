@@ -12,6 +12,12 @@ Outcome priority: 招生 Recruitment > 技术合作 Technical collaboration > �
 - Do not invent current openings, student outcomes, partner names, facilities, funding, salary, subsidies, or publication metadata.
 - If a fact is unverified, either omit it from public pages or use a public-safe updating statement.
 - Public page copy should preserve bilingual Chinese/English headings where the surrounding page already uses them.
+- Do not reproduce local institution, college, address, title, or employment-history claims for the group leader on public pages. Use the official profile link instead: https://homepage.hit.edu.cn/lichao.
+- Student names and current/graduated status may remain when used only as academic member context. Do not add student institution, college, address, personal contact, private biography, photo, student ID, demographic detail, or non-academic personal information.
+- Public contact channels are the website URL, personal email `lichaosz@qq.com`, official profile, and homepage WeChat QR code. Do not add further personal contact details without explicit confirmation.
+- The site should keep a concise Privacy Notice. It should cover static-site boundaries, platform logs, email and WeChat contact information, the absence of tracking scripts, and the request channel for correction or deletion.
+- The homepage Site Statement should say the site is used for academic output display and technical-collaboration exchange. Do not include recruitment purpose, institution names, or official-position claims in that statement.
+- Enterprise project evidence may keep already anonymized descriptions such as `某再生能源发电厂`. Do not disclose partner names, current cooperation status, exact facility names, or unpublished project details.
 
 ## Recruitment
 
@@ -19,7 +25,7 @@ Outcome priority: 招生 Recruitment > 技术合作 Technical collaboration > �
 
 From `docs/source/index.rst`:
 
-- Master students: 3 to 4 per year.
+- Master students: 2 to 3 per year.
 - PhD students: 1 to 2 per year.
 - Postdoctoral researchers: 1 to 2 per year.
 - Desired applicants are practical, motivated, curious, innovative, and willing to contribute to engineering technology innovation.
@@ -29,14 +35,9 @@ From `docs/source/index.rst`:
 
 From `docs/source/index.rst`:
 
-- Age below 35, including age 35.
 - Doctoral degree in civil engineering, ocean engineering, or related fields.
-- Degree normally obtained within 3 years.
-- At least one SCI journal paper.
-- Annual salary above RMB 320,000, including RMB 180,000 Shenzhen government tax-free subsidy.
-- Benefits include social insurance and housing fund, Shenzhen talent apartment or rent subsidy, Shenzhen hukou support for spouse and children.
-- Postdoctoral researchers who stay in Shenzhen after completing the postdoc can apply for RMB 300,000 Shenzhen research funding.
-- The group provides research environment, domestic and international cooperation opportunities, research support, and assistance applying for China Postdoctoral Science Foundation and NSFC projects.
+- Postdoctoral details such as age, degree timing, salary, subsidy, housing, household-registration support, and postdoc exit policies should be checked against current public policy before publication.
+- The public page should invite qualified postdoctoral researchers to contact the group for current policy confirmation.
 
 ### Needs Owner Confirmation Before Strong Public Claims
 
@@ -47,7 +48,7 @@ From `docs/source/index.rst`:
 
 ### Public-Safe Fallback
 
-If recruitment terms are not confirmed, publish the general invitation and contact path, and mark detailed annual openings as "以当年学校和团队公开信息为准 / subject to current university and group announcements".
+If recruitment terms are not confirmed, publish the general invitation and contact path, and mark detailed annual openings as "以相关公开信息为准 / subject to current public announcements".
 
 ## Contact
 
@@ -56,13 +57,15 @@ If recruitment terms are not confirmed, publish the general invitation and conta
 From the homepage contact section in `docs/source/index.rst`:
 
 - Website: https://winddee.cn
-- Email: lichaosz@hit.edu.cn
-- Address: 哈尔滨工业大学（深圳）智能土木与海洋工程学院
+- Email: lichaosz@qq.com
+- Official profile: https://homepage.hit.edu.cn/lichao
+- Privacy notice page: `docs/source/Privacy.rst`
 - WeChat QR image: `docs/_static/lcWeChatMatrixCode01.png`
+- Site statement: used for academic output display and technical-collaboration exchange; does not represent any organization's official position.
 
 ### Needs Owner Confirmation
 
-- Whether WeChat QR code is intended for all public visitors, applicants only, or should stay in the homepage contact section.
+- Whether any future contact channel beyond email and WeChat may be disclosed.
 
 ## People
 
@@ -70,7 +73,7 @@ From the homepage contact section in `docs/source/index.rst`:
 
 From `docs/source/People.rst`:
 
-- Group leader: 李朝, professor and doctoral supervisor at Harbin Institute of Technology, Shenzhen.
+- Group leader: 李朝, WOEAI group leader. Official profile: https://homepage.hit.edu.cn/lichao.
 - Research and service summary includes wind engineering, wind energy, SCI publication count, citation count, H-index, NSFC grants, Guangdong offshore wind fund, Shenzhen projects, and enterprise consulting projects.
 - Current PhD students listed: 陈铃伟 Chen Lingwei, 何欣 He Xin, 刘尚佩 Liu Shangpei, 杨军辉 Yang Junhui, 丁意恒 Ding Yihang.
 - Graduated PhD students listed: 周盛涛, 王靖含, 赵子涵, 张文通, 郑舜云.
@@ -79,12 +82,11 @@ From `docs/source/People.rst`:
 
 - Current master student names.
 - Graduated master student names.
-- Whether the group leader title and college name changed permanently in 2025.
 - Whether publication/citation/H-index metrics should be updated.
 
 ### Public-Safe Fallback
 
-For empty student/alumni sections, use "名单将根据团队公开信息持续更新。" or hide the empty section.
+For empty student/alumni sections, use "名单将根据团队公开信息持续更新。" or hide the empty section. Keep published member information academic-only.
 
 ## Industry Cooperation
 
@@ -104,7 +106,7 @@ From `docs/source/Projects.rst`:
 
 ### Public-Safe Fallback
 
-Use project categories and capability areas without partner names. Avoid saying "current partners" or "active cooperation" unless confirmed.
+Use project categories and capability areas without partner names. Avoid saying "current partners" or "active cooperation" unless confirmed. Do not further generalize already anonymized enterprise entries unless they become identifiable.
 
 ## Academic Proof
 
@@ -155,4 +157,4 @@ Images available under `docs/_static/`:
 - Partner names.
 - Active technical collaboration status.
 - Facilities, lab area, instrument lists, computing resources, and student outcomes.
-- Analytics ownership and whether Google Analytics ID is valid.
+- Whether any future analytics or third-party tracking tool should be added. If added, update the Privacy Notice before publication.

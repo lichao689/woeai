@@ -791,7 +791,7 @@ published_url:
 ## 联系入口
 
 - Website: https://winddee.cn
-- Email: lichaosz@hit.edu.cn
+- Email: lichaosz@qq.com
 ```
 
 - [ ] **Step 6: Create `wechat/templates/review-checklist.md`**

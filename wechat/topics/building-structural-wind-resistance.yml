@@ -1,0 +1,16 @@
+id: building-structural-wind-resistance
+label_cn: 建筑结构抗风
+label_en: Building Structural Wind Resistance
+subdirections:
+  - id: numerical-wind-tunnel-and-turbulent-inflow
+    label_cn: 数值风洞与湍流入流
+    includes:
+      - 城市风环境
+      - 复杂地形风场
+      - 大气边界层湍流
+      - LES 入流
+  - id: tall-building-wind-resistance-and-optimization
+    label_cn: 高层建筑抗风与优化
+    includes:
+      - 风致振动控制与流动控制
+      - 历史输电塔线及工程结构抗风证据

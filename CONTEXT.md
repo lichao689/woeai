@@ -17,7 +17,7 @@ A factual public page whose purpose is to support recruitment, technical collabo
 _Avoid_: marketing page, archive dump
 
 **Official Profile Link**:
-The canonical way to reference the group leader's institution-hosted official information. Link to `https://homepage.hit.edu.cn/lichao` instead of reproducing local institution, college, address, title, or employment-history claims on the public site.
+The canonical way to reference the group leader's official external profile. Link to `https://homepage.hit.edu.cn/lichao` instead of reproducing local institution, college, address, title, or employment-history claims on the public site.
 _Avoid_: local institution identity copy, college-address claims, school-official wording on the personal/group website
 
 **Public Contact Channels**:
@@ -25,7 +25,7 @@ The public contact channels for WOEAI are the website URL, the personal email ad
 _Avoid_: workplace address as contact, alternate private contact, unconfirmed phone or messaging IDs
 
 **Privacy Notice**:
-The public page that explains the website's personal-information handling boundary. It should say that the website itself does not provide forms, accounts, comments, analytics, or tracking scripts; platform logs are handled by GitHub or Read the Docs under their own policies; information sent through Public Contact Channels is used only for replies, recruitment communication, technical-collaboration communication, and academic exchange.
+The public page that explains the website's personal-information handling boundary. It should say that the website itself does not provide forms, accounts, comments, analytics, or tracking scripts; platform logs are handled by GitHub or Read the Docs under their own policies; information sent through Public Contact Channels is used only for replies, application or academic communication, technical-collaboration communication, and academic exchange.
 _Avoid_: legal guarantee, platform-log control claim, consent-heavy wording for functions the site does not run
 
 **Site Statement**:
@@ -35,6 +35,10 @@ _Avoid_: recruitment purpose in the statement, local institution name, legal gua
 **Technical Collaboration**:
 The canonical public label for external engineering cooperation and consulting-oriented work. Use `技术合作 Technical Collaboration` for the navigation path and page title.
 _Avoid_: 产业合作 Industry Collaboration as the public navigation label
+
+**Enterprise Project Evidence**:
+Public evidence for enterprise-commissioned work. It may show approved capability direction, problem type, year, and role, but should not disclose partner names, current cooperation status, or unpublished project details. Already anonymized descriptions such as `某再生能源发电厂` do not need further generalization unless they become identifiable.
+_Avoid_: partner name, exact facility name, active project detail, over-generalizing already anonymized evidence
 
 **Academic Outputs**:
 The canonical public label for the proof page that contains journal papers and selected highlights. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists.
@@ -104,7 +108,7 @@ Domain Expert: No. Only Public Journal Papers should appear; general library ref
 
 Dev: Should the site describe the group leader's current institution and college locally?
 
-Domain Expert: No. Use the Official Profile Link for institution-hosted official information and keep this site focused on WOEAI research, recruitment, collaboration, and academic outputs.
+Domain Expert: No. Use the Official Profile Link for official external profile information and keep this site focused on WOEAI research, recruitment, collaboration, and academic outputs.
 
 Dev: Should the homepage keep the WeChat QR code?
 
@@ -117,6 +121,10 @@ Domain Expert: Yes. Add a concise Privacy Notice that covers static-site boundar
 Dev: What purpose should the homepage statement give for the website?
 
 Domain Expert: Say it is used for academic output display and technical-collaboration exchange. Do not include recruitment in the statement.
+
+Dev: Should enterprise project entries be generalized further?
+
+Domain Expert: Keep already anonymized Enterprise Project Evidence as-is. Do not disclose partner names or unpublished project details, but do not further generalize entries such as `某再生能源发电厂`.
 
 Dev: Should we restrict the list to first-author or corresponding-author work?
 

@@ -8,7 +8,7 @@
 团队负责人 Group Leader
 ------------------------
 
-李朝，WOEAI 团队负责人。学校官方个人主页见 https://homepage.hit.edu.cn/lichao。
+李朝，WOEAI 团队负责人。官方个人主页见 https://homepage.hit.edu.cn/lichao。
 
 曾在香港城市大学和香港理工大学担任访问研究员。是深圳市海外和后备级高层次人才、南山区领航人才，中国振动工程学会结构抗震控制委员会和中国可再生能源学会会员。
 

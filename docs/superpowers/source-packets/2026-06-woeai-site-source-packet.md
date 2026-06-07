@@ -12,11 +12,12 @@ Outcome priority: 招生 Recruitment > 技术合作 Technical collaboration > �
 - Do not invent current openings, student outcomes, partner names, facilities, funding, salary, subsidies, or publication metadata.
 - If a fact is unverified, either omit it from public pages or use a public-safe updating statement.
 - Public page copy should preserve bilingual Chinese/English headings where the surrounding page already uses them.
-- Do not reproduce local institution, college, address, title, or employment-history claims for the group leader on public pages. Use the official university profile link instead: https://homepage.hit.edu.cn/lichao.
+- Do not reproduce local institution, college, address, title, or employment-history claims for the group leader on public pages. Use the official profile link instead: https://homepage.hit.edu.cn/lichao.
 - Student names and current/graduated status may remain when used only as academic member context. Do not add student institution, college, address, personal contact, private biography, photo, student ID, demographic detail, or non-academic personal information.
-- Public contact channels are the website URL, personal email `lichaosz@qq.com`, official university profile, and homepage WeChat QR code. Do not add further personal contact details without explicit confirmation.
+- Public contact channels are the website URL, personal email `lichaosz@qq.com`, official profile, and homepage WeChat QR code. Do not add further personal contact details without explicit confirmation.
 - The site should keep a concise Privacy Notice. It should cover static-site boundaries, platform logs, email and WeChat contact information, the absence of tracking scripts, and the request channel for correction or deletion.
 - The homepage Site Statement should say the site is used for academic output display and technical-collaboration exchange. Do not include recruitment purpose, institution names, or official-position claims in that statement.
+- Enterprise project evidence may keep already anonymized descriptions such as `某再生能源发电厂`. Do not disclose partner names, current cooperation status, exact facility names, or unpublished project details.
 
 ## Recruitment
 
@@ -47,7 +48,7 @@ From `docs/source/index.rst`:
 
 ### Public-Safe Fallback
 
-If recruitment terms are not confirmed, publish the general invitation and contact path, and mark detailed annual openings as "以当年学校和团队公开信息为准 / subject to current university and group announcements".
+If recruitment terms are not confirmed, publish the general invitation and contact path, and mark detailed annual openings as "以相关公开信息为准 / subject to current public announcements".
 
 ## Contact
 
@@ -57,7 +58,7 @@ From the homepage contact section in `docs/source/index.rst`:
 
 - Website: https://winddee.cn
 - Email: lichaosz@qq.com
-- Official university profile: https://homepage.hit.edu.cn/lichao
+- Official profile: https://homepage.hit.edu.cn/lichao
 - Privacy notice page: `docs/source/Privacy.rst`
 - WeChat QR image: `docs/_static/lcWeChatMatrixCode01.png`
 - Site statement: used for academic output display and technical-collaboration exchange; does not represent any organization's official position.
@@ -72,7 +73,7 @@ From the homepage contact section in `docs/source/index.rst`:
 
 From `docs/source/People.rst`:
 
-- Group leader: 李朝, WOEAI group leader. Official university profile: https://homepage.hit.edu.cn/lichao.
+- Group leader: 李朝, WOEAI group leader. Official profile: https://homepage.hit.edu.cn/lichao.
 - Research and service summary includes wind engineering, wind energy, SCI publication count, citation count, H-index, NSFC grants, Guangdong offshore wind fund, Shenzhen projects, and enterprise consulting projects.
 - Current PhD students listed: 陈铃伟 Chen Lingwei, 何欣 He Xin, 刘尚佩 Liu Shangpei, 杨军辉 Yang Junhui, 丁意恒 Ding Yihang.
 - Graduated PhD students listed: 周盛涛, 王靖含, 赵子涵, 张文通, 郑舜云.
@@ -105,7 +106,7 @@ From `docs/source/Projects.rst`:
 
 ### Public-Safe Fallback
 
-Use project categories and capability areas without partner names. Avoid saying "current partners" or "active cooperation" unless confirmed.
+Use project categories and capability areas without partner names. Avoid saying "current partners" or "active cooperation" unless confirmed. Do not further generalize already anonymized enterprise entries unless they become identifiable.
 
 ## Academic Proof
 

@@ -29,11 +29,12 @@ Do not turn every article into a multi-paper theme essay. Related papers may app
 
 ## Formula Handling
 
-- Use the most direct formula format supported by the WeChat publishing workflow.
-- Do not render formulas as images. Formula images are too easy to blur after upload, compression, or mobile scaling.
+- Use Markdown LaTeX as the canonical formula source in WeChat article drafts: `$...$` for inline formulas and `$$...$$` for display formulas.
+- Render WeChat formulas through the WeChat Markdown workflow, such as doocs/md, and verify the resulting formula display in the final WeChat backend mobile preview.
+- RTD companion pages should convert the same LaTeX formula semantics to Sphinx math markup: ``:math:`...` `` for inline formulas and `.. math::` for display formulas.
+- Do not render formulas as images by default. Formula images are too easy to blur after upload, compression, or mobile scaling; use them only as a fallback when the final WeChat preview cannot preserve a readable formula.
 - Keep formulas short and readable on mobile. If a formula is long, split the explanation into nearby text rather than forcing a dense display block.
 - After each important formula, add a plain-language sentence explaining what the formula means and why it matters for the paper.
-- Verify formulas in the final WeChat backend mobile preview before publishing.
 
 ## Figure Handling
 

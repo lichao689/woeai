@@ -61,6 +61,8 @@ STUDENT_NAME_ALIASES = {
     "张文通": ["Zhang Wentong", "Wentong Zhang"],
     "郑舜云": ["Zheng Shunyun", "Shunyun Zheng"],
 }
+GROUP_LEADER_AUTHOR_NAMES = ("Li Chao", "Chao Li", "李朝", "朝 李")
+CORRESPONDING_AUTHOR_LABELS = ("通讯作者", "corresponding author", "corresponding authors")
 
 
 PINYIN_SURNAMES = {
@@ -475,6 +477,95 @@ def mark_student_first_author(value: str, item: dict[str, Any]) -> str:
     return pattern.sub(f":student-first-author:`{escaped_author}`", value, count=1)
 
 
+def split_extra_tokens(value: str | None) -> list[str]:
+    return [token.strip() for token in re.split(r"[、,，;；\n\r]+", value or "") if token.strip()]
+
+
+def has_corresponding_author_flag(item: dict[str, Any]) -> bool:
+    extra = str(item.get("data", {}).get("extra") or "")
+    if not extra:
+        return False
+    if re.search(r"(?:^|[、,，;；\s])_?通讯作者(?:$|[、,，;；\s])", extra):
+        return True
+    if re.search(r"\bcorresponding[-_ ]authors?\b", extra, flags=re.I):
+        return True
+    normalized_tokens = {token.casefold().lstrip("_#") for token in split_extra_tokens(extra)}
+    return any(label in normalized_tokens for label in CORRESPONDING_AUTHOR_LABELS)
+
+
+def explicit_corresponding_author_tokens(item: dict[str, Any]) -> list[str]:
+    extra = str(item.get("data", {}).get("extra") or "")
+    if not extra:
+        return []
+    tokens: list[str] = []
+    for label in CORRESPONDING_AUTHOR_LABELS:
+        pattern = re.compile(rf"{re.escape(label)}\s*[:：=]\s*(?P<names>[^\n\r]+)", re.I)
+        for match in pattern.finditer(extra):
+            raw_names = match.group("names")
+            # Stop before Zotero tag-style separators when the next token is a private marker.
+            raw_names = re.split(r"\s+[|]\s+|🏷️", raw_names, maxsplit=1)[0]
+            tokens.extend(split_extra_tokens(raw_names))
+    return [token for token in tokens if token and not token.startswith(("_", "#", "/"))]
+
+
+def creator_name_index(item: dict[str, Any]) -> dict[str, str]:
+    index: dict[str, str] = {}
+    for creator in item.get("data", {}).get("creators") or []:
+        csl_name = creator_csl_display_name(creator)
+        for variant in {creator_display_name(creator), csl_name}:
+            normalized = normalize_author_name(variant)
+            if normalized:
+                index[normalized] = csl_name
+    return index
+
+
+def corresponding_author_display_names(item: dict[str, Any]) -> list[str]:
+    index = creator_name_index(item)
+    names: list[str] = []
+    for token in explicit_corresponding_author_tokens(item):
+        normalized = normalize_author_name(token)
+        if normalized in index:
+            names.append(index[normalized])
+        elif normalized:
+            names.append(token)
+    if not names and has_corresponding_author_flag(item):
+        for leader_name in GROUP_LEADER_AUTHOR_NAMES:
+            csl_name = index.get(normalize_author_name(leader_name))
+            if csl_name:
+                names.append(csl_name)
+    seen: set[str] = set()
+    unique_names: list[str] = []
+    for name in names:
+        normalized = normalize_author_name(name)
+        if normalized and normalized not in seen:
+            seen.add(normalized)
+            unique_names.append(name)
+    return unique_names
+
+
+def rendered_author_variants(name: str, item: dict[str, Any]) -> list[str]:
+    escaped_name = rst_escape(name)
+    variants = [escaped_name]
+    if normalize_author_name(name) in {normalize_author_name(raw) for raw in GROUP_LEADER_AUTHOR_NAMES}:
+        variants.extend(["**Li Chao**", "**李朝**"])
+    first_author = student_first_author_display(item)
+    if first_author and normalize_author_name(first_author) == normalize_author_name(name):
+        variants.append(f":student-first-author:`{rst_escape(first_author)}`")
+    return variants
+
+
+def mark_corresponding_authors(value: str, item: dict[str, Any]) -> str:
+    names = corresponding_author_display_names(item)
+    if not names:
+        return value
+    author_segment, separator, remainder = value.partition(",")
+    for name in names:
+        for variant in rendered_author_variants(name, item):
+            pattern = re.compile(rf"({re.escape(variant)})(?!\\\*|\*)(?=\s*(?:;|,|$))")
+            author_segment = pattern.sub(r"\1\\*", author_segment, count=1)
+    return author_segment + separator + remainder
+
+
 def rendered_entry(item: dict[str, Any], number: int) -> str:
     text = strip_bib_html(item.get("bib") or "")
     text = rst_escape(text)
@@ -482,6 +573,7 @@ def rendered_entry(item: dict[str, Any], number: int) -> str:
     text = bold_metric_values(text)
     text = mark_student_first_author(text, item)
     text = bold_group_leader(text)
+    text = mark_corresponding_authors(text, item)
     return f"[{number}] {text}"
 
 
@@ -711,6 +803,7 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "------------------------",
             "",
             "- :student-first-author:`学生第一作者` 表示该论文第一作者为团队在校或毕业学生。",
+            "- 作者姓名后的 ``*`` 表示通讯作者。",
             "",
         ]
     )
@@ -753,6 +846,9 @@ def build_publications_by_research_rst(
         "",
         "按研究方向浏览学术成果 Publications by Research Direction",
         "=" * 80,
+        "",
+        "- :student-first-author:`学生第一作者` 表示该论文第一作者为团队在校或毕业学生。",
+        "- 作者姓名后的 ``*`` 表示通讯作者。",
         "",
     ]
     for family in RESEARCH_FAMILY_ORDER:
@@ -823,6 +919,7 @@ def snapshot(
                 "doi": item["data"].get("DOI"),
                 "creators": [creator_display_name(creator) for creator in item["data"].get("creators") or []],
                 "student_first_author": student_first_author_display(item),
+                "corresponding_authors": corresponding_author_display_names(item),
                 "research_family": research_map[item["key"]].get("research_family"),
                 "subdirection": research_map[item["key"]].get("subdirection"),
                 "rendered": strip_bib_html(item.get("bib") or ""),

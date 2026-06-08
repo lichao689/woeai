@@ -124,6 +124,10 @@ _Avoid_: forcing every article into a multi-paper theme essay
 A Read the Docs page generated from a One-Paper WeChat Article. It should preserve the same title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent as the WeChat article, while converting the markup and rendering format to Sphinx-compatible reStructuredText.
 _Avoid_: creating a separate Markdown route for Sphinx, changing the article meaning for RTD, or making the RTD page a shorter unrelated summary
 
+**Public Formula**:
+A mathematical expression included in a One-Paper WeChat Article or RTD Paper Companion Page. It should preserve one LaTeX formula meaning across publication channels, with channel-specific rendering. Public formulas should remain text-based and explain their key variables in prose.
+_Avoid_: code-block formula, unstructured plain-text formula, default formula screenshot, unexplained symbol list
+
 **Academic Progress Section**:
 The research-direction page section that groups RTD Paper Companion Pages by second-level research subdirection. It replaces `近期证据` as the public label for recent paper-explanation progress and should initially sort entries by publication date in descending order.
 _Avoid_: treating Academic Progress as a raw publication list, a duplicate chronological publication view, or a collection grouped only by first-level Research Family

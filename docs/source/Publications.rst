@@ -28,6 +28,7 @@
 ------------------------
 
 - :student-first-author:`学生第一作者` 表示该论文第一作者为团队在校或毕业学生。
+- 作者姓名后的 ``*`` 表示通讯作者。
 
 2026
 ~~~~~~~~~~~~
@@ -143,11 +144,11 @@
 
 .. _ref-zhou2023-AE:
 
-[48] :student-first-author:`Zhou Shengtao`; **Li Chao**; Xiao Yiqing; Wang Xiaolu; Xiang Wenyuan; Sun Qing, Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization[J]. **Applied Energy**, 2023, 352: 121941. https://doi.org/10.1016/j.apenergy.2023.121941. 影响因子: **11.0 (Q1)**. 中科院分区: **1**.
+[48] :student-first-author:`Zhou Shengtao`; **Li Chao**\*; Xiao Yiqing; Wang Xiaolu; Xiang Wenyuan; Sun Qing, Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization[J]. **Applied Energy**, 2023, 352: 121941. https://doi.org/10.1016/j.apenergy.2023.121941. 影响因子: **11.0 (Q1)**. 中科院分区: **1**.
 
 .. _ref-zhao2023-BS:
 
-[47] :student-first-author:`Zhao Zihan`; Xiao Yiqing; **Li Chao**; Chan P W; Hu Gang; Zhou Qingfeng, Multiscale simulation of the urban wind environment under typhoon weather conditions[J]. **Building Simulation**, 2023, 16(9): 1713～1734. https://doi.org/10.1007/s12273-023-0991-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
+[47] :student-first-author:`Zhao Zihan`; Xiao Yiqing; **Li Chao**\*; Chan P W; Hu Gang; Zhou Qingfeng, Multiscale simulation of the urban wind environment under typhoon weather conditions[J]. **Building Simulation**, 2023, 16(9): 1713～1734. https://doi.org/10.1007/s12273-023-0991-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
 
 .. _ref-zhang2023-JWEIA:
 
@@ -155,19 +156,19 @@
 
 .. _ref-zheng2023-MS:
 
-[45] :student-first-author:`Zheng Shunyun`; **Li Chao**; Xiao Yiqing, Efficient optimization design method of jacket structures for offshore wind turbines[J]. **Marine Structures**, 2023, 89: 103372. https://doi.org/10.1016/j.marstruc.2023.103372. 影响因子: **5.1 (Q1)**. 中科院分区: **2**.
+[45] :student-first-author:`Zheng Shunyun`; **Li Chao**\*; Xiao Yiqing, Efficient optimization design method of jacket structures for offshore wind turbines[J]. **Marine Structures**, 2023, 89: 103372. https://doi.org/10.1016/j.marstruc.2023.103372. 影响因子: **5.1 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zhang2023-S:
 
-[44] :student-first-author:`Zhang Wentong`; **Li Chao**; Liu Gaixia; Xiao Yiqing, Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra[J]. **Structures**, 2023, 48: 1634～1650. https://doi.org/10.1016/j.istruc.2022.12.073. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
+[44] :student-first-author:`Zhang Wentong`; **Li Chao**\*; Liu Gaixia; Xiao Yiqing, Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra[J]. **Structures**, 2023, 48: 1634～1650. https://doi.org/10.1016/j.istruc.2022.12.073. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
 .. _ref-wang2023-JWEIA:
 
-[43] :student-first-author:`Wang Jinghan`; **Li Chao**; Huang Shenghong; Zheng Qingxing; Xiao Yiqing; Ou Jinping, Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2023, 233: 105326. https://doi.org/10.1016/j.jweia.2023.105326. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
+[43] :student-first-author:`Wang Jinghan`; **Li Chao**\*; Huang Shenghong; Zheng Qingxing; Xiao Yiqing; Ou Jinping, Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2023, 233: 105326. https://doi.org/10.1016/j.jweia.2023.105326. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zheng2023-JRSE:
 
-[42] :student-first-author:`Zheng Shunyun`; **Li Chao**; Wang Peicen; Zhou Shengtao; Xiao Yiqing, Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine[J]. **Journal of Renewable and Sustainable Energy**, 2023, 15(1): 013305. https://doi.org/10.1063/5.0131279. 影响因子: **1.9 (Q4)**. 中科院分区: **4**.
+[42] :student-first-author:`Zheng Shunyun`; **Li Chao**\*; Wang Peicen; Zhou Shengtao; Xiao Yiqing, Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine[J]. **Journal of Renewable and Sustainable Energy**, 2023, 15(1): 013305. https://doi.org/10.1063/5.0131279. 影响因子: **1.9 (Q4)**. 中科院分区: **4**.
 
 .. _ref-zhang2023-ES:
 
@@ -226,7 +227,7 @@
 
 .. _ref-yang2022-AS:
 
-[28] :student-first-author:`Yang Junhui`; Zhang Junfeng; **Li Chao**, Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses[J]. **Applied Sciences**, 2022, 12(8): 3729. https://doi.org/10.3390/app12083729. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
+[28] :student-first-author:`Yang Junhui`; Zhang Junfeng; **Li Chao**\*, Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses[J]. **Applied Sciences**, 2022, 12(8): 3729. https://doi.org/10.3390/app12083729. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
 
 2021
 ~~~~~~~~~~~~
@@ -249,11 +250,11 @@
 
 .. _ref-zhou2021-OE:
 
-[23] :student-first-author:`Zhou Shengtao`; Müller Kolja; **Li Chao**; Xiao Yiqing; Cheng Po Wen, Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics[J]. **Ocean Engineering**, 2021, 221: 108585. https://doi.org/10.1016/j.oceaneng.2021.108585. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
+[23] :student-first-author:`Zhou Shengtao`; Müller Kolja; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics[J]. **Ocean Engineering**, 2021, 221: 108585. https://doi.org/10.1016/j.oceaneng.2021.108585. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zhao2021-TYNXB:
 
-[22] :student-first-author:`赵子涵`; **李朝**; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. **太阳能学报**, 2021, 42(2): 205～210.
+[22] :student-first-author:`赵子涵`; **李朝**\*; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. **太阳能学报**, 2021, 42(2): 205～210.
 
 2020
 ~~~~~~~~~~~~
@@ -302,7 +303,7 @@
 
 .. _ref-xiao2018-KXJSYGC:
 
-[12] 肖凯; 赵子涵; 罗啸宇; **李朝**; 钟继; 肖仪清, 复杂地形下基于计算流体动力学的风速比计算[J]. **科学技术与工程**, 2018, 18(33): 1～6.
+[12] 肖凯; 赵子涵; 罗啸宇; **李朝**\*; 钟继; 肖仪清, 复杂地形下基于计算流体动力学的风速比计算[J]. **科学技术与工程**, 2018, 18(33): 1～6.
 
 2017
 ~~~~~~~~~~~~

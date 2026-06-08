@@ -62,7 +62,7 @@ rtd_page_checked: true
 ## 公式检查
 
 - 使用公式: yes
-- 呈现方式: direct text formula, not image
+- 呈现方式: Markdown LaTeX formula rendered by the WeChat Markdown workflow, not image
 - 移动端预览: pending WeChat backend mobile preview
 
 ## 公开安全

@@ -43,6 +43,7 @@ rtd_page_checked: false
 
 - 使用公式:
 - 呈现方式:
+- RTD 呈现方式:
 - 移动端预览:
 
 ## 公开安全

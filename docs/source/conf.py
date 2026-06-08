@@ -27,6 +27,7 @@ html_meta = {
 extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.mathjax',
     'sphinx_sitemap',  # 生成 sitemap.xml 用于 SEO
 ]
 

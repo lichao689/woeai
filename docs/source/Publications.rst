@@ -35,7 +35,7 @@
 
 .. _ref-zhao2026-BE:
 
-[74] Zhao Peisheng; **Li Chao**; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu\*, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. **Building and Environment**, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: **7.6 (Q1)**. 中科院分区: **1**.
+[74] :student-first-author:`Zhao Peisheng`; **Li Chao**; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu\*, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. **Building and Environment**, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: **7.6 (Q1)**. 中科院分区: **1**.
 
 .. _ref-he2026-OE:
 
@@ -43,7 +43,7 @@
 
 .. _ref-zhao2026-BS:
 
-[72] Zhao Peisheng; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. **Building Simulation**, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
+[72] :student-first-author:`Zhao Peisheng`; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. **Building Simulation**, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
 
 .. _ref-huang2026-JWEIA:
 
@@ -51,7 +51,7 @@
 
 .. _ref-he2026-OE-structural:
 
-[70] He Weiwen; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
+[70] :student-first-author:`He Weiwen`; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
 .. _ref-tang2026-RE:
 
@@ -82,7 +82,7 @@
 
 .. _ref-tang2025-JBE:
 
-[63] Tang Ao; **Li Chao**\*; Yang Junhui; Zhang Heqiang; Zheng Qingxing; Zhang Jianjun, Training and application of graph neural networks for predicting structural responses targeted at tall building structures[J]. **Journal of Building Engineering**, 2025, 103: 112131. https://doi.org/10.1016/j.jobe.2025.112131. 影响因子: **7.4 (Q1)**. 中科院分区: **1**.
+[63] :student-first-author:`Tang Ao`; **Li Chao**\*; Yang Junhui; Zhang Heqiang; Zheng Qingxing; Zhang Jianjun, Training and application of graph neural networks for predicting structural responses targeted at tall building structures[J]. **Journal of Building Engineering**, 2025, 103: 112131. https://doi.org/10.1016/j.jobe.2025.112131. 影响因子: **7.4 (Q1)**. 中科院分区: **1**.
 
 .. _ref-gong2025-POF:
 
@@ -94,7 +94,7 @@
 
 .. _ref-zhao2025-SCS:
 
-[60] Zhao Peisheng; **Li Chao**\*; Jiang Jianxun; Chen Lingwei; Wang Xiaolu, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: **12.0 (Q1)**. 中科院分区: **1**. 引用次数: **6**.
+[60] :student-first-author:`Zhao Peisheng`; **Li Chao**\*; Jiang Jianxun; Chen Lingwei; Wang Xiaolu, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: **12.0 (Q1)**. 中科院分区: **1**. 引用次数: **6**.
 
 .. _ref-liang2025-OE:
 

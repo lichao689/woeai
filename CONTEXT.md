@@ -101,8 +101,12 @@ A public People-page label that indicates whether a student member is current or
 _Avoid_: status in the name, current/graduated as the primary student category
 
 **Academic Member Listing**:
-A public member listing that supports academic context only. It may show a student's public name, degree-level group, and Member Status Tag, but should not add institution, college, address, personal contact, private biography, photo, student ID, demographic detail, or non-academic personal information.
+A public member listing that supports academic context only. It may show a student's public name, degree-level group, Member Status Tag, and degree thesis information when the thesis record is public, but should not add institution, college, address, personal contact, private biography, photo, student ID, demographic detail, or non-academic personal information.
 _Avoid_: unit-bearing student profile, contact directory, private student record
+
+**Degree Thesis Listing**:
+A People-page line that presents a member through public graduation thesis metadata in the format `姓名(English Name)，年份日期，学位论文类型：题目。`. It is ordinary listing text, not a subsection heading or a private biography.
+_Avoid_: thesis as member profile heading, unpublished private thesis note, non-public student record
 
 **Research Family**:
 The canonical public first-level research taxonomy for WOEAI. Use exactly two public research families: `建筑结构抗风` and `海上漂浮风电`. Method names such as `数值风洞` are subdirections, not first-level public families.
@@ -209,6 +213,10 @@ Domain Expert: No. Use degree-level groups such as PhD Students and Master Stude
 Dev: Should student names and current/graduated status be removed for privacy?
 
 Domain Expert: No. Keep Academic Member Listings when they support academic context, but do not add units, contact details, photos, IDs, or private biographical information.
+
+Dev: Should graduated students on the People page be shown as one subsection per person?
+
+Domain Expert: No. Use Degree Thesis Listings as ordinary text lines under the relevant degree-level group.
 
 Dev: Should WOEAI use semantic versioning for public site updates?
 

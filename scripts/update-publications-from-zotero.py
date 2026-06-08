@@ -55,11 +55,30 @@ RESEARCH_SUBDIRECTION_ORDER = {
 }
 STUDENT_SECTION_MARKERS = ("PhD Students", "Master Students", "博士生", "硕士生")
 STUDENT_NAME_ALIASES = {
+    "何欣": ["He Xin", "Xin He"],
+    "刘尚佩": ["Liu Shangpei", "Shangpei Liu"],
+    "杨军辉": ["Yang Junhui", "Junhui Yang"],
+    "丁意恒": ["Ding Yihang", "Yihang Ding"],
+    "裴若鹏": ["Pei Ruopeng", "Ruopeng Pei"],
+    "陈铃伟": ["Chen Lingwei", "Lingwei Chen"],
     "周盛涛": ["Zhou Shengtao", "Shengtao Zhou"],
     "王靖含": ["Wang Jinghan", "Jinghan Wang"],
     "赵子涵": ["Zhao Zihan", "Zihan Zhao"],
     "张文通": ["Zhang Wentong", "Wentong Zhang"],
     "郑舜云": ["Zheng Shunyun", "Shunyun Zheng"],
+    "赵培升": ["Zhao Peisheng", "Peisheng Zhao"],
+    "汤澳": ["Tang Ao", "Ao Tang"],
+    "秦佳伦": ["Qin Jialun", "Jialun Qin"],
+    "刘金波": ["Liu Jinbo", "Jinbo Liu"],
+    "周子豪": ["Zhou Zihao", "Zihao Zhou"],
+    "袁野": ["Yuan Ye", "Ye Yuan"],
+    "蒋建勋": ["Jiang Jianxun", "Jianxun Jiang"],
+    "何蔚文": ["He Weiwen", "Weiwen He"],
+    "范文涛": ["Fan Wentao", "Wentao Fan"],
+    "王一鸣": ["Wang Yiming", "Yiming Wang"],
+    "王沛岑": ["Wang Peicen", "Peicen Wang"],
+    "韩芷宸": ["Han Zhichen", "Zhichen Han"],
+    "陈翔": ["Chen Xiang", "Xiang Chen"],
 }
 GROUP_LEADER_AUTHOR_NAMES = ("Li Chao", "Chao Li", "李朝", "朝 李")
 CORRESPONDING_AUTHOR_LABELS = ("通讯作者", "corresponding author", "corresponding authors")
@@ -303,18 +322,27 @@ def normalize_author_name(value: str) -> str:
 
 
 def people_name_variants(line: str) -> set[str]:
-    variants = {line.strip()}
-    match = re.match(
-        r"(?P<chinese>[\u4e00-\u9fff·]+)(?:\s+(?P<latin>[A-Za-z][A-Za-z .'\-]+))?$",
-        line.strip(),
-    )
-    if match:
-        chinese = match.group("chinese")
-        latin = (match.group("latin") or "").strip()
-        variants.add(chinese)
-        if latin:
-            variants.add(latin)
-        variants.update(STUDENT_NAME_ALIASES.get(chinese, []))
+    stripped = line.strip()
+    cleaned = re.sub(r"^[-*]\s+", "", stripped)
+    candidates = {cleaned}
+    if "，" in cleaned or "," in cleaned:
+        candidates.add(re.split(r"[，,]", cleaned, maxsplit=1)[0].strip())
+
+    variants: set[str] = set()
+    for candidate in list(candidates):
+        match = re.match(
+            r"(?P<chinese>[\u4e00-\u9fff·]+)(?:\((?P<latin_paren>[A-Za-z][A-Za-z .'\-]+)\)|\s+(?P<latin>[A-Za-z][A-Za-z .'\-]+))?$",
+            candidate.strip(),
+        )
+        if match:
+            chinese = match.group("chinese")
+            latin = (match.group("latin_paren") or match.group("latin") or "").strip()
+            variants.add(chinese)
+            if latin and normalize_author_name(latin) not in {
+                normalize_author_name(name) for name in GROUP_LEADER_AUTHOR_NAMES
+            }:
+                variants.add(latin)
+            variants.update(STUDENT_NAME_ALIASES.get(chinese, []))
     return {variant for variant in variants if variant}
 
 
@@ -342,7 +370,11 @@ def load_student_author_names() -> set[str]:
             continue
         if "名单将" in stripped:
             continue
-        if next_line and is_section_underline(next_line, "~"):
+        is_member_heading = next_line and is_section_underline(next_line, "~")
+        is_member_list_item = stripped.startswith(("- ", "* ")) and (
+            "学位论文" in stripped or "member-status-" in stripped
+        )
+        if is_member_heading or is_member_list_item:
             for variant in people_name_variants(stripped):
                 names.add(normalize_author_name(variant))
     return names

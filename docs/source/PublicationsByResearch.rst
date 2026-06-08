@@ -12,9 +12,9 @@
 数值风洞与湍动入流
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`[74] <ref-zhao2026-BE>` Zhao Peisheng; **Li Chao**; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu\*, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. **Building and Environment**, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: **7.6 (Q1)**. 中科院分区: **1**.
+:ref:`[74] <ref-zhao2026-BE>` :student-first-author:`Zhao Peisheng`; **Li Chao**; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu\*, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. **Building and Environment**, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: **7.6 (Q1)**. 中科院分区: **1**.
 
-:ref:`[72] <ref-zhao2026-BS>` Zhao Peisheng; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. **Building Simulation**, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
+:ref:`[72] <ref-zhao2026-BS>` :student-first-author:`Zhao Peisheng`; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. **Building Simulation**, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
 
 :ref:`[71] <ref-huang2026-JWEIA>` Huang Xigui; Chen Shangxin; Wu Teng; Hu Gang; **Li Chao**; Long Wujian; Li Lixiao\*, Simulation of non-stationary winds in typhoon field based on turbulent coherent structure and AR-GARCH model[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2026, 269: 106302. https://doi.org/10.1016/j.jweia.2025.106302. 中科院分区: **2**.
 
@@ -22,7 +22,7 @@
 
 :ref:`[66] <ref-wang2025-POF>` :student-first-author:`Wang Jinghan`; He Xinyu; Jiang Shan; Chan P W; **Li Chao**; Ou Jinping; Duan Penghao\*; Li Lishuai, Evaluation of urban wind effects on flight path planning of delivery drones using computational fluid dynamics simulations[J]. **Physics of Fluids**, 2025, 37(8): 87124. https://doi.org/10.1063/5.0281373. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
-:ref:`[60] <ref-zhao2025-SCS>` Zhao Peisheng; **Li Chao**\*; Jiang Jianxun; Chen Lingwei; Wang Xiaolu, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: **12.0 (Q1)**. 中科院分区: **1**. 引用次数: **6**.
+:ref:`[60] <ref-zhao2025-SCS>` :student-first-author:`Zhao Peisheng`; **Li Chao**\*; Jiang Jianxun; Chen Lingwei; Wang Xiaolu, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: **12.0 (Q1)**. 中科院分区: **1**. 引用次数: **6**.
 
 :ref:`[58] <ref-chen2024-POF>` :student-first-author:`Chen Lingwei`; **Li Chao**\*; Wang Jinghan; He Xin; Wang Xiangjie; Hu Gang; Wang Xiaolu, Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment[J]. **Physics of Fluids**, 2024, 36(12): 127120. https://doi.org/10.1063/5.0240163. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
@@ -79,7 +79,7 @@
 
 :ref:`[67] <ref-yang2025-JBE>` :student-first-author:`Yang Junhui`; **Li Chao**\*; Zhang Zhu; Chen Lingwei; He Xin; Zheng Qingxing; Zhang Jianjun, Statistical extremes of 2D vectorial response for wind-excited tall buildings[J]. **Journal of Building Engineering**, 2025, 111: 113635. https://doi.org/10.1016/j.jobe.2025.113635. 影响因子: **7.4 (Q1)**. 中科院分区: **1**.
 
-:ref:`[63] <ref-tang2025-JBE>` Tang Ao; **Li Chao**\*; Yang Junhui; Zhang Heqiang; Zheng Qingxing; Zhang Jianjun, Training and application of graph neural networks for predicting structural responses targeted at tall building structures[J]. **Journal of Building Engineering**, 2025, 103: 112131. https://doi.org/10.1016/j.jobe.2025.112131. 影响因子: **7.4 (Q1)**. 中科院分区: **1**.
+:ref:`[63] <ref-tang2025-JBE>` :student-first-author:`Tang Ao`; **Li Chao**\*; Yang Junhui; Zhang Heqiang; Zheng Qingxing; Zhang Jianjun, Training and application of graph neural networks for predicting structural responses targeted at tall building structures[J]. **Journal of Building Engineering**, 2025, 103: 112131. https://doi.org/10.1016/j.jobe.2025.112131. 影响因子: **7.4 (Q1)**. 中科院分区: **1**.
 
 :ref:`[61] <ref-yan2025-POF>` Yan Lei; Cai Huaiqiang; Wang Qiulei; Chen Lingwei; **Li Chao**; Hu Gang\*, Deep reinforcement learning-based active flow control for a tall building[J]. **Physics of Fluids**, 2025, 37(4): 045132. https://doi.org/10.1063/5.0267175. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
@@ -160,7 +160,7 @@
 浮式混凝土平台结构设计
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`[70] <ref-he2026-OE-structural>` He Weiwen; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
+:ref:`[70] <ref-he2026-OE-structural>` :student-first-author:`He Weiwen`; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
 :ref:`[33] <ref-li2022-SOS>` **Li Chao**; Zhou Shengtao\*; Shan Baohua; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin; Yiqing Xiao, Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures[J]. **Ships and Offshore Structures**, Taylor & Francis, 2022, 17(8): 1663～1683. https://doi.org/10.1080/17445302.2021.1937801. 影响因子: **1.8 (Q2)**. 中科院分区: **3**.
 

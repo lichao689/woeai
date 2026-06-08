@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -77,6 +78,41 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
 
         self.assertIn("**Li Chao**\\*, Example[J]", rendered)
         self.assertNotIn("\\*\\*", rendered)
+
+    def test_people_parser_accepts_degree_thesis_listing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            people = Path(tmpdir) / "People.rst"
+            people.write_text(
+                "\n".join(
+                    [
+                        "团队成员 People",
+                        "===================",
+                        "",
+                        "博士生 PhD Students",
+                        "-------------------",
+                        "",
+                        "- 郑舜云(Zheng Shunyun)，2024-11，博士学位论文：半潜式风机支撑结构的尺度优化及强度评估。",
+                        "- 何欣(He Xin)，:member-status-current:`在校 Current`。",
+                        "- 李超(Li Chao)，2023，硕士学位论文：基于气象资料统计的滨海城市微尺度风气候分析。",
+                        "",
+                    ]
+                ),
+                encoding="utf-8",
+            )
+            original_path = self.updater.PEOPLE_PATH
+            self.updater.PEOPLE_PATH = people
+            self.updater.load_student_author_names.cache_clear()
+            try:
+                names = self.updater.load_student_author_names()
+            finally:
+                self.updater.PEOPLE_PATH = original_path
+                self.updater.load_student_author_names.cache_clear()
+
+        self.assertIn(self.updater.normalize_author_name("Zheng Shunyun"), names)
+        self.assertIn(self.updater.normalize_author_name("Shunyun Zheng"), names)
+        self.assertIn(self.updater.normalize_author_name("He Xin"), names)
+        self.assertIn(self.updater.normalize_author_name("李超"), names)
+        self.assertNotIn(self.updater.normalize_author_name("Li Chao"), names)
 
 
 if __name__ == "__main__":

@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS = ROOT / "docs/source/Publications.rst"
 PUBLICATIONS_BY_RESEARCH = ROOT / "docs/source/PublicationsByResearch.rst"
+TEACHING = ROOT / "docs/source/Teaching.rst"
 INDEX = ROOT / "docs/source/index.rst"
 RESEARCH_MAP = ROOT / "docs/data/publication-research-map.json"
 
@@ -17,6 +18,8 @@ RESEARCH_STRUCTURE = {
     "建筑结构抗风": ("数值风洞与湍动入流", "高层建筑抗风与优化"),
     "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
 }
+TEACHING_REFORM_PUBLICATION_KEY = "KT6UR5JW"
+TEACHING_REFORM_PUBLICATION_TITLE = "中国共产党精神谱系视域下土木工程课程思政建设的探索与实践"
 
 
 def publication_anchors(text: str) -> set[str]:
@@ -124,6 +127,18 @@ class PublicationsResearchViewTests(unittest.TestCase):
         for key, row in items.items():
             self.assertRegex(key, r"^[A-Z0-9]{8}$")
             self.assertIn(row["research_family"], RESEARCH_FAMILIES)
+
+    def test_teaching_reform_publications_live_on_teaching_page(self) -> None:
+        publications_text = PUBLICATIONS.read_text(encoding="utf-8")
+        research_text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
+        teaching_text = TEACHING.read_text(encoding="utf-8")
+        mapping = json.loads(RESEARCH_MAP.read_text(encoding="utf-8"))
+
+        self.assertNotIn(TEACHING_REFORM_PUBLICATION_TITLE, publications_text)
+        self.assertNotIn(TEACHING_REFORM_PUBLICATION_TITLE, research_text)
+        self.assertNotIn(TEACHING_REFORM_PUBLICATION_KEY, mapping["items"])
+        self.assertIn("教改探索", teaching_text)
+        self.assertIn(TEACHING_REFORM_PUBLICATION_TITLE, teaching_text)
 
 
 if __name__ == "__main__":

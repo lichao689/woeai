@@ -1,13 +1,13 @@
 ---
 name: wechat-paper
-description: Use when generating, reviewing, or updating WOEAI WeChat Official Account articles from published journal papers. Applies to one-paper-one-article drafts, historical paper reposts, formula and figure handling, two-file article/review outputs, backlog updates, and public-safe publication workflows in this repository.
+description: Use when generating, reviewing, or updating WOEAI WeChat Official Account articles and matching RTD paper companion pages from published journal papers. Applies to one-paper-one-article drafts, historical paper reposts, formula and figure handling, Markdown-to-RST conversion, article/review/RTD outputs, backlog updates, and public-safe publication workflows in this repository.
 ---
 
 # WeChat Paper Article Skill
 
-Use this skill when a task asks to create, revise, review, or track a WeChat Official Account article based on a published WOEAI journal paper.
+Use this skill when a task asks to create, revise, review, or track a WeChat Official Account article based on a published WOEAI journal paper, including the matching Read the Docs paper companion page.
 
-The output is a public-safe reader-facing Markdown article plus a separate review note. Do not publish to WeChat automatically.
+The output is a public-safe reader-facing Markdown article, a matching Sphinx-compatible RST page for RTD, and a separate review note. Do not publish to WeChat automatically.
 
 ## Required Context
 
@@ -21,6 +21,7 @@ Read these files before drafting:
 6. `wechat/templates/review-checklist.md` for review gates.
 7. `wechat/backlog/selected-papers.yml` to select and update the paper state.
 8. `docs/source/Publications.rst` and the relevant research direction page for public website anchors.
+9. Existing `docs/source/Research.rst` and direction pages for the RTD Academic Progress placement.
 
 If the task mentions Zotero, DOI, a PDF, or a paper title, inspect those sources when available. Do not invent missing bibliographic facts.
 
@@ -66,23 +67,25 @@ Use only these public research families and subdirections unless the user explic
 2. Verify `publication_ref`, title, year, DOI, and WOEAI website anchor.
 3. Create or update the reader-facing article under `wechat/articles/draft-public-safe/`.
 4. Name the article with the paper's `publication_ref`, for example `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`.
-5. Create or update the publishing note under `wechat/articles/review/`, for example `wechat/articles/review/ref-zhao2026-BS.review.md`.
-6. Start the reader-facing article from `wechat/templates/paper-explainer.md`, but remove any production-only placeholders before treating it as copy-ready.
-7. Keep review details, evidence notes, copyright status, formula preview status, figure insertion status, and human checklists in the `.review.md` file, not in the reader-facing article.
-8. Keep `wechat_status` aligned with the backlog state model:
+5. Convert the same public article content to a Sphinx-compatible RST page for RTD. Do not add a separate Markdown route to Sphinx.
+6. Create or update the publishing note under `wechat/articles/review/`, for example `wechat/articles/review/ref-zhao2026-BS.review.md`.
+7. Start the reader-facing article from `wechat/templates/paper-explainer.md`, but remove any production-only placeholders before treating it as copy-ready.
+8. Keep review details, evidence notes, copyright status, formula preview status, figure insertion status, RST conversion notes, and human checklists in the `.review.md` file, not in the reader-facing article or RTD page.
+9. Keep `wechat_status` aligned with the backlog state model:
    - `selected`
    - `drafting`
    - `reviewing`
    - `ready_to_publish`
    - `published`
    - `archived`
-9. Update `wechat/backlog/selected-papers.yml` only when the user's task asks for workflow tracking or after a draft/review step changes status.
+10. Update `wechat/backlog/selected-papers.yml` only when the user's task asks for workflow tracking or after a draft/review step changes status.
 
-## Two-File Output Model
+## Output Model
 
-Generate two files for each paper article:
+Generate three public-safe files or records for each paper article:
 
 - `wechat/articles/draft-public-safe/<publication_ref>.md`: reader-facing WeChat Markdown. It should be clean enough to copy into a WeChat Markdown editor or the WeChat backend.
+- `docs/source/paper-notes/<publication_ref>.rst`: RTD Paper Companion Page. It should present the same public title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent as the WeChat Markdown article, with only markup and rendering differences needed for Sphinx/reStructuredText.
 - `wechat/articles/review/<publication_ref>.review.md`: publishing note for authors and editors. It records metadata, evidence, figure source status, formula preview status, copyright checks, unresolved tasks, and checks run.
 
 The reader-facing Markdown must not contain:
@@ -97,6 +100,22 @@ The reader-facing Markdown must not contain:
 - credential or preview workflow notes.
 
 For author-confirmed WOEAI papers, extract suitable figures directly from the paper PDF or author manuscript, store them under `wechat/assets/public-safe/<publication_ref>/`, and insert normal Markdown image links in the reader-facing article. If images are genuinely not ready, omit image placeholders from the reader-facing article and record the reason in the review note.
+
+## RTD Paper Companion Page
+
+The RTD page is not a shorter summary and not a separate editorial rewrite. It is the Sphinx/RST rendering of the same public article content.
+
+Rules:
+
+- Convert the WeChat Markdown article to reStructuredText rather than enabling a new Markdown/MyST route in Sphinx.
+- Use `docs/source/paper-notes/<publication_ref>.rst` as the canonical RTD page path, for example `docs/source/paper-notes/ref-zhao2026-BS.rst`.
+- Preserve the same title, section order, body text, images, DOI link, WOEAI publication anchor, related direction links, and contact/link intent.
+- Change only what Sphinx rendering requires: heading underline syntax, image directives, internal links, external links, code/formula representation, and relative asset paths.
+- Keep private review metadata out of the RST page.
+- Register RTD pages through the relevant research-direction Academic Progress section, grouped by second-level research subdirection.
+- On `docs/source/Research.rst`, use the public label `学术进展 Academic Progress` instead of `近期证据 Selected Proof Points` when listing these companion pages.
+- Within each second-level subdirection, list RTD Paper Companion Pages by publication date descending until a more specific sorting rule is chosen.
+- If the RST page or research-direction navigation changes, this is a Sphinx site-build input and `./scripts/check-docs.sh` becomes required.
 
 ## Article Structure
 
@@ -205,6 +224,8 @@ Before calling a draft ready:
 - For author-confirmed papers, suitable PDF figures are extracted into `wechat/assets/public-safe/<publication_ref>/` and inserted into the article. For non-authored or unclear papers, suitable figure recommendations are recorded in the review note until rights are confirmed.
 - The article includes a DOI-based `阅读原文` link.
 - The separate review note records source evidence, image/copyright status, formula preview status, and remaining human-review items.
+- The RTD Paper Companion Page matches the WeChat Markdown article in title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent.
+- The relevant research-direction page exposes the RTD page under `学术进展 Academic Progress`, grouped by second-level research subdirection and sorted by publication date descending.
 - `wechat/templates/review-checklist.md` is satisfied or remaining items are explicitly marked in the review note.
 - `scripts/check-public-safe-content.py` passes.
 - Markdown/path checks pass for the article and review files, including checking that reader-facing image links resolve to public-safe assets when images are inserted.
@@ -217,6 +238,7 @@ Use `PYTHON_BIN=/opt/homebrew/bin/python3.12 ./scripts/check-docs.sh` on this Ma
 When generating a draft, return:
 
 - reader-facing article path,
+- RTD Paper Companion Page path, when generated or updated,
 - review note path,
 - source evidence used,
 - unresolved facts or human-review items,

@@ -11,6 +11,7 @@ copyright_checked: true
 public_safety_checked: true
 formula_preview_checked: false
 figure_preview_checked: false
+rtd_page_checked: true
 ---
 
 # ref-zhao2026-BS 发布说明
@@ -18,6 +19,7 @@ figure_preview_checked: false
 ## 正文文件
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`
+- RTD 配套页: `docs/source/paper-notes/ref-zhao2026-BS.rst`
 
 ## 证据来源
 
@@ -75,6 +77,8 @@ figure_preview_checked: false
 
 - [x] 用 Zotero/PDF 核对作者、期刊、页码、DOI、公式和图题。
 - [x] 导入已确认可用的原始高清图。
+- [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和 WOEAI anchor 一致。
+- [x] 将 RTD 配套页挂入 `科研方向 Research` 页面的 `学术进展 Academic Progress`，归入 `建筑结构抗风 / 数值风洞与湍动入流`。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
 
@@ -84,4 +88,4 @@ figure_preview_checked: false
 - public-safety: passed (`/opt/homebrew/bin/python3.12 scripts/check-public-safe-content.py`)
 - markdown whitespace: passed (`git diff --check` on WeChat article-related files)
 - image links: passed (4 Markdown image links resolve to local public-safe assets)
-- docs-check: skipped; this is a WeChat article update, not a Sphinx page update
+- docs-check: passed (`PYTHON_BIN=/opt/homebrew/bin/python3.12 ./scripts/check-docs.sh`)

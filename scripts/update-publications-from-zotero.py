@@ -177,6 +177,17 @@ REPRESENTATIVE_KEYS = {
     "offshore_jacket": "5GPZ54VV",
 }
 
+TEACHING_PUBLICATION_KEYS = {
+    "KT6UR5JW",
+}
+TEACHING_PUBLICATION_TITLE_KEYWORDS = (
+    "教学改革",
+    "教改",
+    "课程思政",
+    "思政建设",
+    "思想政治教育",
+)
+
 
 class ZoteroError(RuntimeError):
     """Raised when the local Zotero API cannot provide required data."""
@@ -519,14 +530,26 @@ def assign_anchors(items: list[dict[str, Any]]) -> None:
         item["anchor"] = anchor
 
 
+def is_teaching_publication(item: dict[str, Any]) -> bool:
+    data = item.get("data", {})
+    title = str(data.get("title") or "")
+    return item.get("key") in TEACHING_PUBLICATION_KEYS or any(
+        keyword in title for keyword in TEACHING_PUBLICATION_TITLE_KEYWORDS
+    )
+
+
+def is_public_journal_paper(item: dict[str, Any]) -> bool:
+    data = item.get("data", {})
+    return (
+        data.get("inPublications") is True
+        and data.get("itemType") == "journalArticle"
+        and not is_teaching_publication(item)
+    )
+
+
 def fetch_publication_items() -> list[dict[str, Any]]:
     all_items = paginated("/items/top", {"include": "data"})
-    keys = [
-        item["key"]
-        for item in all_items
-        if item.get("data", {}).get("inPublications") is True
-        and item.get("data", {}).get("itemType") == "journalArticle"
-    ]
+    keys = [item["key"] for item in all_items if is_public_journal_paper(item)]
     if not keys:
         raise ZoteroError("No Zotero My Publications journalArticle items found.")
 
@@ -541,12 +564,7 @@ def fetch_publication_items() -> list[dict[str, Any]]:
         }
         enriched.extend(paginated("/items/top", params))
 
-    enriched = [
-        item
-        for item in enriched
-        if item.get("data", {}).get("inPublications") is True
-        and item.get("data", {}).get("itemType") == "journalArticle"
-    ]
+    enriched = [item for item in enriched if is_public_journal_paper(item)]
     enriched.sort(
         key=lambda item: (
             -parse_date(item["data"].get("date"))[0],

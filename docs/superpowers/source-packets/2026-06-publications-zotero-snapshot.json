@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-07T13:53:27.760641+00:00",
+  "generated_at": "2026-06-08T01:01:15.338831+00:00",
   "source_boundary": {
     "zotero_filter": {
       "inPublications": true,
       "itemType": "journalArticle"
     },
-    "count": 74
+    "count": 73
   },
   "csl_style": {
     "id": "http://www.zotero.org/styles/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01",
@@ -19,7 +19,7 @@
   "items": [
     {
       "zotero_key": "RLAA46YB",
-      "publication_number": 74,
+      "publication_number": 73,
       "anchor": "ref-zhao2026-BE",
       "old_anchor": "ref-zhao2026-BE",
       "year": 2026,
@@ -43,7 +43,7 @@
     },
     {
       "zotero_key": "4FX43CFT",
-      "publication_number": 73,
+      "publication_number": 72,
       "anchor": "ref-he2026-OE",
       "old_anchor": "ref-he2026-OE",
       "year": 2026,
@@ -66,7 +66,7 @@
     },
     {
       "zotero_key": "CGKPKZ8I",
-      "publication_number": 72,
+      "publication_number": 71,
       "anchor": "ref-zhao2026-BS",
       "old_anchor": "ref-zhao2026-BS",
       "year": 2026,
@@ -92,7 +92,7 @@
     },
     {
       "zotero_key": "EMID6LAJ",
-      "publication_number": 71,
+      "publication_number": 70,
       "anchor": "ref-he2026-OE-structural",
       "old_anchor": "ref-he2026-OE-structural",
       "year": 2026,
@@ -116,7 +116,7 @@
     },
     {
       "zotero_key": "XM44D697",
-      "publication_number": 70,
+      "publication_number": 69,
       "anchor": "ref-tang2026-RE",
       "old_anchor": "ref-tang2026-RE",
       "year": 2026,
@@ -139,7 +139,7 @@
     },
     {
       "zotero_key": "ES37XMDV",
-      "publication_number": 69,
+      "publication_number": 68,
       "anchor": "ref-he2025-POF",
       "old_anchor": "ref-he2025-POF",
       "year": 2025,
@@ -162,7 +162,7 @@
     },
     {
       "zotero_key": "YZ2D62NB",
-      "publication_number": 68,
+      "publication_number": 67,
       "anchor": "ref-yang2025-JBE",
       "old_anchor": "ref-yang2025-JBE",
       "year": 2025,
@@ -187,7 +187,7 @@
     },
     {
       "zotero_key": "Y9QYBEKI",
-      "publication_number": 67,
+      "publication_number": 66,
       "anchor": "ref-wang2025-POF",
       "old_anchor": "ref-wang2025-POF",
       "year": 2025,
@@ -213,7 +213,7 @@
     },
     {
       "zotero_key": "5W2SZJUT",
-      "publication_number": 66,
+      "publication_number": 65,
       "anchor": "ref-zheng2025-OE",
       "old_anchor": "ref-zheng2025-OE",
       "year": 2025,
@@ -236,7 +236,7 @@
     },
     {
       "zotero_key": "H4RZBAIG",
-      "publication_number": 65,
+      "publication_number": 64,
       "anchor": "ref-zheng2025-QHDXXB",
       "old_anchor": "ref-zheng2025-QHDXXB",
       "year": 2025,
@@ -261,7 +261,7 @@
     },
     {
       "zotero_key": "4BCF65NB",
-      "publication_number": 64,
+      "publication_number": 63,
       "anchor": "ref-tang2025-JBE",
       "old_anchor": "ref-tang2025-JBE",
       "year": 2025,
@@ -285,7 +285,7 @@
     },
     {
       "zotero_key": "39Z372P2",
-      "publication_number": 63,
+      "publication_number": 62,
       "anchor": "ref-gong2025-POF",
       "old_anchor": "ref-gong2025-POF",
       "year": 2025,
@@ -310,7 +310,7 @@
     },
     {
       "zotero_key": "6KEYN5GF",
-      "publication_number": 62,
+      "publication_number": 61,
       "anchor": "ref-yan2025-POF",
       "old_anchor": "ref-yan2025-POF",
       "year": 2025,
@@ -334,7 +334,7 @@
     },
     {
       "zotero_key": "V6PLJENN",
-      "publication_number": 61,
+      "publication_number": 60,
       "anchor": "ref-zhao2025-SCS",
       "old_anchor": "ref-zhao2025-SCS",
       "year": 2025,
@@ -357,7 +357,7 @@
     },
     {
       "zotero_key": "PTQVD6AJ",
-      "publication_number": 60,
+      "publication_number": 59,
       "anchor": "ref-liang2025-OE",
       "old_anchor": "ref-liang2025-OE",
       "year": 2025,
@@ -379,7 +379,7 @@
     },
     {
       "zotero_key": "78XMAPMX",
-      "publication_number": 59,
+      "publication_number": 58,
       "anchor": "ref-chen2024-POF",
       "old_anchor": "ref-chen2024-POF",
       "year": 2024,
@@ -404,7 +404,7 @@
     },
     {
       "zotero_key": "FVGTMSEA",
-      "publication_number": 58,
+      "publication_number": 57,
       "anchor": "ref-tang2024-POF",
       "old_anchor": "ref-tang2024-POF",
       "year": 2024,
@@ -427,7 +427,7 @@
     },
     {
       "zotero_key": "UXCUW2AL",
-      "publication_number": 57,
+      "publication_number": 56,
       "anchor": "ref-liu2024-JWEIA",
       "old_anchor": "ref-liu2024-JWEIA",
       "year": 2024,
@@ -449,27 +449,6 @@
       "subdirection": "高层建筑抗风与优化",
       "rendered": "Liu Shizeng; Zhang Wentong; Li Qiang; Yan Shicheng; Zhang Shihong; Li Chao; Li Lixiao, Engineering method for quantifying the coupling effect of transmission tower-line system under strong winds[J]. Journal of Wind Engineering and Industrial Aerodynamics, 2024, 255: 105954. https://doi.org/10.1016/j.jweia.2024.105954. 影响因子: 4.9 (Q1). 中科院分区: 2.",
       "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
-    },
-    {
-      "zotero_key": "KT6UR5JW",
-      "publication_number": 56,
-      "anchor": "ref-li2024-DX",
-      "old_anchor": "ref-li2024-DX",
-      "year": 2024,
-      "date": "2024-12",
-      "title": "中国共产党精神谱系视域下土木工程课程思政建设的探索与实践",
-      "publicationTitle": "大学",
-      "doi": null,
-      "creators": [
-        "李朝",
-        "于洪涛",
-        "邹笃建"
-      ],
-      "student_first_author": null,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
-      "rendered": "李朝; 于洪涛; 邹笃建, 中国共产党精神谱系视域下土木工程课程思政建设的探索与实践[J]. 大学, 2024, (651): 110～114.",
-      "metrics": ""
     },
     {
       "zotero_key": "3HGIR6QR",

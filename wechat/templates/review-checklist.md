@@ -18,6 +18,7 @@
 
 - [ ] WeChat draft formulas use Markdown LaTeX: `$...$` for inline formulas and `$$...$$` for display formulas.
 - [ ] RTD companion formulas use Sphinx math markup: ``:math:`...` `` for inline formulas and `.. math::` for display formulas.
+- [ ] Inline mathematical variables, symbolic parameters, metrics, dimensional quantities, and unit-bearing values use formula markup rather than code spans.
 - [ ] Formulas are not rendered as images unless final WeChat preview proves an image fallback is needed.
 - [ ] Important formulas have plain-language explanations.
 - [ ] Formula display has been checked in the final WeChat backend mobile preview.

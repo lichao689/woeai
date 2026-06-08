@@ -129,8 +129,8 @@ A Read the Docs page generated from a One-Paper WeChat Article. It should preser
 _Avoid_: creating a separate Markdown route for Sphinx, changing the article meaning for RTD, or making the RTD page a shorter unrelated summary
 
 **Public Formula**:
-A mathematical expression included in a One-Paper WeChat Article or RTD Paper Companion Page. It should preserve one LaTeX formula meaning across publication channels, with channel-specific rendering. Public formulas should remain text-based and explain their key variables in prose.
-_Avoid_: code-block formula, unstructured plain-text formula, default formula screenshot, unexplained symbol list
+A mathematical expression included in a One-Paper WeChat Article or RTD Paper Companion Page. It should preserve one LaTeX formula meaning across publication channels, with channel-specific rendering. Public formulas include display equations, inline mathematical variables, symbolic parameters, evaluation metrics, dimensional quantities, and unit-bearing values such as `X_L`, `H_{\max}`, `R`, `1\,\mathrm{km} \times 1\,\mathrm{km}`, and `11\,\mathrm{m/s}`. They should remain text-based and explain key variables in prose.
+_Avoid_: code-block formula, inline-code variable, unstructured plain-text formula, default formula screenshot, unexplained symbol list
 
 **Academic Progress Section**:
 The research-direction page section that groups RTD Paper Companion Pages by second-level research subdirection. It replaces `近期证据` as the public label for recent paper-explanation progress and should initially sort entries by publication date in descending order.

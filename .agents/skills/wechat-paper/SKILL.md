@@ -148,9 +148,20 @@ Tone:
 
 ## Formula Handling
 
-Do not render formulas as images.
+Do not render formulas as images by default.
 
-Use the most direct formula format supported by the WeChat publishing workflow selected for the article. Keep formulas short enough for mobile display when possible.
+Use Markdown LaTeX as the canonical formula source in WeChat article drafts: `$...$` for inline formulas and `$$...$$` for display formulas. Render WeChat formulas through the selected WeChat Markdown workflow, such as doocs/md, and verify the resulting formula display in the final WeChat backend mobile preview.
+
+Convert the same LaTeX formula semantics to Sphinx math markup in RTD companion pages: `:math:` roles for inline formulas and `.. math::` directives for display formulas.
+
+Use formula markup for inline mathematical variables, symbolic parameters, metrics, dimensional quantities, and unit-bearing values inside explanatory prose. Examples:
+
+- WeChat draft: `$X_L$`, `$R$`, `$4H_{\max}$`, `$1\,\mathrm{km} \times 1\,\mathrm{km}$`, `$11\,\mathrm{m/s}$`, `$90^\circ$`.
+- RTD companion page: `:math:` roles with the same LaTeX body, for example `X_L`, `4H_{\max}`, and `11\,\mathrm{m/s}`.
+
+Do not use Markdown backticks or RST double backticks for mathematical variables or scientific quantities. Reserve code spans for paths, filenames, commands, literal field names, and code identifiers.
+
+Keep formulas short enough for mobile display when possible.
 
 For each important formula:
 

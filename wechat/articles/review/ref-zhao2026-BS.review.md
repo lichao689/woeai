@@ -63,6 +63,8 @@ rtd_page_checked: true
 
 - 使用公式: yes
 - 呈现方式: Markdown LaTeX formula rendered by the WeChat Markdown workflow, not image
+- RTD 呈现方式: Sphinx MathJax with `.. math::` and `:math:` roles
+- 行内变量/量纲: formula markup applied to `X_L`, `R`, `H_{\max}`, block dimensions, wind-speed threshold, wind directions, and percentages
 - 移动端预览: pending WeChat backend mobile preview
 
 ## 公开安全

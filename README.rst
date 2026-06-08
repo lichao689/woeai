@@ -8,7 +8,7 @@ The site is a Sphinx documentation project, not a Python package. Its public
 purpose is ordered as:
 
 1. recruitment for students, postdocs, and research talent;
-2. technical collaboration around wind engineering, offshore wind energy, and
+2. engineering applications around wind engineering, offshore wind energy, and
    AI-enabled engineering methods;
 3. academic credibility through people, projects, academic outputs, teaching, and
    research directions.
@@ -48,7 +48,7 @@ Content Rules
 - Use ``docs/superpowers/source-packets/2026-06-woeai-site-source-packet.md``
   as the first reference for facts that were available during the 2026 site
   upgrade.
-- Keep the homepage ordered around recruitment, technical collaboration, then
+- Keep the homepage ordered around recruitment, engineering applications, then
   academic credibility.
 - Keep public pages free of template residue such as sample Python package
   documentation, placeholder usage pages, and unowned news cadence.
@@ -58,7 +58,7 @@ Key Paths
 
 - ``docs/source/index.rst``: homepage, recruitment content, contact information,
   and navigation.
-- ``docs/source/TechnicalCollaboration.rst``: technical collaboration journey.
+- ``docs/source/EngineeringApplications.rst``: engineering applications journey.
 - ``docs/source/Research.rst``: research overview and direction hub.
 - ``docs/source/Publications.rst``: academic-output proof.
 - ``docs/source/Projects.rst``: project proof.

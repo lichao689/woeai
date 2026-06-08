@@ -9,12 +9,16 @@ The canonical expanded English name is `Wind and Ocean Engineering with AI (WOEA
 _Avoid_: ampersand-form expansions, empowered-by-AI phrasing as the canonical name
 
 **Public Journal Paper**:
-A journal article that belongs to the group leader's curated public publication record and is suitable for the website's journal-paper list. It is narrower than the broader research library and broader than only first-author or corresponding-author papers.
-_Avoid_: reference-library item, collected paper, first-author-only paper
+A journal article that belongs to the group leader's curated public research publication record and is suitable for the website's journal-paper list. It is narrower than the broader research library and broader than only first-author or corresponding-author papers. Teaching-reform and ideological-and-political-course-construction papers are not Public Journal Papers; place them under the Teaching Reform Publication section instead.
+_Avoid_: reference-library item, collected paper, first-author-only paper, teaching-reform paper, course ideological-and-political construction paper
 
 **Proof Page**:
-A factual public page whose purpose is to support recruitment, technical collaboration, and academic credibility with verifiable records.
+A factual public page whose purpose is to support recruitment, engineering applications, and academic credibility with verifiable records.
 _Avoid_: marketing page, archive dump
+
+**Teaching Reform Publication**:
+A teaching-reform, course-construction, or ideological-and-political-course-construction paper that belongs on `docs/source/Teaching.rst` under `教改探索 Teaching Reform Exploration`. It should not be counted, numbered, mapped, or displayed as a Public Journal Paper in Academic Outputs or the Thematic Publication View.
+_Avoid_: research-family mapping, Academic Outputs listing, publication-number assignment
 
 **Official Profile Link**:
 The canonical way to reference the group leader's official external profile. Link to `https://homepage.hit.edu.cn/lichao` instead of reproducing local institution, college, address, title, or employment-history claims on the public site.
@@ -25,16 +29,16 @@ The public contact channels for WOEAI are the website URL, the personal email ad
 _Avoid_: workplace address as contact, alternate private contact, unconfirmed phone or messaging IDs
 
 **Privacy Notice**:
-The public page that explains the website's personal-information handling boundary. It should say that the website itself does not provide forms, accounts, comments, analytics, or tracking scripts; platform logs are handled by GitHub or Read the Docs under their own policies; information sent through Public Contact Channels is used only for replies, application or academic communication, technical-collaboration communication, and academic exchange.
+The public page that explains the website's personal-information handling boundary. It should say that the website itself does not provide forms, accounts, comments, analytics, or tracking scripts; platform logs are handled by GitHub or Read the Docs under their own policies; information sent through Public Contact Channels is used only for replies, application or academic communication, engineering-application or technical-collaboration communication, and academic exchange.
 _Avoid_: legal guarantee, platform-log control claim, consent-heavy wording for functions the site does not run
 
 **Site Statement**:
-The concise homepage statement for site purpose, non-official status, and content-use boundary. It should say the site is for academic output display and technical-collaboration exchange, and that it does not represent any organization or institution's official position.
+The concise homepage statement for site purpose, non-official status, and content-use boundary. It should say the site is for academic output display and engineering-application exchange, and that it does not represent any organization or institution's official position.
 _Avoid_: recruitment purpose in the statement, local institution name, legal guarantee, broad public-relations language
 
-**Technical Collaboration**:
-The canonical public label for external engineering cooperation and consulting-oriented work. Use `技术合作 Technical Collaboration` for the navigation path and page title.
-_Avoid_: 产业合作 Industry Collaboration as the public navigation label
+**Engineering Applications**:
+The canonical public label for the second conversion path for external engineering cooperation and consulting-oriented work. Use `工程应用 Engineering Applications` for the navigation path and page title, with `docs/source/EngineeringApplications.rst` as the canonical page URL. The page should present public application scenarios by Research Family and second-level research subdirection before pointing to public project evidence. Technical collaboration remains a contact action, not the primary page title.
+_Avoid_: 产业合作 Industry Collaboration as the public navigation label, sales-style cooperation page, partner-name display without source confirmation
 
 **Enterprise Project Evidence**:
 Public evidence for enterprise-commissioned work. It may show approved capability direction, problem type, year, and role, but should not disclose partner names, current cooperation status, or unpublished project details. Already anonymized descriptions such as `某再生能源发电厂` do not need further generalization unless they become identifiable.
@@ -108,6 +112,14 @@ _Avoid_: generic `海上风电` when the public page is specifically about float
 A WeChat Official Account article whose core unit is one selected paper. It should explain the paper's problem, method, findings, boundaries, engineering significance, DOI, WOEAI publication anchor, and related direction pages.
 _Avoid_: forcing every article into a multi-paper theme essay
 
+**RTD Paper Companion Page**:
+A Read the Docs page generated from a One-Paper WeChat Article. It should preserve the same title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent as the WeChat article, while converting the markup and rendering format to Sphinx-compatible reStructuredText.
+_Avoid_: creating a separate Markdown route for Sphinx, changing the article meaning for RTD, or making the RTD page a shorter unrelated summary
+
+**Academic Progress Section**:
+The research-direction page section that groups RTD Paper Companion Pages by second-level research subdirection. It replaces `近期证据` as the public label for recent paper-explanation progress and should initially sort entries by publication date in descending order.
+_Avoid_: treating Academic Progress as a raw publication list, a duplicate chronological publication view, or a collection grouped only by first-level Research Family
+
 **Site Build ID**:
 The public date-time identifier for a WOEAI website update. It replaces semantic software versioning for this docs-only public website and should use Beijing time in `YYYY.MM.DD-HHMM` form.
 _Avoid_: package version, API compatibility version, ReadTheDocs config version
@@ -132,7 +144,7 @@ Domain Expert: Yes. Add a concise Privacy Notice that covers static-site boundar
 
 Dev: What purpose should the homepage statement give for the website?
 
-Domain Expert: Say it is used for academic output display and technical-collaboration exchange. Do not include recruitment in the statement.
+Domain Expert: Say it is used for academic output display and engineering-application exchange. Do not include recruitment in the statement.
 
 Dev: Should enterprise project entries be generalized further?
 

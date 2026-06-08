@@ -4,6 +4,8 @@ This directory manages public-safe WeChat Official Account article material for 
 
 The basic unit is one selected paper, one article. Each article must be source-bounded by Zotero metadata, the WOEAI website, and public publication anchors.
 
+Each One-Paper WeChat Article may also have an RTD Paper Companion Page under `docs/source/paper-notes/<publication_ref>.rst`. The RTD page is generated as Sphinx-compatible reStructuredText converted from the WeChat Markdown article, not through a separate Markdown route in Sphinx. It should preserve the same public title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent, with only markup and rendering differences.
+
 ## Research Families
 
 - `建筑结构抗风`
@@ -41,8 +43,10 @@ Use `wechat/backlog/selected-papers.yml` to track selected papers and publicatio
 
 1. Select a paper in `wechat/backlog/selected-papers.yml`.
 2. Create a draft from `wechat/templates/paper-explainer.md`.
-3. Verify the paper's WOEAI site reference and DOI.
-4. Complete the source, copyright, and public-safety checklist.
-5. Render the Markdown in a WeChat Markdown editor such as doocs/md.
-6. Publish manually in the WeChat backend.
-7. Record the published URL and state fields in `wechat/backlog/selected-papers.yml` and, when useful, in `wechat/index.yml`.
+3. Convert the same public article content to an RTD Paper Companion Page in `.rst` format when the article should appear on the website.
+4. List the RTD page under `学术进展 Academic Progress` on the relevant research-direction page, grouped by second-level research subdirection and sorted by publication date descending until a more specific sorting rule exists.
+5. Verify the paper's WOEAI site reference and DOI.
+6. Complete the source, copyright, public-safety, and RTD companion-page checklist.
+7. Render the Markdown in a WeChat Markdown editor such as doocs/md.
+8. Publish manually in the WeChat backend.
+9. Record the published URL and state fields in `wechat/backlog/selected-papers.yml` and, when useful, in `wechat/index.yml`.

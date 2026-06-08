@@ -11,6 +11,7 @@ copyright_checked: false
 public_safety_checked: false
 formula_preview_checked: false
 figure_preview_checked: false
+rtd_page_checked: false
 ---
 
 # <publication_ref> 发布说明
@@ -18,6 +19,7 @@ figure_preview_checked: false
 ## 正文文件
 
 - 公众号正文:
+- RTD 配套页:
 
 ## 证据来源
 
@@ -55,6 +57,8 @@ figure_preview_checked: false
 
 - [ ] 核对作者、期刊、页码、DOI、公式和图题。
 - [ ] 从 PDF 或作者稿抽取并导入已确认可用的原始高清图。
+- [ ] 确认 RTD 配套页由公众号正文转换而来，标题、正文、图片、DOI 和 WOEAI anchor 与公众号正文一致。
+- [ ] 确认 RTD 配套页已挂入相关科研方向页的 `学术进展 Academic Progress`，并按二级科研方向归类。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
 

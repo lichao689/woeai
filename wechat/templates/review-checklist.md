@@ -22,6 +22,13 @@
 - [ ] Formula display has been checked in the final WeChat backend mobile preview.
 - [ ] Figure clarity has been checked in the final WeChat backend mobile preview.
 
+## RTD Companion Page
+
+- [ ] The RTD companion page is reStructuredText converted from the WeChat Markdown article, not a separate Markdown route in Sphinx.
+- [ ] The RTD companion page preserves the same title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent as the WeChat article.
+- [ ] The RTD companion page is listed under `学术进展 Academic Progress` on the relevant research-direction page.
+- [ ] The entry is grouped by second-level research subdirection and sorted by publication date descending until a more specific sorting rule exists.
+
 ## Public Safety
 
 - [ ] No WeChat AppSecret, token, cookie, or credential appears.

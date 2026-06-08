@@ -1,7 +1,7 @@
 项目实践 Project Evidence
 =========================
 
-本页是团队公开项目实践的证据库，用于支撑 :doc:`Research`、:doc:`TechnicalCollaboration`、:doc:`BuildingStructuralWindResistance` 和 :doc:`FloatingOffshoreWindEnergy`。项目名称和承担角色按现有公开信息呈现；未公开确认的企业名称、当前合作状态和项目细节不在本页展开。
+本页是团队公开项目实践的证据库，用于支撑 :doc:`Research`、:doc:`EngineeringApplications`、:doc:`BuildingStructuralWindResistance` 和 :doc:`FloatingOffshoreWindEnergy`。项目名称和承担角色按现有公开信息呈现；未公开确认的企业名称、当前合作状态和项目细节不在本页展开。
 
 如果只想快速判断合作相关性，可先看下面的证据主题索引；如果需要完整核验，可继续查看政府项目和企业项目记录。
 
@@ -93,6 +93,6 @@
 相关页面 Related Pages
 ----------------------
 
-- :doc:`TechnicalCollaboration`
+- :doc:`EngineeringApplications`
 - :doc:`BuildingStructuralWindResistance`
 - :doc:`FloatingOffshoreWindEnergy`

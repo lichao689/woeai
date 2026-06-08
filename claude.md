@@ -91,3 +91,4 @@ tracking WeChat Official Account articles from WOEAI journal papers.
 | 2026-06-07 | 纯公众号正文与 review 文档更新不属于 Sphinx 页面变更；使用 wechat-paper 技能时，不把 `./scripts/check-docs.sh` 作为必跑项，只需运行公开安全、Markdown/路径检查和必要的图片存在性检查。只有同时修改 Sphinx 站点页面、配置或生成脚本时，才运行 docs 检查。 | WOEAI 公众号论文文章 | 对话 | 新增 |
 | 2026-06-07 | AGENTS.md 是项目主规则源；claude.md / CLAUDE.md 供 Claude Code 使用，gemini.md / GEMINI.md 供 Gemini 使用；这些镜像文件应保留并随 AGENTS.md 全量同步，不应因为它们是新生成文件就删除。 | 全项目规则文件 | 对话 | 新增 |
 | 2026-06-08 | 教学改革、思政建设类论文统一放在教育教学页面的“教改探索”小节，不进入学术成果或按研究方向浏览页面。 | WOEAI 公共网站内容分类 | 对话确认 | 新增 |
+| 2026-06-08 | Zotero Web API 写权限 key 是本机私密凭据，固定存放在 `~/.config/woeai/zotero_write_api_key`；仅当用户明确要求修改 Zotero 条目时读取，用于 Web API 写入。不得打印、提交、复制到仓库，普通论文读取与页面生成仍优先使用 Zotero Desktop 本地只读 API。 | Zotero 学术成果维护 | 对话确认 | 新增 |

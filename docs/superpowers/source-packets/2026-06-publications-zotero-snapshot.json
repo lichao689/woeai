@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-08T02:36:03.925868+00:00",
+  "generated_at": "2026-06-08T03:13:55.701128+00:00",
   "source_boundary": {
     "zotero_filter": {
       "inPublications": true,
@@ -87,7 +87,9 @@
         "Xiaolu Wang"
       ],
       "student_first_author": null,
-      "corresponding_authors": [],
+      "corresponding_authors": [
+        "Wang Xiaolu"
+      ],
       "research_family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "rendered": "Zhao Peisheng; Li Chao; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. Building Simulation, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: 5.9 (Q1). 中科院分区: 1.",

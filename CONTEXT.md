@@ -105,7 +105,7 @@ A public member listing that supports academic context only. It may show a stude
 _Avoid_: unit-bearing student profile, contact directory, private student record
 
 **Degree Thesis Listing**:
-A People-page line that presents a member through public graduation thesis metadata in the format `姓名(English Name)，年份日期，学位论文类型：题目。`. It is ordinary listing text, not a subsection heading or a private biography.
+A People-page line that presents a member through public graduation thesis metadata in the format `姓名(English Name)，年份日期，学位论文类型：题目。`. It is ordinary listing text, not a subsection heading or a private biography. Degree Thesis Listings are sorted by graduation date in ascending order within each degree-level group.
 _Avoid_: thesis as member profile heading, unpublished private thesis note, non-public student record
 
 **Research Family**:

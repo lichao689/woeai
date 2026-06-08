@@ -3,6 +3,27 @@
 
 建筑结构抗风方向关注建筑与相关工程结构在强风、复杂风场和风致作用下的荷载、响应、优化与控制问题。该方向以数值风洞、湍动入流、物理试验、工程项目和 AI 赋能建模为支撑，服务高层建筑抗风、城市风环境评估和工程结构防灾减灾。
 
+视频展示 Video Demonstration
+----------------------------
+
+以下视频为外部公开视频的嵌入测试，用于验证页面中的视频展示方式；该视频不代表 WOEAI 成果，正式发布时应替换为自有、授权或明确可公开嵌入的视频。
+
+.. raw:: html
+
+   <div class="video-embed">
+     <iframe
+       src="https://player.bilibili.com/player.html?isOutside=true&bvid=BV1u64y1c7J1&p=1&autoplay=0&danmaku=0"
+       title="风洞试验-超高层建筑气动干扰效应"
+       scrolling="no"
+       border="0"
+       frameborder="no"
+       framespacing="0"
+       allowfullscreen="true">
+     </iframe>
+   </div>
+
+外部链接：`风洞试验-超高层建筑气动干扰效应 <https://www.bilibili.com/video/BV1u64y1c7J1/>`_
+
 数值风洞与湍动入流
 ------------------
 

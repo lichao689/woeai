@@ -29,7 +29,7 @@ The public contact channels for WOEAI are the website URL, the personal email ad
 _Avoid_: workplace address as contact, alternate private contact, unconfirmed phone or messaging IDs
 
 **Privacy Notice**:
-The public page that explains the website's personal-information handling boundary. It should say that the website itself does not provide forms, accounts, comments, analytics, or tracking scripts; platform logs are handled by GitHub or Read the Docs under their own policies; information sent through Public Contact Channels is used only for replies, application or academic communication, engineering-application or technical-collaboration communication, and academic exchange.
+The public page that explains the website's personal-information handling boundary. It should say that the website itself does not provide forms, accounts, comments, analytics, or tracking scripts; platform logs are handled by GitHub or Read the Docs under their own policies; information sent through Public Contact Channels is used only for replies, application or academic communication, engineering-application or technical-collaboration communication, and academic exchange. If a page embeds a third-party video player, the Privacy Notice should disclose that the visitor's browser may request resources from that third-party platform.
 _Avoid_: legal guarantee, platform-log control claim, consent-heavy wording for functions the site does not run
 
 **Site Statement**:
@@ -39,6 +39,10 @@ _Avoid_: recruitment purpose in the statement, local institution name, legal gua
 **Engineering Applications**:
 The canonical public label for the second conversion path for external engineering cooperation and consulting-oriented work. Use `工程应用 Engineering Applications` for the navigation path and page title, with `docs/source/EngineeringApplications.rst` as the canonical page URL. The page should present public application scenarios by Research Family and second-level research subdirection before pointing to public project evidence. Technical collaboration remains a contact action, not the primary page title.
 _Avoid_: 产业合作 Industry Collaboration as the public navigation label, sales-style cooperation page, partner-name display without source confirmation
+
+**Embedded Video**:
+A public video player embedded from a third-party platform such as Bilibili or YouTube. Use it only for self-owned, authorized, or clearly test-labeled public videos. Test embeds must not be described as WOEAI evidence or成果, and final public embeds should identify the source and provide an external link fallback.
+_Avoid_: unmarked third-party video, implying team ownership of external demonstrations, embedding sensitive or unpublished project footage
 
 **Enterprise Project Evidence**:
 Public evidence for enterprise-commissioned work. It may show approved capability direction, problem type, year, and role, but should not disclose partner names, current cooperation status, or unpublished project details. Already anonymized descriptions such as `某再生能源发电厂` do not need further generalization unless they become identifiable.
@@ -67,6 +71,10 @@ _Avoid_: publication id, permanent reference key
 **Representative Publication**:
 A Public Journal Paper selected for highlights or direction pages because it strongly supports recruitment, technical collaboration, or academic credibility for a research theme. It is a curated subset, not a complete list of outputs.
 _Avoid_: every recent paper, exhaustive topic list
+
+**Homepage Latest Academic Progress**:
+The homepage research section should surface the latest academic progress so recurring paper-article updates remain visible. Show up to 10 newest paper notes or RTD companion articles under `最新学术进展 Latest Academic Progress`, while keeping the complete archive and longer research narrative on `docs/source/Research.rst`.
+_Avoid_: hiding new paper notes only in deep pages, duplicating the full Research archive on the homepage, listing more than 10 homepage progress items
 
 **Chronological Publication View**:
 The canonical complete Academic Outputs view in `docs/source/Publications.rst`. It lists Public Journal Papers by publication year in descending order and owns the full citation text, DOI, Publication Metrics, Student First Author Marker, anchors, and current Publication Numbers.

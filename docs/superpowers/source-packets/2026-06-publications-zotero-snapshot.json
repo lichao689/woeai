@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-06-08T08:19:12.044927+00:00",
+  "generated_at": "2026-06-09T01:17:07.005300+00:00",
   "source_boundary": {
     "zotero_filter": {
       "inPublications": true,
       "itemType": "journalArticle"
     },
-    "count": 74
+    "count": 74,
+    "degree_theses_data": "docs/data/degree-theses.json"
   },
   "csl_style": {
     "id": "http://www.zotero.org/styles/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01",
@@ -14,8 +15,10 @@
     "sha256": "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
   },
   "anchor_rule": "ref-{first-author}{year}-{journal-initialism}; collisions append deterministic title token",
-  "ordering": "publication year desc, parsed date desc, normalized title asc",
-  "old_anchor_map": {},
+  "ordering": "publication year desc, parsed date desc, normalized title asc; years before 2019 grouped as 更早 Earlier",
+  "old_anchor_map": {
+    "ref-zhang2015-E": "ref-zhang2022-E"
+  },
   "items": [
     {
       "zotero_key": "RLAA46YB",
@@ -1182,8 +1185,32 @@
       "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
     },
     {
-      "zotero_key": "H9YSVNMM",
+      "zotero_key": "88ZT9SGP",
       "publication_number": 31,
+      "anchor": "ref-zhang2022-E",
+      "old_anchor": "ref-zhang2015-E",
+      "year": 2022,
+      "date": "2022-03",
+      "title": "Applicability of wake models to predictions of turbine-induced velocity deficit and wind farm power generation",
+      "publicationTitle": "Energies",
+      "doi": "10.3390/en15197431",
+      "creators": [
+        "Dongqin Zhang",
+        "Yang Liang",
+        "Chao Li",
+        "Yiqing Xiao",
+        "Gang Hu"
+      ],
+      "student_first_author": null,
+      "corresponding_authors": [],
+      "research_family": "海上漂浮风电",
+      "subdirection": "浮式风机系统一体化分析与优化",
+      "rendered": "Zhang Dongqin; Liang Yang; Li Chao; Xiao Yiqing; Hu Gang, Applicability of wake models to predictions of turbine-induced velocity deficit and wind farm power generation[J]. Energies, Multidisciplinary Digital Publishing Institute, 2022, 15(19): 7431. https://doi.org/10.3390/en15197431. 中科院分区: 3.",
+      "metrics": "中科院分区: 3."
+    },
+    {
+      "zotero_key": "H9YSVNMM",
+      "publication_number": 30,
       "anchor": "ref-abdullahi2022-OE",
       "old_anchor": "ref-abdullahi2022-OE",
       "year": 2022,
@@ -1209,7 +1236,7 @@
     },
     {
       "zotero_key": "F9AB6YN4",
-      "publication_number": 30,
+      "publication_number": 29,
       "anchor": "ref-zhang2022-ES",
       "old_anchor": "ref-zhang2022-ES",
       "year": 2022,
@@ -1235,7 +1262,7 @@
     },
     {
       "zotero_key": "93A562VW",
-      "publication_number": 29,
+      "publication_number": 28,
       "anchor": "ref-lin2022-JWEIA",
       "old_anchor": "ref-lin2022-JWEIA",
       "year": 2022,
@@ -1265,7 +1292,7 @@
     },
     {
       "zotero_key": "WUGUPVR4",
-      "publication_number": 28,
+      "publication_number": 27,
       "anchor": "ref-yang2022-AS",
       "old_anchor": "ref-yang2022-AS",
       "year": 2022,
@@ -1289,7 +1316,7 @@
     },
     {
       "zotero_key": "SXU5CL43",
-      "publication_number": 27,
+      "publication_number": 26,
       "anchor": "ref-wang2021-ABE",
       "old_anchor": "ref-wang2021-ABE",
       "year": 2021,
@@ -1316,7 +1343,7 @@
     },
     {
       "zotero_key": "3VYYMGTH",
-      "publication_number": 26,
+      "publication_number": 25,
       "anchor": "ref-zhao2021-EFM",
       "old_anchor": "ref-zhao2021-EFM",
       "year": 2021,
@@ -1343,7 +1370,7 @@
     },
     {
       "zotero_key": "VEJ6LL7P",
-      "publication_number": 25,
+      "publication_number": 24,
       "anchor": "ref-zhao2021-AR",
       "old_anchor": "ref-zhao2021-AR",
       "year": 2021,
@@ -1369,7 +1396,7 @@
     },
     {
       "zotero_key": "5G6YFN8Y",
-      "publication_number": 24,
+      "publication_number": 23,
       "anchor": "ref-lin2021-JWEIA",
       "old_anchor": "ref-lin2021-JWEIA",
       "year": 2021,
@@ -1398,7 +1425,7 @@
     },
     {
       "zotero_key": "H8SGIEYU",
-      "publication_number": 23,
+      "publication_number": 22,
       "anchor": "ref-zhou2021-OE",
       "old_anchor": "ref-zhou2021-OE",
       "year": 2021,
@@ -1424,7 +1451,7 @@
     },
     {
       "zotero_key": "JGSIKX3F",
-      "publication_number": 22,
+      "publication_number": 21,
       "anchor": "ref-zhao2021-TYNXB",
       "old_anchor": "ref-zhao2021-TYNXB",
       "year": 2021,
@@ -1451,7 +1478,7 @@
     },
     {
       "zotero_key": "3ZY69PVB",
-      "publication_number": 21,
+      "publication_number": 20,
       "anchor": "ref-li2020-JWEIA",
       "old_anchor": "ref-li2020-JWEIA",
       "year": 2020,
@@ -1477,7 +1504,7 @@
     },
     {
       "zotero_key": "74H4VLG2",
-      "publication_number": 20,
+      "publication_number": 19,
       "anchor": "ref-zhou2020-RE",
       "old_anchor": "ref-zhou2020-RE",
       "year": 2020,
@@ -1502,7 +1529,7 @@
     },
     {
       "zotero_key": "I4I82574",
-      "publication_number": 19,
+      "publication_number": 18,
       "anchor": "ref-hu2019-JOFAS",
       "old_anchor": "ref-hu2019-JOFAS",
       "year": 2019,
@@ -1529,7 +1556,7 @@
     },
     {
       "zotero_key": "HPU9VCE6",
-      "publication_number": 18,
+      "publication_number": 17,
       "anchor": "ref-peng2019-JWEIA",
       "old_anchor": "ref-peng2019-JWEIA",
       "year": 2019,
@@ -1554,7 +1581,7 @@
     },
     {
       "zotero_key": "WHSVAKCD",
-      "publication_number": 17,
+      "publication_number": 16,
       "anchor": "ref-li2019-JWEIA",
       "old_anchor": "ref-li2019-JWEIA",
       "year": 2019,
@@ -1582,7 +1609,7 @@
     },
     {
       "zotero_key": "F6KEY453",
-      "publication_number": 16,
+      "publication_number": 15,
       "anchor": "ref-lin2019-E",
       "old_anchor": "ref-lin2019-E",
       "year": 2019,
@@ -1607,7 +1634,7 @@
     },
     {
       "zotero_key": "DNXNTCJ9",
-      "publication_number": 15,
+      "publication_number": 14,
       "anchor": "ref-zhou2019-WHLGDXXB",
       "old_anchor": "ref-zhou2019-WHLGDXXB",
       "year": 2019,
@@ -1631,7 +1658,7 @@
     },
     {
       "zotero_key": "C75QWNRE",
-      "publication_number": 14,
+      "publication_number": 13,
       "anchor": "ref-hu2018-EJMBF",
       "old_anchor": "ref-hu2018-EJMBF",
       "year": 2018,
@@ -1656,7 +1683,7 @@
     },
     {
       "zotero_key": "YJN53AF9",
-      "publication_number": 13,
+      "publication_number": 12,
       "anchor": "ref-li2018-AE",
       "old_anchor": "ref-li2018-AE",
       "year": 2018,
@@ -1683,7 +1710,7 @@
     },
     {
       "zotero_key": "YF5RIBAN",
-      "publication_number": 12,
+      "publication_number": 11,
       "anchor": "ref-xiao2018-KXJSYGC",
       "old_anchor": "ref-xiao2018-KXJSYGC",
       "year": 2018,
@@ -1710,7 +1737,7 @@
     },
     {
       "zotero_key": "DRCNU3JT",
-      "publication_number": 11,
+      "publication_number": 10,
       "anchor": "ref-zhou2017-E",
       "old_anchor": "ref-zhou2017-E",
       "year": 2017,
@@ -1739,7 +1766,7 @@
     },
     {
       "zotero_key": "77THBZDM",
-      "publication_number": 10,
+      "publication_number": 9,
       "anchor": "ref-li2017-BS",
       "old_anchor": "ref-li2017-BS",
       "year": 2017,
@@ -1766,7 +1793,7 @@
     },
     {
       "zotero_key": "NJ4KP6WJ",
-      "publication_number": 9,
+      "publication_number": 8,
       "anchor": "ref-li2017-AS",
       "old_anchor": "ref-li2017-AS",
       "year": 2017,
@@ -1789,30 +1816,6 @@
       "subdirection": "浮式风机系统一体化分析与优化",
       "rendered": "Li Chao; Zhuang Tongyi; Zhou Shengtao; Xiao Yiqing; Hu Gang, Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine[J]. Applied Sciences, Multidisciplinary Digital Publishing Institute, 2017, 7(6): 509. https://doi.org/10.3390/app7060509. 影响因子: 2.5 (Q2). 中科院分区: 3.",
       "metrics": "影响因子: 2.5 (Q2). 中科院分区: 3."
-    },
-    {
-      "zotero_key": "88ZT9SGP",
-      "publication_number": 8,
-      "anchor": "ref-zhang2015-E",
-      "old_anchor": "ref-zhang2015-E",
-      "year": 2015,
-      "date": "2015-03",
-      "title": "Applicability of Wake Models to Predictions of Turbine-Induced Velocity Deficit and Wind Farm Power Generation",
-      "publicationTitle": "Energies",
-      "doi": "10.3390/en15197431",
-      "creators": [
-        "Dongqin Zhang",
-        "Yang Liang",
-        "Chao Li",
-        "Yiqing Xiao",
-        "Gang Hu"
-      ],
-      "student_first_author": null,
-      "corresponding_authors": [],
-      "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
-      "rendered": "Zhang Dongqin; Liang Yang; Li Chao; Xiao Yiqing; Hu Gang, Applicability of Wake Models to Predictions of Turbine-Induced Velocity Deficit and Wind Farm Power Generation[J]. Energies, Multidisciplinary Digital Publishing Institute, 2015, 15(19): 7431. https://doi.org/10.3390/en15197431. 影响因子: 3.2 (Q3). 中科院分区: 3.",
-      "metrics": "影响因子: 3.2 (Q3). 中科院分区: 3."
     },
     {
       "zotero_key": "D5KH2XJN",

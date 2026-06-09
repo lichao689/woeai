@@ -77,7 +77,7 @@ The homepage research section should surface the latest academic progress so rec
 _Avoid_: hiding new paper notes only in deep pages, duplicating the full Research archive on the homepage, listing more than 10 homepage progress items
 
 **Chronological Publication View**:
-The canonical complete Academic Outputs view in `docs/source/Publications.rst`. It lists Public Journal Papers by publication year in descending order and owns the full citation text, DOI, Publication Metrics, Student First Author Marker, anchors, and current Publication Numbers.
+The canonical complete Academic Outputs view in `docs/source/Publications.rst`. It lists Public Journal Papers by publication year in descending order, groups Public Journal Papers before 2019 under `更早 Earlier`, and owns the full citation text, DOI, Publication Metrics, Student First Author Marker, anchors, and current Publication Numbers. It also contains Degree Thesis Listings after the Journal Papers section.
 _Avoid_: treating the direction view as the full bibliography, maintaining duplicate long citations
 
 **Thematic Publication View**:
@@ -89,24 +89,24 @@ The machine-readable mapping from Zotero item keys to Research Family and subdir
 _Avoid_: Publication Number as mapping key, selected WeChat paper list as full mapping source, unmapped public papers
 
 **Student First Author**:
-The first author of a Public Journal Paper who is listed publicly as the group leader's current or graduated student. This includes both master's and doctoral students when their public names are available.
+The first author of a Public Journal Paper who is listed publicly as the group leader's current or graduated student. This includes both master's and doctoral students when their names are present in Degree Thesis Data or confirmed public student-author aliases.
 _Avoid_: coauthor student, undocumented student status, degree-level-only student marker
 
 **Student First Author Marker**:
 A visual marker applied only to the Student First Author's displayed name in a Public Journal Paper entry. It marks the person, not the full author list, separator punctuation, or paper title.
 _Avoid_: student paper marker, student coauthor marker, first-author separator marker
 
-**Member Status Tag**:
-A public People-page label that indicates whether a student member is current or graduated. It supplements the degree-level grouping and must not change the member's public name.
-_Avoid_: status in the name, current/graduated as the primary student category
-
-**Academic Member Listing**:
-A public member listing that supports academic context only. It may show a student's public name, degree-level group, Member Status Tag, and degree thesis information when the thesis record is public, but should not add institution, college, address, personal contact, private biography, photo, student ID, demographic detail, or non-academic personal information.
-_Avoid_: unit-bearing student profile, contact directory, private student record
+**Degree Thesis Data**:
+The machine-readable source for public student thesis metadata and student-first-author aliases, stored at `docs/data/degree-theses.json`. It replaces People-page parsing for publication generation and should include only public academic metadata needed by Academic Outputs.
+_Avoid_: private student record, contact directory, personal biography, unit-bearing student profile
 
 **Degree Thesis Listing**:
-A People-page line that presents a member through public graduation thesis metadata in the format `姓名(English Name)，年份日期，学位论文类型：题目。`. It is ordinary listing text, not a subsection heading or a private biography. Degree Thesis Listings are sorted by graduation date in ascending order within each degree-level group.
-_Avoid_: thesis as member profile heading, unpublished private thesis note, non-public student record
+An Academic Outputs line that presents public graduation thesis metadata in the format `姓名(English Name)，年份日期，学位论文类型：题目。`. It is ordinary listing text under `学位论文 Degree Theses`, grouped into doctoral and master's theses after the Journal Papers section. Degree Thesis Listings are sorted by graduation date in ascending order within each degree-level group.
+_Avoid_: thesis as member profile heading, People-page dependency, unpublished private thesis note, non-public student record
+
+**Early Publication Group**:
+The Chronological Publication View section titled `更早 Earlier`, grouping Public Journal Papers before 2019 instead of keeping many sparse historical year headings.
+_Avoid_: standalone pre-2019 year sections, `Early` without the Chinese label
 
 **Research Family**:
 The canonical public first-level research taxonomy for WOEAI. Use exactly two public research families: `建筑结构抗风` and `海上漂浮风电`. Method names such as `数值风洞` are subdirections, not first-level public families.
@@ -196,27 +196,27 @@ Domain Expert: No. The first level must be Research Family: `建筑结构抗风`
 
 Dev: Should student authorship marking include only doctoral students?
 
-Domain Expert: No. Student First Author marking applies to both master's and doctoral students when the public People page provides the names.
+Domain Expert: No. Student First Author marking applies to both master's and doctoral students when Degree Thesis Data or confirmed public aliases provide the names.
 
-Dev: Should a private student relationship be marked if the public People page does not name the student?
+Dev: Should a private student relationship be marked if Degree Thesis Data and confirmed public aliases do not name the student?
 
-Domain Expert: No. Student First Author marking should be source-bounded to public People-page names and confirmed aliases.
+Domain Expert: No. Student First Author marking should be source-bounded to Degree Thesis Data and confirmed public aliases.
 
 Dev: Should Publication Metric labels be visually emphasized?
 
 Domain Expert: No. Emphasize Publication Metric Values while keeping labels readable as labels.
 
-Dev: Should the People page split students into current and graduated categories?
+Dev: Should WOEAI keep a standalone Team Members page?
 
-Domain Expert: No. Use degree-level groups such as PhD Students and Master Students, then add Member Status Tags for current or graduated status.
+Domain Expert: No. Let readers use the Official Profile Link for people information and publish public doctoral and master's thesis metadata under Academic Outputs.
 
-Dev: Should student names and current/graduated status be removed for privacy?
+Dev: Should public degree thesis metadata be removed for privacy?
 
-Domain Expert: No. Keep Academic Member Listings when they support academic context, but do not add units, contact details, photos, IDs, or private biographical information.
+Domain Expert: No. Keep Degree Thesis Listings when they support academic context, but do not add units, contact details, photos, IDs, or private biographical information.
 
-Dev: Should graduated students on the People page be shown as one subsection per person?
+Dev: Should graduated students be shown as one subsection per person?
 
-Domain Expert: No. Use Degree Thesis Listings as ordinary text lines under the relevant degree-level group.
+Domain Expert: No. Use Degree Thesis Listings as ordinary text lines under the relevant degree-level group in Academic Outputs.
 
 Dev: Should WOEAI use semantic versioning for public site updates?
 

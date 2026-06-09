@@ -1,7 +1,7 @@
 .. _paper-note-ref-zhao2026-BS:
 
-论文解读 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测
-===============================================================
+数值风洞 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测
+==================================================================
 
 城市风环境评估经常遇到一个现实矛盾：我们希望看清建筑群、街区和局部地形对风场的影响，但如果每一个规划片区、每一次方案调整都重新开展高分辨率 CFD 计算，工程应用的时间成本会非常高。
 
@@ -27,6 +27,15 @@
 - DOI: https://doi.org/10.1007/s12273-025-1379-7
 - WOEAI 官网条目: https://winddee.cn/zh-cn/latest/Publications.html#ref-zhao2026-BS
 - WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
+
+摘要
+----
+
+城市微尺度风场预测的精度和效率，对于风环境评估和城市规划等应用至关重要。然而，传统数值天气预报依赖中尺度模拟数据，往往受到空间和时间分辨率不足的限制。为解决这一问题，本文通过建立基于分块计算流体力学（CFD）的城市微尺度风场数据库，提出一种快速风场预测新框架。该框架将基于 GIS 的建筑与地形模型划分为 :math:`1\,\mathrm{km} \times 1\,\mathrm{km}` 区块，并以各区块的 CFD 模拟结果组成预计算数据库。研究进一步开展综合分析，以确定考虑周边建筑气动影响所需的最优过渡区长度。相邻区块界面处风剖面差异较小，验证了这种独立分块模拟方法的可行性。此外，论文还将统计得到的平均风速与多个气象站一年的现场数据进行比较，展示了该框架的预测能力。最后，包含风速比和风压系数的预计算 CFD 数据库被集成到 WebGIS 平台中，从而支持实际应用。
+
+**英文摘要**
+
+The accuracy and efficiency of urban microscale wind field prediction are critical for applications in wind environment assessment and urban planning. However, conventional numerical weather prediction, which relies on data from mesoscale simulations, is often hindered by insufficient spatial and temporal resolution. To address this limitation, this study introduces a novel framework for rapid wind field prediction by establishing an urban microscale wind field database using block-based computational fluid dynamics (CFD). The framework involves partitioning a GIS-based building and terrain model into 1 km × 1 km blocks, with the CFD simulation results for each block composing a precomputed database. A comprehensive analysis was conducted to determine the optimal transition zone length required to account for the aerodynamic effects of surrounding buildings. The minimal discrepancies observed in wind profiles at the interfaces of adjacent blocks validate the feasibility of this independent, block-wise simulation approach. Furthermore, the framework’s predictive capability was demonstrated by comparing its statistically-derived mean wind speeds against a year of field data from multiple meteorological stations. Finally, the precomputed CFD database, containing wind speed ratios and wind pressure coefficients, has been integrated into a WebGIS platform, enabling practical applications.
 
 研究问题
 --------
@@ -83,17 +92,7 @@
 
 在高风速条件下，热力影响相对减弱，CFD 与实测数据之间的平均相对误差进入可接受范围。论文中给出的结果显示，在 :math:`11\,\mathrm{m/s}` 风速阈值下，三个气象站的平均风速相对误差在 :math:`90^\circ` 风向下控制在 :math:`17\%` 以下，在 :math:`120^\circ` 风向下控制在 :math:`20\%` 以下。
 
-.. figure:: ../../../wechat/assets/public-safe/ref-zhao2026-BS/fig-21-stations.png
-   :alt: 图 21 气象自动站位置与观测环境
-   :align: center
-   :width: 100%
-
-   图 21 气象自动站位置与观测环境：现场监测数据用于检验区块 CFD 数据库在真实城市环境中的预测能力。
-
-公式说明
---------
-
-本篇公众号文章保留一个最容易解释、也最贴近验证逻辑的公式：风速比相对误差。
+这里使用风速比相对误差来描述 CFD 结果与现场实测之间的差异：
 
 .. math::
 
@@ -102,6 +101,13 @@
 其中，:math:`K_{\mathrm{CFD}}` 是 CFD 模拟得到的风速比，:math:`K_{\mathrm{m}}` 是现场实测得到的风速比，:math:`E` 是二者之间的相对误差。
 
 这条公式的含义很直接：我们不是只看某个风速值是否相同，而是比较“局地测点相对于参考点的风速比例”是否一致。这样可以更好地评估微尺度风场结构是否被 CFD 数据库捕捉到。
+
+.. figure:: ../../../wechat/assets/public-safe/ref-zhao2026-BS/fig-21-stations.png
+   :alt: 图 21 气象自动站位置与观测环境
+   :align: center
+   :width: 100%
+
+   图 21 气象自动站位置与观测环境：现场监测数据用于检验区块 CFD 数据库在真实城市环境中的预测能力。
 
 工程意义
 --------
@@ -148,11 +154,3 @@
 --------
 
 - DOI: https://doi.org/10.1007/s12273-025-1379-7
-
-联系入口
---------
-
-如果你关注城市风环境快速评估、数值风洞、复杂地形风场或工程软件化应用，可以通过以下方式联系：
-
-- Website: https://winddee.cn
-- Email: lichaosz@qq.com

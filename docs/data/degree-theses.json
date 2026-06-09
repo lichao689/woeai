@@ -1,0 +1,195 @@
+{
+  "student_authors": [
+    {
+      "name_cn": "何欣",
+      "name_en": "He Xin",
+      "aliases": ["Xin He"]
+    },
+    {
+      "name_cn": "刘尚佩",
+      "name_en": "Liu Shangpei",
+      "aliases": ["Shangpei Liu"]
+    },
+    {
+      "name_cn": "杨军辉",
+      "name_en": "Yang Junhui",
+      "aliases": ["Junhui Yang"]
+    },
+    {
+      "name_cn": "丁意恒",
+      "name_en": "Ding Yihang",
+      "aliases": ["Yihang Ding"]
+    },
+    {
+      "name_cn": "裴若鹏",
+      "name_en": "Pei Ruopeng",
+      "aliases": ["Ruopeng Pei"]
+    }
+  ],
+  "theses": {
+    "phd": [
+      {
+        "name_cn": "周盛涛",
+        "name_en": "Zhou Shengtao",
+        "aliases": ["Shengtao Zhou"],
+        "date": "2021",
+        "thesis_type": "博士学位论文",
+        "title": "基于快速动力响应分析的半潜式风机下部结构主尺寸优化"
+      },
+      {
+        "name_cn": "王靖含",
+        "name_en": "Wang Jinghan",
+        "aliases": ["Jinghan Wang"],
+        "date": "2022",
+        "thesis_type": "博士学位论文",
+        "title": "粗糙场地大气边界层湍流风场数值生成方法研究"
+      },
+      {
+        "name_cn": "赵子涵",
+        "name_en": "Zhao Zihan",
+        "aliases": ["Zihan Zhao"],
+        "date": "2022",
+        "thesis_type": "博士学位论文",
+        "title": "近地边界层风场的降尺度复原模拟方法研究"
+      },
+      {
+        "name_cn": "张文通",
+        "name_en": "Zhang Wentong",
+        "aliases": ["Wentong Zhang"],
+        "date": "2023",
+        "thesis_type": "博士学位论文",
+        "title": "输电塔动力风荷载反演及其风致倒塌失效研究"
+      },
+      {
+        "name_cn": "郑舜云",
+        "name_en": "Zheng Shunyun",
+        "aliases": ["Shunyun Zheng"],
+        "date": "2024-11",
+        "thesis_type": "博士学位论文",
+        "title": "半潜式风机支撑结构的尺度优化及强度评估"
+      },
+      {
+        "name_cn": "陈铃伟",
+        "name_en": "Chen Lingwei",
+        "aliases": ["Lingwei Chen"],
+        "date": "2025-09",
+        "thesis_type": "博士学位论文",
+        "title": "基于傅里叶合成法的时空相关湍流风场大涡模拟研究"
+      }
+    ],
+    "master": [
+      {
+        "name_cn": "王一鸣",
+        "name_en": "Wang Yiming",
+        "aliases": ["Yiming Wang"],
+        "date": "2023",
+        "thesis_type": "硕士学位论文",
+        "title": "基于高频天平风洞试验的高层建筑非线性振型响应分析"
+      },
+      {
+        "name_cn": "王沛岑",
+        "name_en": "Wang Peicen",
+        "aliases": ["Peicen Wang"],
+        "date": "2023",
+        "thesis_type": "硕士学位论文",
+        "title": "耦合系泊系统的数值波浪水槽研究"
+      },
+      {
+        "name_cn": "李超",
+        "name_en": "Li Chao",
+        "aliases": [],
+        "date": "2023",
+        "thesis_type": "硕士学位论文",
+        "title": "基于气象资料统计的滨海城市微尺度风气候分析"
+      },
+      {
+        "name_cn": "韩芷宸",
+        "name_en": "Han Zhichen",
+        "aliases": ["Zhichen Han"],
+        "date": "2023",
+        "thesis_type": "硕士学位论文",
+        "title": "基于Cesium的深圳市三维模型可视化及风灾指标提取研究"
+      },
+      {
+        "name_cn": "陈翔",
+        "name_en": "Chen Xiang",
+        "aliases": ["Xiang Chen"],
+        "date": "2023",
+        "thesis_type": "硕士学位论文",
+        "title": "高层建筑风荷载大涡模拟的影响因素及误差研究"
+      },
+      {
+        "name_cn": "周子豪",
+        "name_en": "Zhou Zihao",
+        "aliases": ["Zihao Zhou"],
+        "date": "2024",
+        "thesis_type": "硕士学位论文",
+        "title": "浮式风机悬链线系泊的频域计算及优化"
+      },
+      {
+        "name_cn": "袁野",
+        "name_en": "Yuan Ye",
+        "aliases": ["Ye Yuan"],
+        "date": "2024",
+        "thesis_type": "硕士学位论文",
+        "title": "大跨度空间结构多目标等效静力风荷载时域优化计算"
+      },
+      {
+        "name_cn": "蒋建勋",
+        "name_en": "Jiang Jianxun",
+        "aliases": ["Jianxun Jiang"],
+        "date": "2024",
+        "thesis_type": "硕士学位论文",
+        "title": "基于倾斜影像密集匹配点云的城市风环境CFD模型重建"
+      },
+      {
+        "name_cn": "何蔚文",
+        "name_en": "He Weiwen",
+        "aliases": ["Weiwen He"],
+        "date": "2024",
+        "thesis_type": "硕士学位论文",
+        "title": "新型半潜式钢筋混凝土风机基础结构设计与优化"
+      },
+      {
+        "name_cn": "范文涛",
+        "name_en": "Fan Wentao",
+        "aliases": ["Wentao Fan"],
+        "date": "2024",
+        "thesis_type": "硕士学位论文",
+        "title": "柔性光伏支架结构优化及抗风性能研究"
+      },
+      {
+        "name_cn": "赵培升",
+        "name_en": "Zhao Peisheng",
+        "aliases": ["Peisheng Zhao"],
+        "date": "2025",
+        "thesis_type": "硕士学位论文",
+        "title": "影像"
+      },
+      {
+        "name_cn": "汤澳",
+        "name_en": "Tang Ao",
+        "aliases": ["Ao Tang"],
+        "date": "2025",
+        "thesis_type": "硕士学位论文",
+        "title": "图神经网络"
+      },
+      {
+        "name_cn": "秦佳伦",
+        "name_en": "Qin Jialun",
+        "aliases": ["Jialun Qin"],
+        "date": "2025",
+        "thesis_type": "硕士学位论文",
+        "title": "平衡大气边界层"
+      },
+      {
+        "name_cn": "刘金波",
+        "name_en": "Liu Jinbo",
+        "aliases": ["Jinbo Liu"],
+        "date": "2025",
+        "thesis_type": "硕士学位论文",
+        "title": "考虑粘性水动力的浮式风机系统一体化耦合分析方法研究"
+      }
+    ]
+  }
+}

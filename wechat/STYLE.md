@@ -9,15 +9,54 @@ Do not turn every article into a multi-paper theme essay. Related papers may app
 ## Default Structure
 
 1. `论文信息`
-2. `研究问题`
-3. `方法贡献`
-4. `关键发现`
-5. `工程意义`
-6. `适用边界`
-7. `图文说明` when a separate figure summary is useful
-8. `延伸阅读`
-9. `阅读原文`
-10. `联系入口`
+2. `摘要`
+3. `研究问题`
+4. `方法贡献`
+5. `关键发现`
+6. `工程意义`
+7. `适用边界`
+8. `图文说明` when a separate figure summary is useful
+9. `延伸阅读`
+10. `阅读原文`
+
+## Title Format
+
+Use this title pattern:
+
+`<title category> | <problem-solving Chinese title>`
+
+The title category is temporarily selected from:
+
+- `数值风洞`
+- `结构抗风`
+- `漂浮风电`
+
+The second half should say what problem the paper helps solve, not only restate
+the paper topic.
+
+## Abstract Handling
+
+- Add an `摘要` section immediately after `论文信息`.
+- For Chinese papers, use the Chinese abstract.
+- For English papers, provide a faithful Chinese translation of the original
+  abstract, then add `**英文摘要**` followed by the original English abstract.
+- Do not invent an abstract from the article body. If the original abstract is
+  unavailable, keep the article in drafting/review notes until the paper PDF,
+  author manuscript, or another approved source is available.
+
+## Source Acquisition
+
+Use this Zotero-first order before drafting:
+
+1. Read metadata, DOI, and `abstractNote` from the Zotero Desktop Local API.
+2. Read attachment records from the Zotero Desktop Local API.
+3. If a local PDF attachment exists, extract or verify the abstract, figures,
+   captions, and body evidence from that PDF.
+4. If the local PDF is missing, try the Zotero Web API `/file` endpoint for the
+   attachment. Keep API keys and downloaded private working files outside the
+   public repository.
+5. If Web API file access also fails, record `需要同步 PDF 或提供作者稿` in the
+   review note and do not invent PDF-derived facts.
 
 ## Tone
 
@@ -35,6 +74,7 @@ Do not turn every article into a multi-paper theme essay. Related papers may app
 - Use formula markup for inline mathematical variables, symbolic parameters, metrics, dimensional quantities, and unit-bearing values in prose. Examples: `$X_L$`, `$R$`, `$4H_{\max}$`, `$1\,\mathrm{km} \times 1\,\mathrm{km}$`, `$11\,\mathrm{m/s}$`, and `$90^\circ$`.
 - Do not use Markdown backticks or RST double backticks for mathematical variables or scientific quantities. Reserve code spans for paths, filenames, commands, literal field names, and code identifiers.
 - Do not render formulas as images by default. Formula images are too easy to blur after upload, compression, or mobile scaling; use them only as a fallback when the final WeChat preview cannot preserve a readable formula.
+- Do not create a fixed `公式说明` section by default. Put formulas in the section where they are needed, usually `方法贡献`, `关键发现`, `工程意义`, or `适用边界`.
 - Keep formulas short and readable on mobile. If a formula is long, split the explanation into nearby text rather than forcing a dense display block.
 - After each important formula, add a plain-language sentence explaining what the formula means and why it matters for the paper.
 

@@ -30,7 +30,7 @@ PUBLICATIONS_PATH = ROOT / "docs/source/Publications.rst"
 PUBLICATIONS_BY_RESEARCH_PATH = ROOT / "docs/source/PublicationsByResearch.rst"
 RESEARCH_MAP_PATH = ROOT / "docs/data/publication-research-map.json"
 SNAPSHOT_PATH = ROOT / "docs/superpowers/source-packets/2026-06-publications-zotero-snapshot.json"
-PEOPLE_PATH = ROOT / "docs/source/People.rst"
+DEGREE_THESES_PATH = ROOT / "docs/data/degree-theses.json"
 
 BASE_URL = "http://127.0.0.1:23119/api/users/0"
 API_HEADERS = {"Zotero-API-Version": "3"}
@@ -53,33 +53,12 @@ RESEARCH_SUBDIRECTION_ORDER = {
     "建筑结构抗风": ("数值风洞与湍动入流", "高层建筑抗风与优化"),
     "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
 }
-STUDENT_SECTION_MARKERS = ("PhD Students", "Master Students", "博士生", "硕士生")
-STUDENT_NAME_ALIASES = {
-    "何欣": ["He Xin", "Xin He"],
-    "刘尚佩": ["Liu Shangpei", "Shangpei Liu"],
-    "杨军辉": ["Yang Junhui", "Junhui Yang"],
-    "丁意恒": ["Ding Yihang", "Yihang Ding"],
-    "裴若鹏": ["Pei Ruopeng", "Ruopeng Pei"],
-    "陈铃伟": ["Chen Lingwei", "Lingwei Chen"],
-    "周盛涛": ["Zhou Shengtao", "Shengtao Zhou"],
-    "王靖含": ["Wang Jinghan", "Jinghan Wang"],
-    "赵子涵": ["Zhao Zihan", "Zihan Zhao"],
-    "张文通": ["Zhang Wentong", "Wentong Zhang"],
-    "郑舜云": ["Zheng Shunyun", "Shunyun Zheng"],
-    "赵培升": ["Zhao Peisheng", "Peisheng Zhao"],
-    "汤澳": ["Tang Ao", "Ao Tang"],
-    "秦佳伦": ["Qin Jialun", "Jialun Qin"],
-    "刘金波": ["Liu Jinbo", "Jinbo Liu"],
-    "周子豪": ["Zhou Zihao", "Zihao Zhou"],
-    "袁野": ["Yuan Ye", "Ye Yuan"],
-    "蒋建勋": ["Jiang Jianxun", "Jianxun Jiang"],
-    "何蔚文": ["He Weiwen", "Weiwen He"],
-    "范文涛": ["Fan Wentao", "Wentao Fan"],
-    "王一鸣": ["Wang Yiming", "Yiming Wang"],
-    "王沛岑": ["Wang Peicen", "Peicen Wang"],
-    "韩芷宸": ["Han Zhichen", "Zhichen Han"],
-    "陈翔": ["Chen Xiang", "Xiang Chen"],
-}
+EARLY_PUBLICATION_CUTOFF_YEAR = 2019
+EARLIER_PUBLICATIONS_TITLE = "更早 Earlier"
+DEGREE_THESIS_GROUPS = (
+    ("phd", "博士学位论文 PhD Theses"),
+    ("master", "硕士学位论文 Master Theses"),
+)
 GROUP_LEADER_AUTHOR_NAMES = ("Li Chao", "Chao Li", "李朝", "朝 李")
 CORRESPONDING_AUTHOR_LABELS = ("通讯作者", "corresponding author", "corresponding authors")
 
@@ -321,62 +300,62 @@ def normalize_author_name(value: str) -> str:
     return re.sub(r"[^0-9a-z\u4e00-\u9fff]+", "", value)
 
 
-def people_name_variants(line: str) -> set[str]:
-    stripped = line.strip()
-    cleaned = re.sub(r"^[-*]\s+", "", stripped)
-    candidates = {cleaned}
-    if "，" in cleaned or "," in cleaned:
-        candidates.add(re.split(r"[，,]", cleaned, maxsplit=1)[0].strip())
+@functools.lru_cache(maxsize=1)
+def load_degree_thesis_data() -> dict[str, Any]:
+    if not DEGREE_THESES_PATH.exists():
+        raise ZoteroError(f"Degree thesis data is missing: {DEGREE_THESES_PATH}")
+    try:
+        payload = json.loads(DEGREE_THESES_PATH.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as exc:
+        raise ZoteroError(f"Degree thesis data is invalid JSON: {exc}") from exc
+    if not isinstance(payload, dict):
+        raise ZoteroError("Degree thesis data must be a JSON object.")
+    if not isinstance(payload.get("student_authors", []), list):
+        raise ZoteroError("Degree thesis data must contain a list at student_authors.")
+    if not isinstance(payload.get("theses", {}), dict):
+        raise ZoteroError("Degree thesis data must contain an object at theses.")
+    return payload
 
+
+def student_record_variants(record: dict[str, Any]) -> set[str]:
+    leader_names = {normalize_author_name(name) for name in GROUP_LEADER_AUTHOR_NAMES}
     variants: set[str] = set()
-    for candidate in list(candidates):
-        match = re.match(
-            r"(?P<chinese>[\u4e00-\u9fff·]+)(?:\((?P<latin_paren>[A-Za-z][A-Za-z .'\-]+)\)|\s+(?P<latin>[A-Za-z][A-Za-z .'\-]+))?$",
-            candidate.strip(),
-        )
-        if match:
-            chinese = match.group("chinese")
-            latin = (match.group("latin_paren") or match.group("latin") or "").strip()
-            variants.add(chinese)
-            if latin and normalize_author_name(latin) not in {
-                normalize_author_name(name) for name in GROUP_LEADER_AUTHOR_NAMES
-            }:
-                variants.add(latin)
-            variants.update(STUDENT_NAME_ALIASES.get(chinese, []))
-    return {variant for variant in variants if variant}
+    name_cn = str(record.get("name_cn") or "").strip()
+    name_en = str(record.get("name_en") or "").strip()
+    if name_cn:
+        variants.add(name_cn)
+    if name_en and normalize_author_name(name_en) not in leader_names:
+        variants.add(name_en)
+    aliases = record.get("aliases") or []
+    if isinstance(aliases, list):
+        for alias in aliases:
+            alias_text = str(alias or "").strip()
+            if alias_text and normalize_author_name(alias_text) not in leader_names:
+                variants.add(alias_text)
+    return variants
 
 
-def is_section_underline(line: str, char: str) -> bool:
-    stripped = line.strip()
-    return len(stripped) >= 3 and set(stripped) == {char}
+def iter_student_records() -> list[dict[str, Any]]:
+    payload = load_degree_thesis_data()
+    records: list[dict[str, Any]] = []
+    for record in payload.get("student_authors", []):
+        if isinstance(record, dict):
+            records.append(record)
+    theses = payload.get("theses", {})
+    if isinstance(theses, dict):
+        for group_key, _title in DEGREE_THESIS_GROUPS:
+            for record in theses.get(group_key, []):
+                if isinstance(record, dict):
+                    records.append(record)
+    return records
 
 
 @functools.lru_cache(maxsize=1)
 def load_student_author_names() -> set[str]:
-    if not PEOPLE_PATH.exists():
-        return set()
-    lines = PEOPLE_PATH.read_text(encoding="utf-8").splitlines()
     names: set[str] = set()
-    in_student_section = False
-    for index, line in enumerate(lines):
-        stripped = line.strip()
-        next_line = lines[index + 1].strip() if index + 1 < len(lines) else ""
-        if next_line and is_section_underline(next_line, "-"):
-            in_student_section = any(marker in stripped for marker in STUDENT_SECTION_MARKERS)
-            continue
-        if not in_student_section:
-            continue
-        if not stripped or is_section_underline(stripped, "-") or is_section_underline(stripped, "~"):
-            continue
-        if "名单将" in stripped:
-            continue
-        is_member_heading = next_line and is_section_underline(next_line, "~")
-        is_member_list_item = stripped.startswith(("- ", "* ")) and (
-            "学位论文" in stripped or "member-status-" in stripped
-        )
-        if is_member_heading or is_member_list_item:
-            for variant in people_name_variants(stripped):
-                names.add(normalize_author_name(variant))
+    for record in iter_student_records():
+        for variant in student_record_variants(record):
+            names.add(normalize_author_name(variant))
     return names
 
 
@@ -609,22 +588,61 @@ def rendered_entry(item: dict[str, Any], number: int) -> str:
     return f"[{number}] {text}"
 
 
+def iter_degree_theses(group_key: str) -> list[dict[str, Any]]:
+    payload = load_degree_thesis_data()
+    theses = payload.get("theses", {})
+    if not isinstance(theses, dict):
+        return []
+    rows = theses.get(group_key, [])
+    if not isinstance(rows, list):
+        raise ZoteroError(f"Degree thesis group {group_key} must be a list.")
+    indexed = [(index, record) for index, record in enumerate(rows) if isinstance(record, dict)]
+    indexed.sort(key=lambda pair: (parse_date(str(pair[1].get("date") or "")), pair[0]))
+    return [record for _index, record in indexed]
+
+
+def render_degree_thesis_line(record: dict[str, Any]) -> str:
+    name_cn = str(record.get("name_cn") or "").strip()
+    name_en = str(record.get("name_en") or "").strip()
+    date = str(record.get("date") or "").strip()
+    thesis_type = str(record.get("thesis_type") or "").strip()
+    title = str(record.get("title") or "").strip()
+    display_name = f"{name_cn}({name_en})" if name_cn and name_en else name_cn or name_en
+    if not all([display_name, date, thesis_type, title]):
+        raise ZoteroError(f"Incomplete degree thesis record: {record!r}")
+    return f"- {rst_escape(display_name)}，{rst_escape(date)}，{rst_escape(thesis_type)}：{rst_escape(title)}。"
+
+
+def degree_theses_section() -> str:
+    sections = ["学位论文 Degree Theses", "-" * 24, ""]
+    for group_key, group_title in DEGREE_THESIS_GROUPS:
+        sections.extend([group_title, "~" * 32, ""])
+        records = iter_degree_theses(group_key)
+        if not records:
+            raise ZoteroError(f"Degree thesis group {group_key} has no records.")
+        for record in records:
+            sections.append(render_degree_thesis_line(record))
+        sections.append("")
+    return "\n".join(sections).rstrip()
+
+
 def old_publication_records() -> list[dict[str, str]]:
     if not PUBLICATIONS_PATH.exists():
         return []
     text = PUBLICATIONS_PATH.read_text(encoding="utf-8")
     pattern = re.compile(
-        r"^\.\. _(?P<anchor>ref-[^:]+):\n\n(?P<entry>\[\d+\].+?)(?=\n\n(?:\.\. _ref-|\d{4}|更早|\Z))",
+        r"(?P<label_block>(?:^\.\. _ref-[^:]+:\n\n)+)(?P<entry>\[\d+\].+?)(?=\n\n(?:\.\. _ref-|\d{4}|更早|学位论文|\Z))",
         flags=re.M | re.S,
     )
     rows = []
     for match in pattern.finditer(text):
         entry = " ".join(match.group("entry").split())
+        anchors = re.findall(r"^\.\. _(ref-[^:]+):$", match.group("label_block"), flags=re.M)
         doi_match = re.search(r"https?://doi\.org/([^\s.]+(?:\.[^\s.]+)*)", entry)
         title_match = re.search(r",\s*(.+?)\[J\]", entry)
         rows.append(
             {
-                "anchor": match.group("anchor"),
+                "anchor": anchors[0] if anchors else "",
                 "doi": normalize_doi(doi_match.group(1) if doi_match else ""),
                 "title": normalize_title(title_match.group(1) if title_match else ""),
             }
@@ -841,25 +859,36 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
     )
 
 
+def publication_anchor_targets(item: dict[str, Any]) -> list[str]:
+    targets: list[str] = []
+    old_anchor = item.get("old_anchor")
+    if old_anchor and old_anchor != item["anchor"]:
+        targets.append(str(old_anchor))
+    targets.append(str(item["anchor"]))
+    return targets
+
+
 def build_publications_rst(items: list[dict[str, Any]]) -> str:
     items_by_key = build_lookup(items)
     sections = [page_header(items_by_key)]
-    current_year: int | None = None
+    current_section: int | None = None
     for item in items:
         data = item["data"]
         year = extract_year(data.get("date"))
-        if year != current_year:
-            current_year = year
-            title = str(year) if year else "更早 Early"
+        section_key = year if year >= EARLY_PUBLICATION_CUTOFF_YEAR else 0
+        if section_key != current_section:
+            current_section = section_key
+            title = str(section_key) if section_key else EARLIER_PUBLICATIONS_TITLE
             sections.extend([title, "~" * 12, ""])
+        for anchor in publication_anchor_targets(item):
+            sections.extend([f".. _{anchor}:", ""])
         sections.extend(
             [
-                f".. _{item['anchor']}:",
-                "",
                 rendered_entry(item, item["publication_number"]),
                 "",
             ]
         )
+    sections.extend([degree_theses_section(), ""])
     return "\n".join(sections).rstrip() + "\n"
 
 
@@ -928,6 +957,7 @@ def snapshot(
         "source_boundary": {
             "zotero_filter": {"inPublications": True, "itemType": "journalArticle"},
             "count": len(items),
+            "degree_theses_data": str(DEGREE_THESES_PATH.relative_to(ROOT)),
         },
         "csl_style": {
             "id": CSL_STYLE_ID,
@@ -936,7 +966,10 @@ def snapshot(
             "sha256": read_style_sha256(),
         },
         "anchor_rule": "ref-{first-author}{year}-{journal-initialism}; collisions append deterministic title token",
-        "ordering": "publication year desc, parsed date desc, normalized title asc",
+        "ordering": (
+            "publication year desc, parsed date desc, normalized title asc; "
+            f"years before {EARLY_PUBLICATION_CUTOFF_YEAR} grouped as {EARLIER_PUBLICATIONS_TITLE}"
+        ),
         "old_anchor_map": old_anchor_map,
         "items": [
             {

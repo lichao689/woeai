@@ -42,11 +42,28 @@ Use `wechat/backlog/selected-papers.yml` to track selected papers and publicatio
 ## Workflow
 
 1. Select a paper in `wechat/backlog/selected-papers.yml`.
-2. Create a draft from `wechat/templates/paper-explainer.md`.
-3. Convert the same public article content to an RTD Paper Companion Page in `.rst` format when the article should appear on the website.
-4. List the RTD page under `学术进展 Academic Progress` on the relevant research-direction page, grouped by second-level research subdirection and sorted by publication date descending until a more specific sorting rule exists.
-5. Verify the paper's WOEAI site reference and DOI.
-6. Complete the source, copyright, public-safety, and RTD companion-page checklist.
-7. Render the Markdown in a WeChat Markdown editor such as doocs/md.
-8. Publish manually in the WeChat backend.
-9. Record the published URL and state fields in `wechat/backlog/selected-papers.yml` and, when useful, in `wechat/index.yml`.
+2. Use the Zotero source acquisition priority to gather metadata, abstracts,
+   attachments, and PDF source material.
+3. Create a draft from `wechat/templates/paper-explainer.md`.
+4. Convert the same public article content to an RTD Paper Companion Page in `.rst` format when the article should appear on the website.
+5. List the RTD page under `学术进展 Academic Progress` on the relevant research-direction page, grouped by second-level research subdirection and sorted by publication date descending until a more specific sorting rule exists.
+6. Verify the paper's WOEAI site reference and DOI.
+7. Complete the source, copyright, public-safety, and RTD companion-page checklist.
+8. Render the Markdown in a WeChat Markdown editor such as doocs/md.
+9. Publish manually in the WeChat backend.
+10. Record the published URL and state fields in `wechat/backlog/selected-papers.yml` and, when useful, in `wechat/index.yml`.
+
+## Zotero Source Acquisition Priority
+
+Use this order for WOEAI paper articles:
+
+1. Use the Zotero Desktop Local API to read metadata, DOI, and `abstractNote`.
+2. Use the Zotero Desktop Local API to list attachment items.
+3. If a local PDF attachment exists, use that PDF to extract or verify the
+   abstract, figures, captions, and paper body needed for the article.
+4. If the local PDF attachment is missing, try the Zotero Web API `/file`
+   endpoint for the attachment, using private credentials only outside the
+   repository.
+5. If neither local attachment nor Web API file access is available, record
+   `需要同步 PDF 或提供作者稿` in the review note and do not invent PDF-derived
+   facts.

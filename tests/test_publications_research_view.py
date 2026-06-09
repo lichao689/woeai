@@ -11,6 +11,9 @@ PUBLICATIONS = ROOT / "docs/source/Publications.rst"
 PUBLICATIONS_BY_RESEARCH = ROOT / "docs/source/PublicationsByResearch.rst"
 TEACHING = ROOT / "docs/source/Teaching.rst"
 INDEX = ROOT / "docs/source/index.rst"
+PEOPLE = ROOT / "docs/source/People.rst"
+CONF = ROOT / "docs/source/conf.py"
+DOI_NEW_TAB_JS = ROOT / "docs/_static/doi-new-tab.js"
 RESEARCH_MAP = ROOT / "docs/data/publication-research-map.json"
 
 RESEARCH_FAMILIES = ("建筑结构抗风", "海上漂浮风电")
@@ -24,6 +27,16 @@ TEACHING_REFORM_PUBLICATION_TITLE = "中国共产党精神谱系视域下土木�
 
 def publication_anchors(text: str) -> set[str]:
     return set(re.findall(r"^\.\. _(ref-[^:]+):$", text, flags=re.M))
+
+
+def canonical_publication_anchors(text: str) -> set[str]:
+    anchors: set[str] = set()
+    pattern = re.compile(r"(?P<label_block>(?:^\.\. _ref-[^:]+:\n\n)+)\[\d+\] ", flags=re.M)
+    for match in pattern.finditer(text):
+        labels = re.findall(r"^\.\. _(ref-[^:]+):$", match.group("label_block"), flags=re.M)
+        if labels:
+            anchors.add(labels[-1])
+    return anchors
 
 
 def research_ref_targets(text: str) -> list[str]:
@@ -55,6 +68,9 @@ def publication_number_years(text: str) -> dict[int, int]:
         if re.fullmatch(r"\d{4}", line):
             current_year = int(line)
             continue
+        if line == "更早 Earlier":
+            current_year = 0
+            continue
         match = re.match(r"^\[(\d+)\] ", line)
         if match:
             years[int(match.group(1))] = current_year
@@ -77,6 +93,8 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertIn(":doc:`PublicationsByResearch`", text)
         self.assertIn("按研究方向浏览 Publications by Research Direction <PublicationsByResearch>", text)
         self.assertNotIn("\n   PublicationsByResearch\n", index_text)
+        self.assertNotIn("\n   People\n", index_text)
+        self.assertFalse(PEOPLE.exists())
 
     def test_research_view_groups_every_publication_by_family_then_subdirection(self) -> None:
         publications_text = PUBLICATIONS.read_text(encoding="utf-8")
@@ -86,7 +104,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
         thematic_entries = publication_entries(research_text)
         self.assertEqual(set(thematic_entries), set(chronological_entries))
         self.assertEqual(len(thematic_entries), len(chronological_entries))
-        self.assertEqual(set(research_ref_targets(research_text)), publication_anchors(publications_text))
+        self.assertEqual(set(research_ref_targets(research_text)), canonical_publication_anchors(publications_text))
 
         family_positions = [research_text.index(f"\n{family}\n") for family in RESEARCH_FAMILIES]
         self.assertEqual(family_positions, sorted(family_positions))
@@ -118,7 +136,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
     def test_research_mapping_uses_canonical_public_families(self) -> None:
         mapping = json.loads(RESEARCH_MAP.read_text(encoding="utf-8"))
         items = mapping["items"]
-        source_anchors = publication_anchors(PUBLICATIONS.read_text(encoding="utf-8"))
+        source_anchors = canonical_publication_anchors(PUBLICATIONS.read_text(encoding="utf-8"))
         self.assertEqual(len(items), len(source_anchors))
 
         families = {row["research_family"] for row in items.values()}
@@ -139,6 +157,38 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertNotIn(TEACHING_REFORM_PUBLICATION_KEY, mapping["items"])
         self.assertIn("教改探索", teaching_text)
         self.assertIn(TEACHING_REFORM_PUBLICATION_TITLE, teaching_text)
+
+    def test_publications_page_groups_early_papers_and_degree_theses(self) -> None:
+        text = PUBLICATIONS.read_text(encoding="utf-8")
+
+        self.assertIn("\n更早 Earlier\n", text)
+        self.assertNotRegex(text, r"\n2018\n~+\n")
+        self.assertNotRegex(text, r"\n2017\n~+\n")
+        self.assertLess(text.index("期刊论文 Journal Papers"), text.index("学位论文 Degree Theses"))
+        self.assertIn("博士学位论文 PhD Theses", text)
+        self.assertIn("硕士学位论文 Master Theses", text)
+        self.assertLess(text.index("周盛涛(Zhou Shengtao)，2021"), text.index("郑舜云(Zheng Shunyun)，2024-11"))
+        self.assertLess(text.index("王一鸣(Wang Yiming)，2023"), text.index("赵培升(Zhao Peisheng)，2025"))
+
+    def test_updated_wake_model_publication_year_keeps_old_anchor_alias(self) -> None:
+        text = PUBLICATIONS.read_text(encoding="utf-8")
+        old_anchor = ".. _ref-zhang2015-E:"
+        new_anchor = ".. _ref-zhang2022-E:"
+        title = "Applicability of wake models to predictions of turbine-induced velocity deficit and wind farm power generation"
+
+        self.assertIn(old_anchor, text)
+        self.assertIn(new_anchor, text)
+        self.assertLess(text.index("\n2022\n"), text.index(title))
+        self.assertLess(text.index(title), text.index("\n2021\n"))
+
+    def test_doi_links_open_in_new_tab(self) -> None:
+        conf_text = CONF.read_text(encoding="utf-8")
+        js_text = DOI_NEW_TAB_JS.read_text(encoding="utf-8")
+
+        self.assertIn("doi-new-tab.js", conf_text)
+        self.assertIn('target = "_blank"', js_text)
+        self.assertIn('rel = "noopener noreferrer"', js_text)
+        self.assertIn('href^="https://doi.org/"', js_text)
 
 
 if __name__ == "__main__":

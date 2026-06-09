@@ -217,122 +217,115 @@
 
 [32] Wang Qiulei; Yan Lei; Hu Gang\*; **Li Chao**; Xiao Yiqing; Xiong Hao; Rabault Jean; Noack Bernd R, DRLinFluids: An open-source Python platform of coupling deep reinforcement learning and OpenFOAM[J]. **Physics of Fluids**, American Institute of Physics, 2022, 34(8): 081801. https://doi.org/10.1063/5.0103113. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
+.. _ref-zhang2015-E:
+
+.. _ref-zhang2022-E:
+
+[31] Zhang Dongqin; Liang Yang; **Li Chao**; Xiao Yiqing; Hu Gang, Applicability of wake models to predictions of turbine-induced velocity deficit and wind farm power generation[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2022, 15(19): 7431. https://doi.org/10.3390/en15197431. 中科院分区: **3**.
+
 .. _ref-abdullahi2022-OE:
 
-[31] Abdullahi Aliyu; Bhattacharya Subhamoy; **Li Chao**; Xiao Yiqing; Wang Ying\*, Long term effect of operating loads on large monopile-supported offshore wind turbines in sand[J]. **Ocean Engineering**, 2022, 245: 110404. https://doi.org/10.1016/j.oceaneng.2021.110404. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
+[30] Abdullahi Aliyu; Bhattacharya Subhamoy; **Li Chao**; Xiao Yiqing; Wang Ying\*, Long term effect of operating loads on large monopile-supported offshore wind turbines in sand[J]. **Ocean Engineering**, 2022, 245: 110404. https://doi.org/10.1016/j.oceaneng.2021.110404. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zhang2022-ES:
 
-[30] :student-first-author:`Zhang Wentong`; Xiao Yiqing\*; **Li Chao**; Zheng Qingxing; Tang Yanan, Wind load investigation of self-supported lattice transmission tower based on wind tunnel tests[J]. **Engineering Structures**, 2022, 252: 113575. https://doi.org/10.1016/j.engstruct.2021.113575. 影响因子: **6.4 (Q1)**. 中科院分区: **1**.
+[29] :student-first-author:`Zhang Wentong`; Xiao Yiqing\*; **Li Chao**; Zheng Qingxing; Tang Yanan, Wind load investigation of self-supported lattice transmission tower based on wind tunnel tests[J]. **Engineering Structures**, 2022, 252: 113575. https://doi.org/10.1016/j.engstruct.2021.113575. 影响因子: **6.4 (Q1)**. 中科院分区: **1**.
 
 .. _ref-lin2022-JWEIA:
 
-[29] Lin Pengfei; Ding Fei; Hu Gang\*; **Li Chao**\*; Xiao Yiqing; Tse K T; Kwok K C S; Kareem Ahsan, Machine learning-enabled estimation of crosswind load effect on tall buildings[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2022, 220: 104860. https://doi.org/10.1016/j.jweia.2021.104860. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
+[28] Lin Pengfei; Ding Fei; Hu Gang\*; **Li Chao**\*; Xiao Yiqing; Tse K T; Kwok K C S; Kareem Ahsan, Machine learning-enabled estimation of crosswind load effect on tall buildings[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2022, 220: 104860. https://doi.org/10.1016/j.jweia.2021.104860. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
 .. _ref-yang2022-AS:
 
-[28] :student-first-author:`Yang Junhui`; Zhang Junfeng; **Li Chao**\*, Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses[J]. **Applied Sciences**, 2022, 12(8): 3729. https://doi.org/10.3390/app12083729. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
+[27] :student-first-author:`Yang Junhui`; Zhang Junfeng; **Li Chao**\*, Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses[J]. **Applied Sciences**, 2022, 12(8): 3729. https://doi.org/10.3390/app12083729. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
 
 2021
 ~~~~~~~~~~~~
 
 .. _ref-wang2021-ABE:
 
-[27] Wang Qiulei; Jiang Qi; Hu Gang\*; Chen Xiao; **Li Chao**; Xiao Yiqing, Aerodynamic characteristics of a square cylinder with corner fins[J]. **Advances in Bridge Engineering**, 2021, 2(1): 20. https://doi.org/10.1186/s43251-021-00042-x. 影响因子: **2.1 (Q2)**. 中科院分区: **3**.
+[26] Wang Qiulei; Jiang Qi; Hu Gang\*; Chen Xiao; **Li Chao**; Xiao Yiqing, Aerodynamic characteristics of a square cylinder with corner fins[J]. **Advances in Bridge Engineering**, 2021, 2(1): 20. https://doi.org/10.1186/s43251-021-00042-x. 影响因子: **2.1 (Q2)**. 中科院分区: **3**.
 
 .. _ref-zhao2021-EFM:
 
-[26] :student-first-author:`Zhao Zihan`; **Li Chao**\*; Xiao Yiqing; Wang Jinghan; Hu Gang; Xiao Kai, Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions[J]. **Environmental Fluid Mechanics**, 2021, 21(4): 759～790. https://doi.org/10.1007/s10652-021-09796-4. 影响因子: **2.1 (Q2)**. 中科院分区: **3**.
+[25] :student-first-author:`Zhao Zihan`; **Li Chao**\*; Xiao Yiqing; Wang Jinghan; Hu Gang; Xiao Kai, Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions[J]. **Environmental Fluid Mechanics**, 2021, 21(4): 759～790. https://doi.org/10.1007/s10652-021-09796-4. 影响因子: **2.1 (Q2)**. 中科院分区: **3**.
 
 .. _ref-zhao2021-AR:
 
-[25] :student-first-author:`Zhao Zihan`; Xiao Yiqing; **Li Chao**\*; Wang Jinghan; Hu Gang, New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain[J]. **Atmospheric Research**, 2021, 254: 105507. https://doi.org/10.1016/j.atmosres.2021.105507. 影响因子: **4.4 (Q2)**. 中科院分区: **2**.
+[24] :student-first-author:`Zhao Zihan`; Xiao Yiqing; **Li Chao**\*; Wang Jinghan; Hu Gang, New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain[J]. **Atmospheric Research**, 2021, 254: 105507. https://doi.org/10.1016/j.atmosres.2021.105507. 影响因子: **4.4 (Q2)**. 中科院分区: **2**.
 
 .. _ref-lin2021-JWEIA:
 
-[24] Lin Pengfei; Hu Gang\*; **Li Chao**\*; Li Lixiao; Xiao Yiqing; Tse K T; Kwok K C S, Machine learning-based prediction of crosswind vibrations of rectangular cylinders[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2021, 211: 104549. https://doi.org/10.1016/j.jweia.2021.104549. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
+[23] Lin Pengfei; Hu Gang\*; **Li Chao**\*; Li Lixiao; Xiao Yiqing; Tse K T; Kwok K C S, Machine learning-based prediction of crosswind vibrations of rectangular cylinders[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2021, 211: 104549. https://doi.org/10.1016/j.jweia.2021.104549. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zhou2021-OE:
 
-[23] :student-first-author:`Zhou Shengtao`; Müller Kolja; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics[J]. **Ocean Engineering**, 2021, 221: 108585. https://doi.org/10.1016/j.oceaneng.2021.108585. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
+[22] :student-first-author:`Zhou Shengtao`; Müller Kolja; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics[J]. **Ocean Engineering**, 2021, 221: 108585. https://doi.org/10.1016/j.oceaneng.2021.108585. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zhao2021-TYNXB:
 
-[22] :student-first-author:`赵子涵`; **李朝**\*; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. **太阳能学报**, 2021, 42(2): 205～210.
+[21] :student-first-author:`赵子涵`; **李朝**\*; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. **太阳能学报**, 2021, 42(2): 205～210.
 
 2020
 ~~~~~~~~~~~~
 
 .. _ref-li2020-JWEIA:
 
-[21] **Li Chao**; Wang Jinghan; Hu Gang; Li Lixiao; Xiao Yiqing\*, RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2020, 206: 104281. https://doi.org/10.1016/j.jweia.2020.104281. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
+[20] **Li Chao**; Wang Jinghan; Hu Gang; Li Lixiao; Xiao Yiqing\*, RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2020, 206: 104281. https://doi.org/10.1016/j.jweia.2020.104281. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zhou2020-RE:
 
-[20] :student-first-author:`Zhou Shengtao`; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines: A case study by using surrogate models[J]. **Renewable Energy**, 2020, 156: 260～278. https://doi.org/10.1016/j.renene.2020.04.014. 影响因子: **9.1 (Q1)**. 中科院分区: **1**.
+[19] :student-first-author:`Zhou Shengtao`; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines: A case study by using surrogate models[J]. **Renewable Energy**, 2020, 156: 260～278. https://doi.org/10.1016/j.renene.2020.04.014. 影响因子: **9.1 (Q1)**. 中科院分区: **1**.
 
 2019
 ~~~~~~~~~~~~
 
 .. _ref-hu2019-JOFAS:
 
-[19] Hu Gang; Liu Fengxi; Li Lixiao\*; **Li Chao**; Xiao Yiqing; Kwok K C S, Wind energy harvesting performance of tandem circular cylinders with triangular protrusions[J]. **Journal of Fluids and Structures**, 2019, 91: 102780. https://doi.org/10.1016/j.jfluidstructs.2019.102780. 影响因子: **3.5 (Q1)**. 中科院分区: **2**.
+[18] Hu Gang; Liu Fengxi; Li Lixiao\*; **Li Chao**; Xiao Yiqing; Kwok K C S, Wind energy harvesting performance of tandem circular cylinders with triangular protrusions[J]. **Journal of Fluids and Structures**, 2019, 91: 102780. https://doi.org/10.1016/j.jfluidstructs.2019.102780. 影响因子: **3.5 (Q1)**. 中科院分区: **2**.
 
 .. _ref-peng2019-JWEIA:
 
-[18] Peng Yi-Xin; Xu You-Lin\*; Zhu Songye; **Li Chao**, High-solidity straight-bladed vertical axis wind turbine: Numerical simulation and validation[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2019, 193: 103960. https://doi.org/10.1016/j.jweia.2019.103960. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
+[17] Peng Yi-Xin; Xu You-Lin\*; Zhu Songye; **Li Chao**, High-solidity straight-bladed vertical axis wind turbine: Numerical simulation and validation[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2019, 193: 103960. https://doi.org/10.1016/j.jweia.2019.103960. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
 .. _ref-li2019-JWEIA:
 
-[17] Li Lixiao; Kareem Ahsan\*; Hunt Julian; Xing Feng; Chan Pakwai; Xiao Yiqing; **Li Chao**, Observed sub-hectometer-scale low level jets in surface-layer velocity profiles of landfalling typhoons[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2019, 190: 151～165. https://doi.org/10.1016/j.jweia.2019.04.016. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
+[16] Li Lixiao; Kareem Ahsan\*; Hunt Julian; Xing Feng; Chan Pakwai; Xiao Yiqing; **Li Chao**, Observed sub-hectometer-scale low level jets in surface-layer velocity profiles of landfalling typhoons[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2019, 190: 151～165. https://doi.org/10.1016/j.jweia.2019.04.016. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
 .. _ref-lin2019-E:
 
-[16] Lin Jinghua; Xu You-Lin\*; Xia Yong; **Li Chao**, Structural Analysis of Large-Scale Vertical-Axis Wind Turbines, Part I: Wind Load Simulation[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2019, 12(13): 2573. https://doi.org/10.3390/en12132573. 影响因子: **3.2 (Q3)**. 中科院分区: **3**.
+[15] Lin Jinghua; Xu You-Lin\*; Xia Yong; **Li Chao**, Structural Analysis of Large-Scale Vertical-Axis Wind Turbines, Part I: Wind Load Simulation[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2019, 12(13): 2573. https://doi.org/10.3390/en12132573. 影响因子: **3.2 (Q3)**. 中科院分区: **3**.
 
 .. _ref-zhou2019-WHLGDXXB:
 
-[15] 周颖; 梁枢果\*; **李朝**, 超高层建筑风荷载的数值模拟[J]. **武汉理工大学学报**, 2019, 41(1): 56～62, 89.
+[14] 周颖; 梁枢果\*; **李朝**, 超高层建筑风荷载的数值模拟[J]. **武汉理工大学学报**, 2019, 41(1): 56～62, 89.
 
-2018
+更早 Earlier
 ~~~~~~~~~~~~
 
 .. _ref-hu2018-EJMBF:
 
-[14] Hu Gang; **Li Chao**\*; Tse K T; Kwok K C S, Vortex induced vibration of an inclined finite-length square cylinder[J]. **European Journal of Mechanics - B/Fluids**, 2018, 68: 144～152. https://doi.org/10.1016/j.euromechflu.2017.12.004. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
+[13] Hu Gang; **Li Chao**\*; Tse K T; Kwok K C S, Vortex induced vibration of an inclined finite-length square cylinder[J]. **European Journal of Mechanics - B/Fluids**, 2018, 68: 144～152. https://doi.org/10.1016/j.euromechflu.2017.12.004. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
 
 .. _ref-li2018-AE:
 
-[13] **Li Chao**; Xiao Yiqing; Xu You-lin; Peng Yi-xin; Hu Gang; Zhu Songye\*, Optimization of blade pitch in H-rotor vertical axis wind turbines through computational fluid dynamics simulations[J]. **Applied Energy**, 2018, 212: 1107～1125. https://doi.org/10.1016/j.apenergy.2017.12.035. 影响因子: **11.0 (Q1)**. 中科院分区: **1**.
+[12] **Li Chao**; Xiao Yiqing; Xu You-lin; Peng Yi-xin; Hu Gang; Zhu Songye\*, Optimization of blade pitch in H-rotor vertical axis wind turbines through computational fluid dynamics simulations[J]. **Applied Energy**, 2018, 212: 1107～1125. https://doi.org/10.1016/j.apenergy.2017.12.035. 影响因子: **11.0 (Q1)**. 中科院分区: **1**.
 
 .. _ref-xiao2018-KXJSYGC:
 
-[12] 肖凯; 赵子涵; 罗啸宇; **李朝**\*; 钟继; 肖仪清, 复杂地形下基于计算流体动力学的风速比计算[J]. **科学技术与工程**, 2018, 18(33): 1～6.
-
-2017
-~~~~~~~~~~~~
+[11] 肖凯; 赵子涵; 罗啸宇; **李朝**\*; 钟继; 肖仪清, 复杂地形下基于计算流体动力学的风速比计算[J]. **科学技术与工程**, 2018, 18(33): 1～6.
 
 .. _ref-zhou2017-E:
 
-[11] :student-first-author:`Zhou Shengtao`; Shan Baohua; Xiao Yiqing; **Li Chao**\*; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin, Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2017, 10(12): 2097. https://doi.org/10.3390/en10122097. 影响因子: **3.2 (Q3)**. 中科院分区: **3**.
+[10] :student-first-author:`Zhou Shengtao`; Shan Baohua; Xiao Yiqing; **Li Chao**\*; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin, Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2017, 10(12): 2097. https://doi.org/10.3390/en10122097. 影响因子: **3.2 (Q3)**. 中科院分区: **3**.
 
 .. _ref-li2017-BS:
 
-[10] **Li Chao**; Zhou Shengtao; Xiao Yiqing\*; Huang Qin; Li Lixiao; Chan P W, Effects of inflow conditions on mountainous/urban wind environment simulation[J]. **Building Simulation**, 2017, 10(4): 573～588. https://doi.org/10.1007/s12273-017-0348-1. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
+[9] **Li Chao**; Zhou Shengtao; Xiao Yiqing\*; Huang Qin; Li Lixiao; Chan P W, Effects of inflow conditions on mountainous/urban wind environment simulation[J]. **Building Simulation**, 2017, 10(4): 573～588. https://doi.org/10.1007/s12273-017-0348-1. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
 
 .. _ref-li2017-AS:
 
-[9] **Li Chao**; Zhuang Tongyi; Zhou Shengtao; Xiao Yiqing\*; Hu Gang, Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine[J]. **Applied Sciences**, Multidisciplinary Digital Publishing Institute, 2017, 7(6): 509. https://doi.org/10.3390/app7060509. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
-
-2015
-~~~~~~~~~~~~
-
-.. _ref-zhang2015-E:
-
-[8] Zhang Dongqin; Liang Yang; **Li Chao**; Xiao Yiqing; Hu Gang, Applicability of Wake Models to Predictions of Turbine-Induced Velocity Deficit and Wind Farm Power Generation[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2015, 15(19): 7431. https://doi.org/10.3390/en15197431. 影响因子: **3.2 (Q3)**. 中科院分区: **3**.
-
-2013
-~~~~~~~~~~~~
+[8] **Li Chao**; Zhuang Tongyi; Zhou Shengtao; Xiao Yiqing\*; Hu Gang, Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine[J]. **Applied Sciences**, Multidisciplinary Digital Publishing Institute, 2017, 7(6): 509. https://doi.org/10.3390/app7060509. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
 
 .. _ref-pei2013-MPE:
 
@@ -342,9 +335,6 @@
 
 [6] **Li Chao**; Zhu Songye\*; Xu You-lin; Xiao Yiqing, 2.5D large eddy simulation of vertical axis wind turbine in consideration of high angle of attack flow[J]. **Renewable Energy**, 2013, 51(8.7 (Q1)): 317～330. https://doi.org/10.1016/j.renene.2012.09.011. 影响因子: **9.1 (Q1)**. 中科院分区: **1**.
 
-2012
-~~~~~~~~~~~~
-
 .. _ref-li2012-JWEIA:
 
 [5] **Li Chao**; Li Q S; Xiao Y Q; Ou J P, A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2012, 102: 48～60. https://doi.org/10.1016/j.jweia.2011.12.004. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
@@ -352,9 +342,6 @@
 .. _ref-li2012-GCLX:
 
 [4] **李朝**; 肖仪清\*; 滕军; 欧进萍; 陈宜言, 基于超越阈值概率的行人风环境数值评估[J]. **工程力学**, 2012, 29(12): 15～21.
-
-2010
-~~~~~~~~~~~~
 
 .. _ref-li2010-WAS:
 
@@ -364,9 +351,37 @@
 
 [2] 滕军\*; 李秀英; **李朝**, 开口空间结构表面风压分布规律研究[J]. **工程抗震与加固改造**, 2010, 32(6): 18～24.
 
-2009
-~~~~~~~~~~~~
-
 .. _ref-xiao2009-HNLGDXXB:
 
 [1] 肖仪清; **李朝**; 欧进萍; 宋丽莉; 李秋胜, 复杂地形风能评估的CFD方法[J]. **华南理工大学学报(自然科学版)**, 2009, 37(9): 30～35.
+
+学位论文 Degree Theses
+------------------------
+
+博士学位论文 PhD Theses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 周盛涛(Zhou Shengtao)，2021，博士学位论文：基于快速动力响应分析的半潜式风机下部结构主尺寸优化。
+- 王靖含(Wang Jinghan)，2022，博士学位论文：粗糙场地大气边界层湍流风场数值生成方法研究。
+- 赵子涵(Zhao Zihan)，2022，博士学位论文：近地边界层风场的降尺度复原模拟方法研究。
+- 张文通(Zhang Wentong)，2023，博士学位论文：输电塔动力风荷载反演及其风致倒塌失效研究。
+- 郑舜云(Zheng Shunyun)，2024-11，博士学位论文：半潜式风机支撑结构的尺度优化及强度评估。
+- 陈铃伟(Chen Lingwei)，2025-09，博士学位论文：基于傅里叶合成法的时空相关湍流风场大涡模拟研究。
+
+硕士学位论文 Master Theses
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- 王一鸣(Wang Yiming)，2023，硕士学位论文：基于高频天平风洞试验的高层建筑非线性振型响应分析。
+- 王沛岑(Wang Peicen)，2023，硕士学位论文：耦合系泊系统的数值波浪水槽研究。
+- 李超(Li Chao)，2023，硕士学位论文：基于气象资料统计的滨海城市微尺度风气候分析。
+- 韩芷宸(Han Zhichen)，2023，硕士学位论文：基于Cesium的深圳市三维模型可视化及风灾指标提取研究。
+- 陈翔(Chen Xiang)，2023，硕士学位论文：高层建筑风荷载大涡模拟的影响因素及误差研究。
+- 周子豪(Zhou Zihao)，2024，硕士学位论文：浮式风机悬链线系泊的频域计算及优化。
+- 袁野(Yuan Ye)，2024，硕士学位论文：大跨度空间结构多目标等效静力风荷载时域优化计算。
+- 蒋建勋(Jiang Jianxun)，2024，硕士学位论文：基于倾斜影像密集匹配点云的城市风环境CFD模型重建。
+- 何蔚文(He Weiwen)，2024，硕士学位论文：新型半潜式钢筋混凝土风机基础结构设计与优化。
+- 范文涛(Fan Wentao)，2024，硕士学位论文：柔性光伏支架结构优化及抗风性能研究。
+- 赵培升(Zhao Peisheng)，2025，硕士学位论文：影像。
+- 汤澳(Tang Ao)，2025，硕士学位论文：图神经网络。
+- 秦佳伦(Qin Jialun)，2025，硕士学位论文：平衡大气边界层。
+- 刘金波(Liu Jinbo)，2025，硕士学位论文：考虑粘性水动力的浮式风机系统一体化耦合分析方法研究。

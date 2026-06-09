@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -79,33 +80,51 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         self.assertIn("**Li Chao**\\*, Example[J]", rendered)
         self.assertNotIn("\\*\\*", rendered)
 
-    def test_people_parser_accepts_degree_thesis_listing(self) -> None:
+    def test_degree_thesis_data_provides_student_author_names(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
-            people = Path(tmpdir) / "People.rst"
-            people.write_text(
-                "\n".join(
-                    [
-                        "团队成员 People",
-                        "===================",
-                        "",
-                        "博士生 PhD Students",
-                        "-------------------",
-                        "",
-                        "- 郑舜云(Zheng Shunyun)，2024-11，博士学位论文：半潜式风机支撑结构的尺度优化及强度评估。",
-                        "- 何欣(He Xin)，:member-status-current:`在校 Current`。",
-                        "- 李超(Li Chao)，2023，硕士学位论文：基于气象资料统计的滨海城市微尺度风气候分析。",
-                        "",
-                    ]
+            thesis_data = Path(tmpdir) / "degree-theses.json"
+            thesis_data.write_text(
+                json.dumps(
+                    {
+                        "student_authors": [
+                            {"name_cn": "何欣", "name_en": "He Xin", "aliases": ["Xin He"]},
+                        ],
+                        "theses": {
+                            "phd": [
+                                {
+                                    "name_cn": "郑舜云",
+                                    "name_en": "Zheng Shunyun",
+                                    "aliases": ["Shunyun Zheng"],
+                                    "date": "2024-11",
+                                    "thesis_type": "博士学位论文",
+                                    "title": "半潜式风机支撑结构的尺度优化及强度评估",
+                                }
+                            ],
+                            "master": [
+                                {
+                                    "name_cn": "李超",
+                                    "name_en": "Li Chao",
+                                    "aliases": [],
+                                    "date": "2023",
+                                    "thesis_type": "硕士学位论文",
+                                    "title": "基于气象资料统计的滨海城市微尺度风气候分析",
+                                }
+                            ],
+                        },
+                    },
+                    ensure_ascii=False,
                 ),
                 encoding="utf-8",
             )
-            original_path = self.updater.PEOPLE_PATH
-            self.updater.PEOPLE_PATH = people
+            original_path = self.updater.DEGREE_THESES_PATH
+            self.updater.DEGREE_THESES_PATH = thesis_data
+            self.updater.load_degree_thesis_data.cache_clear()
             self.updater.load_student_author_names.cache_clear()
             try:
                 names = self.updater.load_student_author_names()
             finally:
-                self.updater.PEOPLE_PATH = original_path
+                self.updater.DEGREE_THESES_PATH = original_path
+                self.updater.load_degree_thesis_data.cache_clear()
                 self.updater.load_student_author_names.cache_clear()
 
         self.assertIn(self.updater.normalize_author_name("Zheng Shunyun"), names)
@@ -113,6 +132,15 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         self.assertIn(self.updater.normalize_author_name("He Xin"), names)
         self.assertIn(self.updater.normalize_author_name("李超"), names)
         self.assertNotIn(self.updater.normalize_author_name("Li Chao"), names)
+
+    def test_degree_thesis_section_is_sorted_by_graduation_date(self) -> None:
+        section = self.updater.degree_theses_section()
+
+        self.assertIn("学位论文 Degree Theses", section)
+        self.assertIn("博士学位论文 PhD Theses", section)
+        self.assertIn("硕士学位论文 Master Theses", section)
+        self.assertLess(section.index("周盛涛(Zhou Shengtao)，2021"), section.index("郑舜云(Zheng Shunyun)，2024-11"))
+        self.assertLess(section.index("王一鸣(Wang Yiming)，2023"), section.index("赵培升(Zhao Peisheng)，2025"))
 
 
 if __name__ == "__main__":

@@ -27,6 +27,21 @@ If the task mentions Zotero, DOI, a PDF, or a paper title, inspect those sources
 
 When a local PDF or author manuscript is available, inspect the original paper body, figures, captions, and conclusion instead of relying only on a public abstract.
 
+## Source Acquisition Priority
+
+Use this Zotero-first order for WOEAI paper articles:
+
+1. Use the Zotero Desktop Local API to read metadata, DOI, and `abstractNote`.
+2. Use the Zotero Desktop Local API to list attachment items.
+3. If a local PDF attachment exists, use that PDF to extract or verify the
+   abstract, figures, captions, and paper body needed for the article.
+4. If the local PDF attachment is missing, try the Zotero Web API `/file`
+   endpoint for the attachment. Keep Web API keys and downloaded private working
+   files outside this public repository.
+5. If neither local attachment nor Web API file access is available, record
+   `需要同步 PDF 或提供作者稿` in the review note and do not invent PDF-derived
+   facts.
+
 ## Article Unit
 
 Use one selected paper per article.
@@ -64,21 +79,22 @@ Use only these public research families and subdirections unless the user explic
 ## Draft Workflow
 
 1. Select the target item from `wechat/backlog/selected-papers.yml`.
-2. Verify `publication_ref`, title, year, DOI, and WOEAI website anchor.
-3. Create or update the reader-facing article under `wechat/articles/draft-public-safe/`.
-4. Name the article with the paper's `publication_ref`, for example `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`.
-5. Convert the same public article content to a Sphinx-compatible RST page for RTD. Do not add a separate Markdown route to Sphinx.
-6. Create or update the publishing note under `wechat/articles/review/`, for example `wechat/articles/review/ref-zhao2026-BS.review.md`.
-7. Start the reader-facing article from `wechat/templates/paper-explainer.md`, but remove any production-only placeholders before treating it as copy-ready.
-8. Keep review details, evidence notes, copyright status, formula preview status, figure insertion status, RST conversion notes, and human checklists in the `.review.md` file, not in the reader-facing article or RTD page.
-9. Keep `wechat_status` aligned with the backlog state model:
+2. Follow the Source Acquisition Priority above.
+3. Verify `publication_ref`, title, year, DOI, and WOEAI website anchor.
+4. Create or update the reader-facing article under `wechat/articles/draft-public-safe/`.
+5. Name the article with the paper's `publication_ref`, for example `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`.
+6. Convert the same public article content to a Sphinx-compatible RST page for RTD. Do not add a separate Markdown route to Sphinx.
+7. Create or update the publishing note under `wechat/articles/review/`, for example `wechat/articles/review/ref-zhao2026-BS.review.md`.
+8. Start the reader-facing article from `wechat/templates/paper-explainer.md`, but remove any production-only placeholders before treating it as copy-ready.
+9. Keep review details, evidence notes, copyright status, formula preview status, figure insertion status, RST conversion notes, and human checklists in the `.review.md` file, not in the reader-facing article or RTD page.
+10. Keep `wechat_status` aligned with the backlog state model:
    - `selected`
    - `drafting`
    - `reviewing`
    - `ready_to_publish`
    - `published`
    - `archived`
-10. Update `wechat/backlog/selected-papers.yml` only when the user's task asks for workflow tracking or after a draft/review step changes status.
+11. Update `wechat/backlog/selected-papers.yml` only when the user's task asks for workflow tracking or after a draft/review step changes status.
 
 ## Output Model
 
@@ -122,16 +138,29 @@ Rules:
 Use this default order unless the paper strongly requires a small adjustment:
 
 1. `论文信息`
-2. `研究问题`
-3. `方法贡献`
-4. `关键发现`
-5. `公式说明`
+2. `摘要`
+3. `研究问题`
+4. `方法贡献`
+5. `关键发现`
 6. `工程意义`
 7. `适用边界`
 8. `图文说明` when public-safe images are inserted
 9. `延伸阅读`
 10. `阅读原文`
-11. `联系入口`
+
+Use this title pattern:
+
+`<title category> | <problem-solving Chinese title>`
+
+Temporarily choose the title category from `数值风洞`, `结构抗风`, or `漂浮风电`.
+The title after the separator should describe what problem the paper helps
+solve.
+
+Add `摘要` immediately after `论文信息`. For English papers, translate the
+original English abstract faithfully into Chinese and then include
+`**英文摘要**` plus the original English abstract. Do not invent an abstract when
+the original paper abstract is unavailable; keep that issue in the review note
+until a paper PDF, author manuscript, or approved source is available.
 
 Write for technically literate readers who may include prospective students, collaborators, engineering software users, and academic peers.
 
@@ -163,6 +192,10 @@ Do not use Markdown backticks or RST double backticks for mathematical variables
 
 Keep formulas short enough for mobile display when possible.
 
+Do not create a standalone `公式说明` section by default. Put formulas directly
+inside the section where they are needed, such as `方法贡献`, `关键发现`,
+`工程意义`, or `适用边界`.
+
 For each important formula:
 
 - provide the formula in the draft,
@@ -170,7 +203,7 @@ For each important formula:
 - add one plain-language sentence explaining what the formula means,
 - mark `formula_preview_checked: false` until the formula is checked in the final WeChat backend mobile preview.
 
-If the formula cannot be reliably represented in the current publishing workflow, record the issue in `公式说明` and simplify the article around the concept rather than using a blurry image.
+If the formula cannot be reliably represented in the current publishing workflow, record the issue near the relevant discussion and simplify the article around the concept rather than using a blurry image.
 
 ## Figure Handling
 
@@ -228,6 +261,11 @@ For the first workflow version, use the DOI URL as the reading link. Do not impl
 Before calling a draft ready:
 
 - DOI and WOEAI publication anchor are checked.
+- Zotero Desktop Local API metadata, DOI, `abstractNote`, and attachment
+  records are checked.
+- Local PDF attachment is used when present. If it is missing, Zotero Web API
+  `/file` is tried when credentials are available; if that also fails, the
+  review note records `需要同步 PDF 或提供作者稿`.
 - Research family and subdirection match `wechat/topics/`.
 - No invented collaboration, partner, project, facility, award, or metric claims appear.
 - The reader-facing article has no YAML front matter, pending fields, figure plans, private notes, or human checklist.

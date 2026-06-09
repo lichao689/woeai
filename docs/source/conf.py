@@ -46,6 +46,7 @@ html_theme = 'sphinx_rtd_theme'
 # Add custom CSS file
 html_static_path = ['../_static']
 html_css_files = ['custom.css']
+html_js_files = ['doi-new-tab.js']
 
 html_logo = "../_static/logoGroup.png"  # Logo 文件需放置于 _static 目录
 html_title = "Wind and Ocean Engineering with AI"

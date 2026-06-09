@@ -2,6 +2,11 @@
 
 ## Source
 
+- [ ] Zotero Desktop Local API metadata, DOI, and `abstractNote` have been checked.
+- [ ] Zotero Desktop Local API attachment records have been checked.
+- [ ] Local PDF attachment exists and was used for PDF-derived abstract, figures, captions, and body evidence; or the review note records why it was unavailable.
+- [ ] If local PDF was unavailable, Zotero Web API `/file` access was tried when credentials were available.
+- [ ] If no PDF source was available, the review note records `需要同步 PDF 或提供作者稿` and the draft does not invent PDF-derived facts.
 - [ ] DOI matches the WOEAI publication record.
 - [ ] WOEAI publication anchor exists in `docs/source/Publications.rst`.
 - [ ] Journal, year, authors, and metrics are copied from source-bounded data.

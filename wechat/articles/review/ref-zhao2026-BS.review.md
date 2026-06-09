@@ -7,6 +7,7 @@ subdirection: 数值风洞与湍动入流
 publication_mode: first_publish
 wechat_status: drafting
 source_checked: true
+abstract_checked: true
 copyright_checked: true
 public_safety_checked: true
 formula_preview_checked: false
@@ -26,6 +27,7 @@ rtd_page_checked: true
 - WOEAI 官网条目: https://winddee.cn/zh-cn/latest/Publications.html#ref-zhao2026-BS
 - DOI: https://doi.org/10.1007/s12273-025-1379-7
 - Zotero: `CGKPKZ8I`
+- 摘要来源: Zotero Local API `abstractNote`; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
 - PDF / 作者稿: 用户确认其为论文作者，可以直接使用该论文 PDF 中的图片；本稿图片已从 PDF 内嵌图片条带抽取并拼接为正文素材。
 
 ## 图片使用记录
@@ -62,9 +64,10 @@ rtd_page_checked: true
 ## 公式检查
 
 - 使用公式: yes
-- 呈现方式: Markdown LaTeX formula rendered by the WeChat Markdown workflow, not image
+- 呈现方式: Markdown LaTeX formula embedded in the relevant findings section, rendered by the WeChat Markdown workflow, not image
 - RTD 呈现方式: Sphinx MathJax with `.. math::` and `:math:` roles
 - 行内变量/量纲: formula markup applied to `X_L`, `R`, `H_{\max}`, block dimensions, wind-speed threshold, wind directions, and percentages
+- 固定公式小节: removed; formula appears only where needed in the validation discussion
 - 移动端预览: pending WeChat backend mobile preview
 
 ## 公开安全
@@ -74,10 +77,12 @@ rtd_page_checked: true
 - [x] No private partner name appears.
 - [x] No unconfirmed project status appears.
 - [x] Reader-facing Markdown has no production notes, pending placeholders, or private paths.
+- [x] Reader-facing Markdown has no fixed `公式说明` section or `联系入口` section.
 
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、页码、DOI、公式和图题。
+- [x] 用 Zotero Local API `abstractNote` 补入中文摘要和英文原摘要。
 - [x] 导入已确认可用的原始高清图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和 WOEAI anchor 一致。
 - [x] 将 RTD 配套页挂入 `科研方向 Research` 页面的 `学术进展 Academic Progress`，归入 `建筑结构抗风 / 数值风洞与湍动入流`。

@@ -41,6 +41,15 @@
 - [ ] DOI matches the WOEAI publication record.
 - [ ] WOEAI publication record exists in `docs/source/Publications.rst`.
 - [ ] Journal, year, authors, and metrics are copied from source-bounded data.
+- [ ] The `论文信息` author line uses RTD-compatible markers: only Student First
+  Authors are underlined, corresponding authors use a visible `*`, and
+  `(corresponding author)` is not used.
+- [ ] The Official WeChat draft author field is the paper's first author for a
+  journal-paper article.
+- [ ] The `论文信息` block omits a separate `卷期页码` line.
+- [ ] For English papers, `**英文摘要**` matches the original abstract from
+  Zotero `abstractNote`, the PDF abstract, an author manuscript, or another
+  approved source, and is not an English paraphrase.
 - [ ] Related direction page exists.
 
 ## Copyright

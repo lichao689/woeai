@@ -120,11 +120,15 @@ def convert_inline(text: str) -> str:
     def math_repl(match: re.Match[str]) -> str:
         return f":math:`{match.group(1)}`"
 
+    def student_first_author_repl(match: re.Match[str]) -> str:
+        return f":student-first-author:`{match.group(1).strip()}`"
+
     text = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", link_repl, text)
     text = re.sub(r"\$([^$\n]+)\$", math_repl, text)
+    text = re.sub(r"<u>(.+?)</u>", student_first_author_repl, text)
     text = re.sub(r"\*\*([^*]+?)\*\*", r"**\1**", text)
     text = re.sub(r"([^\s])(\*\*[^*]+?\*\*)", r"\1 \2", text)
-    text = re.sub(r"(\*\*[^*]+?\*\*)([^\s，。,.!?；;：:）\)])", r"\1 \2", text)
+    text = re.sub(r"(\*\*[^*]+?\*\*)([^\s，。,.!?；;：:）\)\\])", r"\1 \2", text)
     return text.strip()
 
 
@@ -203,7 +207,12 @@ def convert_markdown_to_rst(markdown_path: Path, review_path: Path, rst_path: Pa
     lines = markdown_text.splitlines()
     title = parse_title(markdown_text)
     publication_ref = markdown_path.stem
-    output: list[str] = [f".. _paper-note-{publication_ref}:", ""]
+    output: list[str] = [
+        f".. _paper-note-{publication_ref}:",
+        "",
+        ".. role:: student-first-author",
+        "",
+    ]
     output.extend(heading(title, "="))
     emit_cover(output, parse_review_cover(review_path), rst_path, title)
 

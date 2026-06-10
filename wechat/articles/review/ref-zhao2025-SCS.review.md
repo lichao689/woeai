@@ -5,8 +5,8 @@ doi: 10.1016/j.scs.2025.106237
 research_family: 建筑结构抗风
 subdirection: 数值风洞与湍动入流
 publication_mode: first_publish
-wechat_status: reviewing
-wechat_author: WOEAI
+wechat_status: ready_to_publish
+wechat_author: Zhao Peisheng
 source_checked: true
 abstract_checked: true
 copyright_checked: true
@@ -16,6 +16,7 @@ figure_preview_checked: false
 cover_image_checked: false
 body_images_upload_approved: true
 rtd_page_checked: true
+rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png
 ---
 
 # ref-zhao2025-SCS 发布说明
@@ -25,15 +26,23 @@ rtd_page_checked: true
 - 公众号正文: `wechat/articles/draft-public-safe/ref-zhao2025-SCS.md`
 - RTD 配套页: `docs/source/paper-notes/ref-zhao2025-SCS.rst`
 - 封面简报: `wechat/articles/review/ref-zhao2025-SCS.cover-brief.md`
-- 微信草稿作者字段: `WOEAI`
+- 微信草稿作者字段: `Zhao Peisheng`
 
 ## RTD 转换记录
 
 - 内容母版: `wechat/articles/draft-public-safe/ref-zhao2025-SCS.md`
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2025-SCS`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2025-SCS --check`
-- RTD 顶部封面: not selected in this worker task; final cover image to be generated separately from the cover brief
+- RTD 顶部封面: `wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png`
 - 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；封面图等平台字段留给 review note 或后续发布记录。微信底部 `content_source_url` 默认留空。
+
+## 微信草稿箱记录
+
+- 草稿状态: updated via official WeChat draft API, pending WeChat backend preview
+- 草稿 media_id: `OW4ZgzIulHGwsx2YUygit7Sdnf2rZTJdKBSG18ErBfpXulaYLSi6rgd6sNy7lgU6`
+- 更新时间: `2026-06-10T21:15:03+08:00`
+- 更新说明: 使用 `academic-clean` 主题和 `mathjax-svg` 公式渲染路线重新提交，封面使用已确认的 D/v2 短文字封面。
+- 发布状态: not published; final publication remains manual in the WeChat backend
 
 ## 证据来源
 
@@ -152,12 +161,26 @@ rtd_page_checked: true
 
 ## 封面图
 
-- 封面状态: not generated in this worker task
+- 封面状态: selected v2 cover from upgraded candidate workflow, pending WeChat backend preview
 - 封面简报: `wechat/articles/review/ref-zhao2025-SCS.cover-brief.md`
-- 设计方向: urban buildings with wind-field overlay; Gaussian point-cloud reconstruction to clean building geometry; visual-data-to-simulation-ready model workflow
-- 文字策略: no embedded text; rely on the WeChat article title
-- 尺寸建议: first-article cover target `900 x 383 px`, core visual centered for crop safety
-- 预览状态: pending cover generation and WeChat backend preview
+- 封面素材: `wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png`
+- 尺寸: `900 x 383 px`
+- 生成方式: image-gen public-safe candidate selected after upgraded `wechat-cover` candidate comparison
+- 设计方向: 3DGS point-cloud reconstruction to clean building geometry, then to CFD wind-field visualization
+- 文字策略: short embedded Chinese hook; category tag `数值风洞`; hook `从影像到可计算几何`
+- 本地裁剪预览: `wechat/.local/cover-previews/ref-zhao2025-SCS.cover-preview.html`
+- 2026-06-10 新候选对比板: `wechat/.local/cover-previews/ref-zhao2025-SCS.quality-board.html`
+- 2026-06-10 新候选联系表: `wechat/.local/cover-candidates/ref-zhao2025-SCS/contact-sheet.png`
+- 2026-06-10 候选数量: `7` including the current cover, `2` no-text image-gen candidates, `2` image-gen short-text candidates, and `2` programmatic-overlay candidates
+- 2026-06-10 已采纳候选: `D image-gen 文字 | 从影像到可计算几何`
+- 2026-06-10 已采纳候选路径: `wechat/.local/cover-candidates/ref-zhao2025-SCS/candidate-d-imagegen-text-3dgs-method.png`
+- 2026-06-10 正式封面路径: `wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png`
+- 2026-06-10 已采纳文字模式: `image-gen-text`
+- 2026-06-10 已采纳理由: best balance of paper specificity, click appeal, small-thumbnail readability, and visible 3DGS-to-CFD workflow
+- 2026-06-10 保留备选: `A no-text` for a no-embedded-text final cover; `E programmatic-overlay` if exact deterministic Chinese typography is required
+- 2026-06-10 人工确认: user confirmed candidate D as the formal v2 cover
+- 裁剪预览结果: passed local ratio and file-size checks
+- 微信后台预览: pending WeChat backend mobile preview
 
 ## 公开安全
 
@@ -175,8 +198,8 @@ rtd_page_checked: true
 - [x] 用 Zotero/PDF 摘要补入中文摘要和英文原摘要。
 - [x] 从 PDF 抽取并导入可用正文图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
-- [ ] 由 controller/final integration task 将 RTD 配套页挂入相关科研方向页的 `学术进展 Academic Progress`。
-- [ ] 生成并选择最终封面图。
+- [x] 由 controller/final integration task 将 RTD 配套页挂入相关科研方向页的 `学术进展 Academic Progress`。
+- [x] 生成并本地审核最终封面图。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
 

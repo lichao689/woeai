@@ -26,16 +26,9 @@ html_meta = {
 
 extensions = [
     'sphinx.ext.duration',
-    'sphinx.ext.intersphinx',
     'sphinx.ext.mathjax',
     'sphinx_sitemap',  # 生成 sitemap.xml 用于 SEO
 ]
-
-intersphinx_mapping = {
-    'python': ('https://docs.python.org/3/', None),
-    'sphinx': ('https://www.sphinx-doc.org/en/master/', None),
-}
-intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 

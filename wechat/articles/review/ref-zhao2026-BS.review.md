@@ -9,8 +9,8 @@ wechat_status: ready_to_publish
 wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit8W5lJ84JuQVMz4NFRpBMgLqu_P2CwMhp5uLAs3CfZau
 wechat_draft_created_at: 2026-06-09T12:31:43+08:00
 wechat_draft_updated_at: 2026-06-10T02:50:06+08:00
-wechat_author: WOEAI
-rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v1.png
+wechat_author: Zhao Peisheng
+rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png
 source_checked: true
 abstract_checked: true
 copyright_checked: true
@@ -28,14 +28,14 @@ rtd_page_checked: true
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`
 - RTD 配套页: `docs/source/paper-notes/ref-zhao2026-BS.rst`
-- 微信草稿作者字段: `WOEAI`
+- 微信草稿作者字段: `Zhao Peisheng`
 
 ## RTD 转换记录
 
 - 内容母版: `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS --check`
-- RTD 顶部封面: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v1.png`
+- RTD 顶部封面: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
 - 转换规则: 正文措辞、公式、正文图片和延伸阅读链接来自 Markdown；封面图等平台字段来自本 review note。微信底部“阅读原文”默认留空，只有人工明确指定目标时才写入 front matter。
 
 ## 微信草稿箱记录
@@ -43,8 +43,8 @@ rtd_page_checked: true
 - 草稿状态: updated via official WeChat draft API, pending WeChat backend preview
 - 草稿 media_id: `OW4ZgzIulHGwsx2YUygit8W5lJ84JuQVMz4NFRpBMgLqu_P2CwMhp5uLAs3CfZau`
 - 创建时间: `2026-06-09T12:31:43+08:00`
-- 更新时间: `2026-06-10T02:50:06+08:00`
-- 更新说明: 使用 `academic-clean` 主题重新提交，正文渲染默认跳过 Markdown H1，避免在微信公众号自带标题下方重复显示正文大标题。
+- 更新时间: `2026-06-10T21:14:24+08:00`
+- 更新说明: 使用 `academic-clean` 主题和 `mathjax-svg` 公式渲染路线重新提交，封面切换为 v2 短文字封面。
 - 阅读原文: 默认留空；读者侧链接放在正文 `延伸阅读` 中。
 - 发布状态: not published; final publication remains manual in the WeChat backend
 
@@ -100,13 +100,17 @@ rtd_page_checked: true
 
 ## 封面图
 
-- 封面状态: approved for first API test, pending WeChat backend preview
-- 封面素材: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v1.png`
-- 生成原图: `wechat/assets/public-safe/ref-zhao2026-BS/cover-generated-v1-source.png`
-- 尺寸: final `900 x 383 px`, source `1922 x 818 px`, both about `2.35:1`
-- 生成方式: built-in imagegen tool
-- 设计意图: 用城市片区、风场流线和数据网格表达“城市微尺度风环境 + 预计算 CFD 数据库 + 快速预测”，避免直接使用论文图作为封面。
-- 文字策略: no embedded text; rely on the WeChat article title to avoid AI-generated text distortion
+- 封面状态: selected v2 cover from upgraded batch cover workflow; existing WeChat draft still needs a live API update before backend preview changes
+- 封面素材: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
+- 生成原图: `wechat/.local/cover-candidates/batch-2026-06-10/ref-zhao2026-BS-v2-imagegen.png`
+- 尺寸: final `900 x 383 px`
+- 生成方式: image-gen public-safe candidate selected after upgraded batch `wechat-cover` comparison
+- 设计意图: 用模块化城市区块、风场流线、数据网格和数据库层表达“城市微尺度风环境 + 预计算 CFD 数据库 + 快速调用”。
+- 文字策略: short embedded Chinese hook; category tag `数值风洞`; hook `把风场预先算好`
+- 本地裁剪预览: `wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html`
+- 批量候选联系表: `wechat/.local/cover-candidates/batch-2026-06-10/contact-sheet-v2.png`
+- 裁剪预览结果: passed local ratio, file-size, small-thumbnail, and text-quality checks (`900 x 383 px`, ratio delta `0.0`)
+- 微信后台预览: pending live draft update and WeChat backend mobile preview
 
 ## 图片使用记录
 
@@ -184,6 +188,8 @@ rtd_page_checked: true
 ## 检查记录
 
 - image extraction: `pdfimages -all` from paper PDF, then `ffmpeg` vertical stitching of embedded image strips
+- cover-v2 generation: selected `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png` from upgraded batch `wechat-cover` image-gen workflow
+- cover-v2 preview: passed (`python3 .agents/skills/wechat-cover/scripts/cover_preview.py -o wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html ...`)
 - public-safety: passed (`/opt/homebrew/bin/python3.12 scripts/check-public-safe-content.py`)
 - markdown whitespace: passed (`git diff --check` on WeChat article-related files)
 - image links: passed (4 Markdown image links resolve to local public-safe assets)

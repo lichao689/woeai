@@ -103,17 +103,17 @@ Risk:
 
 ## Current Selected Cover
 
-- Source image: `wechat/assets/public-safe/ref-zhao2026-BS/cover-generated-v1-source.png`
-- Final cover: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v1.png`
+- Previous v1 source image: `wechat/assets/public-safe/ref-zhao2026-BS/cover-generated-v1-source.png`
+- Previous v1 cover: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v1.png`
+- Current v2 cover: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
 - Current final size: `900 x 383 px`
-- Local crop preview:
-  `wechat/.local/cover-previews/cover-wechat-900x383-v1.cover-preview.html`
+- Local v2 batch preview:
+  `wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html`
 - Backend preview: pending.
 
 ## Recommendation
 
-For this article, Candidate B is the strongest next iteration because it makes
-the paper's specific contribution visible: block-based CFD results becoming a
-precomputed database. Candidate A is the safest general cover, while Candidate C
-is useful if the article is positioned more toward engineering software and
-WebGIS application.
+The v2 cover adopts Candidate B: block-based CFD results becoming a
+precomputed database. It uses the short Chinese hook `数值风洞 / 把风场预先算好`
+instead of repeating the full title. The local batch preview is recorded at
+`wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html`.

@@ -60,10 +60,39 @@ the title, account, author, and timestamp above the body.
 - Add an `摘要` section immediately after `论文信息`.
 - For Chinese papers, use the Chinese abstract.
 - For English papers, provide a faithful Chinese translation of the original
-  abstract, then add `**英文摘要**` followed by the original English abstract.
+  abstract, then add `**英文摘要**` followed by the original English abstract
+  from Zotero `abstractNote`, the paper PDF, an author manuscript, or another
+  approved source.
+- Do not replace the English abstract with an English paraphrase.
 - Do not invent an abstract from the article body. If the original abstract is
   unavailable, keep the article in drafting/review notes until the paper PDF,
   author manuscript, or another approved source is available.
+
+## Paper Metadata
+
+In `论文信息`, use only:
+
+- `论文题名`
+- `作者`
+- `期刊`
+- `年份`
+- `DOI`
+- `WOEAI 相关方向`
+
+Do not add `卷期页码` as a separate line in WeChat paper articles.
+
+Write the `作者` line with the same author-marker semantics as
+`docs/source/Publications.rst`:
+
+- Student First Authors only use an underline marker. In the Markdown source,
+  write this as `<u>Student Name</u>` so RTD can convert it to
+  `:student-first-author:`.
+- Corresponding authors use `\*` immediately after the displayed name, such as
+  `**Li Chao**\*`; rendered WeChat HTML must show a normal `*`, not `\*`.
+- Do not write `(corresponding author)` in the reader-facing article.
+
+For journal-paper articles, the Official WeChat draft author field should be
+the paper's first author. Keep the full paper author list in `论文信息`.
 
 ## Source Acquisition
 
@@ -198,15 +227,24 @@ The public-safety script must fail a review note that omits either
   are often too tall, too detailed, or visually weak after WeChat cover cropping.
 - Prefer a purpose-designed or generated cover image based on the article's
   core idea, target readers, and title category.
+- Generate or compare both no-text and short-text cover candidates when the
+  cover is important for first-click appeal. Direct image-generation text may
+  be tried, but reject it if any Chinese text is distorted, misspelled, or
+  unreadable. Use programmatic text overlay when exact wording matters.
 - Use a first-article cover target of `900 x 383 px`, about `2.35:1`. Larger
   source images may use the same ratio and be resized down for upload.
 - Keep the main visual concept in the center so the image still works if a
   WeChat surface crops it toward a square thumbnail.
+- Check small-thumbnail readability, not only full-size dimensions and crop
+  ratio.
 - Avoid generated text inside the image by default. Let the WeChat article title
-  carry the text, because generated Chinese text is easy to distort.
+  carry the full title. If cover text is used, keep it to a category tag and a
+  short hook rather than repeating the full article title.
 - Store final public-safe cover images under
   `wechat/assets/public-safe/<publication_ref>/` and record the source or prompt
-  in the article review note.
+  in the article review note. Also record candidate count, selected text mode,
+  selected candidate, rejected candidate reasons, and local candidate-preview
+  path when a cover is generated through the upgraded workflow.
 - Mark cover approval as pending until the cover is checked in the WeChat
   backend preview.
 

@@ -29,6 +29,29 @@
 - 生成提示词方向: cinematic but clean engineering workflow, drone imagery tiles becoming point cloud, point cloud becoming simplified urban building geometry, geometry surrounded by blue-green CFD wind contours, centered composition for WeChat cover crop, no embedded text, no logos, no named city.
 - 风险控制: 不出现品牌化无人机或平台界面；流程符号保持简洁，不做复杂小字说明。
 
+## 当前状态
+
+- 最终封面: `wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png`
+- 新候选对比板: `wechat/.local/cover-previews/ref-zhao2025-SCS.quality-board.html`
+- 新候选联系表: `wechat/.local/cover-candidates/ref-zhao2025-SCS/contact-sheet.png`
+- 预览结果: all new candidates match `900 x 383 px`, pass local ratio and file-size checks
+- 微信后台预览: pending
+
+## 2026-06-10 候选复审
+
+本轮按升级后的 `wechat-cover` 规则生成并比较了无文字、image-gen 直出短文字、程序叠字三类候选。
+
+| ID | 模式 | 本地候选文件 | 评价 |
+|---|---|---|---|
+| A | no-text | `wechat/.local/cover-candidates/ref-zhao2025-SCS/candidate-a-no-text-3dgs-to-geometry.png` | 3DGS 点云到建筑几何的论文特异性强，适合不放封面文字的稳妥方案。 |
+| B | no-text | `wechat/.local/cover-candidates/ref-zhao2025-SCS/candidate-b-no-text-urban-cfd.png` | 城市 CFD 风场直观，工程感稳定，但比 A 更接近常规城市风场封面。 |
+| C | image-gen-text | `wechat/.local/cover-candidates/ref-zhao2025-SCS/candidate-c-imagegen-text-urban-cfd.png` | 中文文字正确、可读性好，点击感强；主题偏城市风场，方法特异性略弱。 |
+| D | image-gen-text | `wechat/.local/cover-candidates/ref-zhao2025-SCS/candidate-d-imagegen-text-3dgs-method.png` | 已采纳为 v2 正式封面。兼顾 3DGS 点云、建筑几何、CFD 风场和短中文 hook；小图识别度最好。 |
+| E | programmatic-overlay | `wechat/.local/cover-candidates/ref-zhao2025-SCS/candidate-e-program-text-3dgs-method.png` | 文字最可控，但深色文字面板遮挡主体较多，视觉冲击弱于 D。 |
+| F | programmatic-overlay | `wechat/.local/cover-candidates/ref-zhao2025-SCS/candidate-f-program-text-urban-cfd.png` | 文字可控，画面稳妥；主题特异性和点击感弱于 D。 |
+
 ## 推荐
 
-优先尝试候选概念 2，因为它最能区别于一般“城市风场”封面，并且直接对应本文的 3D Gaussian Splatting 方法贡献。若生成图在小尺寸下点云过碎，可退回候选概念 1，以更稳定的城市风场叠加画面保证封面可读性。
+D 已由用户确认为新版正式封面，并保存为 `wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png`。它最能区别于一般“城市风场”封面，并且直接对应本文的 3D Gaussian Splatting 方法贡献；短文字“从影像到可计算几何”比完整标题更适合封面点击场景。
+
+若不希望正式封面使用 image-gen 直接生成的文字，则选择 A 作为无文字方案，或以 A 为底图重新做更克制的程序叠字版本。

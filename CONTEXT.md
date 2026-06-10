@@ -128,9 +128,21 @@ _Avoid_: forcing every article into a multi-paper theme essay
 The canonical public-safe Markdown source for a One-Paper WeChat Article before publication. WeChat HTML, rendered previews, API payloads, draft-box records, and RTD Paper Companion Pages are derived outputs and should not become the source of truth for article wording or facts.
 _Avoid_: treating rendered HTML, WeChat draft content, doocs/md previews, API payloads, or RTD pages as the canonical article source
 
+**WeChat Paper Author Line**:
+The author list shown in the `论文信息` section of a One-Paper WeChat Article. It uses the same author-marker semantics as the Chronological Publication View: the Student First Author Marker applies only to Student First Authors, and an author-name `*` marks a corresponding author.
+_Avoid_: marking every first author as a Student First Author, spelling out `corresponding author` in the reader-facing author line, or moving the full paper author list into the WeChat draft author field
+
+**WeChat Paper Original Abstract**:
+The original English abstract shown in a One-Paper WeChat Article for an English Public Journal Paper. It comes from Zotero metadata, the paper PDF, an author manuscript, or another approved source and is not an editorial English paraphrase.
+_Avoid_: public-safe English paraphrase as the original abstract, summary-as-abstract, invented abstract
+
 **WeChat Draft Record**:
 A non-sensitive repository record showing that a WeChat Article Source has been submitted to the WeChat Official Account draft box for human preview and publication review. It may record workflow status, the remote draft `media_id`, draft creation/update time, and the eventual published URL, but it must not store access tokens, AppSecret, cookies, preview credentials, full API responses, or other secrets.
 _Avoid_: treating WeChat credentials, cookies, preview tokens, raw API payloads, or human preview material as publishable state
+
+**WeChat Draft Author Field**:
+The short author value submitted to the Official WeChat draft metadata for a One-Paper WeChat Article. For journal-paper articles, it defaults to the paper's first author rather than the WOEAI account name; the full author list remains in the WeChat Paper Author Line.
+_Avoid_: using the account name as the paper author by default, placing the full paper author list in the draft metadata author field
 
 **Manual Publication Gate**:
 The required human checkpoint around WeChat draft delivery and public release. Agents and automation may prepare content, upload approved images, render WeChat-compatible HTML, and create or update Official Account drafts only after the agent explains the real draft-creation action and the user explicitly confirms creating the WeChat draft. They must not automatically publish, mass-send, or otherwise release the article publicly.

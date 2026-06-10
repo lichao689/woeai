@@ -2,9 +2,11 @@
 
 <开篇导语。使用作者视角，说明这项研究为什么值得读者关注。>
 
-![图 1 <图片说明>](../../assets/public-safe/<publication_ref>/<figure-file>)
+![图 1 <中文图名>](../../assets/public-safe/<publication_ref>/<figure-file>)
 
-图 1 <用一两句话解释图片如何帮助读者理解这篇论文。>
+图 1 <中文图名>
+
+<用一两句话解释图片如何帮助读者理解这篇论文。>
 
 ## 论文信息
 
@@ -13,7 +15,7 @@
 - 期刊:
 - 年份:
 - DOI:
-- WOEAI 官网条目:
+- WOEAI 相关方向:
 
 ## 摘要
 
@@ -31,21 +33,25 @@
 
 <说明论文提出或改进的方法。>
 
-![图 2 <图片说明>](../../assets/public-safe/<publication_ref>/<figure-file>)
+![图 2 <中文图名>](../../assets/public-safe/<publication_ref>/<figure-file>)
 
-图 2 <说明研究对象、模型、流程或关键结果。>
+图 2 <中文图名>
+
+<说明研究对象、模型、流程或关键结果。>
 
 ## 关键发现
 
 <说明最值得读者注意的结果。>
 
-![图 3 <图片说明>](../../assets/public-safe/<publication_ref>/<figure-file>)
+![图 3 <中文图名>](../../assets/public-safe/<publication_ref>/<figure-file>)
 
-图 3 <说明验证证据、结果对比或工程应用场景。>
+图 3 <中文图名>
+
+<说明验证证据、结果对比或工程应用场景。>
 
 <如有必要，直接在相关小节中使用 Markdown LaTeX 公式。行内公式用 `$...$`，独立公式用 `$$...$$`；不要默认使用公式图片，也不要为公式单独设置固定小节。>
 
-<正文中的数学变量、符号参数、指标、量纲和带单位数值也使用行内公式，例如 `$X_L$`、`$4H_{\max}$`、`$1\,\mathrm{km} \times 1\,\mathrm{km}$`、`$11\,\mathrm{m/s}$`；不要用反引号把它们标成代码。>
+<正文中的数学变量、符号参数、指标、量纲和带单位数值也使用行内公式，例如 `$X_L$`、`$4H_{\mathrm{max}}$`、`$1\,\mathrm{km} \times 1\,\mathrm{km}$`、`$11\,\mathrm{m/s}$`；不要用反引号把它们标成代码。>
 
 $$
 <LaTeX formula>
@@ -63,9 +69,5 @@ $$
 
 ## 延伸阅读
 
-- WOEAI 相关方向页:
-- WOEAI 相关论文:
-
-## 阅读原文
-
-- DOI:
+- [WOEAI | <相关方向介绍>](<url>)
+- [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

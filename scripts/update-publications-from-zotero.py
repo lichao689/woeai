@@ -350,6 +350,14 @@ def iter_student_records() -> list[dict[str, Any]]:
     return records
 
 
+def iter_current_student_authors() -> list[dict[str, Any]]:
+    payload = load_degree_thesis_data()
+    records = payload.get("student_authors", [])
+    if not isinstance(records, list):
+        raise ZoteroError("Degree thesis data must contain a list at student_authors.")
+    return [record for record in records if isinstance(record, dict)]
+
+
 @functools.lru_cache(maxsize=1)
 def load_student_author_names() -> set[str]:
     names: set[str] = set()
@@ -613,6 +621,16 @@ def render_degree_thesis_line(record: dict[str, Any]) -> str:
     return f"- {rst_escape(display_name)}，{rst_escape(date)}，{rst_escape(thesis_type)}：{rst_escape(title)}。"
 
 
+def render_current_student_line(record: dict[str, Any]) -> str:
+    name_cn = str(record.get("name_cn") or "").strip()
+    name_en = str(record.get("name_en") or "").strip()
+    status = str(record.get("status") or "博士生在读").strip()
+    display_name = f"{name_cn}({name_en})" if name_cn and name_en else name_cn or name_en
+    if not all([display_name, status]):
+        raise ZoteroError(f"Incomplete current student record: {record!r}")
+    return f"- {rst_escape(display_name)}，{rst_escape(status)}。"
+
+
 def degree_theses_section() -> str:
     sections = ["学位论文 Degree Theses", "-" * 24, ""]
     for group_key, group_title in DEGREE_THESIS_GROUPS:
@@ -622,6 +640,9 @@ def degree_theses_section() -> str:
             raise ZoteroError(f"Degree thesis group {group_key} has no records.")
         for record in records:
             sections.append(render_degree_thesis_line(record))
+        if group_key == "phd":
+            for record in iter_current_student_authors():
+                sections.append(render_current_student_line(record))
         sections.append("")
     return "\n".join(sections).rstrip()
 

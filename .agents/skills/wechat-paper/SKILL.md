@@ -7,7 +7,7 @@ description: Use when generating, reviewing, or updating WOEAI WeChat Official A
 
 Use this skill when a task asks to create, revise, review, or track a WeChat Official Account article based on a published WOEAI journal paper, including the matching Read the Docs paper companion page.
 
-The output is a public-safe reader-facing Markdown article, a matching Sphinx-compatible RST page for RTD, and a separate review note. Do not publish to WeChat automatically.
+The output is a public-safe reader-facing Markdown article, a matching Sphinx-compatible RST page for RTD, and a separate review note. Do not publish to WeChat automatically. Automation may create or update WeChat drafts, but the public release step must remain a manual WeChat backend action.
 
 ## Required Context
 
@@ -55,6 +55,7 @@ This repository is public. Anything committed here must be safe to expose.
 Never include:
 
 - WeChat AppSecret, access token, refresh token, cookies, preview credentials, or API keys.
+- raw WeChat API responses, private preview URLs, or remote preview material.
 - Zotero API keys or private library credentials.
 - private partner names or unpublished project details.
 - private review notes.
@@ -80,28 +81,100 @@ Use only these public research families and subdirections unless the user explic
 
 1. Select the target item from `wechat/backlog/selected-papers.yml`.
 2. Follow the Source Acquisition Priority above.
-3. Verify `publication_ref`, title, year, DOI, and WOEAI website anchor.
+3. Verify `publication_ref`, title, year, DOI, and the WOEAI website record.
 4. Create or update the reader-facing article under `wechat/articles/draft-public-safe/`.
 5. Name the article with the paper's `publication_ref`, for example `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`.
-6. Convert the same public article content to a Sphinx-compatible RST page for RTD. Do not add a separate Markdown route to Sphinx.
-7. Create or update the publishing note under `wechat/articles/review/`, for example `wechat/articles/review/ref-zhao2026-BS.review.md`.
-8. Start the reader-facing article from `wechat/templates/paper-explainer.md`, but remove any production-only placeholders before treating it as copy-ready.
-9. Keep review details, evidence notes, copyright status, formula preview status, figure insertion status, RST conversion notes, and human checklists in the `.review.md` file, not in the reader-facing article or RTD page.
-10. Keep `wechat_status` aligned with the backlog state model:
+6. Treat that reader-facing Markdown file as the public content master. Align
+   all public text, formulas, figure captions, and extended-reading body links
+   there first.
+7. Convert the same public article content to a Sphinx-compatible RST page for
+   RTD. Do not add a separate Markdown route to Sphinx.
+8. Create or update the publishing note under `wechat/articles/review/`, for example `wechat/articles/review/ref-zhao2026-BS.review.md`.
+9. Start the reader-facing article from `wechat/templates/paper-explainer.md`, but remove any production-only placeholders before treating it as copy-ready.
+10. Keep review details, evidence notes, copyright status, formula preview status, figure insertion status, RST conversion notes, and human checklists in the `.review.md` file, not in the reader-facing article or RTD page.
+11. Keep `wechat_status` aligned with the backlog state model:
    - `selected`
    - `drafting`
    - `reviewing`
    - `ready_to_publish`
    - `published`
    - `archived`
-11. Update `wechat/backlog/selected-papers.yml` only when the user's task asks for workflow tracking or after a draft/review step changes status.
+12. When official WeChat API submission is configured, record only non-sensitive
+    draft-box metadata in the backlog, such as `wechat_draft_media_id`,
+    `wechat_draft_created_at`, `wechat_draft_updated_at`, and
+    `latest_published_url`. Do not record credentials, cookies, private preview
+    URLs, or raw API responses.
+    After a live draft creation/update succeeds, write back
+    `wechat_status: ready_to_publish`, `wechat_draft_media_id`,
+    `wechat_draft_created_at`, and `wechat_draft_updated_at`. Do not advance
+    backlog state after a failed live call or a no-submit check.
+    If `wechat_draft_media_id` is absent, create a new WeChat draft. If it is
+    present, update that existing draft by default. Create a separate new draft
+    only when the user explicitly asks for a new copy.
+    Use `WOEAI` as the default WeChat draft author field for paper articles
+    unless the review note or user explicitly specifies another public-safe
+    author value.
+13. Treat the official WeChat draft API as the primary automated submission
+    path. Use doocs/md only for theme design, formula/style preview, and manual
+    copy-paste fallback when the official API path is unavailable or a human
+    editor specifically wants that route. Treat Wechatsync and other
+    browser-plugin routes as optional one-off distribution aids, not as the
+    default WOEAI pipeline.
+14. Read `~/.config/woeai/wechat_official_account.env` only when the user
+    explicitly asks to test the WeChat API path or confirms live creation/update
+    of a WeChat draft.
+    Cache fetched `access_token` data only in
+    `~/.cache/woeai/wechat_access_token.json`. Never print, log, commit, or copy
+    credential or token values into repository files, review notes, dry-run
+    output, or final responses.
+    `wechat_draft.py ip-check` is only an optional diagnostic command for
+    manually viewing the current public egress IP. Do not use it as a hard
+    live-run gate: the local IP-detection route can disagree with the actual
+    WeChat API path, so create/update commands should call the official API
+    directly and treat the WeChat API response as the source of truth. If
+    WeChat returns an IP-allowlist error, ask the user to add the IP reported by
+    WeChat or move the workflow to a fixed-egress remote runner.
+15. Default to no-submit checks for API tools. Before any live command that
+    creates or updates a WeChat draft, explain that the command will read
+    private WeChat credentials, upload approved images, and create/update a
+    draft in the WeChat backend. Wait for explicit confirmation such as
+    `确认创建公众号草稿`; vague approval such as `继续`, `可以`, or `试试` is
+    not enough.
+16. Dry-run output must list the approved cover image and each approved body
+    image that would be uploaded. Live runs must upload approved body images and
+    replace local Markdown image paths with WeChat image URLs in the submitted
+    HTML before draft creation/update.
+17. Do not call WeChat publish, mass-send, or browser-driven release actions.
+    The human editor must preview, proofread, and publish manually in the
+    WeChat backend.
+18. Use `https://woeai.readthedocs.io/zh-cn/latest/` as the preferred domain
+    for useful WOEAI website links embedded in WeChat articles and WeChat API
+    draft payloads, including RTD companion pages, direction pages, and
+    homepage-style links. Put reader-facing links under `延伸阅读` as direct
+    hyperlinks. Do not hard-code `winddee.cn` into WeChat article sources when
+    an equivalent Read the Docs project-domain URL exists. This does not by
+    itself change the public website's own canonical SEO URL or contact-page
+    display.
+19. Leave WeChat API `content_source_url` empty by default. Reader-facing links
+    should live in `延伸阅读`, not in a separate bottom `阅读原文` link, unless the
+    user explicitly chooses a public original-link destination for a specific
+    article. When the user chooses a target, record it as
+    `wechat_content_source_url` in that article's review front matter and use it
+    as the WeChat API `content_source_url`; do not duplicate the raw URL in the
+    body text.
+20. Update `wechat/backlog/selected-papers.yml` only when the user's task asks for workflow tracking or after a draft/review/API step changes status.
+
+When a WeChat backend preview leads to public wording changes, apply those
+changes back to the Markdown content master first, then regenerate/update the
+RST companion page and the WeChat draft from that same Markdown. Do not keep
+parallel public正文 edits only in the WeChat draft or only in the RST page.
 
 ## Output Model
 
 Generate three public-safe files or records for each paper article:
 
 - `wechat/articles/draft-public-safe/<publication_ref>.md`: reader-facing WeChat Markdown. It should be clean enough to copy into a WeChat Markdown editor or the WeChat backend.
-- `docs/source/paper-notes/<publication_ref>.rst`: RTD Paper Companion Page. It should present the same public title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent as the WeChat Markdown article, with only markup and rendering differences needed for Sphinx/reStructuredText.
+- `docs/source/paper-notes/<publication_ref>.rst`: RTD Paper Companion Page. It should present the same public title, body text, images, DOI link, and useful related links as the WeChat Markdown article, with only markup and rendering differences needed for Sphinx/reStructuredText.
 - `wechat/articles/review/<publication_ref>.review.md`: publishing note for authors and editors. It records metadata, evidence, figure source status, formula preview status, copyright checks, unresolved tasks, and checks run.
 
 The reader-facing Markdown must not contain:
@@ -125,9 +198,21 @@ Rules:
 
 - Convert the WeChat Markdown article to reStructuredText rather than enabling a new Markdown/MyST route in Sphinx.
 - Use `docs/source/paper-notes/<publication_ref>.rst` as the canonical RTD page path, for example `docs/source/paper-notes/ref-zhao2026-BS.rst`.
-- Preserve the same title, section order, body text, images, DOI link, WOEAI publication anchor, related direction links, and contact/link intent.
+- Preserve the same title, section order, body text, images, DOI link, and useful related links.
 - Change only what Sphinx rendering requires: heading underline syntax, image directives, internal links, external links, code/formula representation, and relative asset paths.
 - Keep private review metadata out of the RST page.
+- Use `wechat/tools/markdown_to_rtd.py` as the formal Markdown-to-RST
+  converter for this pipeline. Example:
+
+  ```bash
+  python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS
+  python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS --check
+  ```
+
+- Put article-wide RTD metadata in the review note, not in the public Markdown
+  body. The RTD top cover is read from `rtd_cover_image`, `wechat_cover_image`,
+  `cover_image`, or the review note's `封面素材` line, then inserted below the
+  RST title.
 - Register RTD pages through the relevant research-direction Academic Progress section, grouped by second-level research subdirection.
 - On `docs/source/Research.rst`, use the public label `学术进展 Academic Progress` instead of `近期证据 Selected Proof Points` when listing these companion pages.
 - Within each second-level subdirection, list RTD Paper Companion Pages by publication date descending until a more specific sorting rule is chosen.
@@ -146,7 +231,12 @@ Use this default order unless the paper strongly requires a small adjustment:
 7. `适用边界`
 8. `图文说明` when public-safe images are inserted
 9. `延伸阅读`
-10. `阅读原文`
+
+Put reader-facing links under `延伸阅读`. Use direct Markdown hyperlinks, not a
+label followed by a naked URL. Keep DOI visible in `论文信息`, and do not repeat
+it in `延伸阅读` unless it is the only useful external reading path. Do not
+include a WOEAI publication-page anchor in the reader-facing article when that
+public page merely duplicates the article or paper record.
 
 Use this title pattern:
 
@@ -155,6 +245,24 @@ Use this title pattern:
 Temporarily choose the title category from `数值风洞`, `结构抗风`, or `漂浮风电`.
 The title after the separator should describe what problem the paper helps
 solve.
+
+Keep this title as the Markdown H1 in the WeChat Article Source. In the
+Official WeChat Draft API Path and manual WeChat-editor copy path, use that H1
+only as the WeChat title field and do not render it again inside the submitted
+article body. The WeChat backend already displays the title, account, author,
+and timestamp above the body, so rendering another H1 creates a duplicate
+title.
+
+The current official API renderer themes are:
+
+- `academic-clean`: default scholarly paper-explainer style.
+- `engineering-note`: applied technical style for engineering readers.
+- `recruitment-friendly`: warmer direction-introduction style for recruitment
+  readers.
+
+Themes change presentation only. They must not change facts, section order,
+citations, formula semantics, image approval status, or public-safety
+boundaries.
 
 Add `摘要` immediately after `论文信息`. For English papers, translate the
 original English abstract faithfully into Chinese and then include
@@ -177,20 +285,57 @@ Tone:
 
 ## Formula Handling
 
-Do not render formulas as images by default.
+Do not render formulas as raster images by default.
 
-Use Markdown LaTeX as the canonical formula source in WeChat article drafts: `$...$` for inline formulas and `$$...$$` for display formulas. Render WeChat formulas through the selected WeChat Markdown workflow, such as doocs/md, and verify the resulting formula display in the final WeChat backend mobile preview.
+Use Markdown LaTeX as the canonical formula source in WeChat article drafts:
+`$...$` for inline formulas and `$$...$$` for display formulas. For the official
+WeChat API path, use MathJax SVG pre-rendering as the default formula route:
+convert the LaTeX before submission into
+`<mjx-container jax="SVG">...<svg>...</svg></mjx-container>` HTML, then verify
+the resulting formula display in the final WeChat backend mobile preview. In
+this route WeChat does not need to run MathJax or load external scripts.
+Preserve the source LaTeX in the SVG formula container when possible, using
+`data-formula` plus `data-formula-type="inline-equation"` or
+`data-formula-type="block-equation"`.
+
+This default is based on the 2026-06-10 WeChat draft API stress tests: SVG
+formulas with both inline and display cases were accepted in a single article
+draft and the user confirmed the preview effect was satisfactory.
+
+The lightweight HTML formula path in `wechat/tools/render-copy-ready.py` is
+only a fallback for troubleshooting or machines without the MathJax SVG
+runtime. It is not a full LaTeX engine and should not be described as
+LaTeX-quality rendering. PNG formula images are also fallback-only unless final
+preview proves SVG is not preserved.
 
 Convert the same LaTeX formula semantics to Sphinx math markup in RTD companion pages: `:math:` roles for inline formulas and `.. math::` directives for display formulas.
+RTD display formulas should also be visually centered through the site CSS, so
+the same standalone-formula alignment expectation applies to both WeChat and
+RTD HTML.
 
 Use formula markup for inline mathematical variables, symbolic parameters, metrics, dimensional quantities, and unit-bearing values inside explanatory prose. Examples:
 
-- WeChat draft: `$X_L$`, `$R$`, `$4H_{\max}$`, `$1\,\mathrm{km} \times 1\,\mathrm{km}$`, `$11\,\mathrm{m/s}$`, `$90^\circ$`.
-- RTD companion page: `:math:` roles with the same LaTeX body, for example `X_L`, `4H_{\max}`, and `11\,\mathrm{m/s}`.
+- WeChat draft: `$X_L$`, `$R$`, `$4H_{\mathrm{max}}$`, `$1\,\mathrm{km} \times 1\,\mathrm{km}$`, `$11\,\mathrm{m/s}$`, `$90^\circ$`.
+- RTD companion page: `:math:` roles with the same LaTeX body, for example `X_L`, `4H_{\mathrm{max}}`, and `11\,\mathrm{m/s}`.
+
+For word-like or abbreviation subscripts in WeChat drafts, prefer explicit
+roman text, such as `$H_{\mathrm{max}}$`, `$K_{\mathrm{CFD}}$`, and
+`$K_{\mathrm{m}}$`. Do not rely on shorthand commands such as `\max` in the
+WeChat HTML renderer.
 
 Do not use Markdown backticks or RST double backticks for mathematical variables or scientific quantities. Reserve code spans for paths, filenames, commands, literal field names, and code identifiers.
 
 Keep formulas short enough for mobile display when possible.
+
+For formula-heavy articles, do not split formulas into artificial
+formula-only sections just to reduce rendering risk. Keep formulas in the
+normal narrative flow: inline SVG for variables and short symbolic quantities
+inside Chinese prose, display SVG for longer derivations or definitions, and
+nearby plain-language explanations for important formulas.
+
+Display SVG formulas should be visually centered in their standalone formula
+block, with horizontal overflow allowed for unusually wide equations and the
+original LaTeX source preserved in `data-formula` metadata.
 
 Do not create a standalone `公式说明` section by default. Put formulas directly
 inside the section where they are needed, such as `方法贡献`, `关键发现`,
@@ -208,6 +353,13 @@ If the formula cannot be reliably represented in the current publishing workflow
 ## Figure Handling
 
 Prefer the paper's original high-resolution figures and use them directly when the paper is authored by the user/WOEAI and author status has been confirmed.
+
+For WeChat cover images, do not use a paper figure by default. The cover should
+be a purpose-designed or generated public-safe image sized for the WeChat cover
+surface, normally `900 x 383 px` for the first article cover. Keep the core
+visual in the center for crop safety, avoid generated text unless explicitly
+approved, and record the cover source, prompt, dimensions, and preview status in
+the review note.
 
 Use the clearest legally safe source:
 
@@ -232,10 +384,23 @@ Recommended extraction order:
 Every figure needs:
 
 - figure identifier from the paper, when applicable,
+- Chinese figure title on its own caption-title line, faithfully translated
+  from the original paper figure title,
+- separate Chinese explanatory text on the following caption-body line,
 - source or generation method,
 - copyright/reuse note,
 - mobile clarity preview result,
 - `figure_preview_checked: false` until final WeChat backend preview.
+
+In rendered WeChat HTML, the Chinese figure-title line should be centered, one
+font size smaller than body text, and italic. The explanatory line should remain
+separate and visually distinct from normal body text.
+
+In RTD HTML, the Markdown-to-RST converter should emit body figures with the
+`paper-note-figure` class. The first indented caption paragraph is the centered,
+smaller, italic Chinese figure-title line; the following legend paragraph is
+the separate Chinese explanatory line. Keep the two lines in the Markdown
+content master so both WeChat and RTD receive the same wording.
 
 For a normal paper article, include several figure positions when the original paper has suitable figures. Choose figures that help readers understand:
 
@@ -250,17 +415,26 @@ Do not commit unapproved source images for papers outside the user's authored-pa
 
 If image rights or final high-resolution assets are not ready for a non-authored or unclear paper, put figure recommendations in the review note. Do not put visible `待上传原文图` placeholders into the reader-facing article.
 
-## Original Article Link
+## Extended Reading Links
 
-Add a `阅读原文` section near the end of the article.
+Add only a `延伸阅读` section near the end of the article when there are useful
+reader-facing links. Use direct Markdown hyperlinks, for example
+`[WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html)`.
 
-For the first workflow version, use the DOI URL as the reading link. Do not imply that the repository hosts the full paper PDF unless a public author manuscript or approved download link is actually available.
+For the WOEAI homepage, use the visible label
+`[WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)`.
+
+Do not add a separate `阅读原文` section. Keep the DOI visible in `论文信息`.
+Do not include a WOEAI publication-page anchor in the reader-facing article
+when that public page merely duplicates the article or paper record. Do not
+imply that the repository hosts the full paper PDF unless a public author
+manuscript or approved download link is actually available.
 
 ## Draft Quality Gates
 
 Before calling a draft ready:
 
-- DOI and WOEAI publication anchor are checked.
+- DOI and the WOEAI website record are checked.
 - Zotero Desktop Local API metadata, DOI, `abstractNote`, and attachment
   records are checked.
 - Local PDF attachment is used when present. If it is missing, Zotero Web API
@@ -271,9 +445,15 @@ Before calling a draft ready:
 - The reader-facing article has no YAML front matter, pending fields, figure plans, private notes, or human checklist.
 - Important formulas are not images and have explanations.
 - For author-confirmed papers, suitable PDF figures are extracted into `wechat/assets/public-safe/<publication_ref>/` and inserted into the article. For non-authored or unclear papers, suitable figure recommendations are recorded in the review note until rights are confirmed.
-- The article includes a DOI-based `阅读原文` link.
+- The article uses `延伸阅读` for useful reader-facing links, direct Markdown
+  hyperlinks instead of naked URLs, and no separate `阅读原文` section.
+- Rendered WeChat HTML shows Chinese link text only and does not expose raw
+  English URLs after the link text.
+- DOI remains visible in `论文信息` for scholarly traceability.
 - The separate review note records source evidence, image/copyright status, formula preview status, and remaining human-review items.
-- The RTD Paper Companion Page matches the WeChat Markdown article in title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent.
+- The RTD Paper Companion Page matches the WeChat Markdown article in title, body text, images, DOI link, and useful related links.
+- `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref> --check`
+  passes after generating the RTD companion page.
 - The relevant research-direction page exposes the RTD page under `学术进展 Academic Progress`, grouped by second-level research subdirection and sorted by publication date descending.
 - `wechat/templates/review-checklist.md` is satisfied or remaining items are explicitly marked in the review note.
 - `scripts/check-public-safe-content.py` passes.

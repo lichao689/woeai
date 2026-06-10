@@ -8,7 +8,7 @@
 - [ ] If local PDF was unavailable, Zotero Web API `/file` access was tried when credentials were available.
 - [ ] If no PDF source was available, the review note records `需要同步 PDF 或提供作者稿` and the draft does not invent PDF-derived facts.
 - [ ] DOI matches the WOEAI publication record.
-- [ ] WOEAI publication anchor exists in `docs/source/Publications.rst`.
+- [ ] WOEAI publication record exists in `docs/source/Publications.rst`.
 - [ ] Journal, year, authors, and metrics are copied from source-bounded data.
 - [ ] Related direction page exists.
 
@@ -23,16 +23,32 @@
 
 - [ ] WeChat draft formulas use Markdown LaTeX: `$...$` for inline formulas and `$$...$$` for display formulas.
 - [ ] RTD companion formulas use Sphinx math markup: ``:math:`...` `` for inline formulas and `.. math::` for display formulas.
+- [ ] Standalone display formulas are visually centered in both WeChat preview and RTD HTML.
 - [ ] Inline mathematical variables, symbolic parameters, metrics, dimensional quantities, and unit-bearing values use formula markup rather than code spans.
-- [ ] Formulas are not rendered as images unless final WeChat preview proves an image fallback is needed.
+- [ ] Word-like or abbreviation subscripts use explicit roman text in LaTeX, for example `$H_{\mathrm{max}}$` and `$K_{\mathrm{CFD}}$`.
+- [ ] The selected WeChat formula renderer is `mathjax-svg` unless this review
+  note explicitly records a fallback reason.
+- [ ] The WeChat backend mobile preview preserves the
+  `<mjx-container jax="SVG">` / inline SVG formula output clearly.
+- [ ] SVG formula containers preserve source metadata such as `data-formula`
+  and `data-formula-type` where practical.
+- [ ] Formulas are not rendered as raster images unless final WeChat preview proves an image fallback is needed.
 - [ ] Important formulas have plain-language explanations.
 - [ ] Formula display has been checked in the final WeChat backend mobile preview.
+- [ ] Each figure has a Chinese figure-title line translated from the original paper title, followed by a separate Chinese explanatory line.
+- [ ] Rendered WeChat figure-title text is centered, one font size smaller than body text, and italic.
+- [ ] RTD body figures preserve the same two-line caption meaning: centered
+  smaller italic Chinese figure-title line, then separate explanatory line.
 - [ ] Figure clarity has been checked in the final WeChat backend mobile preview.
 
 ## RTD Companion Page
 
-- [ ] The RTD companion page is reStructuredText converted from the WeChat Markdown article, not a separate Markdown route in Sphinx.
-- [ ] The RTD companion page preserves the same title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent as the WeChat article.
+- [ ] The reader-facing Markdown article is treated as the public content master before generating RTD and WeChat outputs.
+- [ ] The RTD companion page is generated with `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref>`, not by maintaining a separate Markdown route in Sphinx.
+- [ ] `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref> --check` passes.
+- [ ] The RTD companion page preserves the same title, body text, images, DOI link, and useful related links as the WeChat article.
+- [ ] The approved cover image appears near the top of the RTD page below the
+  title and is recorded in the review note.
 - [ ] The RTD companion page is listed under `学术进展 Academic Progress` on the relevant research-direction page.
 - [ ] The entry is grouped by second-level research subdirection and sorted by publication date descending until a more specific sorting rule exists.
 

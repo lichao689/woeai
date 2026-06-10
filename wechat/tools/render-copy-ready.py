@@ -59,6 +59,10 @@ BASE_STYLES = {
         "color:#0f5f95;text-decoration:underline;text-underline-offset:3px;"
         "font-weight:600;word-break:break-word;"
     ),
+    "student_first_author": (
+        "text-decoration:underline;text-underline-offset:3px;"
+        "text-decoration-thickness:1px;"
+    ),
     "img": "display:block;width:100%;height:auto;margin:22px auto 8px;",
     "caption": (
         "margin:0 0 24px;padding-left:10px;border-left:3px solid #c3d6e4;"
@@ -282,10 +286,25 @@ def render_inline(
         placeholders.append(value)
         return f"\u0000{len(placeholders) - 1}\u0000"
 
+    def render_escaped_markup(value: str) -> str:
+        value = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", value)
+        return value.replace(r"\*", "*")
+
     def math_repl(match: re.Match[str]) -> str:
         return store(render_inline_math(match.group(1), styles=active_styles, math_renderer=math_renderer))
 
     text = re.sub(r"\$([^$\n]+)\$", math_repl, text)
+
+    def student_first_author_repl(match: re.Match[str]) -> str:
+        inner = render_escaped_markup(html.escape(match.group(1).strip()))
+        return store(
+            '<span style="{}">{}</span>'.format(
+                html.escape(active_styles["student_first_author"], quote=True),
+                inner,
+            )
+        )
+
+    text = re.sub(r"<u>(.+?)</u>", student_first_author_repl, text)
 
     def link_repl(match: re.Match[str]) -> str:
         label, href = match.groups()
@@ -299,7 +318,7 @@ def render_inline(
 
     text = re.sub(r"\[([^\]]+)\]\((https?://[^)\s]+)\)", link_repl, text)
     escaped = html.escape(text)
-    escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
+    escaped = render_escaped_markup(escaped)
 
     for idx, value in enumerate(placeholders):
         escaped = escaped.replace(f"\u0000{idx}\u0000", value)

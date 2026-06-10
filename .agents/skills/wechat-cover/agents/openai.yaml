@@ -1,4 +1,4 @@
 interface:
   display_name: "WeChat Cover"
-  short_description: "Design WOEAI WeChat cover workflows."
-  default_prompt: "Use $wechat-cover to create or improve the cover workflow for a WOEAI WeChat paper article."
+  short_description: "Create and review WOEAI WeChat paper covers."
+  default_prompt: "Use $wechat-cover to create, compare, or improve a WOEAI WeChat paper article cover."

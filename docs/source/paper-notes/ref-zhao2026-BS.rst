@@ -1,9 +1,11 @@
 .. _paper-note-ref-zhao2026-BS:
 
+.. role:: student-first-author
+
 数值风洞 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测
 ==============================================================
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v1.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png
    :alt: 数值风洞 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测
    :align: center
    :width: 100%
@@ -29,10 +31,9 @@
 --------
 
 - 论文题名: A fast prediction framework for urban microscale wind environment based on precomputed CFD database
-- 作者: Zhao Peisheng; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu
+- 作者: :student-first-author:`Zhao Peisheng`; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*
 - 期刊: Building Simulation
 - 年份: 2026
-- 卷期页码: 19(2): 333-357
 - DOI: https://doi.org/10.1007/s12273-025-1379-7
 - WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
 

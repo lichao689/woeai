@@ -17,6 +17,7 @@ from typing import Any
 
 REPO_ROOT = Path.cwd().resolve()
 DEFAULT_OUTPUT_DIR = REPO_ROOT / "wechat/.local/cover-previews"
+LAST_JSON_OUTPUT = ""
 
 
 def repo_relative(path: Path) -> str:
@@ -53,13 +54,22 @@ def file_url(path: Path) -> str:
     return path.resolve().as_uri()
 
 
-def cover_summary(path: Path, target_width: int, target_height: int, max_bytes: int) -> dict[str, Any]:
+def cover_summary(
+    path: Path,
+    target_width: int,
+    target_height: int,
+    max_bytes: int,
+    label: str = "",
+    scores: dict[str, str] | None = None,
+) -> dict[str, Any]:
     width, height = image_dimensions(path)
     ratio = (width / height) if width and height else None
     target_ratio = target_width / target_height
     ratio_delta = abs(ratio - target_ratio) if ratio else None
     size = path.stat().st_size if path.exists() else 0
     return {
+        "label": label or path.stem,
+        "scores": scores or {},
         "path": repo_relative(path),
         "exists": path.exists(),
         "bytes": size,
@@ -77,14 +87,23 @@ def render_card(summary: dict[str, Any]) -> str:
     path = Path(REPO_ROOT / summary["path"]).resolve()
     src = html.escape(file_url(path), quote=True)
     title = html.escape(summary["path"])
+    label = html.escape(str(summary.get("label") or summary["path"]))
     metadata = "".join(
         f"<tr><th>{html.escape(str(key))}</th><td>{html.escape(str(value))}</td></tr>"
         for key, value in summary.items()
         if key not in {"path", "exists"}
     )
+    scores = summary.get("scores") or {}
+    score_items = "".join(
+        f"<li><strong>{html.escape(str(key))}</strong>: {html.escape(str(value))}</li>"
+        for key, value in scores.items()
+    )
+    score_block = f"<ul class=\"scores\">{score_items}</ul>" if score_items else "<p class=\"scores empty\">No candidate scores recorded.</p>"
     return f"""
 <section class="card">
-  <h2>{title}</h2>
+  <h2>{label}</h2>
+  <p class="path">{title}</p>
+  {score_block}
   <table>{metadata}</table>
   <div class="grid">
     <div>
@@ -103,6 +122,12 @@ def render_card(summary: dict[str, Any]) -> str:
     <div>
       <h3>5:4 Share Crop</h3>
       <div class="frame share">
+        <img src="{src}" alt="{title}">
+      </div>
+    </div>
+    <div>
+      <h3>Small Thumbnail</h3>
+      <div class="thumbnail">
         <img src="{src}" alt="{title}">
       </div>
     </div>
@@ -175,9 +200,35 @@ def render_page(summaries: list[dict[str, Any]]) -> str:
     }}
     .grid {{
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.25fr);
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.25fr) 132px;
       gap: 16px;
       align-items: start;
+    }}
+    .path {{
+      margin: -6px 0 14px;
+      color: #667085;
+      font-size: 12px;
+      line-height: 1.5;
+      word-break: break-all;
+    }}
+    .scores {{
+      margin: 0 0 14px;
+      padding: 10px 12px;
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      color: #344054;
+      font-size: 13px;
+      line-height: 1.6;
+    }}
+    ul.scores {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 4px 16px;
+      list-style: none;
+    }}
+    .scores.empty {{
+      color: #667085;
     }}
     .frame {{
       position: relative;
@@ -206,6 +257,20 @@ def render_page(summaries: list[dict[str, Any]]) -> str:
       box-shadow: inset 0 0 0 1px rgba(15, 45, 82, 0.65);
       pointer-events: none;
     }}
+    .thumbnail {{
+      width: 120px;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #dfe5ec;
+      border: 1px solid #b6c2d0;
+    }}
+    .thumbnail img {{
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center center;
+    }}
     .note {{
       margin: 12px 0 0;
       color: #596579;
@@ -233,24 +298,68 @@ def default_output(images: list[Path]) -> Path:
     return DEFAULT_OUTPUT_DIR / "cover-preview.html"
 
 
-def main() -> int:
+def labels_for_images(images: list[Path], labels: list[str]) -> list[str]:
+    if labels and len(labels) != len(images):
+        raise RuntimeError("--label must be repeated once per image when provided")
+    return labels or [image.stem for image in images]
+
+
+def parse_score_spec(raw: str) -> dict[str, str]:
+    result: dict[str, str] = {}
+    for item in raw.split(","):
+        stripped = item.strip()
+        if not stripped:
+            continue
+        if "=" not in stripped:
+            raise RuntimeError(f"Invalid --score item '{stripped}'. Use key=value pairs.")
+        key, value = stripped.split("=", 1)
+        result[key.strip()] = value.strip()
+    return result
+
+
+def scores_for_images(images: list[Path], score_specs: list[str]) -> list[dict[str, str]]:
+    if score_specs and len(score_specs) != len(images):
+        raise RuntimeError("--score must be repeated once per image when provided")
+    return [parse_score_spec(raw) for raw in score_specs] if score_specs else [{} for _ in images]
+
+
+def main(argv: list[str] | None = None) -> int:
+    global LAST_JSON_OUTPUT
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("images", nargs="+", type=Path)
+    parser.add_argument(
+        "--label",
+        action="append",
+        default=[],
+        help="Candidate label. Repeat once per input image.",
+    )
+    parser.add_argument(
+        "--score",
+        action="append",
+        default=[],
+        help="Candidate score fields as comma-separated key=value pairs. Repeat once per input image.",
+    )
     parser.add_argument("-o", "--output", type=Path)
     parser.add_argument("--target-width", type=int, default=900)
     parser.add_argument("--target-height", type=int, default=383)
     parser.add_argument("--max-bytes", type=int, default=5 * 1024 * 1024)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     images = [image.resolve() for image in args.images]
+    labels = labels_for_images(images, args.label)
+    score_sets = scores_for_images(images, args.score)
     for image in images:
         if not image.exists():
             raise FileNotFoundError(image)
     output = (args.output or default_output(images)).resolve()
-    summaries = [cover_summary(image, args.target_width, args.target_height, args.max_bytes) for image in images]
+    summaries = [
+        cover_summary(image, args.target_width, args.target_height, args.max_bytes, label=label, scores=scores)
+        for image, label, scores in zip(images, labels, score_sets, strict=True)
+    ]
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(render_page(summaries), encoding="utf-8")
-    print(json.dumps({"ok": True, "output": repo_relative(output), "covers": summaries}, ensure_ascii=False, indent=2))
+    LAST_JSON_OUTPUT = json.dumps({"ok": True, "output": repo_relative(output), "covers": summaries}, ensure_ascii=False, indent=2)
+    print(LAST_JSON_OUTPUT)
     return 0
 
 

@@ -15,10 +15,9 @@
 ## 论文信息
 
 - 论文题名: A fast prediction framework for urban microscale wind environment based on precomputed CFD database
-- 作者: Zhao Peisheng; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu
+- 作者: <u>Zhao Peisheng</u>; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*
 - 期刊: Building Simulation
 - 年份: 2026
-- 卷期页码: 19(2): 333-357
 - DOI: https://doi.org/10.1007/s12273-025-1379-7
 - WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
 

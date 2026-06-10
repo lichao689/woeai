@@ -166,9 +166,10 @@ Use only these public research families and subdirections unless the user explic
     If `wechat_draft_media_id` is absent, create a new WeChat draft. If it is
     present, update that existing draft by default. Create a separate new draft
     only when the user explicitly asks for a new copy.
-    Use `WOEAI` as the default WeChat draft author field for paper articles
-    unless the review note or user explicitly specifies another public-safe
-    author value.
+    Use the paper's first author as the default WeChat draft author field for
+    journal-paper articles. Keep the complete paper author list in the public
+    `论文信息` section rather than putting it into the WeChat metadata author
+    field.
 13. Treat the official WeChat draft API as the primary automated submission
     path. Use doocs/md only for theme design, formula/style preview, and manual
     copy-paste fallback when the official API path is unavailable or a human
@@ -325,9 +326,34 @@ boundaries.
 
 Add `摘要` immediately after `论文信息`. For English papers, translate the
 original English abstract faithfully into Chinese and then include
-`**英文摘要**` plus the original English abstract. Do not invent an abstract when
-the original paper abstract is unavailable; keep that issue in the review note
+`**英文摘要**` plus the original English abstract from Zotero `abstractNote`, the
+paper PDF, an author manuscript, or another approved source. Do not replace the
+English abstract with an English paraphrase. Do not invent an abstract when the
+original paper abstract is unavailable; keep that issue in the review note
 until a paper PDF, author manuscript, or approved source is available.
+
+In `论文信息`, keep the article metadata compact:
+
+- `论文题名`
+- `作者`
+- `期刊`
+- `年份`
+- `DOI`
+- `WOEAI 相关方向`
+
+Do not add a separate `卷期页码` line to WeChat paper articles. Volume, issue,
+page, and article-number details belong to the full RTD publication citation,
+not to the WeChat article metadata block.
+
+Write the `作者` line with the same author-marker semantics as
+`docs/source/Publications.rst`:
+
+- wrap only a Student First Author name in `<u>...</u>` in the Markdown source;
+  the RTD converter maps this to `:student-first-author:` and the WeChat HTML
+  renderer displays it as underlined text.
+- mark corresponding authors with `\*` immediately after the displayed name,
+  for example `**Li Chao**\*`.
+- do not write `(corresponding author)` in the reader-facing article.
 
 Write for technically literate readers who may include prospective students, collaborators, engineering software users, and academic peers.
 
@@ -494,8 +520,17 @@ manuscript or approved download link is actually available.
 Before calling a draft ready:
 
 - DOI and the WOEAI website record are checked.
+- The `论文信息` author line uses RTD-compatible markers: Student First Authors
+  only are underlined, corresponding authors use a visible `*`, and
+  `(corresponding author)` is not used.
+- The WeChat draft author field is the paper's first author for journal-paper
+  articles.
+- The `论文信息` block does not contain a separate `卷期页码` line.
 - Zotero Desktop Local API metadata, DOI, `abstractNote`, and attachment
   records are checked.
+- For English papers, the public `**英文摘要**` text matches the original
+  abstract from Zotero `abstractNote`, the PDF abstract, an author manuscript,
+  or another approved source; it is not an English paraphrase.
 - Local PDF attachment is used when present. If it is missing, Zotero Web API
   `/file` is tried when credentials are available; if that also fails, the
   review note records `需要同步 PDF 或提供作者稿`.

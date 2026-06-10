@@ -457,9 +457,24 @@ def parse_title(article_path: Path) -> str:
 def text_without_markup(markdown: str) -> str:
     text = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", markdown)
     text = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text)
+    text = re.sub(r"</?u>", "", text)
     text = re.sub(r"[*_`#>$]", "", text)
+    text = text.replace(r"\*", "*")
     text = re.sub(r"\s+", " ", text)
     return text.strip()
+
+
+def parse_first_paper_author(article_path: Path) -> str:
+    for raw in article_path.read_text(encoding="utf-8").splitlines():
+        match = re.match(r"\s*-\s+作者:\s*(.+)", raw)
+        if not match:
+            continue
+        first = match.group(1).split(";", 1)[0].strip()
+        first = re.sub(r"</?u>", "", first)
+        first = re.sub(r"\*\*(.+?)\*\*", r"\1", first)
+        first = first.replace(r"\*", "").replace("*", "")
+        return re.sub(r"\s+", " ", first).strip()
+    return ""
 
 
 def parse_digest(article_path: Path, limit: int = 120) -> str:
@@ -588,7 +603,9 @@ def build_context(
     front = parse_front_matter(review_path)
     if front.get("body_images_upload_approved", "").lower() != "true":
         raise RuntimeError("Review note has not approved body image upload")
-    author = front.get("wechat_author") or "WOEAI"
+    first_author = parse_first_paper_author(article_path)
+    front_author = front.get("wechat_author", "")
+    author = first_author if front_author == "WOEAI" and first_author else front_author or first_author or "WOEAI"
     content_source_url = front.get("wechat_content_source_url") or DEFAULT_CONTENT_SOURCE_URL
     cover_path = parse_cover_path(review_path)
     body_images = parse_markdown_images(article_path)

@@ -121,12 +121,48 @@ The second canonical public research family. It covers floating offshore wind re
 _Avoid_: generic `海上风电` when the public page is specifically about floating offshore wind
 
 **One-Paper WeChat Article**:
-A WeChat Official Account article whose core unit is one selected paper. It should explain the paper's problem, method, findings, boundaries, engineering significance, DOI, WOEAI publication anchor, and related direction pages.
+A WeChat Official Account article whose core unit is one selected paper. It should explain the paper's problem, method, findings, boundaries, engineering significance, DOI, and selected related direction links. It should avoid repeating a WOEAI publication-page anchor when that linked page does not add reader value beyond the article itself.
 _Avoid_: forcing every article into a multi-paper theme essay
 
+**WeChat Article Source**:
+The canonical public-safe Markdown source for a One-Paper WeChat Article before publication. WeChat HTML, rendered previews, API payloads, draft-box records, and RTD Paper Companion Pages are derived outputs and should not become the source of truth for article wording or facts.
+_Avoid_: treating rendered HTML, WeChat draft content, doocs/md previews, API payloads, or RTD pages as the canonical article source
+
+**WeChat Draft Record**:
+A non-sensitive repository record showing that a WeChat Article Source has been submitted to the WeChat Official Account draft box for human preview and publication review. It may record workflow status, the remote draft `media_id`, draft creation/update time, and the eventual published URL, but it must not store access tokens, AppSecret, cookies, preview credentials, full API responses, or other secrets.
+_Avoid_: treating WeChat credentials, cookies, preview tokens, raw API payloads, or human preview material as publishable state
+
+**Manual Publication Gate**:
+The required human checkpoint around WeChat draft delivery and public release. Agents and automation may prepare content, upload approved images, render WeChat-compatible HTML, and create or update Official Account drafts only after the agent explains the real draft-creation action and the user explicitly confirms creating the WeChat draft. They must not automatically publish, mass-send, or otherwise release the article publicly.
+_Avoid_: allowing an agent, scheduled job, API script, or browser automation flow to create or publish WeChat content from vague approval such as "continue", or without human preview and manual confirmation in the WeChat backend
+
+**Official WeChat Draft API Path**:
+The primary automation path for WOEAI WeChat article delivery. It converts the WeChat Article Source and approved public-safe assets into WeChat-compatible HTML, uploads approved cover and body images through official WeChat API endpoints, creates or updates the Official Account draft, records only a WeChat Draft Record, and then stops at the Manual Publication Gate. Its default mode is a no-submit check; a real draft creation/update requires explicit live confirmation. doocs/md is an auxiliary route for theme design, formula/style preview, and manual copy-paste fallback, not the primary automated submission path.
+_Avoid_: treating doocs/md, Wechatsync, browser extensions, copied editor content, or WeChat backend HTML as the primary system of record or default automation path
+
+**WeChat Remote Runner**:
+A small trusted machine used only to run the Official WeChat Draft API Path from a stable public egress IP. It should pull the public-safe repository content, keep WeChat credentials outside the repository, run `ip-check` or `preflight` before live draft creation/update, and stop after the draft reaches the WeChat backend for human preview.
+_Avoid_: using changing home/campus network IPs for unattended API calls, storing AppSecret in GitHub Actions secrets without a fixed runner IP, or letting the runner publish/mass-send content
+
+**WeChat Egress IP Diagnostic**:
+An optional diagnostic check that reports the current public egress IP and compares it with a configured fixed runner IP list. The expected IP list belongs in `~/.config/woeai/wechat_runner.env` as `WOEAI_WECHAT_EXPECTED_EGRESS_IPS`, separate from the AppID/AppSecret credential file. This local IP probe is not a live-run gate because it can disagree with the actual WeChat API path; live draft creation/update should call the official API directly after explicit user confirmation and treat WeChat's own response as the source of truth.
+_Avoid_: reading private credentials just to learn the current public IP, or treating local IP-probe mismatch as stronger evidence than the WeChat API response
+
+**WeChat RTD Link Domain**:
+The preferred domain for WOEAI website links embedded in WeChat articles and WeChat draft API payloads. Use `https://woeai.readthedocs.io/zh-cn/latest/` for RTD companion pages, useful direction pages, and homepage-style links, because this Read the Docs project domain is less tied to the replaceable custom domain `winddee.cn`. Reader-facing links should normally appear under `延伸阅读` as direct hyperlinks, not as repeated label-plus-URL text or a separate `阅读原文` section. This rule applies to WeChat article links and draft payloads, not necessarily to the public website's own SEO canonical URL or contact-page display.
+_Avoid_: hard-coding `winddee.cn` into WeChat article sources or generated WeChat HTML when an equivalent `woeai.readthedocs.io` URL exists
+
+**Private WeChat Credential Store**:
+The local-only credential location for the Official WeChat Draft API Path. The WeChat Official Account AppID and AppSecret live in `~/.config/woeai/wechat_official_account.env`, expected fixed runner IPs live separately in `~/.config/woeai/wechat_runner.env`, and fetched `access_token` data lives in `~/.cache/woeai/wechat_access_token.json`. These files are outside the public repository; the credential file may be read only when the user explicitly asks to test the API path or create/update a WeChat draft.
+_Avoid_: committing, printing, logging, copying, or summarizing WeChat AppSecret, access tokens, cookies, preview credentials, or private config contents in public-safe files
+
 **RTD Paper Companion Page**:
-A Read the Docs page generated from a One-Paper WeChat Article. It should preserve the same title, body text, images, DOI link, WOEAI publication anchor, and contact/link intent as the WeChat article, while converting the markup and rendering format to Sphinx-compatible reStructuredText.
-_Avoid_: creating a separate Markdown route for Sphinx, changing the article meaning for RTD, or making the RTD page a shorter unrelated summary
+A Read the Docs page generated from a One-Paper WeChat Article. It is the default website companion for paper-based WeChat articles, but not required for temporary notices, activity posts, or non-paper WeChat content. It should preserve the same title, body text, images, DOI link, and useful related links as the WeChat article, while converting the markup and rendering format to Sphinx-compatible reStructuredText.
+_Avoid_: creating a separate Markdown route for Sphinx, changing the article meaning for RTD, making the RTD page a shorter unrelated summary, or forcing every non-paper WeChat post to have an RTD companion page
+
+**WeChat Figure Caption**:
+The reader-facing caption attached to a figure in a One-Paper WeChat Article. It uses a Chinese figure-title line translated faithfully from the paper's original figure title, followed by a separate Chinese explanatory line that tells the reader why the figure matters in this article.
+_Avoid_: leaving pure English figure titles in Chinese WeChat articles, merging the figure title and explanation into one paragraph, or using the caption to store extraction/copyright notes
 
 **Public Formula**:
 A mathematical expression included in a One-Paper WeChat Article or RTD Paper Companion Page. It should preserve one LaTeX formula meaning across publication channels, with channel-specific rendering. Public formulas include display equations, inline mathematical variables, symbolic parameters, evaluation metrics, dimensional quantities, and unit-bearing values such as `X_L`, `H_{\max}`, `R`, `1\,\mathrm{km} \times 1\,\mathrm{km}`, and `11\,\mathrm{m/s}`. They should remain text-based and explain key variables in prose.

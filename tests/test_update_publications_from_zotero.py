@@ -140,6 +140,8 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         self.assertIn("博士学位论文 PhD Theses", section)
         self.assertIn("硕士学位论文 Master Theses", section)
         self.assertLess(section.index("周盛涛(Zhou Shengtao)，2021"), section.index("郑舜云(Zheng Shunyun)，2024-11"))
+        self.assertLess(section.index("陈铃伟(Chen Lingwei)，2025-09"), section.index("何欣(He Xin)，博士生在读"))
+        self.assertIn("刘尚佩(Liu Shangpei)，博士生在读", section)
         self.assertLess(section.index("王一鸣(Wang Yiming)，2023"), section.index("赵培升(Zhao Peisheng)，2025"))
 
 

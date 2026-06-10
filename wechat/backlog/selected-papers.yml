@@ -12,12 +12,15 @@ items:
     subdirection: 数值风洞与湍动入流
     original_year: 2026
     repost_priority: high
-    wechat_status: drafting
+    wechat_status: ready_to_publish
     publication_mode: first_publish
     previous_published_url: ""
     latest_published_url: ""
     revision_note: ""
     publication_history: []
+    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit8W5lJ84JuQVMz4NFRpBMgLqu_P2CwMhp5uLAs3CfZau
+    wechat_draft_updated_at: 2026-06-10T02:50:06+08:00
+    wechat_draft_created_at: 2026-06-09T12:31:43+08:00
   - publication_ref: ref-zhao2026-BE
     zotero_key: RLAA46YB
     title: "A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment"

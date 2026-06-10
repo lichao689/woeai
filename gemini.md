@@ -82,6 +82,11 @@ This is a single-context docs-site repo. See `docs/agents/domain.md`.
 Use `.agents/skills/wechat-paper/SKILL.md` when generating, reviewing, or
 tracking WeChat Official Account articles from WOEAI journal papers.
 
+### WeChat cover images
+
+Use `.agents/skills/wechat-cover/SKILL.md` when generating, improving,
+reviewing, or recording WOEAI WeChat Official Account cover images.
+
 ## 动态更新规则
 
 | 日期 | 规则 | 适用范围 | 来源 | 备注 |
@@ -93,3 +98,21 @@ tracking WeChat Official Account articles from WOEAI journal papers.
 | 2026-06-08 | 教学改革、思政建设类论文统一放在教育教学页面的“教改探索”小节，不进入学术成果或按研究方向浏览页面。 | WOEAI 公共网站内容分类 | 对话确认 | 新增 |
 | 2026-06-08 | Zotero Web API 写权限 key 是本机私密凭据，固定存放在 `~/.config/woeai/zotero_write_api_key`；仅当用户明确要求修改 Zotero 条目时读取，用于 Web API 写入。不得打印、提交、复制到仓库，普通论文读取与页面生成仍优先使用 Zotero Desktop 本地只读 API。 | Zotero 学术成果维护 | 对话确认 | 新增 |
 | 2026-06-08 | WOEAI 公众号论文文章应优先通过 Zotero Desktop Local API 获取元数据、DOI、abstractNote 和附件记录；本地 PDF 存在时直接用于摘要、图片、图注和正文证据抽取，本地 PDF 缺失时再尝试 Zotero Web API /file；仍不可获得时在 review 文档记录“需要同步 PDF 或提供作者稿”，不得编造 PDF 原文信息。 | WOEAI 公众号论文文章 | 对话确认 | 新增 |
+| 2026-06-09 | WOEAI 公众号自动化流程只能创建或更新微信公众号草稿；不得自动发布、群发或通过浏览器自动点击发布。最终发布必须由人工在微信公众号后台预览、校对并确认。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-09 | WOEAI 公众号自动化主线采用官方微信公众号草稿 API；doocs/md 仅作为主题设计、公式/样式预览和手工复制兜底，Wechatsync 或浏览器插件不作为默认主线或内容事实源。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-09 | 微信公众号 API 凭据仅放在本机私密配置：AppID/AppSecret 存于 `~/.config/woeai/wechat_official_account.env`，`access_token` 缓存于 `~/.cache/woeai/wechat_access_token.json`；仓库不得提交、打印、记录或复制这些内容，只有用户明确要求测试 API 或创建/更新草稿时才读取。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-09 | 微信公众号 API 工具默认只做不提交检查；真实创建或更新公众号草稿前，agent 必须说明将读取私密凭据、上传已批准图片并在微信后台生成/更新草稿，且必须等用户明确确认“创建公众号草稿”后才可执行 live 命令。`继续`、`可以`、`试试` 等模糊回复不足以授权 live。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-09 | 微信公众号 live 创建/更新草稿成功后，工具应自动把非敏感状态写回 `wechat/backlog/selected-papers.yml`：`wechat_status: ready_to_publish`、`wechat_draft_media_id`、`wechat_draft_created_at`、`wechat_draft_updated_at`。失败或仅 dry-run 时不得推进状态。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-09 | 微信公众号 live 提交时，如果 backlog 没有 `wechat_draft_media_id`，默认新建草稿；如果已有 `wechat_draft_media_id`，默认更新该草稿。只有用户明确要求“新建一份草稿”时才另建新草稿。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-09 | WOEAI 公众号论文文章的微信公众号草稿作者字段默认使用 `WOEAI`；论文作者列表保留在正文“论文信息”中，不塞入微信草稿作者字段。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-09 | WOEAI 公众号文章和微信草稿 API payload 中的 WOEAI 官网外链优先使用 `https://woeai.readthedocs.io/zh-cn/latest/`；读者侧链接统一放入“延伸阅读”，使用直接超链接，不再单列“阅读原文”，也不重复放置与正文内容一致的 WOEAI 论文条目锚点。`winddee.cn` 可作为网站自身 canonical/联系方式，但不作为公众号内容默认硬编码域名。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-09 | 微信草稿 API 的 `content_source_url` 默认留空；读者跳转入口放在正文“延伸阅读”中。只有用户针对某篇文章明确选择阅读原文目标时，才填写底部阅读原文链接。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-09 | WOEAI 公众号论文文章的正文图片说明采用两行结构：第一行用中文图名，由论文原英文图名忠实翻译而来；第二行另起中文解释说明。图名在微信正文中居中显示，使用比正文小一号的斜体样式；图名和说明文字都应与正文显著区分。 | WOEAI 公众号论文文章 | 对话确认 | 更新 |
+| 2026-06-09 | WOEAI 公众号论文文章中的数学变量、文字性下标和单位应保持 LaTeX 语义；文字性下标优先使用 `\mathrm{...}`，例如 `$H_{\mathrm{max}}$`、`$K_{\mathrm{CFD}}$`。当前 `render-copy-ready.py` 的公式输出是轻量 HTML 近似渲染，不是完整 LaTeX 排版；正式发布前必须在微信后台手机预览中确认公式观感，后续应优先改进为真正的数学排版渲染链路。 | WOEAI 公众号论文文章 | 对话确认 | 更新 |
+| 2026-06-10 | WOEAI 公众号论文文章的公式渲染优先采用 Markdown LaTeX 源码到 MathJax SVG 的预渲染路线，即提交前生成 `<mjx-container jax="SVG">...<svg>...</svg></mjx-container>`；微信端不运行 MathJax/KaTeX 脚本。轻量 HTML 只作简单公式兜底，PNG 公式只在 SVG 预览不可用时作为兜底。正式发布前仍必须以微信公众号后台手机预览为准。 | WOEAI 公众号论文文章 | 对话确认 | 新增 |
+| 2026-06-10 | WOEAI 公众号公式单篇压力测试已确认：官方 `draft/add` 可接受约 113k 字符、包含多组行内与展示 MathJax SVG 公式的单篇正文，用户确认预览效果满意。后续 `render-copy-ready.py` 和 `wechat_draft.py` 默认公式渲染器改为 `mathjax-svg`；`lightweight` 仅作排障或缺少 MathJax SVG 运行时的兜底。SVG 容器应尽量保留 `data-formula` 与 `data-formula-type` 元信息。 | WOEAI 公众号论文文章 | 对话确认 | 新增 |
+| 2026-06-10 | WOEAI 公众号正文中的展示公式应在独立公式块中视觉居中，保留 `data-formula` 元信息并允许宽公式横向滚动。微信底部“阅读原文”由 API `content_source_url` 控制，不是正文“延伸阅读”小节；默认留空，只有用户明确指定时才在发布说明 front matter 中写入 `wechat_content_source_url` 并提交。 | WOEAI 公众号论文文章 | 对话确认 | 新增 |
+| 2026-06-10 | WOEAI 公众号论文文章固定采用“Markdown 公共正文母版 -> RTD RST -> 微信草稿”的同步顺序。正文措辞、公式、图注和正文链接先在 `wechat/articles/draft-public-safe/*.md` 对齐，再转换到 `docs/source/paper-notes/*.rst` 并由同一 Markdown 渲染微信草稿；微信后台预览若产生正文修改，必须先反向录回 Markdown，再重新生成 RST 和草稿。RTD 展示公式也应通过站点 CSS 保持居中。 | WOEAI 公众号论文文章 | 对话确认 | 新增 |
+| 2026-06-10 | WOEAI 公众号论文文章的正式 Markdown 到 RTD 转换脚本为 `wechat/tools/markdown_to_rtd.py`；生成命令为 `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref>`，同步检查命令为同命令追加 `--check`。RTD 顶部封面图由 review note 的 `rtd_cover_image` / `wechat_cover_image` / `cover_image` 或“封面素材”记录提供，插在标题下方；RTD 正文图使用两行图注并由站点 CSS 将中文图名显示为居中、小一号、斜体，说明文字另起一行。 | WOEAI 公众号论文文章 | 对话确认 | 新增 |
+| 2026-06-09 | WOEAI 微信公众号 API 第一次实操从当前 Mac 本机运行；长期云端/CI 自动化待首轮本机 API 链路跑通后再设计。本机实操需要将当前公网出口 IP 配置到公众号后台 IP 白名单。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-10 | WOEAI 微信公众号 API 的本地公网 IP 探测不再作为 live 创建/更新草稿前的硬性守门，因为该探测结果可能与微信 API 实际链路不一致。`wechat_draft.py ip-check` 仅保留为人工诊断命令；live 创建/更新应直接调用微信官方 API，并以微信 API 返回的白名单错误作为后续处理依据。 | WOEAI 公众号自动化发布流程 | 对话确认 | 更新 |

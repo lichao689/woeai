@@ -6,9 +6,11 @@
 
 这项工作属于 WOEAI 的 **建筑结构抗风 / 数值风洞与湍动入流** 方向，也与城市风环境、复杂地形风场和工程软件化应用直接相关。
 
-![图 1 预计算 CFD 数据库框架](../../assets/public-safe/ref-zhao2026-BS/fig-01-workflow.png)
+![图 1 所提出框架的工作流程](../../assets/public-safe/ref-zhao2026-BS/fig-01-workflow.png)
 
-图 1 预计算 CFD 数据库框架：我们把中尺度气象输入、微尺度 CFD 计算和数据库组织连接起来，让城市风环境预测从“每次重新计算”转向“预计算结果的快速调用”。
+图 1 所提出框架的工作流程
+
+我们把中尺度气象输入、微尺度 CFD 计算和数据库组织连接起来，让城市风环境预测从“每次重新计算”转向“预计算结果的快速调用”。
 
 ## 论文信息
 
@@ -18,7 +20,6 @@
 - 年份: 2026
 - 卷期页码: 19(2): 333-357
 - DOI: https://doi.org/10.1007/s12273-025-1379-7
-- WOEAI 官网条目: https://winddee.cn/zh-cn/latest/Publications.html#ref-zhao2026-BS
 - WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
 
 ## 摘要
@@ -49,9 +50,11 @@ The accuracy and efficiency of urban microscale wind field prediction are critic
 
 这个框架的工程含义在于：如果一个城市片区已经完成了标准化的高分辨率计算，那么后续在不同风向、不同高度或不同应用场景下，就可以更快调用已有数据库，而不是每次都重新搭建完整计算任务。
 
-![图 2 深圳建筑区块划分示意](../../assets/public-safe/ref-zhao2026-BS/fig-02-block-division.png)
+![图 2 深圳建筑分块划分示意图](../../assets/public-safe/ref-zhao2026-BS/fig-02-block-division.png)
 
-图 2 深圳建筑区块划分示意：城市区域被组织为可计算、可拼接、可入库的微尺度风场单元，这是后续建立区块 CFD 数据库的基础。
+图 2 深圳建筑分块划分示意图
+
+城市区域被组织为可计算、可拼接、可入库的微尺度风场单元，这是后续建立区块 CFD 数据库的基础。
 
 ## 关键发现
 
@@ -61,7 +64,7 @@ The accuracy and efficiency of urban microscale wind field prediction are critic
 
 论文中比较了不同过渡区长度 $X_L$ 对核心区域风场的影响，并使用 $\mathrm{FB}$、$\mathrm{NMSE}$、$\mathrm{FAC2}$ 和线性相关系数 $R$ 等指标进行评价。结果显示，随着 $X_L$ 增大，系统误差和随机误差逐渐降低，相关性和拟合程度提高。
 
-从工程折中角度看，论文建议核心建筑群可选择 $4H_{\max}$ 作为过渡区长度；在考虑计算规模和成本时，$3H_{\max}$ 也可以作为一种可选方案。这里的 $H_{\max}$ 是核心区域最高建筑高度。
+从工程折中角度看，论文建议核心建筑群可选择 $4H_{\mathrm{max}}$ 作为过渡区长度；在考虑计算规模和成本时，$3H_{\mathrm{max}}$ 也可以作为一种可选方案。这里的 $H_{\mathrm{max}}$ 是核心区域最高建筑高度。
 
 ### 2. 相邻区块之间的风场可以保持较好一致性
 
@@ -85,9 +88,11 @@ $$
 
 这条公式的含义很直接：我们不是只看某个风速值是否相同，而是比较“局地测点相对于参考点的风速比例”是否一致。这样可以更好地评估微尺度风场结构是否被 CFD 数据库捕捉到。
 
-![图 21 气象自动站位置与观测环境](../../assets/public-safe/ref-zhao2026-BS/fig-21-stations.png)
+![图 21 气象自动站的位置与观测环境](../../assets/public-safe/ref-zhao2026-BS/fig-21-stations.png)
 
-图 21 气象自动站位置与观测环境：现场监测数据用于检验区块 CFD 数据库在真实城市环境中的预测能力。
+图 21 气象自动站的位置与观测环境
+
+现场监测数据用于检验区块 CFD 数据库在真实城市环境中的预测能力。
 
 ## 工程意义
 
@@ -101,9 +106,11 @@ $$
 - 风速比、风压系数等数据在 WebGIS 平台中的可视化；
 - 后续与 AI 代理模型、快速几何重构、数字孪生或工程咨询平台结合。
 
-![图 25 WebGIS 平台中的风速和风压数据展示](../../assets/public-safe/ref-zhao2026-BS/fig-25-webgis.png)
+![图 25 WebGIS 中风速与风压数据的可视化展示](../../assets/public-safe/ref-zhao2026-BS/fig-25-webgis.png)
 
-图 25 WebGIS 平台中的风速和风压数据展示：预计算 CFD 数据库不只停留在离线计算结果中，也可以进一步进入查询、展示和工程沟通平台。
+图 25 WebGIS 中风速与风压数据的可视化展示
+
+预计算 CFD 数据库不只停留在离线计算结果中，也可以进一步进入查询、展示和工程沟通平台。
 
 对 WOEAI 的研究方向来说，这项工作也连接了几个长期关注的问题：数值风洞、湍动入流、城市复杂风场、工程软件平台，以及 AI 赋能的快速建模与预测。
 
@@ -121,9 +128,5 @@ $$
 
 ## 延伸阅读
 
-- WOEAI 建筑结构抗风方向: https://winddee.cn/zh-cn/latest/BuildingStructuralWindResistance.html
-- WOEAI 学术成果条目: https://winddee.cn/zh-cn/latest/Publications.html#ref-zhao2026-BS
-
-## 阅读原文
-
-- DOI: https://doi.org/10.1007/s12273-025-1379-7
+- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html)
+- [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

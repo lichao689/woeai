@@ -168,6 +168,8 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertIn("博士学位论文 PhD Theses", text)
         self.assertIn("硕士学位论文 Master Theses", text)
         self.assertLess(text.index("周盛涛(Zhou Shengtao)，2021"), text.index("郑舜云(Zheng Shunyun)，2024-11"))
+        self.assertLess(text.index("陈铃伟(Chen Lingwei)，2025-09"), text.index("何欣(He Xin)，博士生在读"))
+        self.assertIn("刘尚佩(Liu Shangpei)，博士生在读", text)
         self.assertLess(text.index("王一鸣(Wang Yiming)，2023"), text.index("赵培升(Zhao Peisheng)，2025"))
 
     def test_updated_wake_model_publication_year_keeps_old_anchor_alias(self) -> None:

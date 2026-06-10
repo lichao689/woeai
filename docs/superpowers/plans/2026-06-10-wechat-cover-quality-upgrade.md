@@ -16,24 +16,16 @@ safety, WeChat crop safety, and the Manual Publication Gate.
   `cover-standards.md`, and `wechat/STYLE.md`.
 - Phase 2 preview tooling: candidate labels, optional score metadata, and
   small-thumbnail preview implemented in `cover_preview.py`.
-- Phase 2 text tooling: `cover_text_overlay.py` added. It performs deterministic
-  overlay when Pillow is available and returns a clear JSON dependency error
-  when Pillow is not available in the current Python runtime.
-- Phase 3 pilot: executed for `ref-zhao2025-SCS`. Generated and compared
-  `2` no-text image-gen candidates, `2` image-gen short-text candidates, and
-  `2` programmatic-overlay candidates. Candidate D was confirmed by the user
-  and switched into the public-safe formal v2 cover asset.
+- Phase 2 route correction: the cover workflow is image-gen-text only. Covers
+  must include confirmed text directly generated in the image.
+- Phase 3 pilot: executed for `ref-zhao2025-SCS`. The accepted production path
+  is direct image-generated cover text plus crop-preview review.
 - Phase 4 batch cover regeneration: not yet executed.
 
-The new workflow should support both:
-
-- generated visual candidates without embedded text;
-- generated or composed candidates with short Chinese text.
-
-Direct image-generation text is allowed as an experiment, but any distorted,
-misspelled, low-contrast, or unreadable text must be rejected. Deterministic
-programmatic text overlay remains the fallback and preferred production route
-when exact Chinese text matters.
+The workflow supports one cover-generation route: direct image generation with
+the confirmed Chinese cover text embedded in the image. Any distorted,
+misspelled, rewritten, missing, low-contrast, or unreadable text must be
+rejected.
 
 ## Current Problem
 
@@ -66,14 +58,13 @@ It does not yet strongly evaluate:
 
 ## Design Decisions
 
-1. Produce at least two cover families per article:
-   - no-text editorial visual;
-   - short-text editorial visual.
-2. Try image-gen direct text as one candidate lane when useful.
-3. Keep deterministic text overlay available for exact final wording.
+1. Produce image-gen-text candidates only.
+2. Generate at least three candidates per round.
+3. Retry once with the same confirmed text if all candidates fail; after two
+   failed rounds, ask the editor to confirm shorter or clearer cover text.
 4. Keep cover text short:
    - category tag: `数值风洞`, `结构抗风`, or `漂浮风电`;
-   - main hook: normally 8-14 Chinese characters;
+   - main hook: normally 6-12 Chinese characters;
    - optional subtitle only when the thumbnail remains readable.
 5. Let the WeChat title carry the full article title. The cover text should
    create curiosity, not repeat the full paper title.
@@ -85,8 +76,7 @@ It does not yet strongly evaluate:
 ### Skill And Standards
 
 - Update `.agents/skills/wechat-cover/SKILL.md`.
-  - Add candidate generation lanes: no-text, image-gen text, deterministic text
-    overlay.
+  - Require the image-gen-text route.
   - Require candidate scoring before selecting a final cover.
   - Require small-thumbnail review before approval.
 - Update `.agents/skills/wechat-cover/references/cover-standards.md`.
@@ -104,11 +94,6 @@ It does not yet strongly evaluate:
   - Show full cover, square crop, share-card crop, and small-thumbnail views.
   - Display basic scores/check fields beside each candidate.
   - Keep output under `wechat/.local/cover-previews/`.
-- Add a deterministic text overlay helper, for example:
-  - `.agents/skills/wechat-cover/scripts/cover_text_overlay.py`
-  - Inputs: base image, category tag, main hook, optional subtitle, output path.
-  - It should use local fonts when available and fail clearly when no Chinese
-    font is usable.
 - Optionally add a simple candidate manifest format:
   - `wechat/.local/cover-candidates/<publication_ref>/manifest.json`
   - This remains ignored/private unless a final public-safe asset is selected.
@@ -119,15 +104,13 @@ It does not yet strongly evaluate:
   - cover promise;
   - target reader;
   - hook text options;
-  - no-text prompt;
-  - image-gen direct-text prompt;
-  - deterministic overlay text;
+  - image-gen-text prompt;
   - avoid list;
   - candidate scoring notes.
 - Update review note cover fields:
   - candidate count;
   - selected candidate ID;
-  - selected text mode: `none`, `image-gen-text`, or `programmatic-overlay`;
+  - selected text mode: `image-gen-text`;
   - rejected candidate reasons;
   - local candidate-board path;
   - WeChat backend preview status.
@@ -189,7 +172,6 @@ Exit condition:
 ### Phase 2: Preview And Text Tooling
 
 - Extend `cover_preview.py` into a candidate comparison board.
-- Add deterministic text overlay helper.
 - Add tests for dimensions, text metadata, output paths, and failure cases.
 
 Exit condition:
@@ -204,9 +186,8 @@ but visually too faint.
 
 Generate at least:
 
-- 2 no-text image-gen candidates;
-- 2 image-gen direct-text candidates;
-- 2 deterministic-overlay candidates from the best no-text images.
+- 3 image-gen-text candidates per round.
+- 1 retry round if all candidates fail text or visual-quality gates.
 
 Exit condition:
 

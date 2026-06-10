@@ -227,19 +227,22 @@ The public-safety script must fail a review note that omits either
   are often too tall, too detailed, or visually weak after WeChat cover cropping.
 - Prefer a purpose-designed or generated cover image based on the article's
   core idea, target readers, and title category.
-- Generate or compare both no-text and short-text cover candidates when the
-  cover is important for first-click appeal. Direct image-generation text may
-  be tried, but reject it if any Chinese text is distorted, misspelled, or
-  unreadable. Use programmatic text overlay when exact wording matters.
+- Generate cover candidates through image generation with the user-confirmed
+  cover text embedded directly in the image. Do not use no-text covers or add
+  Chinese text after generation with any overlay method.
+- Generate at least three image-gen-text candidates per round. If all
+  candidates have wrong, missing, rewritten, distorted, low-contrast, or
+  unreadable Chinese text, retry once with the same confirmed text. If two
+  rounds fail, stop and ask the editor to confirm shorter or clearer cover text.
 - Use a first-article cover target of `900 x 383 px`, about `2.35:1`. Larger
   source images may use the same ratio and be resized down for upload.
 - Keep the main visual concept in the center so the image still works if a
   WeChat surface crops it toward a square thumbnail.
 - Check small-thumbnail readability, not only full-size dimensions and crop
   ratio.
-- Avoid generated text inside the image by default. Let the WeChat article title
-  carry the full title. If cover text is used, keep it to a category tag and a
-  short hook rather than repeating the full article title.
+- Keep cover text to the confirmed `分类标签 | 主钩子 / 可选副标题`
+  structure. Let the WeChat article title carry the full title; do not repeat
+  the full article title on the cover.
 - Store final public-safe cover images under
   `wechat/assets/public-safe/<publication_ref>/` and record the source or prompt
   in the article review note. Also record candidate count, selected text mode,

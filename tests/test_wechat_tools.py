@@ -127,35 +127,6 @@ class WeChatToolTests(unittest.TestCase):
         self.assertIn("候选 A", html)
         self.assertIn("Small Thumbnail", html)
 
-    def test_cover_text_overlay_reports_missing_pillow_as_json_error(self) -> None:
-        overlay = load_script(
-            ROOT / ".agents/skills/wechat-cover/scripts/cover_text_overlay.py",
-            "woeai_cover_text_overlay_test",
-        )
-
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            base = root / "base.png"
-            output = root / "cover.png"
-            base.write_bytes(PNG_1X1)
-
-            with contextlib.redirect_stdout(io.StringIO()):
-                result = overlay.main(
-                    [
-                        str(base),
-                        str(output),
-                        "--category",
-                        "数值风洞",
-                        "--hook",
-                        "让城市风场更快可算",
-                    ]
-                )
-            payload = json.loads(overlay.LAST_JSON_OUTPUT)
-
-        self.assertEqual(result, 1)
-        self.assertEqual(payload["stage"], "dependency_check")
-        self.assertIn("Pillow", payload["message"])
-
     def test_cover_preview_records_candidate_scores(self) -> None:
         preview = load_script(
             ROOT / ".agents/skills/wechat-cover/scripts/cover_preview.py",

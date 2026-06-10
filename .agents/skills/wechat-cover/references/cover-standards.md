@@ -29,42 +29,41 @@ Generate at least three directions for each paper:
 2. Method: the model, simulation, database, algorithm, or workflow.
 3. Engineering impact: how the work supports decisions, platforms, or practice.
 
-For each direction, consider two cover families:
-
-- no-text editorial visual,
-- short-text editorial visual.
-
-Short text may be produced either directly by image generation or by
-programmatic overlay. Direct image-generation text is an experiment, not an
-automatic approval path.
+For each direction, generate image-gen-text candidates only. Each final cover
+must contain the exact user-confirmed cover text generated directly in the
+image.
 
 ## Text Policy
 
 Use cover text only when it improves click appeal and remains readable as a
 thumbnail.
 
-User confirmation is required before generating any cover candidate that may
-contain text, or before committing to a no-text direction. The agent should
-offer exactly five concrete cover-text combinations plus one custom-text
+User confirmation is required before generating any cover candidate. The agent
+should offer exactly five concrete cover-text combinations plus one custom-text
 option. The five generated combinations should each be ready to use on the
 cover. The selected option becomes the source of truth for image-generation
-prompts and deterministic text overlays.
+prompts.
 
 Preferred structure:
 
 - category tag: `数值风洞`, `结构抗风`, or `漂浮风电`;
-- main hook: 8-14 Chinese characters;
+- main hook: preferably 6-12 Chinese characters;
 - optional subtitle only if the small-thumbnail preview stays readable.
 
 Do not repeat the full article title. Let the WeChat title field carry the
 complete wording.
 
-Reject direct image-generation text when:
+Reject image-gen-text candidates when:
 
 - any Chinese character is wrong, distorted, missing, or hard to read;
+- the model rewrites, omits, translates, or adds to the confirmed cover text;
 - contrast is too low on the full cover or thumbnail;
 - text competes with the main visual subject;
 - fake UI labels, fake map labels, or misleading claims appear.
+
+If all candidates in a round fail, retry once with the same confirmed text. If
+two rounds fail, stop and ask the user to confirm shorter or clearer cover text.
+Do not switch to a no-text cover or add text after generation.
 
 ## Title Category Cues
 
@@ -125,7 +124,8 @@ A technically credible editorial cover image for a WOEAI WeChat article about
 <paper topic>. Show <main visual subject>. Include <method or data cue>.
 Use a clean modern academic engineering magazine style, restrained blue/white
 palette with subtle accent color, central subject, wide 2.35:1 composition.
-No text, no logo, no watermark, no people unless needed.
+Include the exact Chinese cover text: <confirmed cover text>. No logo, no
+watermark, no people unless needed.
 ```
 
 Add article-specific avoids:
@@ -133,6 +133,7 @@ Add article-specific avoids:
 - no generic city skyline,
 - no decorative abstract technology wallpaper,
 - no distorted Chinese text,
+- no missing, rewritten, translated, or extra cover text,
 - no unrelated lab scene,
 - no private partner or project branding.
 - no fake software UI, fake map label, or fake publication claim.
@@ -146,7 +147,7 @@ or a paired cover brief:
 - candidate count,
 - selected candidate ID,
 - user-confirmed cover text choice,
-- selected text mode: `none`, `image-gen-text`, or `programmatic-overlay`,
+- selected text mode: `image-gen-text`,
 - rejected candidate reasons,
 - source candidate path,
 - final cover path,

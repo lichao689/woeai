@@ -37,12 +37,11 @@ the article and API path, then use this skill for the cover stage.
 3. Before generating or selecting any cover image, run the mandatory cover-text
    confirmation gate below. Record the confirmed text choice in the cover brief
    or review note before proceeding.
-4. Generate or select candidate images only from public-safe prompts and
-   approved sources. Produce at least two candidate families when possible:
-   no-text editorial visuals and short-text editorial visuals. Direct
-   image-generation text is allowed as an experiment, but reject any candidate
-   with distorted, misspelled, low-contrast, or unreadable text. Use
-   deterministic programmatic text overlay when exact Chinese wording matters.
+4. Generate cover candidates only through the image-generation route with the
+   confirmed cover text embedded in the image. Produce at least three
+   image-gen-text candidates in each round. Reject any candidate with
+   distorted, misspelled, incomplete, rewritten, low-contrast, or unreadable
+   Chinese text.
 5. Store public-safe cover outputs under
    `wechat/assets/public-safe/<publication_ref>/`. Keep private experiments
    under ignored local paths such as `wechat/.local/`.
@@ -65,8 +64,7 @@ the article and API path, then use this skill for the cover stage.
    - candidate count,
    - selected candidate ID,
    - user-confirmed cover text choice,
-   - selected text mode: `none`, `image-gen-text`, or
-     `programmatic-overlay`,
+   - selected text mode: `image-gen-text`,
    - rejected candidate reasons,
    - cover source or prompt,
    - generation tool,
@@ -82,12 +80,17 @@ the article and API path, then use this skill for the cover stage.
    - `python wechat/tools/wechat_draft.py dry-run --publication-ref <ref>`
      when the draft API path should see the selected cover.
 
+If all candidates in a round fail because the text is wrong, unreadable, or the
+visual is not article-specific, retry once with the same confirmed text. If two
+rounds fail, stop and ask the user to confirm shorter or clearer cover text.
+Do not use no-text covers or post-generation text overlays as fallbacks.
+
 ## Mandatory Cover-Text Confirmation
 
 Before any new cover-generation round, ask the user to choose the exact text
 plan that may appear on the cover. Do this after extracting the brief and before
-calling an image-generation tool, selecting a candidate, or applying text
-overlay. Do not infer approval from silence or from a generic "continue".
+calling an image-generation tool or selecting a candidate. Do not infer
+approval from silence or from a generic "continue".
 
 Present exactly five concrete cover-text combinations plus one custom-text
 option, then wait for the user's reply. The first five options should be ready
@@ -100,20 +103,24 @@ to use on the cover, not abstract text modes:
 5. `category tag` + a more method- or finding-focused `8-14 character Chinese hook`.
 6. Custom cover text supplied by the user.
 
-Use the article category from `wechat/STYLE.md` when suggesting category tags,
-and derive hooks only from public-safe article wording or the cover brief. A
-short optional subtitle may be included only when it is needed for meaning and
-is likely to remain readable in the small-thumbnail preview. If the user chooses
-custom text, ask for the exact category tag, hook, and optional subtitle before
-continuing. If the user asks for no text instead of choosing one of the six
-options, confirm the no-text plan before continuing.
+Use the article category from `wechat/STYLE.md` when suggesting category tags.
+Each option should follow this structure:
+
+`category tag | main hook / optional subtitle`
+
+The category tag must be `数值风洞`, `结构抗风`, or `漂浮风电`. Derive hooks only
+from public-safe article wording or the cover brief. Keep the main hook short,
+preferably 6-12 Chinese characters. Include a subtitle only when it helps the
+meaning and is likely to remain readable in the small-thumbnail preview. If the
+user chooses custom text, ask for the exact category tag, hook, and optional
+subtitle before continuing. If the user asks for a no-text cover, explain that
+this skill requires confirmed cover text and ask them to choose or provide text.
 
 Record the confirmed choice in the cover brief or review note with:
 
 - `cover_text_confirmation: user-confirmed`,
 - `confirmed_cover_text`,
-- `confirmed_text_mode`: `none`, `image-gen-text`, or
-  `programmatic-overlay`,
+- `confirmed_text_mode`: `image-gen-text`,
 - `confirmation_note`: short public-safe note such as "confirmed in chat".
 
 ## Cover Quality Rules
@@ -121,8 +128,8 @@ Record the confirmed choice in the cover brief or review note with:
 - Make the visual specific to the article, not generic science decoration.
 - Keep the main subject centered for square and share-card crops.
 - Make the main subject recognizable in one second on a phone-sized thumbnail.
-- Use short cover text only when it improves click appeal and remains readable.
-  Prefer a category tag plus an 8-14 character Chinese hook; do not repeat the
+- Every final cover must include the confirmed cover text generated directly in
+  the image. Prefer a category tag plus a short Chinese hook; do not repeat the
   full article title.
 - Use paper figures as source inspiration only when they remain legible as a
   cover; do not use a detailed paper figure as the default cover.
@@ -142,21 +149,3 @@ Record the confirmed choice in the cover brief or review note with:
 Use `scripts/cover_preview.py` from the repository root. It outputs a local HTML
 candidate comparison board under `wechat/.local/cover-previews/` and prints
 dimension, ratio, file-size, label, and optional score metadata.
-
-Use `scripts/cover_text_overlay.py` for deterministic text overlay when a
-runtime with Pillow is available:
-
-```bash
-python .agents/skills/wechat-cover/scripts/cover_text_overlay.py \
-  wechat/.local/cover-candidates/<publication_ref>/base.png \
-  wechat/.local/cover-candidates/<publication_ref>/with-text.png \
-  --category 数值风洞 \
-  --hook 让城市风场更快可算
-```
-
-If system `python3` lacks Pillow, use the Codex bundled Python reported by
-`codex_app.load_workspace_dependencies` instead of installing packages into the
-repository.
-
-If Pillow is unavailable, the script returns a JSON dependency error instead
-of silently producing a low-quality cover.

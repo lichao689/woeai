@@ -15,21 +15,23 @@
 
 ## 选中方案
 
-- selected candidate: `cover-wechat-900x383-v3`
+- selected candidate: `cover-wechat-900x383-imagegen-v2`
 - cover_text_confirmation: user-confirmed
 - confirmed_cover_text: `结构抗风 | 楼层矢量极值 / 高层风振如何算准`
-- confirmed_text_mode: `programmatic-overlay`
-- confirmation_note: confirmed in chat after 5+1 cover-text choice test
-- selected text mode: `programmatic-overlay`
+- confirmed_text_mode: `image-gen-text`
+- confirmation_note: confirmed in chat after 5+1 cover-text choice test; user selected the second image-gen candidate for draft update
+- selected text mode: `image-gen-text`
 - requested exact cover text: `结构抗风 | 楼层矢量极值 / 高层风振如何算准`
-- generation tool: Codex image generation tool for no-text base + `cover_text_overlay.py`
+- generation tool: Codex image generation tool
 - prompt scene: 高层建筑风致二维矢量响应、角点加速度、风工程图解
-- source candidate path: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-v3-base.png`
-- final cover path: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-v3.png`
-- previous generated cover: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v1.png`
+- source candidate path: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v2b.png`
+- final cover path: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v2.png`
+- current draft cover before update: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v1.png`
+- generated candidate set: `cover-wechat-900x383-imagegen-v2a.png`, `cover-wechat-900x383-imagegen-v2b.png`, `cover-wechat-900x383-imagegen-v2c.png`
+- superseded local experiment: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-v4.png`; rejected because the post-generation text workflow was removed
 - previous fallback cover: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-v1.png`
 - dimensions: `900 x 383 px`
 - local contact sheet: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`
-- local crop preview: `wechat/.local/cover-previews/ref-yang2025-JBE-v3-cover-preview.html`
-- approval state: local visual text check and crop preview passed; WeChat backend mobile preview pending
-- draft state: existing WeChat draft still uses the previous generated cover and needs explicit update confirmation after regeneration
+- local crop preview: `wechat/.local/cover-previews/ref-yang2025-JBE-imagegen-v2-cover-preview.html`
+- approval state: user selected the second image-gen candidate; local crop preview passed; WeChat backend mobile preview not yet checked
+- draft state: existing WeChat draft updated with `cover-wechat-900x383-imagegen-v2.png`; WeChat backend mobile preview not yet checked

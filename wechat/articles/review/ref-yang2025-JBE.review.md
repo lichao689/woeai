@@ -173,27 +173,30 @@ wechat_backend_preview_checked: false
 
 ## 封面图
 
-- 封面状态: regenerated with programmatic-overlay; pending WeChat backend mobile preview and live draft update
-- 候选数量: 3 concept directions documented in `wechat/articles/review/ref-yang2025-JBE.cover-brief.md`; 1 no-text base plus 1 programmatic-overlay cover exported
-- 选中候选: `cover-wechat-900x383-v3`
+- 封面状态: regenerated with image-gen-text; user selected the second candidate for live draft update
+- 候选数量: 3 concept directions documented in `wechat/articles/review/ref-yang2025-JBE.cover-brief.md`; 3 image-gen-text candidates generated in this round
+- 选中候选: `cover-wechat-900x383-imagegen-v2`
 - 用户确认封面文字: `结构抗风 | 楼层矢量极值 / 高层风振如何算准`
 - cover_text_confirmation: user-confirmed
 - confirmed_cover_text: `结构抗风 | 楼层矢量极值 / 高层风振如何算准`
-- confirmed_text_mode: `programmatic-overlay`
-- confirmation_note: confirmed in chat after 5+1 cover-text choice test
-- 文字模式: programmatic-overlay
-- 生成工具: Codex image generation tool for no-text base + `cover_text_overlay.py`
+- confirmed_text_mode: `image-gen-text`
+- confirmation_note: confirmed in chat after 5+1 cover-text choice test; user selected the second image-gen candidate for draft update
+- 文字模式: image-gen-text
+- 生成工具: Codex image generation tool
 - 图像生成场景: 高层建筑风致二维矢量响应、角点加速度、风工程图解
 - 要求文字: `结构抗风 | 楼层矢量极值 / 高层风振如何算准`
-- 无字底图: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-v3-base.png`
 - 备用封面: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-v1.png`
-- 上一版生成封面: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v1.png`
-- 封面素材: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-v3.png`
+- 当前草稿封面更新前: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v1.png`
+- 候选 A: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v2a.png`
+- 候选 B: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v2b.png`
+- 候选 C: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v2c.png`
+- 已废弃本地实验: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-v4.png`; rejected because the post-generation text workflow was removed
+- 封面素材: `wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v2.png`
 - 尺寸: `900 x 383 px`
 - 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`
-- 本地裁剪预览: `wechat/.local/cover-previews/ref-yang2025-JBE-v3-cover-preview.html`
-- 审核状态: local visual text check and crop preview passed; WeChat backend mobile preview pending
-- 草稿状态: existing WeChat draft still uses the previous generated cover; update requires explicit confirmation after regeneration
+- 本地裁剪预览: `wechat/.local/cover-previews/ref-yang2025-JBE-imagegen-v2-cover-preview.html`
+- 审核状态: user selected the second image-gen candidate; local crop preview passed; WeChat backend mobile preview not yet checked
+- 草稿状态: existing WeChat draft updated with `cover-wechat-900x383-imagegen-v2.png` at 2026-06-10T23:32:13+08:00; WeChat backend mobile preview not yet checked
 - 注意: `cover_image_checked` remains `false` until the WeChat backend mobile preview is checked.
 
 ## 公开安全

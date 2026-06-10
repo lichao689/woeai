@@ -5,7 +5,7 @@
 结构抗风 | 别只看单方向峰值：高层建筑二维矢量响应极值怎么算
 ===========================================================
 
-.. image:: ../../../wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-v3.png
+.. image:: ../../../wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v2.png
    :alt: 结构抗风 | 别只看单方向峰值：高层建筑二维矢量响应极值怎么算
    :align: center
    :width: 100%

@@ -27,6 +27,42 @@ rtd_page_checked: false
 - Zotero:
 - PDF / 作者稿:
 
+## 源文件获取记录
+
+- Zotero 元数据: pending / checked via Zotero Desktop Local API
+- Zotero 附件记录: pending / checked via Zotero Desktop Local API
+- 本地 PDF 附件: pending / exists / missing
+- PDF 附件候选: single / multiple / none
+- PDF 选择优先级: author manuscript > publisher version of record > OA platform PDF > preprint > other
+- 已选 PDF 类型: author manuscript / publisher version of record / OA platform PDF / preprint / other / unavailable
+- 低优先级选择原因: not applicable / higher-priority source missing / unreadable / legally unsafe / visually unsuitable
+- PDF 来源类型: Zotero local attachment / Zotero Web API `/file` / user-provided author manuscript / approved OA PDF / unavailable
+- PDF 私有存放: not recorded / Zotero private attachment / `wechat/.local/<publication_ref>/...`
+- Zotero Web API `/file`: not needed / attempted / unavailable / failed
+- 网页 PDF 下载: not used / explicitly approved public legal source
+- 网页 PDF 批准记录: not applicable / approved by user on YYYY-MM-DD for <source label>
+- 摘要依据: Zotero `abstractNote` / PDF abstract / author manuscript / unavailable
+- 正文证据依据: PDF body / author manuscript / public metadata only / unavailable
+- 图片依据: PDF embedded figures / author manuscript figures / generated/redrawn / unavailable
+- 备注: do not record absolute private file paths, API keys, cookies, or downloaded PDF contents in this public repository
+
+## 关键事实证据定位记录
+
+- 摘要:
+  - 文章使用:
+  - 证据位置: Zotero `abstractNote` / PDF file page / author manuscript / pending PDF page audit
+- 核心结论:
+  - 文章使用:
+  - 证据位置: PDF file page / section / table / pending PDF page audit
+- 关键图:
+  - 文章使用:
+  - 证据位置: PDF file page / original figure number / pending PDF page audit
+- 关键公式:
+  - 文章使用:
+  - 证据位置: PDF file page / original equation number / editorial explanatory formula based on paper evidence / pending PDF page audit
+- 页码口径: use PDF file page numbers, not journal printed page numbers or article pagination
+- 备注: record evidence anchors, not long copied PDF passages or absolute private paths
+
 ## 图片使用记录
 
 1. Figure:

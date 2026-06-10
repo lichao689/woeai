@@ -55,6 +55,49 @@ rtd_page_checked: true
 - 摘要来源: Zotero Local API `abstractNote`; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
 - PDF / 作者稿: 用户确认其为论文作者，可以直接使用该论文 PDF 中的图片；本稿图片已从 PDF 内嵌图片条带抽取并拼接为正文素材。
 
+## 源文件获取记录
+
+- Zotero key: `CGKPKZ8I`
+- Zotero 元数据: checked via Zotero Desktop Local API
+- Zotero 附件记录: checked via Zotero Desktop Local API
+- 本地 PDF 附件: exists
+- PDF 附件候选: not fully enumerated in this review note; used the available Zotero local paper PDF already checked for this article
+- PDF 选择优先级: author manuscript > publisher version of record > OA platform PDF > preprint > other
+- 已选 PDF 类型: Zotero local paper PDF; treated as the article's usable paper PDF for body evidence and figure extraction
+- 低优先级选择原因: not applicable; no lower-priority web/preprint source was used
+- PDF 来源类型: Zotero local attachment; author-confirmed WOEAI/user-authored paper
+- PDF 私有存放: Zotero private attachment / local private working copy; no PDF committed to this public repository
+- Zotero Web API `/file`: not needed
+- 网页 PDF 下载: not used
+- 网页 PDF 批准记录: not applicable
+- 摘要依据: Zotero `abstractNote`, with faithful Chinese translation and original English abstract kept in the public article
+- 正文证据依据: paper PDF body and public publication metadata
+- 图片依据: PDF embedded figures extracted from the paper PDF
+- 私有信息边界: no absolute private file path, credential, cookie, raw API payload, or downloaded PDF content is recorded here
+
+## 关键事实证据定位记录
+
+- 摘要:
+  - 文章使用: 中文摘要为英文原摘要的忠实翻译，并附英文原摘要。
+  - 证据位置: Zotero Desktop Local API `abstractNote`; PDF abstract location: `pending PDF page audit`.
+- 核心结论: 预计算 CFD 数据库将中尺度气象输入、微尺度 CFD 计算和数据库组织连接起来，用于快速城市微尺度风环境预测。
+  - 证据位置: PDF file page 04, Fig. 1; paper workflow and WRF/CFD/database discussion around Sections 3.2-3.3.
+- 核心结论: 深圳研究区域按 `1 km x 1 km` 区块组织，并以区块模拟结果构建可调用数据库。
+  - 证据位置: PDF file page 05, Fig. 2; Section 3.3.1 text on block division and computational domain.
+- 核心结论: 验证部分使用气象自动站数据、90°/120°主风向和不同风速阈值，`11 m/s` 阈值用于高风速条件比较。
+  - 证据位置: PDF file page 18, Fig. 21 and Table 7; validation discussion below Fig. 21.
+- 核心结论: WebGIS 平台展示风速和风压数据，使预计算 CFD 数据库进入可视化和工程沟通场景。
+  - 证据位置: PDF file page 22, Fig. 25; text above Section 5.4 describing Cesium/WebGIS visualization.
+- 关键图:
+  - Fig. 1 `Workflow of the proposed framework`: PDF file page 04; used as article Figure 1.
+  - Fig. 2 `Schematic diagram of block division of buildings in Shenzhen`: PDF file page 05; used as article Figure 2.
+  - Fig. 21 `Locations and observation environment of meteorological automatic stations`: PDF file page 18; used as article Figure 21.
+  - Fig. 25 `Visual representation of wind speed and wind pressure data on WebGIS`: PDF file page 22; used as article Figure 25.
+- 关键公式:
+  - Article formula `E = (K_CFD - K_m) / K_m x 100%`: editorial explanatory formula added in the WeChat article to explain wind-speed-ratio relative error. It is not recorded here as a numbered paper equation. The paper evidence it explains is the field-validation comparison around PDF file page 18 and the subsequent validation discussion.
+  - Paper Eq. (10) on PDF file page 22 is visible in the source page but is not used in the current WeChat article body.
+- 页码审计依据: local ignored PDF file page renders under `wechat/.local/ref-zhao2026-BS/pdf-pages/` were used only for evidence-location audit; no absolute private source PDF path is recorded.
+
 ## 封面图
 
 - 封面状态: approved for first API test, pending WeChat backend preview

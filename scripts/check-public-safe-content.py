@@ -24,6 +24,10 @@ PUBLIC_DRAFT_FORBIDDEN_PATTERNS = [
     ("figure_plan", re.compile(r"计划配图")),
     ("pre_publish_checklist", re.compile(r"发布前人工复核项|发布前任务")),
 ]
+REVIEW_REQUIRED_SECTIONS = [
+    "## 源文件获取记录",
+    "## 关键事实证据定位记录",
+]
 TEXT_SUFFIXES = {".json", ".md", ".rst", ".txt", ".yaml", ".yml"}
 TEXT_FILENAMES = {".env"}
 
@@ -50,8 +54,57 @@ def is_reader_facing_draft(path: Path, root: Path) -> bool:
     return len(parts) >= 3 and parts[:3] == ("articles", "draft-public-safe", path.name)
 
 
-def main() -> int:
+def is_review_note(path: Path, root: Path) -> bool:
+    parts = path.relative_to(root).parts
+    return len(parts) >= 3 and parts[0] == "articles" and parts[1] == "review" and path.name.endswith(".review.md")
+
+
+def scan_path(path: Path, root: Path) -> list[str]:
     findings: list[str] = []
+    text = path.read_text(encoding="utf-8")
+    for label, pattern in SECRET_PATTERNS:
+        for match in pattern.finditer(text):
+            line_no = text.count("\n", 0, match.start()) + 1
+            rel = path.relative_to(ROOT)
+            findings.append(f"{rel}:{line_no}: possible secret pattern ({label})")
+    if is_reader_facing_draft(path, root):
+        for label, pattern in PUBLIC_DRAFT_FORBIDDEN_PATTERNS:
+            for match in pattern.finditer(text):
+                line_no = text.count("\n", 0, match.start()) + 1
+                rel = path.relative_to(ROOT)
+                findings.append(f"{rel}:{line_no}: reader draft contains editor-only content ({label})")
+    if is_review_note(path, root):
+        rel = path.relative_to(ROOT)
+        for section in REVIEW_REQUIRED_SECTIONS:
+            if section not in text:
+                label = section.replace("## ", "", 1)
+                findings.append(f"{rel}:1: review note missing required section ({label})")
+    return findings
+
+
+def root_for_path(path: Path) -> Path | None:
+    resolved = path.resolve()
+    for root in SCAN_ROOTS:
+        try:
+            resolved.relative_to(root.resolve())
+        except ValueError:
+            continue
+        return root
+    return None
+
+
+def collect_findings(paths: list[Path] | None = None) -> list[str]:
+    findings: list[str] = []
+    if paths is not None:
+        for raw_path in paths:
+            path = raw_path.resolve()
+            root = root_for_path(path)
+            if root is None or should_skip(path, root) or not path.is_file():
+                continue
+            if is_scannable_text_path(path):
+                findings.extend(scan_path(path, root))
+        return findings
+
     for root in SCAN_ROOTS:
         if not root.exists():
             continue
@@ -60,18 +113,12 @@ def main() -> int:
                 continue
             if not is_scannable_text_path(path):
                 continue
-            text = path.read_text(encoding="utf-8")
-            for label, pattern in SECRET_PATTERNS:
-                for match in pattern.finditer(text):
-                    line_no = text.count("\n", 0, match.start()) + 1
-                    rel = path.relative_to(ROOT)
-                    findings.append(f"{rel}:{line_no}: possible secret pattern ({label})")
-            if is_reader_facing_draft(path, root):
-                for label, pattern in PUBLIC_DRAFT_FORBIDDEN_PATTERNS:
-                    for match in pattern.finditer(text):
-                        line_no = text.count("\n", 0, match.start()) + 1
-                        rel = path.relative_to(ROOT)
-                        findings.append(f"{rel}:{line_no}: reader draft contains editor-only content ({label})")
+            findings.extend(scan_path(path, root))
+    return findings
+
+
+def main() -> int:
+    findings = collect_findings()
     if findings:
         print("Public-safety check failed:", file=sys.stderr)
         for finding in findings:

@@ -4,6 +4,37 @@
 
 - [ ] Zotero Desktop Local API metadata, DOI, and `abstractNote` have been checked.
 - [ ] Zotero Desktop Local API attachment records have been checked.
+- [ ] The review note contains a public-safe `源文件获取记录` section.
+- [ ] `scripts/check-public-safe-content.py` will fail if this section is
+  missing from the review note.
+- [ ] The source-acquisition record states the Zotero key, metadata source,
+  attachment-record status, local PDF status, PDF source type, and whether
+  Zotero Web API `/file` was attempted.
+- [ ] If multiple PDF-like attachments exist, the review note records the
+  selected attachment class using this priority: author manuscript, publisher
+  version of record, OA platform PDF, preprint, then other.
+- [ ] If a lower-priority PDF source was used, the review note explains why the
+  higher-priority source was not used.
+- [ ] Bibliographic fields are taken from Zotero metadata and the official
+  published record, not overwritten by a lower-priority PDF such as a preprint.
+- [ ] The review note contains a public-safe `关键事实证据定位记录` section.
+- [ ] `scripts/check-public-safe-content.py` will fail if this section is
+  missing from the review note.
+- [ ] The evidence-location record covers the abstract, core claims or
+  conclusions, key figures, and key formulas.
+- [ ] Evidence page references use PDF file page numbers, written as
+  `PDF file page N`, not journal printed page numbers or article pagination.
+- [ ] Key figures include PDF file page and original figure number when
+  available.
+- [ ] Key formulas include PDF file page and equation number when they are
+  original paper formulas; editorial explanatory formulas are clearly marked as
+  such.
+- [ ] Missing page audits are marked `pending PDF page audit` rather than
+  guessed.
+- [ ] The source-acquisition record states whether any web PDF download was
+  used. If yes, it records explicit user approval and the public/legal source.
+- [ ] The source-acquisition record does not expose absolute private file
+  paths, API keys, cookies, raw downloaded PDF contents, or private credentials.
 - [ ] Local PDF attachment exists and was used for PDF-derived abstract, figures, captions, and body evidence; or the review note records why it was unavailable.
 - [ ] If local PDF was unavailable, Zotero Web API `/file` access was tried when credentials were available.
 - [ ] If no PDF source was available, the review note records `需要同步 PDF 或提供作者稿` and the draft does not invent PDF-derived facts.

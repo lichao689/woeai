@@ -134,6 +134,10 @@ class PublicSafeContentTests(unittest.TestCase):
                 "---\n"
                 "formula_preview_checked: false\n"
                 "---\n\n"
+                "## 源文件获取记录\n\n"
+                "- Zotero key: EXAMPLE\n\n"
+                "## 关键事实证据定位记录\n\n"
+                "- 摘要: pending PDF page audit\n\n"
                 "## 发布前任务\n\n"
                 "- 图片状态: pending original high-resolution figure\n",
                 encoding="utf-8",
@@ -144,6 +148,27 @@ class PublicSafeContentTests(unittest.TestCase):
             self.assertEqual(result, 0)
             self.assertIn("Public-safety check passed", stdout)
             self.assertEqual(stderr, "")
+
+    def test_review_note_requires_source_and_evidence_sections(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "repo"
+            wechat_root = root / "wechat"
+            review_dir = wechat_root / "articles" / "review"
+            review_dir.mkdir(parents=True)
+            (review_dir / "ref-example.review.md").write_text(
+                "---\n"
+                "formula_preview_checked: false\n"
+                "---\n\n"
+                "## 发布前任务\n\n"
+                "- 图片状态: pending original high-resolution figure\n",
+                encoding="utf-8",
+            )
+
+            result, _stdout, stderr = self.run_checker(root, wechat_root)
+
+            self.assertEqual(result, 1)
+            self.assertIn("review note missing required section (源文件获取记录)", stderr)
+            self.assertIn("review note missing required section (关键事实证据定位记录)", stderr)
 
 
 if __name__ == "__main__":

@@ -191,7 +191,10 @@ python wechat/tools/wechat_draft.py dry-run --publication-ref ref-zhao2026-BS --
 `ip-check` shows the current public egress IP without reading credentials or
 contacting WeChat; it is diagnostic only and is not a live-run gate.
 `preflight` runs the same article and asset validation used by `dry-run`
-without reading credentials or contacting WeChat.
+without reading credentials or contacting WeChat. Both commands run
+`scripts/check-public-safe-content.py` against the target article and review
+note, including the required `源文件获取记录` and `关键事实证据定位记录` section
+check.
 `token-check` reads the private credential file, requests or reuses an
 `access_token`, caches it outside the repository, and never prints the token.
 `dry-run` does not read credentials and does not contact WeChat; it lists the
@@ -213,6 +216,8 @@ Live commands read private credentials, upload the approved cover image and
 approved body images, replace local Markdown image paths with WeChat image
 URLs in the submitted HTML, create or update the WeChat backend draft, and then
 write only non-sensitive draft metadata back to `wechat/backlog/selected-papers.yml`.
+Before reading credentials or uploading images, live commands run the same
+target article/review public-safety validation as `preflight`.
 They do not run a local fixed-IP guard by default. If WeChat rejects the token
 or draft request with an IP-allowlist error, use the IP reported by WeChat as
 the next action item.
@@ -386,3 +391,44 @@ Use this order for WOEAI paper articles:
 5. If neither local attachment nor Web API file access is available, record
    `需要同步 PDF 或提供作者稿` in the review note and do not invent PDF-derived
    facts.
+
+This is not a general web-scraping workflow. Do not automatically scrape or
+download PDFs from publisher pages, DOI landing pages, Google Scholar,
+ResearchGate, Sci-Hub, search results, or other general web pages. Web pages
+may be used to verify public metadata only. A web PDF may be downloaded only
+after the user explicitly approves a specific public and legal source, such as
+an OA PDF, an author manuscript, or a user-provided download link. Keep such
+downloads under ignored private working paths such as
+`wechat/.local/<publication_ref>/`, never commit the PDF to the public
+repository, and record the source and approval status in the review note.
+
+Every article review note must include a public-safe `源文件获取记录` section.
+Use it to record the Zotero key, metadata source, attachment-record status,
+local PDF status, PDF source type, private-storage class, Zotero Web API
+`/file` status, web-download status, abstract source, body-evidence source, and
+figure source. Do not record absolute private file paths, credentials, cookies,
+raw API payloads, or downloaded PDF contents in committed files.
+
+When a Zotero item has multiple PDF-like attachments, choose the PDF evidence
+source in this order: author final manuscript / author manuscript, publisher
+version of record PDF, open-access platform PDF, preprint, then other
+attachments. Record the selected class in the review note. If a lower-priority
+source is used, explain why the higher-priority source was missing, unreadable,
+legally unsafe, or visually unsuitable. Journal, year, volume, issue, pages,
+DOI, and publication status still come from Zotero metadata and the official
+published record.
+
+Every article review note must also include a public-safe
+`关键事实证据定位记录` section. It should not annotate every sentence, but it
+must record evidence anchors for the abstract, core claims or conclusions, key
+figures, and key formulas. Use PDF file page, section, table, original figure
+number, or original equation number when available. If a WeChat article formula
+is an editorial explanation rather than a numbered paper equation, record that
+distinction and point to the paper evidence it explains. Mark unaudited pages
+as `pending PDF page audit` instead of guessing. Evidence locations use PDF
+file page numbers, written as `PDF file page N`, not journal printed page
+numbers or article pagination.
+
+`scripts/check-public-safe-content.py` enforces that every
+`wechat/articles/review/*.review.md` file includes both `## 源文件获取记录` and
+`## 关键事实证据定位记录`.

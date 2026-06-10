@@ -104,6 +104,18 @@ def load_renderer() -> Any:
     return module
 
 
+def load_public_safety_checker() -> Any:
+    checker_path = REPO_ROOT / "scripts/check-public-safe-content.py"
+    spec = importlib.util.spec_from_file_location("woeai_check_public_safe_content", checker_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError(f"Cannot load public-safety checker: {checker_path}")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    if not hasattr(module, "collect_findings"):
+        raise RuntimeError(f"Public-safety checker has no collect_findings(): {checker_path}")
+    return module
+
+
 def validate_theme(theme: str) -> str:
     if theme not in AVAILABLE_THEMES:
         options = ", ".join(AVAILABLE_THEMES)
@@ -608,6 +620,19 @@ def validate_context(ctx: ArticleContext) -> list[dict[str, Any]]:
     for image in ctx.body_images:
         if not image.path.exists():
             problems.append({"kind": "missing_image", "alt": image.alt, "path": repo_relative(image.path)})
+    try:
+        checker = load_public_safety_checker()
+        findings = checker.collect_findings([ctx.article_path, ctx.review_path])
+        for finding in findings:
+            problems.append({"kind": "public_safety", "message": finding})
+    except Exception as exc:
+        problems.append(
+            {
+                "kind": "public_safety_check_error",
+                "error_type": type(exc).__name__,
+                "message": str(exc),
+            }
+        )
     return problems
 
 
@@ -712,6 +737,8 @@ def dry_run_summary(ctx: ArticleContext) -> dict[str, Any]:
         "content_source_url": ctx.content_source_url,
         "theme": ctx.theme,
         "math_renderer": ctx.math_renderer,
+        "public_safety_check": repo_relative(REPO_ROOT / "scripts/check-public-safe-content.py"),
+        "public_safety_scope": [repo_relative(ctx.article_path), repo_relative(ctx.review_path)],
         "cover": file_summary(ctx.cover_path),
         "body_images": [
             {"alt": image.alt, "markdown_src": image.raw_src, **file_summary(image.path)}

@@ -79,6 +79,45 @@ Use this Zotero-first order before drafting:
 5. If Web API file access also fails, record `需要同步 PDF 或提供作者稿` in the
    review note and do not invent PDF-derived facts.
 
+Do not automatically scrape or download PDFs from publisher pages, DOI landing
+pages, Google Scholar, ResearchGate, Sci-Hub, search results, or other general
+web pages. Use web pages only for public metadata checks unless the user
+explicitly approves a specific public and legal PDF source, such as an OA PDF,
+an author manuscript, or a user-provided download link. Store approved web
+downloads only under ignored private working paths such as
+`wechat/.local/<publication_ref>/`, and record the source, approval, and reuse
+status in the review note.
+
+Every article review note must include a public-safe `源文件获取记录` section.
+Record the Zotero key, metadata source, attachment-record status, local PDF
+status, PDF source type, private-storage class, Zotero Web API `/file` status,
+web-download status, abstract source, body-evidence source, and figure source.
+Do not record absolute private file paths, credentials, cookies, raw API
+payloads, or downloaded PDF contents in committed files.
+
+When a Zotero item has multiple PDF-like attachments, choose the PDF evidence
+source in this order: author final manuscript / author manuscript, publisher
+version of record PDF, open-access platform PDF, preprint, then other
+attachments. Record the selected attachment class in the review note. If a
+lower-priority source is used, explain why the higher-priority source was
+missing, unreadable, legally unsafe, or visually unsuitable. Bibliographic
+fields such as journal, year, volume, issue, pages, DOI, and publication status
+still come from Zotero metadata and the official published record.
+
+Every review note must include a public-safe `关键事实证据定位记录` section.
+Do not mark every sentence, but record evidence anchors for the abstract, core
+claims or conclusions, key figures, and key formulas. Use PDF file page,
+section, table, original figure number, or original equation number when
+available. If a formula is added as an editorial explanation in the WeChat
+article rather than copied from a numbered paper equation, record that
+distinction and point to the paper evidence it explains. If exact pages have
+not been audited, mark them as `pending PDF page audit` rather than guessing.
+Evidence locations use PDF file page numbers, written as `PDF file page N`,
+not journal printed page numbers or article pagination.
+
+The public-safety script must fail a review note that omits either
+`## 源文件获取记录` or `## 关键事实证据定位记录`.
+
 ## Tone
 
 - Scholarly first.

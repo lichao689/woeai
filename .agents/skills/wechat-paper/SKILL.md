@@ -42,6 +42,61 @@ Use this Zotero-first order for WOEAI paper articles:
    `需要同步 PDF 或提供作者稿` in the review note and do not invent PDF-derived
    facts.
 
+Do not automatically scrape or download PDFs from publisher pages, DOI landing
+pages, Google Scholar, ResearchGate, Sci-Hub, search results, or other general
+web pages. Web pages may be used only to verify public metadata such as DOI,
+journal page, or open website records. A web PDF may be downloaded only when
+the user explicitly approves a specific public and legal source, such as an OA
+PDF, an author manuscript, or a user-provided download link. Store any such
+download under an ignored private working path, such as
+`wechat/.local/<publication_ref>/`, never commit the PDF to the public
+repository, and record the source and approval status in the review note.
+
+Every paper article review note must contain a public-safe `源文件获取记录`
+section. Record at least: Zotero item key, metadata source, attachment-record
+status, local PDF status, PDF source type, private-storage class, whether
+Zotero Web API `/file` was attempted, whether any web PDF download was used,
+abstract source, body-evidence source, and figure source. Do not record absolute
+private file paths, credentials, cookies, raw API payloads, or downloaded PDF
+contents in the public repository.
+
+When a Zotero item has multiple PDF-like attachments, choose the source used
+for PDF-derived body evidence and figures in this order:
+
+1. author final manuscript / author manuscript,
+2. publisher version of record PDF,
+3. open-access platform PDF,
+4. preprint,
+5. other attachments.
+
+If a lower-priority attachment is used because a higher-priority one is
+missing, unreadable, legally unsafe, or visually unsuitable, record that reason
+in the review note. Formal bibliographic fields such as journal, year, volume,
+issue, pages, DOI, and publication status still come from Zotero metadata and
+the official published record, not from a preprint or other lower-priority PDF.
+
+Every review note must also contain a public-safe `关键事实证据定位记录`
+section. Do not annotate every sentence, but record enough anchors for fast
+human review:
+
+- abstract source and location,
+- core claims or conclusions and their PDF file page, section, table, or
+  paragraph location,
+- key figures with PDF file page and original figure number,
+- key formulas with PDF file page and equation number when they are original
+  paper formulas; if a formula is an editorial explanatory formula added for
+  the WeChat article, record it as such and point to the paper evidence it
+  explains.
+
+If exact PDF file pages have not been audited yet, mark the page as
+`pending PDF page audit` instead of guessing. These evidence-location records
+must stay public-safe: do not include absolute private paths or raw copied PDF
+content.
+Use PDF file page numbers for evidence locations, written as `PDF file page N`.
+Do not use journal printed page numbers or article pagination for this purpose,
+because local rendering, screenshots, and figure extraction all follow the PDF
+file page order.
+
 ## Article Unit
 
 Use one selected paper per article.
@@ -140,6 +195,10 @@ Use only these public research families and subdirections unless the user explic
     draft in the WeChat backend. Wait for explicit confirmation such as
     `确认创建公众号草稿`; vague approval such as `继续`, `可以`, or `试试` is
     not enough.
+    `wechat_draft.py dry-run`, `preflight`, `create-draft`, and `update-draft`
+    must run `scripts/check-public-safe-content.py` against the target article
+    and review note before any credential read, image upload, or WeChat API
+    draft call.
 16. Dry-run output must list the approved cover image and each approved body
     image that would be uploaded. Live runs must upload approved body images and
     replace local Markdown image paths with WeChat image URLs in the submitted
@@ -440,6 +499,22 @@ Before calling a draft ready:
 - Local PDF attachment is used when present. If it is missing, Zotero Web API
   `/file` is tried when credentials are available; if that also fails, the
   review note records `需要同步 PDF 或提供作者稿`.
+- No general web-page PDF scraping is used. If a web PDF is used, the review
+  note records the explicit user approval, public/legal source,
+  private-storage class or ignored relative path, and public-safe reuse status.
+- The review note includes a public-safe `源文件获取记录` section covering
+  Zotero key, metadata source, attachment status, local PDF status, PDF source
+  type, Zotero Web API `/file` status, web-download status, abstract source,
+  body source, and figure source.
+- If multiple PDF-like attachments exist, the review note records which
+  attachment class was selected, follows the standard priority order, and
+  explains any lower-priority selection.
+- The review note includes a public-safe `关键事实证据定位记录` section for
+  abstract source, core claims, key figures, and key formulas. Missing page
+  audits are marked pending rather than guessed.
+- `scripts/check-public-safe-content.py` fails any
+  `wechat/articles/review/*.review.md` file that omits `## 源文件获取记录` or
+  `## 关键事实证据定位记录`.
 - Research family and subdirection match `wechat/topics/`.
 - No invented collaboration, partner, project, facility, award, or metric claims appear.
 - The reader-facing article has no YAML front matter, pending fields, figure plans, private notes, or human checklist.
@@ -456,7 +531,8 @@ Before calling a draft ready:
   passes after generating the RTD companion page.
 - The relevant research-direction page exposes the RTD page under `学术进展 Academic Progress`, grouped by second-level research subdirection and sorted by publication date descending.
 - `wechat/templates/review-checklist.md` is satisfied or remaining items are explicitly marked in the review note.
-- `scripts/check-public-safe-content.py` passes.
+- `scripts/check-public-safe-content.py` passes, including the required review
+  note section check.
 - Markdown/path checks pass for the article and review files, including checking that reader-facing image links resolve to public-safe assets when images are inserted.
 - `./scripts/check-docs.sh` is not required for pure WeChat article/review updates because those files are not Sphinx pages. Run docs checks only when the task also changes Sphinx pages, Sphinx config, website data generation, publication pages, or other site-build inputs.
 

@@ -1,11 +1,8 @@
 # WOEAI WeChat Themes
 
-WOEAI has two theme surfaces:
-
-1. API renderer themes, used by `wechat/tools/render-copy-ready.py` and
-   `wechat/tools/wechat_draft.py` when submitting HTML through the official
-   WeChat draft API.
-2. doocs/md CSS themes, used only for manual preview and copy-paste fallback.
+WOEAI maintains API renderer themes, used by
+`wechat/tools/render-copy-ready.py` and `wechat/tools/wechat_draft.py` when
+submitting HTML through the official WeChat draft API.
 
 Current API renderer theme:
 
@@ -15,11 +12,6 @@ Current API renderer theme:
 - `recruitment-friendly`: warmer direction-introduction style for
   recruitment-facing articles.
 
-Current doocs/md CSS theme:
-
-- `doocs-academic-clean.css`: manual doocs/md fallback style matching the
-  current academic-clean direction as closely as practical.
-
 Themes change presentation only. They must not change article facts, section
 order, citations, formula semantics, image approval, or public-safety
 boundaries.
@@ -27,7 +19,6 @@ boundaries.
 Promote a future preview into production only after:
 
 1. adding an API renderer theme name,
-2. adding or updating a doocs/md CSS file when manual fallback matters,
-3. generating a local preview,
-4. checking the WeChat backend mobile preview,
-5. documenting the intended article type and usage.
+2. generating a local preview,
+3. checking the WeChat backend mobile preview,
+4. documenting the intended article type and usage.

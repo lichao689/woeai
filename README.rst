@@ -10,8 +10,8 @@ purpose is ordered as:
 1. recruitment for students, postdocs, and research talent;
 2. engineering applications around wind engineering, offshore wind energy, and
    AI-enabled engineering methods;
-3. academic credibility through people, projects, academic outputs, teaching, and
-   research directions.
+3. academic credibility through academic outputs, teaching, public research
+   support, and research directions.
 
 Local Checks
 ------------
@@ -61,7 +61,7 @@ Key Paths
 - ``docs/source/EngineeringApplications.rst``: engineering applications journey.
 - ``docs/source/Research.rst``: research overview and direction hub.
 - ``docs/source/Publications.rst``: academic-output proof.
-- ``docs/source/Projects.rst``: project proof.
+- ``docs/source/Teaching.rst``: teaching and education proof.
 - ``docs/requirements.txt``: documentation build dependencies.
 - ``scripts/bump-site-release.py``: refreshes the Sphinx Site Build ID.
 - ``scripts/check-docs.sh``: strict local verification.

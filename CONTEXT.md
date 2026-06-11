@@ -128,9 +128,13 @@ _Avoid_: generic `海上风电` when the public page is specifically about float
 A WeChat Official Account article whose core unit is one selected paper. It should explain the paper's problem, method, findings, boundaries, engineering significance, DOI, and selected related direction links. It should avoid repeating a WOEAI publication-page anchor when that linked page does not add reader value beyond the article itself.
 _Avoid_: forcing every article into a multi-paper theme essay
 
+**Publication Artifact**:
+The repository-owned artifact set for one selected Public Journal Paper that has entered the one-paper publication workflow. It is keyed by `publication_ref` and may include a WeChat Article Source, review note, RTD Paper Companion Page, public-safe cover and body assets, backlog state, and a WeChat Draft Record. It is narrower than Public Journal Paper and should not imply that every Public Journal Paper has a WeChat or RTD companion artifact.
+_Avoid_: treating every bibliography entry as a Publication Artifact, or using rendered WeChat HTML, API payloads, or remote draft content as the artifact source of truth
+
 **WeChat Article Source**:
 The canonical public-safe Markdown source for a One-Paper WeChat Article before publication. WeChat HTML, rendered previews, API payloads, draft-box records, and RTD Paper Companion Pages are derived outputs and should not become the source of truth for article wording or facts.
-_Avoid_: treating rendered HTML, WeChat draft content, doocs/md previews, API payloads, or RTD pages as the canonical article source
+_Avoid_: treating rendered HTML, WeChat draft content, API payloads, or RTD pages as the canonical article source
 
 **WeChat Paper Author Line**:
 The author list shown in the `论文信息` section of a One-Paper WeChat Article. It uses the same author-marker semantics as the Chronological Publication View: the Student First Author Marker applies only to Student First Authors, and an author-name `*` marks a corresponding author.
@@ -153,8 +157,8 @@ The required human checkpoint around WeChat draft delivery and public release. A
 _Avoid_: allowing an agent, scheduled job, API script, or browser automation flow to create or publish WeChat content from vague approval such as "continue", or without human preview and manual confirmation in the WeChat backend
 
 **Official WeChat Draft API Path**:
-The primary automation path for WOEAI WeChat article delivery. It converts the WeChat Article Source and approved public-safe assets into WeChat-compatible HTML, uploads approved cover and body images through official WeChat API endpoints, creates or updates the Official Account draft, records only a WeChat Draft Record, and then stops at the Manual Publication Gate. Its default mode is a no-submit check; a real draft creation/update requires explicit live confirmation. doocs/md is an auxiliary route for theme design, formula/style preview, and manual copy-paste fallback, not the primary automated submission path.
-_Avoid_: treating doocs/md, Wechatsync, browser extensions, copied editor content, or WeChat backend HTML as the primary system of record or default automation path
+The primary automation path for WOEAI WeChat article delivery. It converts the WeChat Article Source and approved public-safe assets into WeChat-compatible HTML, uploads approved cover and body images through official WeChat API endpoints, creates or updates the Official Account draft, records only a WeChat Draft Record, and then stops at the Manual Publication Gate. Its default mode is a no-submit check; a real draft creation/update requires explicit live confirmation.
+_Avoid_: treating Wechatsync, browser extensions, copied editor content, or WeChat backend HTML as the primary system of record or default automation path
 
 **WeChat Remote Runner**:
 A small trusted machine used only to run the Official WeChat Draft API Path from a stable public egress IP. It should pull the public-safe repository content, keep WeChat credentials outside the repository, run `ip-check` or `preflight` before live draft creation/update, and stop after the draft reaches the WeChat backend for human preview.

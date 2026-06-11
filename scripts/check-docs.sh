@@ -14,6 +14,7 @@ if sys.version_info < (3, 12):
     raise SystemExit("Python 3.12+ is required for WOEAI docs checks")
 PY
 "${PYTHON_BIN}" "${ROOT_DIR}/scripts/check-public-safe-content.py"
+"${PYTHON_BIN}" "${ROOT_DIR}/tools/publications/artifacts.py" --check
 "${PYTHON_BIN}" -m unittest discover -s "${ROOT_DIR}/tests"
 "${PYTHON_BIN}" -m venv "${VENV_DIR}"
 "${VENV_DIR}/bin/python" -m pip install --upgrade pip

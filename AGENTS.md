@@ -49,8 +49,8 @@ environment and builds HTML with Sphinx warnings treated as failures.
 - `docs/source/EngineeringApplications.rst` should be the second conversion path.
 - `docs/source/Research.rst` should connect research themes to direction pages
   and academic outputs.
-- `docs/source/People.rst`, `docs/source/Projects.rst`, and
-  `docs/source/Publications.rst` are proof pages and should stay factual.
+- `docs/source/Publications.rst`, `docs/source/Teaching.rst`, and the research
+  direction pages are proof surfaces and should stay factual.
 
 ## Editing Notes
 
@@ -106,7 +106,7 @@ reviewing, or recording WOEAI WeChat Official Account cover images.
 | 2026-06-10 | `scripts/check-public-safe-content.py` 必须自动检查 `wechat/articles/review/*.review.md`；任何 review note 缺少 `## 源文件获取记录` 或 `## 关键事实证据定位记录` 时都应失败，不能只依赖人工复核发现。 | WOEAI 公众号论文文章 | 对话确认 | 新增 |
 | 2026-06-10 | `wechat/tools/wechat_draft.py dry-run`、`preflight`、`create-draft` 和 `update-draft` 必须在读取微信凭据、上传图片或调用微信草稿 API 前，对目标公众号正文和 review note 运行公开安全检查；若缺少必填 review note 小节或发现公开安全问题，必须停止。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
 | 2026-06-09 | WOEAI 公众号自动化流程只能创建或更新微信公众号草稿；不得自动发布、群发或通过浏览器自动点击发布。最终发布必须由人工在微信公众号后台预览、校对并确认。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
-| 2026-06-09 | WOEAI 公众号自动化主线采用官方微信公众号草稿 API；doocs/md 仅作为主题设计、公式/样式预览和手工复制兜底，Wechatsync 或浏览器插件不作为默认主线或内容事实源。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
+| 2026-06-11 | WOEAI 公众号自动化主线采用官方微信公众号草稿 API；不再维护第三方 Markdown 编辑器手工复制兜底路径，Wechatsync 或浏览器插件不作为默认主线或内容事实源。 | WOEAI 公众号自动化发布流程 | 对话确认 | 更新 |
 | 2026-06-09 | 微信公众号 API 凭据仅放在本机私密配置：AppID/AppSecret 存于 `~/.config/woeai/wechat_official_account.env`，`access_token` 缓存于 `~/.cache/woeai/wechat_access_token.json`；仓库不得提交、打印、记录或复制这些内容，只有用户明确要求测试 API 或创建/更新草稿时才读取。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
 | 2026-06-09 | 微信公众号 API 工具默认只做不提交检查；真实创建或更新公众号草稿前，agent 必须说明将读取私密凭据、上传已批准图片并在微信后台生成/更新草稿，且必须等用户明确确认“创建公众号草稿”后才可执行 live 命令。`继续`、`可以`、`试试` 等模糊回复不足以授权 live。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |
 | 2026-06-09 | 微信公众号 live 创建/更新草稿成功后，工具应自动把非敏感状态写回 `wechat/backlog/selected-papers.yml`：`wechat_status: ready_to_publish`、`wechat_draft_media_id`、`wechat_draft_created_at`、`wechat_draft_updated_at`。失败或仅 dry-run 时不得推进状态。 | WOEAI 公众号自动化发布流程 | 对话确认 | 新增 |

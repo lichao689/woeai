@@ -675,7 +675,7 @@ Use `wechat/articles/draft-public-safe/` only for drafts that are safe to expose
 2. Create a draft from `wechat/templates/paper-explainer.md`.
 3. Verify the paper's WOEAI site reference and DOI.
 4. Complete the source, copyright, and public-safety checklist.
-5. Render the Markdown in a WeChat Markdown editor such as doocs/md.
+5. Render the Markdown through the repository's deterministic WeChat HTML renderer.
 6. Publish manually in the WeChat backend.
 7. Record the published URL in `wechat/backlog/selected-papers.yml` and, when useful, in `wechat/index.yml`.
 ```

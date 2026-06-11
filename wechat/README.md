@@ -136,11 +136,6 @@ The API renderer appends WeChat-body related-paper navigation only when related
 items already have public WeChat URLs in `latest_published_url`; unpublished
 related papers are omitted.
 
-doocs/md is no longer needed for the normal WOEAI draft-submission workflow.
-Keep it only as an auxiliary design and fallback path for theme CSS tuning,
-formula/style preview, and manual copy-paste when the official API path is not
-configured or needs troubleshooting.
-
 Wechatsync or other browser-plugin routes may be useful for one-off
 distribution experiments, but they are not the default WOEAI automation path
 and should not become the article source of truth.
@@ -268,9 +263,9 @@ must not publish, mass-send, or click WeChat backend release buttons.
 
 ## Theme Selection
 
-The official API path submits rendered HTML, not doocs/md CSS. Select a
-supported API renderer theme with `--theme` on `dry-run`, `create-draft`, or
-`update-draft`.
+The official API path submits rendered HTML through the internal renderer.
+Select a supported API renderer theme with `--theme` on `dry-run`,
+`create-draft`, or `update-draft`.
 
 Select the formula renderer with `--math-renderer`. Current options:
 
@@ -326,9 +321,6 @@ the WeChat backend mobile preview before publishing a theme for the first time.
 
 Recommended default for paper explainers: `academic-clean`.
 
-For manual doocs/md fallback, use the CSS files under `wechat/themes/`. The
-current committed doocs/md CSS is `wechat/themes/doocs-academic-clean.css`.
-
 ## Backlog State Model
 
 Use `wechat/backlog/selected-papers.yml` to track selected papers and publication state.
@@ -379,8 +371,7 @@ gate is manual preview, proofreading, and confirmation in the WeChat backend.
 6. Verify the paper's WOEAI site record and DOI.
 7. Complete the source, copyright, public-safety, and RTD companion-page checklist.
 8. Render the Markdown through the deterministic Markdown-to-WeChat-HTML
-   conversion layer for API submission. Use doocs/md for theme design, formula
-   preview, and manual fallback.
+   conversion layer for API submission.
 9. Create or update a WeChat draft through the official draft API as the
    primary automated submission path when credentials are configured.
 10. Preview, proofread, and publish manually in the WeChat backend. Do not

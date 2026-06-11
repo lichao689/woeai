@@ -162,12 +162,12 @@
 
 :ref:`[70] <ref-he2026-OE-structural>` :student-first-author:`He Weiwen`; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
+:ref:`[65] <ref-zheng2025-OE>` :student-first-author:`Zheng Shunyun`; Liu Shangpei; **Li Chao**\*; Wang Xiaolu; Ou Jinping, Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine[J]. **Ocean Engineering**, 2025, 332: 121336. https://doi.org/10.1016/j.oceaneng.2025.121336. 影响因子: **5.5 (Q1)**. 中科院分区: **2**. 引用次数: **2**.
+
 :ref:`[33] <ref-li2022-SOS>` **Li Chao**; Zhou Shengtao\*; Shan Baohua; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin; Yiqing Xiao, Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures[J]. **Ships and Offshore Structures**, Taylor & Francis, 2022, 17(8): 1663～1683. https://doi.org/10.1080/17445302.2021.1937801. 影响因子: **1.8 (Q2)**. 中科院分区: **3**.
 
 数值风浪流水池
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-:ref:`[65] <ref-zheng2025-OE>` :student-first-author:`Zheng Shunyun`; Liu Shangpei; **Li Chao**\*; Wang Xiaolu; Ou Jinping, Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine[J]. **Ocean Engineering**, 2025, 332: 121336. https://doi.org/10.1016/j.oceaneng.2025.121336. 影响因子: **5.5 (Q1)**. 中科院分区: **2**. 引用次数: **2**.
 
 :ref:`[64] <ref-zheng2025-QHDXXB>` :student-first-author:`郑舜云`; 周盛涛; 石兵; **李朝**\*; 胡钢; 曾宇; 李利孝, 中心与偏心布置半潜风机动力特性的模型试验[J]. **清华大学学报（自然科学版）**, 2025: 1～14.
 

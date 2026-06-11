@@ -3,7 +3,7 @@ publication_ref: ref-zheng2025-OE
 zotero_key: 5W2SZJUT
 doi: 10.1016/j.oceaneng.2025.121336
 research_family: 海上漂浮风电
-subdirection: 数值风浪流水池
+subdirection: 浮式混凝土平台结构设计
 publication_mode: first_publish
 wechat_status: ready_to_publish
 wechat_draft_media_id: OW4ZgzIulHGwsx2YUygityiCBgxLgEDIa8y3uhHf7kDdBisslbMb3Gm3dZwSx5n-
@@ -46,7 +46,7 @@ wechat_backend_preview_checked: false
 - PDF attachment keys: `Y95L65C5`, `3PC68U8X`
 - 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
 - PDF / 作者稿: Zotero local imported PDF attachments exist; the selected local publisher-record PDF was used for article evidence and body figures.
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-zheng2025-OE` as paper `[65]`; `docs/source/FloatingOffshoreWindEnergy.rst` lists it under `数值风浪流水池`.
+- 公开网站记录: `docs/source/Publications.rst` contains `ref-zheng2025-OE` as paper `[65]`; `docs/source/FloatingOffshoreWindEnergy.rst` lists it under `浮式混凝土平台结构设计`.
 
 ## 源文件获取记录
 
@@ -207,5 +207,9 @@ wechat_backend_preview_checked: false
 - figure extraction: copied selected local extracted PDF embedded JPG images to public-safe asset names
 - rtd-generation: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zheng2025-OE`)
 - rtd-sync-check: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zheng2025-OE --check`)
+- taxonomy-correction: passed; current source data and public pages classify this paper as `海上漂浮风电 / 浮式混凝土平台结构设计`
+- direction-consistency: passed; no current source-data or public-page binding remains between `ref-zheng2025-OE` / `5W2SZJUT` and the former subdirection
+- wechat-dry-run: passed (`python wechat/tools/wechat_draft.py dry-run --publication-ref ref-zheng2025-OE`)
+- wechat-preflight: passed (`python wechat/tools/wechat_draft.py preflight --publication-ref ref-zheng2025-OE`)
 - public-safety: passed (`python3 scripts/check-public-safe-content.py`)
 - whitespace: passed (`git diff --check`)

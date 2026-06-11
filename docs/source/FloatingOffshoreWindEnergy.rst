@@ -22,17 +22,17 @@
 代表性证据包括：
 
 - :ref:`Reinforced-concrete semi-submersible platform structural design and optimization <ref-he2026-OE-structural>`；
+- :ref:`Equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine <ref-zheng2025-OE>`；
 - :ref:`Concrete and steel support structure comparison for a Y-shaped semi-submersible floating wind turbine <ref-li2022-SOS>`；
 - :ref:`Efficient optimization design method of jacket structures for offshore wind turbines <ref-zheng2023-MS>`。
 
 数值风浪流水池
 --------------
 
-该子方向关注风浪联合作用、海洋环境作用、数值水池、等效静力波浪荷载、动力响应和多物理场多体动力学分析。
+该子方向关注风浪联合作用、海洋环境作用、数值水池、动力响应验证和多物理场多体动力学分析。
 
 代表性证据包括：
 
-- :ref:`Equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine <ref-zheng2025-OE>`；
 - :ref:`Wind tunnel and wave flume testing for a 10 MW Y-shaped semi-submersible wind turbine <ref-zheng2023-JRSE>`；
 - :ref:`Dynamics of a Y-shaped semi-submersible floating wind turbine <ref-li2022-SOS>`。
 

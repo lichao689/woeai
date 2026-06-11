@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS = ROOT / "docs/source/Publications.rst"
 PUBLICATIONS_BY_RESEARCH = ROOT / "docs/source/PublicationsByResearch.rst"
+RESEARCH = ROOT / "docs/source/Research.rst"
 TEACHING = ROOT / "docs/source/Teaching.rst"
 INDEX = ROOT / "docs/source/index.rst"
 PEOPLE = ROOT / "docs/source/People.rst"
@@ -87,11 +88,16 @@ def section_between(text: str, title: str, next_titles: tuple[str, ...]) -> str:
 class PublicationsResearchViewTests(unittest.TestCase):
     def test_publications_page_links_to_research_view(self) -> None:
         text = PUBLICATIONS.read_text(encoding="utf-8")
+        research_text = RESEARCH.read_text(encoding="utf-8")
         index_text = INDEX.read_text(encoding="utf-8")
 
-        self.assertIn("浏览方式 View Options", text)
-        self.assertIn(":doc:`PublicationsByResearch`", text)
-        self.assertIn("按研究方向浏览 Publications by Research Direction <PublicationsByResearch>", text)
+        self.assertNotIn("浏览方式 View Options", text)
+        self.assertNotIn("精选证据 Selected Highlights", text)
+        self.assertIn(".. container:: publication-view-banner", text)
+        self.assertIn("论文解读 Paper Notes", text)
+        self.assertIn("按研究方向浏览学术成果 Publications by Research Direction <PublicationsByResearch>", text)
+        self.assertNotIn("学术进展 Academic Progress", research_text)
+        self.assertNotIn("paper-notes/", research_text)
         self.assertNotIn("\n   PublicationsByResearch\n", index_text)
         self.assertNotIn("\n   People\n", index_text)
         self.assertFalse(PEOPLE.exists())

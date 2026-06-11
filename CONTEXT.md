@@ -49,8 +49,8 @@ Public evidence for enterprise-commissioned work. It may show approved capabilit
 _Avoid_: partner name, exact facility name, active project detail, over-generalizing already anonymized evidence
 
 **Academic Outputs**:
-The canonical public label for the proof page that contains journal papers and selected highlights. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists.
-_Avoid_: 研究成果 Publications as a mixed-language page title
+The canonical public label for the proof page that contains the complete chronological journal-paper record, a paper-note entry area, and alternate browsing options such as the Thematic Publication View. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists. On the page body, the Thematic Publication View should appear as a lightweight banner, and the Paper Notes area should appear before the Journal Papers section. The Paper Notes area should absorb the former Research-page Academic Progress content, preserving its Research Family and subdirection grouping and publication-year-descending order.
+_Avoid_: 研究成果 Publications as a mixed-language page title, treating selected highlights as a mandatory Academic Outputs section
 
 **Publication Metrics**:
 Per-paper credibility indicators shown with a Public Journal Paper, including impact factor, journal quartile, Chinese Academy of Sciences division, and citation count. They must come from a confirmed source because they can change over time.
@@ -82,7 +82,11 @@ _Avoid_: treating the direction view as the full bibliography, maintaining dupli
 
 **Thematic Publication View**:
 The alternate Academic Outputs browsing view in `docs/source/PublicationsByResearch.rst`. It groups the same Public Journal Papers by Research Family first and subdirection second. Inside each subdirection, paper entries are listed by publication year in descending order. Each paper entry must use the exact same public citation expression as the Chronological Publication View, including authors, title, venue, DOI, Publication Metrics, Student First Author Marker, and current Publication Number. It should be registered under the Chronological Publication View's toctree so it appears as part of Academic Outputs in the left navigation, not as a separate root-level site directory.
-_Avoid_: JavaScript-only tabs, alternate short-index citation style, duplicate hand-maintained citation text, publication-year section headings inside subdirections, root-level navigation entry for the thematic view
+_Avoid_: JavaScript-only tabs, alternate short-index citation style, duplicate hand-maintained citation text, publication-year section headings inside subdirections, root-level navigation entry for the thematic view, presenting the view option as a full page section heading
+
+**Paper Notes Area**:
+The `论文解读 Paper Notes` section on Academic Outputs. It contains the former Research-page Academic Progress paper-note archive, grouped by Research Family and subdirection, and appears before `期刊论文 Journal Papers`.
+_Avoid_: 公众号文章 as the public section title, a single ungrouped date-only list, placing paper notes under Research navigation
 
 **Publication Research Mapping**:
 The machine-readable mapping from Zotero item keys to Research Family and subdirection, stored at `docs/data/publication-research-map.json`. Every Public Journal Paper must have exactly one canonical Research Family and one canonical subdirection before the thematic view can be generated.
@@ -169,8 +173,8 @@ The local-only credential location for the Official WeChat Draft API Path. The W
 _Avoid_: committing, printing, logging, copying, or summarizing WeChat AppSecret, access tokens, cookies, preview credentials, or private config contents in public-safe files
 
 **RTD Paper Companion Page**:
-A Read the Docs page generated from a One-Paper WeChat Article. It is the default website companion for paper-based WeChat articles, but not required for temporary notices, activity posts, or non-paper WeChat content. It should preserve the same title, body text, images, DOI link, and useful related links as the WeChat article, while converting the markup and rendering format to Sphinx-compatible reStructuredText.
-_Avoid_: creating a separate Markdown route for Sphinx, changing the article meaning for RTD, making the RTD page a shorter unrelated summary, or forcing every non-paper WeChat post to have an RTD companion page
+A Read the Docs page generated from a One-Paper WeChat Article and stored under `docs/source/paper-notes/`. It is the default website companion for paper-based WeChat articles, but not required for temporary notices, activity posts, or non-paper WeChat content. It should preserve the same title, body text, images, DOI link, and useful related links as the WeChat article, while converting the markup and rendering format to Sphinx-compatible reStructuredText. In navigation it belongs under Academic Outputs, not under Research Directions; Research pages should not retain a separate paper-note archive or pointer after the Paper Notes area is moved to Academic Outputs.
+_Avoid_: creating a separate Markdown route for Sphinx, changing the article meaning for RTD, making the RTD page a shorter unrelated summary, forcing every non-paper WeChat post to have an RTD companion page, treating paper notes as research-direction child pages, or keeping a duplicate Research-page entry point for paper notes
 
 **WeChat Figure Caption**:
 The reader-facing caption attached to a figure in a One-Paper WeChat Article. It uses a Chinese figure-title line translated faithfully from the paper's original figure title, followed by a separate Chinese explanatory line that tells the reader why the figure matters in this article.
@@ -181,8 +185,8 @@ A mathematical expression included in a One-Paper WeChat Article or RTD Paper Co
 _Avoid_: code-block formula, inline-code variable, unstructured plain-text formula, default formula screenshot, unexplained symbol list
 
 **Academic Progress Section**:
-The research-direction page section that groups RTD Paper Companion Pages by second-level research subdirection. It replaces `近期证据` as the public label for recent paper-explanation progress and should initially sort entries by publication date in descending order.
-_Avoid_: treating Academic Progress as a raw publication list, a duplicate chronological publication view, or a collection grouped only by first-level Research Family
+The former research-direction page section that grouped RTD Paper Companion Pages by second-level research subdirection. Its content should now be merged into the Academic Outputs Paper Notes area, preserving the same Research Family and subdirection grouping and publication-year-descending order.
+_Avoid_: keeping a duplicate full paper-note archive under Research, treating Academic Progress as a raw publication list, or grouping only by first-level Research Family
 
 **Site Build ID**:
 The public date-time identifier for a WOEAI website update. It replaces semantic software versioning for this docs-only public website and should use Beijing time in `YYYY.MM.DD-HHMM` form.

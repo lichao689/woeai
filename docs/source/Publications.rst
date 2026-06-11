@@ -3,26 +3,72 @@
 学术成果 Academic Outputs
 ===============================
 
-浏览方式 View Options
----------------------
+.. container:: publication-view-banner
 
-- 当前页：按发表年份倒序浏览完整期刊论文清单。
-- :doc:`PublicationsByResearch`：按研究方向浏览，方向内按发表年份倒序聚合。
+   :doc:`按研究方向浏览学术成果 Publications by Research Direction <PublicationsByResearch>`：按研究方向浏览，方向内按发表年份倒序聚合。
 
 .. toctree::
    :hidden:
    :maxdepth: 1
 
    按研究方向浏览 Publications by Research Direction <PublicationsByResearch>
+   paper-notes/ref-zhao2026-BE
+   paper-notes/ref-zhao2026-BS
+   paper-notes/ref-he2026-OE
+   paper-notes/ref-tang2026-RE
+   paper-notes/ref-he2025-POF
+   paper-notes/ref-yang2025-JBE
+   paper-notes/ref-zhao2025-SCS
+   paper-notes/ref-tang2025-JBE
+   paper-notes/ref-wang2024-ES
+   paper-notes/ref-chen2024-JCP
+   paper-notes/ref-li2024-POF
+   paper-notes/ref-he2026-OE-structural
+   paper-notes/ref-zheng2025-OE
+   paper-notes/ref-zhou2023-AE
+   paper-notes/ref-li2022-SOS
 
-精选证据 Selected Highlights
-----------------------------
+论文解读 Paper Notes
+--------------------
 
-- AI 与城市风模拟: :ref:`[72] precomputed CFD database for urban microscale wind <ref-zhao2026-BS>`、:ref:`[74] satellite-imagery urban geometry reconstruction <ref-zhao2026-BE>`、:ref:`[60] 3D Gaussian Splatting building geometry <ref-zhao2025-SCS>`。
-- AI 与结构响应预测: :ref:`[63] graph neural networks for tall-building response <ref-tang2025-JBE>`、:ref:`[67] 2D vectorial response extremes <ref-yang2025-JBE>`。
-- 数值风洞与入流湍流: :ref:`[51] vector-potential random flow generation <ref-li2024-POF>`、:ref:`[50] coherence-improved and mass-balanced inflow turbulence <ref-chen2024-JCP>`。
-- 结构抗风: :ref:`[68] implanted-pole tuned liquid damper <ref-he2025-POF>`、:ref:`[56] tower-line coupling under strong winds <ref-liu2024-JWEIA>`。
-- 海上风电: :ref:`[70] reinforced-concrete semi-submersible platform optimization <ref-he2026-OE-structural>`、:ref:`[65] equivalent static wave loads for semi-submersible turbines <ref-zheng2025-OE>`、:ref:`[48] floating wind turbine substructure optimization <ref-zhou2023-AE>`。
+以下页面由公众号论文正文转换为 RTD 配套页，按二级科研方向归集。同一子方向内，暂按论文发表时间倒序排列。
+
+建筑结构抗风
+~~~~~~~~~~~~
+
+数值风洞与湍动入流
+^^^^^^^^^^^^^^^^^^
+
+- 2026: :doc:`数值风洞 | 如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-BE>`
+- 2026: :doc:`论文解读 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测 <paper-notes/ref-zhao2026-BS>`
+- 2026: :doc:`数值风洞 | 如何高效重建城市风能中的高时间分辨率风场 <paper-notes/ref-tang2026-RE>`
+- 2025: :doc:`论文解读 | 用 3D Gaussian Splatting 重建城市建筑几何 <paper-notes/ref-zhao2025-SCS>`
+- 2024: :doc:`数值风洞 | 让 LES 入流按目标风场自动收敛 <paper-notes/ref-wang2024-ES>`
+- 2024: :doc:`论文解读 | 让 LES 入流湍流更连贯也更守恒 <paper-notes/ref-chen2024-JCP>`
+- 2024: :doc:`论文解读 | 用矢量势随机流生成无散湍流 <paper-notes/ref-li2024-POF>`
+
+高层建筑抗风与优化
+^^^^^^^^^^^^^^^^^^
+
+- 2026: :doc:`结构抗风 | 用内置矩形立柱提升液舱阻尼器设计效率 <paper-notes/ref-he2026-OE>`
+- 2025: :doc:`论文解读 | 让高层建筑 TLD 在非线性晃荡中更会耗能 <paper-notes/ref-he2025-POF>`
+- 2025: :doc:`论文解读 | 计算高层建筑二维矢量响应极值 <paper-notes/ref-yang2025-JBE>`
+- 2025: :doc:`论文解读 | 用图神经网络预测高层建筑结构响应 <paper-notes/ref-tang2025-JBE>`
+
+海上漂浮风电
+~~~~~~~~~~~~
+
+浮式风机系统一体化分析与优化
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- 2023: :doc:`漂浮风电 | 用长期动力优化选择浮式风机下部结构 <paper-notes/ref-zhou2023-AE>`
+
+浮式混凝土平台结构设计
+^^^^^^^^^^^^^^^^^^^^^^
+
+- 2026: :doc:`论文解读 | 用钢筋混凝土优化半潜式风机平台 <paper-notes/ref-he2026-OE-structural>`
+- 2025: :doc:`论文解读 | 评估半潜式风机平台的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>`
+- 2022: :doc:`漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变 <paper-notes/ref-li2022-SOS>`
 
 期刊论文 Journal Papers
 ------------------------

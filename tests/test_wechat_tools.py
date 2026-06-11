@@ -57,18 +57,17 @@ class WeChatToolTests(unittest.TestCase):
                 "- DOI: https://doi.org/10.1000/example\n"
                 "- WOEAI 相关方向: 建筑结构抗风\n\n"
                 "## 摘要\n\n"
-                "**英文摘要**\n\n"
                 "Plain text.\n",
                 encoding="utf-8",
             )
             review.write_text("", encoding="utf-8")
 
-            rst = converter.convert_markdown_to_rst(article, review, output)
+            with contextlib.redirect_stderr(io.StringIO()):
+                rst = converter.convert_markdown_to_rst(article, review, output)
 
         self.assertIn("- WOEAI 相关方向: 建筑结构抗风\n\n摘要\n--", rst)
         self.assertIn(".. role:: student-first-author", rst)
-        self.assertIn("**英文摘要**\n\nPlain text.", rst)
-        self.assertNotIn("**英文摘要** ", rst)
+        self.assertIn("Plain text.", rst)
 
     def test_markdown_to_rtd_converts_author_markers_like_publications(self) -> None:
         converter = load_script(ROOT / "wechat/tools/markdown_to_rtd.py", "woeai_markdown_to_rtd_author_test")
@@ -118,6 +117,83 @@ class WeChatToolTests(unittest.TestCase):
 
         self.assertEqual([link["publication_ref"] for link in links], ["ref-published"])
         self.assertEqual(links[0]["title"], "数值风洞 | 已有 RTD 页面")
+
+    def test_markdown_to_rtd_strips_title_prefix_and_skips_closing_block(self) -> None:
+        converter = load_script(ROOT / "wechat/tools/markdown_to_rtd.py", "woeai_markdown_to_rtd_channel_test")
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            article = root / "ref-example.md"
+            review = root / "ref-example.review.md"
+            output = root / "ref-example.rst"
+            article.write_text(
+                "# 结构抗风 | 示例标题\n\n"
+                "正文段落。\n\n"
+                "如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，"
+                "点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。\n\n"
+                "## 延伸阅读\n\n"
+                "- [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)\n",
+                encoding="utf-8",
+            )
+            review.write_text("", encoding="utf-8")
+
+            with contextlib.redirect_stderr(io.StringIO()):
+                rst = converter.convert_markdown_to_rst(article, review, output)
+
+        self.assertIn("示例标题\n========", rst)
+        self.assertNotIn("结构抗风 |", rst)
+        self.assertNotIn("点击阅读原文", rst)
+        self.assertIn("延伸阅读", rst)
+
+    def test_markdown_to_rtd_citation_truncates_at_doi(self) -> None:
+        converter = load_script(ROOT / "wechat/tools/markdown_to_rtd.py", "woeai_markdown_to_rtd_citation_test")
+
+        citation = converter.parse_publications_citation("ref-yang2025-JBE")
+        missing = converter.parse_publications_citation("ref-nonexistent-paper")
+
+        self.assertTrue(citation.endswith("https://doi.org/10.1016/j.jobe.2025.113635."))
+        self.assertNotIn("影响因子", citation)
+        self.assertEqual(missing, "")
+
+    def test_markdown_to_rtd_related_navigation_strips_title_prefix(self) -> None:
+        converter = load_script(ROOT / "wechat/tools/markdown_to_rtd.py", "woeai_markdown_to_rtd_nav_label_test")
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            article_dir = root / "articles"
+            notes_dir = root / "notes"
+            article_dir.mkdir()
+            notes_dir.mkdir()
+            backlog = root / "selected-papers.yml"
+            backlog.write_text(
+                "items:\n"
+                "  - publication_ref: ref-target\n"
+                "    title: Target\n"
+                "    research_family: 建筑结构抗风\n"
+                "    subdirection: 数值风洞与湍动入流\n"
+                "    original_year: 2026\n"
+                "  - publication_ref: ref-published\n"
+                "    title: Published\n"
+                "    research_family: 建筑结构抗风\n"
+                "    subdirection: 数值风洞与湍动入流\n"
+                "    original_year: 2025\n",
+                encoding="utf-8",
+            )
+            (article_dir / "ref-published.md").write_text("# 数值风洞 | 已有 RTD 页面\n", encoding="utf-8")
+            (notes_dir / "ref-published.rst").write_text("placeholder\n", encoding="utf-8")
+
+            output: list[str] = []
+            converter.emit_rtd_related_navigation(
+                output,
+                "ref-target",
+                backlog_path=backlog,
+                notes_dir=notes_dir,
+                article_dir=article_dir,
+            )
+
+        body = "\n".join(output)
+        self.assertIn(":doc:`已有 RTD 页面 <ref-published>`", body)
+        self.assertNotIn("数值风洞 |", body)
 
     def test_wechat_renderer_shows_corresponding_star_and_underlined_author(self) -> None:
         renderer = load_script(ROOT / "wechat/tools/render-copy-ready.py", "woeai_render_copy_ready_author_test")

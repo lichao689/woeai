@@ -44,7 +44,7 @@ wechat_backend_preview_checked: false
 - DOI: https://doi.org/10.1016/j.apenergy.2023.121941
 - Zotero: `3LWVP7B7`
 - PDF attachment key: `G792HSAZ`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero child `G792HSAZ`, `application/pdf`, `linkMode=imported_url`; controller verified a local storage PDF exists, is valid `%PDF-`, has 20 pages, `pdftotext` works, and `pdfimages` lists images. This worker also used the local storage PDF for evidence and figure extraction.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-zhou2023-AE` as paper `[48]`; `docs/source/FloatingOffshoreWindEnergy.rst` lists it under `浮式风机系统一体化分析与优化`.
 
@@ -71,7 +71,7 @@ wechat_backend_preview_checked: false
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 本文提出基于长期动力优化的浮式风机下部结构评估方法，用 ROM、Kriging 代理模型和 NSGA-II 多目标优化寻找长期动力性能与制造成本之间的 Pareto 折中。
   - 证据位置: PDF file page 1 abstract; PDF file pages 6-9, Sections 3.2-4.3.
@@ -105,7 +105,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zhou2023-AE/fig-01-dof-coordinate.jpg`
    - 来源/版权: paper PDF page-render crop; WOEAI/user-authored paper workflow scope
    - 抽取方式: rendered PDF file page 3 and cropped with local tooling
-   - 公众号图名: 图 1 自由度和全局坐标系定义
+   - 公众号图名: 论文图 1 自由度和全局坐标系定义
    - 公众号说明: 展示用于快速动力分析的运动自由度、全局坐标、来流方向和系泊线布置。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 7: 所研究浮式风机的平台构型与系泊布置
@@ -114,7 +114,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zhou2023-AE/fig-07-platform-mooring-layout.jpg`
    - 来源/版权: paper PDF page-render crop; WOEAI/user-authored paper workflow scope
    - 抽取方式: rendered PDF file page 8 and cropped with local tooling
-   - 公众号图名: 图 7 所研究浮式风机的平台构型与系泊布置
+   - 公众号图名: 论文图 7 所研究浮式风机的平台构型与系泊布置
    - 公众号说明: 展示方形半潜式和 Y 形半潜式两类构型，以及平台和系泊参数如何进入优化设计空间。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 19: 不同环境输入得到的 Pareto 前沿对比
@@ -123,7 +123,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zhou2023-AE/fig-19-pareto-environmental-inputs.jpg`
    - 来源/版权: paper PDF page-render crop; WOEAI/user-authored paper workflow scope
    - 抽取方式: rendered PDF file page 15 and cropped with local tooling
-   - 公众号图名: 图 19 不同环境输入得到的 Pareto 前沿对比
+   - 公众号图名: 论文图 19 不同环境输入得到的 Pareto 前沿对比
    - 公众号说明: 展示简化海况和长期海况下，制造成本与疲劳指标之间的 Pareto 关系变化。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 23: 方形与 Y 形下部结构的 Pareto 前沿对比
@@ -132,7 +132,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zhou2023-AE/fig-23-pareto-substructures.jpg`
    - 来源/版权: paper PDF page-render crop; WOEAI/user-authored paper workflow scope
    - 抽取方式: rendered PDF file page 17 and cropped with local tooling
-   - 公众号图名: 图 23 方形与 Y 形下部结构的 Pareto 前沿对比
+   - 公众号图名: 论文图 23 方形与 Y 形下部结构的 Pareto 前沿对比
    - 公众号说明: 把两类概念放到同一成本和疲劳指标坐标系中比较，支持构型筛选判断。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 25: 两类下部结构在 135 度波向下的平台运动 RAO 对比
@@ -141,7 +141,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zhou2023-AE/fig-25-rao-comparison.jpg`
    - 来源/版权: paper PDF page-render crop; WOEAI/user-authored paper workflow scope
    - 抽取方式: rendered PDF file page 18 and cropped with local tooling
-   - 公众号图名: 图 25 两类下部结构在 135 度波向下的平台运动 RAO 对比
+   - 公众号图名: 论文图 25 两类下部结构在 135 度波向下的平台运动 RAO 对比
    - 公众号说明: 通过 surge、sway、roll 和 pitch 响应幅值对比，解释长期疲劳差异背后的水动力原因。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -191,6 +191,10 @@ wechat_backend_preview_checked: false
 - [x] 将 RTD 配套页挂入 `docs/source/Research.rst` 对应科研方向的 `学术进展 Academic Progress`。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [ ] 如需发布，另行生成并审核公众号封面图。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：具体数字式。关键卡证据：25 年海洋环境数据、方形与 Y 形疲劳差异、ROM/OpenFAST 误差边界均已在关键事实证据定位记录中标到 PDF file pages 15-18 及 Figs. 19、23、25。
 
 ## 检查记录
 

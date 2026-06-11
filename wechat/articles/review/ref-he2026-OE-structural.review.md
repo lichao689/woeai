@@ -52,7 +52,7 @@ wechat_backend_preview_checked: false
 - DOI: https://doi.org/10.1016/j.oceaneng.2025.123951
 - Zotero: `EMID6LAJ`
 - PDF attachment key: `UY7S47UC`
-- 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: local Zotero imported PDF attachment exists; PDF body and embedded images were used for article evidence and body figures.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-he2026-OE-structural` as paper `[70]`; `docs/source/FloatingOffshoreWindEnergy.rst` lists it under `浮式混凝土平台结构设计`.
 
@@ -79,7 +79,7 @@ wechat_backend_preview_checked: false
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 本文提出一种基于模块化构件的新型钢筋混凝土半潜式 FOWT 平台，并把概念设计、主尺度优化、性能比较和结构强度分析组织成完整路线。
   - 证据位置: PDF file page 3, Fig. 1; PDF file page 5, Section 3.1, Fig. 7.
@@ -120,7 +120,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-01-research-route.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 1 研究路线
+   - 公众号图名: 论文图 1 研究路线
    - 公众号说明: 概括概念设计、多目标优化、性能比较和强度分析路径。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 7: 新型平台概念设计
@@ -129,7 +129,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-07-platform-concept.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 7 新型平台概念设计
+   - 公众号图名: 论文图 7 新型平台概念设计
    - 公众号说明: 展示圆柱、方柱和圆板等模块构件组合。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 10: 新型平台水动力模型
@@ -138,7 +138,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-10-hydrodynamic-model.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 10 新型平台水动力模型
+   - 公众号图名: 论文图 10 新型平台水动力模型
    - 公众号说明: 展示用于快速动力响应分析的水动力模型。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 16: 目标函数对比
@@ -147,7 +147,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-16-objective-functions.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 16 目标函数对比
+   - 公众号图名: 论文图 16 目标函数对比
    - 公众号说明: 展示疲劳损伤和总建造成本之间的多目标关系。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 19: 两类平台在 135 度波向下的 RAO 对比
@@ -156,7 +156,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-19-raos-comparison.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 19 两类平台在 135 度波向下的 RAO 对比
+   - 公众号图名: 论文图 19 两类平台在 135 度波向下的 RAO 对比
    - 公众号说明: 对比新平台和 OO-Star 在不同自由度下的波浪响应幅值。
    - 移动端预览: pending WeChat backend mobile preview
 6. 图 27: 总建造成本对比
@@ -165,7 +165,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-27-construction-costs.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 27 总建造成本对比
+   - 公众号图名: 论文图 27 总建造成本对比
    - 公众号说明: 分别展示平台和系泊系统对总建造成本的贡献。
    - 移动端预览: pending WeChat backend mobile preview
 7. 图 29: 新型平台强度分析有限元模型
@@ -174,7 +174,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-29-strength-fem.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 29 新型平台强度分析有限元模型
+   - 公众号图名: 论文图 29 新型平台强度分析有限元模型
    - 公众号说明: 展示整体结构、内部加劲、预应力筋和边界条件。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -223,6 +223,10 @@ wechat_backend_preview_checked: false
 - [x] 运行本地封面裁剪预览。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：具体数字式。关键卡证据：长期响应、成本比较和 ULS 强度分析数字均已在关键事实证据定位记录中标到 PDF file pages 8-18 及 Figs. 16、19、27、29。
 
 ## 检查记录
 

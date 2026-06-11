@@ -44,7 +44,7 @@ wechat_backend_preview_checked: false
 - DOI: https://doi.org/10.1063/5.0293483
 - Zotero: `ES37XMDV`
 - PDF attachment key: `TE9SXHTY`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero attachment record has `linkMode=imported_url`; controller and local verification confirmed a valid local Zotero storage PDF exists, has 19 pages, starts with `%PDF-`, supports `pdftotext`, and has extractable images. The selected local PDF was used for article evidence and body figures.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-he2025-POF` as paper `[68]`; `docs/data/publication-research-map.json` maps Zotero key `ES37XMDV` to `建筑结构抗风 / 高层建筑抗风与优化`.
 
@@ -71,7 +71,7 @@ wechat_backend_preview_checked: false
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 本文提出 implanted pole TLD，立柱可扰动多方向液体运动、增强耗能，并为大型水箱提供支撑和抵抗晃荡力。
   - 证据位置: PDF file page 1 abstract; PDF file pages 1-2, Section I.
@@ -127,7 +127,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2025-POF/fig-09-implanted-pole-tld-model.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 9 植入式立柱 TLD 模型示意
+   - 公众号图名: 论文图 9 植入式立柱 TLD 模型示意
    - 公众号说明: 展示立柱布置方式和阻塞率定义。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 14: 自由液面速度云图说明植入式立柱对液体振荡的影响
@@ -136,7 +136,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2025-POF/fig-14-pole-flow-mechanism.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 14 自由液面速度云图说明植入式立柱对液体振荡的影响
+   - 公众号图名: 论文图 14 自由液面速度云图说明植入式立柱对液体振荡的影响
    - 公众号说明: 显示液体分离、小涡和立柱阻塞效应。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 17: 大幅激励下的非线性振荡特征
@@ -145,7 +145,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2025-POF/fig-17-large-amplitude-nonlinear-sloshing.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 17 大幅激励下的非线性振荡特征
+   - 公众号图名: 论文图 17 大幅激励下的非线性振荡特征
    - 公众号说明: 展示大幅输入下自由液面破碎和波形叠加。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 18: 不同激励幅值下植入式立柱 TLD 的能量耗散效率
@@ -154,7 +154,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2025-POF/fig-18-energy-dissipation-excitation-amplitude.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 18 不同激励幅值下植入式立柱 TLD 的能量耗散效率
+   - 公众号图名: 论文图 18 不同激励幅值下植入式立柱 TLD 的能量耗散效率
    - 公众号说明: 显示激励幅值提高时等效阻尼比整体上升。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 22: 自由液面捕捉结果对比
@@ -163,7 +163,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2025-POF/fig-22-free-surface-validation.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 22 自由液面捕捉结果对比
+   - 公众号图名: 论文图 22 自由液面捕捉结果对比
    - 公众号说明: 比较试验自由液面和数值模型预测结果。
    - 移动端预览: pending WeChat backend mobile preview
 6. 图 24: CAARC 模型测压试验示意
@@ -172,7 +172,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2025-POF/fig-24-caarc-wind-tunnel-model.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 24 CAARC 模型测压试验示意
+   - 公众号图名: 论文图 24 CAARC 模型测压试验示意
    - 公众号说明: 展示缩尺模型和风向角布置。
    - 移动端预览: pending WeChat backend mobile preview
 7. 图 26: 不同立柱阻塞率下减振率对比
@@ -181,7 +181,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2025-POF/fig-26-mitigation-ratio-pole-obstruction.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 26 不同立柱阻塞率下减振率对比
+   - 公众号图名: 论文图 26 不同立柱阻塞率下减振率对比
    - 公众号说明: 显示阻塞率增大时减振率提高但增幅放缓。
    - 移动端预览: pending WeChat backend mobile preview
 8. 图 29: 不同调谐比下减振率对比
@@ -190,7 +190,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2025-POF/fig-29-mitigation-ratio-tuning.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 29 不同调谐比下减振率对比
+   - 公众号图名: 论文图 29 不同调谐比下减振率对比
    - 公众号说明: 显示调谐比存在最优范围，偏离后减振率下降。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -234,11 +234,15 @@ wechat_backend_preview_checked: false
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要补入中文摘要和英文原摘要。
+- [x] 用 Zotero/PDF 摘要核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
 - [x] 从 PDF 抽取并导入可用正文图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：场景式。关键卡证据：结构-TLD 双向耦合验证、85.2% 位移响应降低和 CAARC 减振参数均已在关键事实证据定位记录中标到 PDF file pages 13-15 及相关图表。
 
 ## 检查记录
 

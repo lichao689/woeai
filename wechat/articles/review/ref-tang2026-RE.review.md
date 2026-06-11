@@ -42,7 +42,7 @@ rtd_page_checked: true
 - DOI: https://doi.org/10.1016/j.renene.2025.124336
 - Zotero: `XM44D697`
 - PDF attachment key: `EQT752AQ`
-- 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero child record is `application/pdf` with `linkMode=imported_url`; the article evidence and figures use the valid local Zotero storage PDF for that child record, not a web-downloaded PDF.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-tang2026-RE` as paper `[69]`; `docs/source/BuildingStructuralWindResistance.rst` lists it under `数值风洞与湍动入流`.
 
@@ -69,7 +69,7 @@ rtd_page_checked: true
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 本文提出 WTT-SRST，用低时间分辨率风场快照重建高时间分辨率湍流演化，并用公式 `q(t_HR)=F_t(q(t_LR))` 表达 TSR-TF 映射任务。
   - 证据位置: PDF file page 6, Fig. 6 and Section 2.2 task overview, Eq. (12).
@@ -114,7 +114,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-tang2026-RE/fig-06-temporal-super-resolution.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted with `pdfimages -all` from local Zotero storage PDF
-   - 公众号图名: 图 6 风场快照的时间超分辨率流程
+   - 公众号图名: 论文图 6 风场快照的时间超分辨率流程
    - 公众号说明: 展示由低时间分辨率输入快照重建高时间分辨率风场序列的任务设定。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 1: 基于步长的稀疏操作示意图
@@ -123,7 +123,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-tang2026-RE/fig-01-stride-sparse-operation.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted with `pdfimages -all` from local Zotero storage PDF
-   - 公众号图名: 图 1 基于步长的稀疏操作示意图
+   - 公众号图名: 论文图 1 基于步长的稀疏操作示意图
    - 公众号说明: 展示如何通过步长采样和特征融合降低注意力计算量。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 4: 所提出 WTT-SRST 的详细结构与各模块架构
@@ -132,7 +132,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-tang2026-RE/fig-04-wtt-srst-framework.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted with `pdfimages -all` from local Zotero storage PDF
-   - 公众号图名: 图 4 所提出 WTT-SRST 的详细结构与各模块架构
+   - 公众号图名: 论文图 4 所提出 WTT-SRST 的详细结构与各模块架构
    - 公众号说明: 展示编码-解码、skip connection 和稀疏窗口注意力模块之间的关系。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 14: 脉动速度的功率谱密度结果
@@ -141,7 +141,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-tang2026-RE/fig-14-power-spectra.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted with `pdfimages -all` from local Zotero storage PDF
-   - 公众号图名: 图 14 脉动速度的功率谱密度结果
+   - 公众号图名: 论文图 14 脉动速度的功率谱密度结果
    - 公众号说明: 用频域结果检查重建风场是否保留湍流能量分布。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 24: 凌晨 3:45 生成风场的可视化表示
@@ -150,7 +150,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-tang2026-RE/fig-24-generated-wind-field.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted with `pdfimages -all` from local Zotero storage PDF
-   - 公众号图名: 图 24 凌晨 3:45 生成风场的可视化表示
+   - 公众号图名: 论文图 24 凌晨 3:45 生成风场的可视化表示
    - 公众号说明: 展示全尺度风场应用中重建结果与参考结果的空间结构对比。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -210,6 +210,10 @@ rtd_page_checked: true
 - [ ] 由主线程将 RTD 配套页挂入相关科研方向页或首页最新学术进展。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：场景式。关键卡证据：训练时间、能耗、注意力显存、参数量和 RPL 消融结果均已在关键事实证据定位记录中标到对应性能评估和消融实验页码。
 
 ## 检查记录
 

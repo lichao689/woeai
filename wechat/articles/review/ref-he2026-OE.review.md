@@ -44,7 +44,7 @@ wechat_backend_preview_checked: false
 - DOI: https://doi.org/10.1016/j.oceaneng.2026.124728
 - Zotero: `4FX43CFT`
 - PDF attachment key: `MFYQL4M5`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero attachment record has `linkMode=imported_url`; local verification confirmed a valid local Zotero storage PDF exists, has 16 pages, starts as a normal PDF record, supports `pdftotext`, and has extractable images. The selected local PDF was used for article evidence and body figures.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-he2026-OE` as paper `[73]`; `docs/data/publication-research-map.json` maps Zotero key `4FX43CFT` to `建筑结构抗风 / 高层建筑抗风与优化`.
 
@@ -71,7 +71,7 @@ wechat_backend_preview_checked: false
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 本文提出 built-in rectangular pole TLD，用矩形立柱增强液体耗能，并为大型液舱提供内部支撑构件。
   - 证据位置: PDF file page 1 abstract; PDF file pages 2-3, Section 1.
@@ -124,7 +124,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE/fig-07-built-in-rectangular-pole-tld.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 7 内置矩形立柱 TLD 示意图
+   - 公众号图名: 论文图 7 内置矩形立柱 TLD 示意图
    - 公众号说明: 展示两列矩形立柱、激励方向和关键几何参数。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 12: 不同立柱位置下的流场速度分布
@@ -133,7 +133,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE/fig-12-pole-position-flow-field.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 12 不同立柱位置下的流场速度分布
+   - 公众号图名: 论文图 12 不同立柱位置下的流场速度分布
    - 公众号说明: 比较立柱位于中部和靠近舱壁时的流场差异。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 14: 不同立柱数量下的流场特征对比
@@ -142,7 +142,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE/fig-14-flow-field-pole-counts.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 14 不同立柱数量下的流场特征对比
+   - 公众号图名: 论文图 14 不同立柱数量下的流场特征对比
    - 公众号说明: 显示立柱数量改变流动通道、尾流和耗能形态。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 16: 大幅激励下的非线性晃荡特征
@@ -151,7 +151,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE/fig-16-large-amplitude-nonlinear-sloshing.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 16 大幅激励下的非线性晃荡特征
+   - 公众号图名: 论文图 16 大幅激励下的非线性晃荡特征
    - 公众号说明: 展示大幅输入下矩形液舱内部响应具有明显非线性。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 19: 不同激励幅值下液体晃荡频率和阻尼比变化
@@ -160,7 +160,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-he2026-OE/fig-19-equivalent-model-validation.png`
    - 来源/版权: paper PDF vector/plot content rendered from the local paper PDF; WOEAI/user-authored paper workflow scope
    - 抽取方式: rendered PDF file page 14 and cropped to the original figure area
-   - 公众号图名: 图 19 不同激励幅值下液体晃荡频率和阻尼比变化
+   - 公众号图名: 论文图 19 不同激励幅值下液体晃荡频率和阻尼比变化
    - 公众号说明: 比较数值模拟、本文等效机械模型和理论解析模型。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -204,12 +204,16 @@ wechat_backend_preview_checked: false
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要补入中文摘要和英文原摘要。
+- [x] 用 Zotero/PDF 摘要核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
 - [x] 从 PDF 抽取并导入可用正文图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [ ] 主线程集成 `docs/source/Research.rst`、`docs/source/index.rst` 和 `wechat/backlog/selected-papers.yml`。
 - [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：反常识式。关键卡证据：纯水 TLD 阻尼、等效机械模型拟合精度和立柱参数分析均已在关键事实证据定位记录中标到 PDF file pages 5-15 及 Figs. 12、14、16、19。
 
 ## 检查记录
 

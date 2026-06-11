@@ -4,9 +4,9 @@
 
 这篇发表于 Engineering Structures 的论文提出 controllable weak recycling (CWR) 方法。它把反馈比例控制引入 weak recycling 方法的重缩放过程，并结合近地面阻力模型，使 LES 可以在一个辅助计算域中生成满足目标特征的湍流大气边界层，再把提取到的速度时程用于主计算域的建筑风效应评估。
 
-![图 3 CWR 方法获得指定湍流大气边界层风场的示意图](../../assets/public-safe/ref-wang2024-ES/fig-03-cwr-schematic.jpg)
+![论文图 3 CWR 方法获得指定湍流大气边界层风场的示意图](../../assets/public-safe/ref-wang2024-ES/fig-03-cwr-schematic.jpg)
 
-图 3 CWR 方法获得指定湍流大气边界层风场的示意图
+论文图 3 CWR 方法获得指定湍流大气边界层风场的示意图
 
 图中展示了 CWR 的整体流程：辅助域内通过反馈控制调整回收站处的脉动速度，SECD 模型维持近地面粗糙地形影响，再从提取面输出入口速度时程给主域使用。
 
@@ -19,19 +19,33 @@
 - DOI: https://doi.org/10.1016/j.engstruct.2024.118742
 - WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
 
+## 三句话导读
+
+这篇论文研究 CWR 方法：让 LES 辅助域中的弱循环入流可以按目标平均风速和湍流强度自动收敛。
+它重要，因为传统 weak recycling 往往要为不同目标地貌和计算域重新设计粗糙元布置，削弱了数值风洞的工程效率。
+读者可以带走的结论是：反馈控制可以让入口边界层生成更可调，但风谱、相干性和建筑风压验证仍是进入工程应用前的关键门槛。
+
+## 关键数字 / 关键结论卡
+
+- 城市地形算例中，$K_P=-80.0$ 时系统稳定收敛，平均风速和纵向湍流强度的整体平均绝对相对误差均保持在 $10\%$ 以下。
+- 乡村、郊区和城市三类粗糙地形下，回收站处平均风速 MARE 分别为 $3.28\%$、$4.07\%$ 和 $5.45\%$。
+- 建筑风压验证中，迎风面和背风面的脉动风压偏差小于 $20\%$，侧面最大偏差达到 $30\%$，提示相干性仍需继续改进。
+
 ## 摘要
 
-弱循环方法，又称“重缩放-循环”方法，已经通过在发展段采用错列块体来模拟微尺度湍流大气边界层（ABL），从而复现物理 ABL 风洞布置。然而，当面对不同目标结构、计算域尺寸或地表暴露条件时，该方法需要重新评估粗糙元的尺寸和布置，因而存在应用上的挑战。为解决这些问题，本文提出一种可控弱循环（controllable weak recycling, CWR）方法，用于在大涡模拟（LES）中生成粗糙地表上的湍流 ABL 风场。该方法能够在单次模拟中直接生成具有任意目标特征的湍流边界层，显著提高生成效率并降低计算资源消耗。本文的改进方法将反馈比例控制算法引入“重缩放”过程，以最小化模拟湍流强度与目标湍流强度之间的误差。此外，方法在近地面区域采用既有阻力模型，以维持粗糙地表上的水平匀质 ABL 风场。本文通过 LES 模拟三类不同粗糙地形上的湍流 ABL 风场，对所提出的 CWR 方法进行验证。结果表明，生成的入口湍流符合给定的平均风速和湍流强度，并沿流向表现出一致的自持性。同时，生成的风谱与各向异性 von-Kármán 谱高度一致。当把提取的风速时程施加到主计算域入口时，研究发现高层建筑上的平均和脉动风压与指定风洞试验结果吻合较好。
+弱循环方法，又称“重缩放-循环”方法，已经通过在发展段采用错列块体来模拟微尺度湍流大气边界层（ABL），从而复现物理 ABL 风洞布置。然而，当面对不同目标结构、计算域尺寸或地表暴露条件时，该方法需要重新评估粗糙元的尺寸和布置，因而存在应用上的挑战。
 
-**英文摘要**
+为解决这些问题，本文提出一种可控弱循环（controllable weak recycling, CWR）方法，用于在大涡模拟（LES）中生成粗糙地表上的湍流 ABL 风场。该方法能够在单次模拟中直接生成具有任意目标特征的湍流边界层，显著提高生成效率并降低计算资源消耗。
 
-The weak recycling method, known as the “rescaling-recycling” method, has been extended to simulate micro-scale turbulent atmospheric boundary layers (ABL) by employing staggered blocks in the developing section, replicating physical ABL wind tunnel setups. However, this method faces challenges, such as the need to re-evaluate the sizes and configurations of roughness elements when addressing different objective structures, computational domain sizes, or ground exposures. To address these issues, we propose a controllable weak recycling (CWR) method for generating turbulent ABL flows over rough surfaces in large eddy simulation (LES). This method can directly produce a turbulent boundary layer with arbitrary target characteristics in a single simulation, significantly enhancing generation efficiency and reducing computational resource consumption. Our refinement method incorporates a feedback proportional control algorithm into the “rescaling” procedure to minimize errors between simulated and targeted turbulence intensities. Besides, an existing drag model is utilized in the near-ground region to maintain horizontal homogeneous ABL flows over rough surfaces. The proposed CWR method is validated by simulating three turbulent ABL flows over various rough terrains using LES. Results confirm that the generated inflow turbulence adheres to prescribed mean velocities and turbulence intensities, demonstrating consistent self-sustainability along the flow direction. Furthermore, the generated wind spectra closely align with the anisotropic von-Kármán spectrum. When applying the extracted wind time histories at the main domain’s inlet, we find that the mean and fluctuating wind pressures on a high-rise building closely match specified wind tunnel test results.
+本文的改进方法将反馈比例控制算法引入“重缩放”过程，以最小化模拟湍流强度与目标湍流强度之间的误差。此外，方法在近地面区域采用既有阻力模型，以维持粗糙地表上的水平匀质 ABL 风场。本文通过 LES 模拟三类不同粗糙地形上的湍流 ABL 风场，对所提出的 CWR 方法进行验证。结果表明，生成的入口湍流符合给定的平均风速和湍流强度，并沿流向表现出一致的自持性。同时，生成的风谱与各向异性 von-Kármán 谱高度一致。当把提取的风速时程施加到主计算域入口时，研究发现高层建筑上的平均和脉动风压与指定风洞试验结果吻合较好。
 
 ## 研究问题
 
-传统 weak recycling 方法的优势，是能够用较短的辅助计算域生成自然发展的湍流边界层；但当目标地貌、建筑尺度或计算域改变时，粗糙块和尖劈等物理风洞式布置往往需要重新设计。这会抵消 weak recycling 方法本来应有的效率优势，也让工程化数值风洞难以快速适配不同目标风场。
+CWR 关注的是如何让 LES 入流生成更可控、更少试错。本文回答三个问题：
 
-本文要解决的问题不是重新发明一类入口湍流，而是让 weak recycling 方法更“可控”：给定目标平均风速和湍流强度后，能否在 LES 过程中自动调整回收的脉动速度，使生成的 ABL 风场既贴近目标统计量，又保持沿流向的自持发展，并最终服务于建筑表面风压预测。
+1. 给定目标平均风速和湍流强度后，能否用反馈比例控制自动调整 weak recycling 的重缩放过程？
+2. 生成的湍流大气边界层能否在不同粗糙地形下保持沿流向的自持发展，并匹配目标风谱？
+3. 将提取的入口速度时程用于高层建筑主域时，平均和脉动风压能否与风洞试验总体吻合？
 
 ## 方法贡献
 
@@ -51,35 +65,35 @@ $$
 
 ### 1. 比例控制足以把目标湍流强度拉回可用范围
 
-在城市地形算例中，论文比较了无控制、较弱调整和适当调整三种比例增益。结果显示，$K_P=-80.0$ 时系统能够稳定收敛，且平均风速和纵向湍流强度的整体平均绝对相对误差均保持在 $10\%$ 以下。更强的控制会带来振荡甚至求解发散，因此这不是“控制越强越好”，而是需要在稳定性和误差之间找到合适增益。
+**针对问题 1，在城市地形算例中，论文比较了无控制、较弱调整和适当调整三种比例增益。**结果显示，$K_P=-80.0$ 时系统能够稳定收敛，且平均风速和纵向湍流强度的整体平均绝对相对误差均保持在 $10\%$ 以下。更强的控制会带来振荡甚至求解发散，因此这不是“控制越强越好”，而是需要在稳定性和误差之间找到合适增益。
 
 ### 2. 三类粗糙地形下生成的 ABL 风场具有自持性
 
-论文进一步将 CWR 应用于乡村、郊区和城市三类粗糙地形。以 $K_P=-80.0$ 作为统一比例增益时，回收站处平均风速的 MARE 分别为 $3.28\%$、$4.07\%$ 和 $5.45\%$；纵向湍流强度的 MARE 分别为 $6.16\%$、$8.47\%$ 和 $7.41\%$。从提取面到回收站的统计偏差也较小，说明生成的湍流 ABL 风场沿流向保持了较好的自持发展。
+**针对问题 2，论文进一步将 CWR 应用于乡村、郊区和城市三类粗糙地形。**以 $K_P=-80.0$ 作为统一比例增益时，回收站处平均风速的 MARE 分别为 $3.28\%$、$4.07\%$ 和 $5.45\%$；纵向湍流强度的 MARE 分别为 $6.16\%$、$8.47\%$ 和 $7.41\%$。从提取面到回收站的统计偏差也较小，说明生成的湍流 ABL 风场沿流向保持了较好的自持发展。
 
-![图 13 不同粗糙地形下湍流大气边界层风场的瞬时涡量](../../assets/public-safe/ref-wang2024-ES/fig-13-rough-terrain-vorticity.jpg)
+![论文图 13 不同粗糙地形下湍流大气边界层风场的瞬时涡量](../../assets/public-safe/ref-wang2024-ES/fig-13-rough-terrain-vorticity.jpg)
 
-图 13 不同粗糙地形下湍流大气边界层风场的瞬时涡量
+论文图 13 不同粗糙地形下湍流大气边界层风场的瞬时涡量
 
 图中用 $Q=200$ 提取三类粗糙地形下的瞬时涡结构，并按速度幅值着色。它直观展示了 CWR 生成的湍流结构在计算域内持续发展，而不是快速衰减为过度平滑的入口风场。
 
 ### 3. 风谱与各向异性 von-Kármán 谱保持一致
 
-对数值风洞来说，平均风速和湍流强度只是第一层检查，频率能量分布同样重要。论文将 CWR 生成的风谱与各向异性 von-Kármán 谱对比，结果显示生成风场在能量含量区和惯性子区总体吻合，并能观察到 $-5/3$ 斜率特征。高频部分的能量损失仍然存在，主要与 LES 的数值耗散和网格分辨率有关。
+**针对问题 2，对数值风洞来说，平均风速和湍流强度只是第一层检查，频率能量分布同样重要。**论文将 CWR 生成的风谱与各向异性 von-Kármán 谱对比，结果显示生成风场在能量含量区和惯性子区总体吻合，并能观察到 $-5/3$ 斜率特征。高频部分的能量损失仍然存在，主要与 LES 的数值耗散和网格分辨率有关。
 
 ### 4. 高层建筑风压结果与风洞数据总体吻合
 
-论文将提取到的 CWR 风速时程作为主计算域入口条件，用于孤立高层建筑的风荷载评估，并与 TPU Aerodynamic Database 的风洞试验结果对比。结果显示，建筑迎风面、背风面和侧面的平均风压分布总体一致；迎风面和背风面的脉动风压偏差小于 $20\%$，侧面最大偏差达到 $30\%$。
+**针对问题 3，论文将提取到的 CWR 风速时程作为主计算域入口条件，用于孤立高层建筑的风荷载评估，并与 TPU Aerodynamic Database 的风洞试验结果对比。**结果显示，建筑迎风面、背风面和侧面的平均风压分布总体一致；迎风面和背风面的脉动风压偏差小于 $20\%$，侧面最大偏差达到 $30\%$。
 
-![图 19 建筑周围平均风场和流动结构](../../assets/public-safe/ref-wang2024-ES/fig-19-building-flow-structures.jpg)
+![论文图 19 建筑周围平均风场和流动结构](../../assets/public-safe/ref-wang2024-ES/fig-19-building-flow-structures.jpg)
 
-图 19 建筑周围平均风场和流动结构
+论文图 19 建筑周围平均风场和流动结构
 
 图中展示了建筑周围的平均速度场、流线和瞬时涡结构。它说明 CWR 生成的入口风场进入建筑主域后，能够形成分离、尾流和马蹄涡等典型建筑绕流特征。
 
-![图 21 建筑表面风压系数云图](../../assets/public-safe/ref-wang2024-ES/fig-21-wind-pressure-contours.jpg)
+![论文图 21 建筑表面风压系数云图](../../assets/public-safe/ref-wang2024-ES/fig-21-wind-pressure-contours.jpg)
 
-图 21 建筑表面风压系数云图
+论文图 21 建筑表面风压系数云图
 
 上排为 TPU 风洞试验数据库结果，下排为 LES 结果。图中比较了平均风压系数和脉动风压系数，显示 CWR-LES 对主要风压分布具有较好的复现能力，同时也暴露出侧面脉动风压仍有改进空间。
 
@@ -94,6 +108,8 @@ $$
 论文也明确给出了后续改进空间。首先，SECD 模型会在近地面区域放大湍流强度，仍需要更准确地建立阻力系数与湍流统计特征之间的关系。其次，SECD 阻力系数在本文中仍依赖试算确定，这限制了方法在更多地形条件下的直接推广。
 
 第三，CWR 方法当前主要调整纵向湍流强度，没有同时把湍流相干性作为控制目标。因此，在高层建筑侧面脉动风压预测中，LES 结果相对风洞试验仍出现较大偏差。将 CWR 用于具体工程时，仍需要结合目标风场谱、相干性、网格分辨率、计算域尺度以及风洞或现场数据进行验证。
+
+如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 

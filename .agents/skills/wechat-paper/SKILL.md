@@ -235,7 +235,7 @@ parallel public正文 edits only in the WeChat draft or only in the RST page.
 Generate three public-safe files or records for each paper article:
 
 - `wechat/articles/draft-public-safe/<publication_ref>.md`: reader-facing WeChat Markdown. It should be clean enough to copy into a WeChat Markdown editor or the WeChat backend.
-- `docs/source/paper-notes/<publication_ref>.rst`: RTD Paper Companion Page. It should present the same public title, body text, images, and DOI as the WeChat Markdown article, with only markup and rendering differences needed for Sphinx/reStructuredText. RTD related-paper navigation is generated separately with internal paper-note links.
+- `docs/source/paper-notes/<publication_ref>.rst`: RTD Paper Companion Page. It should present the same public body text, images, and DOI as the WeChat Markdown article, with markup/rendering differences plus the documented channel adaptations (prefix-stripped title, no WeChat closing block, RTD-only `完整引用` citation section). RTD related-paper navigation is generated separately with internal paper-note links.
 - `wechat/articles/review/<publication_ref>.review.md`: publishing note for authors and editors. It records metadata, evidence, figure source status, formula preview status, copyright checks, unresolved tasks, and checks run.
 
 The reader-facing Markdown must not contain:
@@ -259,8 +259,25 @@ Rules:
 
 - Convert the WeChat Markdown article to reStructuredText rather than enabling a new Markdown/MyST route in Sphinx.
 - Use `docs/source/paper-notes/<publication_ref>.rst` as the canonical RTD page path, for example `docs/source/paper-notes/ref-zhao2026-BS.rst`.
-- Preserve the same title, section order, body text, images, and DOI link.
-- Change only what Sphinx rendering requires: heading underline syntax, image directives, internal links, external links, code/formula representation, relative asset paths, and RTD-only internal related-paper navigation.
+- Preserve the same section order, body text, images, and DOI link.
+- Change only what Sphinx rendering requires plus the channel adaptations
+  listed below: heading underline syntax, image directives, internal links,
+  external links, code/formula representation, relative asset paths, and
+  RTD-only internal related-paper navigation.
+- RTD title: strip the WeChat title-category prefix (`数值风洞 |`, `结构抗风 |`,
+  `漂浮风电 |`) from the page title and related-navigation link labels. The
+  category packaging is a WeChat surface concern; RTD pages get their
+  categorization from direction pages and the site navigation.
+- Closing block: skip the paragraph containing the fixed WeChat closing
+  sentence (anchored on `点击阅读原文`); RTD pages carry no closing block.
+- Citation section: after the body and before `相关论文解读`, the converter
+  appends a `完整引用` section with the full bibliographic citation, extracted
+  from the `docs/source/Publications.rst` paragraph under the
+  `.. _<publication_ref>:` anchor and truncated at the DOI URL (impact factor
+  and CAS partition stay on the Publications page), plus a `:ref:` link to
+  that Publications entry. If the anchor is missing, the converter warns and
+  omits the section; for a real paper article that warning must be resolved
+  before the draft is called ready.
 - Keep private review metadata out of the RST page.
 - Use `wechat/tools/markdown_to_rtd.py` as the formal Markdown-to-RST
   converter for this pipeline. Example:
@@ -337,12 +354,15 @@ citations, formula semantics, image approval status, or public-safety
 boundaries.
 
 Add `摘要` immediately after `论文信息`. For English papers, translate the
-original English abstract faithfully into Chinese and then include
-`**英文摘要**` plus the original English abstract from Zotero `abstractNote`, the
-paper PDF, an author manuscript, or another approved source. Do not replace the
-English abstract with an English paraphrase. Do not invent an abstract when the
+original English abstract faithfully into Chinese. Do not include the original
+English abstract in the reader-facing article, the WeChat draft, or the RTD
+page; readers are Chinese-first. The Chinese translation may be split into 2-3
+paragraphs by meaning for mobile readability; splitting changes layout only,
+not the faithful-translation requirement. Do not invent an abstract when the
 original paper abstract is unavailable; keep that issue in the review note
 until a paper PDF, author manuscript, or approved source is available.
+`scripts/check-public-safe-content.py` must fail any reader-facing draft that
+still contains `**英文摘要**`.
 
 In `论文信息`, keep the article metadata compact:
 
@@ -372,13 +392,30 @@ Write for technically literate readers who may include prospective students, col
 Tone:
 
 - Use the author's perspective and voice. The article should read like WOEAI or the authors are explaining their own paper to readers.
-- Prefer `我们在这项研究中...`, `这项工作...`, and `这篇论文...` over third-party phrases such as `从公开摘要可确认...`.
+- Unify narration on `我们` for research actions and decisions (`我们在这项研究中...`, `我们比较了...`, `我们建议...`). When citing specific numeric results, `论文中给出的结果` is acceptable for precision. Do not use detached third-party phrases such as `从公开摘要可确认...`.
 - Scholarly first.
 - Engineering relevance second.
 - No hype.
 - No unsupported partner names or project claims.
 - Keep limitations visible.
 - Avoid standing outside the paper as a detached reviewer unless explicitly writing a review note.
+
+Opening and skim path:
+
+- Vary the opening strategy across articles. Choose from: real-world
+  contradiction, counter-intuition (challenge a common assumption), concrete
+  number lead, or scenario lead. Adjacent articles in the same batch should not
+  reuse the same strategy.
+- When the paper provides citable numbers, put a quantified hook in the first
+  one or two paragraphs (for example a maximum error reduction, a speedup, or
+  a deviation percentage). Never invent numbers; if no suitable number exists,
+  record a `待确认可公开的量化数字` item in the review note instead.
+- In each `关键发现` subsection, bold exactly one conclusion sentence so a
+  skimming reader can follow the bolded sentences alone. Keep other bold usage
+  restrained.
+- Write `研究问题` as a numbered list of questions. Open each `关键发现`
+  subsection with a sentence that answers back to a numbered question, for
+  example `针对问题 1，...`.
 
 ## Formula Handling
 
@@ -480,10 +517,17 @@ Recommended extraction order:
 
 Every figure needs:
 
-- figure identifier from the paper, when applicable,
+- figure identifier from the paper, written as `论文图 N` at the start of the
+  caption-title line (for example `论文图 21 气象自动站的位置与观测环境`), so
+  readers understand the numbering comes from the paper and is not a missing
+  in-article sequence; keep the Markdown image alt text identical to the
+  caption-title line,
 - Chinese figure title on its own caption-title line, faithfully translated
   from the original paper figure title,
-- separate Chinese explanatory text on the following caption-body line,
+- separate Chinese explanatory text on the following caption-body line; write
+  only what the reader needs while looking at the figure (reading order, what
+  colors or line styles mean, which region to focus on) and do not restate the
+  article's main argument,
 - source or generation method,
 - copyright/reuse note,
 - mobile clarity preview result,
@@ -512,7 +556,18 @@ Do not commit unapproved source images for papers outside the user's authored-pa
 
 If image rights or final high-resolution assets are not ready for a non-authored or unclear paper, put figure recommendations in the review note. Do not put visible `待上传原文图` placeholders into the reader-facing article.
 
-## Extended Reading Links
+## Closing Block And Extended Reading Links
+
+Immediately before `延伸阅读`, every paper article ends its body with this
+fixed closing sentence as its own paragraph:
+
+`如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。`
+
+This sentence is WeChat-channel-specific: the bottom `阅读原文` entry it refers
+to is provided by the WeChat API `content_source_url`, which defaults to the
+current paper's RTD companion page. `markdown_to_rtd.py` recognizes the
+`点击阅读原文` anchor and skips the paragraph, so the RTD page carries no
+closing block.
 
 Add only a `延伸阅读` section near the end of the article when there are useful
 reader-facing links. For related paper navigation in the WeChat body, include
@@ -541,9 +596,17 @@ Before calling a draft ready:
 - The `论文信息` block does not contain a separate `卷期页码` line.
 - Zotero Desktop Local API metadata, DOI, `abstractNote`, and attachment
   records are checked.
-- For English papers, the public `**英文摘要**` text matches the original
-  abstract from Zotero `abstractNote`, the PDF abstract, an author manuscript,
-  or another approved source; it is not an English paraphrase.
+- For English papers, the public `摘要` text is a faithful Chinese translation
+  of the original abstract from Zotero `abstractNote`, the PDF abstract, an
+  author manuscript, or another approved source; the article contains no
+  `**英文摘要**` block.
+- `研究问题` is a numbered question list, and each `关键发现` subsection opens
+  by answering back to a numbered question.
+- Each `关键发现` subsection bolds exactly one conclusion sentence.
+- Figure caption-title lines use the `论文图 N` original-number format and the
+  explanatory line does not restate the article's main argument.
+- The fixed closing sentence appears as its own paragraph immediately before
+  `延伸阅读`.
 - Local PDF attachment is used when present. If it is missing, Zotero Web API
   `/file` is tried when credentials are available; if that also fails, the
   review note records `需要同步 PDF 或提供作者稿`.
@@ -583,7 +646,11 @@ Before calling a draft ready:
   English URLs after the link text.
 - DOI remains visible in `论文信息` for scholarly traceability.
 - The separate review note records source evidence, image/copyright status, formula preview status, and remaining human-review items.
-- The RTD Paper Companion Page matches the WeChat Markdown article in title, body text, images, and DOI link, with platform-specific related-paper navigation generated for RTD.
+- The RTD Paper Companion Page matches the WeChat Markdown article in body
+  text, images, and DOI link, with the documented channel adaptations:
+  prefix-stripped title, no closing block, the `完整引用` section (citation
+  truncated at the DOI plus a Publications anchor link), and platform-specific
+  related-paper navigation generated for RTD.
 - `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref> --check`
   passes after generating the RTD companion page.
 - The relevant research-direction page exposes the RTD page under `学术进展 Academic Progress`, grouped by second-level research subdirection and sorted by publication date descending.

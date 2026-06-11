@@ -50,7 +50,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
 - DOI: https://doi.org/10.1016/j.jobe.2025.112131
 - Zotero: `4BCF65NB`
 - PDF attachment key: `G2D6USRE`
-- 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: local Zotero imported PDF attachment exists; PDF body and embedded images were used for article evidence and body figures.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-tang2025-JBE` as paper `[63]`; `docs/source/BuildingStructuralWindResistance.rst` lists it under `高层建筑抗风与优化`.
 
@@ -77,7 +77,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 本文提出高层建筑结构响应预测的 GNN 训练与应用框架，以结构图表示节点、构件和楼层连接关系，并把风荷载信息纳入节点特征。
   - 证据位置: PDF file page 3, Section 2.1, Fig. 1, Eq. (2).
@@ -124,7 +124,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-tang2025-JBE/fig-01-structural-graph.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 1 建筑结构模型的结构图表示（不同颜色表示不同标准层）
+   - 公众号图名: 论文图 1 建筑结构模型的结构图表示（不同颜色表示不同标准层）
    - 公众号说明: 展示节点、边和楼层关系如何组成结构图。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 4: 数据生成
@@ -133,7 +133,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-tang2025-JBE/fig-04-data-generation.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 4 数据生成
+   - 公众号图名: 论文图 4 数据生成
    - 公众号说明: 展示参数化建模、有限元分析和结构图数据集转换流程。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 6: TBGNN 架构
@@ -142,7 +142,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-tang2025-JBE/fig-06-tbgnn-architecture.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 6 TBGNN 架构
+   - 公众号图名: 论文图 6 TBGNN 架构
    - 公众号说明: 展示编码器、消息传递、楼层特征融合和解码器之间的关系。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 8: 面向超高层建筑的迁移学习
@@ -151,7 +151,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-tang2025-JBE/fig-08-transfer-learning.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 8 面向超高层建筑的迁移学习
+   - 公众号图名: 论文图 8 面向超高层建筑的迁移学习
    - 公众号说明: 展示由高层数据预训练参数迁移到超高层结构数据训练的过程。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 9: 验证集回归性能
@@ -160,7 +160,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-tang2025-JBE/fig-09-regression-performance.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 9 验证集回归性能
+   - 公众号图名: 论文图 9 验证集回归性能
    - 公众号说明: 对比加入楼层特征融合前后的多种 GNN 模型预测散点。
    - 移动端预览: pending WeChat backend mobile preview
 6. 图 16: 不同基本风压下的位移和层间位移
@@ -169,7 +169,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-tang2025-JBE/fig-16-wind-pressure-sensitivity.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 16 不同基本风压下的位移和层间位移
+   - 公众号图名: 论文图 16 不同基本风压下的位移和层间位移
    - 公众号说明: 展示模型对不同基本风压输入的响应预测。
    - 移动端预览: pending WeChat backend mobile preview
 7. 图 19: CAARC 建筑不同截面工况下预测值与真实值对比
@@ -178,7 +178,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-tang2025-JBE/fig-19-caarc-comparison.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 19 CAARC 建筑不同截面工况下预测值与真实值对比
+   - 公众号图名: 论文图 19 CAARC 建筑不同截面工况下预测值与真实值对比
    - 公众号说明: 展示同一拓扑下不同构件尺寸情景的层间位移预测。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -219,7 +219,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、页码、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要补入中文摘要和英文原摘要。
+- [x] 用 Zotero/PDF 摘要核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
 - [x] 从 PDF 抽取并导入可用正文图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
 - [x] 由 controller/final integration task 将 RTD 配套页挂入相关科研方向页的 `学术进展 Academic Progress`。
@@ -227,6 +227,10 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
 - [x] 运行本地封面裁剪预览。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：具体数字式。关键卡证据：数据集规模、准确率提升、楼层数外推和 90% 时间节约均已在关键事实证据定位记录中标到 PDF file pages 8-18 及 Figs. 9、16、19。
 
 ## 检查记录
 

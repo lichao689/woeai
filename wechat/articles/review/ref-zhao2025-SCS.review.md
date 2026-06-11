@@ -49,7 +49,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
 - DOI: https://doi.org/10.1016/j.scs.2025.106237
 - Zotero: `V6PLJENN`
 - PDF attachment key: `8DSM76PX`
-- 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: local Zotero imported PDF attachment exists; PDF body and embedded images were used for article evidence and body figures.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-zhao2025-SCS` as paper `[60]`; `docs/source/BuildingStructuralWindResistance.rst` lists it under `数值风洞与湍动入流`.
 
@@ -76,7 +76,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 本文框架由场景分块、改进 3DGS/GaussianPro、点云语义分离、屋面轮廓提取和几何模型生成组成。
   - 证据位置: PDF file page 3, Section 2 `Method`, Fig. 1.
@@ -110,7 +110,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-zhao2025-SCS/fig-01-workflow.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted PDF embedded image converted to PNG public-safe asset
-   - 公众号图名: 图 1 算法框架总体流程
+   - 公众号图名: 论文图 1 算法框架总体流程
    - 公众号说明: 展示从无人机影像、场景分块、改进 GaussianPro 到建筑模型生成的完整路径。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 14: 选定建筑的密集点云
@@ -119,7 +119,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-zhao2025-SCS/fig-14-dense-point-cloud.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted PDF embedded image converted to PNG public-safe asset
-   - 公众号图名: 图 14 选定建筑的密集点云
+   - 公众号图名: 论文图 14 选定建筑的密集点云
    - 公众号说明: 从初始化点、splat 渲染、高斯椭球到最终点云展示 3DGS 建筑细节生成过程。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 18: 几何模型重建结果
@@ -128,7 +128,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-zhao2025-SCS/fig-18-geometry-reconstruction.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted PDF embedded image converted to PNG public-safe asset
-   - 公众号图名: 图 18 几何模型重建结果
+   - 公众号图名: 论文图 18 几何模型重建结果
    - 公众号说明: 将建筑点云、平面轮廓、几何模型和整体场景并列展示。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 25: 研究区域 2 m 高度处的速度幅值
@@ -137,7 +137,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-zhao2025-SCS/fig-25-velocity-magnitude.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted PDF embedded image converted to PNG public-safe asset
-   - 公众号图名: 图 25 研究区域 2 m 高度处的速度幅值
+   - 公众号图名: 论文图 25 研究区域 2 m 高度处的速度幅值
    - 公众号说明: 连接建筑几何重建与行人高度风环境分析。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 34: 风场插值结果
@@ -146,7 +146,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
    - 素材文件: `wechat/assets/public-safe/ref-zhao2025-SCS/fig-34-webgis-interpolation.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: extracted PDF embedded image converted to PNG public-safe asset
-   - 公众号图名: 图 34 风场插值结果
+   - 公众号图名: 论文图 34 风场插值结果
    - 公众号说明: 展示风场数据进入地图平台和工程沟通语境的初步效果。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -195,13 +195,17 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、页码、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要补入中文摘要和英文原摘要。
+- [x] 用 Zotero/PDF 摘要核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
 - [x] 从 PDF 抽取并导入可用正文图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
 - [x] 由 controller/final integration task 将 RTD 配套页挂入相关科研方向页的 `学术进展 Academic Progress`。
 - [x] 生成并本地审核最终封面图。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：具体数字式。关键卡证据：点云精度、生成速度、LoD 等级和 GCI 指标均已在关键事实证据定位记录中标到 PDF file pages 13-19 及 Figs. 18、25、34。
 
 ## 检查记录
 

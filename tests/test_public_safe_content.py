@@ -22,10 +22,10 @@ def load_checker():
 
 
 class PublicSafeContentTests(unittest.TestCase):
-    def run_checker(self, root: Path, wechat_root: Path) -> tuple[int, str, str]:
+    def run_checker(self, root: Path, wechat_root: Path, *extra_roots: Path) -> tuple[int, str, str]:
         checker = load_checker()
         checker.ROOT = root
-        checker.SCAN_ROOTS = [wechat_root]
+        checker.SCAN_ROOTS = [wechat_root, *extra_roots]
         stdout = io.StringIO()
         stderr = io.StringIO()
         with contextlib.redirect_stdout(stdout), contextlib.redirect_stderr(stderr):
@@ -123,6 +123,28 @@ class PublicSafeContentTests(unittest.TestCase):
             self.assertIn("reader draft contains editor-only content (pending_placeholder)", stderr)
             self.assertIn("reader draft contains editor-only content (figure_plan)", stderr)
             self.assertIn("reader draft contains editor-only content (pre_publish_checklist)", stderr)
+
+    def test_rtd_paper_note_rejects_english_abstract_marker(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "repo"
+            wechat_root = root / "wechat"
+            paper_notes_root = root / "docs" / "source" / "paper-notes"
+            wechat_root.mkdir(parents=True)
+            paper_notes_root.mkdir(parents=True)
+            (paper_notes_root / "ref-example.rst").write_text(
+                "示例标题\n"
+                "========\n\n"
+                "摘要\n"
+                "--\n\n"
+                "**英文摘要**\n\n"
+                "Example abstract.\n",
+                encoding="utf-8",
+            )
+
+            result, _stdout, stderr = self.run_checker(root, wechat_root, paper_notes_root)
+
+            self.assertEqual(result, 1)
+            self.assertIn("docs/source/paper-notes/ref-example.rst:7: RTD paper note contains editor-only content (english_abstract)", stderr)
 
     def test_review_template_may_contain_editor_workflow_fields(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

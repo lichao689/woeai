@@ -2,11 +2,11 @@
 
 .. role:: student-first-author
 
-漂浮风电 | 用长期动力优化选择浮式风机下部结构
-=============================================
+用长期动力优化选择浮式风机下部结构
+==================================
 
 .. image:: ../../../wechat/assets/public-safe/ref-zhou2023-AE/cover-wechat-900x383-imagegen-v1.png
-   :alt: 漂浮风电 | 用长期动力优化选择浮式风机下部结构
+   :alt: 用长期动力优化选择浮式风机下部结构
    :align: center
    :width: 100%
    :class: paper-note-cover
@@ -16,12 +16,12 @@
 在这篇发表于 Applied Energy 的论文中，我们提出了一套基于长期动力优化的浮式风机下部结构评估方法。论文把降阶动力模型、Kriging 代理模型、长期海况统计和 NSGA-II 多目标优化结合起来，并用这一框架比较了方形半潜式和 Y 形半潜式两类典型下部结构。它属于 WOEAI 的海上漂浮风电 / 浮式风机系统一体化分析与优化方向。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-zhou2023-AE/fig-01-dof-coordinate.jpg
-   :alt: 图 1 自由度和全局坐标系定义
+   :alt: 论文图 1 自由度和全局坐标系定义
    :align: center
    :width: 100%
    :class: paper-note-figure
 
-   图 1 自由度和全局坐标系定义
+   论文图 1 自由度和全局坐标系定义
 
    这张图展示了论文用于快速动力分析的运动自由度、全局坐标、来流方向和系泊线布置，是后续比较平台响应、塔底疲劳和导缆孔疲劳的统一坐标基础。
 
@@ -35,27 +35,35 @@
 - DOI: https://doi.org/10.1016/j.apenergy.2023.121941
 - WOEAI 相关方向: 海上漂浮风电 / 浮式风机系统一体化分析与优化
 
+三句话导读
+----------
+
+这篇论文研究用长期动力优化来筛选浮式风机下部结构，把 ROM、Kriging、长期海况和 NSGA-II 组合成设计评估流程。 它重要，因为浮式风机早期设计不能只看少数短期工况；长期疲劳、平台运动、机舱加速度和制造成本会共同改变方案排序。 读者可以带走的结论是：长期动力指标应前移到概念筛选阶段，代理模型的价值在于让 Pareto 前沿成为可计算、可比较的设计证据。
+
+关键数字 / 关键结论卡
+---------------------
+
+- 论文从 :math:`25` 年长期海洋环境数据中选取代表性风浪样本，用 Kriging 代理模型把短期响应推广到长期性能指标。
+- 在相同制造成本水平下，方形半潜式概念的塔底疲劳通常比 Y 形概念低 :math:`30\%` 至 :math:`50\%`。
+- ROM 与 OpenFAST 对比存在边界：低于额定风速时相对误差约 :math:`10\%`，更严苛海况下可能增至 :math:`10\%` 至 :math:`25\%`。
+
 摘要
 ----
 
-浮式风机下部结构设计在资本支出和动力性能中都发挥重要作用。为从多种设计概念中确定更具成本效益的船体形状和系泊构型，本文提出一种基于长期动力优化的评估方法。为了使迭代优化过程中的长期动力性能评估在计算上可承受，研究使用 Kriging 代理模型近似浮式风机响应；该模型通过代表性海洋环境参数与相应短期响应之间的回归分析建立。随机风浪中的短期响应由一个包含八个自由度的高效降阶模型 ROM 模拟。Kriging 模型用于推导长期性能指标，例如塔底和导缆孔处的全寿命累积疲劳损伤、平台峰值运动和机舱加速度。模型有效性通过与 OpenFAST 的验证对比得到确认。随后，研究将该模型嵌入多目标优化框架，以寻找在长期动力性能和制造成本之间具有最佳折中的 Pareto 最优设计。NSGA-II 算法被用于探索下部结构设计空间，并考虑与结构固有属性和动力性能相关的约束。该方法应用于两类典型半潜式浮式风机：Y 形概念和方形概念。通过比较二者 Pareto 前沿，论文发现，在本文案例中，方形半潜式有望成为更有利的下部结构。在相同制造成本水平下，方形概念的塔底疲劳大多比 Y 形低 :math:`30\%` 至 :math:`50\%`。两类概念疲劳差异的主要原因是水动力性能差异。这项工作为把哪一种浮式风机下部结构设计作为详细设计阶段输入提供了决策依据。
+浮式风机下部结构设计在资本支出和动力性能中都发挥重要作用。为从多种设计概念中确定更具成本效益的船体形状和系泊构型，本文提出一种基于长期动力优化的评估方法。为了使迭代优化过程中的长期动力性能评估在计算上可承受，研究使用 Kriging 代理模型近似浮式风机响应；该模型通过代表性海洋环境参数与相应短期响应之间的回归分析建立。
 
-**英文摘要**
+随机风浪中的短期响应由一个包含八个自由度的高效降阶模型 ROM 模拟。Kriging 模型用于推导长期性能指标，例如塔底和导缆孔处的全寿命累积疲劳损伤、平台峰值运动和机舱加速度。模型有效性通过与 OpenFAST 的验证对比得到确认。随后，研究将该模型嵌入多目标优化框架，以寻找在长期动力性能和制造成本之间具有最佳折中的 Pareto 最优设计。
 
-The substructure design plays an important role in the capital expenditure as well as the dynamic performance of floating wind turbines (FWTs). To determine the most cost-effective hull shape and mooring configuration from various design concepts, this paper proposes an evaluation methodology based on long-term dynamic optimization. To make the long-term dynamic performance assessment computationally affordable in the iterative optimization process, the FWT responses are approximated by a Kriging surrogate model, which is established via regression analysis between representative met-ocean parameters and the corresponding short-term responses. The short-term responses in stochastic wind and waves are simulated by an efficient reduced-order model (ROM) with eight degrees of freedom (DoFs). The Kriging model is employed to derive the long-term performance indicators, e.g. the lifetime accumulative fatigue damage at tower base and fairleads, the peak platform motion and nacelle acceleration. The model effectiveness is confirmed by the verification campaign against OpenFAST. Afterwards, this model is implemented into a multi-objective optimization framework that aims to find out the Pareto optimal designs that have the best trade-off between long-term dynamic performance and manufacturing cost. The NSGA-II algorithm is adopted to explore the substructure design space, with the consideration of constraints related to the inherent properties as well as the dynamic performance of structures. This methodology is applied to two typical semi-submersible FWTs: the Y-shaped and the square-shaped concept. By comparing their Pareto fronts, it is found that the square-shaped semi-submersible is expected to be a more favourable substructure for our case study. Under the same level of manufacturing cost, the tower base fatigue of square-shaped concept is mostly 30%–50% lower than that of the Y-shaped. Hydrodynamics is the main cause of the fatigue difference between the two concepts. This work provides a decision basis on which FWT substructure design is employed as input to the detail design stage.
+NSGA-II 算法被用于探索下部结构设计空间，并考虑与结构固有属性和动力性能相关的约束。该方法应用于两类典型半潜式浮式风机：Y 形概念和方形概念。通过比较二者 Pareto 前沿，论文发现，在本文案例中，方形半潜式有望成为更有利的下部结构。在相同制造成本水平下，方形概念的塔底疲劳大多比 Y 形低 :math:`30\%` 至 :math:`50\%`。两类概念疲劳差异的主要原因是水动力性能差异。这项工作为把哪一种浮式风机下部结构设计作为详细设计阶段输入提供了决策依据。
 
 研究问题
 --------
 
-浮式风机下部结构的早期设计有一个典型难题：设计空间很大，但每一个候选方案如果都进行长时程耦合仿真，计算成本会很高；如果只用少量短期工况或简化指标，又可能遗漏长期海况对疲劳和极值响应的影响。
+长期动力优化要回答的是“怎样筛选下部结构”，而不是只比较某一次响应。本文围绕三个问题展开：
 
-这篇论文关注的是“如何在早期设计阶段做可计算、可比较、可用于决策的下部结构筛选”。具体来说，研究需要同时回答三件事：
-
-- 如何用足够快的模型估计浮式风机在随机风浪下的短期响应；
-- 如何把代表性短期响应推广到长期性能指标，例如塔底疲劳、导缆孔疲劳、平台峰值运动和机舱加速度；
-- 如何在制造成本、平台主尺度、系泊参数和动力性能约束之间寻找 Pareto 最优设计。
-
-因此，本文不是单独比较某一个平台外形，也不是只做一次响应分析，而是把“快速动力分析、长期性能估计和多目标优化”合成一个下部结构评估流程。
+1. 如何用足够快的 ROM 和 Kriging 代理模型估计随机风浪下的短期响应与长期性能指标？
+2. 如何把制造成本、平台主尺度、系泊参数和动力性能约束放入同一个 Pareto 优化框架？
+3. 方形半潜式和 Y 形半潜式在本文案例中为什么会出现疲劳差异，这种差异能否指导详细设计输入选择？
 
 方法贡献
 --------
@@ -67,12 +75,12 @@ The substructure design plays an important role in the capital expenditure as we
 第三步是把代理模型嵌入多目标优化。研究采用 NSGA-II 算法探索设计空间，目标是在制造成本 :math:`TC`、塔底累积疲劳损伤 :math:`D_{\mathrm{TwrBs}}` 和导缆孔累积疲劳损伤 :math:`D_{\mathrm{Frld}}` 等指标之间寻找折中，同时施加平台固有属性和动力性能约束。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-zhou2023-AE/fig-07-platform-mooring-layout.jpg
-   :alt: 图 7 所研究浮式风机的平台构型与系泊布置
+   :alt: 论文图 7 所研究浮式风机的平台构型与系泊布置
    :align: center
    :width: 100%
    :class: paper-note-figure
 
-   图 7 所研究浮式风机的平台构型与系泊布置
+   论文图 7 所研究浮式风机的平台构型与系泊布置
 
    论文比较了方形半潜式和 Y 形半潜式两类构型，并把平台主尺度、系泊线长度、锚点半径和链径等参数纳入同一个优化设计空间。
 
@@ -82,15 +90,15 @@ The substructure design plays an important role in the capital expenditure as we
 1. 长期海况信息会改变优化判断
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-论文比较了基于简化海洋环境数据 SMD 和长期海洋环境数据 LMD 得到的优化结果。结果显示，使用长期海况数据后，风浪失配等环境条件影响能够被捕捉，部分设计会被重新排序，长期动力响应更低的设计方案也会被识别出来。
+**针对问题 1，论文比较了基于简化海洋环境数据 SMD 和长期海洋环境数据 LMD 得到的优化结果。** 结果显示，使用长期海况数据后，风浪失配等环境条件影响能够被捕捉，部分设计会被重新排序，长期动力响应更低的设计方案也会被识别出来。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-zhou2023-AE/fig-19-pareto-environmental-inputs.jpg
-   :alt: 图 19 不同环境输入得到的 Pareto 前沿对比
+   :alt: 论文图 19 不同环境输入得到的 Pareto 前沿对比
    :align: center
    :width: 100%
    :class: paper-note-figure
 
-   图 19 不同环境输入得到的 Pareto 前沿对比
+   论文图 19 不同环境输入得到的 Pareto 前沿对比
 
    这张图说明，长期海况数据不是只改变输入文件，而会影响设计点在制造成本、塔底疲劳和导缆孔疲劳之间的折中关系。
 
@@ -99,37 +107,37 @@ The substructure design plays an important role in the capital expenditure as we
 2. 方形半潜式在本文案例中更适合作为详细设计输入
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-在相同制造成本水平下，方形半潜式概念的塔底疲劳通常比 Y 形概念低 :math:`30\%` 至 :math:`50\%`。论文将这一差异主要归因于两类构型的水动力差异：Y 形平台的柱距与波浪波长之间更容易产生衍射影响，使其在部分波频范围内出现更高的平台运动响应。
+**针对问题 3，在相同制造成本水平下，方形半潜式概念的塔底疲劳通常比 Y 形概念低 :math:`30\%` 至 :math:`50\%`。** 论文将这一差异主要归因于两类构型的水动力差异：Y 形平台的柱距与波浪波长之间更容易产生衍射影响，使其在部分波频范围内出现更高的平台运动响应。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-zhou2023-AE/fig-23-pareto-substructures.jpg
-   :alt: 图 23 方形与 Y 形下部结构的 Pareto 前沿对比
+   :alt: 论文图 23 方形与 Y 形下部结构的 Pareto 前沿对比
    :align: center
    :width: 100%
    :class: paper-note-figure
 
-   图 23 方形与 Y 形下部结构的 Pareto 前沿对比
+   论文图 23 方形与 Y 形下部结构的 Pareto 前沿对比
 
    Pareto 前沿把两类概念放到同一成本和疲劳指标坐标系中比较。论文据此判断，在本文案例下，方形半潜式更有望成为进入详细设计阶段的下部结构方案。
 
 3. 水动力差异是疲劳差异的重要原因
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-为了解释两类下部结构的疲劳差异，论文进一步选择相近制造成本和主尺度的设计个体进行比较。RAO 分析显示，Y 形模型在 surge/sway 方向以及部分波频范围内具有更大的运动响应；在 roll/pitch 上，两类平台也表现出不同的峰值和频率特征。
+**针对问题 3，为了解释两类下部结构的疲劳差异，论文进一步选择相近制造成本和主尺度的设计个体进行比较。** RAO 分析显示，Y 形模型在 surge/sway 方向以及部分波频范围内具有更大的运动响应；在 roll/pitch 上，两类平台也表现出不同的峰值和频率特征。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-zhou2023-AE/fig-25-rao-comparison.jpg
-   :alt: 图 25 两类下部结构在 135 度波向下的平台运动 RAO 对比
+   :alt: 论文图 25 两类下部结构在 135 度波向下的平台运动 RAO 对比
    :align: center
    :width: 100%
    :class: paper-note-figure
 
-   图 25 两类下部结构在 135 度波向下的平台运动 RAO 对比
+   论文图 25 两类下部结构在 135 度波向下的平台运动 RAO 对比
 
    RAO 对比帮助解释为什么两个成本接近、主尺度接近的设计概念，在长期疲劳指标上仍可能出现明显差异。也就是说，优化结果不能只从几何尺寸或材料用量解释，还需要回到水动力响应机制。
 
 4. 优化同样改善了原始参考设计
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-论文还把 NAUTILUS 和 OO-Star 的原始设计作为参考点。结果显示，在相近成本水平下，优化器可以找到更低塔底疲劳和导缆孔疲劳的方案。以 OO-Star 相关成本水平为例，优化后的方形设计中，:math:`D_{\mathrm{Frld}}` 和 :math:`D_{\mathrm{TwrBs}}` 均明显低于原始参考点。
+**针对问题 2，论文还把 NAUTILUS 和 OO-Star 的原始设计作为参考点。** 结果显示，在相近成本水平下，优化器可以找到更低塔底疲劳和导缆孔疲劳的方案。以 OO-Star 相关成本水平为例，优化后的方形设计中，:math:`D_{\mathrm{Frld}}` 和 :math:`D_{\mathrm{TwrBs}}` 均明显低于原始参考点。
 
 这说明，长期动力优化不仅能用于“方形还是 Y 形”的概念比较，也能用于同一概念内部的主尺度和系泊参数改进。
 
@@ -159,9 +167,16 @@ The substructure design plays an important role in the capital expenditure as we
 - `WOEAI | 海上漂浮风电方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/FloatingOffshoreWindEnergy.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
 
+完整引用
+--------
+
+[48] :student-first-author:`Zhou Shengtao`; **Li Chao**\*; Xiao Yiqing; Wang Xiaolu; Xiang Wenyuan; Sun Qing, Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization[J]. **Applied Energy**, 2023, 352: 121941. https://doi.org/10.1016/j.apenergy.2023.121941.
+
+收录信息见 :ref:`WOEAI 学术成果页对应条目 <ref-zhou2023-AE>`。
+
 相关论文解读
 ------------
 
-- :doc:`漂浮风电 | 用钢筋混凝土优化半潜式风机平台 <ref-he2026-OE-structural>`
-- :doc:`漂浮风电 | 为半潜式风机找到可信的等效静力波浪荷载 <ref-zheng2025-OE>`
-- :doc:`漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变 <ref-li2022-SOS>`
+- :doc:`用钢筋混凝土优化半潜式风机平台 <ref-he2026-OE-structural>`
+- :doc:`为半潜式风机找到可信的等效静力波浪荷载 <ref-zheng2025-OE>`
+- :doc:`同一座 Y 型半潜平台换材料后，动力响应会怎样改变 <ref-li2022-SOS>`

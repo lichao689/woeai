@@ -36,7 +36,7 @@ wechat_backend_preview_checked: false
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-yang2025-JBE`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-yang2025-JBE --check`
 - RTD 顶部封面: not set for this package; body figures are inserted in the article flow
-- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；平台字段来自 review note。微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-yang2025-JBE.html`）。
+- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；平台字段来自 review note。微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-yang2025-JBE.html`）。RTD 渠道适配：标题去分类前缀、以“点击阅读原文”锚点跳过固定结尾块、追加“完整引用”小节（截到 DOI，附学术成果页锚点链接）和内部“相关论文解读”导航。
 - 导航状态: `docs/source/Research.rst` should list this page under `建筑结构抗风 / 高层建筑抗风与优化` in `学术进展 Academic Progress`.
 
 ## 证据来源
@@ -44,7 +44,7 @@ wechat_backend_preview_checked: false
 - DOI: https://doi.org/10.1016/j.jobe.2025.113635
 - Zotero: `YZ2D62NB`
 - PDF attachment key: `XF4GB5L9`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，并按语义分为三段；公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero local imported PDF attachment exists; the selected local publisher-record PDF was used for article evidence and body figures.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-yang2025-JBE` as paper `[67]`; `docs/data/publication-research-map.json` maps it to `建筑结构抗风 / 高层建筑抗风与优化`.
 
@@ -71,7 +71,10 @@ wechat_backend_preview_checked: false
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，按语义分为三段；不附英文原摘要。
+- 开头量化钩子:
+  - 文章使用: 忽略相关性的组合方法最大偏差约 `42%`；宽深比不小于 `2:1` 时中心点主轴响应可产生约 `19%` 以上偏差。
+  - 证据位置: PDF file pages 9-12, Section 3.1, Figs. 3-5; PDF file pages 20-21, Section 3.3.1, Table 4, Fig. 20; PDF file page 23, conclusion items 1 and 4.
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 结构位移和人体对加速度的感知是二维矢量过程，只关注一维主轴方向响应会显著低估建筑实际极值响应。
   - 证据位置: PDF file page 1 abstract; PDF file pages 2-3, Section 1.
@@ -113,8 +116,8 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-yang2025-JBE/fig-01-building-principal-axes-wind-direction.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 1 建筑主轴和风向
-   - 公众号说明: 展示楼面主轴、风向角和角点位置关系。
+   - 公众号图名: 论文图 1 建筑主轴和风向
+   - 公众号说明: 标注楼面主轴、风向角定义和角点 $C$ 位置，说明后文合成响应的坐标约定（看图信息，不复述正文）。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 3: 二维矢量响应极值合成结果和误差
    - 用途: 方法误差直观比较
@@ -122,7 +125,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-yang2025-JBE/fig-03-method-error-random-signals.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 3 二维矢量响应极值合成结果和误差
+   - 公众号图名: 论文图 3 二维矢量响应极值合成结果和误差
    - 公众号说明: 展示 SRSS、ERF、CDC、RPA 和 CPF 在随机信号算例中的极值估计差异。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 5: 不同标准差比和相关系数下的二维矢量响应极值误差
@@ -131,7 +134,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-yang2025-JBE/fig-05-error-correlation-map.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 5 不同标准差比和相关系数下的二维矢量响应极值误差
+   - 公众号图名: 论文图 5 不同标准差比和相关系数下的二维矢量响应极值误差
    - 公众号说明: 显示 CDC 和 RPA 能够更好反映 $\rho_{XY}$ 与 $\sigma_X/\sigma_Y$ 的变化。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 17: 建筑框架有限元模型
@@ -140,7 +143,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-yang2025-JBE/fig-17-width-depth-fe-models.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 17 建筑框架有限元模型
+   - 公众号图名: 论文图 17 建筑框架有限元模型
    - 公众号说明: 展示 $1:1$、$2:1$ 和 $3:1$ 宽深比模型。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 18: 不同宽深比建筑顶层角点的主轴响应和合成响应极值
@@ -149,7 +152,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-yang2025-JBE/fig-18-width-depth-wind-direction-response.jpg`
    - 来源/版权: paper PDF page-render crop; WOEAI/user-authored paper workflow scope
    - 抽取方式: rendered PDF file page 20 and cropped to the figure body
-   - 公众号图名: 图 18 不同宽深比建筑顶层角点的主轴响应和合成响应极值
+   - 公众号图名: 论文图 18 不同宽深比建筑顶层角点的主轴响应和合成响应极值
    - 公众号说明: 比较不同宽深比模型在风向角变化下的位移和加速度极值。
    - 移动端预览: pending WeChat backend mobile preview
 6. 图 20: 中心点主轴响应与角点合成响应之比
@@ -158,8 +161,8 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-yang2025-JBE/fig-20-center-corner-response-ratio.jpg`
    - 来源/版权: paper PDF page-render crop; WOEAI/user-authored paper workflow scope
    - 抽取方式: rendered PDF file page 21 and cropped to the figure body
-   - 公众号图名: 图 20 中心点主轴响应与角点合成响应之比
-   - 公众号说明: 比较楼面中心点主轴响应与顶层角点二维合成响应。
+   - 公众号图名: 论文图 20 中心点主轴响应与角点合成响应之比
+   - 公众号说明: 比较楼面中心点主轴响应与顶层角点二维合成响应之比；比例偏离 $1$ 越远，只看中心点的误差越大。
    - 移动端预览: pending WeChat backend mobile preview
 
 ## 公式检查
@@ -228,16 +231,22 @@ wechat_backend_preview_checked: false
 - [x] No unconfirmed project status appears.
 - [x] Reader-facing Markdown has no YAML front matter, production notes, checklist, pending placeholders, or private paths.
 - [x] Reader-facing Markdown uses direct Markdown hyperlinks under `延伸阅读`; no separate `阅读原文` body section is included.
-- [x] Figure captions use a Chinese figure-title line translated from the original paper title plus a separate Chinese explanatory line.
+- [x] Figure captions use a `论文图 N` Chinese figure-title line translated from the original paper title plus a separate look-at-the-figure explanatory line.
 
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要补入中文摘要和英文原摘要。
+- [x] 用 Zotero/PDF 摘要补入中文摘要（忠实翻译，按语义分段；2026-06-11 起不再保留英文原摘要）。
 - [x] 从 PDF 抽取并导入可用正文图。
-- [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
+- [x] 由公众号正文转换生成 RTD 配套页，保持正文、图片、DOI 和延伸阅读链接一致（渠道适配：去前缀标题、无结尾块、“完整引用”小节、内部相关论文解读导航）。
+- [ ] 2026-06-11 表达修订后，微信草稿需要重新 live `update-draft`（`content_source_url` 默认本文 RTD 解读页），等待用户明确确认后执行。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成整篇修订——删除英文摘要段；中文摘要按语义分三段；开头增加量化钩子（约 `42%` 方法偏差、约 `19%` 中心点偏差，证据见“关键事实证据定位记录”）；每个“关键发现”小节恰好加粗一句结论；叙述人称统一为“我们”；“研究问题”改为编号列表且“关键发现”首句回扣对应问题；图注改为 `论文图 N` 格式且解释行只写看图信息；“延伸阅读”前加入固定结尾块（配套微信底部“阅读原文”默认指向本文 RTD 解读页）。开头策略：反常识式 + 具体数字。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：反常识式 + 具体数字式。关键卡证据：42%、19%、前 3/6/11 阶振型贡献和风向/宽深比结论均已在关键事实证据定位记录中标到对应 PDF file pages 与图表。
 
 ## 检查记录
 

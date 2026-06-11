@@ -52,7 +52,7 @@ rtd_page_checked: true
 
 - DOI: https://doi.org/10.1007/s12273-025-1379-7
 - Zotero: `CGKPKZ8I`
-- 摘要来源: Zotero Local API `abstractNote`; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Local API `abstractNote`; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: 用户确认其为论文作者，可以直接使用该论文 PDF 中的图片；本稿图片已从 PDF 内嵌图片条带抽取并拼接为正文素材。
 
 ## 源文件获取记录
@@ -78,7 +78,7 @@ rtd_page_checked: true
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要为英文原摘要的忠实翻译，并附英文原摘要。
+  - 文章使用: 中文摘要为英文原摘要的忠实翻译，不附英文原摘要。
   - 证据位置: Zotero Desktop Local API `abstractNote`; PDF abstract location: `pending PDF page audit`.
 - 核心结论: 预计算 CFD 数据库将中尺度气象输入、微尺度 CFD 计算和数据库组织连接起来，用于快速城市微尺度风环境预测。
   - 证据位置: PDF file page 04, Fig. 1; paper workflow and WRF/CFD/database discussion around Sections 3.2-3.3.
@@ -122,7 +122,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BS/fig-01-workflow.png`
    - 来源/版权: paper PDF embedded images; author confirmed usable
    - API 实操: approved for upload in first live draft test
-   - 公众号图名: 图 1 所提出框架的工作流程
+   - 公众号图名: 论文图 1 所提出框架的工作流程
    - 公众号说明: 将城市微尺度风场计算前置，并面向快速预测和工程应用调用。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 2: 深圳建筑分块划分示意图
@@ -131,7 +131,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BS/fig-02-block-division.png`
    - 来源/版权: paper PDF embedded images; author confirmed usable
    - API 实操: approved for upload in first live draft test
-   - 公众号图名: 图 2 深圳建筑分块划分示意图
+   - 公众号图名: 论文图 2 深圳建筑分块划分示意图
    - 公众号说明: 城市区域被组织为可计算、可拼接、可入库的微尺度风场单元。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 21: 气象自动站的位置与观测环境
@@ -140,7 +140,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BS/fig-21-stations.png`
    - 来源/版权: paper PDF embedded images; author confirmed usable
    - API 实操: approved for upload in first live draft test
-   - 公众号图名: 图 21 气象自动站的位置与观测环境
+   - 公众号图名: 论文图 21 气象自动站的位置与观测环境
    - 公众号说明: 用现场监测数据检验区块 CFD 数据库的预测能力。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 25: WebGIS 中风速与风压数据的可视化展示
@@ -149,7 +149,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BS/fig-25-webgis.png`
    - 来源/版权: paper PDF embedded images; author confirmed usable
    - API 实操: approved for upload in first live draft test
-   - 公众号图名: 图 25 WebGIS 中风速与风压数据的可视化展示
+   - 公众号图名: 论文图 25 WebGIS 中风速与风压数据的可视化展示
    - 公众号说明: 让预计算 CFD 数据库具备查询、展示和工程沟通能力。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -178,12 +178,16 @@ rtd_page_checked: true
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、页码、DOI、公式和图题。
-- [x] 用 Zotero Local API `abstractNote` 补入中文摘要和英文原摘要。
+- [x] 用 Zotero Local API `abstractNote` 核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
 - [x] 导入已确认可用的原始高清图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
 - [x] 将 RTD 配套页挂入 `科研方向 Research` 页面的 `学术进展 Academic Progress`，归入 `建筑结构抗风 / 数值风洞与湍动入流`。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：现实矛盾式。关键卡证据：区块尺度、过渡区长度、气象站风速阈值和相对误差均已在关键事实证据定位记录中标到 PDF file pages 04-22 及 Figs. 1、2、21、25。
 
 ## 检查记录
 

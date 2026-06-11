@@ -70,7 +70,7 @@ rtd_page_checked: true
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要为 PDF abstract 的忠实翻译，并附英文原摘要。
+  - 文章使用: 中文摘要为 PDF abstract 的忠实翻译，不附英文原摘要。
   - 证据位置: `PDF file page 3`, Abstract.
 - 核心结论: 论文提出从高分辨率 GF-7 立体卫星影像到 CFD 可用城市几何的快速重建框架。
   - 证据位置: `PDF file page 5`, Section 2 and Fig. 1.
@@ -105,7 +105,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BE/fig-01-workflow.png`
    - 来源/版权: PDF embedded image; author-confirmed WOEAI/user-authored paper
    - 抽取方式: `pdfimages -png -p`
-   - 公众号图名: 图 1 所提出框架的整体流程
+   - 公众号图名: 论文图 1 所提出框架的整体流程
    - 公众号说明: 框架把建筑轮廓提取、视差估计、点云生成、DSM 投影和 LoD1 几何建模连接起来。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 2: GF-7 的 MUX 与 PAN 数据集
@@ -114,7 +114,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BE/fig-02-gf7-dataset.png`
    - 来源/版权: PDF embedded image; author-confirmed WOEAI/user-authored paper
    - 抽取方式: `pdfimages -png -p`
-   - 公众号图名: 图 2 GF-7 的 MUX 与 PAN 数据集
+   - 公众号图名: 论文图 2 GF-7 的 MUX 与 PAN 数据集
    - 公众号说明: GF-7 多光谱与全色影像提供了城市尺度覆盖和局部建筑细节。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 10: 三维建筑几何的局部视图
@@ -123,7 +123,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BE/fig-10-local-geometry.png`
    - 来源/版权: PDF embedded image; author-confirmed WOEAI/user-authored paper
    - 抽取方式: `pdfimages -png -p`
-   - 公众号图名: 图 10 三维建筑几何的局部视图
+   - 公众号图名: 论文图 10 三维建筑几何的局部视图
    - 公众号说明: 局部结果展示了规则化后的 LoD1 城市几何。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 14: 不同 DSM 生成与建筑高度估计算法的比较
@@ -132,7 +132,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BE/fig-14-dsm-comparison.png`
    - 来源/版权: PDF embedded image; author-confirmed WOEAI/user-authored paper
    - 抽取方式: `pdfimages -png -p`
-   - 公众号图名: 图 14 不同 DSM 生成与建筑高度估计算法的比较
+   - 公众号图名: 论文图 14 不同 DSM 生成与建筑高度估计算法的比较
    - 公众号说明: DSM-Net 的高度曲线更接近 LiDAR 参考结果。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -178,12 +178,16 @@ rtd_page_checked: true
 ## 发布前任务
 
 - [x] 用 Zotero Desktop Local API 核对作者、期刊、年份、DOI、摘要和附件记录。
-- [x] 用本地 PDF 核对英文摘要、正文证据、关键图、关键公式和页码。
+- [x] 用本地 PDF 核对中文摘要、正文证据、关键图、关键公式和页码，并按 2026-06-11 规则移除英文原摘要。
 - [x] 从 PDF 抽取并放入 public-safe 正文图片。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
 - [ ] 主线程挂入方向页、首页或 backlog 状态。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [x] 已生成公众号首图封面并记录封面素材；微信后台手机预览 pending。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：场景式。关键卡证据：RS-Mamba 识别指标、DSM-Net 高度验证和 GF-7 分辨率边界均已在关键事实证据定位记录中标到 PDF file pages 13-19 及 Fig. 14。
 
 ## 检查记录
 

@@ -44,7 +44,7 @@ wechat_backend_preview_checked: false
 - DOI: https://doi.org/10.1016/j.engstruct.2024.118742
 - Zotero: `3HGIR6QR`
 - PDF attachment key: `WAPF8PVL`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero attachment record is `linkMode=imported_url`, but the selected evidence file was the valid local Zotero storage PDF associated with attachment `WAPF8PVL`; no web PDF download was used.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-wang2024-ES` as paper `[55]`; `docs/source/PublicationsByResearch.rst` maps it under `建筑结构抗风 / 数值风洞与湍动入流`; the assigned worker scope did not modify integration pages.
 
@@ -71,7 +71,7 @@ wechat_backend_preview_checked: false
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 论文提出 controllable weak recycling (CWR) 方法，将反馈比例控制引入 weak recycling 的重缩放过程，并结合 SECD 模型生成粗糙地表上的湍流 ABL 风场。
   - 证据位置: PDF file page 1 abstract; PDF file page 4 Fig. 3; PDF file page 9 and PDF file page 10, Section 2.2.
@@ -106,7 +106,7 @@ wechat_backend_preview_checked: false
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
    - 图像复核: visually verified against PDF file page 4 / Fig. 3 and local extracted image inventory
-   - 公众号图名: 图 3 CWR 方法获得指定湍流大气边界层风场的示意图
+   - 公众号图名: 论文图 3 CWR 方法获得指定湍流大气边界层风场的示意图
    - 公众号说明: 展示 CWR 如何在辅助域中通过反馈控制和 SECD 模型生成目标 ABL 风场，并向主域输出入口速度时程。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 13: 不同粗糙地形下湍流大气边界层风场的瞬时涡量
@@ -116,7 +116,7 @@ wechat_backend_preview_checked: false
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
    - 图像复核: visually verified against PDF file page 12 / Fig. 13 and local extracted image inventory
-   - 公众号图名: 图 13 不同粗糙地形下湍流大气边界层风场的瞬时涡量
+   - 公众号图名: 论文图 13 不同粗糙地形下湍流大气边界层风场的瞬时涡量
    - 公众号说明: 展示 CWR 生成的涡结构在乡村、郊区和城市粗糙地形中沿流向发展。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 19: 建筑周围平均风场和流动结构
@@ -126,7 +126,7 @@ wechat_backend_preview_checked: false
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
    - 图像复核: visually verified against PDF file page 17 / Fig. 19 and local extracted image inventory
-   - 公众号图名: 图 19 建筑周围平均风场和流动结构
+   - 公众号图名: 论文图 19 建筑周围平均风场和流动结构
    - 公众号说明: 展示主域中的流线、速度场和瞬时涡结构，帮助读者理解建筑绕流验证场景。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 21: 建筑表面风压系数云图
@@ -136,7 +136,7 @@ wechat_backend_preview_checked: false
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
    - 图像复核: visually verified against PDF file page 19 / Fig. 21 and local extracted image inventory
-   - 公众号图名: 图 21 建筑表面风压系数云图
+   - 公众号图名: 论文图 21 建筑表面风压系数云图
    - 公众号说明: 上排为 TPU 风洞试验数据库结果，下排为 LES 结果，用于比较平均与脉动风压系数分布。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -180,12 +180,16 @@ wechat_backend_preview_checked: false
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要补入中文摘要和英文原摘要。
+- [x] 用 Zotero/PDF 摘要核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
 - [x] 从 PDF 抽取并导入可用正文图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [ ] 主线程集成 Research/index/backlog。
 - [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：现实矛盾式。关键卡证据：比例控制、三类粗糙地形 MARE、谱一致性和建筑风压偏差均已在关键事实证据定位记录中标到 PDF file pages 11-21 及 Figs. 13、19、21。
 
 ## 检查记录
 

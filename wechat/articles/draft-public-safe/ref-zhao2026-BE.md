@@ -6,9 +6,9 @@
 
 这项工作属于 WOEAI 的 **建筑结构抗风 / 数值风洞与湍动入流** 方向，也直接服务于城市风环境模拟、数值风洞前处理和工程软件化应用。
 
-![图 1 所提出框架的整体流程](../../assets/public-safe/ref-zhao2026-BE/fig-01-workflow.png)
+![论文图 1 所提出框架的整体流程](../../assets/public-safe/ref-zhao2026-BE/fig-01-workflow.png)
 
-图 1 所提出框架的整体流程
+论文图 1 所提出框架的整体流程
 
 框架把建筑轮廓提取、视差估计、点云生成、DSM 投影和 LoD1 几何建模连接起来，使卫星影像能够进一步转化为 CFD 可用的城市模型。
 
@@ -21,21 +21,29 @@
 - DOI: https://doi.org/10.1016/j.buildenv.2026.114811
 - WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
 
+## 三句话导读
+
+这篇论文研究如何把 GF-7 高分辨率立体卫星影像转化为城市风环境 CFD 可用的 LoD1 几何模型。
+它重要，因为应急评估、城市级规划和快速工程判断很难长期依赖人工建模或局部现场点云采集。
+读者可以带走的结论是：卫星影像可以进入数值风洞前处理链路，但建筑轮廓、高度估计和几何规则化必须一起验证。
+
+## 关键数字 / 关键结论卡
+
+- 建筑识别独立测试中，Precision、Recall、F1-score 和 IoU 分别达到 $0.9602$、$0.9166$、$0.9379$ 和 $0.9178$。
+- UAV-LiDAR 验证中，建筑高度估计达到 $R^2 = 0.91$、$\mathrm{MAE} = 2.72\,\mathrm{m}$ 和 $\mathrm{RMSE} = 4.09\,\mathrm{m}$。
+- DSM-Net 的建筑高度排序曲线中，$\mathrm{MAE}$ 为 $2.27\,\mathrm{m}$，低于 SGM 的 $6.28\,\mathrm{m}$ 和 MGM 的 $3.27\,\mathrm{m}$。
+
 ## 摘要
 
-快速、准确地构建能够直接用于计算流体力学（CFD）的规则城市建筑模型，对城市风环境评估具有重要意义。传统建筑几何生成方法依赖人工建模或现场点云采集，数据获取耗时巨大，难以满足应急场景下城市尺度快速重建的需求。为解决这一问题，本文提出一种利用高分辨率立体卫星影像快速生成适用于 CFD 模拟的城市几何模型框架。以深圳为例，研究首先对高分七号（GF-7）立体影像进行影像融合和正射校正，构建语义分割数据集；随后训练 remote sensing mamba（RS-Mamba）网络提取建筑轮廓。同时，研究利用 digital surface model network（DSM-Net）估计视差，并通过前方交会算法生成点云；这些点云随后被投影为数字表面模型（DSM），用于计算建筑高度。为了满足 CFD 对几何质量的要求，研究开发了轮廓简化与规则化算法，在城市尺度快速生成高质量 Level of Detail 1（LoD1）建筑与植被模型。最后，基于深圳和东莞的 UAV-LiDAR 验证得到 $R^2 = 0.91$、$\mathrm{MAE} = 2.72\,\mathrm{m}$ 和 $\mathrm{RMSE} = 4.09\,\mathrm{m}$，优于 SGM、MGM 以及 CSF/Top-hat 方法。结果表明，该框架能够有效缓解 GF-7 影像的拖尾效应，并为高保真城市风环境评估提供数值稳定的几何基础。
+快速、准确地构建能够直接用于计算流体力学（CFD）的规则城市建筑模型，对城市风环境评估具有重要意义。传统建筑几何生成方法依赖人工建模或现场点云采集，数据获取耗时巨大，难以满足应急场景下城市尺度快速重建的需求。为解决这一问题，本文提出一种利用高分辨率立体卫星影像快速生成适用于 CFD 模拟的城市几何模型框架。
 
-**英文摘要**
+以深圳为例，研究首先对高分七号（GF-7）立体影像进行影像融合和正射校正，构建语义分割数据集；随后训练 remote sensing mamba（RS-Mamba）网络提取建筑轮廓。同时，研究利用 digital surface model network（DSM-Net）估计视差，并通过前方交会算法生成点云；这些点云随后被投影为数字表面模型（DSM），用于计算建筑高度。
 
-Rapid and accurate construction of regular urban building models, which can be directly used in computational fluid dynamics (CFD), is of great significance for urban wind environment assessment. But traditional methods for generating building geometry, which rely on manual modeling or on-site point cloud acquisition, consume massive amounts of time for data collection and struggle to meet the demand for rapid city-scale reconstruction in emergency situations. To address this issue, this paper proposes a framework for rapidly generating urban geometric models suitable for CFD simulations utilizing high-resolution stereo satellite imagery. Taking Shenzhen as an example, the GaoFen-7 (GF-7) stereo images were first processed through image fusion and ortho-rectification to construct a semantic segmentation dataset. Subsequently, the remote sensing mamba (RS-Mamba) network was trained to extract building contours. Simultaneously, disparity was estimated using digital surface model network (DSM-Net), and point clouds were generated via a forward intersection algorithm. These point clouds were then projected into a digital surface model (DSM) to calculate building heights. To satisfy the geometric quality requirements for CFD, this study developed a contour simplification and regularization algorithm to rapidly generate high-quality Level of Detail 1 (LoD1) building and vegetation models at the urban scale. Finally, validation across Shenzhen and Dongguan using UAV-LiDAR yielded R2 = 0.91, MAE = 2.72 m, and RMSE = 4.09 m, outperforming SGM, MGM, and CSF/Top-hat methods. These results demonstrated that the proposed framework effectively mitigates GF-7 tailing effects and ensures a numerically stable foundation for high-fidelity urban wind environment assessment.
+为了满足 CFD 对几何质量的要求，研究开发了轮廓简化与规则化算法，在城市尺度快速生成高质量 Level of Detail 1（LoD1）建筑与植被模型。最后，基于深圳和东莞的 UAV-LiDAR 验证得到 $R^2 = 0.91$、$\mathrm{MAE} = 2.72\,\mathrm{m}$ 和 $\mathrm{RMSE} = 4.09\,\mathrm{m}$，优于 SGM、MGM 以及 CSF/Top-hat 方法。结果表明，该框架能够有效缓解 GF-7 影像的拖尾效应，并为高保真城市风环境评估提供数值稳定的几何基础。
 
 ## 研究问题
 
-城市风环境模拟并不只是“把求解器跑起来”。在真实城市尺度上，前处理阶段的建筑轮廓、建筑高度、植被表示和几何规则性，都会影响网格质量、计算稳定性和后续风场判断。
-
-传统人工建模可以控制几何细节，但效率有限；UAV 摄影测量或 LiDAR 能提供高精度点云，却难以在短时间内覆盖大范围城市区域。卫星影像具备尺度优势，但原始影像并不能直接成为 CFD 模型，还需要完成建筑轮廓识别、高度估计、点云处理和几何规则化。
-
-因此，我们在这项研究中关注三个问题：
+卫星影像要成为 CFD 几何输入，需要跨过识别、测高和规则化三道门槛。本文回答三个问题：
 
 1. 如何从 GF-7 高分辨率立体卫星影像中快速提取城市建筑轮廓和高度信息？
 2. 如何把遥感识别结果转化为适合 CFD 网格划分与计算收敛的规则化 LoD1 几何？
@@ -47,9 +55,9 @@ Rapid and accurate construction of regular urban building models, which can be d
 
 第一步是数据准备。研究使用 GF-7 多光谱和前后视全色立体影像，经过正射校正和融合，构建本地语义分割数据集，并结合公开数据集进行迁移学习。GF-7 的立体成像能力使研究能够同时处理建筑平面轮廓和高度信息。
 
-![图 2 GF-7 的 MUX 与 PAN 数据集](../../assets/public-safe/ref-zhao2026-BE/fig-02-gf7-dataset.png)
+![论文图 2 GF-7 的 MUX 与 PAN 数据集](../../assets/public-safe/ref-zhao2026-BE/fig-02-gf7-dataset.png)
 
-图 2 GF-7 的 MUX 与 PAN 数据集
+论文图 2 GF-7 的 MUX 与 PAN 数据集
 
 GF-7 多光谱与全色影像提供了城市尺度覆盖和局部建筑细节，是后续轮廓提取、视差估计和高度计算的输入基础。
 
@@ -57,9 +65,9 @@ GF-7 多光谱与全色影像提供了城市尺度覆盖和局部建筑细节，
 
 第三步是面向 CFD 的几何规则化。遥感识别得到的原始轮廓可能存在短边、锐角、孔洞、粘连和不规则边界，这些问题会降低网格质量并影响计算稳定性。论文结合连通域处理、RDP 简化、分割、合并与交点规则，将不规则建筑轮廓转化为更适合数值模拟的 LoD1 建筑模型；植被则通过增强植被指数（EVI）识别并构建简化棱柱模型。
 
-![图 10 三维建筑几何的局部视图](../../assets/public-safe/ref-zhao2026-BE/fig-10-local-geometry.png)
+![论文图 10 三维建筑几何的局部视图](../../assets/public-safe/ref-zhao2026-BE/fig-10-local-geometry.png)
 
-图 10 三维建筑几何的局部视图
+论文图 10 三维建筑几何的局部视图
 
 局部结果展示了规则化后的 LoD1 城市几何：建筑轮廓更清晰，高度信息被转化为空间模型，便于后续网格划分和风环境计算。
 
@@ -67,25 +75,25 @@ GF-7 多光谱与全色影像提供了城市尺度覆盖和局部建筑细节，
 
 ### 1. 卫星影像可以支撑城市尺度的快速几何重建
 
-研究表明，经过迁移学习和本地数据微调后，RS-Mamba 能够较完整地提取 GF-7 影像中的建筑轮廓。论文报告的独立测试结果中，建筑识别的 Precision、Recall、F1-score 和 IoU 分别达到 $0.9602$、$0.9166$、$0.9379$ 和 $0.9178$。
+**针对问题 1，研究表明，经过迁移学习和本地数据微调后，RS-Mamba 能够较完整地提取 GF-7 影像中的建筑轮廓。**论文报告的独立测试结果中，建筑识别的 Precision、Recall、F1-score 和 IoU 分别达到 $0.9602$、$0.9166$、$0.9379$ 和 $0.9178$。
 
 这说明高分辨率立体卫星影像不仅能提供二维底图，也可以通过深度学习和立体匹配进入城市几何建模链路，为大范围风环境模拟提供更快的数据入口。
 
 ### 2. DSM-Net 高度估计与 UAV-LiDAR 验证结果吻合较好
 
-论文使用东莞理工学院区域的 UAV-LiDAR 数据作为地面真值，对 DSM 和建筑高度估计进行验证。结果显示，预测 DSM 与参考 DSM 的建筑高度具有较好一致性，量化指标达到 $R^2 = 0.91$、$\mathrm{MAE} = 2.72\,\mathrm{m}$ 和 $\mathrm{RMSE} = 4.09\,\mathrm{m}$。
+**针对问题 3，论文使用东莞理工学院区域的 UAV-LiDAR 数据作为地面真值，对 DSM 和建筑高度估计进行验证。**结果显示，预测 DSM 与参考 DSM 的建筑高度具有较好一致性，量化指标达到 $R^2 = 0.91$、$\mathrm{MAE} = 2.72\,\mathrm{m}$ 和 $\mathrm{RMSE} = 4.09\,\mathrm{m}$。
 
 论文进一步将 DSM-Net 与传统 SGM、MGM 方法比较。在建筑高度排序曲线中，DSM-Net 的 $\mathrm{MAE}$ 为 $2.27\,\mathrm{m}$，低于 SGM 的 $6.28\,\mathrm{m}$ 和 MGM 的 $3.27\,\mathrm{m}$。这说明在该研究区域中，DSM-Net 对城市建筑高度建模具有更好的稳定性。
 
-![图 14 不同 DSM 生成与建筑高度估计算法的比较](../../assets/public-safe/ref-zhao2026-BE/fig-14-dsm-comparison.png)
+![论文图 14 不同 DSM 生成与建筑高度估计算法的比较](../../assets/public-safe/ref-zhao2026-BE/fig-14-dsm-comparison.png)
 
-图 14 不同 DSM 生成与建筑高度估计算法的比较
+论文图 14 不同 DSM 生成与建筑高度估计算法的比较
 
 对比结果显示，DSM-Net 的高度曲线更接近 LiDAR 参考结果；传统 SGM 和 MGM 在局部区域存在更明显的高度估计偏差。
 
 ### 3. 几何规则化是连接遥感识别与 CFD 模拟的关键环节
 
-这篇论文的重点不只是识别建筑，也不只是生成 DSM，而是把这些结果进一步处理为 CFD 可用的几何模型。
+**针对问题 2，这篇论文的重点不只是识别建筑，也不只是生成 DSM，而是把这些结果进一步处理为 CFD 可用的几何模型。**
 
 对于数值风洞应用来说，建筑轮廓是否规则、短边和尖角是否减少、模型是否能稳定网格化，往往决定了后续计算能否顺利进行。论文中的轮廓简化、规则化和 LoD1 建模步骤，正是为了弥合“遥感视觉结果”和“风工程数值模型”之间的差距。
 
@@ -106,6 +114,8 @@ GF-7 多光谱与全色影像提供了城市尺度覆盖和局部建筑细节，
 其次，当前几何生成算法主要针对建筑优化，植被识别依赖 EVI，生成的是相对简化的植被几何，不能等同于完整树冠结构重建。
 
 最后，LoD1 城市几何适合支撑城市尺度风环境模拟和快速评估，但对于对局部细部非常敏感的专项工程，仍需要结合更高精度数据、局部复核和针对性的 CFD 建模策略。
+
+如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 

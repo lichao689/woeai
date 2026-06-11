@@ -44,7 +44,7 @@ wechat_backend_preview_checked: false
 - DOI: https://doi.org/10.1016/j.jcp.2023.112706
 - Zotero: `Y76UWP9R`
 - PDF attachment key: `XQVFX5D7`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero local imported PDF attachment exists; the selected local publisher-record PDF was used for article evidence and body figures.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-chen2024-JCP` as paper `[50]`; `docs/source/PublicationsByResearch.rst` maps it under `建筑结构抗风 / 数值风洞与湍动入流`; `docs/source/BuildingStructuralWindResistance.rst` lists it under `数值风洞与湍动入流`.
 
@@ -71,7 +71,7 @@ wechat_backend_preview_checked: false
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 论文提出 coherence-improved and mass-balanced random flow generation (CMRFG) 方法，用于 LES 入口湍流生成。
   - 证据位置: PDF file page 1 abstract; PDF file pages 11-15, Section 3.2.
@@ -113,7 +113,7 @@ wechat_backend_preview_checked: false
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
    - 图像复核: visually verified against PDF file page 14 / Fig. 7 and local extracted image inventory; asset is the English CMRFG workflow figure
-   - 公众号图名: 图 7 CMRFG 方法流程
+   - 公众号图名: 论文图 7 CMRFG 方法流程
    - 公众号说明: 展示 CMRFG 如何从目标谱、相关和相干函数生成质量平衡的入口湍流场。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 4: 不同单波条件下的流场统计波动
@@ -122,7 +122,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-chen2024-JCP/fig-04-statistical-flow-fluctuations.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 4 不同单波条件下的流场统计波动
+   - 公众号图名: 论文图 4 不同单波条件下的流场统计波动
    - 公众号说明: 对比质量不平衡、质量通量修正和波数周期修正下的压力与速度统计波动。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 17: 不同空间间距下的 Y 方向空间相干函数对比
@@ -131,7 +131,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-chen2024-JCP/fig-17-spatial-coherence-validation.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 17 不同空间间距下的 Y 方向空间相干函数对比
+   - 公众号图名: 论文图 17 不同空间间距下的 Y 方向空间相干函数对比
    - 公众号说明: 展示 CMRFG 相比 CIRFG 更接近目标空间相干函数。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 28: 脉动压力系数分布云图
@@ -140,7 +140,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-chen2024-JCP/fig-28-pressure-fluctuation-contours.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 28 脉动压力系数分布云图
+   - 公众号图名: 论文图 28 脉动压力系数分布云图
    - 公众号说明: 对比带质量平衡修正与不带修正时计算域中的人工压力波动。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 30: Q 准则等值面显示的瞬时涡结构
@@ -149,7 +149,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-chen2024-JCP/fig-30-q-criterion-vortices.png`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 30 Q 准则等值面显示的瞬时涡结构
+   - 公众号图名: 论文图 30 Q 准则等值面显示的瞬时涡结构
    - 公众号说明: 展示随机涡结构随流向发展和衰减。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -193,11 +193,15 @@ wechat_backend_preview_checked: false
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要补入中文摘要和英文原摘要。
+- [x] 用 Zotero/PDF 摘要核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
 - [x] 从 PDF 抽取并导入可用正文图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：现实矛盾式。关键卡证据：入口质量不平衡的压力波动、HA2/HA1 压力污染对比和空间相干验证均已在关键事实证据定位记录中标到 PDF file pages 7-8、21、25-29。
 
 ## 检查记录
 

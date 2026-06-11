@@ -47,7 +47,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v
 
 - DOI: https://doi.org/10.1063/5.0194006
 - Zotero: `2YG78T62`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero attachment key `RIVR33QT`; attachment record mode is `imported_url`, but a local PDF exists in Zotero private storage and was used as the evidence source for body claims and figure extraction.
 - WOEAI 网站记录: `docs/source/Publications.rst` anchor `ref-li2024-POF`; research placement checked against `docs/source/BuildingStructuralWindResistance.rst`.
 
@@ -74,7 +74,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要为英文原摘要的忠实翻译，并附英文原摘要。
+  - 文章使用: 中文摘要为英文原摘要的忠实翻译，不附英文原摘要。
   - 证据位置: Zotero Desktop Local API `abstractNote`; PDF abstract on `PDF file page 2`.
 - 核心结论: VPRFG 先生成矢量势场，再由旋度生成脉动速度场，使均匀各向同性湍流满足无散条件。
   - 证据位置: `PDF file page 5`, Section II.B, Eqs. (15)-(17); conclusion restatement on `PDF file page 11`.
@@ -111,7 +111,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v
    - 素材文件: `wechat/assets/public-safe/ref-li2024-POF/fig3-vprfg-flowchart.png`
    - 来源/版权: paper PDF page-render crop; author/user paper scope treated as usable for this WOEAI article
    - 抽取方式: crop from `PDF file page 8` rendered page image because the flowchart is vector/page content rather than a clean standalone embedded raster
-   - 公众号图名: 图 3 VPRFG 方法流程图
+   - 公众号图名: 论文图 3 VPRFG 方法流程图
    - 公众号说明: 方法从目标平均速度、目标能谱、计算域和网格参数出发，生成波数、幅值、频率和相位，最后由矢量势场旋度得到脉动速度场。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 4: 以 von Karman 能谱为目标生成湍流的能谱
@@ -120,7 +120,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v
    - 素材文件: `wechat/assets/public-safe/ref-li2024-POF/fig4-von-karman-energy-spectrum.jpg`
    - 来源/版权: paper PDF embedded image; author/user paper scope treated as usable for this WOEAI article
    - 抽取方式: `pdfimages` embedded raster from `PDF file page 9`
-   - 公众号图名: 图 4 以 von Karman 能谱为目标生成湍流的能谱
+   - 公众号图名: 论文图 4 以 von Karman 能谱为目标生成湍流的能谱
    - 公众号说明: 不同网格分辨率下生成能谱整体贴近目标曲线，高分辨率网格覆盖更宽波数范围。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 7: 初始时刻不同网格的 Q 准则等值面
@@ -129,7 +129,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v
    - 素材文件: `wechat/assets/public-safe/ref-li2024-POF/fig7-q-criterion-isosurfaces.jpg`
    - 来源/版权: paper PDF embedded image; author/user paper scope treated as usable for this WOEAI article
    - 抽取方式: `pdfimages` embedded raster from `PDF file page 12`, resized to mobile/repo-friendly public asset
-   - 公众号图名: 图 7 初始时刻不同网格的 Q 准则等值面
+   - 公众号图名: 论文图 7 初始时刻不同网格的 Q 准则等值面
    - 公众号说明: Q 准则等值面展示生成湍流中的涡结构；网格分辨率提高后，小尺度结构更加丰富。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 9: 衰减盒湍流能谱
@@ -138,7 +138,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v
    - 素材文件: `wechat/assets/public-safe/ref-li2024-POF/fig9-decaying-box-energy-spectra.jpg`
    - 来源/版权: paper PDF embedded image; author/user paper scope treated as usable for this WOEAI article
    - 抽取方式: `pdfimages` embedded raster from `PDF file page 13`
-   - 公众号图名: 图 9 衰减盒湍流能谱
+   - 公众号图名: 论文图 9 衰减盒湍流能谱
    - 公众号说明: 衰减盒湍流算例把 VPRFG 生成的初始场放入 LES 中检验，能谱随时间演化并与实验数据保持较好一致。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -188,6 +188,10 @@ rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v
 - [x] 将 RTD 配套页挂入相关科研方向页的 `学术进展 Academic Progress`，归入 `建筑结构抗风 / 数值风洞与湍动入流`。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键结论卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：现实矛盾式。关键卡证据：矢量势构造、任意目标谱、无散推导、Taylor 冻结假设和盒湍流验证均已在关键事实证据定位记录中标到 PDF file pages 4-13 及 Eqs. (15)-(17)、(27)、(29)、(47)、(48)。
 
 ## 检查记录
 

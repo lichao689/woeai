@@ -44,7 +44,7 @@ wechat_backend_preview_checked: false
 - DOI: https://doi.org/10.1016/j.oceaneng.2025.121336
 - Zotero: `5W2SZJUT`
 - PDF attachment keys: `Y95L65C5`, `3PC68U8X`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero local imported PDF attachments exist; the selected local publisher-record PDF was used for article evidence and body figures.
 - 公开网站记录: `docs/source/Publications.rst` contains `ref-zheng2025-OE` as paper `[65]`; `docs/source/FloatingOffshoreWindEnergy.rst` lists it under `浮式混凝土平台结构设计`.
 
@@ -71,7 +71,7 @@ wechat_backend_preview_checked: false
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，并附英文原摘要。
+  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
   - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
 - 核心结论: 研究对象为三角形半潜式 `10 MW` 风机平台，平台由三根立柱和底部浮筒组成，风机位于其中一根立柱上，四根悬链线系泊线约束平台运动。
   - 证据位置: PDF file page 3, Section 2.2, Fig. 1, Tables 2-3.
@@ -116,7 +116,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zheng2025-OE/fig-01-delta-shaped-system.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 1 三角形半潜式 10 MW 风机系统
+   - 公众号图名: 论文图 1 三角形半潜式 10 MW 风机系统
    - 公众号说明: 展示平台、风机和系泊系统基本构型。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 7: 三角形半潜式风机系统 RAO
@@ -125,7 +125,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zheng2025-OE/fig-07-raos-validation.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 7 三角形半潜式风机系统 RAO
+   - 公众号图名: 论文图 7 三角形半潜式风机系统 RAO
    - 公众号说明: 比较数值模拟与模型试验的响应幅值算子。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 12: 基于 LTSCR 和 LTCLR 的 ESWL 方法流程
@@ -134,7 +134,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zheng2025-OE/fig-12-eswl-workflow.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 12 基于 LTSCR 和 LTCLR 的 ESWL 方法流程
+   - 公众号图名: 论文图 12 基于 LTSCR 和 LTCLR 的 ESWL 方法流程
    - 公众号说明: 展示增强 ESWL 方法如何加入耦合动力分析和长期极值响应。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 13a: 半潜式 10 MW 风机平台的波浪诱导 LTSCR
@@ -143,7 +143,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zheng2025-OE/fig-13a-ltscr-distribution.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 13a 半潜式 10 MW 风机平台的波浪诱导 LTSCR
+   - 公众号图名: 论文图 13a 半潜式 10 MW 风机平台的波浪诱导 LTSCR
    - 公众号说明: 显示高应力区集中在局部危险区域。
    - 移动端预览: pending WeChat backend mobile preview
 5. 图 19: 基于标准、LTSCR 和 LTCLR 工况的最大 Von Mises 应力对比
@@ -152,7 +152,7 @@ wechat_backend_preview_checked: false
    - 素材文件: `wechat/assets/public-safe/ref-zheng2025-OE/fig-19-von-mises-comparison.jpg`
    - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
    - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 图 19 基于标准、LTSCR 和 LTCLR 工况的最大 Von Mises 应力对比
+   - 公众号图名: 论文图 19 基于标准、LTSCR 和 LTCLR 工况的最大 Von Mises 应力对比
    - 公众号说明: 对比传统方法和增强方法对最大 Von Mises 应力的预测表现。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -196,11 +196,15 @@ wechat_backend_preview_checked: false
 ## 发布前任务
 
 - [x] 用 Zotero/PDF 核对作者、期刊、页码、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要补入中文摘要和英文原摘要。
+- [x] 用 Zotero/PDF 摘要核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
 - [x] 从 PDF 抽取并导入可用正文图。
 - [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：反常识式。关键卡证据：传统方法误差、LTCLR/LTSCR 工况数、平均等效误差和 Von Mises 强度比较均已在关键事实证据定位记录中标到 PDF file pages 11-18 及 Figs. 13、19。
 
 ## 检查记录
 

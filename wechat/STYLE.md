@@ -25,6 +25,15 @@ python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS --chec
 The public Markdown owns body wording. The review note owns platform metadata
 such as the RTD top cover image and WeChat bottom `content_source_url`.
 
+The converter applies these documented channel adaptations on the RTD side:
+it strips the WeChat title-category prefix (`数值风洞 |`, `结构抗风 |`,
+`漂浮风电 |`) from the page title and related-navigation labels; it skips the
+fixed WeChat closing sentence (anchored on `点击阅读原文`); it appends a
+`完整引用` section with the full bibliographic citation (taken from the
+`docs/source/Publications.rst` anchor entry and truncated at the DOI, without
+impact factor or CAS partition) plus a `:ref:` link to the Publications entry;
+and it appends the internal `相关论文解读` navigation.
+
 ## Default Structure
 
 1. `论文信息`
@@ -64,10 +73,15 @@ the title, account, author, and timestamp above the body.
 - Add an `摘要` section immediately after `论文信息`.
 - For Chinese papers, use the Chinese abstract.
 - For English papers, provide a faithful Chinese translation of the original
-  abstract, then add `**英文摘要**` followed by the original English abstract
-  from Zotero `abstractNote`, the paper PDF, an author manuscript, or another
-  approved source.
-- Do not replace the English abstract with an English paraphrase.
+  abstract from Zotero `abstractNote`, the paper PDF, an author manuscript, or
+  another approved source. Do not include the original English abstract in the
+  reader-facing article, the WeChat draft, or the RTD page; readers are
+  Chinese-first.
+- The Chinese abstract may be split into 2-3 paragraphs by meaning for mobile
+  readability. Splitting is a layout change only; the faithful-translation
+  requirement is unchanged.
+- `scripts/check-public-safe-content.py` fails any reader-facing draft that
+  still contains `**英文摘要**`.
 - Do not invent an abstract from the article body. If the original abstract is
   unavailable, keep the article in drafting/review notes until the paper PDF,
   author manuscript, or another approved source is available.
@@ -157,10 +171,32 @@ The public-safety script must fail a review note that omits either
 - Engineering relevance second.
 - No hype.
 - No unsupported partner names or project claims.
+- Unify narration on `我们` for research actions and decisions (`我们比较了...`,
+  `我们建议...`). When citing specific numeric results, `论文中给出的结果` is
+  acceptable for precision. Avoid detached third-party phrasing.
 - Use DOI in `论文信息` for scholarly traceability.
 - Do not include a WOEAI publication anchor in reader-facing WeChat articles
   when the linked RTD publication item or paper companion page duplicates the
   article content.
+
+## Opening And Skim Path
+
+- Vary the opening strategy across articles; adjacent articles should not
+  reuse the same one. Strategies:
+  - 现实矛盾式: a real engineering tension the paper resolves.
+  - 反常识式: challenge a common design assumption (for example
+    `别只看单方向峰值`).
+  - 具体数字式: lead with a citable number from the paper.
+  - 场景式: a concrete scenario the reader recognizes.
+- When the paper provides citable numbers, put a quantified hook in the first
+  one or two paragraphs. Never invent numbers; if no suitable public number
+  exists, record `待确认可公开的量化数字` in the review note instead.
+- In each `关键发现` subsection, bold exactly one conclusion sentence so the
+  bolded sentences alone form a readable summary. Keep other bold usage
+  restrained.
+- Write `研究问题` as a numbered list of questions. Open each `关键发现`
+  subsection by answering back to a numbered question, for example
+  `针对问题 1，...`.
 
 ## Link Domain
 
@@ -180,6 +216,12 @@ The public-safety script must fail a review note that omits either
   The review front matter field `wechat_content_source_url` can override this
   per article, including an explicitly blank value when the editor wants no
   bottom link.
+- Every paper article ends its body with this fixed closing sentence as its own
+  paragraph immediately before `延伸阅读`:
+  `如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。`
+  This sentence is WeChat-channel-specific; `markdown_to_rtd.py` recognizes the
+  `点击阅读原文` anchor and skips the paragraph, so the RTD page carries no
+  closing block.
 - Keep DOI links visible in `论文信息`; do not duplicate DOI in `延伸阅读`
   unless it is the only useful external reading path.
 - This WeChat-link rule does not automatically change the public website's own
@@ -315,8 +357,15 @@ paper-note links.
 - Prefer `pdfimages -all` extraction from the PDF. If a figure is stored as ordered image strips, stitch those strips back into a complete figure before using page-render cropping.
 - Store final public-safe article figures under `wechat/assets/public-safe/<publication_ref>/`.
 - After each inserted figure, write a Chinese figure-title line translated
-  faithfully from the paper's original figure title. Put the explanatory
-  Chinese sentence in a separate following line.
+  faithfully from the paper's original figure title, starting with the paper's
+  original figure number in the `论文图 N` format, for example
+  `论文图 21 气象自动站的位置与观测环境`. Keep the Markdown image alt text
+  identical to the caption-title line. Put the explanatory Chinese sentence in
+  a separate following line.
+- The explanatory line carries only what the reader needs while looking at the
+  figure (reading order, what colors or line styles mean, which region to focus
+  on). It must not restate the article's main argument or repeat nearby body
+  text.
 - Rendered Chinese figure-title text should be centered, one font size smaller
   than body text, and italic. The explanatory line should remain separate and
   visually distinct from normal body text.

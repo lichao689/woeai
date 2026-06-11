@@ -6,9 +6,9 @@
 
 这项工作属于 WOEAI 的 **建筑结构抗风 / 数值风洞与湍动入流** 方向，也与城市风环境、PBL 湍流、AI 代理模型和数值风洞数据加速直接相关。
 
-![图 6 风场快照的时间超分辨率流程](../../assets/public-safe/ref-tang2026-RE/fig-06-temporal-super-resolution.jpg)
+![论文图 6 风场快照的时间超分辨率流程](../../assets/public-safe/ref-tang2026-RE/fig-06-temporal-super-resolution.jpg)
 
-图 6 风场快照的时间超分辨率流程
+论文图 6 风场快照的时间超分辨率流程
 
 论文把低时间分辨率输入快照之间的未知风场演化作为重建目标，让模型输出更完整的高时间分辨率风场序列。
 
@@ -21,29 +21,33 @@
 - DOI: https://doi.org/10.1016/j.renene.2025.124336
 - WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
 
+## 三句话导读
+
+这篇论文研究用 WTT-SRST 从低时间分辨率风场快照重建高时间分辨率城市风场演化。
+它重要，因为城市风能和风环境应用既需要时间细节，又不能每次都承担高分辨率物理求解的完整成本。
+读者可以带走的结论是：稀疏注意力负责降成本，物理约束损失负责守住风场一致性，二者共同决定这类 AI 风场重建是否可用。
+
+## 关键数字 / 关键结论卡
+
+- 相比原始架构，所提出方法将训练时间缩短 $32.92\%$，计算能耗降低 $32.89\%$。
+- Sparse Window-based Attention Block 在 $s=2$ 和 $s=4$ 时的显存占用约为 Swin-Transformer Block 的 $29.37\%$ 和 $20.43\%$。
+- 加入 Sparse Window-based Attention 后，参数量减少 $19.50\%$，GPU 资源消耗降低约 $70\%$。
+
 ## 摘要
 
-及时、精确地获取行星边界层风随时间演化的信息，对于城市风能调度与管理至关重要。然而，使用物理模型预测高时间分辨率湍流的高昂成本限制了工程应用。深度学习技术已经成为数值方法的一种有前景替代方案，但关于高时间分辨率风场重建的研究仍然较少。本文提出一种融合 Sparse Window-based Attention 的新框架，以具有成本效益的方式实现湍流场超分辨率。该框架可以通过修改 stride 值来自定义注意力稀疏度。本文进一步提出 Relative Physical-informed Loss，以保证生成风场的物理合理性。与 Window-based Attention 相比，所提出的注意力机制显著降低计算成本并提高推理效率。尽管增加插值风场快照会使性能略有降低，模型仍能重建风场结构。统计指标、湍流特征、功率谱和相干函数的评估显示，重建风场具有较强的物理一致性。同时，该方法将训练时间缩短 $32.92\%$，计算能耗降低 $32.89\%$。更大的 stride 会进一步降低能耗，但会以性能下降为代价，体现出准确性与效率之间的权衡。
+及时、精确地获取行星边界层风随时间演化的信息，对于城市风能调度与管理至关重要。然而，使用物理模型预测高时间分辨率湍流的高昂成本限制了工程应用。深度学习技术已经成为数值方法的一种有前景替代方案，但关于高时间分辨率风场重建的研究仍然较少。
 
-**英文摘要**
+本文提出一种融合 Sparse Window-based Attention 的新框架，以具有成本效益的方式实现湍流场超分辨率。该框架可以通过修改 stride 值来自定义注意力稀疏度。本文进一步提出 Relative Physical-informed Loss，以保证生成风场的物理合理性。
 
-Timely and precise access to the temporal evolution of planetary boundary layer wind is crucial for urban wind energy scheduling and management. Nevertheless, the expensive costs of predicting high temporal resolution turbulence using physical models hinder engineering applications. Deep learning techniques have become a promising alternative to numerical methods, whereas current studies on the high temporal resolution wind reconstruction remain scarce. This study proposes a novel framework incorporating Sparse Window-based Attention for cost-effective super-resolution of turbulence fields. It allows the customization of attention sparsity by modifying the stride value. Relative Physical-informed Loss is proposed to guarantee the physical plausibility of the generated wind fields. Compared to Window-based Attention, the proposed attention significantly reduces computational costs and improves the inference efficiency. Even though increasing interpolated wind snapshots slightly reduces performance, the model still reconstructs the wind field's structure. Evaluations of statistical metrics, turbulence features, power spectra, and coherence functions exhibit strong physical consistency of the reconstructed wind fields. Meanwhile, it shortens training time by 32.92 % and decreases computational energy consumption by 32.89 %. Larger strides further reduce energy consumption but at the cost of decreased performance, highlighting a trade-off between accuracy and efficiency.
+与 Window-based Attention 相比，所提出的注意力机制显著降低计算成本并提高推理效率。尽管增加插值风场快照会使性能略有降低，模型仍能重建风场结构。统计指标、湍流特征、功率谱和相干函数的评估显示，重建风场具有较强的物理一致性。同时，该方法将训练时间缩短 $32.92\%$，计算能耗降低 $32.89\%$。更大的 stride 会进一步降低能耗，但会以性能下降为代价，体现出准确性与效率之间的权衡。
 
 ## 研究问题
 
-城市风能场景中的风场具有明显的时间演化特征。建筑物会改变来流结构，诱发阻塞、剪切、分离和局部加速；风机运行、风资源评估和调度管理则需要更细的时间分辨率来观察这些变化。
+城市风场时间超分辨率不只是插帧问题。本文围绕三个问题展开：
 
-传统 DNS 或 LES 可以提供可信的湍流演化信息，但如果每次都用高时间分辨率物理模型求解，计算成本会限制工程应用。简单的线性插值可以补出中间帧，却容易把湍流中的高频波动、能量传递和物理约束处理得过于粗糙。
-
-因此，这篇论文关注的问题可以概括为：能否从较稀疏的低时间分辨率风场快照中，重建更细时间步长上的风场演化，同时尽量保持湍流结构、频谱特征和物理一致性？
-
-用论文中的任务表达式来说，模型要学习从低时间分辨率风场到高时间分辨率风场的映射：
-
-$$
-q(t_{\mathrm{HR}})=F_t(q(t_{\mathrm{LR}}))
-$$
-
-其中，$q(t_{\mathrm{LR}})$ 表示低时间分辨率风场输入，$q(t_{\mathrm{HR}})$ 表示重建得到的高时间分辨率风场序列，$F_t$ 是模型学习到的时序超分辨率映射。
+1. 如何从低时间分辨率风场快照中重建更细时间步长上的湍流演化？
+2. 如何用稀疏窗口注意力降低大规模风场重建中的显存、参数量和能耗？
+3. 如何通过 Relative Physical-informed Loss，让生成风场在统计误差之外更接近物理约束？
 
 ## 方法贡献
 
@@ -51,9 +55,9 @@ $$
 
 第一类改造是 Sparse Window-based Attention。标准窗口注意力虽然已经避免了全局 attention 的高成本，但在大规模风场网格上仍然会消耗大量显存和计算量。论文提出 Stride-based Sparse Operation（SSO），用 stride 控制注意力计算中的稀疏采样，让模型在保留主要湍流结构的同时减少注意力计算。
 
-![图 1 基于步长的稀疏操作示意图](../../assets/public-safe/ref-tang2026-RE/fig-01-stride-sparse-operation.jpg)
+![论文图 1 基于步长的稀疏操作示意图](../../assets/public-safe/ref-tang2026-RE/fig-01-stride-sparse-operation.jpg)
 
-图 1 基于步长的稀疏操作示意图
+论文图 1 基于步长的稀疏操作示意图
 
 SSO 通过步长采样和特征融合降低注意力计算量，使模型不必在所有网格点之间逐一计算相关性。
 
@@ -67,9 +71,9 @@ $$
 
 第二类改造是 Relative Physical-informed Loss（RPL）。以往很多时序超分辨率方法更像图像插帧，只追求视觉或点值相似；而湍流风场还要满足质量守恒、动量变化和能量传递等物理特征。RPL 将不可压缩 Navier-Stokes 方程的相对残差纳入损失函数，引导模型生成更符合物理约束的风场。
 
-![图 4 所提出 WTT-SRST 的详细结构与各模块架构](../../assets/public-safe/ref-tang2026-RE/fig-04-wtt-srst-framework.jpg)
+![论文图 4 所提出 WTT-SRST 的详细结构与各模块架构](../../assets/public-safe/ref-tang2026-RE/fig-04-wtt-srst-framework.jpg)
 
-图 4 所提出 WTT-SRST 的详细结构与各模块架构
+论文图 4 所提出 WTT-SRST 的详细结构与各模块架构
 
 WTT-SRST 使用编码-解码结构、skip connection、Sparse Window-based Attention Block 和 Shifted Sparse Window-based Attention Block，把低时间分辨率输入转换为完整的高时间分辨率风场演化。
 
@@ -77,41 +81,41 @@ WTT-SRST 使用编码-解码结构、skip connection、Sparse Window-based Atten
 
 ### 1. WTT-SRST 能比线性插值更好地重建湍流结构
 
-论文在训练阶段和测试阶段都比较了线性插值、已有 WTSR-ST 方法和本文提出的 WTT-SRST。结果显示，线性插值在湍流波动较明显的位置容易产生较大误差，难以恢复非线性的风场演化。相比之下，WTT-SRST 在 RMSE、MAE 和 MAPE 等统计指标上整体更低，尤其在需要插入更多中间风场快照时优势更明显。
+**针对问题 1，论文在训练阶段和测试阶段都比较了线性插值、已有 WTSR-ST 方法和本文提出的 WTT-SRST。**结果显示，线性插值在湍流波动较明显的位置容易产生较大误差，难以恢复非线性的风场演化。相比之下，WTT-SRST 在 RMSE、MAE 和 MAPE 等统计指标上整体更低，尤其在需要插入更多中间风场快照时优势更明显。
 
 这说明这项工作不是简单地把两个风场快照“平滑连接”起来，而是在学习湍流演化中的局部结构、速度波动和时间相关性。
 
 ### 2. 频谱和相干函数支持物理一致性判断
 
-对风能应用而言，平均误差并不能完全说明问题。低频信号控制大尺度结构，高频信号则包含瞬态细节和局部扰动。如果模型只在点值上接近参考结果，却丢失高频湍流特征，后续风机载荷、功率波动或调度分析仍可能受到影响。
+**针对问题 3，对风能应用而言，平均误差并不能完全说明问题。**低频信号控制大尺度结构，高频信号则包含瞬态细节和局部扰动。如果模型只在点值上接近参考结果，却丢失高频湍流特征，后续风机载荷、功率波动或调度分析仍可能受到影响。
 
 论文进一步比较了重建风场的功率谱和相干函数。结果显示，WTT-SRST 能较好地保留低频分布，并在高频范围内比线性插值和对比模型更接近参考结果。随着插值快照数量增加，或 stride 取值增大，高频细节会出现一定退化，但整体仍体现出较强的物理一致性。
 
-![图 14 脉动速度的功率谱密度结果](../../assets/public-safe/ref-tang2026-RE/fig-14-power-spectra.jpg)
+![论文图 14 脉动速度的功率谱密度结果](../../assets/public-safe/ref-tang2026-RE/fig-14-power-spectra.jpg)
 
-图 14 脉动速度的功率谱密度结果
+论文图 14 脉动速度的功率谱密度结果
 
 功率谱用于检验重建风场是否保留了不同频率上的湍流能量分布，是判断风场重建质量的重要证据。
 
 ### 3. 稀疏注意力显著降低计算资源消耗
 
-效率是这篇论文的重要目标。单个注意力模块测试显示，Sparse Window-based Attention Block 在 $s=2$ 和 $s=4$ 时的 GPU 显存占用分别为 $359.92\,\mathrm{MB}$ 和 $250.35\,\mathrm{MB}$，明显低于 Swin-Transformer Block 的 $1225.26\,\mathrm{MB}$。论文结论中进一步指出，在 $s=2$ 和 $s=4$ 时，该模块显存占用分别约为 Swin-Transformer Block 的 $29.37\%$ 和 $20.43\%$。
+**针对问题 2，效率是这篇论文的重要目标。**单个注意力模块测试显示，Sparse Window-based Attention Block 在 $s=2$ 和 $s=4$ 时的 GPU 显存占用分别为 $359.92\,\mathrm{MB}$ 和 $250.35\,\mathrm{MB}$，明显低于 Swin-Transformer Block 的 $1225.26\,\mathrm{MB}$。论文结论中进一步指出，在 $s=2$ 和 $s=4$ 时，该模块显存占用分别约为 Swin-Transformer Block 的 $29.37\%$ 和 $20.43\%$。
 
 从整体模型架构看，加入 Sparse Window-based Attention 后，参数量和平均推理时间下降，GPU 资源消耗显著降低。论文报告，相比原始架构，所提出的稀疏注意力架构将参数量减少 $19.50\%$，并将 GPU 资源消耗降低约 $70\%$。
 
 ### 4. RPL 让模型不只追求数值接近，也靠近物理约束
 
-消融实验显示，单独加入相对动量残差或相对连续性残差都会改善结果；当二者共同纳入损失函数时，统计指标相对于无物理约束基准下降到原值的 $74\%$ 到 $88\%$。这说明 RPL 对梯度方向起到了物理约束作用，使生成风场更接近控制方程所要求的演化结构。
+**针对问题 3，消融实验显示，单独加入相对动量残差或相对连续性残差都会改善结果；当二者共同纳入损失函数时，统计指标相对于无物理约束基准下降到原值的 $74\%$ 到 $88\%$。**这说明 RPL 对梯度方向起到了物理约束作用，使生成风场更接近控制方程所要求的演化结构。
 
 对数值风洞和湍动入流研究来说，这一点很关键：AI 模型可以加速风场重建，但不能只追求表面相似。让模型看到并尊重物理残差，是它能否服务工程分析的前提之一。
 
 ### 5. 全尺度风场评估展示了应用潜力
 
-论文还把方法放到全尺度风场场景中评估。结果显示，随着低时间分辨率间隔增大，细节会变得更模糊，误差也会增加；但 WTT-SRST 仍能较好刻画空间非均匀性和流动结构，并在统计指标上优于对比方法。
+**针对问题 1，论文还把方法放到全尺度风场场景中评估。**结果显示，随着低时间分辨率间隔增大，细节会变得更模糊，误差也会增加；但 WTT-SRST 仍能较好刻画空间非均匀性和流动结构，并在统计指标上优于对比方法。
 
-![图 24 凌晨 3:45 生成风场的可视化表示](../../assets/public-safe/ref-tang2026-RE/fig-24-generated-wind-field.jpg)
+![论文图 24 凌晨 3:45 生成风场的可视化表示](../../assets/public-safe/ref-tang2026-RE/fig-24-generated-wind-field.jpg)
 
-图 24 凌晨 3:45 生成风场的可视化表示
+论文图 24 凌晨 3:45 生成风场的可视化表示
 
 全尺度风场结果展示了模型在更接近实际风能场景中的重建能力，也提示读者关注插值数量和模型精度之间的关系。
 
@@ -139,6 +143,8 @@ WTT-SRST 使用编码-解码结构、skip connection、Sparse Window-based Atten
 第三，RPL 提供的是训练中的物理约束，而不是对所有复杂流动现象的完整保证。进入工程流程时，仍需要结合 CFD/LES 验证、风场观测、边界条件审查和专业判断，确认模型是否适用于目标风场、风机布置和调度问题。
 
 因此，更准确的理解是：WTT-SRST 为城市风能中的高时间分辨率风场重建提供了一条更高效、更重视物理一致性的 AI 路线，但它仍应作为数值风洞和工程分析流程中的加速与补充工具，而不是替代所有高保真物理模拟。
+
+如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 

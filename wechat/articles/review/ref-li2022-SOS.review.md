@@ -43,7 +43,7 @@ rtd_page_checked: true
 - Zotero: `5AT7UEWV`
 - PDF attachment: Zotero child `QLMZQ8RK`, `application/pdf`, `linkMode=imported_file`
 - 网站记录: `docs/source/Publications.rst` 中 `ref-li2022-SOS` 条目；`docs/data/publication-research-map.json` 中 `5AT7UEWV` 映射到 `海上漂浮风电 / 浮式混凝土平台结构设计`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文同时保留英文原摘要。
+- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - 作者展示规则: 公开正文和 RTD 论文信息使用 `**Li Chao**; Zhou Shengtao\*; Shan Baohua; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin; Yiqing Xiao`；此篇不使用学生第一作者下划线标记。
 
 ## 源文件获取记录
@@ -69,7 +69,7 @@ rtd_page_checked: true
 ## 关键事实证据定位记录
 
 - 摘要:
-  - 文章使用: 中文摘要为英文原摘要的忠实翻译，并附英文原摘要。
+  - 文章使用: 中文摘要为英文原摘要的忠实翻译，不附英文原摘要。
   - 证据位置: Zotero Desktop Local API `abstractNote`; PDF abstract on `PDF file page 2`.
 - 核心结论: 研究比较安装在混凝土 LCP3 和钢 HSP3 Y 型半潜平台上的两种浮式风机，采用 `1:60` 风浪联合模型试验和耦合多体仿真。
   - 证据位置: PDF abstract on `PDF file page 2`; Introduction and objective on `PDF file page 3`.
@@ -100,7 +100,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-li2022-SOS/fig-01-configuration.png`
    - 来源/版权: paper PDF embedded image; user/WOEAI-authored paper
    - 抽取方法: `pdfimages -all` extracted PDF embedded image, converted to PNG
-   - 公众号图名: 图 1 半潜式浮式风机的构型
+   - 公众号图名: 论文图 1 半潜式浮式风机的构型
    - 公众号说明: 研究对象由 `5 MW` 风机、Y 型半潜式平台和三根悬链线系泊组成。
    - 移动端预览: pending WeChat backend mobile preview
 2. 图 10: FAST 仿真器框架
@@ -110,7 +110,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-li2022-SOS/fig-10-fast-framework.png`
    - 来源/版权: paper PDF embedded image; user/WOEAI-authored paper
    - 抽取方法: `pdfimages -all` extracted PDF embedded image, converted to PNG
-   - 公众号图名: 图 10 FAST 仿真器框架
+   - 公众号图名: 论文图 10 FAST 仿真器框架
    - 公众号说明: 耦合仿真用于解释试验观测到的平台运动差异，并推算结构动力响应。
    - 移动端预览: pending WeChat backend mobile preview
 3. 图 12: LCP3 与 HSP3 模型的响应幅值算子对比
@@ -120,7 +120,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-li2022-SOS/fig-12-rao-comparisons.png`
    - 来源/版权: PDF page-render crop from paper figure; user/WOEAI-authored paper
    - 抽取方法: `pdftoppm` page render followed by `ffmpeg` crop
-   - 公众号图名: 图 12 LCP3 与 HSP3 模型的响应幅值算子对比
+   - 公众号图名: 论文图 12 LCP3 与 HSP3 模型的响应幅值算子对比
    - 公众号说明: RAO 对比显示不能只用单一运动指标判断材料方案优劣。
    - 移动端预览: pending WeChat backend mobile preview
 4. 图 26: 组合随机风浪条件下风机结构动力学统计数据
@@ -130,7 +130,7 @@ rtd_page_checked: true
    - 素材文件: `wechat/assets/public-safe/ref-li2022-SOS/fig-26-structural-dynamics-statistics.png`
    - 来源/版权: PDF page-render crop from paper figure; user/WOEAI-authored paper
    - 抽取方法: `pdftoppm` page render followed by `ffmpeg` crop
-   - 公众号图名: 图 26 组合随机风浪条件下风机结构动力学统计数据
+   - 公众号图名: 论文图 26 组合随机风浪条件下风机结构动力学统计数据
    - 公众号说明: 在随机风浪输入下，两种平台不同统计量和运行工况仍会出现方向不同的差别。
    - 移动端预览: pending WeChat backend mobile preview
 
@@ -185,6 +185,10 @@ rtd_page_checked: true
 - [x] 已生成公众号首图封面并记录封面素材；微信后台手机预览 pending。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
 - [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
+
+## 表达修订记录
+
+- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：反常识式。关键卡证据：模型试验比尺、5 MW 平台对象、横摇/纵摇周期差和额定风况纵摇差均已在关键事实证据定位记录中标到 PDF file pages 1、3、8、15、17-18。
 
 ## 检查记录
 

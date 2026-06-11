@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCAN_ROOTS = [ROOT / "wechat"]
+SCAN_ROOTS = [ROOT / "wechat", ROOT / "docs/source/paper-notes"]
 
 SECRET_PATTERNS = [
     ("appsecret", re.compile(r"(?i)appsecret['\"]?\s*[:=]\s*['\"]?[A-Za-z0-9_-]{8,}")),
@@ -23,6 +23,10 @@ PUBLIC_DRAFT_FORBIDDEN_PATTERNS = [
     ("pending_placeholder", re.compile(r"(?i)\bpending\b|待上传|待确认")),
     ("figure_plan", re.compile(r"计划配图")),
     ("pre_publish_checklist", re.compile(r"发布前人工复核项|发布前任务")),
+    ("english_abstract", re.compile(r"\*\*英文摘要\*\*")),
+]
+PUBLIC_BODY_FORBIDDEN_PATTERNS = [
+    ("english_abstract", re.compile(r"\*\*英文摘要\*\*")),
 ]
 REVIEW_REQUIRED_SECTIONS = [
     "## 源文件获取记录",
@@ -59,22 +63,32 @@ def is_review_note(path: Path, root: Path) -> bool:
     return len(parts) >= 3 and parts[0] == "articles" and parts[1] == "review" and path.name.endswith(".review.md")
 
 
+def is_rtd_paper_note(path: Path, root: Path) -> bool:
+    return root == ROOT / "docs/source/paper-notes" and path.suffix.lower() == ".rst"
+
+
 def scan_path(path: Path, root: Path) -> list[str]:
     findings: list[str] = []
     text = path.read_text(encoding="utf-8")
     for label, pattern in SECRET_PATTERNS:
         for match in pattern.finditer(text):
             line_no = text.count("\n", 0, match.start()) + 1
-            rel = path.relative_to(ROOT)
+            rel = path.relative_to(ROOT).as_posix()
             findings.append(f"{rel}:{line_no}: possible secret pattern ({label})")
     if is_reader_facing_draft(path, root):
         for label, pattern in PUBLIC_DRAFT_FORBIDDEN_PATTERNS:
             for match in pattern.finditer(text):
                 line_no = text.count("\n", 0, match.start()) + 1
-                rel = path.relative_to(ROOT)
+                rel = path.relative_to(ROOT).as_posix()
                 findings.append(f"{rel}:{line_no}: reader draft contains editor-only content ({label})")
+    if is_rtd_paper_note(path, root):
+        for label, pattern in PUBLIC_BODY_FORBIDDEN_PATTERNS:
+            for match in pattern.finditer(text):
+                line_no = text.count("\n", 0, match.start()) + 1
+                rel = path.relative_to(ROOT).as_posix()
+                findings.append(f"{rel}:{line_no}: RTD paper note contains editor-only content ({label})")
     if is_review_note(path, root):
-        rel = path.relative_to(ROOT)
+        rel = path.relative_to(ROOT).as_posix()
         for section in REVIEW_REQUIRED_SECTIONS:
             if section not in text:
                 label = section.replace("## ", "", 1)

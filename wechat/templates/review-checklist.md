@@ -47,15 +47,30 @@
 - [ ] The Official WeChat draft author field is the paper's first author for a
   journal-paper article.
 - [ ] The `论文信息` block omits a separate `卷期页码` line.
-- [ ] For English papers, `**英文摘要**` matches the original abstract from
-  Zotero `abstractNote`, the PDF abstract, an author manuscript, or another
-  approved source, and is not an English paraphrase.
+- [ ] For English papers, the `摘要` text is a faithful Chinese translation of
+  the original abstract from Zotero `abstractNote`, the PDF abstract, an author
+  manuscript, or another approved source; the article contains no `**英文摘要**`
+  block.
 - [ ] Related direction page exists.
 - [ ] The `三句话导读` states the paper's object/problem, importance, and reader
   takeaway without repeating the abstract or key-findings wording.
 - [ ] The `关键数字 / 关键结论卡` uses high-value numbers with evidence when
   available; if there are no high-value numbers, it uses only key conclusions
   rather than forcing low-value numeric detail.
+
+## Expression
+
+- [ ] The opening strategy differs from adjacent articles (现实矛盾式 /
+  反常识式 / 具体数字式 / 场景式).
+- [ ] A quantified hook appears in the first one or two paragraphs when the
+  paper provides citable numbers; otherwise the review note records
+  `待确认可公开的量化数字`.
+- [ ] Narration is unified on `我们` for research actions and decisions.
+- [ ] `研究问题` is a numbered question list and each `关键发现` subsection
+  opens by answering back to a numbered question.
+- [ ] Each `关键发现` subsection bolds exactly one conclusion sentence.
+- [ ] The fixed closing sentence appears as its own paragraph immediately
+  before `延伸阅读`.
 
 ## Copyright
 
@@ -80,7 +95,11 @@
 - [ ] Formulas are not rendered as raster images unless final WeChat preview proves an image fallback is needed.
 - [ ] Important formulas have plain-language explanations.
 - [ ] Formula display has been checked in the final WeChat backend mobile preview.
-- [ ] Each figure has a Chinese figure-title line translated from the original paper title, followed by a separate Chinese explanatory line.
+- [ ] Each figure has a Chinese figure-title line in the `论文图 N` format
+  translated from the original paper title, with identical alt text, followed
+  by a separate Chinese explanatory line.
+- [ ] Figure explanatory lines carry look-at-the-figure information only and do
+  not restate the article's main argument.
 - [ ] Rendered WeChat figure-title text is centered, one font size smaller than body text, and italic.
 - [ ] RTD body figures preserve the same two-line caption meaning: centered
   smaller italic Chinese figure-title line, then separate explanatory line.
@@ -91,7 +110,11 @@
 - [ ] The reader-facing Markdown article is treated as the public content master before generating RTD and WeChat outputs.
 - [ ] The RTD companion page is generated with `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref>`, not by maintaining a separate Markdown route in Sphinx.
 - [ ] `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref> --check` passes.
-- [ ] The RTD companion page preserves the same title, body text, images, DOI link, and useful related links as the WeChat article.
+- [ ] The RTD companion page preserves the same body text, images, and DOI link as the WeChat article, with the documented channel adaptations only.
+- [ ] The RTD page title has no WeChat title-category prefix.
+- [ ] The RTD page carries no WeChat closing block.
+- [ ] The RTD `完整引用` section contains the full citation truncated at the
+  DOI and a `:ref:` link to the Publications entry.
 - [ ] The RTD related-paper navigation uses internal paper-note links only and
   points only to existing RTD companion pages.
 - [ ] The approved cover image appears near the top of the RTD page below the

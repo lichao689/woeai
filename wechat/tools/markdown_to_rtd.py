@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import sys
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -19,6 +20,14 @@ from pathlib import Path
 WECHAT_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = WECHAT_ROOT.parent
 DEFAULT_REF = "ref-zhao2026-BS"
+PUBLICATIONS_RST = REPO_ROOT / "docs/source/Publications.rst"
+# RTD channel adaptations: the WeChat title-category prefix is stripped from
+# the RTD page title, and the paragraph carrying the fixed WeChat closing
+# sentence (anchored on this phrase) is skipped because the bottom 阅读原文
+# entry it refers to does not exist on RTD.
+TITLE_CATEGORY_PREFIX = re.compile(r"^(?:数值风洞|结构抗风|漂浮风电)\s*\|\s*")
+CLOSING_SENTENCE_ANCHOR = "点击阅读原文"
+DOI_TRUNCATE = re.compile(r"^(.*?https://doi\.org/\S+)")
 
 
 @dataclass(frozen=True)
@@ -58,6 +67,10 @@ def parse_title(markdown_text: str) -> str:
         if line.startswith("# "):
             return line[2:].strip()
     raise RuntimeError("Markdown article is missing an H1 title")
+
+
+def strip_title_category_prefix(title: str) -> str:
+    return TITLE_CATEGORY_PREFIX.sub("", title).strip()
 
 
 def parse_review_front_matter(review_path: Path) -> dict[str, str]:
@@ -190,6 +203,59 @@ def escape_rtd_doc_label(value: str) -> str:
     return value.replace("`", "'")
 
 
+def parse_publications_citation(publication_ref: str, publications_path: Path | None = None) -> str:
+    """Return the Publications.rst citation paragraph truncated at the DOI.
+
+    Returns an empty string when the anchor or paragraph is missing, so
+    temporary or test articles without a Publications entry simply omit the
+    citation section.
+    """
+    source = publications_path or PUBLICATIONS_RST
+    if not source.exists():
+        return ""
+    lines = source.read_text(encoding="utf-8").splitlines()
+    anchor = f".. _{publication_ref}:"
+    idx = 0
+    while idx < len(lines) and lines[idx].strip() != anchor:
+        idx += 1
+    if idx >= len(lines):
+        return ""
+    idx += 1
+    while idx < len(lines) and not lines[idx].strip():
+        idx += 1
+    citation_lines: list[str] = []
+    while idx < len(lines) and lines[idx].strip():
+        citation_lines.append(lines[idx].strip())
+        idx += 1
+    citation = " ".join(citation_lines)
+    if not citation:
+        return ""
+    match = DOI_TRUNCATE.match(citation)
+    return match.group(1) if match else citation
+
+
+def emit_citation_section(
+    output: list[str],
+    publication_ref: str,
+    publications_path: Path | None = None,
+) -> None:
+    citation = parse_publications_citation(publication_ref, publications_path)
+    if not citation:
+        print(
+            f"warning: no Publications citation anchor for {publication_ref}; "
+            "RTD citation section omitted",
+            file=sys.stderr,
+        )
+        return
+    if output and output[-1] != "":
+        output.append("")
+    output.extend(heading("完整引用", "-"))
+    output.append(citation)
+    output.append("")
+    output.append(f"收录信息见 :ref:`WOEAI 学术成果页对应条目 <{publication_ref}>`。")
+    output.append("")
+
+
 def emit_rtd_related_navigation(
     output: list[str],
     publication_ref: str,
@@ -210,7 +276,7 @@ def emit_rtd_related_navigation(
         output.append("")
     output.extend(heading("相关论文解读", "-"))
     for link in links:
-        label = escape_rtd_doc_label(link["title"])
+        label = escape_rtd_doc_label(strip_title_category_prefix(link["title"]))
         output.append(f"- :doc:`{label} <{link['publication_ref']}>`")
     output.append("")
 
@@ -263,9 +329,12 @@ def convert_inline(text: str) -> str:
 def emit_paragraph(lines: list[str], output: list[str]) -> None:
     if not lines:
         return
-    output.append(convert_inline(" ".join(line.strip() for line in lines)))
-    output.append("")
+    text = " ".join(line.strip() for line in lines)
     lines.clear()
+    if CLOSING_SENTENCE_ANCHOR in text:
+        return
+    output.append(convert_inline(text))
+    output.append("")
 
 
 def consume_caption(lines: list[str], start: int) -> tuple[str, str, int]:
@@ -338,7 +407,7 @@ def convert_markdown_to_rst(
 ) -> str:
     markdown_text = markdown_path.read_text(encoding="utf-8")
     lines = markdown_text.splitlines()
-    title = parse_title(markdown_text)
+    title = strip_title_category_prefix(parse_title(markdown_text))
     publication_ref = markdown_path.stem
     output: list[str] = [
         f".. _paper-note-{publication_ref}:",
@@ -409,6 +478,7 @@ def convert_markdown_to_rst(
         idx += 1
 
     emit_paragraph(paragraph, output)
+    emit_citation_section(output, publication_ref)
     emit_rtd_related_navigation(
         output,
         publication_ref,

@@ -52,7 +52,17 @@
 - :ref:`Large eddy simulation methods for high-rise building wind load assessment <ref-chen2024-POF>`；
 - :ref:`Engineering method for tower-line coupling effects under strong winds <ref-liu2024-JWEIA>`。
 
-项目连接
---------
+.. _building-wind-project-support:
 
-公开项目记录中包含高层建筑气动外形优化、数值大气湍流边界层生成方法、复杂地形下微尺度台风风场、风洞试验及风振分析等方向。相关项目见 :doc:`Projects`。
+公开科研项目支撑 Public Research Project Support
+----------------------------------------------
+
+建筑结构抗风方向的政府和纵向项目记录支撑数值风洞、湍动入流、城市/复杂地形风场和高层建筑抗风优化等研究问题。
+
+- 2018-2021 国家，数值大气湍流边界层生成方法的改进与验证，主持。
+- 2014-2016 国家，基于粗糙壁面修正的平衡大气边界层紊流风场大涡模拟研究，主持。
+- 2014-2016 校级，三维自平衡紊流边界层风场的大涡模拟研究，主持。
+- 2013-2015 校级，大气边界层数值风洞中三维紊流风场的大涡模拟研究，主持。
+- 2020-2023 市级，考虑风致荷载及响应的高层建筑气动外形优化研究，主持。
+
+企业委托项目证据见 :ref:`engineering-enterprise-project-evidence`。

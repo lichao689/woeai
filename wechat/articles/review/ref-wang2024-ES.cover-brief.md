@@ -21,7 +21,7 @@
 - generation tool: Codex image generation tool
 - prompt scene: CWR 可控弱循环入流湍流、反馈控制、粗糙地形 ABL、建筑风压 LES
 - final cover path: `wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-imagegen-v1.png`
-- previous fallback cover: `wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-v1.png`
+- previous fallback cover: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - dimensions: `900 x 383 px`
 - local contact sheet: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`
 - local crop preview: `wechat/.local/cover-previews/batch-10-imagegen-cover-preview.html`

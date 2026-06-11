@@ -746,10 +746,10 @@ Expected:
 - Modify: `wechat/articles/review/ref-li2024-POF.review.md`
 - Modify: `wechat/articles/review/ref-tang2025-JBE.review.md`
 - Modify: `wechat/articles/review/ref-he2026-OE-structural.review.md`
-- Create/modify: `wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v1.png`
-- Create/modify: `wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v1.png`
-- Create/modify: `wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v1.png`
-- Create/modify: `wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v1.png`
+- Create/modify: `wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png`
+- Create/modify: `wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png`
+- Create/modify: `wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v2.png`
+- Create/modify: `wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png`
 
 - [ ] **Step 1: Generate or select final covers from approved public-safe briefs**
 
@@ -768,10 +768,10 @@ Run:
 
 ```bash
 python .agents/skills/wechat-cover/scripts/cover_preview.py \
-  wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v1.png \
-  wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v1.png \
-  wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v1.png \
-  wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v1.png
+  wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png \
+  wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png \
+  wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v2.png \
+  wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png
 ```
 
 Expected:
@@ -794,10 +794,10 @@ Each review note must record:
 
 Required front-matter fields, one in each review note:
 
-- `ref-zhao2025-SCS`: `rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v1.png`
-- `ref-li2024-POF`: `rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v1.png`
-- `ref-tang2025-JBE`: `rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v1.png`
-- `ref-he2026-OE-structural`: `rtd_cover_image: wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v1.png`
+- `ref-zhao2025-SCS`: `rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png`
+- `ref-li2024-POF`: `rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png`
+- `ref-tang2025-JBE`: `rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v2.png`
+- `ref-he2026-OE-structural`: `rtd_cover_image: wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png`
 
 Acceptance:
 

@@ -158,7 +158,7 @@ wechat_backend_preview_checked: false
 - 生成工具: Codex image generation tool
 - 图像生成场景: CWR 可控弱循环入流湍流、反馈控制、粗糙地形 ABL、建筑风压 LES
 - 要求文字: `数值风洞 / 入流自动收敛 / CWR湍流生成`
-- 备用封面: `wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-v1.png`
+- 备用封面: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - 封面素材: `wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-imagegen-v1.png`
 - 尺寸: `900 x 383 px`
 - 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`

@@ -284,6 +284,19 @@ paper-note links.
   sans-serif text, about `65-75%` of the subtitle size, with no leading dot,
   icon, enclosing badge, capsule, button-like outline, DOI, author names, volume
   or issue data, impact factor, quartile, or other metrics.
+- Use fixed direction badges for the cover category tag. All category badges
+  should be slightly slanted, about `-4deg`, with rounded corners, compact
+  padding, and bold modern sans-serif Chinese text. Use `数值风洞` electric blue
+  `#0B6FD3` with white `#FFFFFF`, `结构抗风` steel teal `#0F766E` with pale mint
+  `#D9FFF2`, and `漂浮风电` engineering yellow `#FFC83D` with deep sea blue
+  `#062B4F`. The publication metadata line is not a badge and must not inherit
+  this shape.
+- Use fixed direction main-hook colors, while allowing each direction to vary
+  hook size and emphasis. Use `数值风洞` computational navy `#073B7A` with at
+  most one cyan `#00A6D6` keyword, `结构抗风` structural teal ink `#075A60` with
+  at most one steel teal `#0F766E` keyword, and `漂浮风电` white `#FFFFFF` with
+  one optional engineering yellow `#FFC83D` keyword in the extra-bold reference
+  cover style. The main hook remains the largest and most readable cover text.
 - Keep cover text to the confirmed `分类标签 | 主钩子 / 可选副标题`
   structure. Let the WeChat article title carry the full title; do not repeat
   the full article title on the cover.

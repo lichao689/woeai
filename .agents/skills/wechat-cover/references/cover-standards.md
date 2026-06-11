@@ -112,9 +112,10 @@ not as loose text decoration:
   high-contrast seam between the text zone and the visual zone;
 - text readability should come from local brightness, contrast, blur, and
   reduced detail behind the text, not from a separate rectangular panel;
-- category tag in a rounded pill at the upper-left of the text panel;
+- category tag in a fixed direction badge at the upper-left of the integrated
+  text-safe zone;
 - main hook below the tag, oversized, bold, high contrast, and visually
-  dominant;
+  dominant; use the fixed direction main-hook token for the article category;
 - subtitle below the hook, one or two sizes smaller, readable but secondary;
 - publication metadata line below the subtitle, left-aligned with the subtitle,
   when journal and year are available;
@@ -170,18 +171,53 @@ review metadata contains both journal name and publication year.
   author names, volume, issue, page range, impact factor, quartile, or other
   publication metrics.
 
-## Direction-Specific Text Styles
+## Direction Badge System
 
-Keep the three directions visually related through the shared left text panel,
-rounded category pill, oversized hook, and smaller subtitle. Differentiate them
-through palette, contrast, and support graphics:
+Keep the three directions visually related through the shared integrated left
+text-safe zone, slightly slanted category badge, oversized hook, smaller
+subtitle, and publication metadata line. Differentiate them through fixed
+direction badge tokens, direction main-hook tokens, palette, contrast, and
+support graphics.
+
+## Direction Badge Tokens
+
+All WOEAI cover prompts must use the fixed direction badge token for the
+article category. The badge shape is shared across directions:
+
+- slightly slanted category badge, about `-4deg`;
+- rounded corners, compact padding, and bold modern sans-serif Chinese text;
+- no capsule or button-like outline, icon, extra label, or heavy UI-style
+  shadow;
+- not used for the publication metadata line.
+
+| Direction | Badge background | Badge text | Notes |
+|---|---:|---:|---|
+| `数值风洞` | electric blue `#0B6FD3` | white `#FFFFFF` | CFD, data, numerical wind-tunnel identity |
+| `结构抗风` | steel teal `#0F766E` | pale mint `#D9FFF2` | Must not reuse the blue/white `数值风洞` badge |
+| `漂浮风电` | engineering yellow `#FFC83D` | deep sea blue `#062B4F` | Match the yellow slanted badge family from `漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变` |
+
+## Direction Main Hook Tokens
+
+The main hook is always the largest, boldest, and most readable text element,
+but its exact size, width, and color may vary by direction. Do not force all
+directions into one hook color.
+
+| Direction | Main hook color | Optional emphasis | Notes |
+|---|---:|---:|---|
+| `数值风洞` | computational navy `#073B7A` | cyan accent `#00A6D6` for at most one data-oriented keyword | Geometric, rational, clean technical feel |
+| `结构抗风` | structural teal ink `#075A60` | steel teal `#0F766E` for at most one engineering keyword | Stable, weighty structural-engineering feel; avoid the same deep blue as `数值风洞` |
+| `漂浮风电` | white `#FFFFFF` | engineering yellow `#FFC83D` for one important keyword | Extra-bold or condensed editorial headline style, with only a subtle deep-sea-blue shadow or outline for readability; match the `混凝土还是钢` reference-cover family |
+
+## Direction-Specific Text Styles
 
 `数值风洞`:
 
 - text zone: white to pale blue, bright and clean, blended into the same
   engineering scene rather than separated by a hard panel edge;
-- category pill: strong blue background with white text;
-- main hook: deep navy blue;
+- category badge: slightly slanted about `-4deg`, electric blue `#0B6FD3`
+  background with white `#FFFFFF` text;
+- main hook: computational navy `#073B7A`, oversized and bold, with at most one
+  cyan `#00A6D6` data-oriented keyword;
 - subtitle: dark gray or blue-gray;
 - support accents: cyan-blue glowing data frames, satellite/image thumbnails,
   grid or geometry panels, wind streamlines, or CFD contour cues;
@@ -192,8 +228,12 @@ through palette, contrast, and support graphics:
 
 - text zone: integrated with a darker ocean-engineering background, still
   clean enough for text;
-- category pill: yellow or amber background with deep blue text;
-- main hook: mostly white, with at most one important keyword in yellow;
+- category badge: slightly slanted about `-4deg`, engineering yellow
+  `#FFC83D` background with deep sea blue `#062B4F` text, not a generic yellow
+  rounded pill;
+- main hook: mostly white `#FFFFFF`, extra-bold or condensed editorial
+  headline style, with at most one important keyword in engineering yellow
+  `#FFC83D`; use only a subtle deep-sea-blue shadow or outline for readability;
 - subtitle: light blue or pale cyan;
 - support accents: wave-line layers, response curves, coordinate axes, platform
   comparison cues, offshore wind turbines, mooring or semi-submersible forms;
@@ -203,8 +243,12 @@ through palette, contrast, and support graphics:
 
 - text zone: white to pale blue city or building atmosphere, blended into the
   same structural scene rather than separated by a hard panel edge;
-- category pill: strong blue background with white text;
-- main hook: deep navy blue;
+- category badge: slightly slanted about `-4deg`, steel teal `#0F766E`
+  background with pale mint `#D9FFF2` text; explicitly avoid the same blue
+  background and white text used by `数值风洞`;
+- main hook: structural teal ink `#075A60`, oversized and heavy; optionally
+  emphasize one engineering keyword with steel teal `#0F766E`; do not use the
+  same deep blue main-hook color as `数值风洞`;
 - subtitle: dark gray or blue-gray;
 - support accents: wind-flow bands, building silhouettes, high-rise structures,
   TLD water, sloshing, vibration-response cues, or GNN/monitoring nodes;
@@ -313,9 +357,12 @@ the strip visually connected to the main scene and readable in a small
 thumbnail. Do not add extra text labels in the strip unless the user explicitly
 confirmed a labelled route strip.
 
-Use exactly three Chinese text elements on the left panel, in this order:
-1. a rounded pill category tag: "<category tag>";
-2. an oversized bold main hook: "<main hook>";
+Use exactly three Chinese main text elements on the integrated left text-safe
+zone, in this order:
+1. a slightly slanted direction badge, about `-4deg`, containing exactly
+   "<category tag>" and using the fixed direction badge token for that category;
+2. an oversized bold main hook using the fixed direction main-hook token for
+   "<category tag>": "<main hook>";
 3. a smaller subtitle below: "<subtitle>".
 
 Below the subtitle, add one publication metadata line:

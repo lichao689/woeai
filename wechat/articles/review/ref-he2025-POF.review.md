@@ -212,7 +212,7 @@ wechat_backend_preview_checked: false
 - 生成工具: Codex image generation tool
 - 图像生成场景: 植入式立柱 TLD、水箱非线性晃荡、结构减振
 - 要求文字: `结构抗风 / 晃荡更耗能 / 植入式立柱TLD`
-- 备用封面: `wechat/assets/public-safe/ref-he2025-POF/cover-wechat-900x383-v1.png`
+- 备用封面: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - 封面素材: `wechat/assets/public-safe/ref-he2025-POF/cover-wechat-900x383-imagegen-v1.png`
 - 尺寸: `900 x 383 px`
 - 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`

@@ -155,7 +155,7 @@ rtd_page_checked: true
 - 生成工具: Codex image generation tool
 - 图像生成场景: 卫星影像到 CFD 可用城市建筑几何、DSM、城市风环境
 - 要求文字: `数值风洞 / 卫星转几何 / 城市CFD建模`
-- 备用封面: `wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-v1.png`
+- 备用封面: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - 封面素材: `wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-imagegen-v1.png`
 - 尺寸: `900 x 383 px`
 - 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`

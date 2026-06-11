@@ -21,7 +21,7 @@
 - generation tool: Codex image generation tool
 - prompt scene: 卫星影像到 CFD 可用城市建筑几何、DSM、城市风环境
 - final cover path: `wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-imagegen-v1.png`
-- previous fallback cover: `wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-v1.png`
+- previous fallback cover: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - dimensions: `900 x 383 px`
 - local contact sheet: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`
 - local crop preview: `wechat/.local/cover-previews/batch-10-imagegen-cover-preview.html`

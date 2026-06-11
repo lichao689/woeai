@@ -182,7 +182,7 @@ wechat_backend_preview_checked: false
 - 生成工具: Codex image generation tool
 - 图像生成场景: 内置矩形立柱 TLD、液舱晃荡、涡耗能和等效模型
 - 要求文字: `结构抗风 / 内置立柱TLD / 液舱阻尼设计`
-- 备用封面: `wechat/assets/public-safe/ref-he2026-OE/cover-wechat-900x383-v1.png`
+- 备用封面: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - 封面素材: `wechat/assets/public-safe/ref-he2026-OE/cover-wechat-900x383-imagegen-v1.png`
 - 尺寸: `900 x 383 px`
 - 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`

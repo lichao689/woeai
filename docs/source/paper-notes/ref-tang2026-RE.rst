@@ -5,7 +5,7 @@
 数值风洞 | 如何高效重建城市风能中的高时间分辨率风场
 ===================================================
 
-.. image:: ../../../wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2.png
+.. image:: ../../../wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png
    :alt: 数值风洞 | 如何高效重建城市风能中的高时间分辨率风场
    :align: center
    :width: 100%

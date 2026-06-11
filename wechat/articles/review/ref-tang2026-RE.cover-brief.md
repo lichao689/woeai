@@ -49,12 +49,12 @@
 - requested exact cover text: `数值风洞 / 稀疏快照补全风场 / 看见湍流时间细节`
 - generation tool: Codex image generation tool
 - prompt scene: 城市风能高时间分辨率风场重建、稀疏快照、WTT-SRST、物理一致性与工程应用
-- candidate A path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2-a-research-scene.png`
-- candidate B path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2-b-method.png`
-- candidate C path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2-c-engineering-impact.png`
+- candidate A path: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v2-a-research-scene.png)`
+- candidate B path: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v2-b-method.png)`
+- candidate C path: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v2-c-engineering-impact.png)`
 - final cover path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2.png`
-- previous selected cover: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v1.png`
-- previous fallback cover: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-v1.png`
+- previous selected cover: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v1.png)`
+- previous fallback cover: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - dimensions: `900 x 383 px`
 - local crop preview: `wechat/.local/cover-previews/cover-wechat-900x383-imagegen-v2.cover-preview.html`
 - quality scores: article_specificity=5, main_subject_clarity=5, click_appeal=5, engineering_credibility=4, thumbnail_readability=5, crop_safety=4, text_quality=5
@@ -67,13 +67,27 @@
 - cover_execution_mode: `image-gen`
 - publication metadata text: `Renewable Energy · 2026`
 - intermediate v3 metadata candidates:
-  - `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v3-a-badge-top-right.png`
-  - `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v3-b-badge-inline.png`
-  - `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v3-c-badge-near-category.png`
+  - `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v3-a-badge-top-right.png)`
+  - `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v3-b-badge-inline.png)`
+  - `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v3-c-badge-near-category.png)`
 - metadata placement tested: subtitle-below publication line / subtitle-below capsule / subtitle-below editorial seal
-- candidate D path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v4-d-pub-line.png`
-- candidate E path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v4-e-pub-capsule.png`
-- candidate F path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v4-f-pub-seal.png`
+- candidate D path: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v4-d-pub-line.png)`
+- candidate E path: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v4-e-pub-capsule.png)`
+- candidate F path: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-imagegen-v4-f-pub-seal.png)`
 - local crop preview: `wechat/.local/cover-previews/cover-preview.html`
 - test outcome: D best preserves title hierarchy; E has the strongest metadata readability and livelier badge treatment; F is visually comfortable but reads slightly like a button.
 - draft state: v4 candidates are local tests only and were not uploaded to the existing WeChat draft.
+
+## 出版信息行默认化测试
+
+- cover_execution_mode: `image-gen`
+- publication metadata line: `Renewable Energy · 2026`
+- metadata style: subtitle-below semi-bold deep-blue text line; no leading dot, no icon, no badge, no capsule, no button-like outline
+- current prompt fragment: `Below the subtitle, add one publication metadata line: "Renewable Energy · 2026". Use semi-bold deep-blue modern sans-serif text, no leading dot, no icon, no enclosing badge, no capsule, no button-like outline. Keep it readable at phone thumbnail size and clearly secondary to the subtitle.`
+- candidate A path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-a-pub-line-no-dot.png`
+- candidate B path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png`
+- candidate C path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-c-pub-line-no-dot.png`
+- local crop preview: `wechat/.local/cover-previews/cover-preview.html`
+- test outcome: B is the selected v5 direction because the publication metadata line is clearly readable without competing with the subtitle; A is quieter but smaller; C is balanced but slightly less legible.
+- selected draft-update cover: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png`
+- draft state: existing WeChat draft updated with `cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png` at 2026-06-11T16:41:36+08:00; WeChat backend mobile preview not yet checked.

@@ -21,7 +21,7 @@
 - generation tool: Codex image generation tool
 - prompt scene: 混凝土与钢 Y 型半潜式浮式风机支撑结构对比
 - final cover path: `wechat/assets/public-safe/ref-li2022-SOS/cover-wechat-900x383-imagegen-v1.png`
-- previous fallback cover: `wechat/assets/public-safe/ref-li2022-SOS/cover-wechat-900x383-v1.png`
+- previous fallback cover: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - dimensions: `900 x 383 px`
 - local contact sheet: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`
 - local crop preview: `wechat/.local/cover-previews/batch-10-imagegen-cover-preview.html`

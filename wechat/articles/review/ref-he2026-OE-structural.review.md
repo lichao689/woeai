@@ -229,8 +229,8 @@ wechat_backend_preview_checked: false
 - figure extraction: copied selected local extracted PDF embedded JPG images to public-safe asset names
 - cover-v2 generation: selected `wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png` from upgraded batch `wechat-cover` image-gen workflow
 - cover-v2 preview: passed (`python3 .agents/skills/wechat-cover/scripts/cover_preview.py -o wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html ...`)
-- cover generation: generated `wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v1.png` with bundled Python/Pillow local raster generator
-- cover-preview: passed (`python .agents/skills/wechat-cover/scripts/cover_preview.py -o wechat/.local/cover-previews/ref-he2026-OE-structural.cover-preview.html wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v1.png`)
+- cover generation: generated `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)` with bundled Python/Pillow local raster generator
+- cover-preview: passed (`python .agents/skills/wechat-cover/scripts/cover_preview.py -o wechat/.local/cover-previews/ref-he2026-OE-structural.cover-preview.html removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`)
 - rtd-generation: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-he2026-OE-structural`)
 - rtd-sync-check: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-he2026-OE-structural --check`)
 - wechat-preflight: passed (`python3 wechat/tools/wechat_draft.py preflight --publication-ref ref-he2026-OE-structural --theme academic-clean`)

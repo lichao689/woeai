@@ -173,7 +173,7 @@ Every cover prompt must specify:
   remain visually connected to the main scene, and avoid competing with the
   main hook;
 - the standard three Chinese main text elements, in this order:
-  1. category tag in a rounded pill,
+  1. category tag in a fixed direction badge,
   2. oversized bold main hook,
   3. smaller subtitle below the hook;
 - a derived publication metadata line below the subtitle whenever the article
@@ -204,19 +204,52 @@ The publication metadata line:
 
 Use direction-specific text styling:
 
-- `数值风洞`: light white-to-blue text panel, blue rounded pill with white
-  category text, deep navy main hook, dark gray subtitle, cyan-blue high
-  contrast data or image-frame accents, with wind lines and field textures
-  softly crossing from the visual area into the text zone.
-- `漂浮风电`: dark ocean engineering background, yellow rounded pill with deep
-  blue category text, mostly white main hook with one optional yellow keyword
-  emphasis, light blue subtitle, response curves or wave-line accents instead
+All category tags must use the fixed direction badge shape:
+
+- a slightly slanted badge, about `-4deg`, with rounded corners, compact
+  padding, and bold modern sans-serif Chinese text;
+- no capsule or button-like outline, icon, extra label, or heavy UI-style
+  shadow;
+- the badge must use the fixed color token for the article category.
+
+Direction badge tokens:
+
+- `数值风洞`: electric blue badge `#0B6FD3` with white text `#FFFFFF`.
+- `结构抗风`: steel teal badge `#0F766E` with pale mint text `#D9FFF2`;
+  explicitly avoid the same blue/white badge used by `数值风洞`.
+- `漂浮风电`: engineering yellow badge `#FFC83D` with deep sea blue text
+  `#062B4F`, matching the yellow slanted badge family used in the reference
+  cover `漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变`.
+
+Direction main hook tokens:
+
+- main hook size and color do not need to be identical across directions, but
+  the main hook must always be the largest, boldest, and most readable text
+  element on the cover;
+- `数值风洞`: computational navy main hook `#073B7A`, with an optional small
+  cyan accent `#00A6D6` for one data-oriented keyword;
+- `结构抗风`: structural teal ink main hook `#075A60`, with an optional steel
+  teal accent `#0F766E` for one engineering keyword; do not use the same deep
+  blue main-hook color as `数值风洞`;
+- `漂浮风电`: mostly white main hook `#FFFFFF`, with one optional engineering
+  yellow keyword `#FFC83D`, extra-bold or condensed editorial headline style,
+  and only a subtle deep-sea-blue shadow or outline for readability, matching
+  the reference cover `漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变`.
+
+Direction text and visual styles:
+
+- `数值风洞`: light white-to-blue text zone, computational navy main hook, dark
+  gray subtitle, cyan-blue high contrast data or image-frame accents, with wind
+  lines and field textures softly crossing from the visual area into the text
+  zone.
+- `漂浮风电`: dark ocean engineering background, white-and-yellow editorial
+  main hook, light blue subtitle, response curves or wave-line accents instead
   of photo thumbnails, with the text zone integrated into the same ocean or
   platform atmosphere.
-- `结构抗风`: light blue city or building text panel, blue rounded pill with
-  white category text, deep navy main hook, dark gray subtitle, wind-flow,
-  building, TLD, water, or structural-response accents, with the text zone
-  blended into the structural scene instead of placed on a separate card.
+- `结构抗风`: light blue city or building text zone, structural teal ink main
+  hook, dark gray subtitle, wind-flow, building, TLD, water, or
+  structural-response accents, with the text zone blended into the structural
+  scene instead of placed on a separate card.
 
 ## Mandatory Cover-Text Confirmation
 

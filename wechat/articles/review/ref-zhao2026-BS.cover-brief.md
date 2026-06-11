@@ -103,8 +103,8 @@ Risk:
 
 ## Current Selected Cover
 
-- Previous v1 source image: `wechat/assets/public-safe/ref-zhao2026-BS/cover-generated-v1-source.png`
-- Previous v1 cover: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v1.png`
+- Previous v1 source image: `removed during 2026-06-11 slimming cleanup (cover-generated-v1-source.png)`
+- Previous v1 cover: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - Current v2 cover: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
 - Current final size: `900 x 383 px`
 - Local v2 batch preview:

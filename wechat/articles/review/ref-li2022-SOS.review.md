@@ -154,7 +154,7 @@ rtd_page_checked: true
 - 生成工具: Codex image generation tool
 - 图像生成场景: 混凝土与钢 Y 型半潜式浮式风机支撑结构对比
 - 要求文字: `漂浮风电 / 混凝土还是钢 / Y型半潜平台`
-- 备用封面: `wechat/assets/public-safe/ref-li2022-SOS/cover-wechat-900x383-v1.png`
+- 备用封面: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - 封面素材: `wechat/assets/public-safe/ref-li2022-SOS/cover-wechat-900x383-imagegen-v1.png`
 - 尺寸: `900 x 383 px`
 - 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`

@@ -163,7 +163,7 @@ wechat_backend_preview_checked: false
 - 生成工具: Codex image generation tool
 - 图像生成场景: 浮式风机下部结构优化、Pareto 前沿、长期动力响应
 - 要求文字: `漂浮风电 / 长期动力优化 / 浮式下部结构`
-- 备用封面: `wechat/assets/public-safe/ref-zhou2023-AE/cover-wechat-900x383-v1.png`
+- 备用封面: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - 封面素材: `wechat/assets/public-safe/ref-zhou2023-AE/cover-wechat-900x383-imagegen-v1.png`
 - 尺寸: `900 x 383 px`
 - 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`

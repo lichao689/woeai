@@ -171,7 +171,7 @@ wechat_backend_preview_checked: false
 - 生成工具: Codex image generation tool
 - 图像生成场景: LES 入流湍流生成、城市数值风洞、CFD 流线与方法流程
 - 要求文字: `数值风洞 / 入流更连贯 / 守恒湍流生成`
-- 备用封面: `wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-v1.png`
+- 备用封面: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
 - 封面素材: `wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v1.png`
 - 尺寸: `900 x 383 px`
 - 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`

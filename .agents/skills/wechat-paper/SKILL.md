@@ -101,7 +101,9 @@ file page order.
 
 Use one selected paper per article.
 
-Do not turn a paper article into a multi-paper survey. Related papers can appear only in `延伸阅读`.
+Do not turn a paper article into a multi-paper survey. Related papers can
+appear only as compact platform-specific navigation: published WeChat article
+links in the WeChat body, and internal paper-note links on RTD.
 
 ## Public Safety
 
@@ -207,21 +209,20 @@ Use only these public research families and subdirections unless the user explic
 17. Do not call WeChat publish, mass-send, or browser-driven release actions.
     The human editor must preview, proofread, and publish manually in the
     WeChat backend.
-18. Use `https://woeai.readthedocs.io/zh-cn/latest/` as the preferred domain
-    for useful WOEAI website links embedded in WeChat articles and WeChat API
-    draft payloads, including RTD companion pages, direction pages, and
-    homepage-style links. Put reader-facing links under `延伸阅读` as direct
-    hyperlinks. Do not hard-code `winddee.cn` into WeChat article sources when
-    an equivalent Read the Docs project-domain URL exists. This does not by
-    itself change the public website's own canonical SEO URL or contact-page
-    display.
-19. Leave WeChat API `content_source_url` empty by default. Reader-facing links
-    should live in `延伸阅读`, not in a separate bottom `阅读原文` link, unless the
-    user explicitly chooses a public original-link destination for a specific
-    article. When the user chooses a target, record it as
-    `wechat_content_source_url` in that article's review front matter and use it
-    as the WeChat API `content_source_url`; do not duplicate the raw URL in the
-    body text.
+18. Use `https://woeai.readthedocs.io/zh-cn/latest/` as the preferred Read the
+    Docs project domain for RTD companion pages and WeChat API draft payloads.
+    Do not hard-code `winddee.cn` into WeChat article sources when an
+    equivalent Read the Docs project-domain URL exists. This does not by itself
+    change the public website's own canonical SEO URL or contact-page display.
+19. By default, set the WeChat API `content_source_url`, which controls the
+    backend bottom `阅读原文` entry, to the current paper's RTD companion page:
+    `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`.
+    Do not add a separate body `阅读原文` section. When the user explicitly
+    chooses a different public original-link destination for a specific article,
+    record it as `wechat_content_source_url` in that article's review front
+    matter and use it as the WeChat API `content_source_url`; do not duplicate
+    the raw URL in the body text. An explicitly blank `wechat_content_source_url`
+    means the editor wants no bottom `阅读原文` link for that article.
 20. Update `wechat/backlog/selected-papers.yml` only when the user's task asks for workflow tracking or after a draft/review/API step changes status.
 
 When a WeChat backend preview leads to public wording changes, apply those
@@ -234,7 +235,7 @@ parallel public正文 edits only in the WeChat draft or only in the RST page.
 Generate three public-safe files or records for each paper article:
 
 - `wechat/articles/draft-public-safe/<publication_ref>.md`: reader-facing WeChat Markdown. It should be clean enough to copy into a WeChat Markdown editor or the WeChat backend.
-- `docs/source/paper-notes/<publication_ref>.rst`: RTD Paper Companion Page. It should present the same public title, body text, images, DOI link, and useful related links as the WeChat Markdown article, with only markup and rendering differences needed for Sphinx/reStructuredText.
+- `docs/source/paper-notes/<publication_ref>.rst`: RTD Paper Companion Page. It should present the same public title, body text, images, and DOI as the WeChat Markdown article, with only markup and rendering differences needed for Sphinx/reStructuredText. RTD related-paper navigation is generated separately with internal paper-note links.
 - `wechat/articles/review/<publication_ref>.review.md`: publishing note for authors and editors. It records metadata, evidence, figure source status, formula preview status, copyright checks, unresolved tasks, and checks run.
 
 The reader-facing Markdown must not contain:
@@ -258,8 +259,8 @@ Rules:
 
 - Convert the WeChat Markdown article to reStructuredText rather than enabling a new Markdown/MyST route in Sphinx.
 - Use `docs/source/paper-notes/<publication_ref>.rst` as the canonical RTD page path, for example `docs/source/paper-notes/ref-zhao2026-BS.rst`.
-- Preserve the same title, section order, body text, images, DOI link, and useful related links.
-- Change only what Sphinx rendering requires: heading underline syntax, image directives, internal links, external links, code/formula representation, and relative asset paths.
+- Preserve the same title, section order, body text, images, and DOI link.
+- Change only what Sphinx rendering requires: heading underline syntax, image directives, internal links, external links, code/formula representation, relative asset paths, and RTD-only internal related-paper navigation.
 - Keep private review metadata out of the RST page.
 - Use `wechat/tools/markdown_to_rtd.py` as the formal Markdown-to-RST
   converter for this pipeline. Example:
@@ -283,20 +284,31 @@ Rules:
 Use this default order unless the paper strongly requires a small adjustment:
 
 1. `论文信息`
-2. `摘要`
-3. `研究问题`
-4. `方法贡献`
-5. `关键发现`
-6. `工程意义`
-7. `适用边界`
-8. `图文说明` when public-safe images are inserted
-9. `延伸阅读`
+2. `三句话导读`
+3. `关键数字 / 关键结论卡`
+4. `摘要`
+5. `研究问题`
+6. `方法贡献`
+7. `关键发现`
+8. `工程意义`
+9. `适用边界`
+10. `图文说明` when public-safe images are inserted
+11. `延伸阅读` or platform-generated related-paper navigation when useful
 
 Put reader-facing links under `延伸阅读`. Use direct Markdown hyperlinks, not a
 label followed by a naked URL. Keep DOI visible in `论文信息`, and do not repeat
 it in `延伸阅读` unless it is the only useful external reading path. Do not
 include a WOEAI publication-page anchor in the reader-facing article when that
 public page merely duplicates the article or paper record.
+
+For new articles, add `三句话导读` near the top. The three sentences should say
+what the paper studies, why it matters, and what the reader can take away. They
+are entry guidance, not a compressed duplicate of `摘要` or `关键发现`.
+
+For new articles, add `关键数字 / 关键结论卡`. Use high-value numbers only when
+they carry real explanatory value and can be traced to paper evidence in the
+review note. If the paper has no high-value numbers, use `关键结论卡` with 2-3
+non-overlapping conclusions instead of forcing low-value numeric detail.
 
 Use this title pattern:
 
@@ -503,11 +515,12 @@ If image rights or final high-resolution assets are not ready for a non-authored
 ## Extended Reading Links
 
 Add only a `延伸阅读` section near the end of the article when there are useful
-reader-facing links. Use direct Markdown hyperlinks, for example
-`[WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html)`.
+reader-facing links. For related paper navigation in the WeChat body, include
+only already-published WeChat article links from `latest_published_url`. Omit
+related papers that do not yet have public WeChat URLs.
 
-For the WOEAI homepage, use the visible label
-`[WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)`.
+RTD related-paper navigation is generated separately as internal paper-note
+links and should point only to existing `docs/source/paper-notes/*.rst` pages.
 
 Do not add a separate `阅读原文` section. Keep the DOI visible in `论文信息`.
 Do not include a WOEAI publication-page anchor in the reader-facing article
@@ -557,11 +570,20 @@ Before calling a draft ready:
 - For author-confirmed papers, suitable PDF figures are extracted into `wechat/assets/public-safe/<publication_ref>/` and inserted into the article. For non-authored or unclear papers, suitable figure recommendations are recorded in the review note until rights are confirmed.
 - The article uses `延伸阅读` for useful reader-facing links, direct Markdown
   hyperlinks instead of naked URLs, and no separate `阅读原文` section.
+- New articles include `三句话导读` and `关键数字 / 关键结论卡`; these entry
+  modules do not repeat the abstract or key-findings wording, and key numbers
+  have review-note evidence when used.
+- WeChat related-paper navigation contains only already-published WeChat
+  article links; unpublished related papers are omitted.
+- RTD related-paper navigation uses internal paper-note links only.
+- The WeChat API `content_source_url` defaults to the current paper's RTD
+  companion page unless the review note explicitly overrides it or explicitly
+  leaves it blank.
 - Rendered WeChat HTML shows Chinese link text only and does not expose raw
   English URLs after the link text.
 - DOI remains visible in `论文信息` for scholarly traceability.
 - The separate review note records source evidence, image/copyright status, formula preview status, and remaining human-review items.
-- The RTD Paper Companion Page matches the WeChat Markdown article in title, body text, images, DOI link, and useful related links.
+- The RTD Paper Companion Page matches the WeChat Markdown article in title, body text, images, and DOI link, with platform-specific related-paper navigation generated for RTD.
 - `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref> --check`
   passes after generating the RTD companion page.
 - The relevant research-direction page exposes the RTD page under `学术进展 Academic Progress`, grouped by second-level research subdirection and sorted by publication date descending.

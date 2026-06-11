@@ -5,7 +5,7 @@
 数值风洞 | 如何高效重建城市风能中的高时间分辨率风场
 ===================================================
 
-.. image:: ../../../wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v1.png
+.. image:: ../../../wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2.png
    :alt: 数值风洞 | 如何高效重建城市风能中的高时间分辨率风场
    :align: center
    :width: 100%
@@ -188,3 +188,10 @@ Timely and precise access to the temporal evolution of planetary boundary layer 
 
 - `WOEAI | 建筑结构抗风方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
+
+相关论文解读
+------------
+
+- :doc:`数值风洞 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测 <ref-zhao2026-BS>`
+- :doc:`数值风洞 | 如何把卫星影像转成 CFD 可用城市几何 <ref-zhao2026-BE>`
+- :doc:`数值风洞 | 用 3D Gaussian Splatting 重建城市建筑几何 <ref-zhao2025-SCS>`

@@ -51,6 +51,11 @@
   Zotero `abstractNote`, the PDF abstract, an author manuscript, or another
   approved source, and is not an English paraphrase.
 - [ ] Related direction page exists.
+- [ ] The `三句话导读` states the paper's object/problem, importance, and reader
+  takeaway without repeating the abstract or key-findings wording.
+- [ ] The `关键数字 / 关键结论卡` uses high-value numbers with evidence when
+  available; if there are no high-value numbers, it uses only key conclusions
+  rather than forcing low-value numeric detail.
 
 ## Copyright
 
@@ -87,6 +92,8 @@
 - [ ] The RTD companion page is generated with `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref>`, not by maintaining a separate Markdown route in Sphinx.
 - [ ] `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref> --check` passes.
 - [ ] The RTD companion page preserves the same title, body text, images, DOI link, and useful related links as the WeChat article.
+- [ ] The RTD related-paper navigation uses internal paper-note links only and
+  points only to existing RTD companion pages.
 - [ ] The approved cover image appears near the top of the RTD page below the
   title and is recorded in the review note.
 - [ ] The RTD companion page is listed under `学术进展 Academic Progress` on the relevant research-direction page.
@@ -100,3 +107,8 @@
 - [ ] No unconfirmed project status appears.
 - [ ] No private review comment appears.
 - [ ] The draft is safe to expose in a public GitHub repository.
+- [ ] WeChat body related-paper navigation contains only already-published
+  WeChat article links; unpublished related articles are omitted.
+- [ ] The WeChat API `content_source_url` is the current paper's RTD companion
+  page unless the review note explicitly overrides it or explicitly leaves it
+  blank.

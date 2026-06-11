@@ -36,7 +36,7 @@ wechat_backend_preview_checked: false
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhou2023-AE`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhou2023-AE --check`
 - RTD 顶部封面: none
-- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；微信底部 `content_source_url` 默认留空。
+- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-zhou2023-AE.html`）。
 - 导航状态: planned for `docs/source/Research.rst` under `海上漂浮风电 / 浮式风机系统一体化分析与优化`.
 
 ## 证据来源

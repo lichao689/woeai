@@ -4,7 +4,9 @@
 
 Use one selected paper per article.
 
-Do not turn every article into a multi-paper theme essay. Related papers may appear in the `延伸阅读` section.
+Do not turn every article into a multi-paper theme essay. Related papers may
+appear only as compact platform-specific navigation: published WeChat article
+links in the WeChat body, and internal paper-note links on RTD.
 
 Use the reader-facing Markdown file under `wechat/articles/draft-public-safe/`
 as the public content master. Public wording, formulas, figure captions, and
@@ -26,14 +28,16 @@ such as the RTD top cover image and WeChat bottom `content_source_url`.
 ## Default Structure
 
 1. `论文信息`
-2. `摘要`
-3. `研究问题`
-4. `方法贡献`
-5. `关键发现`
-6. `工程意义`
-7. `适用边界`
-8. `图文说明` when a separate figure summary is useful
-9. `延伸阅读`
+2. `三句话导读`
+3. `关键数字 / 关键结论卡`
+4. `摘要`
+5. `研究问题`
+6. `方法贡献`
+7. `关键发现`
+8. `工程意义`
+9. `适用边界`
+10. `图文说明` when a separate figure summary is useful
+11. `延伸阅读` or platform-generated related-paper navigation when useful
 
 ## Title Format
 
@@ -170,13 +174,34 @@ The public-safety script must fail a review note that omits either
 - Rendered WeChat HTML must show only the Chinese link text. It must not expose
   the raw English URL after the link text.
 - The WeChat backend bottom `阅读原文` entry is controlled by the API
-  `content_source_url` field, not by body Markdown. Leave it empty by default,
-  but set it to a useful WOEAI Read the Docs page when the editor explicitly
-  chooses a target for a specific article.
+  `content_source_url` field, not by body Markdown. By default it points to
+  the current paper's RTD companion page:
+  `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`.
+  The review front matter field `wechat_content_source_url` can override this
+  per article, including an explicitly blank value when the editor wants no
+  bottom link.
 - Keep DOI links visible in `论文信息`; do not duplicate DOI in `延伸阅读`
   unless it is the only useful external reading path.
 - This WeChat-link rule does not automatically change the public website's own
   canonical SEO URL or homepage contact display.
+
+## Lead Cards And Related Links
+
+Every new paper article should include a compact `三句话导读` near the top. The
+three sentences should answer: what the paper studies, why it matters, and what
+the reader can take away. Do not copy the abstract or repeat the key findings
+in shorter form.
+
+Every new paper article should include `关键数字 / 关键结论卡`. Prefer
+high-value numbers when the paper has them and the review note can point to
+their evidence. If there are no high-value numbers, use `关键结论卡` with only
+2-3 non-overlapping conclusions. Do not force low-value numeric details such as
+ordinary case IDs, sample counts, or routine parameter settings into the card.
+
+For related paper navigation in the WeChat body, include only already-published
+WeChat article links. Omit related papers that do not yet have a public WeChat
+URL. RTD related-paper navigation is generated separately as internal
+paper-note links.
 
 ## Formula Handling
 
@@ -240,6 +265,25 @@ The public-safety script must fail a review note that omits either
   WeChat surface crops it toward a square thumbnail.
 - Check small-thumbnail readability, not only full-size dimensions and crop
   ratio.
+- Use an integrated text-safe zone rather than a hard split layout. The cover
+  text may sit on a cleaner, lower-detail area, but that area should blend into
+  the same engineering scene through soft light, haze, flow lines, or shared
+  geometry. Avoid obvious vertical dividers, hard color walls, white cards,
+  curved panel borders, or high-contrast seams between the text side and image
+  side.
+- Include a bottom technical route strip on generated paper covers by default.
+  This strip should visually summarize the paper's implementation path from
+  input or problem, through method, to output or engineering use, using small
+  schematic panels, arrows, simplified model/data blocks, field snapshots,
+  components, curves, or result cues. It should stay sparse, connected to the
+  main scene, and readable as a thumbnail.
+- Show a publication metadata line by default when a paper article has both
+  `期刊` and `年份` metadata. The line should use `<Journal Name> · <Year>`,
+  sit below the subtitle, and act as scholarly provenance rather than a
+  marketing badge or second category tag. Use semi-bold deep-blue modern
+  sans-serif text, about `65-75%` of the subtitle size, with no leading dot,
+  icon, enclosing badge, capsule, button-like outline, DOI, author names, volume
+  or issue data, impact factor, quartile, or other metrics.
 - Keep cover text to the confirmed `分类标签 | 主钩子 / 可选副标题`
   structure. Let the WeChat article title carry the full title; do not repeat
   the full article title on the cover.

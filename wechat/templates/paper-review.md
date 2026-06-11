@@ -83,6 +83,24 @@ rtd_page_checked: false
 - 行内变量/量纲:
 - 移动端预览:
 
+## 导读与关键卡检查
+
+- 三句话导读:
+  - 研究对象/问题:
+  - 重要性:
+  - 读者带走:
+- 与摘要/关键发现重复: no / needs revision
+- 关键卡类型: 关键数字 / 关键结论
+- 关键数字证据: not applicable / PDF file page / table / figure / section
+- 无高价值关键数字时是否退化为关键结论卡: yes / no / not applicable
+
+## 相关论文导航
+
+- 公众号相关导航: only published WeChat article links / omitted because no published WeChat links / needs revision
+- RTD 相关导航: internal RTD paper-note links / omitted because no related RTD pages / needs revision
+- `content_source_url`: default RTD paper note URL / explicit override / explicitly blank
+- 预期 RTD 阅读原文: `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`
+
 ## 公开安全
 
 - [ ] No WeChat AppSecret, token, cookie, or credential appears.
@@ -94,9 +112,14 @@ rtd_page_checked: false
 ## 发布前任务
 
 - [ ] 核对作者、期刊、页码、DOI、公式和图题。
+- [ ] 核对三句话导读没有复述摘要或关键发现。
+- [ ] 核对关键数字均有证据；没有高价值关键数字时只保留关键结论卡。
 - [ ] 从 PDF 或作者稿抽取并导入已确认可用的原始高清图。
-- [ ] 确认 RTD 配套页由公众号正文转换而来，标题、正文、图片、DOI 和延伸阅读链接与公众号正文一致。
+- [ ] 确认公众号正文相关论文导航只含已发布公众号文章链接。
+- [ ] 确认 RTD 配套页使用站内 paper-note 相关论文链接。
+- [ ] 确认 RTD 配套页由公众号正文转换而来，标题、正文、图片和 DOI 与公众号正文一致，平台相关导航按各自规则生成。
 - [ ] 确认 RTD 配套页已挂入相关科研方向页的 `学术进展 Academic Progress`，并按二级科研方向归类。
+- [ ] 确认微信草稿底部 `content_source_url` 指向本论文 RTD 解读页，除非本 review front matter 明确覆盖或留空。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
 

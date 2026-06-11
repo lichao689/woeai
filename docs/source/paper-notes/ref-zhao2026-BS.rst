@@ -167,3 +167,10 @@ The accuracy and efficiency of urban microscale wind field prediction are critic
 
 - `WOEAI | 建筑结构抗风方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
+
+相关论文解读
+------------
+
+- :doc:`数值风洞 | 如何把卫星影像转成 CFD 可用城市几何 <ref-zhao2026-BE>`
+- :doc:`数值风洞 | 如何高效重建城市风能中的高时间分辨率风场 <ref-tang2026-RE>`
+- :doc:`数值风洞 | 用 3D Gaussian Splatting 重建城市建筑几何 <ref-zhao2025-SCS>`

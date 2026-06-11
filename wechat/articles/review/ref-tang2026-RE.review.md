@@ -165,20 +165,25 @@ rtd_page_checked: true
 
 ## 封面图
 
-- 封面状态: regenerated with image-gen-text; WeChat draft updated; pending WeChat backend mobile preview
-- 候选数量: 3 concept directions documented in `wechat/articles/review/ref-tang2026-RE.cover-brief.md`; 1 selected image-gen-text cover exported
-- 选中候选: `cover-wechat-900x383-imagegen-v1`
+- 封面状态: regenerated locally with image-gen-text v2; existing WeChat draft not updated in this round; pending WeChat backend mobile preview
+- 候选数量: 3 image-gen-text candidates generated in this round; 1 selected image-gen-text cover exported
+- 选中候选: `cover-wechat-900x383-imagegen-v2-c-engineering-impact`
 - 文字模式: image-gen-text
 - 生成工具: Codex image generation tool
-- 图像生成场景: 城市风场时间超分辨、Transformer、风能应用高时间分辨率快照
-- 要求文字: `数值风洞 / 风场超分辨 / 城市风能应用`
+- 图像生成场景: 城市风能高时间分辨率风场重建、稀疏快照、WTT-SRST、物理一致性与工程应用
+- 要求文字: `数值风洞 / 稀疏快照补全风场 / 看见湍流时间细节`
 - 备用封面: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-v1.png`
-- 封面素材: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v1.png`
+- 上一版封面素材: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v1.png`
+- 候选 A: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2-a-research-scene.png`
+- 候选 B: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2-b-method.png`
+- 候选 C: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2-c-engineering-impact.png`
+- 封面素材: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v2.png`
 - 尺寸: `900 x 383 px`
-- 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`
-- 本地裁剪预览: `wechat/.local/cover-previews/batch-10-imagegen-cover-preview.html`
+- 本地裁剪预览: `wechat/.local/cover-previews/cover-wechat-900x383-imagegen-v2.cover-preview.html`
+- 质量评分: article_specificity=5, main_subject_clarity=5, click_appeal=5, engineering_credibility=4, thumbnail_readability=5, crop_safety=4, text_quality=5
+- 未采用候选原因: A 偏研究场景、B 偏方法流程，均保留为备选；C 同时呈现城市风能场景、风场帧序列和工程评估线索，小缩略图可读性更好。
 - 审核状态: local visual text check and crop preview passed; WeChat backend mobile preview pending
-- 草稿状态: existing WeChat draft has been live-updated to this regenerated cover; pending WeChat backend mobile preview and proofread
+- 草稿状态: v2 generated locally but not uploaded to the existing WeChat draft in this round; existing draft still has the prior cover until an explicit draft update is approved.
 - 注意: `cover_image_checked` remains `false` until the WeChat backend mobile preview is checked.
 
 ## 公开安全

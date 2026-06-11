@@ -33,7 +33,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-li2024-POF`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-li2024-POF --check`
 - RTD 顶部封面: `wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png`
-- 转换规则: 正文措辞、公式、正文图片和延伸阅读链接来自 Markdown；封面图等平台字段来自 review note 或后续 cover integration。微信底部“阅读原文”默认留空，只有人工明确指定目标时才写入 front matter。
+- 转换规则: 正文措辞、公式、正文图片和延伸阅读链接来自 Markdown；封面图等平台字段来自 review note 或后续 cover integration。微信底部“阅读原文”默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-li2024-POF.html`）；只有人工明确指定其他目标或留空时才写入 front matter 覆盖默认值。
 
 ## 微信草稿箱记录
 

@@ -12,12 +12,23 @@ from __future__ import annotations
 import argparse
 import os
 import re
+from dataclasses import dataclass
 from pathlib import Path
 
 
 WECHAT_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = WECHAT_ROOT.parent
 DEFAULT_REF = "ref-zhao2026-BS"
+
+
+@dataclass(frozen=True)
+class BacklogPaper:
+    publication_ref: str
+    title: str
+    research_family: str
+    subdirection: str
+    original_year: int
+    order: int
 
 
 def repo_relative(path: Path) -> str:
@@ -85,6 +96,123 @@ def parse_review_cover(review_path: Path) -> Path | None:
     if match:
         return resolve_repo_path(match.group(1))
     return None
+
+
+def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
+    if not backlog_path.exists():
+        return []
+    papers: list[BacklogPaper] = []
+    current: dict[str, str] | None = None
+    order = -1
+
+    def finish() -> None:
+        if not current or not current.get("publication_ref"):
+            return
+        try:
+            original_year = int(current.get("original_year", "0") or "0")
+        except ValueError:
+            original_year = 0
+        papers.append(
+            BacklogPaper(
+                publication_ref=current.get("publication_ref", ""),
+                title=current.get("title", ""),
+                research_family=current.get("research_family", ""),
+                subdirection=current.get("subdirection", ""),
+                original_year=original_year,
+                order=order,
+            )
+        )
+
+    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
+        item_match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
+        if item_match:
+            finish()
+            order += 1
+            current = {"publication_ref": item_match.group(1)}
+            continue
+        if current is None or ":" not in raw:
+            continue
+        key, value = raw.split(":", 1)
+        key = key.strip()
+        if key.startswith("-"):
+            continue
+        current[key] = value.strip().strip('"').strip("'")
+    finish()
+    return papers
+
+
+def article_title_for_ref(publication_ref: str, article_dir: Path, fallback: str = "") -> str:
+    article_path = article_dir / f"{publication_ref}.md"
+    if article_path.exists():
+        try:
+            return parse_title(article_path.read_text(encoding="utf-8"))
+        except RuntimeError:
+            pass
+    return fallback or publication_ref
+
+
+def rtd_related_links(
+    publication_ref: str,
+    *,
+    backlog_path: Path,
+    notes_dir: Path,
+    article_dir: Path,
+    limit: int = 3,
+) -> list[dict[str, str]]:
+    papers = parse_backlog_papers(backlog_path)
+    target = next((paper for paper in papers if paper.publication_ref == publication_ref), None)
+    if target is None:
+        return []
+
+    def candidate_rank(paper: BacklogPaper) -> tuple[int, int, int]:
+        same_subdirection = paper.subdirection == target.subdirection
+        return (0 if same_subdirection else 1, -paper.original_year, paper.order)
+
+    candidates: list[BacklogPaper] = []
+    for paper in papers:
+        if paper.publication_ref == publication_ref:
+            continue
+        if paper.research_family != target.research_family:
+            continue
+        if not (notes_dir / f"{paper.publication_ref}.rst").exists():
+            continue
+        candidates.append(paper)
+    return [
+        {
+            "publication_ref": paper.publication_ref,
+            "title": article_title_for_ref(paper.publication_ref, article_dir, paper.title),
+        }
+        for paper in sorted(candidates, key=candidate_rank)[:limit]
+    ]
+
+
+def escape_rtd_doc_label(value: str) -> str:
+    return value.replace("`", "'")
+
+
+def emit_rtd_related_navigation(
+    output: list[str],
+    publication_ref: str,
+    *,
+    backlog_path: Path,
+    notes_dir: Path,
+    article_dir: Path,
+) -> None:
+    links = rtd_related_links(
+        publication_ref,
+        backlog_path=backlog_path,
+        notes_dir=notes_dir,
+        article_dir=article_dir,
+    )
+    if not links:
+        return
+    if output and output[-1] != "":
+        output.append("")
+    output.extend(heading("相关论文解读", "-"))
+    for link in links:
+        label = escape_rtd_doc_label(link["title"])
+        output.append(f"- :doc:`{label} <{link['publication_ref']}>`")
+    output.append("")
 
 
 def markdown_image(line: str) -> tuple[str, str] | None:
@@ -202,7 +330,12 @@ def emit_cover(output: list[str], cover_path: Path | None, rst_path: Path, title
     )
 
 
-def convert_markdown_to_rst(markdown_path: Path, review_path: Path, rst_path: Path) -> str:
+def convert_markdown_to_rst(
+    markdown_path: Path,
+    review_path: Path,
+    rst_path: Path,
+    backlog_path: Path | None = None,
+) -> str:
     markdown_text = markdown_path.read_text(encoding="utf-8")
     lines = markdown_text.splitlines()
     title = parse_title(markdown_text)
@@ -276,6 +409,13 @@ def convert_markdown_to_rst(markdown_path: Path, review_path: Path, rst_path: Pa
         idx += 1
 
     emit_paragraph(paragraph, output)
+    emit_rtd_related_navigation(
+        output,
+        publication_ref,
+        backlog_path=backlog_path or WECHAT_ROOT / "backlog/selected-papers.yml",
+        notes_dir=rst_path.parent,
+        article_dir=markdown_path.parent,
+    )
     return "\n".join(output).rstrip() + "\n"
 
 

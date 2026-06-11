@@ -36,7 +36,7 @@ rtd_page_checked: true
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS --check`
 - RTD 顶部封面: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
-- 转换规则: 正文措辞、公式、正文图片和延伸阅读链接来自 Markdown；封面图等平台字段来自本 review note。微信底部“阅读原文”默认留空，只有人工明确指定目标时才写入 front matter。
+- 转换规则: 正文措辞、公式、正文图片和延伸阅读链接来自 Markdown；封面图等平台字段来自本 review note。微信底部“阅读原文”默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-zhao2026-BS.html`）；只有人工明确指定其他目标或留空时才写入 front matter 覆盖默认值。
 
 ## 微信草稿箱记录
 
@@ -45,7 +45,7 @@ rtd_page_checked: true
 - 创建时间: `2026-06-09T12:31:43+08:00`
 - 更新时间: `2026-06-10T21:14:24+08:00`
 - 更新说明: 使用 `academic-clean` 主题和 `mathjax-svg` 公式渲染路线重新提交，封面切换为 v2 短文字封面。
-- 阅读原文: 默认留空；读者侧链接放在正文 `延伸阅读` 中。
+- 阅读原文: 默认使用当前论文 RTD 解读页 `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-zhao2026-BS.html`；读者侧链接放在正文 `延伸阅读` 中。
 - 发布状态: not published; final publication remains manual in the WeChat backend
 
 ## 证据来源

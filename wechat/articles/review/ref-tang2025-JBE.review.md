@@ -34,7 +34,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-tang2025-JBE`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-tang2025-JBE --check`
 - RTD 顶部封面: `wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v2.png`
-- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；封面图等平台字段留给 review note 或后续发布记录。微信底部 `content_source_url` 默认留空。
+- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；封面图等平台字段留给 review note 或后续发布记录。微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-tang2025-JBE.html`）。
 - 导航状态: 已由 controller/final integration task 挂入 `docs/source/Research.rst` 和首页最新学术进展。
 
 ## 微信草稿箱记录

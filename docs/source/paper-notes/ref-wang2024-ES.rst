@@ -138,3 +138,10 @@ CWR 方法的核心，是把反馈控制放入 weak recycling 的重缩放流程
 
 - `WOEAI | 建筑结构抗风方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
+
+相关论文解读
+------------
+
+- :doc:`数值风洞 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测 <ref-zhao2026-BS>`
+- :doc:`数值风洞 | 如何把卫星影像转成 CFD 可用城市几何 <ref-zhao2026-BE>`
+- :doc:`数值风洞 | 如何高效重建城市风能中的高时间分辨率风场 <ref-tang2026-RE>`

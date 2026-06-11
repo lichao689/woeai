@@ -40,12 +40,13 @@ DEFAULT_THEME = "academic-clean"
 AVAILABLE_THEMES = ("academic-clean", "engineering-note", "recruitment-friendly")
 DEFAULT_MATH_RENDERER = "mathjax-svg"
 AVAILABLE_MATH_RENDERERS = ("lightweight", "mathjax-svg")
-DEFAULT_CONTENT_SOURCE_URL = ""
+RTD_BASE_URL = "https://woeai.readthedocs.io/zh-cn/latest/"
 EXPECTED_EGRESS_IPS_KEY = "WOEAI_WECHAT_EXPECTED_EGRESS_IPS"
 
 TOKEN_URL = "https://api.weixin.qq.com/cgi-bin/token"
 UPLOAD_BODY_IMAGE_URL = "https://api.weixin.qq.com/cgi-bin/media/uploadimg"
 UPLOAD_PERMANENT_MATERIAL_URL = "https://api.weixin.qq.com/cgi-bin/material/add_material"
+DRAFT_GET_URL = "https://api.weixin.qq.com/cgi-bin/draft/get"
 DRAFT_ADD_URL = "https://api.weixin.qq.com/cgi-bin/draft/add"
 DRAFT_UPDATE_URL = "https://api.weixin.qq.com/cgi-bin/draft/update"
 PUBLIC_IP_ENDPOINTS = (
@@ -60,6 +61,17 @@ class ImageRef:
     alt: str
     raw_src: str
     path: Path
+
+
+@dataclass(frozen=True)
+class BacklogPaper:
+    publication_ref: str
+    title: str
+    research_family: str
+    subdirection: str
+    original_year: int
+    latest_published_url: str
+    order: int
 
 
 @dataclass(frozen=True)
@@ -541,6 +553,160 @@ def read_backlog_item(backlog_path: Path, publication_ref: str) -> dict[str, str
     return item
 
 
+def read_backlog_publication_refs(backlog_path: Path) -> list[str]:
+    refs: list[str] = []
+    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
+        match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
+        if match:
+            refs.append(match.group(1))
+    return refs
+
+
+def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
+    papers: list[BacklogPaper] = []
+    current: dict[str, str] | None = None
+    order = -1
+
+    def finish() -> None:
+        if not current or not current.get("publication_ref"):
+            return
+        try:
+            original_year = int(current.get("original_year", "0") or "0")
+        except ValueError:
+            original_year = 0
+        papers.append(
+            BacklogPaper(
+                publication_ref=current.get("publication_ref", ""),
+                title=current.get("title", ""),
+                research_family=current.get("research_family", ""),
+                subdirection=current.get("subdirection", ""),
+                original_year=original_year,
+                latest_published_url=current.get("latest_published_url", ""),
+                order=order,
+            )
+        )
+
+    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
+        item_match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
+        if item_match:
+            finish()
+            order += 1
+            current = {"publication_ref": item_match.group(1)}
+            continue
+        if current is None or ":" not in raw:
+            continue
+        key, value = raw.split(":", 1)
+        key = key.strip()
+        if key.startswith("-"):
+            continue
+        current[key] = value.strip().strip('"').strip("'")
+    finish()
+    return papers
+
+
+def rtd_paper_note_url(publication_ref: str) -> str:
+    return f"{RTD_BASE_URL}paper-notes/{publication_ref}.html"
+
+
+def resolve_content_source_url(publication_ref: str, front: dict[str, str]) -> str:
+    if "wechat_content_source_url" in front:
+        return front["wechat_content_source_url"].strip()
+    return rtd_paper_note_url(publication_ref)
+
+
+def article_title_for_ref(publication_ref: str, fallback: str = "") -> str:
+    article_path = WECHAT_ROOT / f"articles/draft-public-safe/{publication_ref}.md"
+    if article_path.exists():
+        try:
+            return parse_title(article_path)
+        except RuntimeError:
+            pass
+    return fallback or publication_ref
+
+
+def related_backlog_papers(
+    publication_ref: str,
+    *,
+    require_wechat_url: bool = False,
+    require_rtd_page: bool = False,
+    limit: int = 3,
+) -> list[BacklogPaper]:
+    backlog_path = WECHAT_ROOT / "backlog/selected-papers.yml"
+    papers = parse_backlog_papers(backlog_path)
+    target = next((paper for paper in papers if paper.publication_ref == publication_ref), None)
+    if target is None:
+        return []
+
+    def candidate_rank(paper: BacklogPaper) -> tuple[int, int, int]:
+        same_subdirection = paper.subdirection == target.subdirection
+        return (0 if same_subdirection else 1, -paper.original_year, paper.order)
+
+    candidates: list[BacklogPaper] = []
+    for paper in papers:
+        if paper.publication_ref == publication_ref:
+            continue
+        if paper.research_family != target.research_family:
+            continue
+        if require_wechat_url and not paper.latest_published_url:
+            continue
+        if require_rtd_page and not (REPO_ROOT / f"docs/source/paper-notes/{paper.publication_ref}.rst").exists():
+            continue
+        candidates.append(paper)
+    return sorted(candidates, key=candidate_rank)[:limit]
+
+
+def related_wechat_links(publication_ref: str, *, limit: int = 3) -> list[dict[str, str]]:
+    links: list[dict[str, str]] = []
+    for paper in related_backlog_papers(publication_ref, require_wechat_url=True, limit=limit):
+        links.append(
+            {
+                "publication_ref": paper.publication_ref,
+                "title": article_title_for_ref(paper.publication_ref, paper.title),
+                "url": paper.latest_published_url,
+            }
+        )
+    return links
+
+
+def escape_markdown_link_label(value: str) -> str:
+    return value.replace("[", r"\[").replace("]", r"\]")
+
+
+def append_wechat_related_navigation(markdown_text: str, links: list[dict[str, str]]) -> str:
+    if not links or "## 相关论文导航" in markdown_text:
+        return markdown_text
+    lines = ["", "## 相关论文导航", ""]
+    for link in links:
+        lines.append(f"- [{escape_markdown_link_label(link['title'])}]({link['url']})")
+    return markdown_text.rstrip() + "\n" + "\n".join(lines) + "\n"
+
+
+def planned_content_source_items(publication_refs: list[str]) -> list[dict[str, Any]]:
+    backlog_path = WECHAT_ROOT / "backlog/selected-papers.yml"
+    items: list[dict[str, Any]] = []
+    for publication_ref in publication_refs:
+        review_path = WECHAT_ROOT / f"articles/review/{publication_ref}.review.md"
+        article_path = WECHAT_ROOT / f"articles/draft-public-safe/{publication_ref}.md"
+        front = parse_front_matter(review_path) if review_path.exists() else {}
+        backlog_item = read_backlog_item(backlog_path, publication_ref)
+        has_override = "wechat_content_source_url" in front
+        expected_url = resolve_content_source_url(publication_ref, front)
+        items.append(
+            {
+                "publication_ref": publication_ref,
+                "title": article_title_for_ref(publication_ref, backlog_item.get("title", "")),
+                "article_exists": article_path.exists(),
+                "review_exists": review_path.exists(),
+                "rtd_page_exists": (REPO_ROOT / f"docs/source/paper-notes/{publication_ref}.rst").exists(),
+                "wechat_draft_media_id": backlog_item.get("wechat_draft_media_id", ""),
+                "content_source_url_policy": "review_override" if has_override else "default_rtd_paper_note",
+                "expected_content_source_url": expected_url,
+                "default_rtd_paper_note_url": rtd_paper_note_url(publication_ref),
+            }
+        )
+    return items
+
+
 def update_backlog_after_success(backlog_path: Path, publication_ref: str, media_id: str, action: str) -> None:
     now = datetime.now().astimezone().isoformat(timespec="seconds")
     lines = backlog_path.read_text(encoding="utf-8").splitlines()
@@ -606,7 +772,7 @@ def build_context(
     first_author = parse_first_paper_author(article_path)
     front_author = front.get("wechat_author", "")
     author = first_author if front_author == "WOEAI" and first_author else front_author or first_author or "WOEAI"
-    content_source_url = front.get("wechat_content_source_url") or DEFAULT_CONTENT_SOURCE_URL
+    content_source_url = resolve_content_source_url(publication_ref, front)
     cover_path = parse_cover_path(review_path)
     body_images = parse_markdown_images(article_path)
     backlog_item = read_backlog_item(backlog_path, publication_ref)
@@ -670,6 +836,7 @@ def markdown_with_uploaded_urls(ctx: ArticleContext, image_url_map: dict[str, st
     for image in ctx.body_images:
         url = image_url_map[image.raw_src]
         text = text.replace(f"]({image.raw_src})", f"]({url})")
+    text = append_wechat_related_navigation(text, related_wechat_links(ctx.publication_ref))
     tmp = tempfile.NamedTemporaryFile(
         "w",
         encoding="utf-8",
@@ -752,6 +919,8 @@ def dry_run_summary(ctx: ArticleContext) -> dict[str, Any]:
         "author": ctx.author,
         "digest": ctx.digest,
         "content_source_url": ctx.content_source_url,
+        "existing_media_id": ctx.existing_media_id,
+        "wechat_related_links": related_wechat_links(ctx.publication_ref),
         "theme": ctx.theme,
         "math_renderer": ctx.math_renderer,
         "public_safety_check": repo_relative(REPO_ROOT / "scripts/check-public-safe-content.py"),
@@ -799,6 +968,89 @@ def command_preflight(args: argparse.Namespace) -> int:
         "will_read_credentials": False,
         "will_contact_wechat": False,
         "will_create_or_update_draft": False,
+    }
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    return 0 if summary["ok"] else 1
+
+
+def command_content_source_plan(args: argparse.Namespace) -> int:
+    refs = read_backlog_publication_refs(WECHAT_ROOT / "backlog/selected-papers.yml") if args.all else [args.publication_ref]
+    items = planned_content_source_items(refs)
+    summary = {
+        "ok": True,
+        "stage": "content_source_plan",
+        "checked_count": len(items),
+        "default_content_source_url_policy": "default_rtd_paper_note",
+        "rtd_base_url": RTD_BASE_URL,
+        "will_read_credentials": False,
+        "will_contact_wechat": False,
+        "will_create_or_update_draft": False,
+        "items": items,
+    }
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    return 0
+
+
+def fetch_remote_draft_article(token: str, media_id: str) -> dict[str, Any]:
+    response = api_post_json(DRAFT_GET_URL, token, {"media_id": media_id})
+    if "news_item" not in response:
+        raise WeChatError("draft_get", response)
+    news_items = response.get("news_item") or []
+    if not news_items:
+        raise WeChatError("draft_get", {"errcode": "empty_news_item", "errmsg": "Draft has no articles"})
+    first = news_items[0]
+    if not isinstance(first, dict):
+        raise WeChatError("draft_get", {"errcode": "invalid_news_item", "errmsg": "Draft first article is not an object"})
+    return first
+
+
+def audit_remote_content_source(token: str, ctx: ArticleContext) -> dict[str, Any]:
+    if not ctx.existing_media_id:
+        return {
+            "publication_ref": ctx.publication_ref,
+            "ok": False,
+            "stage": "missing_media_id",
+            "expected_content_source_url": ctx.content_source_url,
+            "remote_content_source_url": None,
+            "matches_expected": False,
+            "needs_update": True,
+            "message": "backlog has no wechat_draft_media_id",
+        }
+    article = fetch_remote_draft_article(token, ctx.existing_media_id)
+    remote_url = str(article.get("content_source_url", ""))
+    matches = remote_url == ctx.content_source_url
+    return {
+        "publication_ref": ctx.publication_ref,
+        "ok": True,
+        "stage": "draft_checked",
+        "wechat_draft_media_id": ctx.existing_media_id,
+        "remote_title": str(article.get("title", "")),
+        "expected_content_source_url": ctx.content_source_url,
+        "remote_content_source_url": remote_url,
+        "matches_expected": matches,
+        "needs_update": not matches,
+    }
+
+
+def command_audit_content_source(args: argparse.Namespace) -> int:
+    refs = read_backlog_publication_refs(WECHAT_ROOT / "backlog/selected-papers.yml") if args.all else [args.publication_ref]
+    contexts = [build_context(ref, args.theme, args.math_renderer) for ref in refs]
+    token_record = fetch_access_token(force_refresh=False)
+    token = token_record["access_token"]
+    items = [audit_remote_content_source(token, ctx) for ctx in contexts]
+    needs_update = [item for item in items if item.get("needs_update")]
+    summary = {
+        "ok": not needs_update,
+        "stage": "draft_content_source_audit",
+        "checked_count": len(items),
+        "needs_update_count": len(needs_update),
+        "default_content_source_url_policy": "default_rtd_paper_note",
+        "rtd_base_url": RTD_BASE_URL,
+        "will_read_credentials": True,
+        "will_contact_wechat": True,
+        "will_create_or_update_draft": False,
+        "token_printed": False,
+        "items": items,
     }
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0 if summary["ok"] else 1
@@ -910,6 +1162,16 @@ def build_parser() -> argparse.ArgumentParser:
     preflight.add_argument("--theme", default=DEFAULT_THEME, choices=AVAILABLE_THEMES)
     preflight.add_argument("--math-renderer", default=DEFAULT_MATH_RENDERER, choices=AVAILABLE_MATH_RENDERERS)
 
+    plan = sub.add_parser("content-source-plan", help="Safe: list expected bottom 阅读原文 targets")
+    plan.add_argument("--publication-ref", default=DEFAULT_REF)
+    plan.add_argument("--all", action="store_true", help="List every publication_ref in the backlog")
+
+    audit = sub.add_parser("audit-content-source", help="Live read-only: check WeChat draft content_source_url")
+    audit.add_argument("--publication-ref", default=DEFAULT_REF)
+    audit.add_argument("--all", action="store_true", help="Check every publication_ref in the backlog")
+    audit.add_argument("--theme", default=DEFAULT_THEME, choices=AVAILABLE_THEMES)
+    audit.add_argument("--math-renderer", default=DEFAULT_MATH_RENDERER, choices=AVAILABLE_MATH_RENDERERS)
+
     create = sub.add_parser("create-draft", help="Live: upload assets and create a WeChat draft")
     create.add_argument("--publication-ref", default=DEFAULT_REF)
     create.add_argument("--theme", default=DEFAULT_THEME, choices=AVAILABLE_THEMES)
@@ -940,6 +1202,10 @@ def main(argv: list[str] | None = None) -> int:
             return command_ip_check(args)
         if args.command == "preflight":
             return command_preflight(args)
+        if args.command == "content-source-plan":
+            return command_content_source_plan(args)
+        if args.command == "audit-content-source":
+            return command_audit_content_source(args)
         if args.command in {"create-draft", "update-draft"}:
             return command_create_or_update(args)
     except WeChatError as exc:

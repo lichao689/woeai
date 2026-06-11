@@ -188,3 +188,10 @@ In recent years, global renewable energy has developed rapidly, with the offshor
 
 - `WOEAI | 海上漂浮风电方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/FloatingOffshoreWindEnergy.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
+
+相关论文解读
+------------
+
+- :doc:`漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变 <ref-li2022-SOS>`
+- :doc:`漂浮风电 | 为半潜式风机找到可信的等效静力波浪荷载 <ref-zheng2025-OE>`
+- :doc:`漂浮风电 | 用长期动力优化选择浮式风机下部结构 <ref-zhou2023-AE>`

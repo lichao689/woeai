@@ -545,4 +545,3 @@ If no files changed during Task 5, do not create an empty commit.
 - `EngineeringApplications.rst` contains enterprise project evidence and no legacy `Projects` links.
 - `python3 -m unittest tests.test_rtd_homepage_projects_redesign -v` passes.
 - `PYTHON_BIN=/opt/homebrew/bin/python3.12 ./scripts/check-docs.sh` passes, or `./scripts/check-docs.sh` passes under another Python 3.12+ interpreter.
-

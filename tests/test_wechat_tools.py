@@ -8,6 +8,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
 from unittest import mock
 
 
@@ -76,6 +77,48 @@ class WeChatToolTests(unittest.TestCase):
 
         self.assertEqual(rst, "- 作者: :student-first-author:`Zhao Peisheng`; **Li Chao**\\*; Wang Xiaolu")
 
+    def test_markdown_to_rtd_related_links_use_existing_internal_pages(self) -> None:
+        converter = load_script(ROOT / "wechat/tools/markdown_to_rtd.py", "woeai_markdown_to_rtd_related_test")
+
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            article_dir = root / "articles"
+            notes_dir = root / "notes"
+            article_dir.mkdir()
+            notes_dir.mkdir()
+            backlog = root / "selected-papers.yml"
+            backlog.write_text(
+                "items:\n"
+                "  - publication_ref: ref-target\n"
+                "    title: Target\n"
+                "    research_family: 建筑结构抗风\n"
+                "    subdirection: 数值风洞与湍动入流\n"
+                "    original_year: 2026\n"
+                "  - publication_ref: ref-published\n"
+                "    title: Published\n"
+                "    research_family: 建筑结构抗风\n"
+                "    subdirection: 数值风洞与湍动入流\n"
+                "    original_year: 2025\n"
+                "  - publication_ref: ref-missing-rtd\n"
+                "    title: Missing RTD\n"
+                "    research_family: 建筑结构抗风\n"
+                "    subdirection: 数值风洞与湍动入流\n"
+                "    original_year: 2024\n",
+                encoding="utf-8",
+            )
+            (article_dir / "ref-published.md").write_text("# 数值风洞 | 已有 RTD 页面\n", encoding="utf-8")
+            (notes_dir / "ref-published.rst").write_text("placeholder\n", encoding="utf-8")
+
+            links = converter.rtd_related_links(
+                "ref-target",
+                backlog_path=backlog,
+                notes_dir=notes_dir,
+                article_dir=article_dir,
+            )
+
+        self.assertEqual([link["publication_ref"] for link in links], ["ref-published"])
+        self.assertEqual(links[0]["title"], "数值风洞 | 已有 RTD 页面")
+
     def test_wechat_renderer_shows_corresponding_star_and_underlined_author(self) -> None:
         renderer = load_script(ROOT / "wechat/tools/render-copy-ready.py", "woeai_render_copy_ready_author_test")
 
@@ -86,12 +129,77 @@ class WeChatToolTests(unittest.TestCase):
         self.assertIn("<strong>Li Chao</strong>*", rendered)
         self.assertNotIn("\\*", rendered)
 
-    def test_wechat_draft_defaults_content_source_url_to_empty(self) -> None:
+    def test_wechat_draft_defaults_content_source_url_to_rtd_paper_note(self) -> None:
         draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_wechat_draft_test")
 
         ctx = draft.build_context("ref-zhao2026-BS", "academic-clean", "lightweight")
 
+        self.assertEqual(
+            ctx.content_source_url,
+            "https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-zhao2026-BS.html",
+        )
+
+    def test_wechat_draft_allows_blank_content_source_url_override(self) -> None:
+        draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_wechat_draft_blank_source_test")
+
+        with mock.patch.object(
+            draft,
+            "parse_front_matter",
+            return_value={"body_images_upload_approved": "true", "wechat_content_source_url": ""},
+        ):
+            ctx = draft.build_context("ref-zhao2026-BS", "academic-clean", "lightweight")
+
         self.assertEqual(ctx.content_source_url, "")
+
+    def test_wechat_draft_audit_content_source_detects_remote_mismatch(self) -> None:
+        draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_wechat_draft_audit_test")
+        ctx = SimpleNamespace(
+            publication_ref="ref-example",
+            existing_media_id="media-123",
+            content_source_url="https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-example.html",
+        )
+
+        with mock.patch.object(
+            draft,
+            "fetch_remote_draft_article",
+            return_value={"title": "远端草稿", "content_source_url": ""},
+        ):
+            item = draft.audit_remote_content_source("secret-token", ctx)
+
+        self.assertTrue(item["needs_update"])
+        self.assertFalse(item["matches_expected"])
+        self.assertEqual(item["remote_content_source_url"], "")
+        self.assertEqual(
+            item["expected_content_source_url"],
+            "https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-example.html",
+        )
+        self.assertNotIn("secret-token", json.dumps(item, ensure_ascii=False))
+
+    def test_wechat_draft_related_links_only_use_published_wechat_urls(self) -> None:
+        draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_wechat_draft_related_test")
+
+        papers = [
+            draft.BacklogPaper("ref-target", "Target", "建筑结构抗风", "数值风洞与湍动入流", 2026, "", 0),
+            draft.BacklogPaper(
+                "ref-published",
+                "Published",
+                "建筑结构抗风",
+                "数值风洞与湍动入流",
+                2025,
+                "https://mp.weixin.qq.com/s/published",
+                1,
+            ),
+            draft.BacklogPaper("ref-unpublished", "Unpublished", "建筑结构抗风", "数值风洞与湍动入流", 2024, "", 2),
+        ]
+
+        with mock.patch.object(draft, "parse_backlog_papers", return_value=papers), mock.patch.object(
+            draft,
+            "article_title_for_ref",
+            side_effect=lambda ref, fallback="": {"ref-published": "公众号已发布文章"}.get(ref, fallback),
+        ):
+            links = draft.related_wechat_links("ref-target")
+
+        self.assertEqual(links, [{"publication_ref": "ref-published", "title": "公众号已发布文章", "url": "https://mp.weixin.qq.com/s/published"}])
 
     def test_wechat_draft_uses_first_paper_author_when_review_author_is_legacy_woeai(self) -> None:
         draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_wechat_draft_author_test")

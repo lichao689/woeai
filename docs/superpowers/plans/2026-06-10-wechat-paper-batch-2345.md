@@ -359,7 +359,7 @@ Expected:
 
 - Both commands pass.
 - Output says `will_read_credentials: false`, `will_contact_wechat: false`, and `will_create_or_update_draft: false`.
-- `content_source_url` is empty unless the user later explicitly chooses a bottom `阅读原文` target.
+- `content_source_url` defaults to `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html` unless the user later explicitly chooses a different bottom `阅读原文` target or an intentionally blank value.
 
 ### Task 3: `ref-li2024-POF` Article, Review, Assets, And RTD Page
 
@@ -1006,7 +1006,7 @@ Before a paper task is considered complete:
 - Temporary PDF text, page renders, image strips, and extraction aids live under the matching ignored `wechat/.local/ref-*/` paper directory.
 - Formula semantics remain Markdown LaTeX in the public Markdown source.
 - RTD companion page is generated from Markdown, not hand-diverged.
-- `content_source_url` stays empty unless the user later explicitly selects a bottom `阅读原文` target.
+- `content_source_url` defaults to `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html` unless the user later explicitly selects a different bottom `阅读原文` target or an intentionally blank value.
 - No live WeChat credential file is read.
 - No WeChat draft is created or updated.
 

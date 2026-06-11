@@ -205,3 +205,10 @@ Finite element analysis (FEA) methods are typically computationally intensive an
 
 - `WOEAI | 建筑结构抗风方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
+
+相关论文解读
+------------
+
+- :doc:`结构抗风 | 用内置矩形立柱提升液舱阻尼器设计效率 <ref-he2026-OE>`
+- :doc:`结构抗风 | 别只看单方向峰值：高层建筑二维矢量响应极值怎么算 <ref-yang2025-JBE>`
+- :doc:`结构抗风 | 让高层建筑 TLD 在非线性晃荡中更会耗能 <ref-he2025-POF>`

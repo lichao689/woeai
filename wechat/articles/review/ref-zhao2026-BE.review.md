@@ -35,7 +35,7 @@ rtd_page_checked: true
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BE`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BE --check`
 - RTD 顶部封面: not included in this scoped package
-- 转换规则: 正文措辞、公式、正文图片和延伸阅读链接来自 Markdown；平台字段来自本 review note。微信底部“阅读原文”默认留空，只有人工明确指定目标时才写入 front matter。
+- 转换规则: 正文措辞、公式、正文图片和延伸阅读链接来自 Markdown；平台字段来自本 review note。微信底部“阅读原文”默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-zhao2026-BE.html`）；只有人工明确指定其他目标或留空时才写入 front matter 覆盖默认值。
 
 ## 证据来源
 

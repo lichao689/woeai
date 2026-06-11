@@ -36,7 +36,7 @@ wechat_backend_preview_checked: false
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-wang2024-ES`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-wang2024-ES --check`
 - RTD 顶部封面: not set for this package; body figures are inserted in the article flow
-- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；平台字段来自 review note。微信底部 `content_source_url` 默认留空。
+- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；平台字段来自 review note。微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-wang2024-ES.html`）。
 - 导航状态: shared integration files were intentionally not modified in this worker task. Main-thread integration should update `docs/source/Research.rst`, `docs/source/index.rst`, and `wechat/backlog/selected-papers.yml` as needed.
 
 ## 证据来源

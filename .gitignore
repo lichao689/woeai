@@ -161,6 +161,7 @@ cython_debug/
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 
 ### WOEAI WeChat local-only material ###
+outputs/
 wechat/.local/
 wechat/private/
 wechat/review-notes/

@@ -34,7 +34,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2025-SCS`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2025-SCS --check`
 - RTD 顶部封面: `wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png`
-- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；封面图等平台字段留给 review note 或后续发布记录。微信底部 `content_source_url` 默认留空。
+- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；封面图等平台字段留给 review note 或后续发布记录。微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-zhao2025-SCS.html`）。
 
 ## 微信草稿箱记录
 

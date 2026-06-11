@@ -36,7 +36,7 @@ wechat_backend_preview_checked: false
 - 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-he2026-OE`
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-he2026-OE --check`
 - RTD 顶部封面: not set for this package; body figures are inserted in the article flow
-- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；平台字段来自 review note。微信底部 `content_source_url` 默认留空。
+- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；平台字段来自 review note。微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-he2026-OE.html`）。
 - 导航状态: this scoped worker did not edit shared navigation files. Main integration should list this page under `建筑结构抗风 / 高层建筑抗风与优化` in `学术进展 Academic Progress`.
 
 ## 证据来源

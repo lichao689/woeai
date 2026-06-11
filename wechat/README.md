@@ -6,16 +6,15 @@ The basic unit is one selected paper, one article. Each article must be source-b
 
 Each One-Paper WeChat Article may also have an RTD Paper Companion Page under `docs/source/paper-notes/<publication_ref>.rst`. The reader-facing Markdown file under `wechat/articles/draft-public-safe/` is the public content master. Align public wording, formulas, figure captions, and body links there first, then convert that same content to Sphinx-compatible reStructuredText and render the WeChat draft from the same Markdown. Platform metadata such as cover image, draft media ID, and WeChat bottom `阅读原文` / `content_source_url` belongs in the review note or backlog, not in the public正文 master.
 
-For WOEAI website links embedded in WeChat articles and WeChat draft API
-payloads, prefer the Read the Docs project domain
-`https://woeai.readthedocs.io/zh-cn/latest/`. Use it for RTD companion pages,
-direction pages, and useful homepage-style links. Reader-facing article links
-should be placed under `延伸阅读` as direct hyperlinks rather than repeated as a
-separate `阅读原文` section. This
-does not automatically change the public website's own canonical SEO URL or
-homepage contact display.
+For WOEAI website links embedded in WeChat draft API payloads, prefer the Read
+the Docs project domain `https://woeai.readthedocs.io/zh-cn/latest/`. The
+WeChat backend bottom `阅读原文` target defaults to the current paper's RTD
+companion page. Reader-facing related-paper navigation in the WeChat body
+should use already-published WeChat article links only; RTD companion pages use
+internal paper-note links. This does not automatically change the public
+website's own canonical SEO URL or homepage contact display.
 
-Use clear visible labels for WOEAI links, for example:
+Use clear visible labels for RTD-side WOEAI links, for example:
 
 - `WOEAI | 建筑结构抗风方向介绍`
 - `WOEAI | 主页`
@@ -67,7 +66,9 @@ public-safe body images with two-line Chinese captions. It reads RTD cover
 metadata from the review note, preferring `rtd_cover_image`, then
 `wechat_cover_image`, then `cover_image`, and finally the `封面素材` line. The
 cover is inserted below the RST title, while body figure captions keep the same
-two-line meaning as the Markdown source.
+two-line meaning as the Markdown source. The converter also appends RTD-only
+related-paper navigation with internal `paper-notes` links when related
+companion pages already exist.
 
 ## Research Families
 
@@ -121,11 +122,19 @@ Live runs upload the approved cover image, upload every approved body image,
 replace local Markdown image paths with WeChat image URLs in the submitted HTML,
 and then create or update the WeChat draft.
 
-By default, the API payload leaves WeChat's bottom `content_source_url` empty.
-Reader-facing links should live in the article's `延伸阅读` section instead.
-When the editor explicitly wants a bottom `阅读原文` entry, add
-`wechat_content_source_url` to that article's review front matter; the API
-payload will use that value as `content_source_url`.
+By default, the API payload sets WeChat's bottom `content_source_url` to the
+current paper's RTD companion page:
+`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`.
+Reader-facing links should still live in the article body instead of a body
+`阅读原文` section. When the editor explicitly wants a different bottom
+`阅读原文` target for one article, set `wechat_content_source_url` in that
+article's review front matter; the API payload will use that value as
+`content_source_url`. An explicitly blank `wechat_content_source_url` means
+that article should have no bottom `阅读原文` link.
+
+The API renderer appends WeChat-body related-paper navigation only when related
+items already have public WeChat URLs in `latest_published_url`; unpublished
+related papers are omitted.
 
 doocs/md is no longer needed for the normal WOEAI draft-submission workflow.
 Keep it only as an auxiliary design and fallback path for theme CSS tuning,
@@ -182,6 +191,7 @@ Safe local checks:
 ```bash
 python wechat/tools/wechat_draft.py config-check
 python wechat/tools/wechat_draft.py ip-check
+python wechat/tools/wechat_draft.py content-source-plan --all
 python wechat/tools/wechat_draft.py preflight --publication-ref ref-zhao2026-BS --theme academic-clean
 python wechat/tools/wechat_draft.py token-check
 python wechat/tools/wechat_draft.py dry-run --publication-ref ref-zhao2026-BS --theme academic-clean
@@ -190,6 +200,8 @@ python wechat/tools/wechat_draft.py dry-run --publication-ref ref-zhao2026-BS --
 `config-check` verifies credential-file shape without printing secrets.
 `ip-check` shows the current public egress IP without reading credentials or
 contacting WeChat; it is diagnostic only and is not a live-run gate.
+`content-source-plan` lists the expected bottom `阅读原文` targets without
+reading credentials or contacting WeChat.
 `preflight` runs the same article and asset validation used by `dry-run`
 without reading credentials or contacting WeChat. Both commands run
 `scripts/check-public-safe-content.py` against the target article and review

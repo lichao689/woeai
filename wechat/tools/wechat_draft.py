@@ -41,6 +41,10 @@ from woeai.wechat.backlog import (  # noqa: E402,F401
     read_backlog_item,
     read_backlog_publication_refs,
 )
+from woeai.wechat.review import (  # noqa: E402,F401
+    find_review_cover,
+    parse_front_matter,
+)
 
 CONFIG_PATH = Path.home() / ".config/woeai/wechat_official_account.env"
 RUNNER_CONFIG_PATH = Path.home() / ".config/woeai/wechat_runner.env"
@@ -423,27 +427,13 @@ def fetch_access_token(force_refresh: bool = False) -> dict[str, Any]:
     return {**record, "from_cache": False}
 
 
-def parse_front_matter(path: Path) -> dict[str, str]:
-    lines = path.read_text(encoding="utf-8").splitlines()
-    if not lines or lines[0].strip() != "---":
-        return {}
-    result: dict[str, str] = {}
-    for raw in lines[1:]:
-        if raw.strip() == "---":
-            break
-        if ":" not in raw:
-            continue
-        key, value = raw.split(":", 1)
-        result[key.strip()] = value.strip().strip('"').strip("'")
-    return result
-
-
 def parse_cover_path(review_path: Path) -> Path:
-    text = review_path.read_text(encoding="utf-8")
-    match = re.search(r"-\s+封面素材:\s+`([^`]+)`", text)
-    if not match:
+    # WeChat drafts require a cover; find_review_cover returns None when
+    # absent, so surface that as an error here.
+    cover = find_review_cover(review_path)
+    if cover is None:
         raise RuntimeError(f"Cannot find cover image in {repo_relative(review_path)}")
-    return (REPO_ROOT / match.group(1)).resolve()
+    return cover
 
 
 def parse_markdown_images(article_path: Path) -> list[ImageRef]:

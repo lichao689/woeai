@@ -32,6 +32,11 @@ CLOSING_SENTENCE_ANCHOR = "点击阅读原文"
 DOI_TRUNCATE = re.compile(r"^(.*?https://doi\.org/\S+)")
 
 from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers  # noqa: E402,F401
+from woeai.wechat.review import (  # noqa: E402,F401
+    find_review_cover,
+    parse_front_matter as parse_review_front_matter,
+    resolve_repo_path,
+)
 
 
 def repo_relative(path: Path) -> str:
@@ -65,44 +70,6 @@ def parse_title(markdown_text: str) -> str:
 
 def strip_title_category_prefix(title: str) -> str:
     return TITLE_CATEGORY_PREFIX.sub("", title).strip()
-
-
-def parse_review_front_matter(review_path: Path) -> dict[str, str]:
-    if not review_path.exists():
-        return {}
-    lines = review_path.read_text(encoding="utf-8").splitlines()
-    if not lines or lines[0].strip() != "---":
-        return {}
-    result: dict[str, str] = {}
-    for raw in lines[1:]:
-        if raw.strip() == "---":
-            break
-        if ":" not in raw:
-            continue
-        key, value = raw.split(":", 1)
-        result[key.strip()] = value.strip().strip('"').strip("'")
-    return result
-
-
-def resolve_repo_path(value: str) -> Path:
-    path = Path(value).expanduser()
-    if path.is_absolute():
-        return path.resolve()
-    return (REPO_ROOT / path).resolve()
-
-
-def parse_review_cover(review_path: Path) -> Path | None:
-    front = parse_review_front_matter(review_path)
-    for key in ("rtd_cover_image", "wechat_cover_image", "cover_image"):
-        if front.get(key):
-            return resolve_repo_path(front[key])
-    if not review_path.exists():
-        return None
-    text = review_path.read_text(encoding="utf-8")
-    match = re.search(r"-\s+封面素材:\s+`([^`]+)`", text)
-    if match:
-        return resolve_repo_path(match.group(1))
-    return None
 
 
 def article_title_for_ref(publication_ref: str, article_dir: Path, fallback: str = "") -> str:
@@ -367,7 +334,7 @@ def convert_markdown_to_rst(
         "",
     ]
     output.extend(heading(title, "="))
-    emit_cover(output, parse_review_cover(review_path), rst_path, title)
+    emit_cover(output, find_review_cover(review_path), rst_path, title)
 
     idx = 0
     if lines and lines[0].startswith("# "):

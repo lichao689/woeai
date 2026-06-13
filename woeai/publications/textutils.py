@@ -203,3 +203,24 @@ def strip_bib_html(value: str) -> str:
 
 def split_extra_tokens(value: str | None) -> list[str]:
     return [token.strip() for token in re.split(r"[、,，;；\n\r]+", value or "") if token.strip()]
+
+
+def creator_display_name(creator: dict[str, Any]) -> str:
+    if creator.get("name"):
+        return str(creator["name"])
+    return " ".join(part for part in [creator.get("firstName"), creator.get("lastName")] if part)
+
+
+def creator_csl_display_name(creator: dict[str, Any]) -> str:
+    if creator.get("name"):
+        return str(creator["name"])
+    first = str(creator.get("firstName") or "").strip()
+    last = str(creator.get("lastName") or "").strip()
+    if contains_cjk(first) or contains_cjk(last):
+        return f"{last}{first}"
+    return " ".join(part for part in [last, first] if part)
+
+
+def normalize_author_name(value: str) -> str:
+    value = unicodedata.normalize("NFKC", value).casefold()
+    return re.sub(r"[^0-9a-z\u4e00-\u9fff]+", "", value)

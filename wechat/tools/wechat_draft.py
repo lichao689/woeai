@@ -42,6 +42,14 @@ from woeai.wechat.backlog import (  # noqa: E402,F401
     read_backlog_item,
     read_backlog_publication_refs,
 )
+from woeai.wechat.options import (  # noqa: E402,F401
+    AVAILABLE_MATH_RENDERERS,
+    AVAILABLE_THEMES,
+    DEFAULT_MATH_RENDERER,
+    DEFAULT_THEME,
+    validate_math_renderer,
+    validate_theme,
+)
 from woeai.wechat.review import (  # noqa: E402,F401
     find_review_cover,
     parse_front_matter,
@@ -52,10 +60,6 @@ CONFIG_PATH = Path.home() / ".config/woeai/wechat_official_account.env"
 RUNNER_CONFIG_PATH = Path.home() / ".config/woeai/wechat_runner.env"
 TOKEN_CACHE_PATH = Path.home() / ".cache/woeai/wechat_access_token.json"
 DEFAULT_REF = "ref-zhao2026-BS"
-DEFAULT_THEME = "academic-clean"
-AVAILABLE_THEMES = ("academic-clean", "engineering-note", "recruitment-friendly")
-DEFAULT_MATH_RENDERER = "mathjax-svg"
-AVAILABLE_MATH_RENDERERS = ("lightweight", "mathjax-svg")
 RTD_BASE_URL = "https://woeai.readthedocs.io/zh-cn/latest/"
 EXPECTED_EGRESS_IPS_KEY = "WOEAI_WECHAT_EXPECTED_EGRESS_IPS"
 
@@ -131,20 +135,6 @@ def load_public_safety_checker() -> Any:
     if not hasattr(module, "collect_findings"):
         raise RuntimeError(f"Public-safety checker has no collect_findings(): {checker_path}")
     return module
-
-
-def validate_theme(theme: str) -> str:
-    if theme not in AVAILABLE_THEMES:
-        options = ", ".join(AVAILABLE_THEMES)
-        raise RuntimeError(f"Unsupported theme '{theme}'. Available themes: {options}")
-    return theme
-
-
-def validate_math_renderer(math_renderer: str) -> str:
-    if math_renderer not in AVAILABLE_MATH_RENDERERS:
-        options = ", ".join(AVAILABLE_MATH_RENDERERS)
-        raise RuntimeError(f"Unsupported math renderer '{math_renderer}'. Available renderers: {options}")
-    return math_renderer
 
 
 def parse_env_file(path: Path, *, required: bool) -> dict[str, str]:

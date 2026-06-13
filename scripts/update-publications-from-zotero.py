@@ -25,7 +25,18 @@ from pathlib import Path
 from typing import Any
 
 
+# This script is invoked by absolute path, so the repo root is not guaranteed
+# to be on sys.path. Make the local ``woeai`` package importable regardless of
+# how the entry point is launched.
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from woeai.publications import (  # noqa: E402
+    RESEARCH_FAMILY_ORDER,
+    RESEARCH_SUBDIRECTION_ORDER,
+)
+
 PUBLICATIONS_PATH = ROOT / "docs/source/Publications.rst"
 PUBLICATIONS_BY_RESEARCH_PATH = ROOT / "docs/source/PublicationsByResearch.rst"
 RESEARCH_MAP_PATH = ROOT / "docs/data/publication-research-map.json"
@@ -48,11 +59,6 @@ CSL_INSTALLED_PATH = Path(
 CSL_SHA256 = "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
 
 METRIC_LABELS = ("影响因子", "中科院分区", "引用次数")
-RESEARCH_FAMILY_ORDER = ("建筑结构抗风", "海上漂浮风电")
-RESEARCH_SUBDIRECTION_ORDER = {
-    "建筑结构抗风": ("数值风洞与湍动入流", "高层建筑抗风与优化"),
-    "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
-}
 EARLY_PUBLICATION_CUTOFF_YEAR = 2019
 EARLIER_PUBLICATIONS_TITLE = "更早 Earlier"
 DEGREE_THESIS_GROUPS = (

@@ -12,17 +12,24 @@ from pathlib import Path
 from typing import Any
 
 
+# This script is invoked by absolute path (check-docs.sh, agents, direct calls),
+# so the repo root is not guaranteed to be on sys.path. Make the local ``woeai``
+# package importable regardless of how the entry point is launched.
 REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 LATEST_MARKER = "GENERATED LATEST PAPER NOTES"
 TOCTREE_MARKER = "GENERATED PAPER NOTES TOCTREE"
 AREA_MARKER = "GENERATED PAPER NOTES AREA"
 
-RESEARCH_FAMILY_ORDER = ("建筑结构抗风", "海上漂浮风电")
-RESEARCH_SUBDIRECTION_ORDER = {
-    "建筑结构抗风": ("数值风洞与湍动入流", "高层建筑抗风与优化"),
-    "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
-}
+# Research taxonomy is a single source of truth in woeai.publications.
+# Importing here (rather than re-declaring) is exactly what collapses the
+# former byte-for-byte copy across this file and two others.
+from woeai.publications import (  # noqa: E402
+    RESEARCH_FAMILY_ORDER,
+    RESEARCH_SUBDIRECTION_ORDER,
+)
 
 
 @dataclass(frozen=True)

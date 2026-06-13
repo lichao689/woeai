@@ -32,6 +32,16 @@ from urllib.request import Request, urlopen
 
 WECHAT_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = WECHAT_ROOT.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from woeai.wechat.backlog import (  # noqa: E402,F401
+    BacklogPaper,
+    parse_backlog_papers,
+    read_backlog_item,
+    read_backlog_publication_refs,
+)
+
 CONFIG_PATH = Path.home() / ".config/woeai/wechat_official_account.env"
 RUNNER_CONFIG_PATH = Path.home() / ".config/woeai/wechat_runner.env"
 TOKEN_CACHE_PATH = Path.home() / ".cache/woeai/wechat_access_token.json"
@@ -61,17 +71,6 @@ class ImageRef:
     alt: str
     raw_src: str
     path: Path
-
-
-@dataclass(frozen=True)
-class BacklogPaper:
-    publication_ref: str
-    title: str
-    research_family: str
-    subdirection: str
-    original_year: int
-    latest_published_url: str
-    order: int
 
 
 @dataclass(frozen=True)
@@ -535,73 +534,6 @@ def image_dimensions(path: Path) -> tuple[int | None, int | None]:
                 return width, height
             idx += length
     return None, None
-
-
-def read_backlog_item(backlog_path: Path, publication_ref: str) -> dict[str, str]:
-    item: dict[str, str] = {}
-    in_item = False
-    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
-        if re.match(r"\s*-\s+publication_ref:\s+" + re.escape(publication_ref) + r"\s*$", raw):
-            in_item = True
-            item["publication_ref"] = publication_ref
-            continue
-        if in_item and re.match(r"\s*-\s+publication_ref:\s+", raw):
-            break
-        if in_item and ":" in raw:
-            key, value = raw.split(":", 1)
-            item[key.strip()] = value.strip().strip('"')
-    return item
-
-
-def read_backlog_publication_refs(backlog_path: Path) -> list[str]:
-    refs: list[str] = []
-    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
-        match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
-        if match:
-            refs.append(match.group(1))
-    return refs
-
-
-def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
-    papers: list[BacklogPaper] = []
-    current: dict[str, str] | None = None
-    order = -1
-
-    def finish() -> None:
-        if not current or not current.get("publication_ref"):
-            return
-        try:
-            original_year = int(current.get("original_year", "0") or "0")
-        except ValueError:
-            original_year = 0
-        papers.append(
-            BacklogPaper(
-                publication_ref=current.get("publication_ref", ""),
-                title=current.get("title", ""),
-                research_family=current.get("research_family", ""),
-                subdirection=current.get("subdirection", ""),
-                original_year=original_year,
-                latest_published_url=current.get("latest_published_url", ""),
-                order=order,
-            )
-        )
-
-    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
-        item_match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
-        if item_match:
-            finish()
-            order += 1
-            current = {"publication_ref": item_match.group(1)}
-            continue
-        if current is None or ":" not in raw:
-            continue
-        key, value = raw.split(":", 1)
-        key = key.strip()
-        if key.startswith("-"):
-            continue
-        current[key] = value.strip().strip('"').strip("'")
-    finish()
-    return papers
 
 
 def rtd_paper_note_url(publication_ref: str) -> str:

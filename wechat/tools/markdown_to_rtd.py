@@ -19,6 +19,8 @@ from pathlib import Path
 
 WECHAT_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = WECHAT_ROOT.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 DEFAULT_REF = "ref-zhao2026-BS"
 PUBLICATIONS_RST = REPO_ROOT / "docs/source/Publications.rst"
 # RTD channel adaptations: the WeChat title-category prefix is stripped from
@@ -29,15 +31,7 @@ TITLE_CATEGORY_PREFIX = re.compile(r"^(?:数值风洞|结构抗风|漂浮风电)
 CLOSING_SENTENCE_ANCHOR = "点击阅读原文"
 DOI_TRUNCATE = re.compile(r"^(.*?https://doi\.org/\S+)")
 
-
-@dataclass(frozen=True)
-class BacklogPaper:
-    publication_ref: str
-    title: str
-    research_family: str
-    subdirection: str
-    original_year: int
-    order: int
+from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers  # noqa: E402,F401
 
 
 def repo_relative(path: Path) -> str:
@@ -109,49 +103,6 @@ def parse_review_cover(review_path: Path) -> Path | None:
     if match:
         return resolve_repo_path(match.group(1))
     return None
-
-
-def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
-    if not backlog_path.exists():
-        return []
-    papers: list[BacklogPaper] = []
-    current: dict[str, str] | None = None
-    order = -1
-
-    def finish() -> None:
-        if not current or not current.get("publication_ref"):
-            return
-        try:
-            original_year = int(current.get("original_year", "0") or "0")
-        except ValueError:
-            original_year = 0
-        papers.append(
-            BacklogPaper(
-                publication_ref=current.get("publication_ref", ""),
-                title=current.get("title", ""),
-                research_family=current.get("research_family", ""),
-                subdirection=current.get("subdirection", ""),
-                original_year=original_year,
-                order=order,
-            )
-        )
-
-    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
-        item_match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
-        if item_match:
-            finish()
-            order += 1
-            current = {"publication_ref": item_match.group(1)}
-            continue
-        if current is None or ":" not in raw:
-            continue
-        key, value = raw.split(":", 1)
-        key = key.strip()
-        if key.startswith("-"):
-            continue
-        current[key] = value.strip().strip('"').strip("'")
-    finish()
-    return papers
 
 
 def article_title_for_ref(publication_ref: str, article_dir: Path, fallback: str = "") -> str:

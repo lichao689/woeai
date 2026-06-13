@@ -97,6 +97,12 @@ from woeai.publications.authors import (  # noqa: E402,F401
     student_first_author_display,
     student_record_variants,
 )
+from woeai.publications.rendering import (  # noqa: E402,F401
+    bold_group_leader,
+    bold_journal_title,
+    bold_metric_values,
+    rendered_entry,
+)
 
 REPRESENTATIVE_KEYS = {
     "urban_fast": "CGKPKZ8I",
@@ -218,45 +224,6 @@ def short_title_token(title: str | None) -> str:
     if contains_cjk(title or ""):
         return "t" + hashlib.sha1((title or "").encode("utf-8")).hexdigest()[:6]
     return "paper"
-
-
-def bold_group_leader(value: str) -> str:
-    value = re.sub(r"(?<!\*)\bLi Chao\b(?!\*)", "**Li Chao**", value)
-    value = value.replace("李朝", "**李朝**")
-    return value
-
-
-def bold_journal_title(value: str, item: dict[str, Any]) -> str:
-    journal = item["data"].get("publicationTitle")
-    if not journal:
-        return value
-    escaped_journal = rst_escape(str(journal))
-    marker = f"[J]. {escaped_journal}"
-    if marker not in value:
-        return value
-    return value.replace(marker, f"[J]. **{escaped_journal}**", 1)
-
-
-def bold_metric_values(value: str) -> str:
-    labels = "|".join(re.escape(label) for label in METRIC_LABELS)
-    pattern = re.compile(rf"(?P<label>{labels}):\s*(?P<metric>.+?)(?=\.\s*(?:{labels}):|\.$)")
-
-    def replace(match: re.Match[str]) -> str:
-        metric = match.group("metric").strip()
-        return f"{match.group('label')}: **{metric}**"
-
-    return pattern.sub(replace, value)
-
-
-def rendered_entry(item: dict[str, Any], number: int) -> str:
-    text = strip_bib_html(item.get("bib") or "")
-    text = rst_escape(text)
-    text = bold_journal_title(text, item)
-    text = bold_metric_values(text)
-    text = mark_student_first_author(text, item)
-    text = bold_group_leader(text)
-    text = mark_corresponding_authors(text, item)
-    return f"[{number}] {text}"
 
 
 def iter_degree_theses(group_key: str) -> list[dict[str, Any]]:

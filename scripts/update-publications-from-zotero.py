@@ -432,50 +432,6 @@ def ref_for(items_by_key: dict[str, dict[str, Any]], key_name: str, label: str) 
 
 
 def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
-    highlights = [
-        "- AI 与城市风模拟: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "urban_fast", "precomputed CFD database for urban microscale wind"),
-                ref_for(items_by_key, "urban_satellite", "satellite-imagery urban geometry reconstruction"),
-                ref_for(items_by_key, "urban_gaussian", "3D Gaussian Splatting building geometry"),
-            ]
-        )
-        + "。",
-        "- AI 与结构响应预测: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "tall_gnn", "graph neural networks for tall-building response"),
-                ref_for(items_by_key, "tall_extremes", "2D vectorial response extremes"),
-            ]
-        )
-        + "。",
-        "- 数值风洞与入流湍流: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "turbulence_vector", "vector-potential random flow generation"),
-                ref_for(items_by_key, "turbulence_inflow", "coherence-improved and mass-balanced inflow turbulence"),
-            ]
-        )
-        + "。",
-        "- 结构抗风: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "structural_tld", "implanted-pole tuned liquid damper"),
-                ref_for(items_by_key, "tower_coupling", "tower-line coupling under strong winds"),
-            ]
-        )
-        + "。",
-        "- 海上风电: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "offshore_concrete", "reinforced-concrete semi-submersible platform optimization"),
-                ref_for(items_by_key, "offshore_wave", "equivalent static wave loads for semi-submersible turbines"),
-                ref_for(items_by_key, "offshore_applied", "floating wind turbine substructure optimization"),
-            ]
-        )
-        + "。",
-    ]
     return "\n".join(
         [
             ".. role:: student-first-author",
@@ -483,11 +439,9 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "学术成果 Academic Outputs",
             "===============================",
             "",
-            "浏览方式 View Options",
-            "---------------------",
+            ".. container:: publication-view-banner",
             "",
-            "- 当前页：按发表年份倒序浏览完整期刊论文清单。",
-            "- :doc:`PublicationsByResearch`：按研究方向浏览，方向内按发表年份倒序聚合。",
+            "   :doc:`按研究方向浏览学术成果 Publications by Research Direction <PublicationsByResearch>`：按研究方向浏览，方向内按发表年份倒序聚合。",
             "",
             ".. toctree::",
             "   :hidden:",
@@ -495,10 +449,10 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             "   按研究方向浏览 Publications by Research Direction <PublicationsByResearch>",
             "",
-            "精选证据 Selected Highlights",
-            "----------------------------",
-            "",
-            *highlights,
+            # Paper-notes toctree + 论文解读 area are owned by artifacts.py and
+            # live in a sibling fragment so that regenerating this file (which
+            # write_text overwrites wholesale) cannot clobber them.
+            ".. include:: _paper-notes-fragment.rst",
             "",
             "期刊论文 Journal Papers",
             "------------------------",

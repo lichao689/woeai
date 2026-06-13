@@ -144,6 +144,23 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         self.assertIn("刘尚佩(Liu Shangpei)，博士生在读", section)
         self.assertLess(section.index("王一鸣(Wang Yiming)，2023"), section.index("赵培升(Zhao Peisheng)，2025"))
 
+    def test_page_header_matches_committed_publications_structure(self) -> None:
+        """page_header must emit the current committed structure, not the stale
+        'View Options'/'Selected Highlights' sections, so that regenerating
+        Publications.rst does not clobber hand-curated content. The
+        paper-notes area (including its 论文解读 heading) is owned by
+        artifacts.py via an include fragment, so page_header references it
+        with .. include:: instead of inlining it."""
+        header = self.updater.page_header({})
+
+        # The stale sections must not come back on regeneration.
+        self.assertNotIn("浏览方式 View Options", header)
+        self.assertNotIn("精选证据 Selected Highlights", header)
+        # The current committed structure must be reproduced.
+        self.assertIn(".. container:: publication-view-banner", header)
+        # Paper-notes content lives in an artifacts-owned fragment.
+        self.assertIn(".. include:: _paper-notes-fragment.rst", header)
+
 
 if __name__ == "__main__":
     unittest.main()

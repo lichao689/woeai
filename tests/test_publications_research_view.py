@@ -98,7 +98,12 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertNotIn("浏览方式 View Options", text)
         self.assertNotIn("精选证据 Selected Highlights", text)
         self.assertIn(".. container:: publication-view-banner", text)
-        self.assertIn("论文解读 Paper Notes", text)
+        # 论文解读 Paper Notes now lives in an artifacts-owned fragment that
+        # Publications.rst includes, so the heading appears there rather than
+        # inline in Publications.rst.
+        self.assertIn(".. include:: _paper-notes-fragment.rst", text)
+        fragment_text = (ROOT / "docs/source/_paper-notes-fragment.rst").read_text(encoding="utf-8")
+        self.assertIn("论文解读 Paper Notes", fragment_text)
         self.assertIn("按研究方向浏览学术成果 Publications by Research Direction <PublicationsByResearch>", text)
         self.assertNotIn("学术进展 Academic Progress", research_text)
         self.assertNotIn("paper-notes/", research_text)

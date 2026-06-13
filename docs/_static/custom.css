@@ -1,50 +1,5 @@
 /* WOEAI site presentation refinements for the Read the Docs theme. */
 
-/* Homepage hero image */
-.rst-content .homepage-hero {
-    margin: 0 0 1.75rem;
-    padding: 0;
-}
-
-.rst-content .homepage-hero img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    border-radius: 6px;
-}
-
-/* Homepage stat row */
-.rst-content .stat-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin: 0 0 1.75rem;
-    padding: 1.1rem 1.3rem;
-    border-left: 4px solid #2f80b7;
-    border-radius: 4px;
-    background: #eef7fb;
-}
-
-.rst-content .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 5rem;
-}
-
-.rst-content .stat-num {
-    font-size: 1.7rem;
-    font-weight: 700;
-    line-height: 1.1;
-    color: #1b5f8c;
-}
-
-.rst-content .stat-label {
-    margin-top: 0.2rem;
-    font-size: 0.86em;
-    color: #34495e;
-}
-
 .wy-nav-content {
     max-width: 1160px !important;
     line-height: 1.75;

@@ -58,112 +58,30 @@ CSL_INSTALLED_PATH = Path(
 )
 CSL_SHA256 = "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
 
-METRIC_LABELS = ("影响因子", "中科院分区", "引用次数")
-EARLY_PUBLICATION_CUTOFF_YEAR = 2019
-EARLIER_PUBLICATIONS_TITLE = "更早 Earlier"
-DEGREE_THESIS_GROUPS = (
-    ("phd", "博士学位论文 PhD Theses"),
-    ("master", "硕士学位论文 Master Theses"),
+# Constants and pure text helpers now live in woeai.publications.textutils.
+# Re-exported here so the module's public surface (used by tests via
+# self.updater.<name>) stays unchanged during the Stage 1 migration.
+from woeai.publications.textutils import (  # noqa: E402,F401
+    CHINESE_INITIALS,
+    CORRESPONDING_AUTHOR_LABELS,
+    DEGREE_THESIS_GROUPS,
+    EARLIER_PUBLICATIONS_TITLE,
+    EARLY_PUBLICATION_CUTOFF_YEAR,
+    GROUP_LEADER_AUTHOR_NAMES,
+    JOURNAL_INITIALISM_OVERRIDES,
+    METRIC_LABELS,
+    PINYIN_SURNAMES,
+    chinese_initialism,
+    contains_cjk,
+    extract_year,
+    normalize_doi,
+    normalize_title,
+    parse_date,
+    rst_escape,
+    slug,
+    split_extra_tokens,
+    strip_bib_html,
 )
-GROUP_LEADER_AUTHOR_NAMES = ("Li Chao", "Chao Li", "李朝", "朝 李")
-CORRESPONDING_AUTHOR_LABELS = ("通讯作者", "corresponding author", "corresponding authors")
-
-
-PINYIN_SURNAMES = {
-    "陈": "chen",
-    "冯": "feng",
-    "李": "li",
-    "梁": "liang",
-    "刘": "liu",
-    "裴": "pei",
-    "滕": "teng",
-    "王": "wang",
-    "肖": "xiao",
-    "向": "xiang",
-    "杨": "yang",
-    "张": "zhang",
-    "赵": "zhao",
-    "郑": "zheng",
-    "周": "zhou",
-}
-
-CHINESE_INITIALS = {
-    "大": "D",
-    "学": "X",
-    "清": "Q",
-    "华": "H",
-    "报": "B",
-    "自": "Z",
-    "然": "R",
-    "科": "K",
-    "版": "B",
-    "船": "C",
-    "舶": "B",
-    "工": "G",
-    "程": "C",
-    "业": "Y",
-    "建": "J",
-    "筑": "Z",
-    "核": "H",
-    "与": "Y",
-    "太": "T",
-    "阳": "Y",
-    "能": "N",
-    "技": "J",
-    "术": "S",
-    "力": "L",
-    "抗": "K",
-    "震": "Z",
-    "加": "J",
-    "固": "G",
-    "改": "G",
-    "造": "Z",
-    "南": "N",
-    "理": "L",
-    "武": "W",
-    "汉": "H",
-}
-
-JOURNAL_INITIALISM_OVERRIDES = {
-    "Advances in Bridge Engineering": "ABE",
-    "Applied Energy": "AE",
-    "Applied Sciences": "AS",
-    "Atmospheric Research": "AR",
-    "Building and Environment": "BE",
-    "Building Simulation": "BS",
-    "Energies": "E",
-    "Engineering Structures": "ES",
-    "Environmental Fluid Mechanics": "EFM",
-    "European Journal of Mechanics - B/Fluids": "EJMBF",
-    "Journal of Building Engineering": "JBE",
-    "Journal of Computational Physics": "JCP",
-    "Journal of Renewable and Sustainable Energy": "JRSE",
-    "Journal of Wind Engineering and Industrial Aerodynamics": "JWEIA",
-    "Marine Structures": "MS",
-    "Mathematical Problems in Engineering": "MPE",
-    "Ocean Engineering": "OE",
-    "Physics of Fluids": "POF",
-    "Renewable Energy": "RE",
-    "Ships and Offshore Structures": "SOS",
-    "Structural Control and Health Monitoring": "SCHM",
-    "Structures": "S",
-    "Sustainable Cities and Society": "SCS",
-    "Wind and Structures an International Journal": "WAS",
-    "Wind and Structures An International Journal": "WAS",
-    "大学": "DX",
-    "清华大学学报（自然科学版）": "QHDXXB",
-    "清华大学学报(自然科学版)": "QHDXXB",
-    "船舶工程": "CBGC",
-    "工业建筑": "GYJZ",
-    "核科学与工程": "HKXYGC",
-    "太阳能学报": "TYNXB",
-    "科学技术与工程": "KXJSYGC",
-    "工程力学": "GCLX",
-    "工程抗震与加固改造": "GCKZYGJGZ",
-    "华南理工大学学报(自然科学版)": "HNLGDXXB",
-    "华南理工大学学报（自然科学版）": "HNLGDXXB",
-    "武汉理工大学学报": "WHLGDXXB",
-}
 
 REPRESENTATIVE_KEYS = {
     "urban_fast": "CGKPKZ8I",
@@ -250,39 +168,6 @@ def verify_style() -> None:
             "Expected CSL style is not available or has changed. "
             f"Expected {CSL_SHA256}, got {digest or 'missing'}."
         )
-
-
-def extract_year(raw: str | None) -> int:
-    match = re.search(r"(\d{4})", raw or "")
-    return int(match.group(1)) if match else 0
-
-
-def parse_date(raw: str | None) -> tuple[int, int, int]:
-    if not raw:
-        return (0, 0, 0)
-    match = re.search(r"(\d{4})(?:[-/年.](\d{1,2}))?(?:[-/月.](\d{1,2}))?", raw)
-    if not match:
-        return (0, 0, 0)
-    year = int(match.group(1))
-    month = int(match.group(2)) if match.group(2) else 0
-    day = int(match.group(3)) if match.group(3) else 0
-    return (year, month, day)
-
-
-def normalize_title(value: str | None) -> str:
-    value = html.unescape(value or "").lower()
-    value = re.sub(r"<[^>]+>", "", value)
-    value = unicodedata.normalize("NFKC", value)
-    value = re.sub(r"[^\w\u4e00-\u9fff]+", " ", value)
-    return re.sub(r"\s+", " ", value).strip()
-
-
-def normalize_doi(value: str | None) -> str:
-    if not value:
-        return ""
-    value = value.strip().lower()
-    value = re.sub(r"^https?://(dx\.)?doi\.org/", "", value)
-    return value.rstrip(". ")
 
 
 def creator_display_name(creator: dict[str, Any]) -> str:
@@ -400,25 +285,6 @@ def creator_family_token(creator: dict[str, Any]) -> str:
     return slug(token)
 
 
-def contains_cjk(value: str) -> bool:
-    return any("\u4e00" <= char <= "\u9fff" for char in value)
-
-
-def slug(value: str) -> str:
-    value = unicodedata.normalize("NFKD", value)
-    value = value.encode("ascii", "ignore").decode("ascii")
-    value = re.sub(r"[^A-Za-z0-9]+", "-", value).strip("-")
-    return value.lower() or "x"
-
-
-def chinese_initialism(value: str) -> str:
-    chars = []
-    for char in value:
-        if "\u4e00" <= char <= "\u9fff":
-            chars.append(CHINESE_INITIALS.get(char, "X"))
-    return "".join(chars) or "ZH"
-
-
 def journal_initialism(title: str | None) -> str:
     title = (title or "").strip()
     if title in JOURNAL_INITIALISM_OVERRIDES:
@@ -440,29 +306,6 @@ def short_title_token(title: str | None) -> str:
     if contains_cjk(title or ""):
         return "t" + hashlib.sha1((title or "").encode("utf-8")).hexdigest()[:6]
     return "paper"
-
-
-def strip_bib_html(value: str) -> str:
-    value = re.sub(r"<style.*?</style>", "", value, flags=re.S)
-    value = re.sub(r"<[^>]+>", "", value)
-    value = html.unescape(value)
-    value = value.replace("\xa0", " ")
-    value = " ".join(value.split())
-    value = re.sub(r"^\[\d+\]\s*", "", value)
-    value = value.replace(" 📊", "")
-    value = re.sub(
-        r"https://doi\.org/https?://doi\.org/",
-        "https://doi.org/",
-        value,
-        flags=re.I,
-    )
-    return value
-
-
-def rst_escape(value: str) -> str:
-    value = value.replace("\\", "\\\\")
-    value = value.replace("*", "\\*")
-    return value
 
 
 def bold_group_leader(value: str) -> str:
@@ -500,10 +343,6 @@ def mark_student_first_author(value: str, item: dict[str, Any]) -> str:
     escaped_author = rst_escape(first_author)
     pattern = re.compile(rf"^{re.escape(escaped_author)}(?=;|,)")
     return pattern.sub(f":student-first-author:`{escaped_author}`", value, count=1)
-
-
-def split_extra_tokens(value: str | None) -> list[str]:
-    return [token.strip() for token in re.split(r"[、,，;；\n\r]+", value or "") if token.strip()]
 
 
 def has_corresponding_author_flag(item: dict[str, Any]) -> bool:

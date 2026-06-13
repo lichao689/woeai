@@ -19,6 +19,8 @@ from pathlib import Path
 
 WECHAT_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = WECHAT_ROOT.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 DEFAULT_REF = "ref-zhao2026-BS"
 PUBLICATIONS_RST = REPO_ROOT / "docs/source/Publications.rst"
 # RTD channel adaptations: the WeChat title-category prefix is stripped from
@@ -29,15 +31,13 @@ TITLE_CATEGORY_PREFIX = re.compile(r"^(?:数值风洞|结构抗风|漂浮风电)
 CLOSING_SENTENCE_ANCHOR = "点击阅读原文"
 DOI_TRUNCATE = re.compile(r"^(.*?https://doi\.org/\S+)")
 
-
-@dataclass(frozen=True)
-class BacklogPaper:
-    publication_ref: str
-    title: str
-    research_family: str
-    subdirection: str
-    original_year: int
-    order: int
+from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers, rank_against_target  # noqa: E402,F401
+from woeai.wechat.review import (  # noqa: E402,F401
+    find_review_cover,
+    parse_front_matter as parse_review_front_matter,
+    parse_title,
+    resolve_repo_path,
+)
 
 
 def repo_relative(path: Path) -> str:
@@ -62,96 +62,8 @@ def heading(text: str, marker: str) -> list[str]:
     return [text, marker * display_width(text), ""]
 
 
-def parse_title(markdown_text: str) -> str:
-    for line in markdown_text.splitlines():
-        if line.startswith("# "):
-            return line[2:].strip()
-    raise RuntimeError("Markdown article is missing an H1 title")
-
-
 def strip_title_category_prefix(title: str) -> str:
     return TITLE_CATEGORY_PREFIX.sub("", title).strip()
-
-
-def parse_review_front_matter(review_path: Path) -> dict[str, str]:
-    if not review_path.exists():
-        return {}
-    lines = review_path.read_text(encoding="utf-8").splitlines()
-    if not lines or lines[0].strip() != "---":
-        return {}
-    result: dict[str, str] = {}
-    for raw in lines[1:]:
-        if raw.strip() == "---":
-            break
-        if ":" not in raw:
-            continue
-        key, value = raw.split(":", 1)
-        result[key.strip()] = value.strip().strip('"').strip("'")
-    return result
-
-
-def resolve_repo_path(value: str) -> Path:
-    path = Path(value).expanduser()
-    if path.is_absolute():
-        return path.resolve()
-    return (REPO_ROOT / path).resolve()
-
-
-def parse_review_cover(review_path: Path) -> Path | None:
-    front = parse_review_front_matter(review_path)
-    for key in ("rtd_cover_image", "wechat_cover_image", "cover_image"):
-        if front.get(key):
-            return resolve_repo_path(front[key])
-    if not review_path.exists():
-        return None
-    text = review_path.read_text(encoding="utf-8")
-    match = re.search(r"-\s+封面素材:\s+`([^`]+)`", text)
-    if match:
-        return resolve_repo_path(match.group(1))
-    return None
-
-
-def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
-    if not backlog_path.exists():
-        return []
-    papers: list[BacklogPaper] = []
-    current: dict[str, str] | None = None
-    order = -1
-
-    def finish() -> None:
-        if not current or not current.get("publication_ref"):
-            return
-        try:
-            original_year = int(current.get("original_year", "0") or "0")
-        except ValueError:
-            original_year = 0
-        papers.append(
-            BacklogPaper(
-                publication_ref=current.get("publication_ref", ""),
-                title=current.get("title", ""),
-                research_family=current.get("research_family", ""),
-                subdirection=current.get("subdirection", ""),
-                original_year=original_year,
-                order=order,
-            )
-        )
-
-    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
-        item_match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
-        if item_match:
-            finish()
-            order += 1
-            current = {"publication_ref": item_match.group(1)}
-            continue
-        if current is None or ":" not in raw:
-            continue
-        key, value = raw.split(":", 1)
-        key = key.strip()
-        if key.startswith("-"):
-            continue
-        current[key] = value.strip().strip('"').strip("'")
-    finish()
-    return papers
 
 
 def article_title_for_ref(publication_ref: str, article_dir: Path, fallback: str = "") -> str:
@@ -177,10 +89,6 @@ def rtd_related_links(
     if target is None:
         return []
 
-    def candidate_rank(paper: BacklogPaper) -> tuple[int, int, int]:
-        same_subdirection = paper.subdirection == target.subdirection
-        return (0 if same_subdirection else 1, -paper.original_year, paper.order)
-
     candidates: list[BacklogPaper] = []
     for paper in papers:
         if paper.publication_ref == publication_ref:
@@ -195,7 +103,7 @@ def rtd_related_links(
             "publication_ref": paper.publication_ref,
             "title": article_title_for_ref(paper.publication_ref, article_dir, paper.title),
         }
-        for paper in sorted(candidates, key=candidate_rank)[:limit]
+        for paper in sorted(candidates, key=lambda p: rank_against_target(p, target))[:limit]
     ]
 
 
@@ -416,7 +324,7 @@ def convert_markdown_to_rst(
         "",
     ]
     output.extend(heading(title, "="))
-    emit_cover(output, parse_review_cover(review_path), rst_path, title)
+    emit_cover(output, find_review_cover(review_path), rst_path, title)
 
     idx = 0
     if lines and lines[0].startswith("# "):

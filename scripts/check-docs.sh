@@ -7,6 +7,13 @@ VENV_DIR="${WOEAI_DOCS_VENV:-/tmp/woeai-docs-venv}"
 BUILD_DIR="${WOEAI_DOCS_BUILD:-/tmp/woeai-sphinx-html}"
 
 mkdir -p "$(dirname "${VENV_DIR}")" "$(dirname "${BUILD_DIR}")"
+
+# The repo ships a local ``woeai`` package (no installable distribution). Make
+# it importable for every in-repo Python invocation regardless of the caller's
+# working directory: ``unittest discover`` puts the *cwd* on sys.path, not the
+# ``-s`` target, so without this the gate fails when run from elsewhere.
+export PYTHONPATH="${ROOT_DIR}${PYTHONPATH:+:${PYTHONPATH}}"
+
 "${PYTHON_BIN}" - <<'PY'
 import sys
 

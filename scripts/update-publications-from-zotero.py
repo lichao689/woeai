@@ -11,9 +11,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
-import functools
 import hashlib
-import html
 import json
 import re
 import sys
@@ -25,7 +23,18 @@ from pathlib import Path
 from typing import Any
 
 
+# This script is invoked by absolute path, so the repo root is not guaranteed
+# to be on sys.path. Make the local ``woeai`` package importable regardless of
+# how the entry point is launched.
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from woeai.publications import (  # noqa: E402
+    RESEARCH_FAMILY_ORDER,
+    RESEARCH_SUBDIRECTION_ORDER,
+)
+
 PUBLICATIONS_PATH = ROOT / "docs/source/Publications.rst"
 PUBLICATIONS_BY_RESEARCH_PATH = ROOT / "docs/source/PublicationsByResearch.rst"
 RESEARCH_MAP_PATH = ROOT / "docs/data/publication-research-map.json"
@@ -47,117 +56,53 @@ CSL_INSTALLED_PATH = Path(
 )
 CSL_SHA256 = "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
 
-METRIC_LABELS = ("影响因子", "中科院分区", "引用次数")
-RESEARCH_FAMILY_ORDER = ("建筑结构抗风", "海上漂浮风电")
-RESEARCH_SUBDIRECTION_ORDER = {
-    "建筑结构抗风": ("数值风洞与湍动入流", "高层建筑抗风与优化"),
-    "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
-}
-EARLY_PUBLICATION_CUTOFF_YEAR = 2019
-EARLIER_PUBLICATIONS_TITLE = "更早 Earlier"
-DEGREE_THESIS_GROUPS = (
-    ("phd", "博士学位论文 PhD Theses"),
-    ("master", "硕士学位论文 Master Theses"),
+# Constants and pure text helpers now live in woeai.publications.textutils.
+# Re-exported here so the module's public surface (used by tests via
+# self.updater.<name>) stays unchanged during the Stage 1 migration.
+from woeai.publications.textutils import (  # noqa: E402,F401
+    CHINESE_INITIALS,
+    CORRESPONDING_AUTHOR_LABELS,
+    DEGREE_THESIS_GROUPS,
+    EARLIER_PUBLICATIONS_TITLE,
+    EARLY_PUBLICATION_CUTOFF_YEAR,
+    GROUP_LEADER_AUTHOR_NAMES,
+    JOURNAL_INITIALISM_OVERRIDES,
+    METRIC_LABELS,
+    PINYIN_SURNAMES,
+    chinese_initialism,
+    contains_cjk,
+    creator_csl_display_name,
+    creator_display_name,
+    extract_year,
+    normalize_author_name,
+    normalize_doi,
+    normalize_title,
+    parse_date,
+    rst_escape,
+    slug,
+    split_extra_tokens,
+    strip_bib_html,
 )
-GROUP_LEADER_AUTHOR_NAMES = ("Li Chao", "Chao Li", "李朝", "朝 李")
-CORRESPONDING_AUTHOR_LABELS = ("通讯作者", "corresponding author", "corresponding authors")
-
-
-PINYIN_SURNAMES = {
-    "陈": "chen",
-    "冯": "feng",
-    "李": "li",
-    "梁": "liang",
-    "刘": "liu",
-    "裴": "pei",
-    "滕": "teng",
-    "王": "wang",
-    "肖": "xiao",
-    "向": "xiang",
-    "杨": "yang",
-    "张": "zhang",
-    "赵": "zhao",
-    "郑": "zheng",
-    "周": "zhou",
-}
-
-CHINESE_INITIALS = {
-    "大": "D",
-    "学": "X",
-    "清": "Q",
-    "华": "H",
-    "报": "B",
-    "自": "Z",
-    "然": "R",
-    "科": "K",
-    "版": "B",
-    "船": "C",
-    "舶": "B",
-    "工": "G",
-    "程": "C",
-    "业": "Y",
-    "建": "J",
-    "筑": "Z",
-    "核": "H",
-    "与": "Y",
-    "太": "T",
-    "阳": "Y",
-    "能": "N",
-    "技": "J",
-    "术": "S",
-    "力": "L",
-    "抗": "K",
-    "震": "Z",
-    "加": "J",
-    "固": "G",
-    "改": "G",
-    "造": "Z",
-    "南": "N",
-    "理": "L",
-    "武": "W",
-    "汉": "H",
-}
-
-JOURNAL_INITIALISM_OVERRIDES = {
-    "Advances in Bridge Engineering": "ABE",
-    "Applied Energy": "AE",
-    "Applied Sciences": "AS",
-    "Atmospheric Research": "AR",
-    "Building and Environment": "BE",
-    "Building Simulation": "BS",
-    "Energies": "E",
-    "Engineering Structures": "ES",
-    "Environmental Fluid Mechanics": "EFM",
-    "European Journal of Mechanics - B/Fluids": "EJMBF",
-    "Journal of Building Engineering": "JBE",
-    "Journal of Computational Physics": "JCP",
-    "Journal of Renewable and Sustainable Energy": "JRSE",
-    "Journal of Wind Engineering and Industrial Aerodynamics": "JWEIA",
-    "Marine Structures": "MS",
-    "Mathematical Problems in Engineering": "MPE",
-    "Ocean Engineering": "OE",
-    "Physics of Fluids": "POF",
-    "Renewable Energy": "RE",
-    "Ships and Offshore Structures": "SOS",
-    "Structural Control and Health Monitoring": "SCHM",
-    "Structures": "S",
-    "Sustainable Cities and Society": "SCS",
-    "Wind and Structures an International Journal": "WAS",
-    "Wind and Structures An International Journal": "WAS",
-    "大学": "DX",
-    "清华大学学报（自然科学版）": "QHDXXB",
-    "清华大学学报(自然科学版)": "QHDXXB",
-    "船舶工程": "CBGC",
-    "工业建筑": "GYJZ",
-    "核科学与工程": "HKXYGC",
-    "太阳能学报": "TYNXB",
-    "科学技术与工程": "KXJSYGC",
-    "工程力学": "GCLX",
-    "工程抗震与加固改造": "GCKZYGJGZ",
-    "华南理工大学学报(自然科学版)": "HNLGDXXB",
-    "华南理工大学学报（自然科学版）": "HNLGDXXB",
-    "武汉理工大学学报": "WHLGDXXB",
-}
+from woeai.publications.authors import (  # noqa: E402,F401
+    corresponding_author_display_names,
+    explicit_corresponding_author_tokens,
+    has_corresponding_author_flag,
+    iter_current_student_authors,
+    iter_student_records,
+    load_degree_thesis_data,
+    load_student_author_names,
+    mark_corresponding_authors,
+    mark_student_first_author,
+    rendered_author_variants,
+    student_first_author_display,
+    student_record_variants,
+)
+from woeai.publications.rendering import (  # noqa: E402,F401
+    bold_group_leader,
+    bold_journal_title,
+    bold_metric_values,
+    rendered_entry,
+)
 
 REPRESENTATIVE_KEYS = {
     "urban_fast": "CGKPKZ8I",
@@ -246,142 +191,6 @@ def verify_style() -> None:
         )
 
 
-def extract_year(raw: str | None) -> int:
-    match = re.search(r"(\d{4})", raw or "")
-    return int(match.group(1)) if match else 0
-
-
-def parse_date(raw: str | None) -> tuple[int, int, int]:
-    if not raw:
-        return (0, 0, 0)
-    match = re.search(r"(\d{4})(?:[-/年.](\d{1,2}))?(?:[-/月.](\d{1,2}))?", raw)
-    if not match:
-        return (0, 0, 0)
-    year = int(match.group(1))
-    month = int(match.group(2)) if match.group(2) else 0
-    day = int(match.group(3)) if match.group(3) else 0
-    return (year, month, day)
-
-
-def normalize_title(value: str | None) -> str:
-    value = html.unescape(value or "").lower()
-    value = re.sub(r"<[^>]+>", "", value)
-    value = unicodedata.normalize("NFKC", value)
-    value = re.sub(r"[^\w\u4e00-\u9fff]+", " ", value)
-    return re.sub(r"\s+", " ", value).strip()
-
-
-def normalize_doi(value: str | None) -> str:
-    if not value:
-        return ""
-    value = value.strip().lower()
-    value = re.sub(r"^https?://(dx\.)?doi\.org/", "", value)
-    return value.rstrip(". ")
-
-
-def creator_display_name(creator: dict[str, Any]) -> str:
-    if creator.get("name"):
-        return str(creator["name"])
-    return " ".join(part for part in [creator.get("firstName"), creator.get("lastName")] if part)
-
-
-def creator_csl_display_name(creator: dict[str, Any]) -> str:
-    if creator.get("name"):
-        return str(creator["name"])
-    first = str(creator.get("firstName") or "").strip()
-    last = str(creator.get("lastName") or "").strip()
-    if contains_cjk(first) or contains_cjk(last):
-        return f"{last}{first}"
-    return " ".join(part for part in [last, first] if part)
-
-
-def normalize_author_name(value: str) -> str:
-    value = unicodedata.normalize("NFKC", value).casefold()
-    return re.sub(r"[^0-9a-z\u4e00-\u9fff]+", "", value)
-
-
-@functools.lru_cache(maxsize=1)
-def load_degree_thesis_data() -> dict[str, Any]:
-    if not DEGREE_THESES_PATH.exists():
-        raise ZoteroError(f"Degree thesis data is missing: {DEGREE_THESES_PATH}")
-    try:
-        payload = json.loads(DEGREE_THESES_PATH.read_text(encoding="utf-8"))
-    except json.JSONDecodeError as exc:
-        raise ZoteroError(f"Degree thesis data is invalid JSON: {exc}") from exc
-    if not isinstance(payload, dict):
-        raise ZoteroError("Degree thesis data must be a JSON object.")
-    if not isinstance(payload.get("student_authors", []), list):
-        raise ZoteroError("Degree thesis data must contain a list at student_authors.")
-    if not isinstance(payload.get("theses", {}), dict):
-        raise ZoteroError("Degree thesis data must contain an object at theses.")
-    return payload
-
-
-def student_record_variants(record: dict[str, Any]) -> set[str]:
-    leader_names = {normalize_author_name(name) for name in GROUP_LEADER_AUTHOR_NAMES}
-    variants: set[str] = set()
-    name_cn = str(record.get("name_cn") or "").strip()
-    name_en = str(record.get("name_en") or "").strip()
-    if name_cn:
-        variants.add(name_cn)
-    if name_en and normalize_author_name(name_en) not in leader_names:
-        variants.add(name_en)
-    aliases = record.get("aliases") or []
-    if isinstance(aliases, list):
-        for alias in aliases:
-            alias_text = str(alias or "").strip()
-            if alias_text and normalize_author_name(alias_text) not in leader_names:
-                variants.add(alias_text)
-    return variants
-
-
-def iter_student_records() -> list[dict[str, Any]]:
-    payload = load_degree_thesis_data()
-    records: list[dict[str, Any]] = []
-    for record in payload.get("student_authors", []):
-        if isinstance(record, dict):
-            records.append(record)
-    theses = payload.get("theses", {})
-    if isinstance(theses, dict):
-        for group_key, _title in DEGREE_THESIS_GROUPS:
-            for record in theses.get(group_key, []):
-                if isinstance(record, dict):
-                    records.append(record)
-    return records
-
-
-def iter_current_student_authors() -> list[dict[str, Any]]:
-    payload = load_degree_thesis_data()
-    records = payload.get("student_authors", [])
-    if not isinstance(records, list):
-        raise ZoteroError("Degree thesis data must contain a list at student_authors.")
-    return [record for record in records if isinstance(record, dict)]
-
-
-@functools.lru_cache(maxsize=1)
-def load_student_author_names() -> set[str]:
-    names: set[str] = set()
-    for record in iter_student_records():
-        for variant in student_record_variants(record):
-            names.add(normalize_author_name(variant))
-    return names
-
-
-def student_first_author_display(item: dict[str, Any]) -> str | None:
-    creators = item["data"].get("creators") or []
-    if not creators:
-        return None
-    first_author = creators[0]
-    variants = {
-        creator_display_name(first_author),
-        creator_csl_display_name(first_author),
-    }
-    student_names = load_student_author_names()
-    if any(normalize_author_name(variant) in student_names for variant in variants):
-        return creator_csl_display_name(first_author)
-    return None
-
-
 def creator_family_token(creator: dict[str, Any]) -> str:
     family = creator.get("lastName") or creator.get("name") or ""
     if not family and creator.get("firstName"):
@@ -392,25 +201,6 @@ def creator_family_token(creator: dict[str, Any]) -> str:
         return PINYIN_SURNAMES.get(first, f"zh{ord(first):x}")
     token = family.split()[-1] if family.split() else "unknown"
     return slug(token)
-
-
-def contains_cjk(value: str) -> bool:
-    return any("\u4e00" <= char <= "\u9fff" for char in value)
-
-
-def slug(value: str) -> str:
-    value = unicodedata.normalize("NFKD", value)
-    value = value.encode("ascii", "ignore").decode("ascii")
-    value = re.sub(r"[^A-Za-z0-9]+", "-", value).strip("-")
-    return value.lower() or "x"
-
-
-def chinese_initialism(value: str) -> str:
-    chars = []
-    for char in value:
-        if "\u4e00" <= char <= "\u9fff":
-            chars.append(CHINESE_INITIALS.get(char, "X"))
-    return "".join(chars) or "ZH"
 
 
 def journal_initialism(title: str | None) -> str:
@@ -434,166 +224,6 @@ def short_title_token(title: str | None) -> str:
     if contains_cjk(title or ""):
         return "t" + hashlib.sha1((title or "").encode("utf-8")).hexdigest()[:6]
     return "paper"
-
-
-def strip_bib_html(value: str) -> str:
-    value = re.sub(r"<style.*?</style>", "", value, flags=re.S)
-    value = re.sub(r"<[^>]+>", "", value)
-    value = html.unescape(value)
-    value = value.replace("\xa0", " ")
-    value = " ".join(value.split())
-    value = re.sub(r"^\[\d+\]\s*", "", value)
-    value = value.replace(" 📊", "")
-    value = re.sub(
-        r"https://doi\.org/https?://doi\.org/",
-        "https://doi.org/",
-        value,
-        flags=re.I,
-    )
-    return value
-
-
-def rst_escape(value: str) -> str:
-    value = value.replace("\\", "\\\\")
-    value = value.replace("*", "\\*")
-    return value
-
-
-def bold_group_leader(value: str) -> str:
-    value = re.sub(r"(?<!\*)\bLi Chao\b(?!\*)", "**Li Chao**", value)
-    value = value.replace("李朝", "**李朝**")
-    return value
-
-
-def bold_journal_title(value: str, item: dict[str, Any]) -> str:
-    journal = item["data"].get("publicationTitle")
-    if not journal:
-        return value
-    escaped_journal = rst_escape(str(journal))
-    marker = f"[J]. {escaped_journal}"
-    if marker not in value:
-        return value
-    return value.replace(marker, f"[J]. **{escaped_journal}**", 1)
-
-
-def bold_metric_values(value: str) -> str:
-    labels = "|".join(re.escape(label) for label in METRIC_LABELS)
-    pattern = re.compile(rf"(?P<label>{labels}):\s*(?P<metric>.+?)(?=\.\s*(?:{labels}):|\.$)")
-
-    def replace(match: re.Match[str]) -> str:
-        metric = match.group("metric").strip()
-        return f"{match.group('label')}: **{metric}**"
-
-    return pattern.sub(replace, value)
-
-
-def mark_student_first_author(value: str, item: dict[str, Any]) -> str:
-    first_author = student_first_author_display(item)
-    if not first_author:
-        return value
-    escaped_author = rst_escape(first_author)
-    pattern = re.compile(rf"^{re.escape(escaped_author)}(?=;|,)")
-    return pattern.sub(f":student-first-author:`{escaped_author}`", value, count=1)
-
-
-def split_extra_tokens(value: str | None) -> list[str]:
-    return [token.strip() for token in re.split(r"[、,，;；\n\r]+", value or "") if token.strip()]
-
-
-def has_corresponding_author_flag(item: dict[str, Any]) -> bool:
-    extra = str(item.get("data", {}).get("extra") or "")
-    if not extra:
-        return False
-    if re.search(r"(?:^|[、,，;；\s])_?通讯作者(?:$|[、,，;；\s])", extra):
-        return True
-    if re.search(r"\bcorresponding[-_ ]authors?\b", extra, flags=re.I):
-        return True
-    normalized_tokens = {token.casefold().lstrip("_#") for token in split_extra_tokens(extra)}
-    return any(label in normalized_tokens for label in CORRESPONDING_AUTHOR_LABELS)
-
-
-def explicit_corresponding_author_tokens(item: dict[str, Any]) -> list[str]:
-    extra = str(item.get("data", {}).get("extra") or "")
-    if not extra:
-        return []
-    tokens: list[str] = []
-    for label in CORRESPONDING_AUTHOR_LABELS:
-        pattern = re.compile(rf"{re.escape(label)}\s*[:：=]\s*(?P<names>[^\n\r]+)", re.I)
-        for match in pattern.finditer(extra):
-            raw_names = match.group("names")
-            # Stop before Zotero tag-style separators when the next token is a private marker.
-            raw_names = re.split(r"\s+[|]\s+|🏷️", raw_names, maxsplit=1)[0]
-            tokens.extend(split_extra_tokens(raw_names))
-    return [token for token in tokens if token and not token.startswith(("_", "#", "/"))]
-
-
-def creator_name_index(item: dict[str, Any]) -> dict[str, str]:
-    index: dict[str, str] = {}
-    for creator in item.get("data", {}).get("creators") or []:
-        csl_name = creator_csl_display_name(creator)
-        for variant in {creator_display_name(creator), csl_name}:
-            normalized = normalize_author_name(variant)
-            if normalized:
-                index[normalized] = csl_name
-    return index
-
-
-def corresponding_author_display_names(item: dict[str, Any]) -> list[str]:
-    index = creator_name_index(item)
-    names: list[str] = []
-    for token in explicit_corresponding_author_tokens(item):
-        normalized = normalize_author_name(token)
-        if normalized in index:
-            names.append(index[normalized])
-        elif normalized:
-            names.append(token)
-    if not names and has_corresponding_author_flag(item):
-        for leader_name in GROUP_LEADER_AUTHOR_NAMES:
-            csl_name = index.get(normalize_author_name(leader_name))
-            if csl_name:
-                names.append(csl_name)
-    seen: set[str] = set()
-    unique_names: list[str] = []
-    for name in names:
-        normalized = normalize_author_name(name)
-        if normalized and normalized not in seen:
-            seen.add(normalized)
-            unique_names.append(name)
-    return unique_names
-
-
-def rendered_author_variants(name: str, item: dict[str, Any]) -> list[str]:
-    escaped_name = rst_escape(name)
-    variants = [escaped_name]
-    if normalize_author_name(name) in {normalize_author_name(raw) for raw in GROUP_LEADER_AUTHOR_NAMES}:
-        variants.extend(["**Li Chao**", "**李朝**"])
-    first_author = student_first_author_display(item)
-    if first_author and normalize_author_name(first_author) == normalize_author_name(name):
-        variants.append(f":student-first-author:`{rst_escape(first_author)}`")
-    return variants
-
-
-def mark_corresponding_authors(value: str, item: dict[str, Any]) -> str:
-    names = corresponding_author_display_names(item)
-    if not names:
-        return value
-    author_segment, separator, remainder = value.partition(",")
-    for name in names:
-        for variant in rendered_author_variants(name, item):
-            pattern = re.compile(rf"({re.escape(variant)})(?!\\\*|\*)(?=\s*(?:;|,|$))")
-            author_segment = pattern.sub(r"\1\\*", author_segment, count=1)
-    return author_segment + separator + remainder
-
-
-def rendered_entry(item: dict[str, Any], number: int) -> str:
-    text = strip_bib_html(item.get("bib") or "")
-    text = rst_escape(text)
-    text = bold_journal_title(text, item)
-    text = bold_metric_values(text)
-    text = mark_student_first_author(text, item)
-    text = bold_group_leader(text)
-    text = mark_corresponding_authors(text, item)
-    return f"[{number}] {text}"
 
 
 def iter_degree_theses(group_key: str) -> list[dict[str, Any]]:
@@ -802,50 +432,6 @@ def ref_for(items_by_key: dict[str, dict[str, Any]], key_name: str, label: str) 
 
 
 def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
-    highlights = [
-        "- AI 与城市风模拟: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "urban_fast", "precomputed CFD database for urban microscale wind"),
-                ref_for(items_by_key, "urban_satellite", "satellite-imagery urban geometry reconstruction"),
-                ref_for(items_by_key, "urban_gaussian", "3D Gaussian Splatting building geometry"),
-            ]
-        )
-        + "。",
-        "- AI 与结构响应预测: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "tall_gnn", "graph neural networks for tall-building response"),
-                ref_for(items_by_key, "tall_extremes", "2D vectorial response extremes"),
-            ]
-        )
-        + "。",
-        "- 数值风洞与入流湍流: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "turbulence_vector", "vector-potential random flow generation"),
-                ref_for(items_by_key, "turbulence_inflow", "coherence-improved and mass-balanced inflow turbulence"),
-            ]
-        )
-        + "。",
-        "- 结构抗风: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "structural_tld", "implanted-pole tuned liquid damper"),
-                ref_for(items_by_key, "tower_coupling", "tower-line coupling under strong winds"),
-            ]
-        )
-        + "。",
-        "- 海上风电: "
-        + "、".join(
-            [
-                ref_for(items_by_key, "offshore_concrete", "reinforced-concrete semi-submersible platform optimization"),
-                ref_for(items_by_key, "offshore_wave", "equivalent static wave loads for semi-submersible turbines"),
-                ref_for(items_by_key, "offshore_applied", "floating wind turbine substructure optimization"),
-            ]
-        )
-        + "。",
-    ]
     return "\n".join(
         [
             ".. role:: student-first-author",
@@ -853,11 +439,9 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "学术成果 Academic Outputs",
             "===============================",
             "",
-            "浏览方式 View Options",
-            "---------------------",
+            ".. container:: publication-view-banner",
             "",
-            "- 当前页：按发表年份倒序浏览完整期刊论文清单。",
-            "- :doc:`PublicationsByResearch`：按研究方向浏览，方向内按发表年份倒序聚合。",
+            "   :doc:`按研究方向浏览学术成果 Publications by Research Direction <PublicationsByResearch>`：按研究方向浏览，方向内按发表年份倒序聚合。",
             "",
             ".. toctree::",
             "   :hidden:",
@@ -865,10 +449,10 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             "   按研究方向浏览 Publications by Research Direction <PublicationsByResearch>",
             "",
-            "精选证据 Selected Highlights",
-            "----------------------------",
-            "",
-            *highlights,
+            # Paper-notes toctree + 论文解读 area are owned by artifacts.py and
+            # live in a sibling fragment so that regenerating this file (which
+            # write_text overwrites wholesale) cannot clobber them.
+            ".. include:: _paper-notes-fragment.rst",
             "",
             "期刊论文 Journal Papers",
             "------------------------",

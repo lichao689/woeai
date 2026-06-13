@@ -32,14 +32,34 @@ from urllib.request import Request, urlopen
 
 WECHAT_ROOT = Path(__file__).resolve().parents[1]
 REPO_ROOT = WECHAT_ROOT.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
+from woeai.wechat.backlog import (  # noqa: E402,F401
+    BacklogPaper,
+    parse_backlog_papers,
+    rank_against_target,
+    read_backlog_item,
+    read_backlog_publication_refs,
+)
+from woeai.wechat.options import (  # noqa: E402,F401
+    AVAILABLE_MATH_RENDERERS,
+    AVAILABLE_THEMES,
+    DEFAULT_MATH_RENDERER,
+    DEFAULT_THEME,
+    validate_math_renderer,
+    validate_theme,
+)
+from woeai.wechat.review import (  # noqa: E402,F401
+    find_review_cover,
+    parse_front_matter,
+    parse_title as parse_title_text,
+)
+
 CONFIG_PATH = Path.home() / ".config/woeai/wechat_official_account.env"
 RUNNER_CONFIG_PATH = Path.home() / ".config/woeai/wechat_runner.env"
 TOKEN_CACHE_PATH = Path.home() / ".cache/woeai/wechat_access_token.json"
 DEFAULT_REF = "ref-zhao2026-BS"
-DEFAULT_THEME = "academic-clean"
-AVAILABLE_THEMES = ("academic-clean", "engineering-note", "recruitment-friendly")
-DEFAULT_MATH_RENDERER = "mathjax-svg"
-AVAILABLE_MATH_RENDERERS = ("lightweight", "mathjax-svg")
 RTD_BASE_URL = "https://woeai.readthedocs.io/zh-cn/latest/"
 EXPECTED_EGRESS_IPS_KEY = "WOEAI_WECHAT_EXPECTED_EGRESS_IPS"
 
@@ -61,17 +81,6 @@ class ImageRef:
     alt: str
     raw_src: str
     path: Path
-
-
-@dataclass(frozen=True)
-class BacklogPaper:
-    publication_ref: str
-    title: str
-    research_family: str
-    subdirection: str
-    original_year: int
-    latest_published_url: str
-    order: int
 
 
 @dataclass(frozen=True)
@@ -126,20 +135,6 @@ def load_public_safety_checker() -> Any:
     if not hasattr(module, "collect_findings"):
         raise RuntimeError(f"Public-safety checker has no collect_findings(): {checker_path}")
     return module
-
-
-def validate_theme(theme: str) -> str:
-    if theme not in AVAILABLE_THEMES:
-        options = ", ".join(AVAILABLE_THEMES)
-        raise RuntimeError(f"Unsupported theme '{theme}'. Available themes: {options}")
-    return theme
-
-
-def validate_math_renderer(math_renderer: str) -> str:
-    if math_renderer not in AVAILABLE_MATH_RENDERERS:
-        options = ", ".join(AVAILABLE_MATH_RENDERERS)
-        raise RuntimeError(f"Unsupported math renderer '{math_renderer}'. Available renderers: {options}")
-    return math_renderer
 
 
 def parse_env_file(path: Path, *, required: bool) -> dict[str, str]:
@@ -424,27 +419,13 @@ def fetch_access_token(force_refresh: bool = False) -> dict[str, Any]:
     return {**record, "from_cache": False}
 
 
-def parse_front_matter(path: Path) -> dict[str, str]:
-    lines = path.read_text(encoding="utf-8").splitlines()
-    if not lines or lines[0].strip() != "---":
-        return {}
-    result: dict[str, str] = {}
-    for raw in lines[1:]:
-        if raw.strip() == "---":
-            break
-        if ":" not in raw:
-            continue
-        key, value = raw.split(":", 1)
-        result[key.strip()] = value.strip().strip('"').strip("'")
-    return result
-
-
 def parse_cover_path(review_path: Path) -> Path:
-    text = review_path.read_text(encoding="utf-8")
-    match = re.search(r"-\s+封面素材:\s+`([^`]+)`", text)
-    if not match:
+    # WeChat drafts require a cover; find_review_cover returns None when
+    # absent, so surface that as an error here.
+    cover = find_review_cover(review_path)
+    if cover is None:
         raise RuntimeError(f"Cannot find cover image in {repo_relative(review_path)}")
-    return (REPO_ROOT / match.group(1)).resolve()
+    return cover
 
 
 def parse_markdown_images(article_path: Path) -> list[ImageRef]:
@@ -460,10 +441,8 @@ def parse_markdown_images(article_path: Path) -> list[ImageRef]:
 
 
 def parse_title(article_path: Path) -> str:
-    for raw in article_path.read_text(encoding="utf-8").splitlines():
-        if raw.startswith("# "):
-            return raw[2:].strip()
-    raise RuntimeError(f"Cannot find article title in {repo_relative(article_path)}")
+    # Path-based convenience wrapper over the pure parse_title_text.
+    return parse_title_text(article_path.read_text(encoding="utf-8"))
 
 
 def text_without_markup(markdown: str) -> str:
@@ -537,73 +516,6 @@ def image_dimensions(path: Path) -> tuple[int | None, int | None]:
     return None, None
 
 
-def read_backlog_item(backlog_path: Path, publication_ref: str) -> dict[str, str]:
-    item: dict[str, str] = {}
-    in_item = False
-    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
-        if re.match(r"\s*-\s+publication_ref:\s+" + re.escape(publication_ref) + r"\s*$", raw):
-            in_item = True
-            item["publication_ref"] = publication_ref
-            continue
-        if in_item and re.match(r"\s*-\s+publication_ref:\s+", raw):
-            break
-        if in_item and ":" in raw:
-            key, value = raw.split(":", 1)
-            item[key.strip()] = value.strip().strip('"')
-    return item
-
-
-def read_backlog_publication_refs(backlog_path: Path) -> list[str]:
-    refs: list[str] = []
-    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
-        match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
-        if match:
-            refs.append(match.group(1))
-    return refs
-
-
-def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
-    papers: list[BacklogPaper] = []
-    current: dict[str, str] | None = None
-    order = -1
-
-    def finish() -> None:
-        if not current or not current.get("publication_ref"):
-            return
-        try:
-            original_year = int(current.get("original_year", "0") or "0")
-        except ValueError:
-            original_year = 0
-        papers.append(
-            BacklogPaper(
-                publication_ref=current.get("publication_ref", ""),
-                title=current.get("title", ""),
-                research_family=current.get("research_family", ""),
-                subdirection=current.get("subdirection", ""),
-                original_year=original_year,
-                latest_published_url=current.get("latest_published_url", ""),
-                order=order,
-            )
-        )
-
-    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
-        item_match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
-        if item_match:
-            finish()
-            order += 1
-            current = {"publication_ref": item_match.group(1)}
-            continue
-        if current is None or ":" not in raw:
-            continue
-        key, value = raw.split(":", 1)
-        key = key.strip()
-        if key.startswith("-"):
-            continue
-        current[key] = value.strip().strip('"').strip("'")
-    finish()
-    return papers
-
-
 def rtd_paper_note_url(publication_ref: str) -> str:
     return f"{RTD_BASE_URL}paper-notes/{publication_ref}.html"
 
@@ -637,10 +549,6 @@ def related_backlog_papers(
     if target is None:
         return []
 
-    def candidate_rank(paper: BacklogPaper) -> tuple[int, int, int]:
-        same_subdirection = paper.subdirection == target.subdirection
-        return (0 if same_subdirection else 1, -paper.original_year, paper.order)
-
     candidates: list[BacklogPaper] = []
     for paper in papers:
         if paper.publication_ref == publication_ref:
@@ -652,7 +560,7 @@ def related_backlog_papers(
         if require_rtd_page and not (REPO_ROOT / f"docs/source/paper-notes/{paper.publication_ref}.rst").exists():
             continue
         candidates.append(paper)
-    return sorted(candidates, key=candidate_rank)[:limit]
+    return sorted(candidates, key=lambda p: rank_against_target(p, target))[:limit]
 
 
 def related_wechat_links(publication_ref: str, *, limit: int = 3) -> list[dict[str, str]]:

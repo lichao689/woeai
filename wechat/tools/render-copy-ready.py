@@ -19,18 +19,28 @@ import html
 import mimetypes
 import re
 import subprocess
+import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
 
 WECHAT_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = WECHAT_ROOT.parent
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
+
 DEFAULT_ARTICLE = WECHAT_ROOT / "articles/draft-public-safe/ref-zhao2026-BS.md"
 DEFAULT_OUTPUT = WECHAT_ROOT / ".local/exports/ref-zhao2026-BS.academic-clean.html"
-DEFAULT_THEME = "academic-clean"
-AVAILABLE_THEMES = ("academic-clean", "engineering-note", "recruitment-friendly")
-AVAILABLE_MATH_RENDERERS = ("lightweight", "mathjax-svg")
-DEFAULT_MATH_RENDERER = "mathjax-svg"
 MATHJAX_SVG_SCRIPT = WECHAT_ROOT / "tools/render_mathjax_svg.cjs"
+
+from woeai.wechat.options import (  # noqa: E402,F401
+    AVAILABLE_MATH_RENDERERS,
+    AVAILABLE_THEMES,
+    DEFAULT_MATH_RENDERER,
+    DEFAULT_THEME,
+    validate_math_renderer,
+    validate_theme,
+)
 
 
 BASE_STYLES = {
@@ -170,20 +180,6 @@ THEME_OVERRIDES = {
         ),
     },
 }
-
-
-def validate_theme(theme: str) -> str:
-    if theme not in AVAILABLE_THEMES:
-        options = ", ".join(AVAILABLE_THEMES)
-        raise ValueError(f"Unsupported theme '{theme}'. Available themes: {options}")
-    return theme
-
-
-def validate_math_renderer(math_renderer: str) -> str:
-    if math_renderer not in AVAILABLE_MATH_RENDERERS:
-        options = ", ".join(AVAILABLE_MATH_RENDERERS)
-        raise ValueError(f"Unsupported math renderer '{math_renderer}'. Available renderers: {options}")
-    return math_renderer
 
 
 def theme_styles(theme: str) -> dict[str, str]:

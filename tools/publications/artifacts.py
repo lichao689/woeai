@@ -12,17 +12,22 @@ from pathlib import Path
 from typing import Any
 
 
+# This script is invoked by absolute path (check-docs.sh, agents, direct calls),
+# so the repo root is not guaranteed to be on sys.path. Make the local ``woeai``
+# package importable regardless of how the entry point is launched.
 REPO_ROOT = Path(__file__).resolve().parents[2]
+if str(REPO_ROOT) not in sys.path:
+    sys.path.insert(0, str(REPO_ROOT))
 
 LATEST_MARKER = "GENERATED LATEST PAPER NOTES"
-TOCTREE_MARKER = "GENERATED PAPER NOTES TOCTREE"
-AREA_MARKER = "GENERATED PAPER NOTES AREA"
 
-RESEARCH_FAMILY_ORDER = ("建筑结构抗风", "海上漂浮风电")
-RESEARCH_SUBDIRECTION_ORDER = {
-    "建筑结构抗风": ("数值风洞与湍动入流", "高层建筑抗风与优化"),
-    "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
-}
+# Research taxonomy is a single source of truth in woeai.publications.
+# Importing here (rather than re-declaring) is exactly what collapses the
+# former byte-for-byte copy across this file and two others.
+from woeai.publications import (  # noqa: E402
+    RESEARCH_FAMILY_ORDER,
+    RESEARCH_SUBDIRECTION_ORDER,
+)
 
 
 @dataclass(frozen=True)
@@ -200,6 +205,31 @@ def render_paper_notes_area(root: Path) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+PAPER_NOTES_FRAGMENT_PATH = Path("docs/source/_paper-notes-fragment.rst")
+
+
+def render_paper_notes_fragment(root: Path) -> str:
+    """Render the whole paper-notes fragment file owned by this tool.
+
+    The fragment is included by Publications.rst via ``.. include::``. It holds
+    the generated toctree, the 论文解读 Paper Notes heading, and the generated
+    area. Owning it as a standalone file means the Zotero generator can
+    overwrite Publications.rst wholesale without clobbering this content.
+    """
+    toctree = render_paper_notes_toctree(root)
+    area = render_paper_notes_area(root)
+    parts: list[str] = []
+    if toctree:
+        parts.append(toctree.rstrip("\n"))
+        parts.append("")
+    parts.append("论文解读 Paper Notes")
+    parts.append("--------------------")
+    parts.append("")
+    parts.append(area.rstrip("\n"))
+    parts.append("")
+    return "\n".join(parts)
+
+
 def artifact_integrity_problems(root: Path) -> list[dict[str, str]]:
     problems: list[dict[str, str]] = []
     for artifact in public_artifacts(root):
@@ -237,8 +267,6 @@ def artifact_integrity_problems(root: Path) -> list[dict[str, str]]:
 def generated_blocks(root: Path) -> dict[str, str]:
     return {
         LATEST_MARKER: render_latest_paper_notes(root),
-        TOCTREE_MARKER: render_paper_notes_toctree(root),
-        AREA_MARKER: render_paper_notes_area(root),
     }
 
 
@@ -283,40 +311,52 @@ def current_marker_body(text: str, marker: str) -> str | None:
 
 
 def write_generated_blocks(root: Path) -> list[dict[str, str]]:
-    block_specs = [
-        (root / "docs/source/index.rst", LATEST_MARKER),
-        (root / "docs/source/Publications.rst", TOCTREE_MARKER),
-        (root / "docs/source/Publications.rst", AREA_MARKER),
-    ]
-    blocks = generated_blocks(root)
     changed: list[dict[str, str]] = []
-    for path, marker in block_specs:
-        text = path.read_text(encoding="utf-8")
-        updated, found = replace_marker_block(text, marker, blocks[marker])
-        if not found:
-            raise RuntimeError(f"Missing marker block {marker} in {repo_relative(path, root)}")
-        if updated != text:
-            path.write_text(updated, encoding="utf-8")
-            changed.append({"path": repo_relative(path, root), "marker": marker})
+    blocks = generated_blocks(root)
+
+    # index.rst keeps its marker block (single writer, no contention).
+    index_path = root / "docs/source/index.rst"
+    text = index_path.read_text(encoding="utf-8")
+    updated, found = replace_marker_block(text, LATEST_MARKER, blocks[LATEST_MARKER])
+    if not found:
+        raise RuntimeError(f"Missing marker block {LATEST_MARKER} in {repo_relative(index_path, root)}")
+    if updated != text:
+        index_path.write_text(updated, encoding="utf-8")
+        changed.append({"path": repo_relative(index_path, root), "marker": LATEST_MARKER})
+
+    # The paper-notes fragment is a standalone file owned solely by this tool.
+    # Publications.rst includes it; the Zotero generator no longer needs to
+    # preserve marker blocks when it overwrites Publications.rst.
+    fragment_path = root / PAPER_NOTES_FRAGMENT_PATH
+    fragment = render_paper_notes_fragment(root)
+    if not fragment_path.exists() or fragment_path.read_text(encoding="utf-8") != fragment:
+        fragment_path.write_text(fragment, encoding="utf-8")
+        changed.append({"path": repo_relative(fragment_path, root), "marker": "PAPER_NOTES_FRAGMENT"})
+
     return changed
 
 
 def check_generated_blocks(root: Path) -> list[dict[str, str]]:
-    block_specs = [
-        (root / "docs/source/index.rst", LATEST_MARKER),
-        (root / "docs/source/Publications.rst", TOCTREE_MARKER),
-        (root / "docs/source/Publications.rst", AREA_MARKER),
-    ]
-    blocks = generated_blocks(root)
     problems: list[dict[str, str]] = []
-    for path, marker in block_specs:
-        text = path.read_text(encoding="utf-8")
-        current = current_marker_body(text, marker)
-        if current is None:
-            problems.append({"kind": "missing_marker", "path": repo_relative(path, root), "marker": marker})
-            continue
-        if current != blocks[marker]:
-            problems.append({"kind": "out_of_sync", "path": repo_relative(path, root), "marker": marker})
+    blocks = generated_blocks(root)
+
+    # index.rst marker block.
+    index_path = root / "docs/source/index.rst"
+    text = index_path.read_text(encoding="utf-8")
+    current = current_marker_body(text, LATEST_MARKER)
+    if current is None:
+        problems.append({"kind": "missing_marker", "path": repo_relative(index_path, root), "marker": LATEST_MARKER})
+    elif current != blocks[LATEST_MARKER]:
+        problems.append({"kind": "out_of_sync", "path": repo_relative(index_path, root), "marker": LATEST_MARKER})
+
+    # Paper-notes fragment file.
+    fragment_path = root / PAPER_NOTES_FRAGMENT_PATH
+    expected = render_paper_notes_fragment(root)
+    if not fragment_path.exists():
+        problems.append({"kind": "missing_fragment", "path": repo_relative(fragment_path, root)})
+    elif fragment_path.read_text(encoding="utf-8") != expected:
+        problems.append({"kind": "out_of_sync", "path": repo_relative(fragment_path, root), "marker": "PAPER_NOTES_FRAGMENT"})
+
     return problems
 
 

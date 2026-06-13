@@ -5,6 +5,11 @@ import re
 import unittest
 from pathlib import Path
 
+from woeai.publications import (
+    RESEARCH_FAMILY_ORDER,
+    RESEARCH_SUBDIRECTION_ORDER,
+)
+
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS = ROOT / "docs/source/Publications.rst"
@@ -17,11 +22,10 @@ CONF = ROOT / "docs/source/conf.py"
 DOI_NEW_TAB_JS = ROOT / "docs/_static/doi-new-tab.js"
 RESEARCH_MAP = ROOT / "docs/data/publication-research-map.json"
 
-RESEARCH_FAMILIES = ("建筑结构抗风", "海上漂浮风电")
-RESEARCH_STRUCTURE = {
-    "建筑结构抗风": ("数值风洞与湍动入流", "高层建筑抗风与优化"),
-    "海上漂浮风电": ("浮式风机系统一体化分析与优化", "浮式混凝土平台结构设计", "数值风浪流水池"),
-}
+# Aliases kept for the existing assertions below; the values now come from the
+# single source of truth in woeai.publications rather than a third local copy.
+RESEARCH_FAMILIES = RESEARCH_FAMILY_ORDER
+RESEARCH_STRUCTURE = RESEARCH_SUBDIRECTION_ORDER
 TEACHING_REFORM_PUBLICATION_KEY = "KT6UR5JW"
 TEACHING_REFORM_PUBLICATION_TITLE = "中国共产党精神谱系视域下土木工程课程思政建设的探索与实践"
 
@@ -94,7 +98,12 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertNotIn("浏览方式 View Options", text)
         self.assertNotIn("精选证据 Selected Highlights", text)
         self.assertIn(".. container:: publication-view-banner", text)
-        self.assertIn("论文解读 Paper Notes", text)
+        # 论文解读 Paper Notes now lives in an artifacts-owned fragment that
+        # Publications.rst includes, so the heading appears there rather than
+        # inline in Publications.rst.
+        self.assertIn(".. include:: _paper-notes-fragment.rst", text)
+        fragment_text = (ROOT / "docs/source/_paper-notes-fragment.rst").read_text(encoding="utf-8")
+        self.assertIn("论文解读 Paper Notes", fragment_text)
         self.assertIn("按研究方向浏览学术成果 Publications by Research Direction <PublicationsByResearch>", text)
         self.assertNotIn("学术进展 Academic Progress", research_text)
         self.assertNotIn("paper-notes/", research_text)

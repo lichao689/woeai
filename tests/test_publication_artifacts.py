@@ -71,15 +71,11 @@ class PublicationArtifactsTests(unittest.TestCase):
             "   :hidden:\n\n"
             "   PublicationsByResearch\n"
             "\n"
-            ".. BEGIN GENERATED PAPER NOTES TOCTREE\n\n"
-            "stale-entry\n\n"
-            ".. END GENERATED PAPER NOTES TOCTREE\n\n"
-            "论文解读 Paper Notes\n"
-            "--------------------\n\n"
-            ".. BEGIN GENERATED PAPER NOTES AREA\n\n"
-            "stale area\n\n"
-            ".. END GENERATED PAPER NOTES AREA\n",
+            ".. include:: paper-notes/_fragments.rst\n",
             encoding="utf-8",
+        )
+        (root / "docs/source/_paper-notes-fragment.rst").write_text(
+            "stale fragment\n", encoding="utf-8"
         )
         self.addCleanup(temp.cleanup)
         return temp
@@ -100,7 +96,7 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.assertEqual(diagnostics[0]["publication_ref"], "ref-missing-rtd")
         self.assertIn("docs/source/paper-notes/ref-missing-rtd.rst", diagnostics[0]["missing"])
 
-    def test_write_replaces_marker_blocks_and_check_then_passes(self) -> None:
+    def test_write_regenerates_fragment_and_check_then_passes(self) -> None:
         temp = self.make_repo()
         root = Path(temp.name)
 
@@ -109,15 +105,18 @@ class PublicationArtifactsTests(unittest.TestCase):
             check_result = self.artifacts.main(["--root", str(root), "--check"])
 
         index_text = (root / "docs/source/index.rst").read_text(encoding="utf-8")
-        publications_text = (root / "docs/source/Publications.rst").read_text(encoding="utf-8")
+        fragment_text = (root / "docs/source/_paper-notes-fragment.rst").read_text(encoding="utf-8")
         self.assertEqual(write_result, 0)
         self.assertEqual(check_result, 0)
         self.assertIn("- 2026 | 建筑结构抗风 / 数值风洞与湍动入流", index_text)
-        self.assertIn(".. toctree::", publications_text)
-        self.assertIn("   paper-notes/ref-complete", publications_text)
-        self.assertNotIn("stale", publications_text)
+        # The fragment owns the toctree + 论文解读 area; Publications.rst no
+        # longer carries them inline.
+        self.assertIn(".. toctree::", fragment_text)
+        self.assertIn("   paper-notes/ref-complete", fragment_text)
+        self.assertIn("论文解读 Paper Notes", fragment_text)
+        self.assertNotIn("stale", fragment_text)
 
-    def test_check_fails_when_marker_block_is_stale(self) -> None:
+    def test_check_fails_when_fragment_is_stale(self) -> None:
         temp = self.make_repo()
         root = Path(temp.name)
 

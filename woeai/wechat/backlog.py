@@ -28,6 +28,7 @@ class BacklogPaper:
     original_year: int
     latest_published_url: str
     order: int
+    wechat_status: str = ""
 
 
 _ITEM_RE = re.compile(r"\s*-\s+publication_ref:\s+(\S+)\s*$")
@@ -64,6 +65,7 @@ def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
                 original_year=original_year,
                 latest_published_url=current.get("latest_published_url", ""),
                 order=order,
+                wechat_status=current.get("wechat_status", ""),
             )
         )
 

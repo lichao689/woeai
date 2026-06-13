@@ -28,6 +28,7 @@ from woeai.publications import (  # noqa: E402
     RESEARCH_FAMILY_ORDER,
     RESEARCH_SUBDIRECTION_ORDER,
 )
+from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers  # noqa: E402,F401
 
 
 @dataclass(frozen=True)
@@ -63,40 +64,6 @@ def repo_relative(path: Path, root: Path) -> str:
         return path.resolve().as_posix()
 
 
-def unquote_scalar(value: str) -> str:
-    value = value.strip()
-    if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
-        return value[1:-1]
-    return value
-
-
-def parse_backlog_items(backlog_path: Path) -> list[dict[str, str]]:
-    if not backlog_path.exists():
-        raise RuntimeError(f"Missing backlog: {backlog_path}")
-    items: list[dict[str, str]] = []
-    current: dict[str, str] | None = None
-
-    def finish() -> None:
-        if current and current.get("publication_ref"):
-            items.append(current.copy())
-
-    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
-        item_match = re.match(r"\s*-\s+publication_ref:\s+(\S+)\s*$", raw)
-        if item_match:
-            finish()
-            current = {"publication_ref": unquote_scalar(item_match.group(1))}
-            continue
-        if current is None or ":" not in raw:
-            continue
-        key, value = raw.split(":", 1)
-        key = key.strip()
-        if key.startswith("-"):
-            continue
-        current[key] = unquote_scalar(value)
-    finish()
-    return items
-
-
 def parse_markdown_title(article_path: Path, fallback: str) -> str:
     if not article_path.exists():
         return fallback
@@ -106,31 +73,27 @@ def parse_markdown_title(article_path: Path, fallback: str) -> str:
     return fallback
 
 
-def int_or_zero(value: str) -> int:
-    try:
-        return int(value)
-    except ValueError:
-        return 0
-
-
 def load_artifacts(root: Path) -> list[PublicationArtifact]:
     backlog_path = root / "wechat/backlog/selected-papers.yml"
     artifacts: list[PublicationArtifact] = []
-    for order, item in enumerate(parse_backlog_items(backlog_path)):
-        publication_ref = item["publication_ref"]
+    papers = parse_backlog_papers(backlog_path)
+    if not papers and not backlog_path.exists():
+        raise RuntimeError(f"Missing backlog: {backlog_path}")
+    for paper in papers:
+        publication_ref = paper.publication_ref
         article_path = root / f"wechat/articles/draft-public-safe/{publication_ref}.md"
         review_path = root / f"wechat/articles/review/{publication_ref}.review.md"
         rtd_path = root / f"docs/source/paper-notes/{publication_ref}.rst"
-        title = parse_markdown_title(article_path, item.get("title", publication_ref))
+        title = parse_markdown_title(article_path, paper.title or publication_ref)
         artifacts.append(
             PublicationArtifact(
                 publication_ref=publication_ref,
                 title=title,
-                research_family=item.get("research_family", ""),
-                subdirection=item.get("subdirection", ""),
-                original_year=int_or_zero(item.get("original_year", "0")),
-                wechat_status=item.get("wechat_status", ""),
-                order=order,
+                research_family=paper.research_family,
+                subdirection=paper.subdirection,
+                original_year=paper.original_year,
+                wechat_status=paper.wechat_status,
+                order=paper.order,
                 article_path=article_path,
                 review_path=review_path,
                 rtd_path=rtd_path,

@@ -71,9 +71,8 @@ Research Family / Student First Author / Public Formula）与 skill 的架构术
    - `woeai/publications/`（A 阶段填充）— `__init__.py` 空占位
    - `woeai/wechat/`（B 阶段填充）— `__init__.py` 空占位
 3. `tools/publications/artifacts.py` 暂留原位（第 2 阶段处理）。
-4. 加 `pyproject.toml`（最小，仅 `[project] name + requires-python >=3.12`，
-   **不发布**，只为 `import woeai` 可用 + 测试发现）。不写 packaging metadata
-   超出"本地可导入"所需（遵循 AGENTS.md：不擅自把它变成发布包）。
+4. 不新增项目打包元数据；本仓库仍保持 docs-first 形态。`scripts/check-docs.sh`
+   通过 `PYTHONPATH` 注入仓库根，让本地 `import woeai` 在脚本、测试和门禁中可用。
 5. 让测试从 `importlib.util` 路径加载切换为 `import woeai...`——**只切导入方式**，
    不动逻辑。先让 `tests/` 能 `import woeai`。
 6. `scripts/check-docs.sh` 不变（仍跑 `python3 -m unittest discover`）。
@@ -84,7 +83,7 @@ Research Family / Student First Author / Public Formula）与 skill 的架构术
 
 **风险**：低。纯结构，无行为变化。唯一注意点是 `sys.path`——测试与脚本目前都用
 `Path(__file__).parents[N]` 推根目录，建包后改为标准 import，需确认 CI/本地都能
-找到包根（`pyproject.toml` + 仓库根运行即可）。
+找到包根（`PYTHONPATH` + 仓库根运行即可）。
 
 **回归保护**：此阶段不改任何行为，所有现有测试必须原样通过。
 
@@ -268,33 +267,29 @@ CONTEXT.md 提到的 PNG tier 在代码里不存在。
 
 **seam 后面放什么**
 
-`woeai/wechat/math.py`：
+`woeai/wechat/options.py`：
 
 ```
-MathRenderer（协议/接口）
-  render_inline(latex) -> str
-  render_display(latex) -> str
-
-REGISTRY: dict[str, type[MathRenderer]]  ← 唯一白名单源
-register("lightweight", LightweightRenderer)
-register("mathjax-svg", MathjaxSvgRenderer)
-render_math(latex, kind, renderer_key) -> str
+DEFAULT_THEME / AVAILABLE_THEMES / validate_theme
+DEFAULT_MATH_RENDERER / AVAILABLE_MATH_RENDERERS / validate_math_renderer
 ```
+
+完整 Public Formula renderer registry 仍是未来可选深化；本阶段只统一已经
+重复漂移的主题与公式渲染器白名单、默认值和校验函数。
 
 **改动步骤**
 
-1. 把 `render-copy-ready.py` 的 `render_inline_math` / `render_display_math` /
-   `render_mathjax_svg` 搬进 `woeai/wechat/math.py`，封装为两个 renderer 类。
+1. 新增 `woeai/wechat/options.py`，集中主题、公式渲染器默认值、白名单和校验函数。
 2. 删除 `wechat_draft.py` 和 `render-copy-ready.py` 里重复的
    `AVAILABLE_MATH_RENDERERS` / `AVAILABLE_THEMES` / `validate_*`。
-3. CLI 的 `--math-renderer` choices 改为读 `REGISTRY.keys()`。
+3. CLI 的 `--math-renderer` / `--theme` choices 改为读 `woeai.wechat.options`。
 4. **PNG tier 暂不实现**（CONTEXT.md 提及但无现成需求）——只在 registry 留扩展点，
    不为不存在的需求写代码。
 
 **验证**
-- `AVAILABLE_MATH_RENDERERS` 全仓库只剩 `woeai/wechat/math.py` 一处。
+- `AVAILABLE_MATH_RENDERERS` 全仓库只剩 `woeai/wechat/options.py` 一处。
 - `test_lightweight_formula_renderer_does_not_call_mathjax` 通过。
-- 新增 `test_math_registry.py`：注册一个假 renderer，确认可被 key 取到。
+- `render-copy-ready.py` 与 `wechat_draft.py` 的 CLI choices 均来自同一 options 模块。
 - `./scripts/check-docs.sh` 全绿。
 
 ---
@@ -331,14 +326,14 @@ render_math(latex, kind, renderer_key) -> str
   作者标记、年份、Research Family）必须与 Publication Data 模型一致，工具不一致则
   fail，而非覆盖作者措辞。
 - 第 4 阶段：AGENTS.md 动态更新规则追加——Public Formula renderer 白名单唯一源为
-  `woeai/wechat/math.py` 的 registry。
+  `woeai/wechat/options.py`。
 - 各阶段不动 CONTEXT.md 的公共措辞词条（它描述读者可见语言，不描述代码结构）。
 
 ## 不做什么（防止范围蔓延）
 
 - 不改网站视觉/主题/CSS（不在本计划范围）。
 - 不引入第三方库（坚持标准库，保门禁可移植）。
-- 不把仓库变成可发布包（`pyproject.toml` 仅够本地 import）。
+- 不把仓库变成可发布包；本地 import 由门禁脚本注入 `PYTHONPATH`。
 - 不自动发布公众号、不碰凭据存储（CONTEXT.md 已有 Manual Publication Gate 规则）。
 - 不实现 PNG 公式 tier（无现成需求）。
 - 不动 Zotero HTTP 抓取逻辑（保留在脚本里，不进包接口）。

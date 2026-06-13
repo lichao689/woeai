@@ -31,6 +31,7 @@ extensions = [
 ]
 
 templates_path = ['_templates']
+exclude_patterns = ['_paper-notes-fragment.rst']
 
 # -- Options for HTML output
 

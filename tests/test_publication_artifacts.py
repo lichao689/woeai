@@ -96,6 +96,32 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.assertEqual(diagnostics[0]["publication_ref"], "ref-missing-rtd")
         self.assertIn("docs/source/paper-notes/ref-missing-rtd.rst", diagnostics[0]["missing"])
 
+    def test_load_artifacts_consumes_shared_backlog_records(self) -> None:
+        temp = self.make_repo()
+        root = Path(temp.name)
+        (root / "wechat/backlog/selected-papers.yml").unlink()
+
+        original_parser = self.artifacts.parse_backlog_papers
+        self.artifacts.parse_backlog_papers = lambda _path: [
+            self.artifacts.BacklogPaper(
+                "ref-complete",
+                "Shared Backlog Title",
+                "建筑结构抗风",
+                "数值风洞与湍动入流",
+                2026,
+                "",
+                7,
+            )
+        ]
+        try:
+            artifacts = self.artifacts.load_artifacts(root)
+        finally:
+            self.artifacts.parse_backlog_papers = original_parser
+
+        self.assertEqual(len(artifacts), 1)
+        self.assertEqual(artifacts[0].publication_ref, "ref-complete")
+        self.assertEqual(artifacts[0].order, 7)
+
     def test_write_regenerates_fragment_and_check_then_passes(self) -> None:
         temp = self.make_repo()
         root = Path(temp.name)

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import runpy
 import re
 import unittest
 from pathlib import Path
@@ -110,6 +111,11 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertNotIn("\n   PublicationsByResearch\n", index_text)
         self.assertNotIn("\n   People\n", index_text)
         self.assertFalse(PEOPLE.exists())
+
+    def test_generated_paper_notes_fragment_is_include_only(self) -> None:
+        conf = runpy.run_path(str(CONF))
+
+        self.assertIn("_paper-notes-fragment.rst", conf.get("exclude_patterns", []))
 
     def test_research_view_groups_every_publication_by_family_then_subdirection(self) -> None:
         publications_text = PUBLICATIONS.read_text(encoding="utf-8")

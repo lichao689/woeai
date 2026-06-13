@@ -31,10 +31,11 @@ TITLE_CATEGORY_PREFIX = re.compile(r"^(?:数值风洞|结构抗风|漂浮风电)
 CLOSING_SENTENCE_ANCHOR = "点击阅读原文"
 DOI_TRUNCATE = re.compile(r"^(.*?https://doi\.org/\S+)")
 
-from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers  # noqa: E402,F401
+from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers, rank_against_target  # noqa: E402,F401
 from woeai.wechat.review import (  # noqa: E402,F401
     find_review_cover,
     parse_front_matter as parse_review_front_matter,
+    parse_title,
     resolve_repo_path,
 )
 
@@ -59,13 +60,6 @@ def display_width(text: str) -> int:
 
 def heading(text: str, marker: str) -> list[str]:
     return [text, marker * display_width(text), ""]
-
-
-def parse_title(markdown_text: str) -> str:
-    for line in markdown_text.splitlines():
-        if line.startswith("# "):
-            return line[2:].strip()
-    raise RuntimeError("Markdown article is missing an H1 title")
 
 
 def strip_title_category_prefix(title: str) -> str:
@@ -95,10 +89,6 @@ def rtd_related_links(
     if target is None:
         return []
 
-    def candidate_rank(paper: BacklogPaper) -> tuple[int, int, int]:
-        same_subdirection = paper.subdirection == target.subdirection
-        return (0 if same_subdirection else 1, -paper.original_year, paper.order)
-
     candidates: list[BacklogPaper] = []
     for paper in papers:
         if paper.publication_ref == publication_ref:
@@ -113,7 +103,7 @@ def rtd_related_links(
             "publication_ref": paper.publication_ref,
             "title": article_title_for_ref(paper.publication_ref, article_dir, paper.title),
         }
-        for paper in sorted(candidates, key=candidate_rank)[:limit]
+        for paper in sorted(candidates, key=lambda p: rank_against_target(p, target))[:limit]
     ]
 
 

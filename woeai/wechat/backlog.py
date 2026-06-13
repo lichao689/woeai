@@ -111,3 +111,14 @@ def read_backlog_publication_refs(backlog_path: Path) -> list[str]:
         if match:
             refs.append(match.group(1))
     return refs
+
+
+def rank_against_target(paper: BacklogPaper, target: BacklogPaper) -> tuple[int, int, int]:
+    """Sort key: prefer same subdirection, then newer year, then backlog order.
+
+    Used by both the RTD related-links builder and the WeChat related-papers
+    builder to rank sibling papers. Previously duplicated inline as a
+    ``candidate_rank`` closure in both scripts.
+    """
+    same_subdirection = paper.subdirection == target.subdirection
+    return (0 if same_subdirection else 1, -paper.original_year, paper.order)

@@ -19,6 +19,19 @@ _COVER_RE = re.compile(r"-\s+封面素材:\s+`([^`]+)`")
 _COVER_FRONT_MATTER_KEYS = ("rtd_cover_image", "wechat_cover_image", "cover_image")
 
 
+def parse_title(markdown_text: str) -> str:
+    """Extract the H1 title from a markdown article's text.
+
+    Raises RuntimeError if no ``# `` heading is present. Callers that read
+    from a path should read the text then call this; it stays pure (no I/O)
+    so it is trivially testable.
+    """
+    for line in markdown_text.splitlines():
+        if line.startswith("# "):
+            return line[2:].strip()
+    raise RuntimeError("Markdown article is missing an H1 title")
+
+
 def parse_front_matter(review_path: Path) -> dict[str, str]:
     """Parse the YAML-ish ``---`` front matter of a review note.
 

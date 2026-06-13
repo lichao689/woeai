@@ -38,12 +38,14 @@ if str(REPO_ROOT) not in sys.path:
 from woeai.wechat.backlog import (  # noqa: E402,F401
     BacklogPaper,
     parse_backlog_papers,
+    rank_against_target,
     read_backlog_item,
     read_backlog_publication_refs,
 )
 from woeai.wechat.review import (  # noqa: E402,F401
     find_review_cover,
     parse_front_matter,
+    parse_title as parse_title_text,
 )
 
 CONFIG_PATH = Path.home() / ".config/woeai/wechat_official_account.env"
@@ -449,10 +451,8 @@ def parse_markdown_images(article_path: Path) -> list[ImageRef]:
 
 
 def parse_title(article_path: Path) -> str:
-    for raw in article_path.read_text(encoding="utf-8").splitlines():
-        if raw.startswith("# "):
-            return raw[2:].strip()
-    raise RuntimeError(f"Cannot find article title in {repo_relative(article_path)}")
+    # Path-based convenience wrapper over the pure parse_title_text.
+    return parse_title_text(article_path.read_text(encoding="utf-8"))
 
 
 def text_without_markup(markdown: str) -> str:
@@ -559,10 +559,6 @@ def related_backlog_papers(
     if target is None:
         return []
 
-    def candidate_rank(paper: BacklogPaper) -> tuple[int, int, int]:
-        same_subdirection = paper.subdirection == target.subdirection
-        return (0 if same_subdirection else 1, -paper.original_year, paper.order)
-
     candidates: list[BacklogPaper] = []
     for paper in papers:
         if paper.publication_ref == publication_ref:
@@ -574,7 +570,7 @@ def related_backlog_papers(
         if require_rtd_page and not (REPO_ROOT / f"docs/source/paper-notes/{paper.publication_ref}.rst").exists():
             continue
         candidates.append(paper)
-    return sorted(candidates, key=candidate_rank)[:limit]
+    return sorted(candidates, key=lambda p: rank_against_target(p, target))[:limit]
 
 
 def related_wechat_links(publication_ref: str, *, limit: int = 3) -> list[dict[str, str]]:

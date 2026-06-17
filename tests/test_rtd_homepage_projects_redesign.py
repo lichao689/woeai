@@ -10,8 +10,8 @@ INDEX = SOURCE / "index.rst"
 CONF = SOURCE / "conf.py"
 PROJECTS = SOURCE / "Projects.rst"
 RESEARCH = SOURCE / "Research.rst"
-BUILDING = SOURCE / "BuildingStructuralWindResistance.rst"
-FLOATING = SOURCE / "FloatingOffshoreWindEnergy.rst"
+BUILDING = SOURCE / "StructuralWindEngineering.rst"
+FLOATING = SOURCE / "FloatingOffshoreWindTurbine.rst"
 ENGINEERING = SOURCE / "EngineeringApplications.rst"
 
 

@@ -160,6 +160,8 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         self.assertIn(".. container:: publication-view-banner", header)
         self.assertIn("PublicationsByYear", header)
         self.assertNotIn("PublicationsBy" + "Research", header)
+        self.assertIn(".. rubric:: 期刊论文 Journal Papers", header)
+        self.assertNotIn("期刊论文 Journal Papers\n------------------------", header)
         # Paper-notes content lives in an artifacts-owned fragment.
         self.assertIn(".. include:: _paper-notes-fragment.rst", header)
 

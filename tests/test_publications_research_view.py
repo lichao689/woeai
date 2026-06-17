@@ -113,6 +113,8 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertNotIn("浏览方式 View Options", text)
         self.assertNotIn("精选证据 Selected Highlights", text)
         self.assertIn(".. container:: publication-view-banner", text)
+        self.assertIn(".. rubric:: 期刊论文 Journal Papers", text)
+        self.assertNotIn("期刊论文 Journal Papers\n------------------------", text)
         # The fragment is a no-op guard now; paper-note toctrees live under
         # each research subdirection so the RTD sidebar nests them correctly.
         self.assertIn(".. include:: _paper-notes-fragment.rst", text)

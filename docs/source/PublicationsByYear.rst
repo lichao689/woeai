@@ -7,8 +7,7 @@
 
    :doc:`返回按研究方向浏览学术成果 <Publications>`：按研究方向浏览，方向内按发表年份倒序聚合。
 
-期刊论文 Journal Papers
-------------------------
+.. rubric:: 期刊论文 Journal Papers
 
 - :student-first-author:`学生第一作者` 表示该论文第一作者为团队在校或毕业学生。
 - 作者姓名后的 ``*`` 表示通讯作者。

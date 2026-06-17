@@ -326,22 +326,21 @@ def load_teaching_courses() -> dict[str, list[dict[str, Any]]]:
 
 
 def courses_subsection(title: str, rows: list[dict[str, Any]]) -> str:
-    """Render a course H3 subsection as an RST definition list."""
+    """Render a course H3 subsection as plain body lines with bold titles."""
     sections = [title, _underline(title, "~"), ""]
     for row in rows:
         title_cn = str(row["title_cn"]).strip()
         title_en = str(row.get("title_en") or "").strip()
-        head = f"{title_cn} {title_en}".strip()
+        head = f"**{title_cn} {title_en}**".strip()
         major = str(row["major"]).strip()
         term = str(row["term"]).strip()
         hours = row.get("hours")
         period = str(row["period"]).strip()
-        detail = f"{major}，{term}"
+        line = f"{head}，{major}，{term}"
         if hours:
-            detail += f"，{hours}学时"
-        detail += f"，{period}"
-        sections.append(head)
-        sections.append(f"    {detail}")
+            line += f"，{hours}学时"
+        line += f"，{period}。"
+        sections.append(line)
         sections.append("")
     return "\n".join(sections).rstrip()
 

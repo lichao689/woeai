@@ -49,7 +49,7 @@ Public evidence for enterprise-commissioned work. It may show approved capabilit
 _Avoid_: partner name, exact facility name, active project detail, over-generalizing already anonymized evidence
 
 **Academic Outputs**:
-The canonical public label for the proof page that contains the complete chronological journal-paper record, a Paper Deep-Dive area, and alternate browsing options such as the Thematic Publication View. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists. On the page body, the Thematic Publication View should appear as a lightweight banner, and the Paper Deep-Dive area should appear before the Journal Papers section. The Paper Deep-Dive area should absorb the former Research-page Academic Progress content, preserving its Research Family and subdirection grouping and publication-year-descending order. In the RTD left sidebar, Paper Deep-Dive pages should nest inside the Academic Outputs Research Family and subdirection hierarchy, not appear as direct children of Academic Outputs.
+The canonical public label for the proof page that contains the complete journal-paper record grouped by Research Family and subdirection, a Paper Deep-Dive area, and an alternate Chronological Publication View. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists. On the page body, the Chronological Publication View should appear as a lightweight banner link to `PublicationsByYear.html`. The Paper Deep-Dive area should absorb the former Research-page Academic Progress content, preserving its Research Family and subdirection grouping and publication-year-descending order. In the RTD left sidebar, Paper Deep-Dive pages should nest inside the Academic Outputs Research Family and subdirection hierarchy, not appear as direct children of Academic Outputs.
 _Avoid_: 研究成果 Publications as a mixed-language page title, treating selected highlights as a mandatory Academic Outputs section
 
 **Publication Metrics**:
@@ -81,11 +81,11 @@ The homepage research section should surface the latest academic progress so rec
 _Avoid_: hiding new paper deep-dives only in deep pages, duplicating the full Research archive on the homepage, listing more than 10 homepage progress items
 
 **Chronological Publication View**:
-The canonical complete Academic Outputs view in `docs/source/Publications.rst`. It lists Public Journal Papers by publication year in descending order, groups Public Journal Papers before 2019 under `更早 Earlier`, and owns the full citation text, DOI, Publication Metrics, Student First Author Marker, anchors, and current Publication Numbers. It also contains Degree Thesis Listings after the Journal Papers section.
-_Avoid_: treating the direction view as the full bibliography, maintaining duplicate long citations
+The alternate by-year Academic Outputs view in `docs/source/PublicationsByYear.rst`, published as `PublicationsByYear.html`. It lists Public Journal Papers by publication year in descending order, groups Public Journal Papers before 2019 under `更早 Earlier`, and uses stable `:ref:` links back to anchors owned by the default Academic Outputs page. The URL and source filename must use `ByYear`, not the older by-research wording.
+_Avoid_: using a by-research filename for the by-year page, maintaining anchors in both publication views, root-level navigation entry for the by-year view
 
 **Thematic Publication View**:
-The alternate Academic Outputs browsing view in `docs/source/PublicationsByResearch.rst`. It groups the same Public Journal Papers by Research Family first and subdirection second. Inside each subdirection, paper entries are listed by publication year in descending order. Each paper entry must use the exact same public citation expression as the Chronological Publication View, including authors, title, venue, DOI, Publication Metrics, Student First Author Marker, and current Publication Number. It should be registered under the Chronological Publication View's toctree so it appears as part of Academic Outputs in the left navigation, not as a separate root-level site directory.
+The default Academic Outputs browsing view in `docs/source/Publications.rst`. It groups the same Public Journal Papers by Research Family first and subdirection second, owns the stable publication anchors, and keeps paper entries listed by publication year in descending order inside each subdirection. Each paper entry must use the complete public citation expression, including authors, title, venue, DOI, Publication Metrics, Student First Author Marker, and current Publication Number.
 _Avoid_: JavaScript-only tabs, alternate short-index citation style, duplicate hand-maintained citation text, publication-year section headings inside subdirections, root-level navigation entry for the thematic view, presenting the view option as a full page section heading
 
 **Paper Deep-Dive Area**:
@@ -253,9 +253,9 @@ Dev: Should every new paper appear in the highlights?
 
 Domain Expert: No. Highlights should use Representative Publications; the full list belongs in the journal-paper section.
 
-Dev: Should the Academic Outputs page maintain two complete citation lists?
+Dev: Should the Academic Outputs page maintain stable publication anchors in two places?
 
-Domain Expert: No. Keep the Chronological Publication View as the full bibliography and use the Thematic Publication View as a short index that links back to stable publication anchors.
+Domain Expert: No. Keep stable publication anchors in the default Academic Outputs page and let the Chronological Publication View link back to those anchors with `:ref:` entries.
 
 Dev: Can the thematic publication page use subdirections as first-level headings?
 

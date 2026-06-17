@@ -37,7 +37,7 @@ wechat_backend_preview_checked: false
 - 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-chen2024-JCP --check`
 - RTD 顶部封面: not set for this package; body figures are inserted in the article flow
 - 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；平台字段来自 review note。微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-chen2024-JCP.html`）。
-- 导航状态: shared integration files were intentionally not modified in this worker task. Existing public record already contains `ref-chen2024-JCP` in `docs/source/Publications.rst`, `docs/source/PublicationsByResearch.rst`, `docs/data/publication-research-map.json`, and the building structural wind direction page.
+- 导航状态: shared integration files were intentionally not modified in this worker task. Existing public record already contains `ref-chen2024-JCP` in `docs/source/Publications.rst`, `docs/source/PublicationsByYear.rst`, `docs/data/publication-research-map.json`, and the building structural wind direction page.
 
 ## 证据来源
 
@@ -46,7 +46,7 @@ wechat_backend_preview_checked: false
 - PDF attachment key: `XQVFX5D7`
 - 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero local imported PDF attachment exists; the selected local publisher-record PDF was used for article evidence and body figures.
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-chen2024-JCP` as paper `[50]`; `docs/source/PublicationsByResearch.rst` maps it under `建筑结构抗风 / 数值风洞与湍动入流`; `docs/source/StructuralWindEngineering.rst` lists it under `数值风洞与湍动入流`.
+- 公开网站记录: `docs/source/Publications.rst` contains `ref-chen2024-JCP` as paper `[50]` and maps it under `建筑结构抗风 / 数值风洞与湍动入流`; `docs/source/PublicationsByYear.rst` contains the by-year citation view; `docs/source/StructuralWindEngineering.rst` lists it under `数值风洞与湍动入流`.
 
 ## 源文件获取记录
 

@@ -14,7 +14,7 @@ from woeai.publications import (
 
 ROOT = Path(__file__).resolve().parents[1]
 PUBLICATIONS = ROOT / "docs/source/Publications.rst"
-PUBLICATIONS_BY_RESEARCH = ROOT / "docs/source/PublicationsByResearch.rst"
+PUBLICATIONS_BY_YEAR = ROOT / "docs/source/PublicationsByYear.rst"
 RESEARCH = ROOT / "docs/source/Research.rst"
 TEACHING = ROOT / "docs/source/Teaching.rst"
 INDEX = ROOT / "docs/source/index.rst"
@@ -122,10 +122,13 @@ class PublicationsResearchViewTests(unittest.TestCase):
         subdirection_section = section_between(text, "数值风洞与湍动入流", ("高层建筑抗风与优化",))
         self.assertIn(".. toctree::", subdirection_section)
         self.assertIn("如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-BE>", subdirection_section)
-        self.assertIn("按年份倒序浏览学术成果 Publications by Year <PublicationsByResearch>", text)
+        self.assertIn("按年份倒序浏览学术成果 Publications by Year <PublicationsByYear>", text)
         self.assertNotIn("学术进展 Academic Progress", research_text)
         self.assertNotIn("paper-notes/", research_text)
-        self.assertNotIn("\n   PublicationsByResearch\n", index_text)
+        deprecated_year_doc = "PublicationsBy" + "Research"
+        self.assertFalse((ROOT / "docs/source" / f"{deprecated_year_doc}.rst").exists())
+        self.assertNotIn(f"\n   {deprecated_year_doc}\n", index_text)
+        self.assertNotIn(deprecated_year_doc, text)
         self.assertNotIn("\n   People\n", index_text)
         self.assertFalse(PEOPLE.exists())
 
@@ -136,7 +139,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
 
     def test_research_view_groups_every_publication_by_family_then_subdirection(self) -> None:
         thematic_text = PUBLICATIONS.read_text(encoding="utf-8")
-        chronological_text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
+        chronological_text = PUBLICATIONS_BY_YEAR.read_text(encoding="utf-8")
 
         thematic_entries = publication_entries(thematic_text)
         chronological_entries = publication_entries(chronological_text)
@@ -164,7 +167,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
 
     def test_research_view_uses_the_same_publication_expression_as_chronological_view(self) -> None:
         publications_text = PUBLICATIONS.read_text(encoding="utf-8")
-        text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
+        text = PUBLICATIONS_BY_YEAR.read_text(encoding="utf-8")
 
         self.assertEqual(set(publication_entries(text)), set(publication_entries(publications_text)))
         self.assertIn("https://doi.org/", text)
@@ -186,7 +189,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
 
     def test_teaching_reform_publications_live_on_teaching_page(self) -> None:
         publications_text = PUBLICATIONS.read_text(encoding="utf-8")
-        research_text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
+        research_text = PUBLICATIONS_BY_YEAR.read_text(encoding="utf-8")
         teaching_text = TEACHING.read_text(encoding="utf-8")
         mapping = json.loads(RESEARCH_MAP.read_text(encoding="utf-8"))
 
@@ -197,7 +200,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertIn(TEACHING_REFORM_PUBLICATION_TITLE, teaching_text)
 
     def test_publications_page_groups_early_papers_without_degree_theses(self) -> None:
-        text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
+        text = PUBLICATIONS_BY_YEAR.read_text(encoding="utf-8")
 
         self.assertIn("\n更早 Earlier\n", text)
         self.assertNotRegex(text, r"\n2018\n~+\n")
@@ -226,7 +229,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
 
     def test_updated_wake_model_publication_year_keeps_old_anchor_alias(self) -> None:
         text = PUBLICATIONS.read_text(encoding="utf-8")
-        by_year = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
+        by_year = PUBLICATIONS_BY_YEAR.read_text(encoding="utf-8")
         old_anchor = ".. _ref-zhang2015-E:"
         new_anchor = ".. _ref-zhang2022-E:"
         title = "Applicability of wake models to predictions of turbine-induced velocity deficit and wind farm power generation"
@@ -234,7 +237,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
         # Anchors live in the thematic view (Publications.rst).
         self.assertIn(old_anchor, text)
         self.assertIn(new_anchor, text)
-        # Year headers live in the chronological view (PublicationsByResearch.rst).
+        # Year headers live in the chronological view (PublicationsByYear.rst).
         self.assertLess(by_year.index("\n2022\n"), by_year.index(title))
         self.assertLess(by_year.index(title), by_year.index("\n2021\n"))
 

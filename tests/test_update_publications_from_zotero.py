@@ -158,6 +158,8 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         self.assertNotIn("精选证据 Selected Highlights", header)
         # The current committed structure must be reproduced.
         self.assertIn(".. container:: publication-view-banner", header)
+        self.assertIn("PublicationsByYear", header)
+        self.assertNotIn("PublicationsBy" + "Research", header)
         # Paper-notes content lives in an artifacts-owned fragment.
         self.assertIn(".. include:: _paper-notes-fragment.rst", header)
 

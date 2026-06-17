@@ -5,13 +5,13 @@
 
 .. container:: publication-view-banner
 
-   :doc:`按年份倒序浏览学术成果 Publications by Year <PublicationsByResearch>`：按发表年份倒序浏览完整期刊论文清单。
+   :doc:`按年份倒序浏览学术成果 Publications by Year <PublicationsByYear>`：按发表年份倒序浏览完整期刊论文清单。
 
 .. toctree::
    :hidden:
    :maxdepth: 1
 
-   按年份倒序浏览 Publications by Year <PublicationsByResearch>
+   按年份倒序浏览 Publications by Year <PublicationsByYear>
 
 .. include:: _paper-notes-fragment.rst
 

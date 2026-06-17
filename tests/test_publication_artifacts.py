@@ -69,7 +69,7 @@ class PublicationArtifactsTests(unittest.TestCase):
         (root / "docs/source/Publications.rst").write_text(
             ".. toctree::\n"
             "   :hidden:\n\n"
-            "   PublicationsByResearch\n"
+            "   PublicationsByYear\n"
             "\n"
             ".. include:: paper-notes/_fragments.rst\n",
             encoding="utf-8",

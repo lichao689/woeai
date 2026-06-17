@@ -36,7 +36,7 @@ from woeai.publications import (  # noqa: E402
 )
 
 PUBLICATIONS_PATH = ROOT / "docs/source/Publications.rst"
-PUBLICATIONS_BY_RESEARCH_PATH = ROOT / "docs/source/PublicationsByResearch.rst"
+PUBLICATIONS_BY_YEAR_PATH = ROOT / "docs/source/PublicationsByYear.rst"
 RESEARCH_MAP_PATH = ROOT / "docs/data/publication-research-map.json"
 SNAPSHOT_PATH = ROOT / "docs/superpowers/source-packets/2026-06-publications-zotero-snapshot.json"
 DEGREE_THESES_PATH = ROOT / "docs/data/degree-theses.json"
@@ -607,13 +607,13 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             ".. container:: publication-view-banner",
             "",
-            "   :doc:`按年份倒序浏览学术成果 Publications by Year <PublicationsByResearch>`：按发表年份倒序浏览完整期刊论文清单。",
+            "   :doc:`按年份倒序浏览学术成果 Publications by Year <PublicationsByYear>`：按发表年份倒序浏览完整期刊论文清单。",
             "",
             ".. toctree::",
             "   :hidden:",
             "   :maxdepth: 1",
             "",
-            "   按年份倒序浏览 Publications by Year <PublicationsByResearch>",
+            "   按年份倒序浏览 Publications by Year <PublicationsByYear>",
             "",
             # Keep this no-op include as a guard against the old top-level
             # paper-notes toctree shape. Per-direction paper-note toctrees are
@@ -753,7 +753,7 @@ def research_full_entry(item: dict[str, Any]) -> str:
     return entry.replace(number, linked_number, 1)
 
 
-def build_publications_by_research_rst(items: list[dict[str, Any]]) -> str:
+def build_publications_by_year_rst(items: list[dict[str, Any]]) -> str:
     sections = [
         ".. role:: student-first-author",
         "",
@@ -866,7 +866,7 @@ def write_outputs(args: argparse.Namespace) -> None:
     research_map = load_research_map()
     validate_research_map(items, research_map)
     page = build_publications_rst(items, research_map)
-    by_research_page = build_publications_by_research_rst(items)
+    by_year_page = build_publications_by_year_rst(items)
     snap = snapshot(items, old_anchor_map, research_map)
 
     teaching_reform_items = fetch_teaching_reform_items()
@@ -874,7 +874,7 @@ def write_outputs(args: argparse.Namespace) -> None:
 
     if args.dry_run:
         print(f"Would write {PUBLICATIONS_PATH}")
-        print(f"Would write {PUBLICATIONS_BY_RESEARCH_PATH}")
+        print(f"Would write {PUBLICATIONS_BY_YEAR_PATH}")
         print(f"Would write {TEACHING_PATH}")
         print(f"Would write {SNAPSHOT_PATH}")
         print(f"Items: {len(items)}")
@@ -886,7 +886,7 @@ def write_outputs(args: argparse.Namespace) -> None:
         return
 
     PUBLICATIONS_PATH.write_text(page, encoding="utf-8")
-    PUBLICATIONS_BY_RESEARCH_PATH.write_text(by_research_page, encoding="utf-8")
+    PUBLICATIONS_BY_YEAR_PATH.write_text(by_year_page, encoding="utf-8")
     TEACHING_PATH.write_text(teaching_page, encoding="utf-8")
     SNAPSHOT_PATH.parent.mkdir(parents=True, exist_ok=True)
     SNAPSHOT_PATH.write_text(
@@ -894,7 +894,7 @@ def write_outputs(args: argparse.Namespace) -> None:
         encoding="utf-8",
     )
     print(f"Wrote {PUBLICATIONS_PATH}")
-    print(f"Wrote {PUBLICATIONS_BY_RESEARCH_PATH}")
+    print(f"Wrote {PUBLICATIONS_BY_YEAR_PATH}")
     print(f"Wrote {TEACHING_PATH}")
     print(f"Wrote {SNAPSHOT_PATH}")
     print(f"Items: {len(items)}")

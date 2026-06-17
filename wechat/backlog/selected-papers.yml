@@ -236,12 +236,15 @@ items:
     subdirection: 数值风洞与湍动入流
     original_year: 2022
     repost_priority: medium
-    wechat_status: reviewing
+    wechat_status: ready_to_publish
     publication_mode: first_publish
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Compact WeChat article and review note prepared from RTD 论文精解; cover text confirmation pending before image generation."
+    revision_note: "Compact WeChat article, review note, and selected second-candidate cover uploaded to the WeChat draft; pending WeChat backend mobile preview, proofread, and manual publication."
     publication_history: []
+    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit4_Ck2xWeM7xecGd_nTuEQEmxtVuA3kOCpCq8eKwNdFf
+    wechat_draft_updated_at: 2026-06-17T18:17:40+08:00
+    wechat_draft_created_at: 2026-06-17T18:15:47+08:00
   - publication_ref: ref-li2022-SOS
     zotero_key: 5AT7UEWV
     title: "Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures"

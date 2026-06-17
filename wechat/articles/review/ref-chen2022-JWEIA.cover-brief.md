@@ -36,9 +36,13 @@
 
 - selected text mode: `image-gen-text`
 - selected execution mode: `image-gen`
-- generation round: pending
-- candidate count: pending
-- selected candidate: pending
-- final cover path: pending
-- local crop preview: pending
+- generation round: 1
+- candidate count: 3 image-gen-text candidates in chat; user selected the second candidate
+- selected candidate: `cover-wechat-900x383-imagegen-v2-selected`
+- final cover path: `wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png`
+- dimensions: `900 x 383 px`
+- local crop preview: `wechat/.local/cover-previews/cover-wechat-900x383-imagegen-v2-selected.cover-preview.html`
+- quality scores: article_specificity=5, main_subject_clarity=5, click_appeal=5, engineering_credibility=5, small_thumbnail_readability=5, crop_safety=5, text_quality=5
+- selection note: user selected and provided the second of the three image-gen candidates, the method-mechanism direction.
+- final render note: user-provided selected candidate was resized to the current 900 x 383 WeChat cover target and stored as the final public-safe PNG.
 - backend preview state: pending WeChat backend mobile preview

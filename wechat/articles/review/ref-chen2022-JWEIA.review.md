@@ -5,17 +5,21 @@ doi: 10.1016/j.jweia.2022.105147
 research_family: 建筑结构抗风
 subdirection: 数值风洞与湍动入流
 publication_mode: first_publish
-wechat_status: reviewing
+wechat_status: ready_to_publish
+wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit4_Ck2xWeM7xecGd_nTuEQEmxtVuA3kOCpCq8eKwNdFf
+wechat_draft_created_at: 2026-06-17T18:15:47+08:00
+wechat_draft_updated_at: 2026-06-17T18:17:40+08:00
 wechat_author: Chen Lingwei
 source_checked: true
 abstract_checked: true
 copyright_checked: true
-public_safety_checked: false
+public_safety_checked: true
 formula_preview_checked: false
 figure_preview_checked: false
 cover_image_checked: false
 body_images_upload_approved: true
 rtd_page_checked: true
+rtd_cover_image: wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png
 wechat_backend_preview_checked: false
 ---
 
@@ -172,15 +176,22 @@ wechat_backend_preview_checked: false
 
 ## 封面图
 
-- 封面状态: user confirmed exact cover text; image generation in progress.
+- 封面状态: selected candidate uploaded to WeChat draft; pending WeChat backend mobile preview.
 - 封面执行模式: `image-gen`
-- 候选方向: documented in `wechat/articles/review/ref-chen2022-JWEIA.cover-brief.md`
-- 文字模式: image-gen-text required
-- 生成工具: pending Codex image generation tool
+- 候选数量: 3 image-gen-text directions generated in chat; user selected the second candidate.
+- 选中候选: `cover-wechat-900x383-imagegen-v2-selected`
+- 文字模式: exact embedded cover text in generated image
+- 生成工具: Codex image generation tool for selected candidate; bundled Python/Pillow resize only for final 900 x 383 export
+- 图像生成场景: LES 入流湍流、CIRFG 方法、数值风洞高层建筑风压验证
 - 要求文字: `数值风洞 / LES 入流新方法 / 谱与相关均匹配`
-- 预期尺寸: `900 x 383 px`
 - 出版信息行: `Journal of Wind Engineering and Industrial Aerodynamics · 2022`
-- 审核状态: pending image generation, local crop preview, and WeChat backend mobile preview.
+- 封面素材: `wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png`
+- 尺寸: `900 x 383 px`
+- 文件大小: `474202 bytes`
+- 本地裁剪预览: `wechat/.local/cover-previews/cover-wechat-900x383-imagegen-v2-selected.cover-preview.html`
+- 质量评分: article_specificity=5, main_subject_clarity=5, click_appeal=5, engineering_credibility=5, small_thumbnail_readability=5, crop_safety=5, text_quality=5
+- 候选取舍: 用户提供并确认三张 image-gen 候选中的第二张原图；最终封面由该图等比缩放到 900 x 383，不再使用本地重绘版本。
+- 审核状态: local visual text check and crop preview passed; WeChat backend mobile preview pending.
 - 注意: `cover_image_checked` remains `false` until the WeChat backend mobile preview is checked.
 
 ## 公开安全
@@ -201,12 +212,17 @@ wechat_backend_preview_checked: false
 - [x] 确认 RTD 论文精解页已进入 `论文精解` 区域，并按二级科研方向归类。
 - [x] 确认微信草稿底部 `content_source_url` 默认指向本论文 RTD 论文精解页。
 - [ ] 补做或复核原 PDF file page 证据页码审计。
-- [ ] 生成封面图并运行裁剪预览。
+- [x] 生成封面图并运行裁剪预览。
 - [ ] 公众号后台手机预览正文、公式、封面和图片。
-- [ ] 微信公众号草稿创建后回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
+- [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
 
 ## 检查记录
 
-- public-safety: pending
-- whitespace: pending
-- docs-check: not required for this WeChat-only article pass; current RTD import was checked separately.
+- public-safety: passed (`python3 scripts/check-public-safe-content.py`)
+- wechat-draft-dry-run: passed (`python3 wechat/tools/wechat_draft.py dry-run --publication-ref ref-chen2022-JWEIA`)
+- publication-artifacts: passed (`python3 tools/publications/artifacts.py --check`)
+- whitespace: passed (`git diff --check`)
+- cover-preview: passed (`python .agents/skills/wechat-cover/scripts/cover_preview.py wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png --label "候选 B 原图缩放最终稿" --score article_specificity=5,main_subject_clarity=5,click_appeal=5,engineering_credibility=5,small_thumbnail_readability=5,crop_safety=5,text_quality=5`)
+- wechat-draft-create: passed (`python3 wechat/tools/wechat_draft.py create-draft --publication-ref ref-chen2022-JWEIA`)
+- wechat-draft-update: passed (`python3 wechat/tools/wechat_draft.py update-draft --publication-ref ref-chen2022-JWEIA`)
+- docs-check: not required for this cover-only pass; full docs gate already passed after the article/site changes.

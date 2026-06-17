@@ -37,7 +37,7 @@
 - 2024: :doc:`数值风洞 | 用矢量势随机流生成无散湍流 <paper-notes/ref-li2024-POF>`
 - 2024: :doc:`数值风洞 | 让 LES 入流湍流更连贯也更守恒 <paper-notes/ref-chen2024-JCP>`
 - 2024: :doc:`数值风洞 | 让 LES 入流按目标风场自动收敛 <paper-notes/ref-wang2024-ES>`
-- 2022: :doc:`CIRFG 大气边界层 LES 入流湍流生成方法论文精解 <paper-notes/ref-chen2022-JWEIA>`
+- 2022: :doc:`数值风洞 | 把相关性写进入流湍流 <paper-notes/ref-chen2022-JWEIA>`
 
 高层建筑抗风与优化
 ^^^^^^^^^^^^^^^^^^

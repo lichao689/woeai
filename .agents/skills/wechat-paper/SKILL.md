@@ -391,8 +391,21 @@ Write for technically literate readers who may include prospective students, col
 
 Tone:
 
-- Use the author's perspective and voice. The article should read like WOEAI or the authors are explaining their own paper to readers.
-- Unify narration on `我们` for research actions and decisions (`我们在这项研究中...`, `我们比较了...`, `我们建议...`). When citing specific numeric results, `论文中给出的结果` is acceptable for precision. Do not use detached third-party phrases such as `从公开摘要可确认...`.
+- Write from the author's perspective and voice. The article should read like WOEAI or the authors are explaining their own paper to readers.
+- Use `我们` as the default subject for research actions, method choices,
+  comparisons, interpretation, and recommendations. Prefer wording such as
+  `我们提出...`, `我们构建...`, `我们比较了...`, `我们发现...`, and `我们建议...`.
+- Do not let detached third-person subjects replace the authorial voice when
+  the sentence describes research work or judgment. Avoid patterns such as
+  `它说明...`, `该研究发现...`, `本文认为...`, and `从公开摘要可确认...`; recast
+  them as first-person explanations unless doing so would distort the source.
+- Use `论文`, `模型`, `方法`, or `结果` as the subject only for static facts,
+  definitions, reported values, or citation precision. When citing specific
+  numeric results, `论文中给出的结果` is acceptable.
+- Keep abstract translation faithful. Do not force `我们` into the translated
+  abstract if the original abstract would be distorted; strengthen first-person
+  narration mainly in `三句话导读`, `研究问题`, `方法贡献`, `关键发现`, `工程意义`,
+  and `适用边界`.
 - Scholarly first.
 - Engineering relevance second.
 - No hype.
@@ -600,6 +613,10 @@ Before calling a draft ready:
   of the original abstract from Zotero `abstractNote`, the PDF abstract, an
   author manuscript, or another approved source; the article contains no
   `**英文摘要**` block.
+- The article uses a first-person authorial voice in explanatory sections:
+  `我们` is the normal subject for research actions and judgments, and detached
+  wording such as `它说明`, `该研究发现`, `本文认为`, or `从公开摘要可确认` has been
+  recast unless needed for citation precision or faithful abstract translation.
 - `研究问题` is a numbered question list, and each `关键发现` subsection opens
   by answering back to a numbered question.
 - Each `关键发现` subsection bolds exactly one conclusion sentence.

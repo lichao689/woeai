@@ -210,7 +210,7 @@
 延伸阅读
 --------
 
-- `WOEAI | 建筑结构抗风方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html>`_
+- `WOEAI | 建筑结构抗风方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
 
 完整引用

@@ -150,7 +150,7 @@ CWR 方法的核心，是把反馈控制放入 weak recycling 的重缩放流程
 延伸阅读
 --------
 
-- `WOEAI | 建筑结构抗风方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html>`_
+- `WOEAI | 建筑结构抗风方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
 
 完整引用

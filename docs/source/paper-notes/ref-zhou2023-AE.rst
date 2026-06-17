@@ -164,7 +164,7 @@ NSGA-II 算法被用于探索下部结构设计空间，并考虑与结构固有
 延伸阅读
 --------
 
-- `WOEAI | 海上漂浮风电方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/FloatingOffshoreWindEnergy.html>`_
+- `WOEAI | 海上漂浮风电方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/FloatingOffshoreWindTurbine.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
 
 完整引用

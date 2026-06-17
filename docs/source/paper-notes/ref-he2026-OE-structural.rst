@@ -196,7 +196,7 @@
 延伸阅读
 --------
 
-- `WOEAI | 海上漂浮风电方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/FloatingOffshoreWindEnergy.html>`_
+- `WOEAI | 海上漂浮风电方向介绍 <https://woeai.readthedocs.io/zh-cn/latest/FloatingOffshoreWindTurbine.html>`_
 - `WOEAI | 主页 <https://woeai.readthedocs.io/zh-cn/latest/>`_
 
 完整引用

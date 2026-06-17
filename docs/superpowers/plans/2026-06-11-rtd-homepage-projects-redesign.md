@@ -364,7 +364,7 @@ git commit -m "docs: move government project support into research pages"
 In `docs/source/EngineeringApplications.rst`, replace each `公开证据` line that references `projects-*` or `:doc:\`Projects\``:
 
 ```rst
-公开证据：:ref:`building-wind-project-support`、:doc:`BuildingStructuralWindResistance`、:doc:`PublicationsByResearch`。
+公开证据：:ref:`building-wind-project-support`、:doc:`BuildingStructuralWindResistance`、:doc:`PublicationsByYear`。
 ```
 
 Use that line for `数值风洞与湍动入流`.
@@ -376,7 +376,7 @@ Use that line for `数值风洞与湍动入流`.
 Use that line for `高层建筑抗风与优化`.
 
 ```rst
-公开证据：:ref:`floating-wind-project-support`、:ref:`engineering-enterprise-project-evidence`、:doc:`FloatingOffshoreWindEnergy`、:doc:`PublicationsByResearch`。
+公开证据：:ref:`floating-wind-project-support`、:ref:`engineering-enterprise-project-evidence`、:doc:`FloatingOffshoreWindEnergy`、:doc:`PublicationsByYear`。
 ```
 
 Use that line for `浮式风机系统一体化分析与优化`.

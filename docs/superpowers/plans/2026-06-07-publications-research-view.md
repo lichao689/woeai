@@ -51,7 +51,7 @@
 
 新增：
 
-- `docs/source/PublicationsByResearch.rst`
+- `docs/source/PublicationsByYear.rst`
 
 推荐原因：
 
@@ -66,12 +66,12 @@
 ---------------------
 
 - 当前页：按发表年份倒序浏览完整期刊论文清单。
-- :doc:`PublicationsByResearch`：按研究方向浏览，方向内按发表年份倒序聚合。
+- :doc:`PublicationsByYear`：按研究方向浏览，方向内按发表年份倒序聚合。
 ```
 
-同时在 `docs/source/index.rst` 的隐藏 toctree 中加入 `PublicationsByResearch`，使页面参与 Sphinx 构建和导航索引。
+同时在 `docs/source/index.rst` 的隐藏 toctree 中加入 `PublicationsByYear`，使页面参与 Sphinx 构建和导航索引。
 
-`docs/source/PublicationsByResearch.rst` 建议结构：
+`docs/source/PublicationsByYear.rst` 建议结构：
 
 ```rst
 按研究方向浏览学术成果 Publications by Research Direction
@@ -165,7 +165,7 @@
 1. 新增常量：
 
 ```python
-PUBLICATIONS_BY_RESEARCH_PATH = ROOT / "docs/source/PublicationsByResearch.rst"
+PUBLICATIONS_BY_YEAR_PATH = ROOT / "docs/source/PublicationsByYear.rst"
 RESEARCH_MAP_PATH = ROOT / "docs/data/publication-research-map.json"
 RESEARCH_FAMILY_ORDER = ("建筑结构抗风", "海上漂浮风电")
 ```
@@ -194,7 +194,7 @@ def validate_research_map(items, research_map) -> None:
 4. 新增方向页生成函数：
 
 ```python
-def build_publications_by_research_rst(items, research_map) -> str:
+def build_publications_by_year_rst(items, research_map) -> str:
     ...
 ```
 
@@ -209,14 +209,14 @@ def build_publications_by_research_rst(items, research_map) -> str:
 ```python
 research_map = load_research_map()
 validate_research_map(items, research_map)
-by_research_page = build_publications_by_research_rst(items, research_map)
+by_year_page = build_publications_by_year_rst(items, research_map)
 ...
-PUBLICATIONS_BY_RESEARCH_PATH.write_text(by_research_page, encoding="utf-8")
+PUBLICATIONS_BY_YEAR_PATH.write_text(by_year_page, encoding="utf-8")
 ```
 
 6. 更新 dry-run 输出：
 
-- 输出将写入 `PublicationsByResearch.rst`。
+- 输出将写入 `PublicationsByYear.rst`。
 - 输出分类覆盖数。
 - 输出每个 research family 的论文数量。
 
@@ -236,15 +236,15 @@ PUBLICATIONS_BY_RESEARCH_PATH.write_text(by_research_page, encoding="utf-8")
 1. 修改 `docs/source/Publications.rst` 生成模板：
    - 在 `page_header(...)` 中加入 `浏览方式 View Options`。
    - 说明当前页按发表年份浏览完整清单。
-   - 链接 `:doc:`PublicationsByResearch``。
+   - 链接 `:doc:`PublicationsByYear``。
 
-2. 新增 `docs/source/PublicationsByResearch.rst`：
+2. 新增 `docs/source/PublicationsByYear.rst`：
    - 首次可以由脚本生成。
    - 标题使用 `按研究方向浏览学术成果 Publications by Research Direction`。
    - 引导读者回到 `Publications.rst` 查看完整引文、DOI 和指标。
 
 3. 修改 `docs/source/index.rst`：
-   - 在 hidden toctree 中加入 `PublicationsByResearch`。
+   - 在 hidden toctree 中加入 `PublicationsByYear`。
    - 不一定把它放入首页显式正文；先让 `Publications.rst` 承担切换入口。
 
 4. 修改 `CONTEXT.md`：
@@ -268,7 +268,7 @@ git diff --check
 
 检查内容：
 
-- `docs/source/PublicationsByResearch.rst` 存在。
+- `docs/source/PublicationsByYear.rst` 存在。
 - 两个 first-level family 都存在，且顺序为 `建筑结构抗风`、`海上漂浮风电`。
 - 每个 family 内年份倒序。
 - 方向页中每个 `:ref:` target 都能在 `docs/source/Publications.rst` 找到对应 anchor。
@@ -280,7 +280,7 @@ git diff --check
 本地构建后人工检查：
 
 - `Publications.html` 中有清晰的两种浏览方式入口。
-- `PublicationsByResearch.html` 的层级是 `研究方向 -> 年份 -> 论文`。
+- `PublicationsByYear.html` 的层级是 `研究方向 -> 年份 -> 论文`。
 - 点击方向页条目能跳转到 `Publications.html` 的对应论文锚点。
 - 页面没有把 subdirection 提升为第一层级。
 - 页面没有新增单位、合作方、项目细节、个人隐私或未确认指标。
@@ -296,7 +296,7 @@ git diff --check
 2. `docs: generate publications research view`
    - `scripts/update-publications-from-zotero.py`
    - `docs/source/Publications.rst`
-   - `docs/source/PublicationsByResearch.rst`
+   - `docs/source/PublicationsByYear.rst`
    - snapshot 更新
 
 3. `test: check publications research view links`
@@ -379,7 +379,7 @@ DX 修改建议：检查脚本的报错要输出 Zotero key、标题和年份，
 执行时采用以下最终决策：
 
 - 保留 `Publications.rst` 为按年份倒序的完整权威列表。
-- 新增 `PublicationsByResearch.rst` 为按方向浏览索引。
+- 新增 `PublicationsByYear.rst` 为按方向浏览索引。
 - 方向页第一层级只使用 `建筑结构抗风` 和 `海上漂浮风电`。
 - 方向页第二层级按年份倒序。
 - 方向页条目链接回 `Publications.rst` 的稳定 RST anchor，不复制完整长引文。

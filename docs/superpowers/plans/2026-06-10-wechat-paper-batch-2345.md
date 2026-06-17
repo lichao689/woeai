@@ -82,7 +82,7 @@ Modify shared integration files only in controller/final integration tasks:
 - `docs/source/Research.rst`
 - `docs/source/index.rst`
 
-Do not modify `docs/source/Publications.rst` or `docs/source/PublicationsByResearch.rst` unless a verification check reveals a real citation mismatch with Zotero or the existing public record.
+Do not modify `docs/source/Publications.rst` or `docs/source/PublicationsByYear.rst` unless a verification check reveals a real citation mismatch with Zotero or the existing public record.
 
 ## Subagent Execution Model
 

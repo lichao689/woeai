@@ -4,7 +4,7 @@
 
 **Goal:** 让"按研究方向浏览"成为学术成果页的默认视图，并在该视图中把论文精解标题融入期刊引用上方。
 
-**Architecture:** 交换 `update-publications-from-zotero.py` 里两个生成函数的职责——`build_publications_rst` 改为按方向分组（成为主视图），`build_publications_by_research_rst` 改为按年份倒序（成为子视图）。锚点定义随之移到主视图。主视图里对有精解的论文，在引用行上方插入精解标题行。移除独立的论文精解 section（保留 toctree 注册）。
+**Architecture:** 交换 `update-publications-from-zotero.py` 里两个生成函数的职责——`build_publications_rst` 改为按方向分组（成为主视图），`build_publications_by_year_rst` 改为按年份倒序（成为子视图）。锚点定义随之移到主视图。主视图里对有精解的论文，在引用行上方插入精解标题行。移除独立的论文精解 section（保留 toctree 注册）。
 
 **Tech Stack:** Python 3.12（标准库），Sphinx RST，unittest。脚本 `scripts/update-publications-from-zotero.py`，工具 `tools/publications/artifacts.py`。
 
@@ -14,15 +14,15 @@
 
 当前两个视图的生成和锚点归属：
 
-- **`Publications.rst`**（学术成果页，主入口）：`build_publications_rst` 生成，按年份倒序。**拥有锚点**（`.. _ref-xxx:`）。顶部有 banner 指向 PublicationsByResearch，有 `.. include:: _paper-notes-fragment.rst`（论文精解 section），然后是期刊论文列表。
-- **`PublicationsByResearch.rst`**（按研究方向浏览，子页）：`build_publications_by_research_rst` 生成，按方向分组。**不拥有锚点**，用 `:ref:` 链接回 Publications.rst 的锚点。没有 banner。
+- **`Publications.rst`**（学术成果页，主入口）：`build_publications_rst` 生成，按年份倒序。**拥有锚点**（`.. _ref-xxx:`）。顶部有 banner 指向 PublicationsByYear，有 `.. include:: _paper-notes-fragment.rst`（论文精解 section），然后是期刊论文列表。
+- **`PublicationsByYear.rst`**（按研究方向浏览，子页）：`build_publications_by_year_rst` 生成，按方向分组。**不拥有锚点**，用 `:ref:` 链接回 Publications.rst 的锚点。没有 banner。
 - 精解标题数据在 `wechat/backlog/selected-papers.yml`（`publication_ref` + `zotero_key` + `title`）。标题格式是 `方向前缀 | 精解标题`，需要去掉前缀。
 - `artifacts.py` 生成 `_paper-notes-fragment.rst`，包含 toctree（注册 paper-notes 页面）+ 论文精解 section（`论文精解` 标题 + 按方向分组的精解列表）。
 
 ## 目标状态
 
 - **`Publications.rst`**（学术成果页，主入口）：按**研究方向**分组。拥有锚点。banner 指向"按年份倒序浏览"。期刊论文列表里，有精解的论文在引用行上方有精解标题行。不再有独立论文精解 section。
-- **`PublicationsByResearch.rst`**（按年份倒序浏览，子页）：按**年份倒序**。不拥有锚点，用 `:ref:` 链接回 Publications.rst。有 banner 指回学术成果页。
+- **`PublicationsByYear.rst`**（按年份倒序浏览，子页）：按**年份倒序**。不拥有锚点，用 `:ref:` 链接回 Publications.rst。有 banner 指回学术成果页。
 - **`_paper-notes-fragment.rst`**：只保留 toctree（注册 paper-notes 页面），移除论文精解 section。
 - **首页"最新学术进展"**：不受影响（仍由 artifacts.py 的 `render_latest_paper_notes` 生成，数据源不变）。
 
@@ -41,7 +41,7 @@
 - Modify: `tests/test_publications_research_view.py` — 更新断言
 - Modify: `tests/test_update_publications_from_zotero.py` — 更新断言
 - Modify: `CONTEXT.md` — 同步视图定义
-- Regenerate: `docs/source/Publications.rst`, `docs/source/PublicationsByResearch.rst`（跑脚本）
+- Regenerate: `docs/source/Publications.rst`, `docs/source/PublicationsByYear.rst`（跑脚本）
 
 ---
 
@@ -51,14 +51,14 @@
 - Modify: `scripts/update-publications-from-zotero.py:641-695`
 - Test: `tests/test_update_publications_from_zotero.py`
 
-**核心改动**：`build_publications_rst` 改为按方向分组并拥有锚点；`build_publications_by_research_rst` 改为按年份倒序并用 `:ref:` 链接。
+**核心改动**：`build_publications_rst` 改为按方向分组并拥有锚点；`build_publications_by_year_rst` 改为按年份倒序并用 `:ref:` 链接。
 
 - [ ] **Step 1: 写失败测试——主视图按方向分组**
 
 在 `tests/test_update_publications_from_zotero.py` 的测试类里加一个测试，验证 `build_publications_rst` 按方向分组而非按年份：
 
 ```python
-def test_publications_rst_groups_by_research_family(self) -> None:
+def test_publications_rst_groups_by_year_family(self) -> None:
     # After the view swap, Publications.rst (the main page) groups by
     # research family first, not by year.
     items = [
@@ -104,12 +104,12 @@ def build_publications_rst(
     return "\n".join(sections).rstrip() + "\n"
 ```
 
-- [ ] **Step 4: 改 `build_publications_by_research_rst` 为按年份倒序 + `:ref:` 链接**
+- [ ] **Step 4: 改 `build_publications_by_year_rst` 为按年份倒序 + `:ref:` 链接**
 
-把当前 `build_publications_by_research_rst`（673-695 行）改为按年份倒序，用 `research_full_entry`（已有 `:ref:` 链接逻辑）。替换为：
+把当前 `build_publications_by_year_rst`（673-695 行）改为按年份倒序，用 `research_full_entry`（已有 `:ref:` 链接逻辑）。替换为：
 
 ```python
-def build_publications_by_research_rst(items: list[dict[str, Any]]) -> str:
+def build_publications_by_year_rst(items: list[dict[str, Any]]) -> str:
     sections = [
         ".. role:: student-first-author",
         "",
@@ -148,23 +148,23 @@ def build_publications_by_research_rst(items: list[dict[str, Any]]) -> str:
 
 - [ ] **Step 5: 改 `page_header`——banner 文字指向按年份视图**
 
-把 `page_header`（599-629 行）的 banner 文字从"按研究方向浏览"改为"按年份倒序浏览"。toctree 注册改为 `按年份倒序浏览 Publications by Year <PublicationsByResearch>`。移除 `.. include:: _paper-notes-fragment.rst`（精解 section 将在 Task 3 移除，但 include 先保留——Task 3 会改 fragment 内容）。
+把 `page_header`（599-629 行）的 banner 文字从"按研究方向浏览"改为"按年份倒序浏览"。toctree 注册改为 `按年份倒序浏览 Publications by Year <PublicationsByYear>`。移除 `.. include:: _paper-notes-fragment.rst`（精解 section 将在 Task 3 移除，但 include 先保留——Task 3 会改 fragment 内容）。
 
 实际上 `page_header` 不再需要 `items_by_key` 参数（精解标题不在 page_header 里加），但签名保留以兼容。banner 行改为：
 
 ```python
-"   :doc:`按年份倒序浏览学术成果 Publications by Year <PublicationsByResearch>`：按发表年份倒序浏览完整期刊论文清单。",
+"   :doc:`按年份倒序浏览学术成果 Publications by Year <PublicationsByYear>`：按发表年份倒序浏览完整期刊论文清单。",
 ```
 
 toctree 注册改为：
 
 ```python
-"   按年份倒序浏览 Publications by Year <PublicationsByResearch>",
+"   按年份倒序浏览 Publications by Year <PublicationsByYear>",
 ```
 
 - [ ] **Step 6: 改 `write_outputs` 的调用签名**
 
-`write_outputs` 里（当前 `page = build_publications_rst(items)`），改为 `page = build_publications_rst(items, research_map)`。`by_research_page = build_publications_by_research_rst(items, research_map)` 改为 `by_research_page = build_publications_by_research_rst(items)`。
+`write_outputs` 里（当前 `page = build_publications_rst(items)`），改为 `page = build_publications_rst(items, research_map)`。`by_year_page = build_publications_by_year_rst(items, research_map)` 改为 `by_year_page = build_publications_by_year_rst(items)`。
 
 - [ ] **Step 7: 运行测试，确认主视图分组测试通过**
 
@@ -186,7 +186,7 @@ git commit -m "refactor: swap publications views — thematic becomes main, chro
 - Modify: `tests/test_publications_research_view.py`
 - Modify: `tests/test_update_publications_from_zotero.py`
 
-**核心改动**：现有测试断言了旧的"Publications.rst 按年份、PublicationsByResearch 按方向"结构，现在反过来了，要更新断言。
+**核心改动**：现有测试断言了旧的"Publications.rst 按年份、PublicationsByYear 按方向"结构，现在反过来了，要更新断言。
 
 - [ ] **Step 1: 读现有断言，列出需要改的**
 
@@ -196,13 +196,13 @@ Run: `python3 -m unittest discover -s tests 2>&1 | grep "FAIL:\|ERROR:"`
 - [ ] **Step 2: 更新 `test_publications_research_view.py` 的断言**
 
 以下断言需要反转语义（文件 `tests/test_publications_research_view.py`）：
-- `test_publications_page_links_to_research_view`：断言 Publications.rst（主视图）现在按方向分组，banner 指向"按年份"。`PublicationsByResearch` 的 toctree 注册文字改为"按年份倒序浏览"。
-- `test_research_view_groups_every_publication_by_family_then_subdirection`：现在测的是 Publications.rst（主视图），不是 PublicationsByResearch.rst。断言的文件引用要对调。
+- `test_publications_page_links_to_research_view`：断言 Publications.rst（主视图）现在按方向分组，banner 指向"按年份"。`PublicationsByYear` 的 toctree 注册文字改为"按年份倒序浏览"。
+- `test_research_view_groups_every_publication_by_family_then_subdirection`：现在测的是 Publications.rst（主视图），不是 PublicationsByYear.rst。断言的文件引用要对调。
 - `test_research_view_uses_the_same_publication_expression_as_chronological_view`：引用一致性断言不变（两个视图引用文字仍应一致），但读取的文件角色对调。
-- `test_publications_page_groups_early_papers_without_degree_theses`：这个断言现在要针对 PublicationsByResearch.rst（按年份视图）。
+- `test_publications_page_groups_early_papers_without_degree_theses`：这个断言现在要针对 PublicationsByYear.rst（按年份视图）。
 - `_paper-notes-fragment` 相关断言（Task 3 会移除 section，这里先不碰）。
 
-逐个修改断言里的文件常量（`PUBLICATIONS` vs `PUBLICATIONS_BY_RESEARCH`）和预期文字。
+逐个修改断言里的文件常量（`PUBLICATIONS` vs `PUBLICATIONS_BY_YEAR`）和预期文字。
 
 - [ ] **Step 3: 更新 `test_update_publications_from_zotero.py` 的断言**
 
@@ -411,21 +411,21 @@ git commit -m "feat: inline deep-dive titles above citations in thematic view"
 ### Task 5: 重新生成页面、更新 CONTEXT.md、全量验证
 
 **Files:**
-- Regenerate: `docs/source/Publications.rst`, `docs/source/PublicationsByResearch.rst`
+- Regenerate: `docs/source/Publications.rst`, `docs/source/PublicationsByYear.rst`
 - Modify: `CONTEXT.md`
 - Run: `./scripts/check-docs.sh`
 
 - [ ] **Step 1: 重新生成两个页面**
 
 Run: `python3 scripts/update-publications-from-zotero.py`
-Expected: 写入 Publications.rst（按方向 + 精解标题）、PublicationsByResearch.rst（按年份）。
+Expected: 写入 Publications.rst（按方向 + 精解标题）、PublicationsByYear.rst（按年份）。
 
 - [ ] **Step 2: 人工检查生成结果**
 
 Run: `head -60 docs/source/Publications.rst`
 确认：banner 指向"按年份倒序浏览"；按方向分组；有精解的论文引用上方有标题行。
 
-Run: `head -30 docs/source/PublicationsByResearch.rst`
+Run: `head -30 docs/source/PublicationsByYear.rst`
 确认：标题"按年份倒序浏览"；有 banner 指回学术成果页；按年份分组。
 
 - [ ] **Step 3: 跑完整门禁**
@@ -436,7 +436,7 @@ Expected: `build succeeded` + 所有测试 PASS。
 - [ ] **Step 4: 更新 CONTEXT.md**
 
 更新以下词条的语义描述（哪个是主视图、哪个是子视图交换了）：
-- `Chronological Publication View`：现在描述"按年份倒序浏览"是**子视图**（`PublicationsByResearch.rst`，但语义是按年份），文件名保留但标题改为"按年份倒序浏览"。
+- `Chronological Publication View`：现在描述"按年份倒序浏览"是**子视图**（`PublicationsByYear.rst`，但语义是按年份），文件名保留但标题改为"按年份倒序浏览"。
 - `Thematic Publication View`：现在描述"按研究方向浏览"是**主视图**（`Publications.rst`），在 toctree 里是默认入口。
 - `Academic Outputs`：更新描述——默认按研究方向展示，论文精解标题融入引用。
 - `Paper Deep-Dive Area`：更新——不再有独立 section，精解标题融入期刊论文列表。
@@ -468,11 +468,11 @@ git push origin main
 - 需求 1（交换默认视图）：Task 1 交换分组逻辑 + Task 2 更新测试 ✓
 - 需求 2（精解标题融入引用上方，只在主视图）：Task 4 插入精解标题行 + Task 3 移除独立 section ✓
 - 精解标题去方向前缀：Task 4 Step 3 的 `split(" | ", 1)[1]` ✓
-- 按年份视图不加精解标题：Task 4 只改 `build_publications_rst`（主视图），不改 `build_publications_by_research_rst`（年份视图）✓
+- 按年份视图不加精解标题：Task 4 只改 `build_publications_rst`（主视图），不改 `build_publications_by_year_rst`（年份视图）✓
 
 **Placeholder scan:** 无 TBD/TODO，每个步骤都有具体代码或命令。
 
-**Type consistency:** `build_publications_rst` 签名从 `(items)` 改为 `(items, research_map)`，`build_publications_by_research_rst` 从 `(items, research_map)` 改为 `(items)`——write_outputs 调用在 Task 1 Step 6 同步改 ✓。`load_deep_dive_titles` 返回 `dict[str, tuple[str, str]]`，在 Task 4 Step 4 用 `.get(item["key"])` 解包 ✓。
+**Type consistency:** `build_publications_rst` 签名从 `(items)` 改为 `(items, research_map)`，`build_publications_by_year_rst` 从 `(items, research_map)` 改为 `(items)`——write_outputs 调用在 Task 1 Step 6 同步改 ✓。`load_deep_dive_titles` 返回 `dict[str, tuple[str, str]]`，在 Task 4 Step 4 用 `.get(item["key"])` 解包 ✓。
 
 **风险点：**
 1. `publication_number` 编号——交换后主视图（按方向）拥有 `[N]` 编号，年份视图用 `:ref:` 链接。编号仍由 `assign_publication_numbers` 统一分配（在 write_outputs 里，按 items 顺序），不受分组方式影响。✓

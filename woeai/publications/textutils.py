@@ -25,8 +25,8 @@ CORRESPONDING_AUTHOR_LABELS = ("通讯作者", "corresponding author", "correspo
 EARLY_PUBLICATION_CUTOFF_YEAR = 2019
 EARLIER_PUBLICATIONS_TITLE = "更早 Earlier"
 DEGREE_THESIS_GROUPS = (
-    ("phd", "博士学位论文 PhD Theses"),
-    ("master", "硕士学位论文 Master Theses"),
+    ("phd", "博士生 PhD Students"),
+    ("master", "硕士生 Master Students"),
 )
 
 PINYIN_SURNAMES = {

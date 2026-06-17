@@ -26,30 +26,34 @@
 
 .. _ref-zhao2026-BE:
 
-[74] :student-first-author:`Zhao Peisheng`; **Li Chao**; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu\*, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. **Building and Environment**, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: **7.6 (Q1)**. 中科院分区: **1**.
+[75] :student-first-author:`Zhao Peisheng`; **Li Chao**; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu\*, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. **Building and Environment**, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: **7.6 (Q1)**. 中科院分区: **1**.
 
 .. _ref-he2026-OE:
 
-[73] :student-first-author:`He Xin`; **Li Chao**\*; Chen Lingwei; Hu Gang; Ou Jinping, Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks[J]. **Ocean Engineering**, 2026, 353: 124728. https://doi.org/10.1016/j.oceaneng.2026.124728. 中科院分区: **2**.
+[74] :student-first-author:`He Xin`; **Li Chao**\*; Chen Lingwei; Hu Gang; Ou Jinping, Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks[J]. **Ocean Engineering**, 2026, 353: 124728. https://doi.org/10.1016/j.oceaneng.2026.124728. 中科院分区: **2**.
 
 .. _ref-zhao2026-BS:
 
-[72] :student-first-author:`Zhao Peisheng`; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. **Building Simulation**, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
+[73] :student-first-author:`Zhao Peisheng`; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. **Building Simulation**, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
 
 .. _ref-huang2026-JWEIA:
 
-[71] Huang Xigui; Chen Shangxin; Wu Teng; Hu Gang; **Li Chao**; Long Wujian; Li Lixiao\*, Simulation of non-stationary winds in typhoon field based on turbulent coherent structure and AR-GARCH model[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2026, 269: 106302. https://doi.org/10.1016/j.jweia.2025.106302. 中科院分区: **2**.
+[72] Huang Xigui; Chen Shangxin; Wu Teng; Hu Gang; **Li Chao**; Long Wujian; Li Lixiao\*, Simulation of non-stationary winds in typhoon field based on turbulent coherent structure and AR-GARCH model[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2026, 269: 106302. https://doi.org/10.1016/j.jweia.2025.106302. 中科院分区: **2**.
 
 .. _ref-he2026-OE-structural:
 
-[70] :student-first-author:`He Weiwen`; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
+[71] :student-first-author:`He Weiwen`; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
 .. _ref-tang2026-RE:
 
-[69] Tang Lingxiao; **Li Chao**\*; Zhao Zihan\*; Chen Lingwei; Zhang Mingming, A novel framework for temporal super-resolution of wind in urban energy applications[J]. **Renewable Energy**, 2026, 256: 124336. https://doi.org/10.1016/j.renene.2025.124336. 影响因子: **9.1 (Q1)**. 中科院分区: **1**. 引用次数: **1**.
+[70] Tang Lingxiao; **Li Chao**\*; Zhao Zihan\*; Chen Lingwei; Zhang Mingming, A novel framework for temporal super-resolution of wind in urban energy applications[J]. **Renewable Energy**, 2026, 256: 124336. https://doi.org/10.1016/j.renene.2025.124336. 影响因子: **9.1 (Q1)**. 中科院分区: **1**. 引用次数: **1**.
 
 2025
 ~~~~~~~~~~~~
+
+.. _ref-zhang2025-CSICM:
+
+[69] Zhang Dongqin; Zhong Xi; Wei Kai; Zheng Shunyun; **Li Chao**; Hu Gang; Zhang Jize\*, On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom[J]. **Case Studies in Construction Materials**, 2025, 23: e05031. https://doi.org/10.1016/j.cscm.2025.e05031. 中科院分区: **2**.
 
 .. _ref-he2025-POF:
 
@@ -345,39 +349,3 @@
 .. _ref-xiao2009-HNLGDXXB:
 
 [1] 肖仪清; **李朝**; 欧进萍; 宋丽莉; 李秋胜, 复杂地形风能评估的CFD方法[J]. **华南理工大学学报(自然科学版)**, 2009, 37(9): 30～35.
-
-学位论文 Degree Theses
-------------------------
-
-博士学位论文 PhD Theses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- 周盛涛(Zhou Shengtao)，2021，博士学位论文：基于快速动力响应分析的半潜式风机下部结构主尺寸优化；去向：风电企业。
-- 王靖含(Wang Jinghan)，2022，博士学位论文：粗糙场地大气边界层湍流风场数值生成方法研究；去向：高校任教。
-- 赵子涵(Zhao Zihan)，2022，博士学位论文：近地边界层风场的降尺度复原模拟方法研究；去向：高校任教。
-- 张文通(Zhang Wentong)，2023，博士学位论文：输电塔动力风荷载反演及其风致倒塌失效研究；去向：高校任教。
-- 郑舜云(Zheng Shunyun)，2024-11，博士学位论文：半潜式风机支撑结构的尺度优化及强度评估；去向：风电企业。
-- 陈铃伟(Chen Lingwei)，2025-09，博士学位论文：基于傅里叶合成法的时空相关湍流风场大涡模拟研究；去向：高校任教。
-- 何欣(He Xin)，博士生在读。
-- 刘尚佩(Liu Shangpei)，博士生在读。
-- 杨军辉(Yang Junhui)，博士生在读。
-- 丁意恒(Ding Yihang)，博士生在读。
-- 裴若鹏(Pei Ruopeng)，博士生在读。
-
-硕士学位论文 Master Theses
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- 王一鸣(Wang Yiming)，2023，硕士学位论文：基于高频天平风洞试验的高层建筑非线性振型响应分析。
-- 王沛岑(Wang Peicen)，2023，硕士学位论文：耦合系泊系统的数值波浪水槽研究。
-- 李超(Li Chao)，2023，硕士学位论文：基于气象资料统计的滨海城市微尺度风气候分析。
-- 韩芷宸(Han Zhichen)，2023，硕士学位论文：基于Cesium的深圳市三维模型可视化及风灾指标提取研究。
-- 陈翔(Chen Xiang)，2023，硕士学位论文：高层建筑风荷载大涡模拟的影响因素及误差研究。
-- 周子豪(Zhou Zihao)，2024，硕士学位论文：浮式风机悬链线系泊的频域计算及优化。
-- 袁野(Yuan Ye)，2024，硕士学位论文：大跨度空间结构多目标等效静力风荷载时域优化计算。
-- 蒋建勋(Jiang Jianxun)，2024，硕士学位论文：基于倾斜影像密集匹配点云的城市风环境CFD模型重建。
-- 何蔚文(He Weiwen)，2024，硕士学位论文：新型半潜式钢筋混凝土风机基础结构设计与优化。
-- 范文涛(Fan Wentao)，2024，硕士学位论文：柔性光伏支架结构优化及抗风性能研究。
-- 赵培升(Zhao Peisheng)，2025，硕士学位论文：影像。
-- 汤澳(Tang Ao)，2025，硕士学位论文：图神经网络。
-- 秦佳伦(Qin Jialun)，2025，硕士学位论文：平衡大气边界层。
-- 刘金波(Liu Jinbo)，2025，硕士学位论文：考虑粘性水动力的浮式风机系统一体化耦合分析方法研究。

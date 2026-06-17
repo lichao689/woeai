@@ -1,12 +1,13 @@
 {
-  "generated_at": "2026-06-09T01:46:56.469404+00:00",
+  "generated_at": "2026-06-17T09:46:15.248957+00:00",
   "source_boundary": {
     "zotero_filter": {
       "inPublications": true,
       "itemType": "journalArticle"
     },
-    "count": 74,
-    "degree_theses_data": "docs/data/degree-theses.json"
+    "count": 75,
+    "degree_theses_data": "docs/data/degree-theses.json",
+    "teaching_data": "docs/data/teaching.json"
   },
   "csl_style": {
     "id": "http://www.zotero.org/styles/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01",
@@ -22,7 +23,7 @@
   "items": [
     {
       "zotero_key": "RLAA46YB",
-      "publication_number": 74,
+      "publication_number": 75,
       "anchor": "ref-zhao2026-BE",
       "old_anchor": "ref-zhao2026-BE",
       "year": 2026,
@@ -49,7 +50,7 @@
     },
     {
       "zotero_key": "4FX43CFT",
-      "publication_number": 73,
+      "publication_number": 74,
       "anchor": "ref-he2026-OE",
       "old_anchor": "ref-he2026-OE",
       "year": 2026,
@@ -75,7 +76,7 @@
     },
     {
       "zotero_key": "CGKPKZ8I",
-      "publication_number": 72,
+      "publication_number": 73,
       "anchor": "ref-zhao2026-BS",
       "old_anchor": "ref-zhao2026-BS",
       "year": 2026,
@@ -104,7 +105,7 @@
     },
     {
       "zotero_key": "IBLEEY34",
-      "publication_number": 71,
+      "publication_number": 72,
       "anchor": "ref-huang2026-JWEIA",
       "old_anchor": "ref-huang2026-JWEIA",
       "year": 2026,
@@ -132,7 +133,7 @@
     },
     {
       "zotero_key": "EMID6LAJ",
-      "publication_number": 70,
+      "publication_number": 71,
       "anchor": "ref-he2026-OE-structural",
       "old_anchor": "ref-he2026-OE-structural",
       "year": 2026,
@@ -159,7 +160,7 @@
     },
     {
       "zotero_key": "XM44D697",
-      "publication_number": 69,
+      "publication_number": 70,
       "anchor": "ref-tang2026-RE",
       "old_anchor": "ref-tang2026-RE",
       "year": 2026,
@@ -183,6 +184,34 @@
       "subdirection": "数值风洞与湍动入流",
       "rendered": "Tang Lingxiao; Li Chao; Zhao Zihan; Chen Lingwei; Zhang Mingming, A novel framework for temporal super-resolution of wind in urban energy applications[J]. Renewable Energy, 2026, 256: 124336. https://doi.org/10.1016/j.renene.2025.124336. 影响因子: 9.1 (Q1). 中科院分区: 1. 引用次数: 1.",
       "metrics": "影响因子: 9.1 (Q1). 中科院分区: 1. 引用次数: 1."
+    },
+    {
+      "zotero_key": "5ALWDPSB",
+      "publication_number": 69,
+      "anchor": "ref-zhang2025-CSICM",
+      "old_anchor": null,
+      "year": 2025,
+      "date": "2025/12",
+      "title": "On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom",
+      "publicationTitle": "Case Studies in Construction Materials",
+      "doi": "10.1016/j.cscm.2025.e05031",
+      "creators": [
+        "Dongqin Zhang",
+        "Xi Zhong",
+        "Kai Wei",
+        "Shunyun Zheng",
+        "Chao Li",
+        "Gang Hu",
+        "Jize Zhang"
+      ],
+      "student_first_author": null,
+      "corresponding_authors": [
+        "Zhang Jize"
+      ],
+      "research_family": "海上漂浮风电",
+      "subdirection": "数值风浪流水池",
+      "rendered": "Zhang Dongqin; Zhong Xi; Wei Kai; Zheng Shunyun; Li Chao; Hu Gang; Zhang Jize, On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom[J]. Case Studies in Construction Materials, 2025, 23: e05031. https://doi.org/10.1016/j.cscm.2025.e05031. 中科院分区: 2.",
+      "metrics": "中科院分区: 2."
     },
     {
       "zotero_key": "ES37XMDV",
@@ -289,7 +318,7 @@
         "Li Chao"
       ],
       "research_family": "海上漂浮风电",
-      "subdirection": "数值风浪流水池",
+      "subdirection": "浮式混凝土平台结构设计",
       "rendered": "Zheng Shunyun; Liu Shangpei; Li Chao; Wang Xiaolu; Ou Jinping, Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine[J]. Ocean Engineering, 2025, 332: 121336. https://doi.org/10.1016/j.oceaneng.2025.121336. 影响因子: 5.5 (Q1). 中科院分区: 2. 引用次数: 2.",
       "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2. 引用次数: 2."
     },

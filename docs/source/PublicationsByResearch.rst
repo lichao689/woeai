@@ -12,13 +12,13 @@
 数值风洞与湍动入流
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`[74] <ref-zhao2026-BE>` :student-first-author:`Zhao Peisheng`; **Li Chao**; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu\*, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. **Building and Environment**, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: **7.6 (Q1)**. 中科院分区: **1**.
+:ref:`[75] <ref-zhao2026-BE>` :student-first-author:`Zhao Peisheng`; **Li Chao**; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu\*, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. **Building and Environment**, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: **7.6 (Q1)**. 中科院分区: **1**.
 
-:ref:`[72] <ref-zhao2026-BS>` :student-first-author:`Zhao Peisheng`; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. **Building Simulation**, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
+:ref:`[73] <ref-zhao2026-BS>` :student-first-author:`Zhao Peisheng`; **Li Chao**; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu\*, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. **Building Simulation**, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
 
-:ref:`[71] <ref-huang2026-JWEIA>` Huang Xigui; Chen Shangxin; Wu Teng; Hu Gang; **Li Chao**; Long Wujian; Li Lixiao\*, Simulation of non-stationary winds in typhoon field based on turbulent coherent structure and AR-GARCH model[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2026, 269: 106302. https://doi.org/10.1016/j.jweia.2025.106302. 中科院分区: **2**.
+:ref:`[72] <ref-huang2026-JWEIA>` Huang Xigui; Chen Shangxin; Wu Teng; Hu Gang; **Li Chao**; Long Wujian; Li Lixiao\*, Simulation of non-stationary winds in typhoon field based on turbulent coherent structure and AR-GARCH model[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2026, 269: 106302. https://doi.org/10.1016/j.jweia.2025.106302. 中科院分区: **2**.
 
-:ref:`[69] <ref-tang2026-RE>` Tang Lingxiao; **Li Chao**\*; Zhao Zihan\*; Chen Lingwei; Zhang Mingming, A novel framework for temporal super-resolution of wind in urban energy applications[J]. **Renewable Energy**, 2026, 256: 124336. https://doi.org/10.1016/j.renene.2025.124336. 影响因子: **9.1 (Q1)**. 中科院分区: **1**. 引用次数: **1**.
+:ref:`[70] <ref-tang2026-RE>` Tang Lingxiao; **Li Chao**\*; Zhao Zihan\*; Chen Lingwei; Zhang Mingming, A novel framework for temporal super-resolution of wind in urban energy applications[J]. **Renewable Energy**, 2026, 256: 124336. https://doi.org/10.1016/j.renene.2025.124336. 影响因子: **9.1 (Q1)**. 中科院分区: **1**. 引用次数: **1**.
 
 :ref:`[66] <ref-wang2025-POF>` :student-first-author:`Wang Jinghan`; He Xinyu; Jiang Shan; Chan P W; **Li Chao**; Ou Jinping; Duan Penghao\*; Li Lishuai, Evaluation of urban wind effects on flight path planning of delivery drones using computational fluid dynamics simulations[J]. **Physics of Fluids**, 2025, 37(8): 87124. https://doi.org/10.1063/5.0281373. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
@@ -73,7 +73,7 @@
 高层建筑抗风与优化
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`[73] <ref-he2026-OE>` :student-first-author:`He Xin`; **Li Chao**\*; Chen Lingwei; Hu Gang; Ou Jinping, Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks[J]. **Ocean Engineering**, 2026, 353: 124728. https://doi.org/10.1016/j.oceaneng.2026.124728. 中科院分区: **2**.
+:ref:`[74] <ref-he2026-OE>` :student-first-author:`He Xin`; **Li Chao**\*; Chen Lingwei; Hu Gang; Ou Jinping, Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks[J]. **Ocean Engineering**, 2026, 353: 124728. https://doi.org/10.1016/j.oceaneng.2026.124728. 中科院分区: **2**.
 
 :ref:`[68] <ref-he2025-POF>` :student-first-author:`He Xin`; **Li Chao**\*; Chen Lingwei; Hu Gang; Ou Jinping, Numerical investigation of nonlinear sloshing features and vibration mitigation efficiency of the implanted pole tuned liquid damper[J]. **Physics of Fluids**, 2025, 37(10): 103314. https://doi.org/10.1063/5.0293483. 中科院分区: **2**.
 
@@ -160,7 +160,7 @@
 浮式混凝土平台结构设计
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-:ref:`[70] <ref-he2026-OE-structural>` :student-first-author:`He Weiwen`; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
+:ref:`[71] <ref-he2026-OE-structural>` :student-first-author:`He Weiwen`; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
 :ref:`[65] <ref-zheng2025-OE>` :student-first-author:`Zheng Shunyun`; Liu Shangpei; **Li Chao**\*; Wang Xiaolu; Ou Jinping, Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine[J]. **Ocean Engineering**, 2025, 332: 121336. https://doi.org/10.1016/j.oceaneng.2025.121336. 影响因子: **5.5 (Q1)**. 中科院分区: **2**. 引用次数: **2**.
 
@@ -168,6 +168,8 @@
 
 数值风浪流水池
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:ref:`[69] <ref-zhang2025-CSICM>` Zhang Dongqin; Zhong Xi; Wei Kai; Zheng Shunyun; **Li Chao**; Hu Gang; Zhang Jize\*, On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom[J]. **Case Studies in Construction Materials**, 2025, 23: e05031. https://doi.org/10.1016/j.cscm.2025.e05031. 中科院分区: **2**.
 
 :ref:`[64] <ref-zheng2025-QHDXXB>` :student-first-author:`郑舜云`; 周盛涛; 石兵; **李朝**\*; 胡钢; 曾宇; 李利孝, 中心与偏心布置半潜风机动力特性的模型试验[J]. **清华大学学报（自然科学版）**, 2025: 1～14.
 

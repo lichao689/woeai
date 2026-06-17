@@ -87,6 +87,16 @@ def parse_rst_title(rtd_path: Path, fallback: str) -> str:
     return fallback
 
 
+def select_artifact_title(article_path: Path, rtd_path: Path, fallback: str) -> str:
+    rtd_title = parse_rst_title(rtd_path, fallback)
+    # New full RTD pages are independent 论文精解 pages. When their public title
+    # already says so, keep RTD navigation anchored to that page title instead
+    # of replacing it with the compact WeChat article title.
+    if "论文精解" in rtd_title:
+        return rtd_title
+    return parse_markdown_title(article_path, rtd_title)
+
+
 def load_artifacts(root: Path) -> list[PublicationArtifact]:
     backlog_path = root / "wechat/backlog/selected-papers.yml"
     artifacts: list[PublicationArtifact] = []
@@ -98,10 +108,7 @@ def load_artifacts(root: Path) -> list[PublicationArtifact]:
         article_path = root / f"wechat/articles/draft-public-safe/{publication_ref}.md"
         review_path = root / f"wechat/articles/review/{publication_ref}.review.md"
         rtd_path = root / f"docs/source/paper-notes/{publication_ref}.rst"
-        title = parse_markdown_title(
-            article_path,
-            parse_rst_title(rtd_path, paper.title or publication_ref),
-        )
+        title = select_artifact_title(article_path, rtd_path, paper.title or publication_ref)
         artifacts.append(
             PublicationArtifact(
                 publication_ref=publication_ref,

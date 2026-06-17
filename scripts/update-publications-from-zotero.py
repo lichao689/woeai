@@ -40,6 +40,8 @@ PUBLICATIONS_BY_RESEARCH_PATH = ROOT / "docs/source/PublicationsByResearch.rst"
 RESEARCH_MAP_PATH = ROOT / "docs/data/publication-research-map.json"
 SNAPSHOT_PATH = ROOT / "docs/superpowers/source-packets/2026-06-publications-zotero-snapshot.json"
 DEGREE_THESES_PATH = ROOT / "docs/data/degree-theses.json"
+TEACHING_PATH = ROOT / "docs/source/Teaching.rst"
+TEACHING_DATA_PATH = ROOT / "docs/data/teaching.json"
 
 BASE_URL = "http://127.0.0.1:23119/api/users/0"
 API_HEADERS = {"Zotero-API-Version": "3"}
@@ -265,10 +267,19 @@ def render_current_student_line(record: dict[str, Any]) -> str:
     return f"- {rst_escape(display_name)}，{rst_escape(status)}。"
 
 
-def degree_theses_section() -> str:
-    sections = ["学位论文 Degree Theses", "-" * 24, ""]
-    for group_key, group_title in DEGREE_THESIS_GROUPS:
-        sections.extend([group_title, "~" * 32, ""])
+def student_training_section() -> str:
+    """Render the numbered H3 subsections (2.1/2.2) of the student-training area.
+
+    Each entry in ``DEGREE_THESIS_GROUPS`` becomes a numbered subsection title
+    such as ``2.1 博士生 PhD Students``. The PhD subsection is followed by the
+    current doctoral students (在读). This produces only the H3 subsections; the
+    enclosing ``2 学生培养 Student Training`` H2 heading is emitted by
+    ``build_teaching_rst`` so the section can be reassembled in one place.
+    """
+    sections: list[str] = []
+    for index, (group_key, group_title) in enumerate(DEGREE_THESIS_GROUPS, start=1):
+        numbered_title = f"2.{index} {group_title}"
+        sections.extend([numbered_title, "~" * len(numbered_title), ""])
         records = iter_degree_theses(group_key)
         if not records:
             raise ZoteroError(f"Degree thesis group {group_key} has no records.")
@@ -279,6 +290,150 @@ def degree_theses_section() -> str:
                 sections.append(render_current_student_line(record))
         sections.append("")
     return "\n".join(sections).rstrip()
+
+
+def _underline(title: str, char: str, minimum: int = 12) -> str:
+    """Return an RST underline of ``char`` matching ``title`` width."""
+    return char * max(len(title), minimum)
+
+
+def load_teaching_courses() -> dict[str, list[dict[str, Any]]]:
+    """Read docs/data/teaching.json and return course rows keyed by group."""
+    payload = json.loads(TEACHING_DATA_PATH.read_text(encoding="utf-8"))
+    courses = payload.get("courses", {})
+    if not isinstance(courses, dict):
+        raise ZoteroError("teaching.json must contain a 'courses' object.")
+    result: dict[str, list[dict[str, Any]]] = {}
+    for group_key in ("undergraduate", "graduate"):
+        rows = courses.get(group_key, [])
+        if not isinstance(rows, list):
+            raise ZoteroError(f"teaching.json courses.{group_key} must be a list.")
+        validated: list[dict[str, Any]] = []
+        for row in rows:
+            if not isinstance(row, dict):
+                raise ZoteroError(f"teaching.json courses.{group_key} entry must be an object.")
+            required = ("title_cn", "major", "term", "period")
+            if not all(str(row.get(field) or "").strip() for field in required):
+                raise ZoteroError(f"Incomplete teaching course record: {row!r}")
+            validated.append(row)
+        result[group_key] = validated
+    return result
+
+
+def courses_subsection(title: str, rows: list[dict[str, Any]]) -> str:
+    """Render a course H3 subsection as an RST definition list."""
+    sections = [title, "~" * len(title), ""]
+    for row in rows:
+        title_cn = str(row["title_cn"]).strip()
+        title_en = str(row.get("title_en") or "").strip()
+        head = f"{title_cn} {title_en}".strip()
+        major = str(row["major"]).strip()
+        term = str(row["term"]).strip()
+        hours = row.get("hours")
+        period = str(row["period"]).strip()
+        detail = f"{major}，{term}"
+        if hours:
+            detail += f"，{hours}学时"
+        detail += f"，{period}"
+        sections.append(head)
+        sections.append(f"    {detail}")
+        sections.append("")
+    return "\n".join(sections).rstrip()
+
+
+def fetch_teaching_reform_items() -> list[dict[str, Any]]:
+    """Fetch teaching-reform publications from Zotero, newest first.
+
+    Selects every journalArticle that ``is_teaching_publication`` flags as a
+    teaching-reform paper (by key or title keyword). These papers live in the
+    Zotero My Publications library but are deliberately excluded from the
+    chronological and research-direction academic-output pages; they surface
+    here on the Teaching page instead. Results are sorted newest-first.
+    """
+    all_items = paginated("/items/top", {"include": "data"})
+    keys = [
+        item["key"]
+        for item in all_items
+        if item["data"].get("itemType") == "journalArticle" and is_teaching_publication(item)
+    ]
+    if not keys:
+        raise ZoteroError("No Zotero teaching-reform items found.")
+
+    enriched: list[dict[str, Any]] = []
+    for index in range(0, len(keys), 50):
+        chunk = keys[index : index + 50]
+        params = {
+            "itemKey": ",".join(chunk),
+            "include": "data,bib",
+            "style": CSL_STYLE_ID,
+            "limit": 100,
+        }
+        enriched.extend(paginated("/items/top", params))
+
+    enriched = [
+        item
+        for item in enriched
+        if item["data"].get("itemType") == "journalArticle" and is_teaching_publication(item)
+    ]
+    enriched.sort(
+        key=lambda item: (
+            -parse_date(item["data"].get("date"))[0],
+            -parse_date(item["data"].get("date"))[1],
+            -parse_date(item["data"].get("date"))[2],
+            normalize_title(item["data"].get("title")),
+        )
+    )
+    return enriched
+
+
+def render_teaching_reform_line(item: dict[str, Any]) -> str:
+    """Render a teaching-reform publication line without the ``[N]`` number."""
+    text = strip_bib_html(item.get("bib") or "")
+    text = rst_escape(text)
+    text = bold_journal_title(text, item)
+    text = bold_group_leader(text)
+    text = mark_corresponding_authors(text, item)
+    # ``[N]`` is stripped by strip_bib_html already, but rendered_entry adds one;
+    # teaching-reform entries do not participate in publication numbering, so
+    # guard against any leading bracketed number here.
+    text = re.sub(r"^\[\d+\]\s*", "", text)
+    return text
+
+
+def build_teaching_rst(teaching_reform_items: list[dict[str, Any]]) -> str:
+    """Assemble the full Teaching page RST."""
+    courses = load_teaching_courses()
+    page_title = "教育教学 Teaching"
+    teaching_title = "1 教学工作 Teaching"
+    training_title = "2 学生培养 Student Training"
+    reform_title = "教改探索 Teaching Reform Exploration"
+    sections: list[str] = [
+        page_title,
+        "=" * len(page_title),
+        "",
+        teaching_title,
+        _underline(teaching_title, "-"),
+        "",
+        courses_subsection("本科生 Undergraduate", courses["undergraduate"]),
+        "",
+        courses_subsection("研究生 Graduate", courses["graduate"]),
+        "",
+        reform_title,
+        _underline(reform_title, "~"),
+        "",
+    ]
+    for item in teaching_reform_items:
+        sections.append(render_teaching_reform_line(item))
+        sections.append("")
+    sections.extend(
+        [
+            training_title,
+            _underline(training_title, "-"),
+            "",
+            student_training_section(),
+        ]
+    )
+    return "\n".join(sections).rstrip() + "\n"
 
 
 def old_publication_records() -> list[dict[str, str]]:
@@ -497,7 +652,8 @@ def build_publications_rst(items: list[dict[str, Any]]) -> str:
                 "",
             ]
         )
-    sections.extend([degree_theses_section(), ""])
+    # Degree theses moved to the Teaching page (student-training area); this
+    # chronological publications page now lists journal papers only.
     return "\n".join(sections).rstrip() + "\n"
 
 
@@ -567,6 +723,7 @@ def snapshot(
             "zotero_filter": {"inPublications": True, "itemType": "journalArticle"},
             "count": len(items),
             "degree_theses_data": str(DEGREE_THESES_PATH.relative_to(ROOT)),
+            "teaching_data": str(TEACHING_DATA_PATH.relative_to(ROOT)),
         },
         "csl_style": {
             "id": CSL_STYLE_ID,
@@ -614,11 +771,16 @@ def write_outputs(args: argparse.Namespace) -> None:
     by_research_page = build_publications_by_research_rst(items, research_map)
     snap = snapshot(items, old_anchor_map, research_map)
 
+    teaching_reform_items = fetch_teaching_reform_items()
+    teaching_page = build_teaching_rst(teaching_reform_items)
+
     if args.dry_run:
         print(f"Would write {PUBLICATIONS_PATH}")
         print(f"Would write {PUBLICATIONS_BY_RESEARCH_PATH}")
+        print(f"Would write {TEACHING_PATH}")
         print(f"Would write {SNAPSHOT_PATH}")
         print(f"Items: {len(items)}")
+        print(f"Teaching-reform items: {len(teaching_reform_items)}")
         print(f"Anchor replacements: {len(old_anchor_map)}")
         for family in RESEARCH_FAMILY_ORDER:
             count = sum(1 for item in items if research_map[item["key"]]["research_family"] == family)
@@ -627,6 +789,7 @@ def write_outputs(args: argparse.Namespace) -> None:
 
     PUBLICATIONS_PATH.write_text(page, encoding="utf-8")
     PUBLICATIONS_BY_RESEARCH_PATH.write_text(by_research_page, encoding="utf-8")
+    TEACHING_PATH.write_text(teaching_page, encoding="utf-8")
     SNAPSHOT_PATH.parent.mkdir(parents=True, exist_ok=True)
     SNAPSHOT_PATH.write_text(
         json.dumps(snap, ensure_ascii=False, indent=2, sort_keys=False) + "\n",
@@ -634,8 +797,10 @@ def write_outputs(args: argparse.Namespace) -> None:
     )
     print(f"Wrote {PUBLICATIONS_PATH}")
     print(f"Wrote {PUBLICATIONS_BY_RESEARCH_PATH}")
+    print(f"Wrote {TEACHING_PATH}")
     print(f"Wrote {SNAPSHOT_PATH}")
     print(f"Items: {len(items)}")
+    print(f"Teaching-reform items: {len(teaching_reform_items)}")
     print(f"Anchor replacements: {len(old_anchor_map)}")
 
 

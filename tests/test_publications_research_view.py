@@ -179,19 +179,31 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertIn("教改探索", teaching_text)
         self.assertIn(TEACHING_REFORM_PUBLICATION_TITLE, teaching_text)
 
-    def test_publications_page_groups_early_papers_and_degree_theses(self) -> None:
+    def test_publications_page_groups_early_papers_without_degree_theses(self) -> None:
         text = PUBLICATIONS.read_text(encoding="utf-8")
 
         self.assertIn("\n更早 Earlier\n", text)
         self.assertNotRegex(text, r"\n2018\n~+\n")
         self.assertNotRegex(text, r"\n2017\n~+\n")
-        self.assertLess(text.index("期刊论文 Journal Papers"), text.index("学位论文 Degree Theses"))
-        self.assertIn("博士学位论文 PhD Theses", text)
-        self.assertIn("硕士学位论文 Master Theses", text)
+        # Degree theses migrated to the Teaching page; the publications page
+        # now lists journal papers only.
+        self.assertNotIn("学位论文 Degree Theses", text)
+        self.assertNotIn("博士生在读", text)
+        self.assertNotIn("硕士学位论文", text)
+
+    def test_teaching_page_contains_student_training(self) -> None:
+        text = TEACHING.read_text(encoding="utf-8")
+
+        self.assertIn("2 学生培养 Student Training", text)
+        self.assertIn("2.1 博士生 PhD Students", text)
+        self.assertIn("2.2 硕士生 Master Students", text)
         self.assertLess(text.index("周盛涛(Zhou Shengtao)，2021"), text.index("郑舜云(Zheng Shunyun)，2024-11"))
         self.assertLess(text.index("陈铃伟(Chen Lingwei)，2025-09"), text.index("何欣(He Xin)，博士生在读"))
         self.assertIn("刘尚佩(Liu Shangpei)，博士生在读", text)
         self.assertLess(text.index("王一鸣(Wang Yiming)，2023"), text.index("赵培升(Zhao Peisheng)，2025"))
+        # Teaching work section still hosts the courses and teaching reform.
+        self.assertIn("1 教学工作 Teaching", text)
+        self.assertIn("教改探索 Teaching Reform Exploration", text)
 
     def test_updated_wake_model_publication_year_keeps_old_anchor_alias(self) -> None:
         text = PUBLICATIONS.read_text(encoding="utf-8")

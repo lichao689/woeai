@@ -105,7 +105,7 @@ The machine-readable source for public student thesis metadata and student-first
 _Avoid_: private student record, contact directory, personal biography, unit-bearing student profile
 
 **Degree Thesis Listing**:
-An Academic Outputs line that presents public graduation thesis metadata in the format `姓名(English Name)，年份日期，学位论文类型：题目。`. It is ordinary listing text under `学位论文 Degree Theses`, grouped into doctoral and master's theses after the Journal Papers section. Degree Thesis Listings are sorted by graduation date in ascending order within each degree-level group.
+An Academic Outputs line that presents public graduation thesis metadata in the format `姓名(English Name)，年份日期，学位论文类型：题目。`. It is ordinary listing text rendered on the Teaching page under the `2 学生培养 Student Training` area, grouped into doctoral (`2.1 博士生 PhD Students`) and master's (`2.2 硕士生 Master Students`) subsections. Degree Thesis Listings are sorted by graduation date in ascending order within each degree-level group. They were migrated off the Publications page, which now lists journal papers only.
 _Avoid_: thesis as member profile heading, People-page dependency, unpublished private thesis note, non-public student record
 
 **Early Publication Group**:

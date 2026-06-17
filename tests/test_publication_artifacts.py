@@ -96,6 +96,22 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.assertEqual(diagnostics[0]["publication_ref"], "ref-missing-rtd")
         self.assertIn("docs/source/paper-notes/ref-missing-rtd.rst", diagnostics[0]["missing"])
 
+    def test_deep_dive_rtd_title_wins_over_compact_wechat_title(self) -> None:
+        temp = self.make_repo()
+        root = Path(temp.name)
+        (root / "docs/source/paper-notes/ref-complete.rst").write_text(
+            "Full RTD 论文精解\n"
+            "=================\n",
+            encoding="utf-8",
+        )
+
+        latest = self.artifacts.render_latest_paper_notes(root)
+        area = self.artifacts.render_paper_notes_area(root)
+
+        self.assertIn("Full RTD 论文精解", latest)
+        self.assertIn("Full RTD 论文精解", area)
+        self.assertNotIn("Markdown Title", latest)
+
     def test_load_artifacts_consumes_shared_backlog_records(self) -> None:
         temp = self.make_repo()
         root = Path(temp.name)

@@ -260,7 +260,7 @@ def render_degree_thesis_line(record: dict[str, Any]) -> str:
 def render_current_student_line(record: dict[str, Any]) -> str:
     name_cn = str(record.get("name_cn") or "").strip()
     name_en = str(record.get("name_en") or "").strip()
-    status = str(record.get("status") or "博士生在读").strip()
+    status = str(record.get("status") or "在读").strip()
     display_name = f"{name_cn}({name_en})" if name_cn and name_en else name_cn or name_en
     if not all([display_name, status]):
         raise ZoteroError(f"Incomplete current student record: {record!r}")
@@ -279,7 +279,7 @@ def student_training_section() -> str:
     sections: list[str] = []
     for index, (group_key, group_title) in enumerate(DEGREE_THESIS_GROUPS, start=1):
         numbered_title = f"2.{index} {group_title}"
-        sections.extend([numbered_title, "~" * len(numbered_title), ""])
+        sections.extend([numbered_title, _underline(numbered_title, "~"), ""])
         records = iter_degree_theses(group_key)
         if not records:
             raise ZoteroError(f"Degree thesis group {group_key} has no records.")
@@ -293,8 +293,13 @@ def student_training_section() -> str:
 
 
 def _underline(title: str, char: str, minimum: int = 12) -> str:
-    """Return an RST underline of ``char`` matching ``title`` width."""
-    return char * max(len(title), minimum)
+    """Return an RST underline of ``char`` matching ``title`` display width.
+
+    CJK characters occupy two columns, so use display width, not character
+    count, to avoid Sphinx 'Title underline too short' warnings.
+    """
+    width = sum(2 if ord(c) >= 0x2E80 else 1 for c in title)
+    return char * max(width, minimum)
 
 
 def load_teaching_courses() -> dict[str, list[dict[str, Any]]]:
@@ -322,7 +327,7 @@ def load_teaching_courses() -> dict[str, list[dict[str, Any]]]:
 
 def courses_subsection(title: str, rows: list[dict[str, Any]]) -> str:
     """Render a course H3 subsection as an RST definition list."""
-    sections = [title, "~" * len(title), ""]
+    sections = [title, _underline(title, "~"), ""]
     for row in rows:
         title_cn = str(row["title_cn"]).strip()
         title_en = str(row.get("title_en") or "").strip()
@@ -406,20 +411,22 @@ def build_teaching_rst(teaching_reform_items: list[dict[str, Any]]) -> str:
     page_title = "教育教学 Teaching"
     teaching_title = "1 教学工作 Teaching"
     training_title = "2 学生培养 Student Training"
-    reform_title = "教改探索 Teaching Reform Exploration"
+    undergraduate_title = "1.1 本科生 Undergraduate"
+    graduate_title = "1.2 研究生 Graduate"
+    reform_numbered_title = "1.3 教改探索 Teaching Reform Exploration"
     sections: list[str] = [
         page_title,
-        "=" * len(page_title),
+        _underline(page_title, "="),
         "",
         teaching_title,
         _underline(teaching_title, "-"),
         "",
-        courses_subsection("本科生 Undergraduate", courses["undergraduate"]),
+        courses_subsection(undergraduate_title, courses["undergraduate"]),
         "",
-        courses_subsection("研究生 Graduate", courses["graduate"]),
+        courses_subsection(graduate_title, courses["graduate"]),
         "",
-        reform_title,
-        _underline(reform_title, "~"),
+        reform_numbered_title,
+        _underline(reform_numbered_title, "~"),
         "",
     ]
     for item in teaching_reform_items:

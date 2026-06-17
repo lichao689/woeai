@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-17T09:46:15.248957+00:00",
+  "generated_at": "2026-06-17T10:14:22.124209+00:00",
   "source_boundary": {
     "zotero_filter": {
       "inPublications": true,
@@ -189,7 +189,7 @@
       "zotero_key": "5ALWDPSB",
       "publication_number": 69,
       "anchor": "ref-zhang2025-CSICM",
-      "old_anchor": null,
+      "old_anchor": "ref-zhang2025-CSICM",
       "year": 2025,
       "date": "2025/12",
       "title": "On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom",
@@ -2001,7 +2001,7 @@
       "zotero_key": "SC8R2QZE",
       "publication_number": 1,
       "anchor": "ref-xiao2009-HNLGDXXB",
-      "old_anchor": "ref-xiao2009-HNLGDXXB",
+      "old_anchor": null,
       "year": 2009,
       "date": "2009",
       "title": "复杂地形风能评估的CFD方法",

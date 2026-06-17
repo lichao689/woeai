@@ -188,7 +188,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
         # Degree theses migrated to the Teaching page; the publications page
         # now lists journal papers only.
         self.assertNotIn("学位论文 Degree Theses", text)
-        self.assertNotIn("博士生在读", text)
+        self.assertNotIn("在读", text)
         self.assertNotIn("硕士学位论文", text)
 
     def test_teaching_page_contains_student_training(self) -> None:
@@ -198,12 +198,14 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertIn("2.1 博士生 PhD Students", text)
         self.assertIn("2.2 硕士生 Master Students", text)
         self.assertLess(text.index("周盛涛(Zhou Shengtao)，2021"), text.index("郑舜云(Zheng Shunyun)，2024-11"))
-        self.assertLess(text.index("陈铃伟(Chen Lingwei)，2025-09"), text.index("何欣(He Xin)，博士生在读"))
-        self.assertIn("刘尚佩(Liu Shangpei)，博士生在读", text)
+        self.assertLess(text.index("陈铃伟(Chen Lingwei)，2025-09"), text.index("何欣(He Xin)，在读"))
+        self.assertIn("刘尚佩(Liu Shangpei)，在读", text)
         self.assertLess(text.index("王一鸣(Wang Yiming)，2023"), text.index("赵培升(Zhao Peisheng)，2025"))
         # Teaching work section still hosts the courses and teaching reform.
         self.assertIn("1 教学工作 Teaching", text)
-        self.assertIn("教改探索 Teaching Reform Exploration", text)
+        self.assertIn("1.1 本科生 Undergraduate", text)
+        self.assertIn("1.2 研究生 Graduate", text)
+        self.assertIn("1.3 教改探索 Teaching Reform Exploration", text)
 
     def test_updated_wake_model_publication_year_keeps_old_anchor_alias(self) -> None:
         text = PUBLICATIONS.read_text(encoding="utf-8")

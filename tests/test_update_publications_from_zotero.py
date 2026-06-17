@@ -139,6 +139,7 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         self.assertIn("学位论文 Degree Theses", section)
         self.assertIn("博士学位论文 PhD Theses", section)
         self.assertIn("硕士学位论文 Master Theses", section)
+        self.assertIn("周盛涛(Zhou Shengtao)，2021，博士学位论文：基于快速动力响应分析的半潜式风机下部结构主尺寸优化；去向：风电企业。", section)
         self.assertLess(section.index("周盛涛(Zhou Shengtao)，2021"), section.index("郑舜云(Zheng Shunyun)，2024-11"))
         self.assertLess(section.index("陈铃伟(Chen Lingwei)，2025-09"), section.index("何欣(He Xin)，博士生在读"))
         self.assertIn("刘尚佩(Liu Shangpei)，博士生在读", section)

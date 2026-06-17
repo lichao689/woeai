@@ -245,10 +245,14 @@ def render_degree_thesis_line(record: dict[str, Any]) -> str:
     date = str(record.get("date") or "").strip()
     thesis_type = str(record.get("thesis_type") or "").strip()
     title = str(record.get("title") or "").strip()
+    destination = str(record.get("destination") or "").strip()
     display_name = f"{name_cn}({name_en})" if name_cn and name_en else name_cn or name_en
     if not all([display_name, date, thesis_type, title]):
         raise ZoteroError(f"Incomplete degree thesis record: {record!r}")
-    return f"- {rst_escape(display_name)}，{rst_escape(date)}，{rst_escape(thesis_type)}：{rst_escape(title)}。"
+    line = f"- {rst_escape(display_name)}，{rst_escape(date)}，{rst_escape(thesis_type)}：{rst_escape(title)}"
+    if destination:
+        line += f"；去向：{rst_escape(destination)}"
+    return line + "。"
 
 
 def render_current_student_line(record: dict[str, Any]) -> str:
@@ -449,7 +453,7 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             "   按研究方向浏览 Publications by Research Direction <PublicationsByResearch>",
             "",
-            # Paper-notes toctree + 论文解读 area are owned by artifacts.py and
+            # Paper-notes toctree + 论文精解 area are owned by artifacts.py and
             # live in a sibling fragment so that regenerating this file (which
             # write_text overwrites wholesale) cannot clobber them.
             ".. include:: _paper-notes-fragment.rst",

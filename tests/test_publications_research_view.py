@@ -59,7 +59,12 @@ def research_ref_targets(text: str) -> list[str]:
 
 
 def normalize_publication_entry(line: str) -> str:
-    return re.sub(r"^:ref:`\[(\d+)\] <ref-[^>]+>`", r"[\1]", line)
+    # Strip :ref: wrapper from the chronological view's [N] links.
+    line = re.sub(r"^:ref:`\[(\d+)\] <ref-[^>]+>`", r"[\1]", line)
+    # Strip inline deep-dive title links (:doc:`title <paper-notes/ref-xxx>`)
+    # that appear only in the thematic view, so both views compare equal.
+    line = re.sub(r" :doc:`[^`]+ <paper-notes/[^>]+>` ", " ", line)
+    return line
 
 
 def publication_entries(text: str) -> list[str]:

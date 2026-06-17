@@ -697,13 +697,14 @@ def build_publications_rst(
                     continue
                 for anchor in publication_anchor_targets(item):
                     sections.extend([f".. _{anchor}:", ""])
+                entry = rendered_entry(item, item["publication_number"])
                 dd = deep_dive_titles.get(item["key"])
                 if dd:
                     pub_ref, dd_title = dd
-                    year = extract_year(item["data"].get("date"))
-                    sections.append(f"* {year}: :doc:`{dd_title} <paper-notes/{pub_ref}>`")
-                    sections.append("")
-                sections.extend([rendered_entry(item, item["publication_number"]), ""])
+                    number = f"[{item['publication_number']}] "
+                    dd_link = f":doc:`{dd_title} <paper-notes/{pub_ref}>` "
+                    entry = entry.replace(number, number + dd_link, 1)
+                sections.extend([entry, ""])
     return "\n".join(sections).rstrip() + "\n"
 
 

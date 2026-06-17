@@ -119,5 +119,5 @@ GF-7 多光谱与全色影像提供了城市尺度覆盖和局部建筑细节，
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html)
+- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

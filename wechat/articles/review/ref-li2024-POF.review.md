@@ -49,7 +49,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v
 - Zotero: `2YG78T62`
 - 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero attachment key `RIVR33QT`; attachment record mode is `imported_url`, but a local PDF exists in Zotero private storage and was used as the evidence source for body claims and figure extraction.
-- WOEAI 网站记录: `docs/source/Publications.rst` anchor `ref-li2024-POF`; research placement checked against `docs/source/BuildingStructuralWindResistance.rst`.
+- WOEAI 网站记录: `docs/source/Publications.rst` anchor `ref-li2024-POF`; research placement checked against `docs/source/StructuralWindEngineering.rst`.
 
 ## 源文件获取记录
 

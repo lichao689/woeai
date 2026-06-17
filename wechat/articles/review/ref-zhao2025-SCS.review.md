@@ -51,7 +51,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383
 - PDF attachment key: `8DSM76PX`
 - 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: local Zotero imported PDF attachment exists; PDF body and embedded images were used for article evidence and body figures.
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-zhao2025-SCS` as paper `[60]`; `docs/source/BuildingStructuralWindResistance.rst` lists it under `数值风洞与湍动入流`.
+- 公开网站记录: `docs/source/Publications.rst` contains `ref-zhao2025-SCS` as paper `[60]`; `docs/source/StructuralWindEngineering.rst` lists it under `数值风洞与湍动入流`.
 
 ## 源文件获取记录
 

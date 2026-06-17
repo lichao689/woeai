@@ -46,7 +46,7 @@ wechat_backend_preview_checked: false
 - PDF attachment key: `G792HSAZ`
 - 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero child `G792HSAZ`, `application/pdf`, `linkMode=imported_url`; controller verified a local storage PDF exists, is valid `%PDF-`, has 20 pages, `pdftotext` works, and `pdfimages` lists images. This worker also used the local storage PDF for evidence and figure extraction.
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-zhou2023-AE` as paper `[48]`; `docs/source/FloatingOffshoreWindEnergy.rst` lists it under `浮式风机系统一体化分析与优化`.
+- 公开网站记录: `docs/source/Publications.rst` contains `ref-zhou2023-AE` as paper `[48]`; `docs/source/FloatingOffshoreWindTurbine.rst` lists it under `浮式风机系统一体化分析与优化`.
 
 ## 源文件获取记录
 

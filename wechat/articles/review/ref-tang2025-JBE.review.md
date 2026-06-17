@@ -52,7 +52,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
 - PDF attachment key: `G2D6USRE`
 - 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: local Zotero imported PDF attachment exists; PDF body and embedded images were used for article evidence and body figures.
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-tang2025-JBE` as paper `[63]`; `docs/source/BuildingStructuralWindResistance.rst` lists it under `高层建筑抗风与优化`.
+- 公开网站记录: `docs/source/Publications.rst` contains `ref-tang2025-JBE` as paper `[63]`; `docs/source/StructuralWindEngineering.rst` lists it under `高层建筑抗风与优化`.
 
 ## 源文件获取记录
 

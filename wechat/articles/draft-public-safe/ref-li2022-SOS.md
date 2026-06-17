@@ -131,5 +131,5 @@ HSP3 钢平台则具有较小平均平台纵摇、较小二阶水动力诱导的
 
 ## 延伸阅读
 
-- [WOEAI | 海上漂浮风电方向介绍](https://woeai.readthedocs.io/zh-cn/latest/FloatingOffshoreWindEnergy.html)
+- [WOEAI | 海上漂浮风电方向介绍](https://woeai.readthedocs.io/zh-cn/latest/FloatingOffshoreWindTurbine.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

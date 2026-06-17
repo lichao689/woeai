@@ -143,5 +143,5 @@ $$
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/BuildingStructuralWindResistance.html)
+- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

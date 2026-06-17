@@ -44,7 +44,7 @@ rtd_page_checked: true
 - PDF attachment key: `EQT752AQ`
 - 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero child record is `application/pdf` with `linkMode=imported_url`; the article evidence and figures use the valid local Zotero storage PDF for that child record, not a web-downloaded PDF.
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-tang2026-RE` as paper `[69]`; `docs/source/BuildingStructuralWindResistance.rst` lists it under `数值风洞与湍动入流`.
+- 公开网站记录: `docs/source/Publications.rst` contains `ref-tang2026-RE` as paper `[69]`; `docs/source/StructuralWindEngineering.rst` lists it under `数值风洞与湍动入流`.
 
 ## 源文件获取记录
 

@@ -46,7 +46,7 @@ wechat_backend_preview_checked: false
 - PDF attachment keys: `Y95L65C5`, `3PC68U8X`
 - 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
 - PDF / 作者稿: Zotero local imported PDF attachments exist; the selected local publisher-record PDF was used for article evidence and body figures.
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-zheng2025-OE` as paper `[65]`; `docs/source/FloatingOffshoreWindEnergy.rst` lists it under `浮式混凝土平台结构设计`.
+- 公开网站记录: `docs/source/Publications.rst` contains `ref-zheng2025-OE` as paper `[65]`; `docs/source/FloatingOffshoreWindTurbine.rst` lists it under `浮式混凝土平台结构设计`.
 
 ## 源文件获取记录
 

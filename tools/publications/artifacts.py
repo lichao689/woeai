@@ -209,25 +209,15 @@ PAPER_NOTES_FRAGMENT_PATH = Path("docs/source/_paper-notes-fragment.rst")
 
 
 def render_paper_notes_fragment(root: Path) -> str:
-    """Render the whole paper deep-dive fragment file owned by this tool.
+    """Render the paper-notes fragment file owned by this tool.
 
-    The fragment is included by Publications.rst via ``.. include::``. It holds
-    the generated toctree, the 论文精解 heading, and the generated
-    area. Owning it as a standalone file means the Zotero generator can
-    overwrite Publications.rst wholesale without clobbering this content.
+    After the view swap, this fragment only holds the hidden toctree that
+    registers paper-notes pages. The 论文精解 section was removed; deep-dive
+    titles now appear inline in the Publications page (see
+    update-publications-from-zotero.py).
     """
-    toctree = render_paper_notes_toctree(root)
-    area = render_paper_notes_area(root)
-    parts: list[str] = []
-    if toctree:
-        parts.append(toctree.rstrip("\n"))
-        parts.append("")
-    parts.append("论文精解")
-    parts.append("--------")
-    parts.append("")
-    parts.append(area.rstrip("\n"))
-    parts.append("")
-    return "\n".join(parts)
+    return render_paper_notes_toctree(root).rstrip("\n") + "\n"
+
 
 
 def artifact_integrity_problems(root: Path) -> list[dict[str, str]]:

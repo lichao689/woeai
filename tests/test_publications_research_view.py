@@ -36,13 +36,22 @@ def publication_anchors(text: str) -> set[str]:
 
 
 def canonical_publication_anchors(text: str) -> set[str]:
+    """Anchors that have a corresponding [N] citation.
+
+    A deep-dive title line may appear between the anchor block and
+    the [N] citation, so the pattern allows non-anchor lines in between.
+    """
     anchors: set[str] = set()
-    pattern = re.compile(r"(?P<label_block>(?:^\.\. _ref-[^:]+:\n\n)+)\[\d+\] ", flags=re.M)
+    pattern = re.compile(
+        r"(?P<label_block>(?:^\.\. _ref-[^:]+:\n\n)+)(?:(?!^\.\. _ref-).*\n)*?\[\d+\] ",
+        flags=re.M,
+    )
     for match in pattern.finditer(text):
         labels = re.findall(r"^\.\. _(ref-[^:]+):$", match.group("label_block"), flags=re.M)
         if labels:
             anchors.add(labels[-1])
     return anchors
+
 
 
 def research_ref_targets(text: str) -> list[str]:
@@ -77,7 +86,7 @@ def publication_number_years(text: str) -> dict[int, int]:
         if line == "更早 Earlier":
             current_year = 0
             continue
-        match = re.match(r"^\[(\d+)\] ", line)
+        match = re.match(r"^(?::ref:`)?\[(\d+)\]", line)
         if match:
             years[int(match.group(1))] = current_year
     return years
@@ -99,13 +108,12 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertNotIn("浏览方式 View Options", text)
         self.assertNotIn("精选证据 Selected Highlights", text)
         self.assertIn(".. container:: publication-view-banner", text)
-        # 论文精解 now lives in an artifacts-owned fragment that
-        # Publications.rst includes, so the heading appears there rather than
-        # inline in Publications.rst.
+        # The fragment only holds the hidden toctree now (论文精解 section removed).
         self.assertIn(".. include:: _paper-notes-fragment.rst", text)
         fragment_text = (ROOT / "docs/source/_paper-notes-fragment.rst").read_text(encoding="utf-8")
-        self.assertIn("论文精解", fragment_text)
-        self.assertIn("按研究方向浏览学术成果 Publications by Research Direction <PublicationsByResearch>", text)
+        self.assertNotIn("论文精解", fragment_text)
+        self.assertIn(".. toctree::", fragment_text)
+        self.assertIn("按年份倒序浏览学术成果 Publications by Year <PublicationsByResearch>", text)
         self.assertNotIn("学术进展 Academic Progress", research_text)
         self.assertNotIn("paper-notes/", research_text)
         self.assertNotIn("\n   PublicationsByResearch\n", index_text)
@@ -118,22 +126,22 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertIn("_paper-notes-fragment.rst", conf.get("exclude_patterns", []))
 
     def test_research_view_groups_every_publication_by_family_then_subdirection(self) -> None:
-        publications_text = PUBLICATIONS.read_text(encoding="utf-8")
-        research_text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
+        thematic_text = PUBLICATIONS.read_text(encoding="utf-8")
+        chronological_text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
 
-        chronological_entries = publication_entries(publications_text)
-        thematic_entries = publication_entries(research_text)
+        thematic_entries = publication_entries(thematic_text)
+        chronological_entries = publication_entries(chronological_text)
         self.assertEqual(set(thematic_entries), set(chronological_entries))
         self.assertEqual(len(thematic_entries), len(chronological_entries))
-        self.assertEqual(set(research_ref_targets(research_text)), canonical_publication_anchors(publications_text))
+        self.assertEqual(set(research_ref_targets(chronological_text)), canonical_publication_anchors(thematic_text))
 
-        family_positions = [research_text.index(f"\n{family}\n") for family in RESEARCH_FAMILIES]
+        family_positions = [thematic_text.index(f"\n{family}\n") for family in RESEARCH_FAMILIES]
         self.assertEqual(family_positions, sorted(family_positions))
-        number_years = publication_number_years(publications_text)
+        number_years = publication_number_years(chronological_text)
 
         for family, subdirections in RESEARCH_STRUCTURE.items():
             other_families = tuple(candidate for candidate in RESEARCH_FAMILIES if candidate != family)
-            family_section = section_between(research_text, family, other_families)
+            family_section = section_between(thematic_text, family, other_families)
             subdirection_positions = [family_section.index(f"\n{subdirection}\n") for subdirection in subdirections]
             self.assertEqual(subdirection_positions, sorted(subdirection_positions), family)
             self.assertNotRegex(family_section, r"^\d{4}$", family)
@@ -180,7 +188,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertIn(TEACHING_REFORM_PUBLICATION_TITLE, teaching_text)
 
     def test_publications_page_groups_early_papers_without_degree_theses(self) -> None:
-        text = PUBLICATIONS.read_text(encoding="utf-8")
+        text = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
 
         self.assertIn("\n更早 Earlier\n", text)
         self.assertNotRegex(text, r"\n2018\n~+\n")
@@ -209,14 +217,17 @@ class PublicationsResearchViewTests(unittest.TestCase):
 
     def test_updated_wake_model_publication_year_keeps_old_anchor_alias(self) -> None:
         text = PUBLICATIONS.read_text(encoding="utf-8")
+        by_year = PUBLICATIONS_BY_RESEARCH.read_text(encoding="utf-8")
         old_anchor = ".. _ref-zhang2015-E:"
         new_anchor = ".. _ref-zhang2022-E:"
         title = "Applicability of wake models to predictions of turbine-induced velocity deficit and wind farm power generation"
 
+        # Anchors live in the thematic view (Publications.rst).
         self.assertIn(old_anchor, text)
         self.assertIn(new_anchor, text)
-        self.assertLess(text.index("\n2022\n"), text.index(title))
-        self.assertLess(text.index(title), text.index("\n2021\n"))
+        # Year headers live in the chronological view (PublicationsByResearch.rst).
+        self.assertLess(by_year.index("\n2022\n"), by_year.index(title))
+        self.assertLess(by_year.index(title), by_year.index("\n2021\n"))
 
     def test_doi_links_open_in_new_tab(self) -> None:
         conf_text = CONF.read_text(encoding="utf-8")

@@ -606,17 +606,16 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             ".. container:: publication-view-banner",
             "",
-            "   :doc:`按研究方向浏览学术成果 Publications by Research Direction <PublicationsByResearch>`：按研究方向浏览，方向内按发表年份倒序聚合。",
+            "   :doc:`按年份倒序浏览学术成果 Publications by Year <PublicationsByResearch>`：按发表年份倒序浏览完整期刊论文清单。",
             "",
             ".. toctree::",
             "   :hidden:",
             "   :maxdepth: 1",
             "",
-            "   按研究方向浏览 Publications by Research Direction <PublicationsByResearch>",
+            "   按年份倒序浏览 Publications by Year <PublicationsByResearch>",
             "",
-            # Paper-notes toctree + 论文精解 area are owned by artifacts.py and
-            # live in a sibling fragment so that regenerating this file (which
-            # write_text overwrites wholesale) cannot clobber them.
+            # Paper-notes toctree is owned by artifacts.py and lives in a sibling
+            # fragment so that regenerating this file cannot clobber it.
             ".. include:: _paper-notes-fragment.rst",
             "",
             "期刊论文 Journal Papers",
@@ -638,28 +637,73 @@ def publication_anchor_targets(item: dict[str, Any]) -> list[str]:
     return targets
 
 
-def build_publications_rst(items: list[dict[str, Any]]) -> str:
-    items_by_key = build_lookup(items)
-    sections = [page_header(items_by_key)]
-    current_section: int | None = None
-    for item in items:
-        data = item["data"]
-        year = extract_year(data.get("date"))
-        section_key = year if year >= EARLY_PUBLICATION_CUTOFF_YEAR else 0
-        if section_key != current_section:
-            current_section = section_key
-            title = str(section_key) if section_key else EARLIER_PUBLICATIONS_TITLE
-            sections.extend([title, "~" * 12, ""])
-        for anchor in publication_anchor_targets(item):
-            sections.extend([f".. _{anchor}:", ""])
-        sections.extend(
-            [
-                rendered_entry(item, item["publication_number"]),
-                "",
-            ]
-        )
-    # Degree theses moved to the Teaching page (student-training area); this
-    # chronological publications page now lists journal papers only.
+def _read_backlog_zotero_keys(backlog_path: Path) -> dict[str, str]:
+    """Return publication_ref -> zotero_key from the backlog."""
+    mapping: dict[str, str] = {}
+    current_ref = ""
+    for raw in backlog_path.read_text(encoding="utf-8").splitlines():
+        m = re.match(r"\s*-\s+publication_ref:\s+(\S+)", raw)
+        if m:
+            current_ref = m.group(1)
+            continue
+        m = re.match(r"\s*zotero_key:\s+(\S+)", raw)
+        if m and current_ref:
+            mapping[current_ref] = m.group(1)
+    return mapping
+
+
+def load_deep_dive_titles() -> dict[str, tuple[str, str]]:
+    """Return zotero_key -> (publication_ref, reader_title) for papers with deep-dives.
+
+    The reader_title is read from the compact WeChat article H1 (which carries
+    the direction-prefixed hook), with the direction prefix stripped.
+    """
+    backlog_path = ROOT / "wechat/backlog/selected-papers.yml"
+    if not backlog_path.exists():
+        return {}
+    from woeai.wechat.backlog import parse_backlog_papers
+
+    zotero_keys = _read_backlog_zotero_keys(backlog_path)
+    key_map: dict[str, tuple[str, str]] = {}
+    for paper in parse_backlog_papers(backlog_path):
+        article_path = ROOT / f"wechat/articles/draft-public-safe/{paper.publication_ref}.md"
+        title = paper.title
+        if article_path.exists():
+            try:
+                from woeai.wechat.review import parse_title
+                title = parse_title(article_path.read_text(encoding="utf-8"))
+            except RuntimeError:
+                pass
+        if " | " in title:
+            title = title.split(" | ", 1)[1]
+        zotero_key = zotero_keys.get(paper.publication_ref)
+        if zotero_key:
+            key_map[zotero_key] = (paper.publication_ref, title)
+    return key_map
+
+
+def build_publications_rst(
+    items: list[dict[str, Any]], research_map: dict[str, dict[str, str]]
+) -> str:
+    deep_dive_titles = load_deep_dive_titles()
+    sections = [page_header({})]
+    for family in RESEARCH_FAMILY_ORDER:
+        sections.extend([family, "-" * 12, ""])
+        for subdirection in RESEARCH_SUBDIRECTION_ORDER[family]:
+            sections.extend([subdirection, "~" * 40, ""])
+            for item in items:
+                row = research_map[item["key"]]
+                if row["research_family"] != family or row.get("subdirection") != subdirection:
+                    continue
+                for anchor in publication_anchor_targets(item):
+                    sections.extend([f".. _{anchor}:", ""])
+                dd = deep_dive_titles.get(item["key"])
+                if dd:
+                    pub_ref, dd_title = dd
+                    year = extract_year(item["data"].get("date"))
+                    sections.append(f"* {year}: :doc:`{dd_title} <paper-notes/{pub_ref}>`")
+                    sections.append("")
+                sections.extend([rendered_entry(item, item["publication_number"]), ""])
     return "\n".join(sections).rstrip() + "\n"
 
 
@@ -670,28 +714,37 @@ def research_full_entry(item: dict[str, Any]) -> str:
     return entry.replace(number, linked_number, 1)
 
 
-def build_publications_by_research_rst(
-    items: list[dict[str, Any]], research_map: dict[str, dict[str, str]]
-) -> str:
+def build_publications_by_research_rst(items: list[dict[str, Any]]) -> str:
     sections = [
         ".. role:: student-first-author",
         "",
-        "按研究方向浏览学术成果 Publications by Research Direction",
-        "=" * 80,
+        "按年份倒序浏览学术成果 Publications by Year",
+        _underline("按年份倒序浏览学术成果 Publications by Year", "="),
+        "",
+        ".. container:: publication-view-banner",
+        "",
+        "   :doc:`返回按研究方向浏览学术成果 <Publications>`：按研究方向浏览，方向内按发表年份倒序聚合。",
+        "",
+        "期刊论文 Journal Papers",
+        "------------------------",
         "",
         "- :student-first-author:`学生第一作者` 表示该论文第一作者为团队在校或毕业学生。",
         "- 作者姓名后的 ``*`` 表示通讯作者。",
         "",
     ]
-    for family in RESEARCH_FAMILY_ORDER:
-        sections.extend([family, "-" * 12, ""])
-        for subdirection in RESEARCH_SUBDIRECTION_ORDER[family]:
-            sections.extend([subdirection, "~" * 40, ""])
-            for item in items:
-                row = research_map[item["key"]]
-                if row["research_family"] != family or row.get("subdirection") != subdirection:
-                    continue
-                sections.extend([research_full_entry(item), ""])
+    current_section: int | None = None
+    for item in items:
+        data = item["data"]
+        year = extract_year(data.get("date"))
+        section_key = year if year >= EARLY_PUBLICATION_CUTOFF_YEAR else 0
+        if section_key != current_section:
+            current_section = section_key
+            title = str(section_key) if section_key else EARLIER_PUBLICATIONS_TITLE
+            sections.extend([title, "~" * 12, ""])
+        sections.extend([research_full_entry(item), ""])
+    return "\n".join(sections).rstrip() + "\n"
+
+
     return "\n".join(sections).rstrip() + "\n"
 
 
@@ -773,8 +826,8 @@ def write_outputs(args: argparse.Namespace) -> None:
     old_anchor_map = merge_old_anchors(items)
     research_map = load_research_map()
     validate_research_map(items, research_map)
-    page = build_publications_rst(items)
-    by_research_page = build_publications_by_research_rst(items, research_map)
+    page = build_publications_rst(items, research_map)
+    by_research_page = build_publications_by_research_rst(items)
     snap = snapshot(items, old_anchor_map, research_map)
 
     teaching_reform_items = fetch_teaching_reform_items()

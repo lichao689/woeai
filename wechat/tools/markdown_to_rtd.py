@@ -129,7 +129,9 @@ def parse_publications_citation(publication_ref: str, publications_path: Path | 
     if idx >= len(lines):
         return ""
     idx += 1
-    while idx < len(lines) and not lines[idx].strip():
+    # Skip blank lines and any deep-dive title line (a bullet item starting
+    # with "* ") that now appears between the anchor and the [N] citation.
+    while idx < len(lines) and (not lines[idx].strip() or lines[idx].strip().startswith("* ")):
         idx += 1
     citation_lines: list[str] = []
     while idx < len(lines) and lines[idx].strip():

@@ -156,11 +156,11 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.assertEqual(write_result, 0)
         self.assertEqual(check_result, 0)
         self.assertIn("- 2026 | 建筑结构抗风 / 数值风洞与湍动入流", index_text)
-        # The fragment owns the toctree + 论文精解 area; Publications.rst no
-        # longer carries them inline.
+        # The fragment only holds the hidden toctree (论文精解 section removed;
+        # deep-dive titles now appear inline in the Publications page).
         self.assertIn(".. toctree::", fragment_text)
         self.assertIn("   paper-notes/ref-complete", fragment_text)
-        self.assertIn("论文精解", fragment_text)
+        self.assertNotIn("论文精解", fragment_text)
         self.assertNotIn("stale", fragment_text)
 
     def test_check_fails_when_fragment_is_stale(self) -> None:

@@ -21,6 +21,19 @@ if str(REPO_ROOT) not in sys.path:
 
 LATEST_MARKER = "GENERATED LATEST PAPER NOTES"
 
+# Paper-deep-dive page (论文精解) H1 titles double as the navigation link text
+# rendered in the paper-notes fragment. To keep that list scannable and
+# consistent, every such title must open with a short direction prefix
+# ("<prefix> | <hook sentence>") and must NOT end with the redundant literal
+# "论文精解" (that label already heads the section). These prefixes are the
+# only allowed openers; a title missing them reads like a stale table-of-contents
+# entry and was the root cause of the chen2022-JWEIA naming regression.
+PAPER_NOTE_TITLE_PREFIXES: dict[str, tuple[str, ...]] = {
+    "建筑结构抗风": ("数值风洞 |", "结构抗风 |"),
+    "海上漂浮风电": ("漂浮风电 |",),
+}
+PAPER_NOTE_TITLE_FORBIDDEN_SUFFIX = "论文精解"
+
 # Research taxonomy is a single source of truth in woeai.publications.
 # Importing here (rather than re-declaring) is exactly what collapses the
 # former byte-for-byte copy across this file and two others.
@@ -89,11 +102,11 @@ def parse_rst_title(rtd_path: Path, fallback: str) -> str:
 
 def select_artifact_title(article_path: Path, rtd_path: Path, fallback: str) -> str:
     rtd_title = parse_rst_title(rtd_path, fallback)
-    # New full RTD pages are independent 论文精解 pages. When their public title
-    # already says so, keep RTD navigation anchored to that page title instead
-    # of replacing it with the compact WeChat article title.
-    if "论文精解" in rtd_title:
-        return rtd_title
+    # The WeChat compact article H1 (a direction-prefix hook sentence) and the
+    # RTD deep-dive H1 are intentionally kept in sync. Prefer the compact
+    # article title when present, falling back to the RTD page title; this
+    # keeps every fragment navigation label uniform and free of the redundant
+    # "论文精解" suffix that once drifted in via the RTD title.
     return parse_markdown_title(article_path, rtd_title)
 
 
@@ -245,6 +258,30 @@ def artifact_integrity_problems(root: Path) -> list[dict[str, str]]:
                     "publication_ref": artifact.publication_ref,
                     "research_family": artifact.research_family,
                     "subdirection": artifact.subdirection,
+                    "path": repo_relative(artifact.rtd_path, root),
+                }
+            )
+        # Paper-deep-dive H1 title doubles as the fragment navigation label, so
+        # enforce the direction-prefix + no-redundant-suffix convention here.
+        title = artifact.title or ""
+        if title.endswith(PAPER_NOTE_TITLE_FORBIDDEN_SUFFIX):
+            problems.append(
+                {
+                    "kind": "paper_note_title_redundant_suffix",
+                    "publication_ref": artifact.publication_ref,
+                    "title": title,
+                    "path": repo_relative(artifact.rtd_path, root),
+                }
+            )
+        allowed_prefixes = PAPER_NOTE_TITLE_PREFIXES.get(artifact.research_family, ())
+        if allowed_prefixes and not title.startswith(allowed_prefixes):
+            problems.append(
+                {
+                    "kind": "paper_note_title_missing_prefix",
+                    "publication_ref": artifact.publication_ref,
+                    "research_family": artifact.research_family,
+                    "expected_prefixes": list(allowed_prefixes),
+                    "title": title,
                     "path": repo_relative(artifact.rtd_path, root),
                 }
             )

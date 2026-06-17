@@ -27,6 +27,9 @@ PUBLIC_DRAFT_FORBIDDEN_PATTERNS = [
 ]
 PUBLIC_BODY_FORBIDDEN_PATTERNS = [
     ("english_abstract", re.compile(r"\*\*英文摘要\*\*")),
+    # MathJax raises "\tag not allowed in split environment" for \tag inside
+    # aligned/cases/bmatrix. Use \qquad (N) for equation numbering instead.
+    ("latex_tag_in_math", re.compile(r"\\tag\{")),
 ]
 REVIEW_REQUIRED_SECTIONS = [
     "## 源文件获取记录",

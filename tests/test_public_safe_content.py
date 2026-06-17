@@ -146,6 +146,26 @@ class PublicSafeContentTests(unittest.TestCase):
             self.assertEqual(result, 1)
             self.assertIn("docs/source/paper-notes/ref-example.rst:7: RTD paper deep-dive contains editor-only content (english_abstract)", stderr)
 
+    def test_rtd_paper_deep_dive_rejects_latex_tag(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "repo"
+            wechat_root = root / "wechat"
+            paper_notes_root = root / "docs" / "source" / "paper-notes"
+            wechat_root.mkdir(parents=True)
+            paper_notes_root.mkdir(parents=True)
+            (paper_notes_root / "ref-example.rst").write_text(
+                "示例标题\n"
+                "========\n\n"
+                ".. math::\n\n"
+                "   a+b=c\\tag{1}\n",
+                encoding="utf-8",
+            )
+
+            result, _stdout, stderr = self.run_checker(root, wechat_root, paper_notes_root)
+
+            self.assertEqual(result, 1)
+            self.assertIn("latex_tag_in_math", stderr)
+
     def test_review_template_may_contain_editor_workflow_fields(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir) / "repo"

@@ -236,11 +236,11 @@ items:
     subdirection: 数值风洞与湍动入流
     original_year: 2022
     repost_priority: medium
-    wechat_status: rtd_deep_dive_ready
-    publication_mode: rtd_deep_dive
+    wechat_status: reviewing
+    publication_mode: first_publish
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "RTD 论文精解 prepared from approved source material; compact WeChat article pending."
+    revision_note: "Compact WeChat article and review note prepared from RTD 论文精解; cover text confirmation pending before image generation."
     publication_history: []
   - publication_ref: ref-li2022-SOS
     zotero_key: 5AT7UEWV

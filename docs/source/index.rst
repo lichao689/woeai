@@ -46,11 +46,11 @@ WOEAI 欢迎对风工程、海洋工程、海上风电、结构防灾减灾和 A
 
 WOEAI 的研究方向按两条公开主方向组织，并以 AI 赋能工程方法和工程验证闭环作为横向支撑。
 
-**建筑结构抗风** Building Structural Wind Resistance
+**建筑结构抗风** Structural Wind Engineering
 
 面向建筑和相关工程结构的强风作用、风环境建模、风荷载、结构响应、优化与控制问题，涵盖数值风洞与湍动入流、高层建筑抗风与优化两个二级方向。详见 :doc:`BuildingStructuralWindResistance`。
 
-**海上漂浮风电** Floating Offshore Wind Energy
+**海上漂浮风电** Floating Offshore Wind Turbine
 
 面向浮式风机系统、浮式混凝土平台、风浪流环境作用和数值风浪流水池的分析、试验与优化问题，涵盖浮式风机系统一体化分析与优化、浮式混凝土平台结构设计、数值风浪流水池三个二级方向。详见 :doc:`FloatingOffshoreWindEnergy`。
 

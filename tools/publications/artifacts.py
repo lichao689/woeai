@@ -51,7 +51,7 @@ class PublicationArtifact:
     @property
     def missing_paths(self) -> list[Path]:
         paths = []
-        for path in (self.article_path, self.review_path, self.rtd_path):
+        for path in (self.rtd_path,):
             if not path.exists():
                 paths.append(path)
         return paths
@@ -73,6 +73,20 @@ def parse_markdown_title(article_path: Path, fallback: str) -> str:
     return fallback
 
 
+def parse_rst_title(rtd_path: Path, fallback: str) -> str:
+    if not rtd_path.exists():
+        return fallback
+    lines = rtd_path.read_text(encoding="utf-8").splitlines()
+    for idx, raw in enumerate(lines[:-1]):
+        title = raw.strip()
+        underline = lines[idx + 1].strip()
+        if not title or title.startswith(".. "):
+            continue
+        if len(underline) >= len(title) and set(underline) <= {"=", "-", "~", "^"}:
+            return title
+    return fallback
+
+
 def load_artifacts(root: Path) -> list[PublicationArtifact]:
     backlog_path = root / "wechat/backlog/selected-papers.yml"
     artifacts: list[PublicationArtifact] = []
@@ -84,7 +98,10 @@ def load_artifacts(root: Path) -> list[PublicationArtifact]:
         article_path = root / f"wechat/articles/draft-public-safe/{publication_ref}.md"
         review_path = root / f"wechat/articles/review/{publication_ref}.review.md"
         rtd_path = root / f"docs/source/paper-notes/{publication_ref}.rst"
-        title = parse_markdown_title(article_path, paper.title or publication_ref)
+        title = parse_markdown_title(
+            article_path,
+            parse_rst_title(rtd_path, paper.title or publication_ref),
+        )
         artifacts.append(
             PublicationArtifact(
                 publication_ref=publication_ref,
@@ -149,7 +166,7 @@ def render_paper_notes_area(root: Path) -> str:
         grouped.setdefault((artifact.research_family, artifact.subdirection), []).append(artifact)
 
     lines = [
-        "以下页面由公众号论文正文转换为 RTD 配套页，按二级科研方向归集。同一子方向内，按论文发表时间倒序排列。",
+        "以下页面为 RTD 论文精解页面，按二级科研方向归集。同一子方向内，按论文发表时间倒序排列。",
         "",
     ]
     for family in RESEARCH_FAMILY_ORDER:
@@ -172,10 +189,10 @@ PAPER_NOTES_FRAGMENT_PATH = Path("docs/source/_paper-notes-fragment.rst")
 
 
 def render_paper_notes_fragment(root: Path) -> str:
-    """Render the whole paper-notes fragment file owned by this tool.
+    """Render the whole paper deep-dive fragment file owned by this tool.
 
     The fragment is included by Publications.rst via ``.. include::``. It holds
-    the generated toctree, the 论文解读 Paper Notes heading, and the generated
+    the generated toctree, the 论文精解 heading, and the generated
     area. Owning it as a standalone file means the Zotero generator can
     overwrite Publications.rst wholesale without clobbering this content.
     """
@@ -185,8 +202,8 @@ def render_paper_notes_fragment(root: Path) -> str:
     if toctree:
         parts.append(toctree.rstrip("\n"))
         parts.append("")
-    parts.append("论文解读 Paper Notes")
-    parts.append("--------------------")
+    parts.append("论文精解")
+    parts.append("--------")
     parts.append("")
     parts.append(area.rstrip("\n"))
     parts.append("")

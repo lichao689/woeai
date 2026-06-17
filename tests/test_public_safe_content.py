@@ -124,7 +124,7 @@ class PublicSafeContentTests(unittest.TestCase):
             self.assertIn("reader draft contains editor-only content (figure_plan)", stderr)
             self.assertIn("reader draft contains editor-only content (pre_publish_checklist)", stderr)
 
-    def test_rtd_paper_note_rejects_english_abstract_marker(self) -> None:
+    def test_rtd_paper_deep_dive_rejects_english_abstract_marker(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir) / "repo"
             wechat_root = root / "wechat"
@@ -144,7 +144,7 @@ class PublicSafeContentTests(unittest.TestCase):
             result, _stdout, stderr = self.run_checker(root, wechat_root, paper_notes_root)
 
             self.assertEqual(result, 1)
-            self.assertIn("docs/source/paper-notes/ref-example.rst:7: RTD paper note contains editor-only content (english_abstract)", stderr)
+            self.assertIn("docs/source/paper-notes/ref-example.rst:7: RTD paper deep-dive contains editor-only content (english_abstract)", stderr)
 
     def test_review_template_may_contain_editor_workflow_fields(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:

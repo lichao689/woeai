@@ -63,7 +63,7 @@ def is_review_note(path: Path, root: Path) -> bool:
     return len(parts) >= 3 and parts[0] == "articles" and parts[1] == "review" and path.name.endswith(".review.md")
 
 
-def is_rtd_paper_note(path: Path, root: Path) -> bool:
+def is_rtd_paper_deep_dive(path: Path, root: Path) -> bool:
     return root == ROOT / "docs/source/paper-notes" and path.suffix.lower() == ".rst"
 
 
@@ -81,12 +81,12 @@ def scan_path(path: Path, root: Path) -> list[str]:
                 line_no = text.count("\n", 0, match.start()) + 1
                 rel = path.relative_to(ROOT).as_posix()
                 findings.append(f"{rel}:{line_no}: reader draft contains editor-only content ({label})")
-    if is_rtd_paper_note(path, root):
+    if is_rtd_paper_deep_dive(path, root):
         for label, pattern in PUBLIC_BODY_FORBIDDEN_PATTERNS:
             for match in pattern.finditer(text):
                 line_no = text.count("\n", 0, match.start()) + 1
                 rel = path.relative_to(ROOT).as_posix()
-                findings.append(f"{rel}:{line_no}: RTD paper note contains editor-only content ({label})")
+                findings.append(f"{rel}:{line_no}: RTD paper deep-dive contains editor-only content ({label})")
     if is_review_note(path, root):
         rel = path.relative_to(ROOT).as_posix()
         for section in REVIEW_REQUIRED_SECTIONS:

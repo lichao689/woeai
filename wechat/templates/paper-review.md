@@ -19,7 +19,7 @@ rtd_page_checked: false
 ## 正文文件
 
 - 公众号正文:
-- RTD 配套页:
+- RTD 论文精解页:
 
 ## 证据来源
 
@@ -98,7 +98,7 @@ rtd_page_checked: false
 
 - 公众号相关导航: only published WeChat article links / omitted because no published WeChat links / needs revision
 - RTD 相关导航: internal RTD paper-note links / omitted because no related RTD pages / needs revision
-- `content_source_url`: default RTD paper note URL / explicit override / explicitly blank
+- `content_source_url`: default RTD 论文精解 URL / explicit override / explicitly blank
 - 预期 RTD 阅读原文: `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`
 
 ## 公开安全
@@ -116,10 +116,10 @@ rtd_page_checked: false
 - [ ] 核对关键数字均有证据；没有高价值关键数字时只保留关键结论卡。
 - [ ] 从 PDF 或作者稿抽取并导入已确认可用的原始高清图。
 - [ ] 确认公众号正文相关论文导航只含已发布公众号文章链接。
-- [ ] 确认 RTD 配套页使用站内 paper-note 相关论文链接。
-- [ ] 确认 RTD 配套页由公众号正文转换而来，标题、正文、图片和 DOI 与公众号正文一致，平台相关导航按各自规则生成。
-- [ ] 确认 RTD 配套页已挂入相关科研方向页的 `学术进展 Academic Progress`，并按二级科研方向归类。
-- [ ] 确认微信草稿底部 `content_source_url` 指向本论文 RTD 解读页，除非本 review front matter 明确覆盖或留空。
+- [ ] 确认 RTD 论文精解页使用站内 paper-note 相关论文链接。
+- [ ] 确认 RTD 论文精解页按已批准可公开使用的论文源文件整理，不由公众号正文派生。
+- [ ] 确认 RTD 论文精解页已进入 `论文精解` 区域，并按二级科研方向归类。
+- [ ] 确认微信草稿底部 `content_source_url` 指向本论文 RTD 论文精解页，除非本 review front matter 明确覆盖或留空。
 - [ ] 公众号后台手机预览正文、公式和图片。
 - [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
 

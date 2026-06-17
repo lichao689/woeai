@@ -49,7 +49,7 @@ Public evidence for enterprise-commissioned work. It may show approved capabilit
 _Avoid_: partner name, exact facility name, active project detail, over-generalizing already anonymized evidence
 
 **Academic Outputs**:
-The canonical public label for the proof page that contains the complete chronological journal-paper record, a paper-note entry area, and alternate browsing options such as the Thematic Publication View. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists. On the page body, the Thematic Publication View should appear as a lightweight banner, and the Paper Notes area should appear before the Journal Papers section. The Paper Notes area should absorb the former Research-page Academic Progress content, preserving its Research Family and subdirection grouping and publication-year-descending order.
+The canonical public label for the proof page that contains the complete chronological journal-paper record, a Paper Deep-Dive area, and alternate browsing options such as the Thematic Publication View. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists. On the page body, the Thematic Publication View should appear as a lightweight banner, and the Paper Deep-Dive area should appear before the Journal Papers section. The Paper Deep-Dive area should absorb the former Research-page Academic Progress content, preserving its Research Family and subdirection grouping and publication-year-descending order.
 _Avoid_: 研究成果 Publications as a mixed-language page title, treating selected highlights as a mandatory Academic Outputs section
 
 **Publication Metrics**:
@@ -73,8 +73,8 @@ A Public Journal Paper selected for highlights or direction pages because it str
 _Avoid_: every recent paper, exhaustive topic list
 
 **Homepage Latest Academic Progress**:
-The homepage research section should surface the latest academic progress so recurring paper-article updates remain visible. Show up to 10 newest paper notes or RTD companion articles under `最新学术进展 Latest Academic Progress`, while keeping the complete archive and longer research narrative on `docs/source/Research.rst`.
-_Avoid_: hiding new paper notes only in deep pages, duplicating the full Research archive on the homepage, listing more than 10 homepage progress items
+The homepage research section should surface the latest academic progress so recurring journal-paper updates remain visible. Show up to 10 newest Paper Deep-Dive pages under `最新学术进展 Latest Academic Progress`, while keeping the complete archive and longer research narrative on `docs/source/Research.rst`.
+_Avoid_: hiding new paper deep-dives only in deep pages, duplicating the full Research archive on the homepage, listing more than 10 homepage progress items
 
 **Chronological Publication View**:
 The canonical complete Academic Outputs view in `docs/source/Publications.rst`. It lists Public Journal Papers by publication year in descending order, groups Public Journal Papers before 2019 under `更早 Earlier`, and owns the full citation text, DOI, Publication Metrics, Student First Author Marker, anchors, and current Publication Numbers. It also contains Degree Thesis Listings after the Journal Papers section.
@@ -84,9 +84,9 @@ _Avoid_: treating the direction view as the full bibliography, maintaining dupli
 The alternate Academic Outputs browsing view in `docs/source/PublicationsByResearch.rst`. It groups the same Public Journal Papers by Research Family first and subdirection second. Inside each subdirection, paper entries are listed by publication year in descending order. Each paper entry must use the exact same public citation expression as the Chronological Publication View, including authors, title, venue, DOI, Publication Metrics, Student First Author Marker, and current Publication Number. It should be registered under the Chronological Publication View's toctree so it appears as part of Academic Outputs in the left navigation, not as a separate root-level site directory.
 _Avoid_: JavaScript-only tabs, alternate short-index citation style, duplicate hand-maintained citation text, publication-year section headings inside subdirections, root-level navigation entry for the thematic view, presenting the view option as a full page section heading
 
-**Paper Notes Area**:
-The `论文解读 Paper Notes` section on Academic Outputs. It contains the former Research-page Academic Progress paper-note archive, grouped by Research Family and subdirection, and appears before `期刊论文 Journal Papers`.
-_Avoid_: 公众号文章 as the public section title, a single ungrouped date-only list, placing paper notes under Research navigation
+**Paper Deep-Dive Area**:
+The `论文精解` section on Academic Outputs. It contains journal-paper deep-dive pages grouped by Research Family and subdirection, and appears before `期刊论文 Journal Papers`. The public Chinese label is `论文精解`; avoid using `论文解读` as the long-term public label for these RTD pages.
+_Avoid_: 公众号文章 as the public section title, 论文解读 as the canonical RTD section label after this terminology change, a single ungrouped date-only list, placing paper deep-dives under Research navigation
 
 **Publication Research Mapping**:
 The machine-readable mapping from Zotero item keys to Research Family and subdirection, stored at `docs/data/publication-research-map.json`. Every Public Journal Paper must have exactly one canonical Research Family and one canonical subdirection before the thematic view can be generated.
@@ -129,11 +129,11 @@ A WeChat Official Account article whose core unit is one selected paper. It shou
 _Avoid_: forcing every article into a multi-paper theme essay
 
 **Publication Artifact**:
-The repository-owned artifact set for one selected Public Journal Paper that has entered the one-paper publication workflow. It is keyed by `publication_ref` and may include a WeChat Article Source, review note, RTD Paper Companion Page, public-safe cover and body assets, backlog state, and a WeChat Draft Record. It is narrower than Public Journal Paper and should not imply that every Public Journal Paper has a WeChat or RTD companion artifact.
+The repository-owned artifact set for one Public Journal Paper that has entered the paper publication workflow. It is keyed by `publication_ref` and may include a WeChat Article Source, review note, RTD Paper Deep-Dive Page, public-safe cover and body assets, backlog state, and a WeChat Draft Record. It is narrower than Public Journal Paper as a workflow state, but the long-term goal is for every Public Journal Paper to enter the Paper Deep-Dive workflow.
 _Avoid_: treating every bibliography entry as a Publication Artifact, or using rendered WeChat HTML, API payloads, or remote draft content as the artifact source of truth
 
 **WeChat Article Source**:
-The canonical public-safe Markdown source for a One-Paper WeChat Article before publication. WeChat HTML, rendered previews, API payloads, draft-box records, and RTD Paper Companion Pages are derived outputs and should not become the source of truth for article wording or facts.
+The canonical public-safe Markdown source for a One-Paper WeChat Article before publication. WeChat HTML, rendered previews, API payloads, draft-box records, and RTD Paper Deep-Dive Pages are separate public outputs and should not become the source of truth for WeChat article wording or facts.
 _Avoid_: treating rendered HTML, WeChat draft content, API payloads, or RTD pages as the canonical article source
 
 **WeChat Paper Author Line**:
@@ -169,28 +169,28 @@ An optional diagnostic check that reports the current public egress IP and compa
 _Avoid_: reading private credentials just to learn the current public IP, or treating local IP-probe mismatch as stronger evidence than the WeChat API response
 
 **WeChat RTD Link Domain**:
-The preferred domain for WOEAI website links embedded in WeChat articles and WeChat draft API payloads. Use `https://woeai.readthedocs.io/zh-cn/latest/` for RTD companion pages, useful direction pages, homepage-style links, and the default WeChat API `content_source_url` base, because this Read the Docs project domain is less tied to the replaceable custom domain `winddee.cn`. Reader-facing links should normally appear under `延伸阅读` as direct hyperlinks, not as repeated label-plus-URL text or a separate body `阅读原文` section. The backend bottom `阅读原文` link is controlled by `content_source_url` and defaults to the current paper RTD companion URL under `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html` unless a review note explicitly overrides it or explicitly leaves it blank. This rule applies to WeChat article links and draft payloads, not necessarily to the public website's own SEO canonical URL or contact-page display.
+The preferred domain for WOEAI website links embedded in WeChat articles and WeChat draft API payloads. Use `https://woeai.readthedocs.io/zh-cn/latest/` for RTD Paper Deep-Dive pages, useful direction pages, homepage-style links, and the default WeChat API `content_source_url` base, because this Read the Docs project domain is less tied to the replaceable custom domain `winddee.cn`. Reader-facing links should normally appear under `延伸阅读` as direct hyperlinks, not as repeated label-plus-URL text or a separate body `阅读原文` section. The backend bottom `阅读原文` link is controlled by `content_source_url` and defaults to the current paper RTD Paper Deep-Dive URL under `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html` unless a review note explicitly overrides it or explicitly leaves it blank. This rule applies to WeChat article links and draft payloads, not necessarily to the public website's own SEO canonical URL or contact-page display.
 _Avoid_: hard-coding `winddee.cn` into WeChat article sources or generated WeChat HTML when an equivalent `woeai.readthedocs.io` URL exists
 
 **Private WeChat Credential Store**:
 The local-only credential location for the Official WeChat Draft API Path. The WeChat Official Account AppID and AppSecret live in `~/.config/woeai/wechat_official_account.env`, expected fixed runner IPs live separately in `~/.config/woeai/wechat_runner.env`, and fetched `access_token` data lives in `~/.cache/woeai/wechat_access_token.json`. These files are outside the public repository; the credential file may be read only when the user explicitly asks to test the API path or create/update a WeChat draft.
 _Avoid_: committing, printing, logging, copying, or summarizing WeChat AppSecret, access tokens, cookies, preview credentials, or private config contents in public-safe files
 
-**RTD Paper Companion Page**:
-A Read the Docs page generated from a One-Paper WeChat Article and stored under `docs/source/paper-notes/`. It is the default website companion for paper-based WeChat articles, but not required for temporary notices, activity posts, or non-paper WeChat content. It should preserve the same title, body text, images, DOI link, and useful related links as the WeChat article, while converting the markup and rendering format to Sphinx-compatible reStructuredText. In navigation it belongs under Academic Outputs, not under Research Directions; Research pages should not retain a separate paper-note archive or pointer after the Paper Notes area is moved to Academic Outputs.
-_Avoid_: creating a separate Markdown route for Sphinx, changing the article meaning for RTD, making the RTD page a shorter unrelated summary, forcing every non-paper WeChat post to have an RTD companion page, treating paper notes as research-direction child pages, or keeping a duplicate Research-page entry point for paper notes
+**RTD Paper Deep-Dive Page**:
+A Read the Docs page publicly labeled `论文精解` for a Public Journal Paper. It should faithfully follow the approved paper source, preserving the paper's section structure, formulas, figures, tables, reference citations, and bibliography in Chinese reader-facing form. It is distinct from the shorter One-Paper WeChat Article; when a compact WeChat article exists, the RTD Paper Deep-Dive Page may link to it near the top, and when it does not exist yet, the link slot may remain absent or explicitly reserved. In navigation it belongs under Academic Outputs, not under Research Directions.
+_Avoid_: 论文解读 as the canonical RTD page label, deriving the full RTD page from the compact WeChat article, summarizing away sections that belong to the approved paper source, losing formula/figure/table/reference structure, treating paper deep-dives as research-direction child pages, or keeping a duplicate Research-page entry point for paper deep-dives
 
 **WeChat Figure Caption**:
 The reader-facing caption attached to a figure in a One-Paper WeChat Article. It uses a Chinese figure-title line translated faithfully from the paper's original figure title, followed by a separate Chinese explanatory line that tells the reader why the figure matters in this article.
 _Avoid_: leaving pure English figure titles in Chinese WeChat articles, merging the figure title and explanation into one paragraph, or using the caption to store extraction/copyright notes
 
 **Public Formula**:
-A mathematical expression included in a One-Paper WeChat Article or RTD Paper Companion Page. It should preserve one LaTeX formula meaning across publication channels, with channel-specific rendering. Public formulas include display equations, inline mathematical variables, symbolic parameters, evaluation metrics, dimensional quantities, and unit-bearing values such as `X_L`, `H_{\max}`, `R`, `1\,\mathrm{km} \times 1\,\mathrm{km}`, and `11\,\mathrm{m/s}`. They should remain text-based and explain key variables in prose.
+A mathematical expression included in a One-Paper WeChat Article or RTD Paper Deep-Dive Page. It should preserve one LaTeX formula meaning across publication channels, with channel-specific rendering. Public formulas include display equations, inline mathematical variables, symbolic parameters, evaluation metrics, dimensional quantities, and unit-bearing values such as `X_L`, `H_{\max}`, `R`, `1\,\mathrm{km} \times 1\,\mathrm{km}`, and `11\,\mathrm{m/s}`. They should remain text-based and explain key variables in prose.
 _Avoid_: code-block formula, inline-code variable, unstructured plain-text formula, default formula screenshot, unexplained symbol list
 
 **Academic Progress Section**:
-The former research-direction page section that grouped RTD Paper Companion Pages by second-level research subdirection. Its content should now be merged into the Academic Outputs Paper Notes area, preserving the same Research Family and subdirection grouping and publication-year-descending order.
-_Avoid_: keeping a duplicate full paper-note archive under Research, treating Academic Progress as a raw publication list, or grouping only by first-level Research Family
+The former research-direction page section that grouped RTD Paper Deep-Dive Pages by second-level research subdirection. Its content should now be merged into the Academic Outputs Paper Deep-Dive area, preserving the same Research Family and subdirection grouping and publication-year-descending order.
+_Avoid_: keeping a duplicate full paper deep-dive archive under Research, treating Academic Progress as a raw publication list, or grouping only by first-level Research Family
 
 **Site Build ID**:
 The public date-time identifier for a WOEAI website update. It replaces semantic software versioning for this docs-only public website and should use Beijing time in `YYYY.MM.DD-HHMM` form.

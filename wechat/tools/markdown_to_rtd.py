@@ -182,7 +182,7 @@ def emit_rtd_related_navigation(
         return
     if output and output[-1] != "":
         output.append("")
-    output.extend(heading("相关论文解读", "-"))
+    output.extend(heading("相关论文精解", "-"))
     for link in links:
         label = escape_rtd_doc_label(strip_title_category_prefix(link["title"]))
         output.append(f"- :doc:`{label} <{link['publication_ref']}>`")

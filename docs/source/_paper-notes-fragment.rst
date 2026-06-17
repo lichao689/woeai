@@ -16,12 +16,13 @@
    paper-notes/ref-chen2024-JCP
    paper-notes/ref-wang2024-ES
    paper-notes/ref-zhou2023-AE
+   paper-notes/ref-chen2022-JWEIA
    paper-notes/ref-li2022-SOS
 
-论文解读 Paper Notes
---------------------
+论文精解
+--------
 
-以下页面由公众号论文正文转换为 RTD 配套页，按二级科研方向归集。同一子方向内，按论文发表时间倒序排列。
+以下页面为 RTD 论文精解页面，按二级科研方向归集。同一子方向内，按论文发表时间倒序排列。
 
 建筑结构抗风
 ~~~~~~~~~~~~
@@ -36,6 +37,7 @@
 - 2024: :doc:`数值风洞 | 用矢量势随机流生成无散湍流 <paper-notes/ref-li2024-POF>`
 - 2024: :doc:`数值风洞 | 让 LES 入流湍流更连贯也更守恒 <paper-notes/ref-chen2024-JCP>`
 - 2024: :doc:`数值风洞 | 让 LES 入流按目标风场自动收敛 <paper-notes/ref-wang2024-ES>`
+- 2022: :doc:`CIRFG 大气边界层 LES 入流湍流生成方法论文精解 <paper-notes/ref-chen2022-JWEIA>`
 
 高层建筑抗风与优化
 ^^^^^^^^^^^^^^^^^^

@@ -9,13 +9,19 @@ appear only as compact platform-specific navigation: published WeChat article
 links in the WeChat body, and internal paper-note links on RTD.
 
 Use the reader-facing Markdown file under `wechat/articles/draft-public-safe/`
-as the public content master. Public wording, formulas, figure captions, and
-body links should be aligned there before generating the RTD RST companion page
-and before updating the WeChat draft. If a WeChat backend preview causes a
-public正文 edit, apply it back to the Markdown master first, then regenerate the
-RST and WeChat outputs.
+as the public content master for the compact WeChat article. Public wording,
+formulas, figure captions, and body links for the WeChat draft should be aligned
+there before updating the draft. If a WeChat backend preview causes a public正文
+edit, apply it back to the Markdown master first, then regenerate the WeChat
+output.
 
-Generate RTD companion pages with the formal converter:
+RTD 论文精解 pages live at `docs/source/paper-notes/<publication_ref>.rst` so
+existing `paper-notes/<publication_ref>.html` links stay stable. They are no
+longer generated from the compact WeChat article; prepare them from the
+approved paper source and follow `docs/agents/paper-deep-dive-rst.md`.
+
+The historical converter remains available for maintaining legacy compact RTD
+pages:
 
 ```bash
 python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS
@@ -32,7 +38,7 @@ fixed WeChat closing sentence (anchored on `点击阅读原文`); it appends a
 `完整引用` section with the full bibliographic citation (taken from the
 `docs/source/Publications.rst` anchor entry and truncated at the DOI, without
 impact factor or CAS partition) plus a `:ref:` link to the Publications entry;
-and it appends the internal `相关论文解读` navigation.
+and it appends the internal `相关论文精解` navigation.
 
 ## Default Structure
 

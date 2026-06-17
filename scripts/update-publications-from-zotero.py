@@ -615,8 +615,9 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             "   按年份倒序浏览 Publications by Year <PublicationsByResearch>",
             "",
-            # Paper-notes toctree is owned by artifacts.py and lives in a sibling
-            # fragment so that regenerating this file cannot clobber it.
+            # Keep this no-op include as a guard against the old top-level
+            # paper-notes toctree shape. Per-direction paper-note toctrees are
+            # emitted under each research subdirection in build_publications_rst.
             ".. include:: _paper-notes-fragment.rst",
             "",
             "期刊论文 Journal Papers",
@@ -683,6 +684,35 @@ def load_deep_dive_titles() -> dict[str, tuple[str, str]]:
     return key_map
 
 
+def paper_deep_dive_toctree(
+    items: list[dict[str, Any]],
+    research_map: dict[str, dict[str, str]],
+    deep_dive_titles: dict[str, tuple[str, str]],
+    family: str,
+    subdirection: str,
+) -> list[str]:
+    entries: list[str] = []
+    for item in items:
+        row = research_map[item["key"]]
+        if row["research_family"] != family or row.get("subdirection") != subdirection:
+            continue
+        dd = deep_dive_titles.get(item["key"])
+        if not dd:
+            continue
+        pub_ref, dd_title = dd
+        entries.append(f"   {dd_title} <paper-notes/{pub_ref}>")
+    if not entries:
+        return []
+    return [
+        ".. toctree::",
+        "   :hidden:",
+        "   :maxdepth: 1",
+        "",
+        *entries,
+        "",
+    ]
+
+
 def build_publications_rst(
     items: list[dict[str, Any]], research_map: dict[str, dict[str, str]]
 ) -> str:
@@ -692,6 +722,11 @@ def build_publications_rst(
         sections.extend([family, "-" * 12, ""])
         for subdirection in RESEARCH_SUBDIRECTION_ORDER[family]:
             sections.extend([subdirection, "~" * 40, ""])
+            sections.extend(
+                paper_deep_dive_toctree(
+                    items, research_map, deep_dive_titles, family, subdirection
+                )
+            )
             for item in items:
                 row = research_map[item["key"]]
                 if row["research_family"] != family or row.get("subdirection") != subdirection:

@@ -21,13 +21,13 @@ if str(REPO_ROOT) not in sys.path:
 
 LATEST_MARKER = "GENERATED LATEST PAPER NOTES"
 
-# Paper-deep-dive page (论文精解) H1 titles double as the navigation link text
-# rendered in the paper-notes fragment. To keep that list scannable and
-# consistent, every such title must open with a short direction prefix
-# ("<prefix> | <hook sentence>") and must NOT end with the redundant literal
-# "论文精解" (that label already heads the section). These prefixes are the
-# only allowed openers; a title missing them reads like a stale table-of-contents
-# entry and was the root cause of the chen2022-JWEIA naming regression.
+# Compact paper-deep-dive titles feed public navigation, homepage progress
+# lists, and citation links. To keep those labels scannable and consistent,
+# every such title must open with a short direction prefix ("<prefix> | <hook
+# sentence>") and must NOT end with the redundant literal "论文精解". These
+# prefixes are the only allowed openers; a title missing them reads like a stale
+# table-of-contents entry and was the root cause of the chen2022-JWEIA naming
+# regression.
 PAPER_NOTE_TITLE_PREFIXES: dict[str, tuple[str, ...]] = {
     "建筑结构抗风": ("数值风洞 |", "结构抗风 |"),
     "海上漂浮风电": ("漂浮风电 |",),
@@ -105,7 +105,7 @@ def select_artifact_title(article_path: Path, rtd_path: Path, fallback: str) -> 
     # The WeChat compact article H1 (a direction-prefix hook sentence) and the
     # RTD deep-dive H1 are intentionally kept in sync. Prefer the compact
     # article title when present, falling back to the RTD page title; this
-    # keeps every fragment navigation label uniform and free of the redundant
+    # keeps every public deep-dive label uniform and free of the redundant
     # "论文精解" suffix that once drifted in via the RTD title.
     return parse_markdown_title(article_path, rtd_title)
 
@@ -158,20 +158,6 @@ def render_latest_paper_notes(root: Path, limit: int = 10) -> str:
     return "\n".join(lines) + ("\n" if lines else "")
 
 
-def render_paper_notes_toctree(root: Path) -> str:
-    artifacts = sort_public_artifacts(public_artifacts(root))
-    if not artifacts:
-        return ""
-    lines = [
-        ".. toctree::",
-        "   :hidden:",
-        "   :maxdepth: 1",
-        "",
-    ]
-    lines.extend(f"   paper-notes/{artifact.publication_ref}" for artifact in artifacts)
-    return "\n".join(lines) + "\n"
-
-
 def rst_heading(title: str, marker: str) -> list[str]:
     width = 0
     for char in title:
@@ -211,12 +197,15 @@ PAPER_NOTES_FRAGMENT_PATH = Path("docs/source/_paper-notes-fragment.rst")
 def render_paper_notes_fragment(root: Path) -> str:
     """Render the paper-notes fragment file owned by this tool.
 
-    After the view swap, this fragment only holds the hidden toctree that
-    registers paper-notes pages. The 论文精解 section was removed; deep-dive
-    titles now appear inline in the Publications page (see
-    update-publications-from-zotero.py).
+    This fragment intentionally no longer registers paper-note pages. The
+    sidebar toctrees now live under each research subdirection in
+    Publications.rst, where update-publications-from-zotero.py can keep them in
+    the same order and hierarchy as the journal-paper entries.
     """
-    return render_paper_notes_toctree(root).rstrip("\n") + "\n"
+    return (
+        ".. Paper-note toctrees are emitted inside each Academic Outputs research\n"
+        ".. subdirection by scripts/update-publications-from-zotero.py.\n"
+    )
 
 
 
@@ -251,8 +240,8 @@ def artifact_integrity_problems(root: Path) -> list[dict[str, str]]:
                     "path": repo_relative(artifact.rtd_path, root),
                 }
             )
-        # Paper-deep-dive H1 title doubles as the fragment navigation label, so
-        # enforce the direction-prefix + no-redundant-suffix convention here.
+        # Enforce the direction-prefix + no-redundant-suffix convention for the
+        # compact public deep-dive label used by navigation and progress lists.
         title = artifact.title or ""
         if title.endswith(PAPER_NOTE_TITLE_FORBIDDEN_SUFFIX):
             problems.append(

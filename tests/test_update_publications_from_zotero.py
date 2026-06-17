@@ -148,9 +148,9 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         """page_header must emit the current committed structure, not the stale
         'View Options'/'Selected Highlights' sections, so that regenerating
         Publications.rst does not clobber hand-curated content. The
-        paper-notes area (including its 论文解读 heading) is owned by
-        artifacts.py via an include fragment, so page_header references it
-        with .. include:: instead of inlining it."""
+        paper-notes top-level toctree is no longer emitted by the include
+        fragment. The include remains as a no-op guard, while per-subdirection
+        paper-note toctrees are emitted by build_publications_rst."""
         header = self.updater.page_header({})
 
         # The stale sections must not come back on regeneration.
@@ -196,6 +196,12 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
             "[75] :doc:`2026 | 如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-JOT>`",
             page,
         )
+        subdirection_index = page.index("\n数值风洞与湍动入流\n")
+        toctree_index = page.index(".. toctree::", subdirection_index)
+        entry_index = page.index("如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-JOT>", toctree_index)
+        citation_index = page.index("[75] :doc:`2026 | 如何把卫星影像转成 CFD 可用城市几何", entry_index)
+        self.assertLess(toctree_index, entry_index)
+        self.assertLess(entry_index, citation_index)
         self.assertNotIn("[75] 2026 | :doc:", page)
 
 

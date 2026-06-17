@@ -98,7 +98,7 @@ class PublicationArtifactsTests(unittest.TestCase):
 
     def test_compact_wechat_title_wins_over_rtd_title_and_keeps_prefix(self) -> None:
         # The compact WeChat article H1 (a direction-prefix hook sentence) is
-        # the canonical fragment navigation label, preferred over the RTD page
+        # the canonical compact public label, preferred over the RTD page
         # title. Both are kept prefix-conformant so no redundant "论文精解"
         # suffix drifts back into the navigation list.
         temp = self.make_repo()
@@ -156,10 +156,12 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.assertEqual(write_result, 0)
         self.assertEqual(check_result, 0)
         self.assertIn("- 2026 | 建筑结构抗风 / 数值风洞与湍动入流", index_text)
-        # The fragment only holds the hidden toctree (论文精解 section removed;
-        # deep-dive titles now appear inline in the Publications page).
-        self.assertIn(".. toctree::", fragment_text)
-        self.assertIn("   paper-notes/ref-complete", fragment_text)
+        # The fragment no longer owns a top-level hidden toctree; the
+        # Publications generator emits paper-note toctrees under each research
+        # subdirection instead.
+        self.assertNotIn(".. toctree::", fragment_text)
+        self.assertNotIn("paper-notes/ref-complete", fragment_text)
+        self.assertIn("Paper-note toctrees are emitted inside each Academic Outputs research", fragment_text)
         self.assertNotIn("论文精解", fragment_text)
         self.assertNotIn("stale", fragment_text)
 

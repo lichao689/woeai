@@ -49,7 +49,7 @@ Public evidence for enterprise-commissioned work. It may show approved capabilit
 _Avoid_: partner name, exact facility name, active project detail, over-generalizing already anonymized evidence
 
 **Academic Outputs**:
-The canonical public label for the proof page that contains the complete chronological journal-paper record, a Paper Deep-Dive area, and alternate browsing options such as the Thematic Publication View. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists. On the page body, the Thematic Publication View should appear as a lightweight banner, and the Paper Deep-Dive area should appear before the Journal Papers section. The Paper Deep-Dive area should absorb the former Research-page Academic Progress content, preserving its Research Family and subdirection grouping and publication-year-descending order.
+The canonical public label for the proof page that contains the complete chronological journal-paper record, a Paper Deep-Dive area, and alternate browsing options such as the Thematic Publication View. Use `学术成果 Academic Outputs` for the page title while preserving the existing `Publications.rst` filename and URL unless a redirect plan exists. On the page body, the Thematic Publication View should appear as a lightweight banner, and the Paper Deep-Dive area should appear before the Journal Papers section. The Paper Deep-Dive area should absorb the former Research-page Academic Progress content, preserving its Research Family and subdirection grouping and publication-year-descending order. In the RTD left sidebar, Paper Deep-Dive pages should nest inside the Academic Outputs Research Family and subdirection hierarchy, not appear as direct children of Academic Outputs.
 _Avoid_: 研究成果 Publications as a mixed-language page title, treating selected highlights as a mandatory Academic Outputs section
 
 **Publication Metrics**:
@@ -90,7 +90,7 @@ _Avoid_: JavaScript-only tabs, alternate short-index citation style, duplicate h
 
 **Paper Deep-Dive Area**:
 The `论文精解` section on Academic Outputs. It contains journal-paper deep-dive pages grouped by Research Family and subdirection, and appears before `期刊论文 Journal Papers`. The public Chinese label is `论文精解`; avoid using `论文解读` as the long-term public label for these RTD pages.
-_Avoid_: 公众号文章 as the public section title, 论文解读 as the canonical RTD section label after this terminology change, a single ungrouped date-only list, placing paper deep-dives under Research navigation
+_Avoid_: 公众号文章 as the public section title, 论文解读 as the canonical RTD section label after this terminology change, a single ungrouped date-only list, placing paper deep-dives under Research navigation, registering paper deep-dives as a flat top-level Academic Outputs sidebar list
 
 **Publication Research Mapping**:
 The machine-readable mapping from Zotero item keys to Research Family and subdirection, stored at `docs/data/publication-research-map.json`. Every Public Journal Paper must have exactly one canonical Research Family and one canonical subdirection before the thematic view can be generated.
@@ -181,8 +181,8 @@ The local-only credential location for the Official WeChat Draft API Path. The W
 _Avoid_: committing, printing, logging, copying, or summarizing WeChat AppSecret, access tokens, cookies, preview credentials, or private config contents in public-safe files
 
 **RTD Paper Deep-Dive Page**:
-A Read the Docs page publicly labeled `论文精解` for a Public Journal Paper. It should faithfully follow the approved paper source, preserving the paper's section structure, formulas, figures, tables, reference citations, and bibliography in Chinese reader-facing form. It is distinct from the shorter One-Paper WeChat Article; when a compact WeChat article exists, the RTD Paper Deep-Dive Page may link to it near the top, and when it does not exist yet, the link slot may remain absent or explicitly reserved. In navigation it belongs under Academic Outputs, not under Research Directions.
-_Avoid_: 论文解读 as the canonical RTD page label, deriving the full RTD page from the compact WeChat article, summarizing away sections that belong to the approved paper source, losing formula/figure/table/reference structure, treating paper deep-dives as research-direction child pages, or keeping a duplicate Research-page entry point for paper deep-dives
+A Read the Docs page publicly labeled `论文精解` for a Public Journal Paper. It should faithfully follow the approved paper source, preserving the paper's section structure, formulas, figures, tables, reference citations, and bibliography in Chinese reader-facing form. It is distinct from the shorter One-Paper WeChat Article; when a compact WeChat article exists, the RTD Paper Deep-Dive Page may link to it near the top, and when it does not exist yet, the link slot may remain absent or explicitly reserved. In navigation it belongs under Academic Outputs, not under the top-level Research page; within Academic Outputs, the sidebar entry should be emitted under the matching Research Family and subdirection.
+_Avoid_: 论文解读 as the canonical RTD page label, deriving the full RTD page from the compact WeChat article, summarizing away sections that belong to the approved paper source, losing formula/figure/table/reference structure, treating paper deep-dives as top-level Research child pages, keeping a duplicate Research-page entry point for paper deep-dives, or listing paper deep-dives as direct Academic Outputs sidebar children
 
 **WeChat Figure Caption**:
 The reader-facing caption attached to a figure in a One-Paper WeChat Article. It uses a Chinese figure-title line translated faithfully from the paper's original figure title, followed by a separate Chinese explanatory line that tells the reader why the figure matters in this article.
@@ -245,6 +245,9 @@ Domain Expert: No. Publication Numbers can change when the page is regenerated; 
 Dev: Should the publication year sit outside the paper-deep-dive link on Academic Outputs?
 
 Domain Expert: No. For a paper that has a Paper Deep-Dive Citation Link, include the year in the clickable text as `YYYY | compact Chinese deep-dive title`; keep the Publication Number outside the link.
+
+Q: Should Paper Deep-Dive pages appear as a flat direct list under Academic Outputs in the RTD left sidebar?
+Domain Expert: No. Register each Paper Deep-Dive page inside the matching Academic Outputs Research Family and subdirection so the sidebar hierarchy reads `Academic Outputs -> Research Family -> subdirection -> Paper Deep-Dive page`.
 
 Dev: Should every new paper appear in the highlights?
 

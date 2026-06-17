@@ -113,11 +113,15 @@ class PublicationsResearchViewTests(unittest.TestCase):
         self.assertNotIn("浏览方式 View Options", text)
         self.assertNotIn("精选证据 Selected Highlights", text)
         self.assertIn(".. container:: publication-view-banner", text)
-        # The fragment only holds the hidden toctree now (论文精解 section removed).
+        # The fragment is a no-op guard now; paper-note toctrees live under
+        # each research subdirection so the RTD sidebar nests them correctly.
         self.assertIn(".. include:: _paper-notes-fragment.rst", text)
         fragment_text = (ROOT / "docs/source/_paper-notes-fragment.rst").read_text(encoding="utf-8")
         self.assertNotIn("论文精解", fragment_text)
-        self.assertIn(".. toctree::", fragment_text)
+        self.assertNotIn(".. toctree::", fragment_text)
+        subdirection_section = section_between(text, "数值风洞与湍动入流", ("高层建筑抗风与优化",))
+        self.assertIn(".. toctree::", subdirection_section)
+        self.assertIn("如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-BE>", subdirection_section)
         self.assertIn("按年份倒序浏览学术成果 Publications by Year <PublicationsByResearch>", text)
         self.assertNotIn("学术进展 Academic Progress", research_text)
         self.assertNotIn("paper-notes/", research_text)

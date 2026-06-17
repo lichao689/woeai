@@ -10,10 +10,9 @@ INDEX = SOURCE / "index.rst"
 CONF = SOURCE / "conf.py"
 PROJECTS = SOURCE / "Projects.rst"
 RESEARCH = SOURCE / "Research.rst"
-# The two former direction pages (StructuralWindEngineering / FloatingOffshoreWindTurbine)
-# are merged into a single ResearchDirections page; their anchors and project
-# records moved with the merge.
-DIRECTIONS = SOURCE / "ResearchDirections.rst"
+# The two former direction pages were first merged into a ResearchDirections
+# page, then inlined into Research.rst itself; their anchors and project
+# records now live directly in Research.rst.
 ENGINEERING = SOURCE / "EngineeringApplications.rst"
 
 
@@ -48,19 +47,17 @@ class RTDHomepageProjectsRedesignTests(unittest.TestCase):
 
     def test_project_evidence_migrated_to_receiving_pages(self) -> None:
         research = read(RESEARCH)
-        directions = read(DIRECTIONS)
         engineering = read(ENGINEERING)
 
-        self.assertIn(".. _research-public-project-support:", research)
-        # Both direction anchors now live in the merged directions page.
-        self.assertIn(".. _building-wind-project-support:", directions)
-        self.assertIn(".. _floating-wind-project-support:", directions)
+        # Both direction anchors now live directly in Research.rst.
+        self.assertIn(".. _building-wind-project-support:", research)
+        self.assertIn(".. _floating-wind-project-support:", research)
         self.assertIn(".. _engineering-enterprise-project-evidence:", engineering)
 
-        self.assertIn("数值大气湍流边界层生成方法的改进与验证", directions)
-        self.assertIn("考虑风致荷载及响应的高层建筑气动外形优化研究", directions)
-        self.assertIn("面向多设计阶段的浮式风机系统一体化分析与优化方法", directions)
-        self.assertIn("柱稳型海上浮式风机基础的关键技术开发", directions)
+        self.assertIn("数值大气湍流边界层生成方法的改进与验证", research)
+        self.assertIn("考虑风致荷载及响应的高层建筑气动外形优化研究", research)
+        self.assertIn("面向多设计阶段的浮式风机系统一体化分析与优化方法", research)
+        self.assertIn("柱稳型海上浮式风机基础的关键技术开发", research)
         self.assertIn("微地形下输电线路微尺度台风风场特性及模型研究", engineering)
         self.assertIn("钢筋混凝土半潜式浮力风机系统的风浪联合模型试验研究", engineering)
 

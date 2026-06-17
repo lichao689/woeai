@@ -1,0 +1,32 @@
+{
+  "courses": {
+    "undergraduate": [
+      {
+        "title_cn": "工程流体力学",
+        "title_en": "Engineering Fluid Mechanics",
+        "major": "土木工程专业",
+        "term": "春季学期",
+        "hours": 32,
+        "period": "2018年-至今"
+      }
+    ],
+    "graduate": [
+      {
+        "title_cn": "风工程",
+        "title_en": "Wind Engineering",
+        "major": "土木工程专业",
+        "term": "春季学期",
+        "hours": 32,
+        "period": "2014年-至今"
+      },
+      {
+        "title_cn": "结构风洞试验",
+        "title_en": "Wind Tunnel Testing for Civil Structures",
+        "major": "土木工程专业",
+        "term": "春季学期",
+        "hours": 16,
+        "period": "2022年-至今"
+      }
+    ]
+  }
+}

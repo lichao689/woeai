@@ -103,6 +103,7 @@ from woeai.publications.rendering import (  # noqa: E402,F401
     bold_group_leader,
     bold_journal_title,
     bold_metric_values,
+    paper_deep_dive_citation_link_text,
     rendered_entry,
 )
 
@@ -702,7 +703,9 @@ def build_publications_rst(
                 if dd:
                     pub_ref, dd_title = dd
                     number = f"[{item['publication_number']}] "
-                    dd_link = f":doc:`{dd_title} <paper-notes/{pub_ref}>` "
+                    year = extract_year(item["data"].get("date"))
+                    link_text = paper_deep_dive_citation_link_text(year, dd_title)
+                    dd_link = f":doc:`{link_text} <paper-notes/{pub_ref}>` "
                     entry = entry.replace(number, number + dd_link, 1)
                 sections.extend([entry, ""])
     return "\n".join(sections).rstrip() + "\n"

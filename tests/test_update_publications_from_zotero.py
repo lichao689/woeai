@@ -161,6 +161,43 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         # Paper-notes content lives in an artifacts-owned fragment.
         self.assertIn(".. include:: _paper-notes-fragment.rst", header)
 
+    def test_deep_dive_link_text_includes_publication_year(self) -> None:
+        item = make_item(
+            None,
+            [
+                {"firstName": "Peisheng", "lastName": "Zhao", "creatorType": "author"},
+                {"firstName": "Chao", "lastName": "Li", "creatorType": "author"},
+            ],
+            "Zhao Peisheng; Li Chao, Example[J]. Journal of Tests, 2026.",
+        )
+        item["data"]["date"] = "2026"
+        item["key"] = "TEST1234"
+        item["anchor"] = "ref-zhao2026-JOT"
+        item["publication_number"] = 75
+
+        original_loader = self.updater.load_deep_dive_titles
+        self.updater.load_deep_dive_titles = lambda: {
+            "TEST1234": ("ref-zhao2026-JOT", "如何把卫星影像转成 CFD 可用城市几何")
+        }
+        try:
+            page = self.updater.build_publications_rst(
+                [item],
+                {
+                    "TEST1234": {
+                        "research_family": "建筑结构抗风",
+                        "subdirection": "数值风洞与湍动入流",
+                    }
+                },
+            )
+        finally:
+            self.updater.load_deep_dive_titles = original_loader
+
+        self.assertIn(
+            "[75] :doc:`2026 | 如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-JOT>`",
+            page,
+        )
+        self.assertNotIn("[75] 2026 | :doc:", page)
+
 
 if __name__ == "__main__":
     unittest.main()

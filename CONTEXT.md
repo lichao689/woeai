@@ -68,6 +68,10 @@ _Avoid_: missing proof, made-up metric
 The visible list number assigned to a Public Journal Paper according to the current complete ordering of the publications page. It is not a stable identifier; cross-page references should rely on explicit RST anchors.
 _Avoid_: publication id, permanent reference key
 
+**Paper Deep-Dive Citation Link**:
+The clickable RTD Paper Deep-Dive Page link embedded at the beginning of an Academic Outputs citation line for a Public Journal Paper that has a deep-dive page. Its visible text includes the publication year, a vertical bar, and the compact Chinese deep-dive title, for example `2026 | 如何把卫星影像转成 CFD 可用城市几何`. The Publication Number remains outside this link, and the author list, English title, venue, DOI, and Publication Metrics remain outside the link.
+_Avoid_: linking only the compact Chinese title, including the Publication Number inside the link, linking the full citation body
+
 **Representative Publication**:
 A Public Journal Paper selected for highlights or direction pages because it strongly supports recruitment, technical collaboration, or academic credibility for a research theme. It is a curated subset, not a complete list of outputs.
 _Avoid_: every recent paper, exhaustive topic list
@@ -237,6 +241,10 @@ Domain Expert: Yes. A complete citation can be published without every Publicati
 Dev: Can another page link to publication number 61 as a permanent identifier?
 
 Domain Expert: No. Publication Numbers can change when the page is regenerated; use the paper's RST anchor for stable links.
+
+Dev: Should the publication year sit outside the paper-deep-dive link on Academic Outputs?
+
+Domain Expert: No. For a paper that has a Paper Deep-Dive Citation Link, include the year in the clickable text as `YYYY | compact Chinese deep-dive title`; keep the Publication Number outside the link.
 
 Dev: Should every new paper appear in the highlights?
 

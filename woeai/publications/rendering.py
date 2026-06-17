@@ -60,3 +60,10 @@ def rendered_entry(item: dict[str, Any], number: int) -> str:
     text = bold_group_leader(text)
     text = mark_corresponding_authors(text, item)
     return f"[{number}] {text}"
+
+
+def paper_deep_dive_citation_link_text(publication_year: int, title: str) -> str:
+    title = title.strip()
+    if publication_year > 0:
+        return f"{publication_year} | {title}"
+    return title

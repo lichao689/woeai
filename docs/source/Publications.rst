@@ -34,6 +34,7 @@
    我们如何用预计算 CFD 数据库加速城市微尺度风环境预测 <paper-notes/ref-zhao2026-BS>
    如何高效重建城市风能中的高时间分辨率风场 <paper-notes/ref-tang2026-RE>
    用 3D Gaussian Splatting 重建城市建筑几何 <paper-notes/ref-zhao2025-SCS>
+   LES 高层建筑风荷载评估中人工压力脉动抑制方法对比 <paper-notes/ref-chen2024-POF>
    让 LES 入流按目标风场自动收敛 <paper-notes/ref-wang2024-ES>
    用矢量势随机流生成无散湍流 <paper-notes/ref-li2024-POF>
    让 LES 入流湍流更连贯也更守恒 <paper-notes/ref-chen2024-JCP>
@@ -65,7 +66,7 @@
 
 .. _ref-chen2024-POF:
 
-[58] :student-first-author:`Chen Lingwei`; **Li Chao**\*; Wang Jinghan; He Xin; Wang Xiangjie; Hu Gang; Wang Xiaolu, Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment[J]. **Physics of Fluids**, 2024, 36(12): 127120. https://doi.org/10.1063/5.0240163. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
+[58] :doc:`2024 | LES 高层建筑风荷载评估中人工压力脉动抑制方法对比 <paper-notes/ref-chen2024-POF>` :student-first-author:`Chen Lingwei`; **Li Chao**\*; Wang Jinghan; He Xin; Wang Xiangjie; Hu Gang; Wang Xiaolu, Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment[J]. **Physics of Fluids**, 2024, 36(12): 127120. https://doi.org/10.1063/5.0240163. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
 .. _ref-tang2024-POF:
 

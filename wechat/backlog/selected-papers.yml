@@ -261,3 +261,10 @@ items:
     wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit2hqMCb-qA7qwltzTTFEeh_5JG6k-8Wrd3o0Vzt5OzC8
     wechat_draft_updated_at: 2026-06-11T11:25:22+08:00
     wechat_draft_created_at: 2026-06-10T20:05:52+08:00
+  - publication_ref: ref-chen2024-POF
+    zotero_key: 78XMAPMX
+    title: "LES 高层建筑风荷载评估中人工压力脉动抑制方法对比"
+    research_family: 建筑结构抗风
+    subdirection: 数值风洞与湍动入流
+    original_year: 2024
+    wechat_status: drafting

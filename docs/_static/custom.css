@@ -104,6 +104,14 @@
     margin: 0 0 1.25rem 1.5rem;
 }
 
+/* Contact-section WeChat QR: size it to roughly match the height of the
+   contact list beside it and nudge it left so it does not hug the page edge. */
+.rst-content img.align-right.contact-qr {
+    width: 120px;
+    height: auto;
+    margin: 0 2.5rem 1rem 1.5rem;
+}
+
 .rst-content .student-first-author {
     text-decoration: underline;
     text-decoration-thickness: 0.08em;
@@ -161,6 +169,10 @@
     .rst-content img.align-right {
         float: none;
         display: block;
+        margin: 0 auto 1rem;
+    }
+
+    .rst-content img.align-right.contact-qr {
         margin: 0 auto 1rem;
     }
 }

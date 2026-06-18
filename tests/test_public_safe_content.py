@@ -166,6 +166,91 @@ class PublicSafeContentTests(unittest.TestCase):
             self.assertEqual(result, 1)
             self.assertIn("latex_tag_in_math", stderr)
 
+    def test_rtd_paper_deep_dive_requires_wechat_cover_after_short_article_line(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "repo"
+            wechat_root = root / "wechat"
+            paper_notes_root = root / "docs" / "source" / "paper-notes"
+            wechat_root.mkdir(parents=True)
+            paper_notes_root.mkdir(parents=True)
+            (paper_notes_root / "ref-example.rst").write_text(
+                "示例论文精解\n"
+                "============\n\n"
+                "精简版微信公众号文章：待发布\n\n"
+                ".. contents:: 本页目录\n\n"
+                "1 结论\n"
+                "------\n\n"
+                "Conclusion.\n\n"
+                "参考文献\n"
+                "--------\n\n"
+                "- Reference.\n",
+                encoding="utf-8",
+            )
+
+            result, _stdout, stderr = self.run_checker(root, wechat_root, paper_notes_root)
+
+            self.assertEqual(result, 1)
+            self.assertIn("top_wechat_cover", stderr)
+
+    def test_rtd_paper_deep_dive_allows_appendix_between_conclusion_and_references(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "repo"
+            wechat_root = root / "wechat"
+            paper_notes_root = root / "docs" / "source" / "paper-notes"
+            wechat_root.mkdir(parents=True)
+            paper_notes_root.mkdir(parents=True)
+            (paper_notes_root / "ref-example.rst").write_text(
+                "示例论文精解\n"
+                "============\n\n"
+                "精简版微信公众号文章：待发布\n\n"
+                ".. image:: ../../../wechat/assets/public-safe/ref-example/cover-wechat.png\n\n"
+                "1 结论\n"
+                "------\n\n"
+                "Conclusion.\n\n"
+                "附录 A 方法细节\n"
+                "---------------\n\n"
+                "Appendix.\n\n"
+                "参考文献\n"
+                "--------\n\n"
+                "- Reference.\n",
+                encoding="utf-8",
+            )
+
+            result, stdout, stderr = self.run_checker(root, wechat_root, paper_notes_root)
+
+            self.assertEqual(result, 0)
+            self.assertIn("Public-safety check passed", stdout)
+            self.assertEqual(stderr, "")
+
+    def test_rtd_paper_deep_dive_rejects_disallowed_section_between_conclusion_and_references(self) -> None:
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir) / "repo"
+            wechat_root = root / "wechat"
+            paper_notes_root = root / "docs" / "source" / "paper-notes"
+            wechat_root.mkdir(parents=True)
+            paper_notes_root.mkdir(parents=True)
+            (paper_notes_root / "ref-example.rst").write_text(
+                "示例论文精解\n"
+                "============\n\n"
+                "精简版微信公众号文章：待发布\n\n"
+                ".. image:: ../../../wechat/assets/public-safe/ref-example/cover-wechat.png\n\n"
+                "1 结论\n"
+                "------\n\n"
+                "Conclusion.\n\n"
+                "CRediT 作者贡献声明\n"
+                "-------------------\n\n"
+                "Contribution.\n\n"
+                "参考文献\n"
+                "--------\n\n"
+                "- Reference.\n",
+                encoding="utf-8",
+            )
+
+            result, _stdout, stderr = self.run_checker(root, wechat_root, paper_notes_root)
+
+            self.assertEqual(result, 1)
+            self.assertIn("post_conclusion_section: CRediT 作者贡献声明", stderr)
+
     def test_review_template_may_contain_editor_workflow_fields(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir) / "repo"

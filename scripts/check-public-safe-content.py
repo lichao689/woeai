@@ -31,6 +31,7 @@ PUBLIC_BODY_FORBIDDEN_PATTERNS = [
     # aligned/cases/bmatrix. Use \qquad (N) for equation numbering instead.
     ("latex_tag_in_math", re.compile(r"\\tag\{")),
 ]
+RST_HEADING_MARKERS = set("=-~^`#*")
 REVIEW_REQUIRED_SECTIONS = [
     "## 源文件获取记录",
     "## 关键事实证据定位记录",
@@ -70,6 +71,72 @@ def is_rtd_paper_deep_dive(path: Path, root: Path) -> bool:
     return root == ROOT / "docs/source/paper-notes" and path.suffix.lower() == ".rst"
 
 
+def rst_headings(text: str) -> list[tuple[str, int]]:
+    lines = text.splitlines()
+    headings: list[tuple[str, int]] = []
+    for index, title in enumerate(lines[:-1]):
+        stripped_title = title.strip()
+        underline = lines[index + 1].strip()
+        if not stripped_title or len(underline) < 3:
+            continue
+        if len(set(underline)) == 1 and underline[0] in RST_HEADING_MARKERS:
+            headings.append((stripped_title, index + 1))
+    return headings
+
+
+def is_conclusion_heading(title: str) -> bool:
+    return re.fullmatch(r"(?:\d+(?:\.\d+)*\s+)?结论", title) is not None
+
+
+def is_allowed_post_conclusion_heading(title: str) -> bool:
+    return title.startswith("附录") or title.lower().startswith("appendix")
+
+
+def rtd_deep_dive_layout_findings(path: Path, text: str) -> list[str]:
+    findings: list[str] = []
+    rel = path.relative_to(ROOT).as_posix()
+    lines = text.splitlines()
+    wechat_line_index = next(
+        (index for index, line in enumerate(lines) if line.startswith("精简版微信公众号文章")),
+        None,
+    )
+    if wechat_line_index is None:
+        return findings
+
+    next_content_index = wechat_line_index + 1
+    while next_content_index < len(lines) and not lines[next_content_index].strip():
+        next_content_index += 1
+    if (
+        next_content_index >= len(lines)
+        or not lines[next_content_index].lstrip().startswith(".. image::")
+        or "cover-wechat" not in lines[next_content_index]
+    ):
+        findings.append(
+            f"{rel}:{wechat_line_index + 1}: RTD paper deep-dive missing top WeChat cover image "
+            "(top_wechat_cover)"
+        )
+
+    headings = rst_headings(text)
+    conclusion_index = next((index for index, (title, _line_no) in enumerate(headings) if is_conclusion_heading(title)), None)
+    if conclusion_index is None:
+        return findings
+    reference_index = next(
+        (index for index in range(conclusion_index + 1, len(headings)) if headings[index][0] == "参考文献"),
+        None,
+    )
+    if reference_index is None:
+        findings.append(f"{rel}:{headings[conclusion_index][1]}: RTD paper deep-dive missing references after conclusion (missing_references_after_conclusion)")
+        return findings
+    for title, line_no in headings[conclusion_index + 1 : reference_index]:
+        if is_allowed_post_conclusion_heading(title):
+            continue
+        findings.append(
+            f"{rel}:{line_no}: RTD paper deep-dive has disallowed section between conclusion and references "
+            f"(post_conclusion_section: {title})"
+        )
+    return findings
+
+
 def scan_path(path: Path, root: Path) -> list[str]:
     findings: list[str] = []
     text = path.read_text(encoding="utf-8")
@@ -90,6 +157,7 @@ def scan_path(path: Path, root: Path) -> list[str]:
                 line_no = text.count("\n", 0, match.start()) + 1
                 rel = path.relative_to(ROOT).as_posix()
                 findings.append(f"{rel}:{line_no}: RTD paper deep-dive contains editor-only content ({label})")
+        findings.extend(rtd_deep_dive_layout_findings(path, text))
     if is_review_note(path, root):
         rel = path.relative_to(ROOT).as_posix()
         for section in REVIEW_REQUIRED_SECTIONS:

@@ -111,6 +111,11 @@
     text-decoration-skip-ink: auto;
 }
 
+.rst-content .homepage-direction-link,
+.rst-content .homepage-direction-link a {
+    font-weight: 700;
+}
+
 .rst-content .member-status-current,
 .rst-content .member-status-graduated {
     display: inline-block;

@@ -25,15 +25,17 @@ def public_source_texts() -> dict[str, str]:
 
 
 class RTDHomepageProjectsRedesignTests(unittest.TestCase):
-    def test_homepage_uses_engineering_first_story_without_duplicate_logo(self) -> None:
+    def test_homepage_uses_recruitment_first_story_without_duplicate_logo(self) -> None:
         index = read(INDEX)
         conf = read(CONF)
 
         self.assertNotIn(".. image:: ../_static/logoGroup.png", index)
         self.assertIn('html_logo = "../_static/logoGroup.png"', conf)
         self.assertIn("把风与海洋工程研究转化为可验证的工程能力", index)
-        self.assertLess(index.index("工程应用 Engineering Applications"), index.index("加入 WOEAI Recruitment"))
-        self.assertLess(index.index("加入 WOEAI Recruitment"), index.index("最新学术进展 Latest Academic Progress"))
+        self.assertLess(index.index("欢迎加入 WOEAI Recruitment"), index.index("研究方向 Research Directions"))
+        self.assertLess(index.index("研究方向 Research Directions"), index.index("工程应用 Engineering Applications"))
+        self.assertLess(index.index("工程应用 Engineering Applications"), index.index("最新学术进展 Latest Academic Progress"))
+        self.assertNotIn("联系建议 Contact Notes", index)
         self.assertIn("完整研究脉络见 :doc:`Research`，完整论文记录见 :doc:`Publications`。", index)
 
     def test_projects_page_is_removed_from_navigation_and_source_tree(self) -> None:

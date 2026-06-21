@@ -197,13 +197,13 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
             self.updater.load_deep_dive_titles = original_loader
 
         self.assertIn(
-            "[75] :doc:`2026 | 如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-JOT>`",
+            "[75] :doc:`2026 JOT | 如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-JOT>`",
             page,
         )
         subdirection_index = page.index("\n数值风洞与湍动入流\n")
         toctree_index = page.index(".. toctree::", subdirection_index)
-        entry_index = page.index("如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-JOT>", toctree_index)
-        citation_index = page.index("[75] :doc:`2026 | 如何把卫星影像转成 CFD 可用城市几何", entry_index)
+        entry_index = page.index("2026 JOT | 如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-JOT>", toctree_index)
+        citation_index = page.index("[75] :doc:`2026 JOT | 如何把卫星影像转成 CFD 可用城市几何", entry_index)
         self.assertLess(toctree_index, entry_index)
         self.assertLess(entry_index, citation_index)
         self.assertNotIn("[75] 2026 | :doc:", page)

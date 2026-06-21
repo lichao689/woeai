@@ -76,6 +76,7 @@ from woeai.publications.textutils import (  # noqa: E402,F401
     creator_csl_display_name,
     creator_display_name,
     extract_year,
+    journal_initialism,
     normalize_author_name,
     normalize_doi,
     normalize_title,
@@ -204,18 +205,6 @@ def creator_family_token(creator: dict[str, Any]) -> str:
         return PINYIN_SURNAMES.get(first, f"zh{ord(first):x}")
     token = family.split()[-1] if family.split() else "unknown"
     return slug(token)
-
-
-def journal_initialism(title: str | None) -> str:
-    title = (title or "").strip()
-    if title in JOURNAL_INITIALISM_OVERRIDES:
-        return JOURNAL_INITIALISM_OVERRIDES[title]
-    if contains_cjk(title):
-        return chinese_initialism(title)
-    words = re.findall(r"[A-Za-z0-9]+", title)
-    if not words:
-        return "J"
-    return "".join(word[0].upper() for word in words)
 
 
 def short_title_token(title: str | None) -> str:
@@ -699,7 +688,10 @@ def paper_deep_dive_toctree(
         if not dd:
             continue
         pub_ref, dd_title = dd
-        entries.append(f"   {dd_title} <paper-notes/{pub_ref}>")
+        year = extract_year(item["data"].get("date"))
+        initialism = journal_initialism(item["data"].get("publicationTitle"))
+        sidebar_title = paper_deep_dive_citation_link_text(year, dd_title, initialism)
+        entries.append(f"   {sidebar_title} <paper-notes/{pub_ref}>")
     if not entries:
         return []
     return [
@@ -738,7 +730,8 @@ def build_publications_rst(
                     pub_ref, dd_title = dd
                     number = f"[{item['publication_number']}] "
                     year = extract_year(item["data"].get("date"))
-                    link_text = paper_deep_dive_citation_link_text(year, dd_title)
+                    initialism = journal_initialism(item["data"].get("publicationTitle"))
+                    link_text = paper_deep_dive_citation_link_text(year, dd_title, initialism)
                     dd_link = f":doc:`{link_text} <paper-notes/{pub_ref}>` "
                     entry = entry.replace(number, number + dd_link, 1)
                 sections.extend([entry, ""])

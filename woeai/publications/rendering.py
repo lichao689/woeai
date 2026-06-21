@@ -18,6 +18,7 @@ from woeai.publications.authors import (
 )
 from woeai.publications.textutils import (
     METRIC_LABELS,
+    journal_initialism,
     rst_escape,
     strip_bib_html,
 )
@@ -62,8 +63,14 @@ def rendered_entry(item: dict[str, Any], number: int) -> str:
     return f"[{number}] {text}"
 
 
-def paper_deep_dive_citation_link_text(publication_year: int, title: str) -> str:
+def paper_deep_dive_citation_link_text(
+    publication_year: int, title: str, journal_initialism_text: str = ""
+) -> str:
     title = title.strip()
-    if publication_year > 0:
-        return f"{publication_year} | {title}"
-    return title
+    journal_initialism_text = (journal_initialism_text or "").strip()
+    prefix = str(publication_year) if publication_year > 0 else ""
+    if journal_initialism_text:
+        prefix = f"{prefix} {journal_initialism_text}".strip()
+    if not prefix:
+        return title
+    return f"{prefix} | {title}"

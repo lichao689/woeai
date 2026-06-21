@@ -178,6 +178,27 @@ def chinese_initialism(value: str) -> str:
     return "".join(chars) or "ZH"
 
 
+def journal_initialism(title: str | None) -> str:
+    """Return the short initialism for a journal title.
+
+    Order of precedence: an explicit override in ``JOURNAL_INITIALISM_OVERRIDES``,
+    then a per-character Chinese initialism for CJK titles, then the initial
+    letter of each ASCII word. Content-word initials are preferred for English
+    titles (e.g. ``Physics of Fluids`` -> ``POF``), matching the established
+    override style; ``JOURNAL_INITIALISM_OVERRIDES`` remains the single source
+    of truth for any title that needs a non-default form.
+    """
+    title = (title or "").strip()
+    if title in JOURNAL_INITIALISM_OVERRIDES:
+        return JOURNAL_INITIALISM_OVERRIDES[title]
+    if contains_cjk(title):
+        return chinese_initialism(title)
+    words = re.findall(r"[A-Za-z0-9]+", title)
+    if not words:
+        return "J"
+    return "".join(word[0].upper() for word in words)
+
+
 def rst_escape(value: str) -> str:
     value = value.replace("\\", "\\\\")
     value = value.replace("*", "\\*")

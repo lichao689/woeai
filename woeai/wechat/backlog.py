@@ -38,6 +38,28 @@ def _unquote(value: str) -> str:
     return value.strip().strip('"').strip("'")
 
 
+def _parse_original_year(value: str) -> int:
+    try:
+        return int(value or "0")
+    except ValueError:
+        return 0
+
+
+def _build_backlog_paper(current: dict[str, str] | None, order: int) -> BacklogPaper | None:
+    if not current or not current.get("publication_ref"):
+        return None
+    return BacklogPaper(
+        publication_ref=current.get("publication_ref", ""),
+        title=current.get("title", ""),
+        research_family=current.get("research_family", ""),
+        subdirection=current.get("subdirection", ""),
+        original_year=_parse_original_year(current.get("original_year", "0")),
+        latest_published_url=current.get("latest_published_url", ""),
+        order=order,
+        wechat_status=current.get("wechat_status", ""),
+    )
+
+
 def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
     """Parse the backlog YAML-ish list into BacklogPaper records.
 
@@ -49,30 +71,12 @@ def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
     current: dict[str, str] | None = None
     order = -1
 
-    def finish() -> None:
-        if not current or not current.get("publication_ref"):
-            return
-        try:
-            original_year = int(current.get("original_year", "0") or "0")
-        except ValueError:
-            original_year = 0
-        papers.append(
-            BacklogPaper(
-                publication_ref=current.get("publication_ref", ""),
-                title=current.get("title", ""),
-                research_family=current.get("research_family", ""),
-                subdirection=current.get("subdirection", ""),
-                original_year=original_year,
-                latest_published_url=current.get("latest_published_url", ""),
-                order=order,
-                wechat_status=current.get("wechat_status", ""),
-            )
-        )
-
     for raw in backlog_path.read_text(encoding="utf-8").splitlines():
         item_match = _ITEM_RE.match(raw)
         if item_match:
-            finish()
+            paper = _build_backlog_paper(current, order)
+            if paper is not None:
+                papers.append(paper)
             order += 1
             current = {"publication_ref": item_match.group(1)}
             continue
@@ -83,7 +87,9 @@ def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
         if key.startswith("-"):
             continue
         current[key] = _unquote(value)
-    finish()
+    paper = _build_backlog_paper(current, order)
+    if paper is not None:
+        papers.append(paper)
     return papers
 
 

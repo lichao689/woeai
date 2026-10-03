@@ -246,3 +246,13 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
 - public-safety: passed (`python3 scripts/check-public-safe-content.py`)
 - docs-check: passed (`./scripts/check-docs.sh`) after final batch navigation integration.
 - whitespace: passed (`git diff --check -- ...` plus no-index whitespace check for the new Markdown/RST files)
+
+## 2026-10-02 云端原稿定点复核
+
+- 源文件获取: 用户批准将既有论文 PDF 经私人 Library 用于云端写作核对；未从网页下载，未使用 Zotero Web API。PDF 保存在 Git 忽略的私有资料目录，不进入公开仓库。
+- 文件识别: DOI `10.1016/j.jobe.2025.112131`，19 页；已核对传入文件完整性。
+- 复核范围: 仅核对 `2944` / `2994` 疑点，提取文字与渲染页图已交叉检查；不代表全篇事实审计完成。
+- PDF file page 6, Section 2.2.3: 初始 `998` 种高层结构经风压情景扩展为 `2994` 组数据。
+- PDF file page 10, Section 3 首段: 原文将首次训练使用的数据写作 `2944`；同页另说明训练/验证按 `80%` / `20%` 划分。
+- 判断: 两处数字及语境不同；现有原稿不能直接证明将训练句中的 `2944` 改为 `2994` 是正确勘误，也不能把 `2994` 直接称为实际训练子集数量。需作者确认是否为原文笔误及最终措辞。
+- 当前处理: 数字差异待作者确认；本次迁移配置修复不提交待确认的正文数字修改，不创建或更新微信草稿，不标记手机预览通过。

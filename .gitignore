@@ -183,3 +183,6 @@ zotero_api_key
 .zotero_api_key
 *.zotero-key
 *.zotero-api-key
+
+# Checkout-local formula runtime (lockfiles remain tracked)
+wechat/runtime/node_modules/

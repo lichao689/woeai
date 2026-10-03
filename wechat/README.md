@@ -4,13 +4,27 @@ This directory manages public-safe WeChat Official Account article material for 
 
 The basic unit is one selected paper, one article. Each article must be source-bounded by Zotero metadata, the WOEAI website, and public publication records.
 
-Each One-Paper WeChat Article may also have an RTD Paper Companion Page under `docs/source/paper-notes/<publication_ref>.rst`. The reader-facing Markdown file under `wechat/articles/draft-public-safe/` is the public content master. Align public wording, formulas, figure captions, and body links there first, then convert that same content to Sphinx-compatible reStructuredText and render the WeChat draft from the same Markdown. Platform metadata such as cover image, draft media ID, and WeChat bottom `阅读原文` / `content_source_url` belongs in the review note or backlog, not in the public正文 master.
+Since 2026-06-17, the two channels have independent sources and purposes:
+
+- **WeChat introduction:** `wechat/articles/draft-public-safe/<publication_ref>.md`
+  is the source of truth for the reader-facing introduction and its rendered
+  WeChat HTML. Apply backend wording corrections to this Markdown first.
+- **RTD full-paper deep dive:** `docs/source/paper-notes/<publication_ref>.rst`
+  is written directly from the approved original paper, following
+  [the full-paper guide](../docs/agents/paper-deep-dive-rst.md). Never generate a
+  new deep dive from the WeChat introduction or overwrite one with its summary.
+
+The channels may share approved figures, the cover, verified metadata, and
+source evidence; their body text and coverage are not required to match.
+Platform metadata such as cover image, draft media ID, and WeChat bottom
+`阅读原文` / `content_source_url` belongs in the review note or backlog, not in
+the reader-facing Markdown body.
 
 For WOEAI website links embedded in WeChat draft API payloads, prefer the Read
 the Docs project domain `https://woeai.readthedocs.io/zh-cn/latest/`. The
 WeChat backend bottom `阅读原文` target defaults to the current paper's RTD
-companion page. Reader-facing related-paper navigation in the WeChat body
-should use already-published WeChat article links only; RTD companion pages use
+deep-dive page. Reader-facing related-paper navigation in the WeChat body
+should use already-published WeChat article links only; RTD deep-dive pages use
 internal paper-note links. This does not automatically change the public
 website's own canonical SEO URL or homepage contact display.
 
@@ -31,44 +45,45 @@ load external scripts. The lightweight HTML renderer remains a fallback for
 troubleshooting. Every formula route must be checked in the WeChat backend
 mobile preview before publishing.
 
-Formula test summary:
+Historical formula evidence (not current-run acceptance):
 
 - Published WeChat formula-heavy examples use MathJax-style SVG output with
   `<mjx-container jax="SVG">`, inline `<svg>`, `data-mml-node`, and often
   `data-formula` / `data-formula-type` metadata.
-- WOEAI local testing now emits the same core structure, including
+- The repository renderer emits the same core structure, including
   `data-formula-type="inline-equation"` for inline formulas and
   `data-formula-type="block-equation"` for display formulas.
 - A 2026-06-10 official `draft/add` stress test accepted one article body of
   about 113k characters containing multiple inline and display SVG formulas;
   the user confirmed the WeChat preview effect was satisfactory.
 
-## Markdown To RTD Conversion
+## Independent RTD Full-Paper Workflow
 
-The reader-facing Markdown article is the public content master. Use
-`wechat/tools/markdown_to_rtd.py` to generate the matching RTD Paper Companion
-Page:
+Read [docs/agents/paper-deep-dive-rst.md](../docs/agents/paper-deep-dive-rst.md)
+before creating or updating an RTD paper deep dive. The approved PDF or author
+manuscript and the corresponding `docs/source/Publications.rst` entry are
+required. Missing full-paper source is a blocker; an abstract or WeChat article
+cannot substitute for it.
 
-```bash
-python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS
-python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS --check
-```
+Translate the complete paper body sentence by sentence in original order,
+including sections, equations, figures, tables, captions, citations, references,
+and appendices. Preserve limitations and discrepancies rather than inventing
+repairs. Keep appendices before references; omit CRediT, conflict-of-interest,
+data-availability, acknowledgements, and supplementary-material tail sections
+as specified by the guide. Use `\qquad (N)` for manual equation numbers, not
+`\tag{N}`. Place the cover immediately after the short-WeChat-link line and
+retain the final `完整引用` link to the paper's Publications anchor.
 
-Default paths are:
+Complete the guide's source-to-output coverage audit before delivery and run
+its required site checks. Keep the audit and private source details out of the
+public RST. Register pages under the Academic Outputs research-family and
+subdirection hierarchy, preserving the stable paper-note URL.
 
-- input article: `wechat/articles/draft-public-safe/<publication_ref>.md`
-- review note: `wechat/articles/review/<publication_ref>.review.md`
-- output page: `docs/source/paper-notes/<publication_ref>.rst`
-
-The converter handles the WOEAI paper-article subset: headings, paragraphs,
-lists, direct external Markdown links, inline/display LaTeX, and local
-public-safe body images with two-line Chinese captions. It reads RTD cover
-metadata from the review note, preferring `rtd_cover_image`, then
-`wechat_cover_image`, then `cover_image`, and finally the `封面素材` line. The
-cover is inserted below the RST title, while body figure captions keep the same
-two-line meaning as the Markdown source. The converter also appends RTD-only
-related-paper navigation with internal `paper-notes` links when related
-companion pages already exist.
+`wechat/tools/markdown_to_rtd.py` is a historical introduction-page converter.
+Use it only for explicitly requested maintenance of a legacy converted
+introduction after verifying that its target is not an independent deep dive.
+It is not part of new article production, and its `--check` is not a quality
+gate for independent RTD pages. Do not run the converter over a full-paper page.
 
 ## Research Families
 
@@ -86,7 +101,7 @@ Do not commit:
 - private review notes.
 - unpublished partner names or project details.
 - copyrighted publisher figures unless reuse rights are confirmed.
-- local WeChat preview HTML.
+- source PDFs, raw paper extraction, private manifests, and local preview HTML.
 - source image files that are not approved for public release.
 
 Use `wechat/articles/draft-public-safe/` only for drafts that are safe to expose before publication. Keep private working material under ignored local paths such as `wechat/.local/`.
@@ -104,10 +119,14 @@ The primary automated path is the official WeChat draft API:
 5. Record only non-sensitive WeChat Draft Record fields.
 6. Stop at the manual publication gate.
 
-The first practical API run is from the current Mac. Long-term cloud or CI
-automation should be designed only after this local API path succeeds. If the
-Official Account API returns an IP-allowlist error, use the IP reported by the
-WeChat response or move the workflow to a fixed-egress remote runner.
+Content production and backend delivery are separate stages. Use the current
+authorized cloud workspace or runner; no Mac-first run is required. Follow
+[the cloud workflow guide](../docs/agents/cloud-wechat-workflow.md) for runtime
+setup, private source inventory, and current-run checks. A previous machine's
+successful API run does not establish this runner's credentials, connectivity,
+or allowlist readiness. If the official API returns an IP-allowlist error,
+report the IP returned by WeChat and have the operator resolve the allowlist
+or choose an authorized fixed-egress runner; do not bypass the restriction.
 
 The tool must default to a no-submit check. A real draft creation or update
 requires a live run. In conversational use, the agent must first explain that
@@ -123,7 +142,7 @@ replace local Markdown image paths with WeChat image URLs in the submitted HTML,
 and then create or update the WeChat draft.
 
 By default, the API payload sets WeChat's bottom `content_source_url` to the
-current paper's RTD companion page:
+current paper's RTD deep-dive page:
 `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`.
 Reader-facing links should still live in the article body instead of a body
 `阅读原文` section. When the editor explicitly wants a different bottom
@@ -136,13 +155,37 @@ The API renderer appends WeChat-body related-paper navigation only when related
 items already have public WeChat URLs in `latest_published_url`; unpublished
 related papers are omitted.
 
-Wechatsync or other browser-plugin routes may be useful for one-off
-distribution experiments, but they are not the default WOEAI automation path
-and should not become the article source of truth.
+Use the repository renderer and official draft API only. Do not fall back to
+third-party Markdown editors, doocs/md, Wechatsync, or browser-plugin submission
+routes. If the API stage is blocked, retain the validated offline deliverables
+and report the blocker. Human backend preview and publication remain separate.
+
+## Cloud Content Setup
+
+From the repository root, set up the content runtime, then load its environment
+in each new shell:
+
+```bash
+./scripts/setup-cloud-workflow.sh
+source scripts/cloud-workflow-env.sh
+```
+
+See [the cloud workflow guide](../docs/agents/cloud-wechat-workflow.md) for
+requirements and supported configuration. Setup prepares dependencies; it is
+not an API credential setup, source-PDF restoration, live API check, or draft
+submission. A fresh clone does not restore ignored `wechat/.local/` sources.
+Verify the actual source files and runtimes before claiming readiness.
+
+After setup, `./scripts/check-cloud-workflow.sh` runs the aggregate offline
+smoke check with existing public-safe sample assets. Its private outputs go to
+`wechat/.local/cloud-check/`. It does not contact WeChat or read credentials;
+passing it establishes sample content/runtime readiness, not live API or
+mobile-preview acceptance.
 
 ## Private Credential Storage
 
-Store WeChat Official Account API credentials only on the local machine:
+Keep WeChat Official Account API credentials in the authorized runner's private
+storage outside the repository, using the supported secure setup. Default paths:
 
 - credential file: `~/.config/woeai/wechat_official_account.env`
 - optional IP diagnostic file: `~/.config/woeai/wechat_runner.env`
@@ -174,49 +217,58 @@ logged, committed, copied into review notes, or included in API dry-run output.
 
 Agents may read the credential file only when the user explicitly asks to test
 the WeChat API path or explicitly confirms live creation/update of an Official
-Account draft. Normal article drafting, theme design, RTD conversion, review,
+Account draft. Normal article drafting, theme design, independent RTD work, review,
 and public-safety checks must not require reading WeChat credentials.
 
-## Local WeChat Draft CLI
+## WeChat Draft CLI: Offline Checks
 
-Use `wechat/tools/wechat_draft.py` for the official API path.
-
-Safe local checks:
+Use `wechat/tools/wechat_draft.py` for the official API path. After runtime
+setup and environment loading, run these no-submit content checks:
 
 ```bash
-python wechat/tools/wechat_draft.py config-check
-python wechat/tools/wechat_draft.py ip-check
-python wechat/tools/wechat_draft.py content-source-plan --all
-python wechat/tools/wechat_draft.py preflight --publication-ref ref-zhao2026-BS --theme academic-clean
-python wechat/tools/wechat_draft.py token-check
-python wechat/tools/wechat_draft.py dry-run --publication-ref ref-zhao2026-BS --theme academic-clean
+python3 wechat/tools/wechat_draft.py content-source-plan --all
+python3 wechat/tools/wechat_draft.py preflight --publication-ref ref-zhao2026-BS --theme academic-clean
+python3 wechat/tools/wechat_draft.py dry-run --publication-ref ref-zhao2026-BS --theme academic-clean
 ```
 
-`config-check` verifies credential-file shape without printing secrets.
-`ip-check` shows the current public egress IP without reading credentials or
-contacting WeChat; it is diagnostic only and is not a live-run gate.
-`content-source-plan` lists the expected bottom `阅读原文` targets without
-reading credentials or contacting WeChat.
-`preflight` runs the same article and asset validation used by `dry-run`
-without reading credentials or contacting WeChat. Both commands run
-`scripts/check-public-safe-content.py` against the target article and review
-note, including the required `源文件获取记录` and `关键事实证据定位记录` section
-check.
-`token-check` reads the private credential file, requests or reuses an
-`access_token`, caches it outside the repository, and never prints the token.
-`dry-run` does not read credentials and does not contact WeChat; it lists the
-cover image, body images, title, author, digest, and draft action that would be
-used.
+These commands do not read credentials, contact WeChat, upload images, or
+create/update a backend draft. `content-source-plan` lists expected bottom
+`阅读原文` targets. `preflight` and `dry-run` validate the article, review note,
+and assets, including the required `源文件获取记录` and `关键事实证据定位记录`
+sections through `scripts/check-public-safe-content.py`. `dry-run` lists the
+cover, body images, title, author, digest, and intended draft action.
+
+### Credential And Network Diagnostics: Separate Opt-In Stage
+
+Do not put these commands into the offline content-check sequence:
+
+- `python3 wechat/tools/wechat_draft.py config-check` reads the private
+  credential file to validate its shape without printing secrets. Run only
+  when the user has explicitly authorized WeChat API configuration testing.
+- `python3 wechat/tools/wechat_draft.py token-check` reads private credentials,
+  requests or reuses an access token, and caches it outside the repository.
+  It may contact WeChat and requires explicit authorization to test the API.
+  It must never print the token.
+- `python3 wechat/tools/wechat_draft.py ip-check` is optional network
+  diagnostics. It contacts public-IP services but neither reads AppSecret nor
+  contacts WeChat. It is not an offline check or a mandatory live-run gate;
+  its detected route can differ from the actual API route.
+
+A successful offline check does not establish API readiness. Report credential,
+network, and allowlist checks independently from content and rendering checks.
+
+### Authorized Live Draft Submission
 
 The Markdown H1 is used as the WeChat draft title field. The rendered WeChat
 body is body-only by default, so the title is not repeated inside the article
 content under the Official Account's own title block.
 
-Live commands are allowed only after explicit user confirmation at action time:
+After explicit user confirmation, choose the one appropriate live command;
+do not run both as a setup sequence:
 
 ```bash
-python wechat/tools/wechat_draft.py create-draft --publication-ref ref-zhao2026-BS
-python wechat/tools/wechat_draft.py update-draft --publication-ref ref-zhao2026-BS
+python3 wechat/tools/wechat_draft.py create-draft --publication-ref ref-zhao2026-BS
+python3 wechat/tools/wechat_draft.py update-draft --publication-ref ref-zhao2026-BS
 ```
 
 Live commands read private credentials, upload the approved cover image and
@@ -229,37 +281,27 @@ They do not run a local fixed-IP guard by default. If WeChat rejects the token
 or draft request with an IP-allowlist error, use the IP reported by WeChat as
 the next action item.
 
-## Remote Publishing Runner
+## Remote Draft Runner
 
-Use a remote runner when the local network's public IP can change. The runner
-is just a small machine with a fixed public egress IP that can pull this repo
-and run `wechat/tools/wechat_draft.py`.
+An authorized cloud workspace can prepare content without API credentials or
+a fixed public IP. A separate fixed-egress runner may be useful when the
+Official Account's allowlist prevents the current runner from reaching the API.
+It is not a prerequisite for writing, source review, offline rendering, or
+no-submit validation.
 
-Minimum runner requirements:
+Prepare a chosen runner using
+[the cloud workflow guide](../docs/agents/cloud-wechat-workflow.md), then verify
+its own runtime, credentials, and official API connectivity within the user's
+authorization. Keep credentials and token caches outside the repository. If a
+fixed IP is required, have the operator configure the WeChat backend allowlist;
+`WOEAI_WECHAT_EXPECTED_EGRESS_IPS` is only a local diagnostic expectation.
 
-- a stable public IPv4 address that can be added to the Official Account API IP
-  allowlist;
-- SSH access for the human/operator or agent;
-- Python 3.10+ and Git;
-- a clone of this repository;
-- private files on the runner only:
-  `~/.config/woeai/wechat_official_account.env` and
-  `~/.config/woeai/wechat_runner.env`;
-- the runner's fixed IP configured in both the WeChat backend allowlist and
-  `WOEAI_WECHAT_EXPECTED_EGRESS_IPS`.
-
-Recommended runner flow:
-
-```bash
-cd /path/to/woeai
-git pull --ff-only
-python wechat/tools/wechat_draft.py preflight --publication-ref ref-zhao2026-BS --theme academic-clean
-python wechat/tools/wechat_draft.py update-draft --publication-ref ref-zhao2026-BS --theme academic-clean
-```
-
-The final live command still requires explicit human confirmation in the
-conversation or operating procedure. The runner may create or update drafts; it
-must not publish, mass-send, or click WeChat backend release buttons.
+Run offline `preflight` before seeking or using approval for live submission.
+Only after explicit approval run `update-draft` for a paper with an existing
+`wechat_draft_media_id`, or `create-draft` for a paper without one. Do not bundle
+live commands into setup or offline validation instructions. The runner must
+stop at draft creation/update; publication, mass-send, and backend release
+clicks remain prohibited for automation.
 
 ## Theme Selection
 
@@ -280,7 +322,7 @@ this to `.. math::` blocks, while inline formulas remain inline with the prose.
 Example local preview:
 
 ```bash
-python wechat/tools/render-copy-ready.py wechat/articles/draft-public-safe/ref-zhao2026-BS.md \
+python3 wechat/tools/render-copy-ready.py wechat/articles/draft-public-safe/ref-zhao2026-BS.md \
   -o wechat/.local/exports/ref-zhao2026-BS.academic-clean.mathjax-svg.html \
   --theme academic-clean \
   --no-embed-images
@@ -289,22 +331,19 @@ python wechat/tools/render-copy-ready.py wechat/articles/draft-public-safe/ref-z
 Example API dry-run:
 
 ```bash
-python wechat/tools/wechat_draft.py dry-run \
+python3 wechat/tools/wechat_draft.py dry-run \
   --publication-ref ref-zhao2026-BS \
   --theme academic-clean
 ```
 
-`mathjax-svg` requires Node.js and the `mathjax-full` package on the publishing
-machine. Keep these runtime dependencies outside the public repository, for
-example:
-
-```bash
-npm --prefix /tmp/woeai-formula-render-node install mathjax-full
-```
-
-If the package is installed somewhere else, set
-`WOEAI_MATHJAX_NODE_MODULE_DIR` to that `node_modules` directory before running
-the renderer.
+`mathjax-svg` requires Node.js and `mathjax-full` in the current runtime.
+Use `./scripts/setup-cloud-workflow.sh`, then
+`source scripts/cloud-workflow-env.sh` to load the configured runtime and
+`WOEAI_MATHJAX_NODE_MODULE_DIR`. Keep dependencies and generated HTML out of
+public commits. If setup or rendering fails, report the actual blocker;
+`lightweight` is an explicitly labelled diagnostic fallback, not evidence that
+the default MathJax SVG route passed. Offline HTML/SVG counts and historical
+stress tests do not replace a current WeChat backend mobile preview.
 
 Current supported API theme:
 
@@ -333,8 +372,8 @@ Use `wechat/backlog/selected-papers.yml` to track selected papers and publicatio
 - `wechat_draft_media_id`: optional non-sensitive draft `media_id` returned by the WeChat draft API after the article is created in the Official Account draft box.
 - `wechat_draft_created_at`: optional Beijing-time timestamp for the first successful draft-box creation.
 - `wechat_draft_updated_at`: optional Beijing-time timestamp for the latest successful draft-box update.
-- `wechat_author`: optional WeChat draft author field; default to `WOEAI` for
-  WOEAI paper articles.
+- `wechat_author`: optional WeChat draft author field; default to the paper's
+  first author for journal-paper articles. Keep the full author list in `论文信息`.
 - `revision_note`: short public-safe note explaining why a historical paper is being rewritten or republished.
 - `publication_history`: optional public-safe list with entries shaped as `published_at`, `mode`, `url`, and `note`.
 
@@ -362,38 +401,57 @@ gate is manual preview, proofreading, and confirmation in the WeChat backend.
 
 ## Workflow
 
-1. Select a paper in `wechat/backlog/selected-papers.yml`.
-2. Use the Zotero source acquisition priority to gather metadata, abstracts,
-   attachments, and PDF source material.
-3. Create a draft from `wechat/templates/paper-explainer.md`.
-4. Convert the same public article content to an RTD Paper Companion Page in `.rst` format when the article should appear on the website.
-5. List the RTD page under `学术进展 Academic Progress` on the relevant research-direction page, grouped by second-level research subdirection and sorted by publication date descending until a more specific sorting rule exists.
-6. Verify the paper's WOEAI site record and DOI.
-7. Complete the source, copyright, public-safety, and RTD companion-page checklist.
-8. Render the Markdown through the deterministic Markdown-to-WeChat-HTML
-   conversion layer for API submission.
-9. Create or update a WeChat draft through the official draft API as the
-   primary automated submission path when credentials are configured.
-10. Preview, proofread, and publish manually in the WeChat backend. Do not
-   automate this release step.
-11. Record only non-sensitive draft metadata, the published URL, and state
-   fields in `wechat/backlog/selected-papers.yml` and, when useful, in
-   `wechat/index.yml`.
+1. Select a paper in `wechat/backlog/selected-papers.yml` and verify its
+   `publication_ref`, WOEAI publication record, and DOI.
+2. Inventory authorized sources in the current workspace and follow the source
+   acquisition priority below. A repository clone is not a source-PDF backup.
+3. Draft the WeChat introduction from `wechat/templates/paper-explainer.md`
+   and create the separate public-safe evidence/review note.
+4. When an RTD deep dive is in scope, produce it independently from the approved
+   full paper under [the full-paper guide](../docs/agents/paper-deep-dive-rst.md).
+   Never derive it from the WeChat introduction. Complete its coverage audit
+   and required Sphinx/site checks separately.
+5. Check source evidence, figure reuse, public safety, and article/asset paths.
+   Render offline HTML with the repository renderer and run `preflight` or
+   `dry-run`. Pure WeChat article/review work does not require a Sphinx build.
+6. If backend delivery is requested, assess credentials and actual-runner API
+   connectivity in the separately authorized diagnostic stage. Explain the
+   credential access, approved-image uploads, and target draft create/update,
+   then obtain explicit confirmation before live submission.
+7. After a successful live operation, record only non-sensitive draft metadata
+   and supported backlog state. Failed calls and no-submit checks do not
+   advance the state.
+8. A human previews, proofreads, and publishes in the WeChat backend. Keep
+   formula/figure/cover preview flags false until their actual backend previews
+   are checked. Apply wording corrections back to the WeChat Markdown and
+   regenerate that draft; do not synchronize its abbreviated body into RTD.
+9. Record the confirmed published URL and appropriate state in the backlog
+   and, when relevant, `wechat/index.yml`.
 
 ## Zotero Source Acquisition Priority
 
 Use this order for WOEAI paper articles:
 
-1. Use the Zotero Desktop Local API to read metadata, DOI, and `abstractNote`.
-2. Use the Zotero Desktop Local API to list attachment items.
-3. If a local PDF attachment exists, use that PDF to extract or verify the
-   abstract, figures, captions, and paper body needed for the article.
-4. If the local PDF attachment is missing, try the Zotero Web API `/file`
-   endpoint for the attachment, using private credentials only outside the
-   repository.
-5. If neither local attachment nor Web API file access is available, record
-   `需要同步 PDF 或提供作者稿` in the review note and do not invent PDF-derived
-   facts.
+1. Inspect authorized source files and manifests already available in the
+   current workspace, including ignored `wechat/.local/` storage. Journal
+   PDFs may be under `journal-papers/<ZoteroKey>/source.pdf` or
+   `<publication_ref>/source.pdf`; inspect actual files rather than assuming
+   a historical inventory was restored. Verify paper identity, source version,
+   reuse status, and manifest before use.
+2. Check Zotero metadata, DOI, `abstractNote`, and attachment records when
+   accessible. Zotero Desktop Local API is available only on the user's actual
+   desktop; it is not a prerequisite for cloud content production. Record the
+   metadata source and unavailable checks rather than claiming a Desktop check.
+3. Use the approved local PDF or author manuscript to verify abstract, figures,
+   captions, and body evidence. If sources were transferred, keep the original
+   source SHA-256 and downloaded-copy SHA-256 separately labelled in private
+   records. A transfer hash alone does not prove original byte identity.
+4. If the source is missing, try the Zotero Web API `/file` endpoint only when
+   authorized access is available, with credentials and downloaded files kept
+   private. Otherwise request source synchronization or an approved author
+   manuscript and record `需要同步 PDF 或提供作者稿`.
+5. Do not invent PDF-derived facts. Missing full-paper source blocks an RTD
+   full-paper deep dive even if the WeChat introduction or abstract is present.
 
 This is not a general web-scraping workflow. Do not automatically scrape or
 download PDFs from publisher pages, DOI landing pages, Google Scholar,

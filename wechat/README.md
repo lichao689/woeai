@@ -11,7 +11,7 @@ Since 2026-06-17, the two channels have independent sources and purposes:
   WeChat HTML. Apply backend wording corrections to this Markdown first.
 - **RTD full-paper deep dive:** `docs/source/paper-notes/<publication_ref>.rst`
   is written directly from the approved original paper, following
-  [the full-paper guide](../docs/agents/paper-deep-dive-rst.md). Never generate a
+  [the full-paper guide](../project/guides/paper-deep-dive-rst.md). Never generate a
   new deep dive from the WeChat introduction or overwrite one with its summary.
 
 The channels may share approved figures, the cover, verified metadata, and
@@ -59,7 +59,7 @@ Historical formula evidence (not current-run acceptance):
 
 ## Independent RTD Full-Paper Workflow
 
-Read [docs/agents/paper-deep-dive-rst.md](../docs/agents/paper-deep-dive-rst.md)
+Read [project/guides/paper-deep-dive-rst.md](../project/guides/paper-deep-dive-rst.md)
 before creating or updating an RTD paper deep dive. The approved PDF or author
 manuscript and the corresponding `docs/source/Publications.rst` entry are
 required. Missing full-paper source is a blocker; an abstract or WeChat article
@@ -121,7 +121,7 @@ The primary automated path is the official WeChat draft API:
 
 Content production and backend delivery are separate stages. Use the current
 authorized cloud workspace or runner; no Mac-first run is required. Follow
-[the cloud workflow guide](../docs/agents/cloud-wechat-workflow.md) for runtime
+[the cloud workflow guide](../project/guides/cloud-wechat-workflow.md) for runtime
 setup, private source inventory, and current-run checks. A previous machine's
 successful API run does not establish this runner's credentials, connectivity,
 or allowlist readiness. If the official API returns an IP-allowlist error,
@@ -170,7 +170,7 @@ in each new shell:
 source scripts/cloud-workflow-env.sh
 ```
 
-See [the cloud workflow guide](../docs/agents/cloud-wechat-workflow.md) for
+See [the cloud workflow guide](../project/guides/cloud-wechat-workflow.md) for
 requirements and supported configuration. Setup prepares dependencies; it is
 not an API credential setup, source-PDF restoration, live API check, or draft
 submission. A fresh clone does not restore ignored `wechat/.local/` sources.
@@ -290,7 +290,7 @@ It is not a prerequisite for writing, source review, offline rendering, or
 no-submit validation.
 
 Prepare a chosen runner using
-[the cloud workflow guide](../docs/agents/cloud-wechat-workflow.md), then verify
+[the cloud workflow guide](../project/guides/cloud-wechat-workflow.md), then verify
 its own runtime, credentials, and official API connectivity within the user's
 authorization. Keep credentials and token caches outside the repository. If a
 fixed IP is required, have the operator configure the WeChat backend allowlist;
@@ -408,7 +408,7 @@ gate is manual preview, proofreading, and confirmation in the WeChat backend.
 3. Draft the WeChat introduction from `wechat/templates/paper-explainer.md`
    and create the separate public-safe evidence/review note.
 4. When an RTD deep dive is in scope, produce it independently from the approved
-   full paper under [the full-paper guide](../docs/agents/paper-deep-dive-rst.md).
+   full paper under [the full-paper guide](../project/guides/paper-deep-dive-rst.md).
    Never derive it from the WeChat introduction. Complete its coverage audit
    and required Sphinx/site checks separately.
 5. Check source evidence, figure reuse, public safety, and article/asset paths.

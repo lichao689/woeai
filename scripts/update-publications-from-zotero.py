@@ -38,7 +38,7 @@ from woeai.publications import (  # noqa: E402
 PUBLICATIONS_PATH = ROOT / "docs/source/Publications.rst"
 PUBLICATIONS_BY_YEAR_PATH = ROOT / "docs/source/PublicationsByYear.rst"
 RESEARCH_MAP_PATH = ROOT / "docs/data/publication-research-map.json"
-SNAPSHOT_PATH = ROOT / "docs/superpowers/source-packets/2026-06-publications-zotero-snapshot.json"
+SNAPSHOT_PATH = ROOT / "docs/data/2026-06-publications-zotero-snapshot.json"
 DEGREE_THESES_PATH = ROOT / "docs/data/degree-theses.json"
 TEACHING_PATH = ROOT / "docs/source/Teaching.rst"
 TEACHING_DATA_PATH = ROOT / "docs/data/teaching.json"

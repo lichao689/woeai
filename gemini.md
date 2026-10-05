@@ -15,10 +15,20 @@ WeChat article workflow, not an installable application package.
    Repository guidance does not grant permission to access credentials, upload,
    create remote drafts, commit, push, or publish beyond the user's authorization.
 
+## Repository navigation
+
+- `docs/`: public website sources, data, and Sphinx dependencies.
+- `wechat/`: article content, evidence reviews, assets, and existing workflows.
+- [project/README.md](project/README.md): maintenance guides, plans, specs,
+  research, and public fact sources; these are not Sphinx pages.
+- `tools/`: publication command entry points; `woeai/`: shared Python logic.
+- `scripts/`: setup/build/check utilities and the existing Zotero updater.
+- `tests/`: regression checks. Existing tool paths are unchanged.
+
 ## Task entry points
 
 - **Website content or navigation:** read [README.rst](README.rst),
-  [the public fact source packet](docs/superpowers/source-packets/2026-06-woeai-site-source-packet.md),
+  [the public fact source packet](project/sources/2026-06-woeai-site-source-packet.md),
   and the affected `docs/source/` pages. Use the site boundaries below.
 - **WeChat article, evidence review, or backlog:** read
   [.agents/skills/wechat-paper/SKILL.md](.agents/skills/wechat-paper/SKILL.md),
@@ -28,7 +38,7 @@ WeChat article workflow, not an installable application package.
   [.agents/skills/wechat-cover/SKILL.md](.agents/skills/wechat-cover/SKILL.md)
   and its linked standards; follow its cover-text confirmation and preview gates.
 - **RTD paper deep dive:** read
-  [docs/agents/paper-deep-dive-rst.md](docs/agents/paper-deep-dive-rst.md),
+  [project/guides/paper-deep-dive-rst.md](project/guides/paper-deep-dive-rst.md),
   the original paper, and its `docs/source/Publications.rst` entry. Use the
   independent full-paper workflow below, including its coverage audit.
 - **Publication generation or Python tools:** inspect `woeai/publications/`,
@@ -36,9 +46,9 @@ WeChat article workflow, not an installable application package.
   relevant `tests/`. Research taxonomy belongs only in
   `woeai/publications/taxonomy.py`; author/text/citation logic belongs in
   `woeai/publications/`. Import it rather than copying it into scripts or tests.
-- **Planning, tickets, or triage:** read [domain.md](docs/agents/domain.md),
-  [issue-tracker.md](docs/agents/issue-tracker.md), and
-  [triage-labels.md](docs/agents/triage-labels.md). The tracker is local Markdown
+- **Planning, tickets, or triage:** read [domain.md](project/guides/domain.md),
+  [issue-tracker.md](project/guides/issue-tracker.md), and
+  [triage-labels.md](project/guides/triage-labels.md). The tracker is local Markdown
   under `.scratch/<feature-slug>/`, not an assumed external service.
 
 ## Site boundaries

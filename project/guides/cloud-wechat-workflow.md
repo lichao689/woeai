@@ -52,7 +52,7 @@ with the Python lock. Do not replace locks with guesses from an old report.
 - Evidence/review: `wechat/articles/review/<ref>.review.md`
 - Approved public assets: `wechat/assets/public-safe/<ref>/`
 
-Follow `AGENTS.md` and `docs/agents/paper-deep-dive-rst.md`. New RTD deep dives
+Follow `AGENTS.md` and `project/guides/paper-deep-dive-rst.md`. New RTD deep dives
 must not be regenerated from the shorter WeChat Markdown. The old
 `markdown_to_rtd.py` is only for historical guide-page maintenance. Official
 WeChat draft APIs are the submission path; no third-party editor fallback is

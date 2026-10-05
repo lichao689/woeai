@@ -18,7 +18,7 @@ output.
 RTD 论文精解 pages live at `docs/source/paper-notes/<publication_ref>.rst` so
 existing `paper-notes/<publication_ref>.html` links stay stable. They are no
 longer generated from the compact WeChat article; prepare them from the
-approved paper source and follow `docs/agents/paper-deep-dive-rst.md`.
+approved paper source and follow `project/guides/paper-deep-dive-rst.md`.
 
 The historical converter remains available for maintaining legacy compact RTD
 pages:

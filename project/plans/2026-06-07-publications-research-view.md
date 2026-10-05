@@ -113,7 +113,7 @@
 
 - `docs/data/publication-research-map.json`
 
-说明：当前工作区已经出现 `docs/superpowers/` 被 `.gitignore` 忽略和若干既有 source-packet 文件被删除的状态。本功能的生产输入不应放在一个可能不被 Git 跟踪的位置。`docs/superpowers/` 后续仍可作为审阅快照或历史证据目录，但方向页生成所依赖的映射文件应放在可跟踪的 `docs/data/` 下。
+历史说明（2026-06-07）：当时的旧维护目录曾被 `.gitignore` 忽略，若干既有 source-packet 文件也已删除。本功能的生产输入不应放在一个可能不被 Git 跟踪的位置。现维护文档已归入可跟踪的 `project/`；方向页生成所依赖的映射文件及 Zotero 快照位于 `docs/data/`。
 
 推荐字段：
 

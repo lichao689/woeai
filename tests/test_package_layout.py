@@ -13,7 +13,7 @@ import unittest
 
 
 ROOT = Path(__file__).resolve().parents[1]
-ARCHITECTURE_PLAN = ROOT / "docs/superpowers/plans/2026-06-14-publication-and-article-architecture.md"
+ARCHITECTURE_PLAN = ROOT / "project/plans/2026-06-14-publication-and-article-architecture.md"
 
 
 class PackageLayoutTests(unittest.TestCase):

@@ -1,6 +1,6 @@
 ---
 name: wechat-paper
-description: Use when generating, reviewing, or updating WOEAI WeChat Official Account paper introductions, evidence notes, figures, formulas, and backlog state. Coordinate separately requested independent RTD full-paper deep dives through docs/agents/paper-deep-dive-rst.md. Covers cloud content production, offline rendering, and explicitly authorized official draft API delivery; never derive a new RTD deep dive from WeChat Markdown.
+description: Use when generating, reviewing, or updating WOEAI WeChat Official Account paper introductions, evidence notes, figures, formulas, and backlog state. Coordinate separately requested independent RTD full-paper deep dives through project/guides/paper-deep-dive-rst.md. Covers cloud content production, offline rendering, and explicitly authorized official draft API delivery; never derive a new RTD deep dive from WeChat Markdown.
 ---
 
 # WeChat Paper Article Skill
@@ -10,7 +10,7 @@ published WOEAI journal paper. Its outputs are public-safe reader-facing
 Markdown, approved assets, and a separate public-safe review note.
 
 Since 2026-06-17, RTD is an independent full-paper deep dive written from the
-approved original paper under `docs/agents/paper-deep-dive-rst.md`. It is not a
+approved original paper under `project/guides/paper-deep-dive-rst.md`. It is not a
 rendering of the WeChat introduction. Produce or update it only when in scope;
 never overwrite it with abbreviated WeChat content.
 
@@ -30,9 +30,9 @@ Read these files before drafting:
 6. `wechat/templates/review-checklist.md` for review gates.
 7. `wechat/backlog/selected-papers.yml` to select and update the paper state.
 8. `docs/source/Publications.rst` and the relevant research direction page for public website anchors.
-9. `docs/agents/paper-deep-dive-rst.md` when RTD work is in scope; the current
+9. `project/guides/paper-deep-dive-rst.md` when RTD work is in scope; the current
    full-paper rules supersede historical shared-Markdown instructions.
-10. `docs/agents/cloud-wechat-workflow.md` for cloud setup and runtime checks.
+10. `project/guides/cloud-wechat-workflow.md` for cloud setup and runtime checks.
 
 `AGENTS.md` is the current rule source. Any remaining shared-Markdown, automatic
 RTD conversion, or Mac-first advice in older style/template material is
@@ -272,7 +272,7 @@ Setup prepares dependencies and the sourced environment selects the configured
 runtime. It does not restore ignored PDF sources, configure WeChat credentials,
 validate API connectivity, or submit a draft. The three content commands are
 no-submit checks: no credential reads, WeChat requests, image uploads, or
-backend draft changes. See `docs/agents/cloud-wechat-workflow.md` for details.
+backend draft changes. See `project/guides/cloud-wechat-workflow.md` for details.
 For the aggregate offline sample smoke check, run
 `./scripts/check-cloud-workflow.sh`; private outputs stay in
 `wechat/.local/cloud-check/`. This does not establish API readiness or replace
@@ -321,7 +321,7 @@ For author-confirmed WOEAI papers, extract suitable figures directly from the pa
 
 ## Independent RTD Full-Paper Deep Dive
 
-Follow `docs/agents/paper-deep-dive-rst.md` as the detailed specification.
+Follow `project/guides/paper-deep-dive-rst.md` as the detailed specification.
 The input is the approved PDF or author manuscript plus the corresponding
 `docs/source/Publications.rst` entry. Missing full-paper source blocks this
 work; never fill it from an abstract, WeChat introduction, or invented text.

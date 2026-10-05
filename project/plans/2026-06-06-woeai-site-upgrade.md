@@ -102,8 +102,8 @@ The best upgrade path is therefore outcome-first, source-grounded, and guardrail
 - `AGENTS.md`: repository-specific operating instructions for future agents.
 - `scripts/check-docs.sh`: one-command local verification in an isolated venv.
 - `.github/workflows/docs.yml`: CI verification for strict Sphinx HTML build.
-- `docs/superpowers/research/2026-06-woeai-peer-site-benchmark.md`: benchmark and theme decision record.
-- `docs/superpowers/source-packets/2026-06-woeai-site-source-packet.md`: source packet for recruitment, cooperation, people, and public claims.
+- `project/research/2026-06-woeai-peer-site-benchmark.md`: benchmark and theme decision record.
+- `project/sources/2026-06-woeai-site-source-packet.md`: source packet for recruitment, cooperation, people, and public claims.
 - `docs/source/index.rst`: homepage with recruitment and contact content.
 - `docs/source/TechnicalCollaboration.rst`: dedicated technical collaboration page or partner path.
 - `docs/source/Research.rst`: overview page linking the three research directions.
@@ -198,7 +198,7 @@ Do not commit this task unless the plan file itself was revised and intentionall
 
 **Files:**
 
-- Create: `docs/superpowers/research/2026-06-woeai-peer-site-benchmark.md`
+- Create: `project/research/2026-06-woeai-peer-site-benchmark.md`
 
 **Required content:**
 
@@ -215,7 +215,7 @@ Do not commit this task unless the plan file itself was revised and intentionall
 - [ ] Commit:
 
 ```bash
-git add docs/superpowers/research/2026-06-woeai-peer-site-benchmark.md
+git add project/research/2026-06-woeai-peer-site-benchmark.md
 git commit -m "docs: benchmark peer research group sites"
 ```
 
@@ -223,7 +223,7 @@ git commit -m "docs: benchmark peer research group sites"
 
 **Files:**
 
-- Create: `docs/superpowers/source-packets/2026-06-woeai-site-source-packet.md`
+- Create: `project/sources/2026-06-woeai-site-source-packet.md`
 
 **Required sections:**
 
@@ -242,7 +242,7 @@ git commit -m "docs: benchmark peer research group sites"
 - [ ] Commit:
 
 ```bash
-git add docs/superpowers/source-packets/2026-06-woeai-site-source-packet.md
+git add project/sources/2026-06-woeai-site-source-packet.md
 git commit -m "docs: add site source packet"
 ```
 
@@ -1138,8 +1138,8 @@ Use the Phase 0 benchmark decision:
 ## Acceptance Criteria for the First Upgrade Cycle
 
 - Outcome priority is visible in homepage hierarchy and navigation: recruitment first, technical collaboration second, academic credibility third.
-- `docs/superpowers/research/2026-06-woeai-peer-site-benchmark.md` records benchmark and theme decision.
-- `docs/superpowers/source-packets/2026-06-woeai-site-source-packet.md` records sources or public-safe fallbacks for every persuasive claim.
+- `project/research/2026-06-woeai-peer-site-benchmark.md` records benchmark and theme decision.
+- `project/sources/2026-06-woeai-site-source-packet.md` records sources or public-safe fallbacks for every persuasive claim.
 - `README.rst` describes WOEAI and local docs build, not the ReadTheDocs tutorial.
 - `AGENTS.md` exists and prevents future agents from treating the repo as a Python package.
 - `./scripts/check-docs.sh` cleans the build directory and builds the site with warnings as errors.

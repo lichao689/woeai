@@ -13,6 +13,25 @@ purpose is ordered as:
 3. academic credibility through academic outputs, teaching, public research
    support, and research directions.
 
+Repository Map
+--------------
+
+- ``docs/``: public website sources (``docs/source/``), structured website data
+  (``docs/data/``), and Sphinx build dependencies. Start at
+  `the homepage source <docs/source/index.rst>`_.
+- ``wechat/``: article sources, evidence reviews, approved assets, and the
+  existing WeChat workflow. Start at `the WeChat guide <wechat/README.md>`_.
+- ``project/``: project maintenance guides, plans, specifications, research,
+  and factual source packets. Start at `the project index <project/README.md>`_.
+- ``tools/``: command entry points for publication maintenance. Existing
+  ``wechat/tools/`` commands remain in place; tool consolidation is deferred.
+- ``woeai/``: shared Python logic imported by repository commands, not an
+  independently installable distribution.
+- ``scripts/``: environment setup, build/check commands, site release metadata,
+  and the existing Zotero publication-update entry point.
+- ``tests/``: regression tests for the shared logic and command workflows.
+- ``AGENTS.md``: contributor/agent guidance; ``CONTEXT.md``: project vocabulary.
+
 Local Checks
 ------------
 
@@ -45,7 +64,7 @@ Content Rules
 -------------
 
 - Prefer source-backed updates over invented marketing copy.
-- Use ``docs/superpowers/source-packets/2026-06-woeai-site-source-packet.md``
+- Use ``project/sources/2026-06-woeai-site-source-packet.md``
   as the first reference for facts that were available during the 2026 site
   upgrade.
 - Keep the homepage ordered around recruitment, engineering applications, then

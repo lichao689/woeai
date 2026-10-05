@@ -12,9 +12,9 @@ exploring the codebase.
 - `docs/adr/`, reading ADRs that touch the area you're about to work in, if
   the directory exists
 - `docs/source/` for public website content and navigation truth
-- `docs/superpowers/source-packets/` for source-supported public facts
-- `docs/superpowers/plans/` for durable implementation plans
-- `docs/superpowers/research/` for benchmark and research notes
+- `project/sources/` for source-supported public facts
+- `project/plans/` for durable implementation plans
+- `project/research/` for benchmark and research notes
 
 Agents may read, maintain, and modify root `CONTEXT.md` when a task needs to
 preserve or refine WOEAI public-site language. If `CONTEXT.md` or `docs/adr/` do
@@ -33,14 +33,21 @@ Expected optional structure:
 /
 |-- CONTEXT.md
 |-- docs/
-|   |-- adr/
-|   |-- agents/
-|   |-- source/
-|   `-- superpowers/
-|       |-- plans/
-|       |-- research/
-|       `-- source-packets/
-`-- scripts/
+|   |-- adr/                 (optional)
+|   |-- data/
+|   `-- source/
+|-- project/
+|   |-- README.md
+|   |-- guides/
+|   |-- plans/
+|   |-- specs/
+|   |-- research/
+|   `-- sources/
+|-- wechat/
+|-- tools/
+|-- woeai/
+|-- scripts/
+`-- tests/
 ```
 
 ## Use The Project Vocabulary

@@ -87,7 +87,7 @@ The script should call the Zotero local API with `include=data,bib` and the CSL 
 ### Script And Snapshot Locations
 
 - Add script: `scripts/update-publications-from-zotero.py`
-- Add source snapshot: `docs/superpowers/source-packets/2026-06-publications-zotero-snapshot.json`
+- Add source snapshot: `docs/data/2026-06-publications-zotero-snapshot.json`
 - The snapshot is evidence for review, not an RTD build input.
 - RTD must continue to build static committed RST only; it must not depend on live Zotero.
 - Commit the script, snapshot, generated `Publications.rst`, and related reference updates together in one changeset.

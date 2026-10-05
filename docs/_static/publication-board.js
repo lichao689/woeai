@@ -73,7 +73,11 @@
     if (channel === 'rtd') section.append(el('p', `页面类型：${{legacy_intro:'历史导读',full_paper:'全文型',unregistered:'未登记'}[workflow.kind] || '未登记'}`));
     else section.append(el('p', `公众号选题：${workflow.selected ? '已选' : '未选'}`));
     const gaps = el('ul', undefined, 'board-gaps');
-    (workflow.gaps || []).forEach(gap => gaps.append(el('li', gap)));
+    const checkWarnings = new Set((workflow.checks || [])
+      .filter(check => check.value !== true)
+      .map(check => `${check.label}：${check.value === false ? '未通过' : '未记录'}`));
+    (workflow.gaps || []).filter(gap => !checkWarnings.has(gap))
+      .forEach(gap => gaps.append(el('li', gap)));
     if (gaps.children.length) section.append(gaps);
     const checks = el('ul', undefined, 'board-checks');
     (workflow.checks || []).forEach(check => {

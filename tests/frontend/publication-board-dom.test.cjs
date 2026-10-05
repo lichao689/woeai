@@ -117,6 +117,14 @@ test('DOM: loading gates controls; show-all preserves totals and focuses the fir
   assert.equal(columns.reduce((sum, column) => sum + cards(column).length, 0), ui.data.papers.length);
   assert(!walk(ui.ids['board-results']).some(node =>
     ['input', 'select', 'textarea', 'form'].includes(node.tag) || node.attributes.contenteditable));
+  for (const section of walk(ui.ids['board-results']).filter(node => node.className === 'board-track-detail')) {
+    const gaps = section.children.find(node => node.className === 'board-gaps');
+    const checks = section.children.find(node => node.className === 'board-checks');
+    for (const gap of gaps?.children || []) {
+      assert(!checks.children.some(check => check.textContent.startsWith(gap.textContent)),
+        'Check results should appear once, not duplicated in gaps');
+    }
+  }
   assert.equal(JSON.stringify(ui.data), JSON.stringify(JSON.parse(fixture)));
   assert.deepEqual(ui.requests, [{url: '_static/publication-board-data.json',
     options: {credentials: 'omit', cache: 'no-cache'}}]);

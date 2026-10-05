@@ -93,7 +93,8 @@ The journal-paper deep-dive pages under `docs/source/paper-notes/<publication_re
 _Avoid_: 公众号文章 as the public section title, 论文解读 as the canonical RTD section label after this terminology change, a single ungrouped date-only list, placing paper deep-dives under Research navigation, registering paper deep-dives as a flat top-level Academic Outputs sidebar list, making `Journal Papers` a sidebar node
 
 **Publication Research Mapping**:
-The machine-readable mapping from Zotero item keys to Research Family and subdirection, stored at `docs/data/publication-research-map.json`. Every Public Journal Paper must have exactly one canonical Research Family and one canonical subdirection before the thematic view can be generated.
+The machine-readable mapping from Zotero item keys to Research Family and subdirection, stored in `custom` fields of `docs/data/publications.json`;
+`docs/data/publication-research-map.json` is its generated compatibility view. Every Public Journal Paper must have exactly one canonical Research Family and one canonical subdirection before the thematic view can be generated.
 _Avoid_: Publication Number as mapping key, selected WeChat paper list as full mapping source, unmapped public papers
 
 **Student First Author**:
@@ -288,3 +289,12 @@ Domain Expert: No. Use Degree Thesis Listings as ordinary text lines under the r
 Dev: Should WOEAI use semantic versioning for public site updates?
 
 Domain Expert: No. Use a Site Build ID for the public website; Git commits remain the authoritative change history.
+
+## Publication Workflow Registry
+
+`docs/data/publications.json` is a standard CSL-JSON bibliography with independent
+`custom.rtd` and `custom.wechat` workflows. A file may be publicly available
+without verified full-paper coverage. Unregistered means no structured record,
+not proof that work has never started. Workflow issue URLs coordinate tasks;
+closing an issue never substitutes for current source/content evidence. See
+`project/guides/publication-registry.md` for status and freshness rules.

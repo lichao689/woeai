@@ -1,275 +1,259 @@
-schema_version: 1
-description: Public-safe backlog of selected WOEAI papers for one-paper WeChat articles.
-selection_policy:
-  - Use one selected paper per article.
-  - Include historical papers when they still support current WOEAI research identity, recruitment, technical collaboration, or academic credibility.
-  - Confirm final inclusion before writing each article.
+# GENERATED from docs/data/publications.json; do not edit.
+schema_version: 2
+description: Generated compatibility view; registry owns workflow state.
 items:
   - publication_ref: ref-zhao2026-BS
-    zotero_key: CGKPKZ8I
+    zotero_key: "CGKPKZ8I"
     title: "A fast prediction framework for urban microscale wind environment based on precomputed CFD database"
-    research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍动入流
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
     original_year: 2026
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: ""
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit8W5lJ84JuQVMz4NFRpBMgLqu_P2CwMhp5uLAs3CfZau
-    wechat_draft_updated_at: 2026-06-11T11:22:19+08:00
-    wechat_draft_created_at: 2026-06-09T12:31:43+08:00
+    wechat_draft_created_at: "2026-06-09T12:31:43+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:22:19+08:00"
   - publication_ref: ref-zhao2026-BE
-    zotero_key: RLAA46YB
+    zotero_key: "RLAA46YB"
     title: "A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment"
-    research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍动入流
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
     original_year: 2026
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygityZj6g6Gb7xQ5DECKFvJTTvjKmO-nwhwlO-v7iUt8HF2
-    wechat_draft_updated_at: 2026-06-11T11:22:56+08:00
-    wechat_draft_created_at: 2026-06-10T20:06:05+08:00
+    wechat_draft_created_at: "2026-06-10T20:06:05+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:22:56+08:00"
   - publication_ref: ref-he2026-OE
-    zotero_key: 4FX43CFT
+    zotero_key: "4FX43CFT"
     title: "Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks"
-    research_family: 建筑结构抗风
-    subdirection: 高层建筑抗风与优化
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
     original_year: 2026
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygitzBMEeUNHmDWPKxTNOcybr_NxJ1SmnLQ7ZKQKKq_Ttj1
-    wechat_draft_updated_at: 2026-06-11T11:23:08+08:00
-    wechat_draft_created_at: 2026-06-10T20:06:14+08:00
+    wechat_draft_created_at: "2026-06-10T20:06:14+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:23:08+08:00"
   - publication_ref: ref-tang2026-RE
-    zotero_key: XM44D697
+    zotero_key: "XM44D697"
     title: "A novel framework for temporal super-resolution of wind in urban energy applications"
-    research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍动入流
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
     original_year: 2026
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit6A53AJWyrorKmAWHqdk-vEKHhAuk3dKwB_lrzFO9PkI
-    wechat_draft_updated_at: 2026-06-11T16:41:36+08:00
-    wechat_draft_created_at: 2026-06-10T20:06:25+08:00
+    wechat_draft_created_at: "2026-06-10T20:06:25+08:00"
+    wechat_draft_updated_at: "2026-06-11T16:41:36+08:00"
   - publication_ref: ref-zhao2025-SCS
-    zotero_key: V6PLJENN
+    zotero_key: "V6PLJENN"
     title: "A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations"
-    research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍动入流
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
     original_year: 2025
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 2345 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit7Sdnf2rZTJdKBSG18ErBfpXulaYLSi6rgd6sNy7lgU6
-    wechat_draft_updated_at: 2026-06-11T11:23:33+08:00
-    wechat_draft_created_at: 2026-06-10T12:11:46+08:00
+    wechat_draft_created_at: "2026-06-10T12:11:46+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:23:33+08:00"
   - publication_ref: ref-li2024-POF
-    zotero_key: 2YG78T62
+    zotero_key: "2YG78T62"
     title: "A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra"
-    research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍动入流
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
     original_year: 2024
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 2345 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygitxOm-FaRJOc1RnchrVP-Vi-lmkVFUH1xSKpmSCuw4SG7
-    wechat_draft_updated_at: 2026-06-11T11:23:44+08:00
-    wechat_draft_created_at: 2026-06-10T12:12:10+08:00
+    wechat_draft_created_at: "2026-06-10T12:12:10+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:23:44+08:00"
   - publication_ref: ref-chen2024-JCP
-    zotero_key: Y76UWP9R
+    zotero_key: "Y76UWP9R"
     title: "A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation"
-    research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍动入流
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
     original_year: 2024
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit8jZYVoX9eNK1vrIQKOcGi8CkjVV77kRKQEP6OlmtkpH
-    wechat_draft_updated_at: 2026-06-11T11:23:55+08:00
-    wechat_draft_created_at: 2026-06-10T20:04:58+08:00
+    wechat_draft_created_at: "2026-06-10T20:04:58+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:23:55+08:00"
   - publication_ref: ref-wang2024-ES
-    zotero_key: 3HGIR6QR
+    zotero_key: "3HGIR6QR"
     title: "A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES"
-    research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍动入流
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
     original_year: 2024
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit-ACT--HuP4rk1XuYJrtqGaEQoGRxYPTqZbfxf59vBFo
-    wechat_draft_updated_at: 2026-06-11T11:24:05+08:00
-    wechat_draft_created_at: 2026-06-10T20:06:35+08:00
+    wechat_draft_created_at: "2026-06-10T20:06:35+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:24:05+08:00"
   - publication_ref: ref-tang2025-JBE
-    zotero_key: 4BCF65NB
+    zotero_key: "4BCF65NB"
     title: "Training and application of graph neural networks for predicting structural responses targeted at tall building structures"
-    research_family: 建筑结构抗风
-    subdirection: 高层建筑抗风与优化
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
     original_year: 2025
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 2345 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygitzV-5rs25MciHekeZ4Rfet5yiGHDm5jr6R6ne4pgKe5n
-    wechat_draft_updated_at: 2026-06-11T11:24:19+08:00
-    wechat_draft_created_at: 2026-06-10T12:12:32+08:00
+    wechat_draft_created_at: "2026-06-10T12:12:32+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:24:19+08:00"
   - publication_ref: ref-yang2025-JBE
-    zotero_key: YZ2D62NB
+    zotero_key: "YZ2D62NB"
     title: "Statistical extremes of 2D vectorial response for wind-excited tall buildings"
-    research_family: 建筑结构抗风
-    subdirection: 高层建筑抗风与优化
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
     original_year: 2025
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit6lI0lhxR21qVyY_pQ7LoFA4ixT5LPZCBp8tyxGpfQBv
-    wechat_draft_updated_at: 2026-06-11T16:42:02+08:00
-    wechat_draft_created_at: 2026-06-10T20:05:09+08:00
+    wechat_draft_created_at: "2026-06-10T20:05:09+08:00"
+    wechat_draft_updated_at: "2026-06-11T16:42:02+08:00"
   - publication_ref: ref-he2025-POF
-    zotero_key: ES37XMDV
+    zotero_key: "ES37XMDV"
     title: "Numerical investigation of nonlinear sloshing features and vibration mitigation efficiency of the implanted pole tuned liquid damper"
-    research_family: 建筑结构抗风
-    subdirection: 高层建筑抗风与优化
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
     original_year: 2025
-    repost_priority: medium
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "medium"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit_URZtdG9CUJHpFtft1WHn9eoCX1ezjDpnpA7TQCx7Wp
-    wechat_draft_updated_at: 2026-06-11T11:24:43+08:00
-    wechat_draft_created_at: 2026-06-10T20:05:23+08:00
+    wechat_draft_created_at: "2026-06-10T20:05:23+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:24:43+08:00"
   - publication_ref: ref-he2026-OE-structural
-    zotero_key: EMID6LAJ
+    zotero_key: "EMID6LAJ"
     title: "Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete"
-    research_family: 海上漂浮风电
-    subdirection: 浮式混凝土平台结构设计
+    research_family: "海上漂浮风电"
+    subdirection: "浮式混凝土平台结构设计"
     original_year: 2026
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 2345 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit68aShIl2MymtSVw34JLDaS0Ib-iz4X5TflMhXMPWvjV
-    wechat_draft_updated_at: 2026-06-11T11:24:55+08:00
-    wechat_draft_created_at: 2026-06-10T12:12:50+08:00
+    wechat_draft_created_at: "2026-06-10T12:12:50+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:24:55+08:00"
   - publication_ref: ref-zheng2025-OE
-    zotero_key: 5W2SZJUT
+    zotero_key: "5W2SZJUT"
     title: "Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine"
-    research_family: 海上漂浮风电
-    subdirection: 浮式混凝土平台结构设计
+    research_family: "海上漂浮风电"
+    subdirection: "浮式混凝土平台结构设计"
     original_year: 2025
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygityiCBgxLgEDIa8y3uhHf7kDdBisslbMb3Gm3dZwSx5n-
-    wechat_draft_updated_at: 2026-06-11T11:25:07+08:00
-    wechat_draft_created_at: 2026-06-10T20:05:35+08:00
+    wechat_draft_created_at: "2026-06-10T20:05:35+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:25:07+08:00"
   - publication_ref: ref-zhou2023-AE
-    zotero_key: 3LWVP7B7
+    zotero_key: "3LWVP7B7"
     title: "Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization"
-    research_family: 海上漂浮风电
-    subdirection: 浮式风机系统一体化分析与优化
+    research_family: "海上漂浮风电"
+    subdirection: "浮式风机系统一体化分析与优化"
     original_year: 2023
-    repost_priority: high
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "high"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit3v-ltteGzLECE5trkxPCiv7it5Ua6pXtFs6644WW5te
-    wechat_draft_updated_at: 2026-06-11T11:25:14+08:00
-    wechat_draft_created_at: 2026-06-10T20:05:45+08:00
+    wechat_draft_created_at: "2026-06-10T20:05:45+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:25:14+08:00"
   - publication_ref: ref-chen2022-JWEIA
-    zotero_key: DD8PJ6PS
+    zotero_key: "DD8PJ6PS"
     title: "Consistency improved random flow generation method for large eddy simulation of atmospheric boundary layer"
-    research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍动入流
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
     original_year: 2022
-    repost_priority: medium
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "medium"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Compact WeChat article, review note, and selected second-candidate cover uploaded to the WeChat draft; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit4_Ck2xWeM7xecGd_nTuEQEmxtVuA3kOCpCq8eKwNdFf
-    wechat_draft_updated_at: 2026-06-17T18:17:40+08:00
-    wechat_draft_created_at: 2026-06-17T18:15:47+08:00
+    wechat_draft_created_at: "2026-06-17T18:15:47+08:00"
+    wechat_draft_updated_at: "2026-06-17T18:17:40+08:00"
   - publication_ref: ref-li2022-SOS
-    zotero_key: 5AT7UEWV
+    zotero_key: "5AT7UEWV"
     title: "Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures"
-    research_family: 海上漂浮风电
-    subdirection: 浮式混凝土平台结构设计
+    research_family: "海上漂浮风电"
+    subdirection: "浮式混凝土平台结构设计"
     original_year: 2022
-    repost_priority: medium
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
+    repost_priority: "medium"
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Batch 10 public-safe WeChat article, RTD companion page, cover, and official WeChat draft created; pending WeChat backend mobile preview, proofread, and manual publication."
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
     publication_history: []
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit2hqMCb-qA7qwltzTTFEeh_5JG6k-8Wrd3o0Vzt5OzC8
-    wechat_draft_updated_at: 2026-06-11T11:25:22+08:00
-    wechat_draft_created_at: 2026-06-10T20:05:52+08:00
+    wechat_draft_created_at: "2026-06-10T20:05:52+08:00"
+    wechat_draft_updated_at: "2026-06-11T11:25:22+08:00"
   - publication_ref: ref-chen2024-POF
-    zotero_key: 78XMAPMX
-    title: "LES 高层建筑风荷载评估中人工压力脉动抑制方法对比"
-    research_family: 建筑结构抗风
-    subdirection: 数值风洞与湍动入流
+    zotero_key: "78XMAPMX"
+    title: "Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
     original_year: 2024
-    wechat_status: ready_to_publish
-    publication_mode: first_publish
-    revision_note: "Public-safe WeChat article, review note, and user-provided regenerated cover prepared; WeChat backend preview pending."
-    wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit6eaj49X7uanG1q7563wBFMnnBNChnLd8UOdiTzd2DBB
-    wechat_draft_updated_at: 2026-06-18T18:38:00+08:00
-    wechat_draft_created_at: 2026-06-18T18:38:00+08:00
+    repost_priority: ""
+    wechat_status: "draft_created"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Historical draft evidence; current backend preview and publication unconfirmed."
+    publication_history: []
+    wechat_draft_created_at: "2026-06-18T18:38:00+08:00"
+    wechat_draft_updated_at: "2026-06-18T18:38:00+08:00"

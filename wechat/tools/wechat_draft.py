@@ -37,6 +37,7 @@ if str(REPO_ROOT) not in sys.path:
 
 from woeai.wechat.backlog import (  # noqa: E402,F401
     BacklogPaper,
+    find_registry_root,
     parse_backlog_papers,
     rank_against_target,
     read_backlog_item,
@@ -606,7 +607,7 @@ def planned_content_source_items(publication_refs: list[str]) -> list[dict[str, 
                 "article_exists": article_path.exists(),
                 "review_exists": review_path.exists(),
                 "rtd_page_exists": (REPO_ROOT / f"docs/source/paper-notes/{publication_ref}.rst").exists(),
-                "wechat_draft_media_id": backlog_item.get("wechat_draft_media_id", ""),
+                "wechat_draft_media_id": existing_draft_media_id(backlog_path, publication_ref),
                 "content_source_url_policy": "review_override" if has_override else "default_rtd_paper_note",
                 "expected_content_source_url": expected_url,
                 "default_rtd_paper_note_url": rtd_paper_note_url(publication_ref),
@@ -615,49 +616,112 @@ def planned_content_source_items(publication_refs: list[str]) -> list[dict[str, 
     return items
 
 
-def update_backlog_after_success(backlog_path: Path, publication_ref: str, media_id: str, action: str) -> None:
-    now = datetime.now().astimezone().isoformat(timespec="seconds")
-    lines = backlog_path.read_text(encoding="utf-8").splitlines()
-    out: list[str] = []
-    in_item = False
-    seen: set[str] = set()
-    indent = "    "
+def private_drafts_path(backlog_path: Path) -> Path | None:
+    """Locate runtime-only IDs without consulting or creating credentials."""
+    root = find_registry_root(backlog_path)
+    if root is None:
+        path = backlog_path.resolve()
+        if path.parent.name != "backlog" or path.parent.parent.name != "wechat":
+            return None
+        root = path.parent.parent.parent
+    return root / "wechat/.local/registry-drafts.json"
 
-    updates = {
-        "wechat_status": "ready_to_publish",
-        "wechat_draft_media_id": media_id,
-        "wechat_draft_updated_at": now,
+
+def read_private_drafts(backlog_path: Path) -> dict[str, dict[str, Any]]:
+    path = private_drafts_path(backlog_path)
+    if path is None or not path.exists():
+        return {}
+    records = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(records, dict) or any(not isinstance(item, dict) for item in records.values()):
+        raise ValueError("Private draft records must map publication references to objects")
+    return records
+
+
+def existing_draft_media_id(backlog_path: Path, publication_ref: str) -> str:
+    record = read_private_drafts(backlog_path).get(publication_ref, {})
+    media_id = record.get("media_id", record.get("wechat_draft_media_id", ""))
+    if not isinstance(media_id, str):
+        raise ValueError("Private draft media_id must be a string")
+    if not media_id and find_registry_root(backlog_path) is None:
+        # Compatibility for a standalone pre-registry checkout, never for a
+        # generated view in a registry-backed repository.
+        media_id = read_backlog_item(backlog_path, publication_ref).get("wechat_draft_media_id", "")
+    return media_id
+
+
+def registered_publication(backlog_path: Path, publication_ref: str) -> tuple[Path, list[dict[str, Any]], dict[str, Any]]:
+    from woeai.publications.registry import load_registry
+
+    root = find_registry_root(backlog_path)
+    if root is None:
+        raise RuntimeError("Live draft delivery requires docs/data/publications.json")
+    records = load_registry(root)
+    matches = [record for record in records if record.get("custom", {}).get("publication_ref") == publication_ref]
+    if len(matches) != 1 or matches[0].get("custom", {}).get("wechat", {}).get("selected") is not True:
+        raise RuntimeError("Live draft delivery requires one selected registry publication")
+    return root, records, matches[0]
+
+
+def save_private_draft(backlog_path: Path, publication_ref: str, media_id: str, now: str) -> None:
+    path = private_drafts_path(backlog_path)
+    if path is None:
+        raise RuntimeError("Cannot locate private draft storage")
+    records = read_private_drafts(backlog_path)
+    record = records.setdefault(publication_ref, {})
+    record["media_id"] = media_id
+    record["updated_at"] = now
+    record.pop("wechat_draft_media_id", None)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    # Same-directory atomic replacement keeps an interrupted write from losing
+    # the existing remote draft mapping. NamedTemporaryFile defaults to 0600.
+    with tempfile.NamedTemporaryFile("w", encoding="utf-8", dir=path.parent, delete=False) as stream:
+        temporary = Path(stream.name)
+        try:
+            json.dump(records, stream, ensure_ascii=False, indent=2)
+            stream.write("\n")
+            stream.flush()
+            os.fsync(stream.fileno())
+        except BaseException:
+            temporary.unlink(missing_ok=True)
+            raise
+    try:
+        temporary.chmod(0o600)
+        os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
+def update_backlog_after_success(
+    backlog_path: Path,
+    publication_ref: str,
+    media_id: str,
+    action: str,
+    *,
+    fingerprint: str | None = None,
+) -> None:
+    """Record a confirmed draft operation, never human publication readiness."""
+    from woeai.publications.registry import save_registry, workflow_fingerprint, write_views
+
+    if action not in {"create", "update"} or not isinstance(media_id, str) or not media_id:
+        raise ValueError("A successful create/update and nonempty draft ID are required")
+    root, records, record = registered_publication(backlog_path, publication_ref)
+    now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+    state = record["custom"]["wechat"]
+    fingerprint = fingerprint if fingerprint is not None else workflow_fingerprint(record, "wechat", root)
+    state["status"] = "draft_created"
+    state["draft_updated_at"] = now
+    if action == "create" and not state.get("draft_created_at"):
+        state["draft_created_at"] = now
+    state.setdefault("evidence", {})["draft_created"] = {
+        "fingerprint": fingerprint,
+        "recorded_at": now,
+        "operation": action,
     }
-    if action == "create":
-        updates["wechat_draft_created_at"] = now
-
-    for raw in lines:
-        if re.match(r"\s*-\s+publication_ref:\s+" + re.escape(publication_ref) + r"\s*$", raw):
-            in_item = True
-            out.append(raw)
-            continue
-        if in_item and re.match(r"\s*-\s+publication_ref:\s+", raw):
-            for key, value in updates.items():
-                if key not in seen:
-                    out.append(f"{indent}{key}: {value}")
-            in_item = False
-            seen.clear()
-            out.append(raw)
-            continue
-        if in_item and ":" in raw:
-            key = raw.split(":", 1)[0].strip()
-            if key in updates:
-                out.append(f"{indent}{key}: {updates[key]}")
-                seen.add(key)
-                continue
-        out.append(raw)
-
-    if in_item:
-        for key, value in updates.items():
-            if key not in seen:
-                out.append(f"{indent}{key}: {value}")
-
-    backlog_path.write_text("\n".join(out) + "\n", encoding="utf-8")
+    # Preserve the confirmed remote identifier privately even if public view
+    # regeneration subsequently fails. It is never passed to registry writers.
+    save_private_draft(backlog_path, publication_ref, media_id, now)
+    save_registry(root, records)
+    write_views(root, records)
 
 
 def build_context(
@@ -683,8 +747,7 @@ def build_context(
     content_source_url = resolve_content_source_url(publication_ref, front)
     cover_path = parse_cover_path(review_path)
     body_images = parse_markdown_images(article_path)
-    backlog_item = read_backlog_item(backlog_path, publication_ref)
-    existing_media_id = backlog_item.get("wechat_draft_media_id", "")
+    existing_media_id = existing_draft_media_id(backlog_path, publication_ref)
     return ArticleContext(
         publication_ref=publication_ref,
         article_path=article_path.resolve(),
@@ -922,7 +985,7 @@ def audit_remote_content_source(token: str, ctx: ArticleContext) -> dict[str, An
             "remote_content_source_url": None,
             "matches_expected": False,
             "needs_update": True,
-            "message": "backlog has no wechat_draft_media_id",
+            "message": "private draft records have no media_id",
         }
     article = fetch_remote_draft_article(token, ctx.existing_media_id)
     remote_url = str(article.get("content_source_url", ""))
@@ -968,14 +1031,38 @@ def command_create_or_update(args: argparse.Namespace) -> int:
     ctx = build_context(args.publication_ref, args.theme, args.math_renderer)
     requested_action = "update" if args.update else "create"
     if requested_action == "update" and not ctx.existing_media_id:
-        raise RuntimeError("Cannot update: backlog has no wechat_draft_media_id")
+        raise RuntimeError("Cannot update: private draft records have no media_id")
     if requested_action == "create" and ctx.existing_media_id and not args.new_copy:
-        raise RuntimeError("Backlog already has wechat_draft_media_id; use update-draft or --new-copy")
+        raise RuntimeError("A private draft record already exists; use update-draft or --new-copy")
     problems = validate_context(ctx)
     if problems:
         print(json.dumps({"ok": False, "stage": "validation", "problems": problems}, ensure_ascii=False, indent=2))
         return 1
 
+    from woeai.publications.registry import workflow_fingerprint
+
+    root, _records, record = registered_publication(ctx.backlog_path, ctx.publication_ref)
+    workflow = record["custom"]["wechat"]
+    has_draft_history = (
+        workflow.get("status") in {"draft_created", "ready_to_publish", "published"}
+        or workflow.get("draft_created_at")
+        or workflow.get("draft_updated_at")
+        or workflow.get("historical_draft_evidence")
+        or workflow.get("evidence", {}).get("draft_created")
+    )
+    if requested_action == "create" and has_draft_history and not args.new_copy:
+        raise RuntimeError(
+            "Registry records an earlier draft but its private media_id is missing; "
+            "restore the private draft mapping or explicitly use --new-copy"
+        )
+    if (root / workflow["path"]).resolve() != ctx.article_path.resolve():
+        raise RuntimeError("Registry WeChat article path does not match the submitted article")
+    if (root / workflow.get("review_path", "")).resolve() != ctx.review_path.resolve():
+        raise RuntimeError("Registry WeChat review path does not match the submitted review")
+    # Bind delivery evidence before networking. If content changes while the
+    # request is in flight, the saved evidence stays stale rather than falsely
+    # certifying the new content as delivered.
+    fingerprint = workflow_fingerprint(record, "wechat", root)
     token_record = fetch_access_token(force_refresh=False)
     token = token_record["access_token"]
 
@@ -1003,7 +1090,7 @@ def command_create_or_update(args: argparse.Namespace) -> int:
 
     if requested_action == "create":
         response = api_post_json(DRAFT_ADD_URL, token, {"articles": [article]})
-        if "media_id" not in response:
+        if not isinstance(response.get("media_id"), str) or not response["media_id"]:
             raise WeChatError("draft_add", response)
         media_id = response["media_id"]
     else:
@@ -1013,10 +1100,10 @@ def command_create_or_update(args: argparse.Namespace) -> int:
             token,
             {"media_id": media_id, "index": 0, "articles": article},
         )
-        if response.get("errcode") not in {0, "0", None}:
+        if response.get("errcode") not in {0, "0"}:
             raise WeChatError("draft_update", response)
 
-    update_backlog_after_success(ctx.backlog_path, ctx.publication_ref, media_id, requested_action)
+    update_backlog_after_success(ctx.backlog_path, ctx.publication_ref, media_id, requested_action, fingerprint=fingerprint)
     print(
         json.dumps(
             {

@@ -3,10 +3,12 @@ from __future__ import annotations
 import contextlib
 import importlib.util
 import io
+import json
 import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -80,7 +82,7 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.addCleanup(temp.cleanup)
         return temp
 
-    def test_generated_fragments_only_publish_complete_artifacts(self) -> None:
+    def test_generated_fragments_only_link_available_artifacts(self) -> None:
         temp = self.make_repo()
         root = Path(temp.name)
 
@@ -93,8 +95,129 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.assertNotIn("ref-missing-rtd", latest)
         self.assertIn("建筑结构抗风", area)
         self.assertIn("数值风洞与湍动入流", area)
-        self.assertEqual(diagnostics[0]["publication_ref"], "ref-missing-rtd")
-        self.assertIn("docs/source/paper-notes/ref-missing-rtd.rst", diagnostics[0]["missing"])
+        missing = next(row for row in diagnostics if row["publication_ref"] == "ref-missing-rtd")
+        self.assertIn("docs/source/paper-notes/ref-missing-rtd.rst", missing["missing"])
+
+    def write_registry(self, root: Path, records: list[dict] | None = None) -> list[dict]:
+        if records is None:
+            records = [{
+                "id": "TEST1234",
+                "type": "article-journal",
+                "title": "Original paper title",
+                "issued": {"date-parts": [[2026]]},
+                "custom": {
+                    "publication_ref": "ref-complete",
+                    "research_family": "建筑结构抗风",
+                    "subdirection": "数值风洞与湍动入流",
+                    "order": 4,
+                    "rtd": {
+                        "status": "planned",
+                        "kind": "full_paper",
+                        "path": "docs/source/paper-notes/ref-complete.rst",
+                        "public_title": "数值风洞 | Independent RTD label",
+                        "order": 2,
+                        "issues": [],
+                        "evidence": {},
+                    },
+                    "wechat": {"selected": False, "status": "planned"},
+                },
+            }]
+        target = root / "docs/data/publications.json"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(json.dumps(records, ensure_ascii=False), encoding="utf-8")
+        return records
+
+    def test_registry_rtd_is_independent_of_wechat_selection_and_title(self) -> None:
+        root = Path(self.make_repo().name)
+        self.write_registry(root)
+        with patch.object(self.artifacts, "parse_backlog_papers", side_effect=AssertionError("No backlog read")):
+            artifacts = self.artifacts.load_artifacts(root)
+            latest = self.artifacts.render_latest_paper_notes(root)
+
+        self.assertEqual(len(artifacts), 1)
+        self.assertEqual(artifacts[0].order, 2)
+        self.assertIn("数值风洞 | Independent RTD label", latest)
+        self.assertNotIn("Markdown Title", latest)
+        self.assertTrue(artifacts[0].is_public_available)
+        self.assertFalse(artifacts[0].is_public_complete)
+
+    def test_registry_does_not_need_backlog_or_wechat_article(self) -> None:
+        root = Path(self.make_repo().name)
+        self.write_registry(root)
+        (root / "wechat/backlog/selected-papers.yml").unlink()
+        (root / "wechat/articles/draft-public-safe/ref-complete.md").unlink()
+
+        self.assertEqual(len(self.artifacts.public_artifacts(root)), 1)
+        self.assertIn("Independent RTD label", self.artifacts.render_paper_notes_area(root))
+
+    def test_page_existence_never_means_verified_completion(self) -> None:
+        root = Path(self.make_repo().name)
+        legacy = self.artifacts.load_artifacts(root)[0]
+        self.assertTrue(legacy.is_public_available)
+        self.assertFalse(legacy.is_public_complete)
+        self.write_registry(root)
+        registered = self.artifacts.load_artifacts(root)[0]
+        self.assertTrue(registered.is_public_available)
+        self.assertFalse(registered.is_public_complete)
+        summary = self.artifacts.summary(root)
+        self.assertEqual(summary["public_available_count"], 1)
+        self.assertEqual(summary["public_complete_count"], 0)
+        self.assertFalse(summary["diagnostics"][0]["public_complete"])
+
+    def test_completion_uses_current_workflow_evidence(self) -> None:
+        root = Path(self.make_repo().name)
+        records = self.write_registry(root)
+        artifact = self.artifacts.load_artifacts(root)[0]
+        with patch.object(self.artifacts, "workflow_verified", side_effect=[True, False]) as verify:
+            self.assertTrue(artifact.is_public_complete)
+            self.assertFalse(artifact.is_public_complete)
+        self.assertEqual(verify.call_count, 2)
+        verify.assert_called_with(records[0], "rtd", root)
+
+    def test_completed_status_without_proof_is_not_complete(self) -> None:
+        root = Path(self.make_repo().name)
+        records = self.write_registry(root)
+        records[0]["custom"]["rtd"]["status"] = "verified"
+        self.write_registry(root, records)
+        self.assertFalse(self.artifacts.load_artifacts(root)[0].is_public_complete)
+
+    def test_output_changes_invalidate_completion_without_removing_links(self) -> None:
+        from woeai.publications.registry import workflow_fingerprint
+
+        root = Path(self.make_repo().name)
+        records = self.write_registry(root)
+        record = records[0]
+        record["custom"]["source"] = {"status": "verified", "sha256": "a" * 64}
+        rtd = record["custom"]["rtd"]
+        rtd["status"] = "verified"
+        rtd["evidence"] = {"verified": {
+            "recorded_at": "2026-10-05T03:00:00Z",
+            "review_path": "wechat/articles/review/ref-complete.review.md",
+            "checks": {"source_identity": True, "full_paper_coverage": True, "public_safety": True},
+        }}
+        rtd["evidence"]["verified"]["fingerprint"] = workflow_fingerprint(record, "rtd", root)
+        self.write_registry(root, records)
+        artifact = self.artifacts.load_artifacts(root)[0]
+        self.assertTrue(artifact.is_public_complete)
+
+        artifact.rtd_path.write_text("Edited after audit\n==================\n", encoding="utf-8")
+        self.assertFalse(artifact.is_public_complete)
+        self.assertTrue(artifact.is_public_available)
+        self.assertIn("paper-notes/ref-complete", self.artifacts.render_latest_paper_notes(root))
+
+    def test_registry_title_falls_back_to_rtd_without_wechat(self) -> None:
+        root = Path(self.make_repo().name)
+        records = self.write_registry(root)
+        del records[0]["custom"]["rtd"]["public_title"]
+        self.write_registry(root, records)
+        self.assertEqual(self.artifacts.load_artifacts(root)[0].title, "数值风洞 | RTD Title")
+
+    def test_invalid_registry_does_not_silently_use_backlog(self) -> None:
+        root = Path(self.make_repo().name)
+        self.write_registry(root)
+        (root / "docs/data/publications.json").write_text("invalid JSON", encoding="utf-8")
+        with self.assertRaises((ValueError, RuntimeError)):
+            self.artifacts.load_artifacts(root)
 
     def test_compact_wechat_title_wins_over_rtd_title_and_keeps_prefix(self) -> None:
         # The compact WeChat article H1 (a direction-prefix hook sentence) is

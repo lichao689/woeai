@@ -1,0 +1,93 @@
+# 论文清单与两个独立工作流
+
+## 唯一手工状态源
+
+`docs/data/publications.json` 是 CSL-JSON 数组，每篇论文一条。`id` 是稳定的
+Zotero item key，`custom.publication_ref` 保持现有 RTD anchor 与 URL。
+Zotero 继续是题名、作者、DOI 等书目信息的上游；更新器只合并书目字段，
+不覆盖 `custom` 工作流、核验历史或 issue 链接，也不因一次刷新缺项而删除旧记录。
+新增论文先在清单登记稳定标识和科研分类，然后运行 Zotero 更新器。
+
+旧快照只有作者显示字符串，迁移不把它猜拆为 CSL 作者，也不从排版引文猜卷、期、页。
+可靠的旧值完整保存在 `custom.legacy_bibliography`；后续 Zotero 结构化作者可写入 `author`。
+旧 snapshot 仅保留历史证据，不再作为制作进度源。
+
+以下文件全部自动生成，不手工编辑：
+
+- `wechat/backlog/selected-papers.yml`：17 篇已选文章的兼容读取视图
+- `docs/data/publication-research-map.json`：全部论文的科研分类视图
+- [论文制作进度](../publication-progress.md)：全量可点击清单，含两个渠道的 issue 链接
+
+```sh
+python3 tools/publications/registry.py --write
+python3 tools/publications/registry.py --check
+```
+
+检查命令使用 vendored 官方 CSL schema（安装 `docs/requirements.txt`），另检查工作流、
+证据、issue URL 和生成视图一致性。`scripts/check-docs.sh` 已包含此门禁。
+
+## 状态与证据
+
+`custom.rtd` 与 `custom.wechat` 独立。RTD 不要求已选公众号文章；公众号草稿也不证明
+RTD 完整。`unregistered` 只表示未登记，绝不等于没有开始。
+
+- RTD：`unregistered` / `planned` / `drafting` / `awaiting_audit` / `verified` / `blocked`
+- 微信：`unregistered` / `planned` / `drafting` / `awaiting_review` / `draft_created` /
+  `ready_to_publish` / `published` / `blocked`
+
+RTD `kind` 单独区分 `legacy_intro`、`full_paper`、`unregistered`。
+文件存在只说明可访问，`full_paper` 只表示全文型页面；都不是全文核验通过。
+2026-10-05 迁移覆盖 75 篇：14 篇旧导读、3 篇全文型页面均待原 PDF 覆盖核验；
+58 篇未登记。17 篇旧 `ready_to_publish` 只按历史 API 草稿记录登记为 `draft_created`，
+没有确认手机预览或发布 URL；9 组 backlog/review 时间冲突原样记录在 `conflicts`，待核对。
+
+Review 文件提供事实证据，不能以其中的旧 front matter 状态覆盖清单。
+历史记录保存在 `legacy_backlog` / `historical_draft_evidence`，不视为当前版本核验。
+确认冲突时保留原始双方值并补充解决依据，不静默删除或覆盖。
+
+核验完成时记录：
+
+1. `custom.source.status = verified` 和原批准论文的 `sha256`（不存 PDF 私有路径）
+2. 渠道 `evidence.verified` 的 `recorded_at`、公开安全的 `review_path`、逐项 `checks`
+3. `workflow_fingerprint(record, channel, root)` 输出的 `fingerprint`
+
+RTD 必须有 `source_identity`、`full_paper_coverage`、`public_safety` 全为 true。
+微信必须有 `source_identity`、`facts`、`public_safety`、`formula_preview`、`figure_preview`、
+`cover_preview` 全为 true；预览项必须来自实际后台预览。Review 应记录核验人、来源定位、
+覆盖范围、差异和结论。写好 review 后再计算指纹。没有实际核验不得机械填 true。
+
+指纹包含 CSL 书目、源文件身份/哈希、渠道正文、review、渠道规范、正文实际引用的图片/include 文件和该论文公开资产的字节，
+不包含状态、issue、时间和指纹本身，避免 commit 自引用。正文、来源、资产或 review 改动后，
+旧证据保留但不再生效，检查失败且进度页标出失效；重核验，或把当前状态退回待核验/待审核。
+Zotero 更新可保留旧核验记录，不能把旧证据自动刷新为当前。
+`published` 还须有 `https://mp.weixin.qq.com/s...` 公开链接；草稿上传成功不是发布。
+
+## 微信后台操作边界
+
+预检、dry-run 和失败操作不写清单。只有获授权且真实成功的官方草稿 create/update，
+才写 `draft_created`、成功时间和提交前内容指纹；真实移动端预览与人工发布仍独立。
+不要复制 token、API 原响应、私有 PDF 路径进清单。
+
+草稿 media ID 是操作定位符，不是公开核验依据。新操作将它写到忽略的
+`wechat/.local/registry-drafts.json`，权限为 0600；公开清单和新生成 backlog 不含它。
+一次性迁移保留了当前 backlog 中的 ID 于该私有映射，没有修改既有 review 历史。
+更换执行环境时需经批准安全迁移该私有映射；普通 clone 不携带它。
+迁移前提交 `86ca48340d227c27310848dece61cfa28c3253c7` 的 backlog
+及既有 review 可供人工恢复定位，但旧 ID 或旧时间不证明后台当前状态；
+不要为恢复映射自动创建重复草稿。现有公开历史未在本次改写或抹除。
+
+## 与 GitHub Issues 配合
+
+每个渠道的 `issues` 是可选 GitHub issue URL 数组，支持一个任务关联多个 issue。
+例如 RTD 补全文核验和微信手机预览分别建任务，标题可用：
+
+- `[全文精解][ref-...] 补齐正文与覆盖核验`
+- `[公众号][ref-...] 完成手机预览`
+
+Issue 放 DOI / Zotero key / publication_ref、正文和 review 路径、当前缺口及验收清单。
+讨论、负责人、优先级在 issue；论文事实和验收状态在仓库清单。一次提交同时更新正文、
+清单与证据，再按实际验收关闭 issue。关闭不自动等于 verified；取消不等于完成；
+草稿创建不等于 published。无后台同步、无自动建 issue、无凭据或网络依赖。
+
+本次只实现可选链接与生成视图，不改变 [现行项目 issue tracker](issue-tracker.md)
+对一般软件任务使用本地 Markdown 的约定，也没有创建任何在线 issue。

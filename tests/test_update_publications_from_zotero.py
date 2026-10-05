@@ -1,10 +1,15 @@
 from __future__ import annotations
 
 import importlib.util
+import argparse
+import contextlib
+import copy
+import io
 import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -36,6 +41,187 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls.updater = load_publication_script()
+
+    def make_registry_repo(self) -> tuple[Path, list[dict]]:
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        root = Path(temp.name)
+        (root / "docs/data").mkdir(parents=True)
+        (root / "docs/source/paper-notes").mkdir(parents=True)
+        records = [{
+            "id": "TEST1234",
+            "type": "article-journal",
+            "title": "Original metadata",
+            "issued": {"date-parts": [[2026]]},
+            "custom": {
+                "publication_ref": "ref-example2026-JOT",
+                "research_family": "建筑结构抗风",
+                "subdirection": "数值风洞与湍动入流",
+                "order": 0,
+                "rtd": {
+                    "status": "planned",
+                    "kind": "full_paper",
+                    "path": "docs/source/paper-notes/ref-example2026-JOT.rst",
+                    "public_title": "数值风洞 | Registry RTD title",
+                    "issues": [],
+                    "evidence": {},
+                },
+                "wechat": {
+                    "selected": False, "status": "planned",
+                    "path": "wechat/articles/draft-public-safe/ref-example2026-JOT.md",
+                    "issues": [], "evidence": {},
+                },
+            },
+        }]
+        records.append(copy.deepcopy(records[0]))
+        records[1]["id"] = "RETAIN12"
+        records[1]["custom"]["publication_ref"] = "ref-retained2026-JOT"
+        records[1]["custom"]["rtd"]["path"] = "docs/source/paper-notes/ref-retained2026-JOT.rst"
+        records[1]["custom"]["wechat"]["path"] = "wechat/articles/draft-public-safe/ref-retained2026-JOT.md"
+        (root / "docs/data/publications.json").write_text(json.dumps(records), encoding="utf-8")
+        (root / "docs/source/paper-notes/ref-example2026-JOT.rst").write_text(
+            "RTD page title\n==============\n", encoding="utf-8"
+        )
+        return root, records
+
+    def test_registry_research_map_precedes_compatibility_view(self) -> None:
+        root, records = self.make_registry_repo()
+        view = root / "docs/data/publication-research-map.json"
+        view.write_text('{"items": {"STALE123": {}}}', encoding="utf-8")
+        with patch.multiple(self.updater, ROOT=root, RESEARCH_MAP_PATH=view):
+            mapping = self.updater.load_research_map()
+        self.assertEqual(set(mapping), {record["id"] for record in records})
+        self.assertEqual(mapping["TEST1234"]["research_family"], "建筑结构抗风")
+
+    def test_registry_deep_dive_titles_need_only_available_rtd(self) -> None:
+        root, _records = self.make_registry_repo()
+        with patch.object(self.updater, "ROOT", root):
+            titles = self.updater.load_deep_dive_titles()
+        self.assertEqual(titles, {"TEST1234": ("ref-example2026-JOT", "Registry RTD title")})
+
+    def test_registry_research_map_failure_does_not_fall_back(self) -> None:
+        root, _records = self.make_registry_repo()
+        (root / "docs/data/publications.json").write_text("invalid JSON", encoding="utf-8")
+        with patch.object(self.updater, "ROOT", root):
+            with self.assertRaises((RuntimeError, ValueError)):
+                self.updater.load_research_map()
+
+    def test_refresh_validation_rejects_unfetched_registry_records(self) -> None:
+        root, _records = self.make_registry_repo()
+        with patch.object(self.updater, "ROOT", root):
+            mapping = self.updater.load_research_map()
+        items = [{"key": "TEST1234", "data": {"title": "Refreshed", "date": "2026"}}]
+        with self.assertRaisesRegex(self.updater.ZoteroError, "Incomplete Zotero refresh"):
+            self.updater.validate_research_map(items, mapping)
+        with self.assertRaises(self.updater.ZoteroError):
+            self.updater.validate_research_map(items, {})
+
+    def run_registry_refresh(self, root: Path, *, dry_run: bool, partial: bool = False):
+        items = [{
+            "key": "TEST1234",
+            "data": {
+                "itemType": "journalArticle",
+                "title": "Fresh Zotero metadata",
+                "date": "2026-05-01",
+                "publicationTitle": "Journal of Tests",
+                "creators": [{"creatorType": "author", "firstName": "Chao", "lastName": "Li"}],
+            },
+            "anchor": "ref-example2026-JOT",
+            "publication_number": 1,
+        }]
+        if not partial:
+            items.append({
+                "key": "RETAIN12",
+                "data": {"title": "Original metadata"},
+                "anchor": "ref-retained2026-JOT",
+                "publication_number": 2,
+            })
+        with patch.multiple(
+            self.updater,
+            ROOT=root,
+            PUBLICATIONS_PATH=root / "docs/source/Publications.rst",
+            PUBLICATIONS_BY_YEAR_PATH=root / "docs/source/PublicationsByYear.rst",
+            TEACHING_PATH=root / "docs/source/Teaching.rst",
+            SNAPSHOT_PATH=root / "docs/data/snapshot.json",
+            verify_style=lambda: None,
+            fetch_publication_items=lambda: items,
+            merge_old_anchors=lambda _items: {},
+            build_publications_rst=lambda *_args: "Publications\n",
+            build_publications_by_year_rst=lambda *_args: "By year\n",
+            snapshot=lambda *_args: {"items": []},
+            fetch_teaching_reform_items=lambda: [],
+            build_teaching_rst=lambda *_args: "Teaching\n",
+        ), patch.object(
+            self.updater, "write_views", wraps=self.updater.write_views
+        ) as write_views, contextlib.redirect_stdout(io.StringIO()):
+            self.updater.write_outputs(argparse.Namespace(dry_run=dry_run))
+        return write_views
+
+    def test_complete_refresh_preserves_workflow_and_all_records(self) -> None:
+        root, records = self.make_registry_repo()
+        write_views = self.run_registry_refresh(root, dry_run=False)
+        updated = self.updater.load_registry(root)
+        by_key = {record["id"]: record for record in updated}
+        self.assertEqual(set(by_key), {"TEST1234", "RETAIN12"})
+        self.assertEqual(by_key["TEST1234"]["title"], "Fresh Zotero metadata")
+        self.assertEqual(by_key["TEST1234"]["custom"], records[0]["custom"])
+        self.assertEqual(by_key["RETAIN12"], records[1])
+        write_views.assert_called_once_with(root, updated)
+
+    def test_partial_refresh_leaves_registry_pages_snapshot_and_views_unchanged(self) -> None:
+        root, _records = self.make_registry_repo()
+        for name in (
+            "docs/source/Publications.rst", "docs/source/PublicationsByYear.rst",
+            "docs/source/Teaching.rst", "docs/data/snapshot.json",
+            "docs/data/publication-research-map.json", "wechat/backlog/selected-papers.yml",
+            "project/publication-progress.md",
+        ):
+            path = root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(f"Existing content: {name}\n", encoding="utf-8")
+        before = {path.relative_to(root): path.read_bytes() for path in root.rglob("*") if path.is_file()}
+        with patch.object(self.updater, "save_registry") as save_registry:
+            with self.assertRaisesRegex(self.updater.ZoteroError, "Incomplete Zotero refresh.*"):
+                self.run_registry_refresh(root, dry_run=False, partial=True)
+            save_registry.assert_not_called()
+        after = {path.relative_to(root): path.read_bytes() for path in root.rglob("*") if path.is_file()}
+        self.assertEqual(after, before)
+
+    def test_pure_metadata_merge_still_preserves_unfetched_records(self) -> None:
+        _root, records = self.make_registry_repo()
+        merged = self.updater.merge_zotero_items(records, [{
+            "key": "TEST1234", "data": {"title": "Updated metadata"},
+        }])
+        self.assertEqual(merged[0]["title"], "Updated metadata")
+        self.assertEqual(merged[0]["custom"], records[0]["custom"])
+        self.assertEqual(merged[1], records[1])
+        self.assertEqual(records[0]["title"], "Original metadata")
+
+    def test_refresh_dry_run_does_not_write_registry_or_views(self) -> None:
+        root, _records = self.make_registry_repo()
+        path = root / "docs/data/publications.json"
+        before = path.read_bytes()
+        write_views = self.run_registry_refresh(root, dry_run=True)
+        self.assertEqual(path.read_bytes(), before)
+        self.assertFalse((root / "docs/source/Publications.rst").exists())
+        write_views.assert_not_called()
+
+    def test_rejected_registry_does_not_partially_write_public_pages(self) -> None:
+        root, _records = self.make_registry_repo()
+        with patch.object(self.updater, "save_registry", side_effect=ValueError("Invalid registry")):
+            with self.assertRaises(ValueError):
+                self.run_registry_refresh(root, dry_run=False)
+        self.assertFalse((root / "docs/source/Publications.rst").exists())
+        self.assertFalse((root / "docs/source/PublicationsByYear.rst").exists())
+        self.assertFalse((root / "docs/source/Teaching.rst").exists())
+
+    def test_main_reports_registry_validation_failure_cleanly(self) -> None:
+        errors = io.StringIO()
+        with patch.object(self.updater.sys, "argv", [str(SCRIPT)]), patch.object(
+            self.updater, "write_outputs", side_effect=ValueError("Invalid registry")
+        ), contextlib.redirect_stderr(errors):
+            self.assertEqual(self.updater.main(), 1)
+        self.assertEqual(errors.getvalue(), "error: Invalid registry\n")
 
     def test_corresponding_author_tag_marks_group_leader(self) -> None:
         item = make_item(

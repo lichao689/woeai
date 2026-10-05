@@ -2,6 +2,12 @@
 
 This directory manages public-safe WeChat Official Account article material for WOEAI.
 
+Workflow state now lives only in `docs/data/publications.json`; the backlog is a
+generated compatibility view. Read [the registry guide](../project/guides/publication-registry.md)
+and [progress view](../project/publication-progress.md). Historical statuses in
+review notes are evidence history, not current readiness. New draft media IDs
+are private operational data in ignored `wechat/.local/registry-drafts.json`.
+
 The basic unit is one selected paper, one article. Each article must be source-bounded by Zotero metadata, the WOEAI website, and public publication records.
 
 Since 2026-06-17, the two channels have independent sources and purposes:

@@ -106,6 +106,18 @@ WeChat article workflow, not an installable application package.
   preserve the evidence and flag the discrepancy rather than silently repairing
   the original paper.
 
+## Publication registry
+
+`docs/data/publications.json` is the single manually maintained publication and
+workflow registry (standard CSL-JSON, extension fields under `custom`). Zotero
+owns upstream bibliographic facts. RTD and WeChat states/evidence are independent;
+file existence, issue closure, and draft upload do not prove content verification
+or publication. See [the registry guide](project/guides/publication-registry.md).
+The backlog, research map, and `project/publication-progress.md` are generated
+compatibility views, not additional authorities. After registry edits run
+`python3 tools/publications/registry.py --write` and `--check`. Keep private draft
+IDs in ignored operational storage, never the public registry.
+
 ## Independent channel outputs
 
 **WeChat is a reader-facing introduction.** Its source is

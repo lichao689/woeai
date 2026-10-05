@@ -34,6 +34,13 @@ from woeai.publications import (  # noqa: E402
     RESEARCH_FAMILY_ORDER,
     RESEARCH_SUBDIRECTION_ORDER,
 )
+from woeai.publications.registry import (  # noqa: E402
+    load_registry,
+    merge_zotero_items,
+    research_map as registry_research_map,
+    save_registry,
+    write_views,
+)
 
 PUBLICATIONS_PATH = ROOT / "docs/source/Publications.rst"
 PUBLICATIONS_BY_YEAR_PATH = ROOT / "docs/source/PublicationsByYear.rst"
@@ -529,6 +536,10 @@ def fetch_publication_items() -> list[dict[str, Any]]:
 
 
 def load_research_map() -> dict[str, dict[str, str]]:
+    if (ROOT / "docs/data/publications.json").exists():
+        return registry_research_map(load_registry(ROOT))
+    # Compatibility for isolated legacy fixtures. Once a registry exists, an
+    # invalid registry must fail rather than silently use a stale view.
     if not RESEARCH_MAP_PATH.exists():
         raise ZoteroError(f"Publication research map is missing: {RESEARCH_MAP_PATH}")
     try:
@@ -559,10 +570,14 @@ def validate_research_map(items: list[dict[str, Any]], research_map: dict[str, d
             for item in missing
         )
 
-    unknown = sorted(map_keys - item_keys)
-    if unknown:
-        errors.append("Publication research map contains keys not in current Public Journal Papers:")
-        errors.extend(f"- {key}" for key in unknown)
+    unfetched = sorted(map_keys - item_keys)
+    if unfetched:
+        errors.append(
+            "Incomplete Zotero refresh: registered Public Journal Papers are missing. "
+            "Refusing to drop their public outputs; check the Zotero source/filter. "
+            "Removing registered papers requires an explicit removal workflow:"
+        )
+        errors.extend(f"- {key}" for key in unfetched)
 
     for key in sorted(item_keys & map_keys):
         family = research_map[key].get("research_family", "")
@@ -643,11 +658,20 @@ def _read_backlog_zotero_keys(backlog_path: Path) -> dict[str, str]:
 
 
 def load_deep_dive_titles() -> dict[str, tuple[str, str]]:
-    """Return zotero_key -> (publication_ref, reader_title) for papers with deep-dives.
+    """Return labels for available RTD pages, independent of WeChat selection.
 
-    The reader_title is read from the compact WeChat article H1 (which carries
-    the direction-prefixed hook), with the direction prefix stripped.
+    Availability preserves existing public links without certifying the page's
+    full-paper audit. Compact labels are owned by the RTD registry channel.
     """
+    if (ROOT / "docs/data/publications.json").exists():
+        from tools.publications.artifacts import public_artifacts
+
+        key_map = {}
+        for artifact in public_artifacts(ROOT):
+            title = artifact.title.split(" | ", 1)[-1]
+            key_map[artifact.registry_record["id"]] = (artifact.publication_ref, title)
+        return key_map
+
     backlog_path = ROOT / "wechat/backlog/selected-papers.yml"
     if not backlog_path.exists():
         return {}
@@ -656,6 +680,8 @@ def load_deep_dive_titles() -> dict[str, tuple[str, str]]:
     zotero_keys = _read_backlog_zotero_keys(backlog_path)
     key_map: dict[str, tuple[str, str]] = {}
     for paper in parse_backlog_papers(backlog_path):
+        if not (ROOT / f"docs/source/paper-notes/{paper.publication_ref}.rst").is_file():
+            continue
         article_path = ROOT / f"wechat/articles/draft-public-safe/{paper.publication_ref}.md"
         title = paper.title
         if article_path.exists():
@@ -855,7 +881,13 @@ def write_outputs(args: argparse.Namespace) -> None:
     items = fetch_publication_items()
     old_anchor_map = merge_old_anchors(items)
     research_map = load_research_map()
+    registry_path = ROOT / "docs/data/publications.json"
+    records = load_registry(ROOT) if registry_path.exists() else None
+    # Public builders need the full bibliography. The pure metadata merge can
+    # preserve absent records, but that alone cannot keep an incomplete fetch
+    # from truncating public pages and the snapshot. Fail before any write.
     validate_research_map(items, research_map)
+    merged_records = merge_zotero_items(records, items) if records is not None else None
     page = build_publications_rst(items, research_map)
     by_year_page = build_publications_by_year_rst(items)
     snap = snapshot(items, old_anchor_map, research_map)
@@ -868,6 +900,8 @@ def write_outputs(args: argparse.Namespace) -> None:
         print(f"Would write {PUBLICATIONS_BY_YEAR_PATH}")
         print(f"Would write {TEACHING_PATH}")
         print(f"Would write {SNAPSHOT_PATH}")
+        if merged_records is not None:
+            print(f"Would update {registry_path} and regenerate compatibility views")
         print(f"Items: {len(items)}")
         print(f"Teaching-reform items: {len(teaching_reform_items)}")
         print(f"Anchor replacements: {len(old_anchor_map)}")
@@ -875,6 +909,12 @@ def write_outputs(args: argparse.Namespace) -> None:
             count = sum(1 for item in items if research_map[item["key"]]["research_family"] == family)
             print(f"{family}: {count}")
         return
+
+    # Validate and persist the authoritative data before touching public page
+    # outputs; a rejected registry must not leave updated RST behind.
+    if merged_records is not None:
+        save_registry(ROOT, merged_records)
+        write_views(ROOT, merged_records)
 
     PUBLICATIONS_PATH.write_text(page, encoding="utf-8")
     PUBLICATIONS_BY_YEAR_PATH.write_text(by_year_page, encoding="utf-8")
@@ -888,6 +928,8 @@ def write_outputs(args: argparse.Namespace) -> None:
     print(f"Wrote {PUBLICATIONS_BY_YEAR_PATH}")
     print(f"Wrote {TEACHING_PATH}")
     print(f"Wrote {SNAPSHOT_PATH}")
+    if merged_records is not None:
+        print(f"Updated {registry_path} and regenerated compatibility views")
     print(f"Items: {len(items)}")
     print(f"Teaching-reform items: {len(teaching_reform_items)}")
     print(f"Anchor replacements: {len(old_anchor_map)}")
@@ -899,7 +941,7 @@ def main() -> int:
     args = parser.parse_args()
     try:
         write_outputs(args)
-    except ZoteroError as exc:
+    except (ZoteroError, ValueError, OSError) as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
     return 0

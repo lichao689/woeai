@@ -7,7 +7,7 @@ import argparse
 import json
 import re
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -41,6 +41,7 @@ from woeai.publications import (  # noqa: E402
     RESEARCH_FAMILY_ORDER,
     RESEARCH_SUBDIRECTION_ORDER,
 )
+from woeai.publications.registry import load_registry, workflow_verified  # noqa: E402
 from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers  # noqa: E402,F401
 
 
@@ -56,16 +57,29 @@ class PublicationArtifact:
     article_path: Path
     review_path: Path
     rtd_path: Path
+    registry_record: dict[str, Any] | None = field(default=None, repr=False, compare=False)
+    root: Path | None = field(default=None, repr=False, compare=False)
+
+    @property
+    def is_public_available(self) -> bool:
+        """An existing page can remain linked without claiming a passed audit."""
+        return self.rtd_path.is_file()
 
     @property
     def is_public_complete(self) -> bool:
-        return self.rtd_path.exists()
+        """Completion requires current registry evidence, never file existence."""
+        return (
+            self.is_public_available
+            and self.registry_record is not None
+            and self.root is not None
+            and workflow_verified(self.registry_record, "rtd", self.root)
+        )
 
     @property
     def missing_paths(self) -> list[Path]:
         paths = []
         for path in (self.rtd_path,):
-            if not path.exists():
+            if not path.is_file():
                 paths.append(path)
         return paths
 
@@ -101,16 +115,43 @@ def parse_rst_title(rtd_path: Path, fallback: str) -> str:
 
 
 def select_artifact_title(article_path: Path, rtd_path: Path, fallback: str) -> str:
+    """Preserve compact labels for legacy fixtures without a registry."""
     rtd_title = parse_rst_title(rtd_path, fallback)
-    # The WeChat compact article H1 (a direction-prefix hook sentence) and the
-    # RTD deep-dive H1 are intentionally kept in sync. Prefer the compact
-    # article title when present, falling back to the RTD page title; this
-    # keeps every public deep-dive label uniform and free of the redundant
-    # "论文精解" suffix that once drifted in via the RTD title.
     return parse_markdown_title(article_path, rtd_title)
 
 
 def load_artifacts(root: Path) -> list[PublicationArtifact]:
+    """Read all registered outputs independently of the WeChat selection."""
+    if (root / "docs/data/publications.json").exists():
+        artifacts = []
+        for index, record in enumerate(load_registry(root)):
+            custom = record["custom"]
+            publication_ref = custom["publication_ref"]
+            rtd = custom.get("rtd", {})
+            wechat = custom.get("wechat", {})
+            rtd_path = root / (rtd.get("path") or f"docs/source/paper-notes/{publication_ref}.rst")
+            date_parts = record.get("issued", {}).get("date-parts", [])
+            year = int(date_parts[0][0]) if date_parts and date_parts[0] else 0
+            artifacts.append(
+                PublicationArtifact(
+                    publication_ref=publication_ref,
+                    title=rtd.get("public_title") or parse_rst_title(rtd_path, record.get("title") or publication_ref),
+                    research_family=custom.get("research_family", ""),
+                    subdirection=custom.get("subdirection", ""),
+                    original_year=year,
+                    wechat_status=wechat.get("status", ""),
+                    order=rtd.get("order", custom.get("order", index)),
+                    article_path=root / (wechat.get("path") or f"wechat/articles/draft-public-safe/{publication_ref}.md"),
+                    review_path=root / (wechat.get("review_path") or f"wechat/articles/review/{publication_ref}.review.md"),
+                    rtd_path=rtd_path,
+                    registry_record=record,
+                    root=root,
+                )
+            )
+        return artifacts
+
+    # Older isolated fixtures may still carry only a backlog. They can expose
+    # available pages, but cannot supply completion evidence.
     backlog_path = root / "wechat/backlog/selected-papers.yml"
     artifacts: list[PublicationArtifact] = []
     papers = parse_backlog_papers(backlog_path)
@@ -140,7 +181,7 @@ def load_artifacts(root: Path) -> list[PublicationArtifact]:
 
 
 def public_artifacts(root: Path) -> list[PublicationArtifact]:
-    return [artifact for artifact in load_artifacts(root) if artifact.is_public_complete]
+    return [artifact for artifact in load_artifacts(root) if artifact.is_public_available]
 
 
 def sort_public_artifacts(artifacts: list[PublicationArtifact]) -> list[PublicationArtifact]:
@@ -367,12 +408,13 @@ def artifact_diagnostics(root: Path) -> list[dict[str, Any]]:
     diagnostics: list[dict[str, Any]] = []
     for artifact in load_artifacts(root):
         missing = [repo_relative(path, root) for path in artifact.missing_paths]
-        if not missing:
+        if not missing and artifact.is_public_complete:
             continue
         diagnostics.append(
             {
                 "publication_ref": artifact.publication_ref,
                 "wechat_status": artifact.wechat_status,
+                "public_available": artifact.is_public_available,
                 "public_complete": artifact.is_public_complete,
                 "missing": missing,
             }
@@ -385,6 +427,7 @@ def summary(root: Path, problems: list[dict[str, str]] | None = None) -> dict[st
     complete = [artifact for artifact in artifacts if artifact.is_public_complete]
     return {
         "artifact_count": len(artifacts),
+        "public_available_count": sum(artifact.is_public_available for artifact in artifacts),
         "public_complete_count": len(complete),
         "diagnostics": artifact_diagnostics(root),
         "problems": problems or [],

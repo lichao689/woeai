@@ -11,6 +11,7 @@ sources and assets remain under `wechat/`.
 - [Project vocabulary](../CONTEXT.md): public terminology and semantic constraints
 - [Domain guide](guides/domain.md): how to explore project documentation
 - [Cloud WeChat workflow](guides/cloud-wechat-workflow.md): credential-free setup
+- [Publication workflow registry](guides/publication-registry.md) and [generated progress](publication-progress.md): one bibliography, independent RTD/WeChat workflows
 - [Paper deep-dive guide](guides/paper-deep-dive-rst.md): independent RTD articles
 - [Issue tracker](guides/issue-tracker.md) and [triage labels](guides/triage-labels.md)
 

@@ -1,13 +1,13 @@
-"""Backlog parsing for WOEAI WeChat paper articles.
+"""Registry-backed, legacy-compatible WeChat selected-paper readers.
 
-Parses ``wechat/backlog/selected-papers.yml`` into typed ``BacklogPaper``
-records. Previously this parsing was duplicated (with drifting fields) across
-``wechat/tools/markdown_to_rtd.py`` and ``wechat/tools/wechat_draft.py``; both
-now import from here.
+The CSL registry owns workflow state. YAML parsing remains only for older
+standalone fixtures/checkouts that have no registry, never as a fallback for
+an invalid registry or a stale generated view.
 """
 
 from __future__ import annotations
 
+import json
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -32,6 +32,48 @@ class BacklogPaper:
 
 
 _ITEM_RE = re.compile(r"\s*-\s+publication_ref:\s+(\S+)\s*$")
+
+
+def find_registry_root(backlog_path: Path) -> Path | None:
+    """Find the registry in an ancestor, even if its generated view is absent."""
+    path = backlog_path.resolve()
+    for candidate in (path, *path.parents):
+        if (candidate / "docs/data/publications.json").is_file():
+            return candidate
+    return None
+
+
+def _string_value(value: object) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, (bool, list, dict)):
+        return json.dumps(value, ensure_ascii=False)
+    return str(value)
+
+
+def _registry_backlog_items(backlog_path: Path) -> list[dict[str, str]] | None:
+    root = find_registry_root(backlog_path)
+    if root is None:
+        return None
+    from woeai.publications.registry import backlog_row, load_registry
+
+    selected = []
+    for index, record in enumerate(load_registry(root)):
+        custom = record.get("custom", {})
+        wechat = custom.get("wechat", {})
+        if wechat.get("selected") is not True:
+            continue
+        # Legacy metadata is for compatibility, never authority. Private remote
+        # identifiers must not leak through the public backlog interface.
+        item = {
+            key: _string_value(value)
+            for key, value in wechat.get("legacy_backlog", {}).items()
+            if "media_id" not in key.lower() and "mediaid" not in key.lower()
+        }
+        item.update({key: _string_value(value) for key, value in backlog_row(record).items()})
+        order = wechat.get("selection_order", custom.get("order", 0))
+        selected.append((order, index, item))
+    return [item for _, _, item in sorted(selected, key=lambda row: row[:2])]
 
 
 def _unquote(value: str) -> str:
@@ -61,10 +103,16 @@ def _build_backlog_paper(current: dict[str, str] | None, order: int) -> BacklogP
 
 
 def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
-    """Parse the backlog YAML-ish list into BacklogPaper records.
+    """Read selected registry records, or a standalone legacy YAML-ish list.
 
     Returns an empty list if the file does not exist.
     """
+    items = _registry_backlog_items(backlog_path)
+    if items is not None:
+        return [
+            paper for order, item in enumerate(items)
+            if (paper := _build_backlog_paper(item, order)) is not None
+        ]
     if not backlog_path.exists():
         return []
     papers: list[BacklogPaper] = []
@@ -94,7 +142,12 @@ def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
 
 
 def read_backlog_item(backlog_path: Path, publication_ref: str) -> dict[str, str]:
-    """Return the raw key:value dict for a single backlog item."""
+    """Return a string-valued compatibility dict for one selected paper."""
+    items = _registry_backlog_items(backlog_path)
+    if items is not None:
+        return next((item for item in items if item["publication_ref"] == publication_ref), {})
+    if not backlog_path.exists():
+        return {}
     item: dict[str, str] = {}
     in_item = False
     target_re = re.compile(r"\s*-\s+publication_ref:\s+" + re.escape(publication_ref) + r"\s*$")
@@ -113,6 +166,11 @@ def read_backlog_item(backlog_path: Path, publication_ref: str) -> dict[str, str
 
 def read_backlog_publication_refs(backlog_path: Path) -> list[str]:
     """Return just the publication_ref values in order."""
+    items = _registry_backlog_items(backlog_path)
+    if items is not None:
+        return [item["publication_ref"] for item in items]
+    if not backlog_path.exists():
+        return []
     refs: list[str] = []
     for raw in backlog_path.read_text(encoding="utf-8").splitlines():
         match = _ITEM_RE.match(raw)

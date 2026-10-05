@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCAN_ROOTS = [ROOT / "wechat", ROOT / "docs/source/paper-notes"]
+SCAN_ROOTS = [ROOT / "wechat", ROOT / "docs/source/paper-notes", ROOT / "docs/data"]
 
 SECRET_PATTERNS = [
     ("appsecret", re.compile(r"(?i)appsecret['\"]?\s*[:=]\s*['\"]?[A-Za-z0-9_-]{8,}")),

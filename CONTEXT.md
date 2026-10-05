@@ -298,3 +298,11 @@ without verified full-paper coverage. Unregistered means no structured record,
 not proof that work has never started. Workflow issue URLs coordinate tasks;
 closing an issue never substitutes for current source/content evidence. See
 `project/guides/publication-registry.md` for status and freshness rules.
+
+**Publication Progress Board**:
+A public, read-only operational Sphinx page at `PublicationProgress.html`, separate
+from academic navigation. It presents the registry's independent RTD and WeChat
+workflows without editing controls or backend calls. README and the generated
+progress checklist link to it; academic pages, sidebar, and global toctree do not.
+The browser reads an allowlisted generated projection, checked for freshness by
+the registry gate. Hiding a navigation link is not access control.

@@ -84,3 +84,18 @@ Key Paths
 - ``docs/requirements.txt``: documentation build dependencies.
 - ``scripts/bump-site-release.py``: refreshes the Sphinx Site Build ID.
 - ``scripts/check-docs.sh``: strict local verification.
+
+Publication Progress Board
+--------------------------
+
+`论文制作进度看板 <https://woeai.readthedocs.io/zh-cn/latest/PublicationProgress.html>`_
+is a public, read-only operational page, intentionally absent from academic
+navigation and the left sidebar. Search papers, switch RTD/WeChat tracks, filter
+by year/direction/status, and expand a paper for both workflows and evidence gaps.
+The assistant maintains the registry; the board has no editing or login features.
+
+After registry changes, run ``python3 tools/publications/registry.py --write``;
+``--check`` rejects stale generated board data. See
+`the registry guide <project/guides/publication-registry.md>`_ for state semantics.
+For JavaScript model regression checks, run
+``node --test tests/frontend/*.test.cjs`` (Node.js 18+).

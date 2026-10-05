@@ -20,5 +20,13 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Set up Node.js for board checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check read-only board behavior
+        run: node --test tests/frontend/*.test.cjs
+
       - name: Build docs with warnings as errors
         run: ./scripts/check-docs.sh

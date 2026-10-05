@@ -1,5 +1,7 @@
 # 论文制作进度（自动生成）
 
+[打开只读看板](https://woeai.readthedocs.io/zh-cn/latest/PublicationProgress.html)（公开独立页面，不加入网站左侧栏）。
+
 来源：[publications.json](../docs/data/publications.json)。只修改清单，运行生成命令；不要手改本页。
 
 共 75 篇；公众号已选 17 篇。未登记表示没有结构化记录，不等于尚未开始。

@@ -11,11 +11,42 @@ import json
 import re
 from pathlib import Path
 from typing import Any
+from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
 REGISTRY_PATH = Path('docs/data/publications.json')
 MAP_PATH = Path('docs/data/publication-research-map.json')
 BACKLOG_PATH = Path('wechat/backlog/selected-papers.yml')
 DASHBOARD_PATH = Path('project/publication-progress.md')
+BOARD_PATH = Path('docs/_static/publication-board-data.json')
+
+# This is deliberately a public projection, not a JSON copy of ``custom``.
+# Keep every emitted field, evidence key, link destination and warning explicit.
+BOARD_REPOSITORY = 'https://github.com/lichao689/woeai/blob/main/'
+BOARD_CHECKS = {
+    'rtd': (
+        ('source_identity', '原文身份'),
+        ('full_paper_coverage', '全文覆盖'),
+        ('public_safety', '公开安全'),
+    ),
+    'wechat': (
+        ('source_identity', '原文身份'),
+        ('facts', '事实核验'),
+        ('public_safety', '公开安全'),
+        ('formula_preview', '公式预览'),
+        ('figure_preview', '插图预览'),
+        ('cover_preview', '封面预览'),
+    ),
+}
+BOARD_STAGES = {
+    'verified': '核验',
+    'published': '发布',
+    'ready_to_publish': '发布准备',
+    'draft_created': '草稿创建',
+    'awaiting_review': '待审核',
+    'awaiting_audit': '待核验',
+    'drafting': '制作',
+}
+BOARD_SOURCE_STATES = {'unregistered', 'planned', 'acquired', 'awaiting_audit', 'verified', 'blocked'}
 
 
 def load_registry(root: Path) -> list[dict[str, Any]]:
@@ -126,7 +157,7 @@ def workflow_fingerprint(record: dict[str, Any], channel: str, root: Path) -> st
 
 def workflow_verified(record: dict[str,Any], channel: str, root: Path) -> bool:
     workflow=record['custom'][channel]; source=record['custom'].get('source',{})
-    required=('source_identity','full_paper_coverage','public_safety') if channel=='rtd' else ('source_identity','facts','public_safety','formula_preview','figure_preview','cover_preview')
+    required=tuple(key for key, _label in BOARD_CHECKS[channel])
     if channel=='rtd' and (workflow.get('status')!='verified' or workflow.get('kind')!='full_paper'): return False
     if channel=='wechat' and workflow.get('status') not in {'ready_to_publish','published'}: return False
     if source.get('status')!='verified' or not SHA256.fullmatch(source.get('sha256','')): return False
@@ -236,6 +267,187 @@ def backlog_row(record: dict[str,Any]) -> dict[str,Any]:
     return row
 
 
+def _board_file(root: Path, value: Any, prefix: str, suffix: str) -> str | None:
+    """Allow only existing files in the particular public content collection.
+
+    Check the resolved location too: a public-looking symlink must not expose
+    a private path or imply that a private source is a published document.
+    """
+    if not isinstance(value, str) or not re.fullmatch(r'[A-Za-z0-9_./-]+', value):
+        return None
+    if not value.startswith(prefix) or not value.endswith(suffix):
+        return None
+    try:
+        resolved = _public_path(root, value)
+        relative = resolved.relative_to(root.resolve()).as_posix()
+        _public_path(root, relative)
+        if resolved.is_file() and relative.startswith(prefix) and relative.endswith(suffix):
+            return value
+    except (ValueError, OSError):
+        pass
+    return None
+
+
+def _board_published_url(value: Any) -> str | None:
+    """Keep public WeChat permalink data, dropping tracking and unknown fields."""
+    if not isinstance(value, str) or re.search(r'[\s\\\x00-\x1f\x7f]', value):
+        return None
+    try:
+        url = urlsplit(value)
+    except ValueError:
+        return None
+    if url.scheme != 'https' or url.netloc != 'mp.weixin.qq.com':
+        return None
+    if re.fullmatch(r'/s/[A-Za-z0-9_-]{1,128}', url.path):
+        return f'https://mp.weixin.qq.com{url.path}'
+    if url.path != '/s':
+        return None
+    # Older share links require these four public locator components. Do not
+    # propagate arbitrary query parameters, credentials, or URL fragments.
+    query = parse_qs(url.query)
+    patterns = {'__biz': r'[A-Za-z0-9+/=]{1,200}', 'mid': r'[0-9]{1,30}',
+                'idx': r'[0-9]{1,10}', 'sn': r'[A-Fa-f0-9]{32}'}
+    safe = {}
+    for key, pattern in patterns.items():
+        values = query.get(key, [])
+        if len(values) != 1 or not re.fullmatch(pattern, values[0]):
+            return None
+        safe[key] = values[0]
+    return 'https://mp.weixin.qq.com/s?' + urlencode(safe)
+
+
+def _board_track(root: Path, record: dict[str, Any], channel: str) -> dict[str, Any]:
+    workflow = record['custom'][channel]
+    states = RTD_STATES if channel == 'rtd' else WECHAT_STATES
+    status = workflow.get('status') if workflow.get('status') in states else 'unregistered'
+    evidence = workflow.get('evidence', {})
+    evidence = evidence if isinstance(evidence, dict) else {}
+    # A check is an assertion at a named stage, not a completion flag. Preserve
+    # an explicit false, and never turn missing values/strings/1 into booleans.
+    stages = list(dict.fromkeys(['verified', status, *BOARD_STAGES]))
+    checks = []
+    for key, label in BOARD_CHECKS[channel]:
+        value = None
+        recorded_stage = None
+        for stage in stages:
+            if stage not in BOARD_STAGES:
+                continue
+            entry = evidence.get(stage, {})
+            stage_checks = entry.get('checks', {}) if isinstance(entry, dict) else {}
+            candidate = stage_checks.get(key) if isinstance(stage_checks, dict) else None
+            if isinstance(candidate, bool):
+                value, recorded_stage = candidate, stage
+                break
+        checks.append({'key': key, 'label': label, 'value': value, 'stage': recorded_stage})
+
+    claims_verification = (channel == 'rtd' and status == 'verified') or (
+        channel == 'wechat' and status in {'ready_to_publish', 'published'})
+    current = None
+    if claims_verification or 'verified' in evidence:
+        # Evidence remains inspectable after an editor downgrades the workflow.
+        # Evaluate its existing proof with the ordinary strict gate, without
+        # changing the real status or relaxing source, kind, or coverage checks.
+        candidate = copy.deepcopy(record)
+        candidate['custom'][channel]['status'] = 'verified' if channel == 'rtd' else 'ready_to_publish'
+        current = (workflow_verified(candidate, channel, root)
+                   if isinstance(evidence.get('verified', {}), dict) else False)
+    links = []
+    if channel == 'rtd':
+        path = _board_file(root, workflow.get('path'), 'docs/source/paper-notes/', '.rst')
+        if path:
+            links.append({'label': 'RTD 页面', 'url': Path(path).relative_to('docs/source').with_suffix('.html').as_posix()})
+            links.append({'label': 'RTD 源文件', 'url': BOARD_REPOSITORY + quote(path, safe='/')})
+    else:
+        path = _board_file(root, workflow.get('path'), 'wechat/articles/draft-public-safe/', '.md')
+        if path:
+            links.append({'label': '公众号草稿源文件', 'url': BOARD_REPOSITORY + quote(path, safe='/')})
+        published = _board_published_url(workflow.get('latest_published_url'))
+        if published:
+            links.append({'label': '公众号已发布原文', 'url': published})
+    review_paths = []
+    for stage, label in BOARD_STAGES.items():
+        entry = evidence.get(stage, {})
+        if isinstance(entry, dict):
+            review_paths.append((entry.get('review_path'), f'{label}阶段证据'))
+    review_paths.append((workflow.get('review_path'), '审核记录'))
+    for value, label in review_paths:
+        path = _board_file(root, value, 'wechat/articles/review/', '.md')
+        if path:
+            url = BOARD_REPOSITORY + quote(path, safe='/')
+            if not any(link['url'] == url for link in links):
+                links.append({'label': label, 'url': url})
+
+    gaps = []
+    if status == 'unregistered':
+        gaps.append('尚未登记结构化工作流，不代表尚未开始')
+    if record['custom'].get('source', {}).get('status') != 'verified':
+        gaps.append('原文来源尚未核验')
+    if channel == 'rtd' and workflow.get('kind') == 'legacy_intro':
+        gaps.append('历史导读，不能视为全文核验完成')
+    if channel == 'rtd' and workflow.get('kind') == 'full_paper' and current is not True:
+        gaps.append('全文型页面仍需完整覆盖核验')
+    if channel == 'wechat' and status == 'draft_created':
+        gaps.append('草稿创建不代表已完成手机预览或已发布')
+    if current is False:
+        gaps.append('核验证据已失效或不完整，需重新核验')
+    for check in checks:
+        if check['value'] is None:
+            gaps.append(f'{check["label"]}：未记录')
+        elif check['value'] is False:
+            gaps.append(f'{check["label"]}：未通过')
+        elif check['stage'] != 'verified':
+            gaps.append(f'{check["label"]}：仅有{BOARD_STAGES[check["stage"]]}阶段记录')
+    conflicts = workflow.get('conflicts', [])
+    if isinstance(conflicts, list) and any(
+        not isinstance(conflict, dict) or conflict.get('resolution') != 'resolved'
+        for conflict in conflicts
+    ):
+        gaps.append('存在时间记录冲突，待核对')
+    issues = workflow.get('issues', [])
+    issues = list(dict.fromkeys(url for url in issues if isinstance(url, str) and ISSUE_URL.fullmatch(url))) if isinstance(issues, list) else []
+    track = {'status': status, 'checks': checks, 'gaps': gaps, 'issues': issues,
+             'links': links, 'verification_current': current}
+    if channel == 'rtd':
+        kind = workflow.get('kind')
+        track['kind'] = kind if kind in {'unregistered', 'legacy_intro', 'full_paper'} else 'unregistered'
+    else:
+        track['selected'] = workflow.get('selected') is True
+    return track
+
+
+def publication_board(root: Path, records: list[dict[str, Any]]) -> dict[str, Any]:
+    """Deterministic browser data with independent states and safe public links.
+
+    Never copy dictionaries from the registry. In particular, source hashes,
+    custom metadata, historical draft identifiers, free-text conflicts and
+    unknown evidence fields do not belong in this display-only contract.
+    """
+    papers = []
+    for record in records:
+        custom = record['custom']
+        ref = custom['publication_ref']
+        date_parts = record.get('issued', {}).get('date-parts', [])
+        year = date_parts[0][0] if date_parts and date_parts[0] else None
+        year = year if type(year) is int and 1 <= year <= 9999 else None
+        doi = record.get('DOI', '')
+        doi = doi if isinstance(doi, str) and re.fullmatch(r'10\.[0-9]{4,9}/[A-Za-z0-9._;()/:\[\]-]+', doi) else ''
+        links = []
+        if re.fullmatch(r'ref-[A-Za-z0-9_-]+', ref) and (root / 'docs/source/Publications.rst').is_file():
+            links.append({'label': '论文目录', 'url': 'Publications.html#' + ref.lower()})
+        if doi:
+            links.append({'label': 'DOI', 'url': 'https://doi.org/' + quote(doi, safe='/')})
+        source_status = custom.get('source', {}).get('status')
+        papers.append({
+            'ref': ref, 'title': record['title'], 'year': year, 'doi': doi,
+            'family': custom['research_family'], 'subdirection': custom['subdirection'],
+            'source': {'status': source_status if source_status in BOARD_SOURCE_STATES else 'unregistered'},
+            'links': links,
+            'rtd': _board_track(root, record, 'rtd'),
+            'wechat': _board_track(root, record, 'wechat'),
+        })
+    return {'schema_version': 1, 'papers': papers}
+
+
 def generated_views(root: Path, records: list[dict[str,Any]]) -> dict[Path,str]:
     mapping={'generated_from':REGISTRY_PATH.as_posix(),'items':research_map(records)}
     selected=sorted((r for r in records if r['custom']['wechat']['selected'] is True),key=lambda r:r['custom']['wechat'].get('selection_order',r['custom'].get('order',0)))
@@ -246,7 +458,7 @@ def generated_views(root: Path, records: list[dict[str,Any]]) -> dict[Path,str]:
         for n,(key,value) in enumerate(item.items()):
             encoded=str(value) if key=='publication_ref' else json.dumps(value,ensure_ascii=False)
             lines.append(('  - ' if n==0 else '    ')+f'{key}: {encoded}')
-    dashboard=['# 论文制作进度（自动生成）','','来源：[publications.json](../docs/data/publications.json)。只修改清单，运行生成命令；不要手改本页。',
+    dashboard=['# 论文制作进度（自动生成）','','[打开只读看板](https://woeai.readthedocs.io/zh-cn/latest/PublicationProgress.html)（公开独立页面，不加入网站左侧栏）。','','来源：[publications.json](../docs/data/publications.json)。只修改清单，运行生成命令；不要手改本页。',
                '',f'共 {len(records)} 篇；公众号已选 {len(selected)} 篇。未登记表示没有结构化记录，不等于尚未开始。',
                '现有页面可访问不等于全文核验完成；历史草稿记录不等于已预览或已发布。',
                '', '| 论文 | RTD | 公众号 | 问题与证据 |','| --- | --- | --- | --- |']
@@ -274,7 +486,8 @@ def generated_views(root: Path, records: list[dict[str,Any]]) -> dict[Path,str]:
         if wc.get('latest_published_url'): wlabel+=f' [原文]({wc["latest_published_url"]})'
         dashboard.append(f'| {publication} | {rlabel} | {wlabel} | {"；".join(details) or "—"} |')
     return {MAP_PATH:json.dumps(mapping,ensure_ascii=False,indent=2,sort_keys=True)+'\n',
-            BACKLOG_PATH:'\n'.join(lines)+'\n',DASHBOARD_PATH:'\n'.join(dashboard)+'\n'}
+            BACKLOG_PATH:'\n'.join(lines)+'\n',DASHBOARD_PATH:'\n'.join(dashboard)+'\n',
+            BOARD_PATH:json.dumps(publication_board(root,records),ensure_ascii=False,indent=2)+'\n'}
 
 
 def write_views(root: Path, records: list[dict[str,Any]]) -> None:

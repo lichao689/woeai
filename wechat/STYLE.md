@@ -173,8 +173,7 @@ The public-safety script must fail a review note that omits either
 
 ## Tone
 
-- Scholarly first.
-- Engineering relevance second.
+- Lead with an engineering question and answer it with scholarly evidence.
 - No hype.
 - No unsupported partner names or project claims.
 - Unify narration on `我们` for research actions and decisions (`我们比较了...`,
@@ -184,6 +183,49 @@ The public-safety script must fail a review note that omits either
 - Do not include a WOEAI publication anchor in reader-facing WeChat articles
   when the linked RTD publication item or paper companion page duplicates the
   article content.
+
+## Engineering Story And Derived Copy
+
+Use one factual spine across title, opening, guide, key card, cover and requested
+sharing summary; give each surface a different job rather than repeat sentences.
+
+1. **Engineering question:** who needs to decide what, under which constraint?
+   Explain relevance before model acronyms. A realistic proposed scenario is
+   allowed, but do not invent a project or imply it was studied in the paper.
+2. **Specific innovation:** state the actual baseline, its relevant limitation
+   and the component this paper changes. Adopting a known method is not itself
+   novelty. Without evidence, use “研究/比较” rather than “首次/突破/解决了”.
+3. **Mechanism and evidence:** explain why the change might help, then how a
+   simulation, experiment or comparison tests it. Distinguish association from
+   demonstrated causality. Numeric hooks retain metric, baseline and conditions;
+   a best-case value is not a universal improvement or full-workflow speedup.
+4. **Engineering use:** identify a decision, required inputs, useful outputs and
+   validation still needed for transfer. Separate “论文已验证” from “潜在工程用途”;
+   a potential use is not deployment, certification or replacement for standards.
+5. **Boundary:** name conditions, assumptions and untested cases. Keep material
+   qualifiers beside the affected claim, not only in the final limitations block.
+
+Write clear Chinese titles posing a meaningful trade-off or supported contribution,
+normally 18–32 characters after the category (an editorial target, not a platform
+limit). Avoid acronym piles, curiosity gaps, “颠覆/终极/全面领先/拿来就用”,
+unsupported causality or production-readiness claims. Useful patterns are
+“<工程决策>，为什么不能只看<常用指标>？” and
+“<约束>下，<具体方法>怎样改进<目标>？”; fill them only from evidence.
+
+- Opening: 80–140 Chinese characters for problem, change and bounded takeaway.
+- Three-sentence guide: decision/problem → actual innovation/evidence → usable
+  takeaway with its condition; not a condensed abstract repeated verbatim.
+- Key card: 2–3 distinct results with the relevant metric, baseline and conditions.
+- Cover: a short problem/method hook under the cover contract; never stronger
+  than the body. Changing approved cover words requires fresh confirmation.
+- Sharing digest, when requested: 60–100 Chinese characters for relevance,
+  innovation and one boundary. Obey the verified destination's actual field limit;
+  these editorial budgets are not claims about API limits.
+
+Keep a source-backed editorial card in the review template: problem, baseline,
+change, mechanism, demonstrated result, possible use and boundary. Trace derived
+claims to its paper locators. Missing evidence blocks a stronger headline.
+A wording/style update never changes source-audited, published or preview state.
 
 ## Opening And Skim Path
 
@@ -296,65 +338,21 @@ paper-note links.
 
 ## Cover Image
 
-- Do not use a paper figure as the WeChat cover image by default. Paper figures
-  are often too tall, too detailed, or visually weak after WeChat cover cropping.
-- Prefer a purpose-designed or generated cover image based on the article's
-  core idea, target readers, and title category.
-- Generate cover candidates through image generation with the user-confirmed
-  cover text embedded directly in the image. Do not use no-text covers or add
-  Chinese text after generation with any overlay method.
-- Generate at least three image-gen-text candidates per round. If all
-  candidates have wrong, missing, rewritten, distorted, low-contrast, or
-  unreadable Chinese text, retry once with the same confirmed text. If two
-  rounds fail, stop and ask the editor to confirm shorter or clearer cover text.
-- Use a first-article cover target of `900 x 383 px`, about `2.35:1`. Larger
-  source images may use the same ratio and be resized down for upload.
-- Keep the main visual concept in the center so the image still works if a
-  WeChat surface crops it toward a square thumbnail.
-- Check small-thumbnail readability, not only full-size dimensions and crop
-  ratio.
-- Use an integrated text-safe zone rather than a hard split layout. The cover
-  text may sit on a cleaner, lower-detail area, but that area should blend into
-  the same engineering scene through soft light, haze, flow lines, or shared
-  geometry. Avoid obvious vertical dividers, hard color walls, white cards,
-  curved panel borders, or high-contrast seams between the text side and image
-  side.
-- Include a bottom technical route strip on generated paper covers by default.
-  This strip should visually summarize the paper's implementation path from
-  input or problem, through method, to output or engineering use, using small
-  schematic panels, arrows, simplified model/data blocks, field snapshots,
-  components, curves, or result cues. It should stay sparse, connected to the
-  main scene, and readable as a thumbnail.
-- Show a publication metadata line by default when a paper article has both
-  `期刊` and `年份` metadata. The line should use `<Journal Name> · <Year>`,
-  sit below the subtitle, and act as scholarly provenance rather than a
-  marketing badge or second category tag. Use semi-bold deep-blue modern
-  sans-serif text, about `65-75%` of the subtitle size, with no leading dot,
-  icon, enclosing badge, capsule, button-like outline, DOI, author names, volume
-  or issue data, impact factor, quartile, or other metrics.
-- Use fixed direction badges for the cover category tag. All category badges
-  should be slightly slanted, about `-4deg`, with rounded corners, compact
-  padding, and bold modern sans-serif Chinese text. Use `数值风洞` electric blue
-  `#0B6FD3` with white `#FFFFFF`, `结构抗风` steel teal `#0F766E` with pale mint
-  `#D9FFF2`, and `漂浮风电` engineering yellow `#FFC83D` with deep sea blue
-  `#062B4F`. The publication metadata line is not a badge and must not inherit
-  this shape.
-- Use fixed direction main-hook colors, while allowing each direction to vary
-  hook size and emphasis. Use `数值风洞` computational navy `#073B7A` with at
-  most one cyan `#00A6D6` keyword, `结构抗风` structural teal ink `#075A60` with
-  at most one steel teal `#0F766E` keyword, and `漂浮风电` white `#FFFFFF` with
-  one optional engineering yellow `#FFC83D` keyword in the extra-bold reference
-  cover style. The main hook remains the largest and most readable cover text.
-- Keep cover text to the confirmed `分类标签 | 主钩子 / 可选副标题`
-  structure. Let the WeChat article title carry the full title; do not repeat
-  the full article title on the cover.
-- Store final public-safe cover images under
-  `wechat/assets/public-safe/<publication_ref>/` and record the source or prompt
-  in the article review note. Also record candidate count, selected text mode,
-  selected candidate, rejected candidate reasons, and local candidate-preview
-  path when a cover is generated through the upgraded workflow.
-- Mark cover approval as pending until the cover is checked in the WeChat
-  backend preview.
+Use [wechat-cover](../.agents/skills/wechat-cover/SKILL.md) for execution and
+text confirmation and its [series contract](../.agents/skills/wechat-cover/references/cover-standards.md)
+for every brief, prompt and crop check. `WOEAI-cover-v2` fixes 900 × 383 output,
+grid, type scale, category colors, text budgets and scientific crop core across
+papers. Do not improvise a separate style per article.
+
+Generate confirmed words inside the image; do not use post-generation text
+overlays or substitute dense paper figures as default covers. Three candidate
+concepts vary scientific emphasis within the shared system. Preserve evidence,
+reuse rights and public-safety requirements; no invented logos or result claims.
+
+During guidance-only updates retain old assets and confirmation history, marking
+migration pending. A center square retains the diagnostic object, not necessarily
+the entire left title. Local dimensions/crops cannot certify visual compliance
+or actual WeChat mobile acceptance; backend checks remain pending until performed.
 
 ## Figure Handling
 

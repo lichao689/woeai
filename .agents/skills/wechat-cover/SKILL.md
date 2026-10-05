@@ -54,9 +54,8 @@ the article and API path, then use this skill for the cover stage.
 7. Store public-safe cover outputs under
    `wechat/assets/public-safe/<publication_ref>/`. Keep private experiments
    under ignored local paths such as `wechat/.local/`.
-8. Export the chosen final cover to the current target ratio. The default first
-   cover target is `900 x 383 px`, but verify current WeChat guidance before
-   hard-coding a new standard.
+8. Export exactly `900 x 383 px` under `WOEAI-cover-v2`. Measure dimensions;
+   ratio alone is insufficient. Verify actual backend crops before release.
 9. Run the crop preview helper:
 
    ```bash
@@ -148,108 +147,17 @@ Default prompt language:
   same structure and exact quoted cover text.
 - If unsure, use English prompt body plus exact Chinese cover text.
 
-## Cover Text Visual Style
+## Shared Series Design
 
-For image-generation prompts and prompt-only output, use the WOEAI three-part
-cover-text system. This system was derived from the reference covers for the
-three current research directions: `数值风洞`, `漂浮风电`, and `结构抗风`.
+Read [references/cover-standards.md](references/cover-standards.md) before every
+brief, prompt, candidate or crop review. `WOEAI-cover-v2` is the single source for
+900 × 383 output, grid, type scale, fixed category colors, text budgets and crop
+acceptance. Do not invent a new style for each paper; candidate concepts change
+the scientific emphasis inside the same system.
 
-Every cover prompt must specify:
-
-- a wide `2.35:1` composition with an integrated left-side text-safe zone;
-- the left `38-45%` kept clean enough for text, but visually blended into the
-  same full-cover engineering scene through a soft luminance gradient,
-  atmospheric haze, subtle wind lines, or shared background geometry;
-- the right `55-62%` reserved for the article-specific engineering visual;
-- no obvious vertical divider, hard color wall, white card, curved border, or
-  high-contrast seam between the text zone and the visual zone;
-- readability must come from local brightness, contrast, blur, and reduced
-  detail behind the text, not from a separate rectangular or sharply separated
-  panel;
-- a bottom technical route strip that summarizes the paper's implementation
-  path with small visual panels, arrows, simplified model/data blocks,
-  engineering components, curves, or field snapshots;
-- the bottom technical route strip should occupy roughly the lower `18-25%`,
-  remain visually connected to the main scene, and avoid competing with the
-  main hook;
-- the standard three Chinese main text elements, in this order:
-  1. category tag in a fixed direction badge,
-  2. oversized bold main hook,
-  3. smaller subtitle below the hook;
-- a derived publication metadata line below the subtitle whenever the article
-  has both journal name and publication year in the public article source or
-  review metadata;
-- omit the subtitle only when the user explicitly confirms a no-subtitle
-  variant for readability;
-- no extra labels, English translations, decorative small text, fake UI labels,
-  or rewritten Chinese characters. The bottom technical route strip should be
-  readable through icons and schematic forms by default, not additional text.
-
-The publication metadata line:
-
-- is secondary scholarly provenance, not a cover-text option, marketing badge,
-  or second category tag;
-- uses the exact format `<Journal Name> · <Year>`, such as
-  `Renewable Energy · 2026`;
-- must be derived from the article's public `期刊` and `年份` metadata;
-- sits below the subtitle, left-aligned with the subtitle, in the blank space of
-  the integrated text-safe zone;
-- uses semi-bold deep-blue modern sans-serif text at about `65-75%` of the
-  subtitle size;
-- must be readable at phone thumbnail size while staying clearly secondary to
-  the subtitle;
-- must not include a leading dot, icon, enclosing badge, capsule, button-like
-  outline, DOI, author name, volume, issue, page range, impact factor, quartile,
-  or other metric.
-
-Use direction-specific text styling:
-
-All category tags must use the fixed direction badge shape:
-
-- a slightly slanted badge, about `-4deg`, with rounded corners, compact
-  padding, and bold modern sans-serif Chinese text;
-- no capsule or button-like outline, icon, extra label, or heavy UI-style
-  shadow;
-- the badge must use the fixed color token for the article category.
-
-Direction badge tokens:
-
-- `数值风洞`: electric blue badge `#0B6FD3` with white text `#FFFFFF`.
-- `结构抗风`: steel teal badge `#0F766E` with pale mint text `#D9FFF2`;
-  explicitly avoid the same blue/white badge used by `数值风洞`.
-- `漂浮风电`: engineering yellow badge `#FFC83D` with deep sea blue text
-  `#062B4F`, matching the yellow slanted badge family used in the reference
-  cover `漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变`.
-
-Direction main hook tokens:
-
-- main hook size and color do not need to be identical across directions, but
-  the main hook must always be the largest, boldest, and most readable text
-  element on the cover;
-- `数值风洞`: computational navy main hook `#073B7A`, with an optional small
-  cyan accent `#00A6D6` for one data-oriented keyword;
-- `结构抗风`: structural teal ink main hook `#075A60`, with an optional steel
-  teal accent `#0F766E` for one engineering keyword; do not use the same deep
-  blue main-hook color as `数值风洞`;
-- `漂浮风电`: mostly white main hook `#FFFFFF`, with one optional engineering
-  yellow keyword `#FFC83D`, extra-bold or condensed editorial headline style,
-  and only a subtle deep-sea-blue shadow or outline for readability, matching
-  the reference cover `漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变`.
-
-Direction text and visual styles:
-
-- `数值风洞`: light white-to-blue text zone, computational navy main hook, dark
-  gray subtitle, cyan-blue high contrast data or image-frame accents, with wind
-  lines and field textures softly crossing from the visual area into the text
-  zone.
-- `漂浮风电`: dark ocean engineering background, white-and-yellow editorial
-  main hook, light blue subtitle, response curves or wave-line accents instead
-  of photo thumbnails, with the text zone integrated into the same ocean or
-  platform atmosphere.
-- `结构抗风`: light blue city or building text zone, structural teal ink main
-  hook, dark gray subtitle, wind-flow, building, TLD, water, or
-  structural-response accents, with the text zone blended into the structural
-  scene instead of placed on a separate card.
+A request to improve skills or derived briefs is guidance maintenance, not image
+generation. Preserve existing assets and confirmation/preview history; mark
+migration pending. Use `wechat/templates/cover-brief.md` for new paired briefs.
 
 ## Mandatory Cover-Text Confirmation
 
@@ -263,11 +171,11 @@ Present exactly five concrete cover-text combinations plus one custom-text
 option, then wait for the user's reply. The first five options should be ready
 to use on the cover, not abstract text modes:
 
-1. `category tag` + `8-14 character Chinese hook`.
-2. `category tag` + an alternate `8-14 character Chinese hook`.
-3. `category tag` + a more engineering-facing `8-14 character Chinese hook`.
-4. `category tag` + a more reader-facing `8-14 character Chinese hook`.
-5. `category tag` + a more method- or finding-focused `8-14 character Chinese hook`.
+1. `category tag` + `6-12 character Chinese hook`.
+2. `category tag` + an alternate `6-12 character Chinese hook`.
+3. `category tag` + a more engineering-facing `6-12 character Chinese hook`.
+4. `category tag` + a more reader-facing `6-12 character Chinese hook`.
+5. `category tag` + a more method- or finding-focused `6-12 character Chinese hook`.
 6. Custom cover text supplied by the user.
 
 Use the article category from `wechat/STYLE.md` when suggesting category tags.
@@ -277,7 +185,8 @@ Each option should follow this structure:
 
 The category tag must be `数值风洞`, `结构抗风`, or `漂浮风电`. Derive hooks only
 from public-safe article wording or the cover brief. Keep the main hook short,
-preferably 6-12 Chinese characters. Include a short subtitle by default for the
+preferably 6-12 full-width character equivalents, maximum 14. Include a short
+subtitle by default for the
 three-part cover-text system; omit it only when the user explicitly chooses a
 no-subtitle variant for readability. If the user chooses custom text, ask for
 the exact category tag, hook, and subtitle before continuing. If the user asks
@@ -296,7 +205,8 @@ Record the confirmed choice in the cover brief or review note with:
 ## Cover Quality Rules
 
 - Make the visual specific to the article, not generic science decoration.
-- Keep the main subject centered for square and share-card crops.
+- Keep the diagnostic subject inside the contract crop core. A center square
+  cannot retain the entire left title; assess subject survival separately.
 - Make the main subject recognizable in one second on a phone-sized thumbnail.
 - Every final cover must include the confirmed cover text generated directly in
   the image. Prefer a category tag plus a short Chinese hook; do not repeat the

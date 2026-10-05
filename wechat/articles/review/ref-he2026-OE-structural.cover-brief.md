@@ -32,3 +32,17 @@
 ## 推荐方向
 
 已采用 v2 封面：`wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png`。它以钢筋混凝土半潜式平台为主体，配合风浪、优化点和应力色带，短文字为“漂浮风电 / 混凝土平台如何优化”。这版比原无文字封面更适合公众号点击场景，同时仍保持中心主体清晰，适合 WeChat 方形裁剪。
+
+## 系列规范迁移（2026-10-05）
+
+- cover_design_contract: `WOEAI-cover-v2`
+- 规范: [统一网格、字号、配色与裁切](../../../.agents/skills/wechat-cover/references/cover-standards.md)
+- 本文方向: `漂浮风电`，依据对应正文标题；仅用该方向固定色彩令牌，不另起画风
+- 证据入口: [本文事实审阅](ref-he2026-OE-structural.review.md)；生成前完成工程叙事证据卡
+- 文字来源: 保留历史确认记录，旧请求文字不自动视为新一轮批准；缩短或改写须重新确认
+- 科学元素: 选择一个已核实主对象；路线为已验证输入 → 方法 → 输出；潜在用途与结果分开
+- 构图: 900 × 383 px；左文区 x=36–396；关键科学对象 x=420–620、y=56–276；底部三节点路线
+- 历史复用限制: 既有提示词、概念和选图仅供溯源，不直接当新一轮完整提示词；重新按 v2 及审阅证据编写
+- migration_status: specification-updated; existing-image-not-regenerated
+- design_contract_checked: pending; 尺寸一致不证明旧图符合新布局、字级或科学对象裁切
+- backend_preview_status: unchanged; 此次简报维护没有新增后台手机预览

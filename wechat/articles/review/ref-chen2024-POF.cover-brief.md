@@ -52,3 +52,17 @@
 - 本地裁剪预览: `wechat/.local/cover-previews/cover-wechat-900x383.cover-preview.html`
 - 质量评分: article_specificity=5, main_subject_clarity=5, click_appeal=5, engineering_credibility=5, small_thumbnail_readability=5, crop_safety=5, text_quality=5
 - WeChat 后台手机预览: pending
+
+## 系列规范迁移（2026-10-05）
+
+- cover_design_contract: `WOEAI-cover-v2`
+- 规范: [统一网格、字号、配色与裁切](../../../.agents/skills/wechat-cover/references/cover-standards.md)
+- 本文方向: `数值风洞`，依据对应正文标题；仅用该方向固定色彩令牌，不另起画风
+- 证据入口: [本文事实审阅](ref-chen2024-POF.review.md)；生成前完成工程叙事证据卡
+- 文字来源: 保留历史确认记录，旧请求文字不自动视为新一轮批准；缩短或改写须重新确认
+- 科学元素: 选择一个已核实主对象；路线为已验证输入 → 方法 → 输出；潜在用途与结果分开
+- 构图: 900 × 383 px；左文区 x=36–396；关键科学对象 x=420–620、y=56–276；底部三节点路线
+- 历史复用限制: 既有提示词、概念和选图仅供溯源，不直接当新一轮完整提示词；重新按 v2 及审阅证据编写
+- migration_status: specification-updated; existing-image-not-regenerated
+- design_contract_checked: pending; 尺寸一致不证明旧图符合新布局、字级或科学对象裁切
+- backend_preview_status: unchanged; 此次简报维护没有新增后台手机预览

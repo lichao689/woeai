@@ -2,8 +2,8 @@
 
 ## Source
 
-- [ ] Zotero Desktop Local API metadata, DOI, and `abstractNote` have been checked.
-- [ ] Zotero Desktop Local API attachment records have been checked.
+- [ ] Available authorized metadata, DOI and `abstractNote` have been checked; unavailable sources are recorded, and desktop access is not a cloud prerequisite.
+- [ ] Available attachment records and current-workspace sources/manifests have been checked.
 - [ ] The review note contains a public-safe `源文件获取记录` section.
 - [ ] `scripts/check-public-safe-content.py` will fail if this section is
   missing from the review note.
@@ -57,6 +57,21 @@
 - [ ] The `关键数字 / 关键结论卡` uses high-value numbers with evidence when
   available; if there are no high-value numbers, it uses only key conclusions
   rather than forcing low-value numeric detail.
+
+## Engineering Story And Series Consistency
+
+- [ ] Opening identifies an engineering decision and constraint before jargon.
+- [ ] Innovation explains the actual baseline, limitation and changed component.
+- [ ] Mechanism, observed association and verification scope are distinguished.
+- [ ] Numeric hooks retain metric, baseline and condition, not universal best cases.
+- [ ] Demonstrated results and potential applications are explicitly separated.
+- [ ] Application names inputs, useful decisions/outputs and missing transfer validation.
+- [ ] Title, guide, cover and requested digest do not outrun source evidence.
+- [ ] Important limitations also sit beside affected claims.
+- [ ] Cover brief uses `WOEAI-cover-v2`, confirmed wording and evidenced scientific elements.
+- [ ] Final dimensions are measured, not inferred from filenames or ratio.
+- [ ] Fixed layout, type, palette and wide/square/mobile checks meet the contract.
+- [ ] Guidance-only migration has not falsely accepted an old image or backend preview.
 
 ## Expression
 

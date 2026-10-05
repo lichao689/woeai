@@ -1,410 +1,159 @@
 # WOEAI WeChat Cover Standards
 
-## Current Default
-
-- Default first-cover size: `900 x 383 px`.
-- Default ratio: about `2.35:1`.
-- Treat this as current design guidance, not a permanent platform contract.
-  Recheck the WeChat backend or current documentation before hard-coding future
-  dimensions.
-
-## Crop Safety
-
-Keep the main visual subject in the center. The local preview checks:
-
-- full `2.35:1` cover,
-- center square crop,
-- `5:4` share-card-like crop,
-- small thumbnail,
-- approximate center safe area.
-
-These are first-pass checks only. The final approval surface is the WeChat
-backend mobile preview.
-
-## Candidate Concepts
-
-Generate at least three directions for each paper:
-
-1. Research scene: the physical or engineering system.
-2. Method: the model, simulation, database, algorithm, or workflow.
-3. Engineering impact: how the work supports decisions, platforms, or practice.
-
-For each direction, either generate image-gen-text candidates in `image-gen`
-mode or write full image-generation prompts in `prompt-only` mode. Each final
-cover must contain the exact user-confirmed cover text generated directly in the
-image.
-
-## Execution Modes
-
-The default execution mode is `image-gen`: generate cover-image candidates
-directly through image generation.
-
-The alternate execution mode is `prompt-only`: output exactly three complete
-image-generation prompts, one each for the research scene, method, and
-engineering impact directions. In this mode, do not call image generation,
-create image files, run crop preview, or update a WeChat draft.
-
-Use `prompt-only` only when the user's request explicitly says to generate only
-prompts or not generate images. Use `image-gen` for all other cover-generation
-requests, including when the request does not name an execution mode. Do not ask
-a separate execution-mode question.
-
-The execution-mode rule does not replace text confirmation. Both modes still
-require the five cover-text options plus one custom-text option before image
-generation or prompt-only output.
-
-## Prompt-Only Chat Output
-
-After the user confirms a cover-text option number in `prompt-only` mode,
-produce exactly three complete prompts and make them the visible center of the
-reply.
-
-- Begin with a single concise confirmation line naming the selected text.
-- Label the prompts in Chinese:
-  `提示词 1｜研究场景`, `提示词 2｜方法机制`, and
-  `提示词 3｜工程应用`.
-- Write each prompt as a normal wrapped paragraph or block quote, not a fenced
-  code block, unless the user explicitly asks for code-block copy boxes.
-- Do not output abbreviated prompt previews, placeholder fragments, "same as
-  above", or "see file".
-- Put any file-update or check summary after the three prompts, not before.
-
-## Text Policy
-
-Use cover text only when it improves click appeal and remains readable as a
-thumbnail.
-
-User confirmation is required before generating any cover candidate or
-prompt-only output. The agent should offer exactly five concrete cover-text
-combinations plus one custom-text option. The five generated combinations
-should each be ready to use on the cover. The selected option becomes the
-source of truth for image-generation prompts.
-
-Preferred structure:
-
-- category tag: `数值风洞`, `结构抗风`, or `漂浮风电`;
-- main hook: preferably 6-12 Chinese characters;
-- subtitle: short, concrete, and one or two sizes smaller than the hook.
-
-Do not repeat the full article title. Let the WeChat title field carry the
-complete wording. Omit the subtitle only when the user explicitly confirms a
-no-subtitle variant for readability.
-
-## Cover Text Layout
-
-Use the same main text hierarchy for all WOEAI WeChat paper covers:
-
-1. Category tag.
-2. Main hook.
-3. Subtitle.
-4. Derived publication metadata line, when journal and year are available.
-
-The prompt must describe the text layout as a fixed editorial design system,
-not as loose text decoration:
-
-- wide `2.35:1` cover composition;
-- left `38-45%` integrated text-safe zone with low visual detail;
-- right `55-62%` article-specific engineering visual;
-- the text-safe zone must blend into the same full-cover background using a
-  soft luminance gradient, atmospheric haze, subtle wind lines, or shared
-  geometry;
-- no obvious vertical divider, hard color wall, white card, curved border, or
-  high-contrast seam between the text zone and the visual zone;
-- text readability should come from local brightness, contrast, blur, and
-  reduced detail behind the text, not from a separate rectangular panel;
-- category tag in a fixed direction badge at the upper-left of the integrated
-  text-safe zone;
-- main hook below the tag, oversized, bold, high contrast, and visually
-  dominant; use the fixed direction main-hook token for the article category;
-- subtitle below the hook, one or two sizes smaller, readable but secondary;
-- publication metadata line below the subtitle, left-aligned with the subtitle,
-  when journal and year are available;
-- text must not overlap complex wind streamlines, waves, buildings, equipment,
-  data frames, or dense backgrounds.
-
-## Bottom Technical Route Strip
-
-Every WOEAI paper cover should include a bottom technical route strip that
-compresses the paper's implementation path into a visual sequence. This is a
-cover-level schematic, not a reproduction of a dense paper figure.
-
-Use the strip to show the paper-specific route from input or problem, through
-method, to output or engineering use:
-
-- place it across roughly the lower `18-25%` of the cover;
-- keep it visually connected to the main scene through the same palette,
-  lighting, perspective, or flow lines;
-- use small panels, arrows, simplified model/data blocks, engineering
-  components, response curves, field snapshots, or validation/result cues;
-- choose route elements from the article's actual method and evidence, such as
-  inflow statistics to feedback control to LES domain to wind-pressure field,
-  low-resolution snapshots to sparse attention to high-resolution wind frames,
-  turbulence cube to coherence-preserving inflow to urban CFD, or structure to
-  TLD geometry to response curve;
-- keep the strip sparse and readable in a small thumbnail;
-- do not use extra text labels by default, because image models often invent or
-  distort small labels. Express the route through icons and schematic forms
-  unless the user explicitly confirms a labelled route strip.
-
-Only the confirmed three main text elements plus the derived publication
-metadata line may appear on the cover. Do not add English translations, fake
-chart labels, UI labels, map labels, figure numbers, decorative captions, logos,
-watermarks, or small unreadable annotations.
-
-## Publication Metadata Line
-
-Add a publication metadata line by default when the public article source or
-review metadata contains both journal name and publication year.
-
-- format: `<Journal Name> · <Year>`, for example
-  `Renewable Energy · 2026`;
-- source: the article's public `期刊` and `年份` metadata;
-- role: secondary scholarly provenance, not a marketing badge and not a second
-  category tag;
-- placement: directly below the subtitle in the integrated text-safe zone,
-  left-aligned with the subtitle;
-- typography: semi-bold deep-blue modern sans-serif text, about `65-75%` of the
-  subtitle size;
-- visibility: readable at phone thumbnail size while clearly secondary to the
-  subtitle;
-- avoid: leading dot, icon, enclosing badge, capsule, button-like outline, DOI,
-  author names, volume, issue, page range, impact factor, quartile, or other
-  publication metrics.
-
-## Direction Badge System
-
-Keep the three directions visually related through the shared integrated left
-text-safe zone, slightly slanted category badge, oversized hook, smaller
-subtitle, and publication metadata line. Differentiate them through fixed
-direction badge tokens, direction main-hook tokens, palette, contrast, and
-support graphics.
-
-## Direction Badge Tokens
-
-All WOEAI cover prompts must use the fixed direction badge token for the
-article category. The badge shape is shared across directions:
-
-- slightly slanted category badge, about `-4deg`;
-- rounded corners, compact padding, and bold modern sans-serif Chinese text;
-- no capsule or button-like outline, icon, extra label, or heavy UI-style
-  shadow;
-- not used for the publication metadata line.
-
-| Direction | Badge background | Badge text | Notes |
-|---|---:|---:|---|
-| `数值风洞` | electric blue `#0B6FD3` | white `#FFFFFF` | CFD, data, numerical wind-tunnel identity |
-| `结构抗风` | steel teal `#0F766E` | pale mint `#D9FFF2` | Must not reuse the blue/white `数值风洞` badge |
-| `漂浮风电` | engineering yellow `#FFC83D` | deep sea blue `#062B4F` | Match the yellow slanted badge family from `漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变` |
-
-## Direction Main Hook Tokens
-
-The main hook is always the largest, boldest, and most readable text element,
-but its exact size, width, and color may vary by direction. Do not force all
-directions into one hook color.
-
-| Direction | Main hook color | Optional emphasis | Notes |
-|---|---:|---:|---|
-| `数值风洞` | computational navy `#073B7A` | cyan accent `#00A6D6` for at most one data-oriented keyword | Geometric, rational, clean technical feel |
-| `结构抗风` | structural teal ink `#075A60` | steel teal `#0F766E` for at most one engineering keyword | Stable, weighty structural-engineering feel; avoid the same deep blue as `数值风洞` |
-| `漂浮风电` | white `#FFFFFF` | engineering yellow `#FFC83D` for one important keyword | Extra-bold or condensed editorial headline style, with only a subtle deep-sea-blue shadow or outline for readability; match the `混凝土还是钢` reference-cover family |
-
-## Direction-Specific Text Styles
-
-`数值风洞`:
-
-- text zone: white to pale blue, bright and clean, blended into the same
-  engineering scene rather than separated by a hard panel edge;
-- category badge: slightly slanted about `-4deg`, electric blue `#0B6FD3`
-  background with white `#FFFFFF` text;
-- main hook: computational navy `#073B7A`, oversized and bold, with at most one
-  cyan `#00A6D6` data-oriented keyword;
-- subtitle: dark gray or blue-gray;
-- support accents: cyan-blue glowing data frames, satellite/image thumbnails,
-  grid or geometry panels, wind streamlines, or CFD contour cues;
-- use when the story is about numerical wind tunnels, CFD, urban geometry,
-  turbulence, inflow, WebGIS, or visual-data-to-CFD workflows.
-
-`漂浮风电`:
-
-- text zone: integrated with a darker ocean-engineering background, still
-  clean enough for text;
-- category badge: slightly slanted about `-4deg`, engineering yellow
-  `#FFC83D` background with deep sea blue `#062B4F` text, not a generic yellow
-  rounded pill;
-- main hook: mostly white `#FFFFFF`, extra-bold or condensed editorial
-  headline style, with at most one important keyword in engineering yellow
-  `#FFC83D`; use only a subtle deep-sea-blue shadow or outline for readability;
-- subtitle: light blue or pale cyan;
-- support accents: wave-line layers, response curves, coordinate axes, platform
-  comparison cues, offshore wind turbines, mooring or semi-submersible forms;
-- prefer curve or wave accents over photo thumbnail frames.
-
-`结构抗风`:
-
-- text zone: white to pale blue city or building atmosphere, blended into the
-  same structural scene rather than separated by a hard panel edge;
-- category badge: slightly slanted about `-4deg`, steel teal `#0F766E`
-  background with pale mint `#D9FFF2` text; explicitly avoid the same blue
-  background and white text used by `数值风洞`;
-- main hook: structural teal ink `#075A60`, oversized and heavy; optionally
-  emphasize one engineering keyword with steel teal `#0F766E`; do not use the
-  same deep blue main-hook color as `数值风洞`;
-- subtitle: dark gray or blue-gray;
-- support accents: wind-flow bands, building silhouettes, high-rise structures,
-  TLD water, sloshing, vibration-response cues, or GNN/monitoring nodes;
-- avoid generic city-poster styling; keep the visual tied to structural wind
-  response or vibration control.
-
-Reject image-gen-text candidates when:
-
-- any Chinese character is wrong, distorted, missing, or hard to read;
-- the model rewrites, omits, translates, or adds to the confirmed cover text;
-- contrast is too low on the full cover or thumbnail;
-- text competes with the main visual subject;
-- fake UI labels, fake map labels, or misleading claims appear.
-
-If all candidates in a round fail, retry once with the same confirmed text. If
-two rounds fail, stop and ask the user to confirm shorter or clearer cover text.
-Do not switch to a no-text cover or add text after generation.
-
-## Title Category Cues
-
-`数值风洞`:
-
-- urban blocks,
-- CFD grids,
-- wind streamlines,
-- turbulence or inflow,
-- contour fields,
-- validation points,
-- database or WebGIS layers.
-- visual-data-to-CFD geometry workflows.
-
-`结构抗风`:
-
-- high-rise structures,
-- wind pressure and load paths,
-- vibration control,
-- monitoring data,
-- optimization,
-- structural response.
-- GNN nodes or response prediction cues.
-
-`漂浮风电`:
-
-- floating offshore wind platforms,
-- wind-wave-current loading,
-- mooring and coupled response,
-- platform structure,
-- offshore environment,
-- system-level optimization.
-- structural feasibility or cost/response tradeoff cues.
-
-## Quality Rubric
-
-Score each candidate from 1 to 5:
-
-- article specificity,
-- main-subject clarity,
-- click appeal,
-- engineering credibility,
-- small-thumbnail readability,
-- crop safety,
-- text quality, when text is present.
-
-Use these scores to compare candidates; do not average them blindly. A cover
-with unreadable text, generic AI wallpaper, or a weak main subject should be
-rejected even if its dimensions and file size pass.
-
-## Prompt Template
-
-Use an English prompt body for image generation by default, while keeping the
-confirmed Chinese cover text exact and quoted. Most general image models follow
-composition, lighting, layout, and style cues more reliably in English; the
-cover text itself must remain Chinese. If the user says the target image model
-is Chinese-first, or explicitly asks for Chinese prompts, write the prompt body
-in Chinese while preserving the same structure and exact quoted cover text.
-
-Split the confirmed cover text into:
-
-- `<category tag>`: one of `数值风洞`, `漂浮风电`, or `结构抗风`;
-- `<main hook>`: the main short hook;
-- `<subtitle>`: the short subtitle. Omit only when the user explicitly confirmed
-  no subtitle for readability.
-- `<journal name>`: the journal name from the article's public `期刊` metadata;
-- `<publication year>`: the year from the article's public `年份` metadata;
-- `<publication metadata line>`: `<journal name> · <publication year>`, omitted
-  only when either journal name or year is unavailable.
-
-```text
-A technically credible editorial cover image for a WOEAI WeChat article about
-<paper topic>. Show <main visual subject>. Include <method or data cue>.
-Use a clean modern academic engineering magazine style and a wide 2.35:1
-composition. Keep the left 38-45% as a clean, low-detail integrated text-safe
-zone and reserve the right 55-62% for the article-specific engineering visual.
-Blend the text-safe zone into the same full-cover background with a soft
-luminance gradient, atmospheric haze, subtle wind lines, or shared geometry.
-Do not create an obvious vertical divider, hard color wall, white card, curved
-border, or high-contrast seam between the text area and the visual area. Text
-readability should come from local brightness, contrast, blur, and reduced
-detail behind the text.
-
-Add a bottom technical route strip across roughly the lower 18-25% of the
-cover. Use small schematic panels, arrows, simplified model/data blocks,
-engineering components, curves, or field snapshots to show <paper-specific
-implementation path from input/problem to method to output/application>. Keep
-the strip visually connected to the main scene and readable in a small
-thumbnail. Do not add extra text labels in the strip unless the user explicitly
-confirmed a labelled route strip.
-
-Use exactly three Chinese main text elements on the integrated left text-safe
-zone, in this order:
-1. a slightly slanted direction badge, about `-4deg`, containing exactly
-   "<category tag>" and using the fixed direction badge token for that category;
-2. an oversized bold main hook using the fixed direction main-hook token for
-   "<category tag>": "<main hook>";
-3. a smaller subtitle below: "<subtitle>".
-
-Below the subtitle, add one publication metadata line:
-"<publication metadata line>". Use semi-bold deep-blue modern sans-serif text,
-no leading dot, no icon, no enclosing badge, no capsule, no button-like outline.
-Keep it readable at phone thumbnail size and clearly secondary to the subtitle.
-
-Apply the direction-specific WOEAI text style for <category tag>: <direction
-text style>. Keep the Chinese characters crisp, complete, high-contrast, and
-unchanged. Do not add any other text, English translation, fake chart labels,
-map labels, UI labels, logos, watermarks, or decorative small captions. No
-people unless needed.
-```
-
-Add article-specific avoids:
-
-- no generic city skyline,
-- no decorative abstract technology wallpaper,
-- no distorted Chinese text,
-- no missing, rewritten, translated, or extra cover text,
-- no unrelated lab scene,
-- no private partner or project branding.
-- no fake software UI, fake map label, or fake publication claim.
-
-## Review Note Fields
-
-Record cover information in `wechat/articles/review/<publication_ref>.review.md`
-or a paired cover brief:
-
-- cover status,
-- selected execution mode: `image-gen` or `prompt-only`,
-- candidate count or prompt count,
-- selected candidate ID, when applicable,
-- user-confirmed cover text choice,
-- selected text mode: `image-gen-text`,
-- prompt-only output count and complete prompt texts, when applicable,
-- rejected candidate reasons,
-- source candidate path, when applicable,
-- final cover path, when applicable,
-- dimensions, when applicable,
-- generation tool,
-- prompt or design brief,
-- quality scores,
-- local crop preview path, when applicable,
-- backend preview state.
+## Series contract: WOEAI-cover-v2
+
+Use one design system across papers. Change the scientific subject and confirmed
+wording, not the layout, typography, rendering language or arbitrary palette.
+Retain the three existing direction color families below. This is a project
+specification, not a platform-wide promise. Verify actual WeChat backend crops
+before release; change the series contract as a whole if requirements change.
+
+## Canvas and fixed grid
+
+Coordinates refer to a final **900 × 383 px** canvas, origin at upper left.
+Larger sources must preserve these proportions. A matching ratio alone does not
+meet the final export requirement. Inspect actual dimensions, not filenames.
+
+| Element | Fixed bounds / treatment |
+|---|---|
+| Outer safe area | x = 36–864; y = 24–359; essential text stays inside |
+| Integrated text zone | x = 36–396; width 360; low-detail shared background |
+| Direction badge | x = 36, y = 28; 128 × 40; −4° tilt; 6 px corner radius |
+| Main hook | x = 36, y = 84; width 360, height 108; at most two lines |
+| Subtitle | x = 36, y = 200; width 360, height 30; one line |
+| Publication line | x = 36, y = 238; width 360, height 44; at most two lines |
+| Scientific scene | x = 420–864; y = 28–280; one dominant object |
+| Crop-critical subject | diagnostic object inside x = 420–620, y = 56–276 |
+| Technical route | x = 36–864; y = 290–359; three sparse nodes and two arrows |
+
+Blend text and scene through a soft luminance gradient, shared geometry or
+subdued flow lines. No hard divider, white card, curved panel border or glowing
+UI frame. Use a restrained engineering editorial illustration, coherent
+perspective and clean geometry. Do not alternate cartoons, photographs, neon
+science fiction and dense dashboards across papers. Scene/method/application
+candidates change subject emphasis within the same grid, not the design system.
+
+## Typography and text budget
+
+Use one modern Chinese sans-serif family throughout: Noto Sans CJK SC / Source
+Han Sans visual style, with sans-serif Latin characters. These are generation
+visual targets, not a claim that a font file is embedded. Target the sizes below;
+visual tolerance up to 10% does not relax any box, line-count or text-budget
+limit. Never shrink the whole title to fit or accept overflow.
+
+- Badge: 24 px, bold 700; exact four-character category.
+- Hook: 48 px, extra-bold 800, 54 px line height; preferably 6–12 full-width
+  character equivalents, maximum 14; at most seven per line, two lines total.
+  Count punctuation/Latin width in the actual fit; never break an abbreviation.
+- Subtitle: 24 px, medium 500, 30 px line height; at most 15 full-width character
+  equivalents. Add a method or condition rather than repeat the hook.
+- Publication line: 18 px, semibold 600, 22 px line height. Use the exact public
+  journal name plus ` · <Year>`; wrap at a word boundary into two lines. Do not
+  invent abbreviations. The 18 px minimum is strict, including font tolerance.
+  If it cannot fit, stop for a reviewed layout/text decision.
+- Only these four elements may contain text. No DOI, authors, impact factors,
+  fake chart values, UI labels, figure numbers, added slogans or translations.
+- No logo or watermark by default, including invented WOEAI/publisher marks.
+  An explicitly requested authorized logo needs a reviewed series-wide revision,
+  not a one-paper placement improvisation.
+- Confirmed wording takes priority over a suggested length: if it cannot fit,
+  ask for revised text. Do not silently shorten it or remove the subtitle.
+- Derive journal/year only from verified public metadata. Omit this line when
+  either is unavailable, and record why; do not invent a source or date.
+
+## Fixed palette
+
+Keep the shared grid and typography identical across directions. Only the
+following established category tokens differ. Use the base under text; confine
+complex scientific color fields and lighting to the scene.
+
+| Category | Text-zone base | Badge / text | Hook | Subtitle / publication |
+|---|---|---|---|---|
+| 数值风洞 | #EFF6FC | #0B6FD3 / #FFFFFF | #073B7A | #334155 / #073B7A |
+| 结构抗风 | #EFF6FC | #0F766E / #D9FFF2 | #075A60 | #334155 / #075A60 |
+| 漂浮风电 | #062B4F | #FFC83D / #062B4F | #FFFFFF | #D9EAF7 / #D9EAF7 |
+
+Use at most one hook accent: numerical blue #0B6FD3, structural teal #0F766E,
+or offshore yellow #FFC83D. Cyan #00A6D6 belongs to the scene, not small text on
+pale backgrounds. Check the final composite, not just token colors: aim at
+least 4.5:1 for small text and 3:1 for the large hook. Dark-ocean publication
+metadata must stay pale, never deep blue on dark blue.
+
+## Scientific meaning and evidence
+
+Read the audited article and review before choosing visual elements. The three
+route nodes show verified input → method → output. Do not present a potential
+engineering use as an experimentally demonstrated result or deployed project.
+Record paper-section/figure anchors for the object, method and output. Missing
+evidence stays pending; do not invent plausible geometries or research detail.
+
+Do not generate quantitative result curves, numerical improvements or benchmark
+wins without evidence. An unlabelled abstract curve must not imply a measured
+trend. Paper figures are evidence/inspiration, not default cover collages.
+Original figure extraction, reuse rights and public-safety rules in
+`wechat/STYLE.md` still apply. Never alter scientific figures to manufacture
+results, and do not expose private sources or project branding.
+
+## Execution and confirmation
+
+A skills/specification/brief-only maintenance request does not request image
+generation. Preserve selected assets, text confirmations and backend history;
+record migration pending instead of claiming old covers satisfy this contract.
+For actual cover production:
+
+1. Read this contract, the audited article and review; use
+   `wechat/templates/cover-brief.md` for the paired brief.
+2. Default to `image-gen`; use `prompt-only` only when the user explicitly asks
+   for prompts without image generation. Do not ask a redundant mode question.
+3. Present five concrete `category | hook / subtitle` choices plus custom text;
+   obtain the exact choice before new generation or complete prompt output.
+   Existing confirmation records are not permission to silently change words.
+4. For `image-gen`, generate three candidates (scene, method, application) within
+   this same grid, with confirmed text generated inside the image. Reject wrong,
+   missing, extra or illegible text. Retry one round with unchanged words; after
+   two failed rounds ask for shorter/clearer confirmed text. Do not fall back to
+   no-text covers or post-generation text overlays.
+5. For `prompt-only`, deliver exactly three complete prompts labelled
+   `提示词 1｜研究场景`, `提示词 2｜方法机制`, `提示词 3｜工程应用`.
+   Start with selected wording, put file/check summaries after the prompts, and
+   do not generate images, run previews or update drafts in this mode.
+6. Default to English prompt instructions with exact quoted Chinese words;
+   use Chinese prompts when requested. Each delivered prompt must be standalone:
+   spell out canvas/grid, font scale, category hex colors, confirmed text,
+   verified journal/year when available, three evidence-based route nodes,
+   crop core and prohibited elements. Do not leave placeholders or “same as above”.
+
+## Acceptance and crops
+
+A center-square crop of 900 × 383 covers x = 258.5–641.5 (42.56% of its width).
+It cannot retain the whole left-aligned title. The square must preserve the
+recognizable diagnostic object; the wide cover carries the complete words.
+A dedicated square asset is a separate scoped deliverable.
+
+Inspect each surface:
+
+- Full 900 × 383: exact text, science, composition, scale and palette.
+- 360 × 153 wide mobile approximation: readable hook/subtitle and decipherable
+  secondary provenance. Shorten through confirmation if necessary, not shrinking.
+- 120 × 120 center square: recognizable diagnostic subject; tiny metadata is
+  not expected to be readable.
+- Center 5:4 crop: subject survives without misleading partial results.
+- 120 px wide thumbnail: recognizable visual identity and dominant subject;
+  do not claim every text line can be read at this size.
+- Side-by-side with two series covers: same grid, type scale and rendering
+  language, with only the category token differences allowed above.
+
+Run the skill's `scripts/cover_preview.py` with candidate labels and optional
+scores. It measures dimensions/ratio/file size and previews the full source and
+common crops; it does not certify text, science, contrast or backend behavior.
+Score specificity, subject clarity, engineering credibility, readable hook,
+crop survival and exact text from 1–5; do not default to full marks. Any incorrect
+text, unsupported result or missing crop-critical object rejects a candidate
+regardless of its average score.
+
+Store public-safe final assets under `wechat/assets/public-safe/<ref>/` and
+experiments/previews in ignored local storage. Record confirmed words, sources,
+candidates, rejections, selected path, measured dimensions, contract version,
+evidence anchors, local checks and backend checks separately. Set
+`cover_image_checked: true` only after an actual WeChat backend mobile preview.
+A specification update, matching dimensions or local preview is not acceptance.

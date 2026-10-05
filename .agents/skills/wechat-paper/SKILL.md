@@ -42,6 +42,21 @@ If the task mentions Zotero, DOI, a PDF, or a paper title, inspect those sources
 
 When a local PDF or author manuscript is available, inspect the original paper body, figures, captions, and conclusion instead of relying only on a public abstract.
 
+## Engineering Editorial Pass
+
+After the factual audit, before titles, cover wording and summaries, read
+`wechat/STYLE.md` → `Engineering Story And Derived Copy`. Fill the editorial
+card in `wechat/templates/paper-review.md`: engineering question, actual baseline,
+specific change, mechanism/verification, demonstrated result, potential use and
+boundary. Use the same evidence spine across derived copy without repeating it.
+Do not turn the faithful abstract into marketing copy.
+
+Explain what changes relative to the baseline and what engineering decision it
+could inform. Keep proposed applications distinct from tested results and numbers
+attached to metrics/conditions. Unverified novelty, causality or deployment claims
+are blockers. Headlines cannot be stronger than the audited article. Updating
+skills/briefs alone does not request image generation or live draft operations.
+
 ## Source Acquisition Priority
 
 Use available authorized evidence before requesting another source copy:
@@ -472,8 +487,7 @@ Tone:
   abstract if the original abstract would be distorted; strengthen first-person
   narration mainly in `三句话导读`, `研究问题`, `方法贡献`, `关键发现`, `工程意义`,
   and `适用边界`.
-- Scholarly first.
-- Engineering relevance second.
+- Lead with an engineering question and answer it with scholarly evidence.
 - No hype.
 - No unsupported partner names or project claims.
 - Keep limitations visible.
@@ -570,10 +584,10 @@ Prefer the paper's original high-resolution figures and use them directly when t
 
 For WeChat cover images, do not use a paper figure by default. The cover should
 be a purpose-designed or generated public-safe image sized for the WeChat cover
-surface, normally `900 x 383 px` for the first article cover. Keep the core
-visual in the center for crop safety, avoid generated text unless explicitly
-approved, and record the cover source, prompt, dimensions, and preview status in
-the review note.
+surface, normally `900 x 383 px` for the first article cover. Follow the
+`wechat-cover` skill and its series contract for fixed grid,
+typography, category tokens, crop core and text confirmation. Record source,
+prompt, actual dimensions and preview status separately.
 
 Use the clearest legally safe source:
 

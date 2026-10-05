@@ -62,6 +62,8 @@ def cover_summary(
     label: str = "",
     scores: dict[str, str] | None = None,
 ) -> dict[str, Any]:
+    if target_width <= 0 or target_height <= 0:
+        raise ValueError("Target dimensions must be positive")
     width, height = image_dimensions(path)
     ratio = (width / height) if width and height else None
     target_ratio = target_width / target_height
@@ -78,6 +80,10 @@ def cover_summary(
         "ratio": round(ratio, 4) if ratio else None,
         "target_ratio": round(target_ratio, 4),
         "ratio_delta": round(ratio_delta, 4) if ratio_delta is not None else None,
+        "target_dimensions_match": (width, height) == (target_width, target_height),
+        "series_v2_dimensions_match": (width, height) == (900, 383),
+        "visual_contract_checked": False,
+        "backend_preview_checked": False,
         "target_ratio_match": bool(ratio_delta is not None and ratio_delta <= 0.02),
         "file_size_ok": size <= max_bytes,
     }
@@ -88,6 +94,12 @@ def render_card(summary: dict[str, Any]) -> str:
     src = html.escape(file_url(path), quote=True)
     title = html.escape(summary["path"])
     label = html.escape(str(summary.get("label") or summary["path"]))
+    width, height = summary.get("width"), summary.get("height")
+    ratio = width / height if width and height else (summary.get("ratio") or 900 / 383)
+    square_width = min(100.0, 100.0 / ratio)
+    square_height = min(100.0, 100.0 * ratio)
+    square_left = (100.0 - square_width) / 2
+    square_top = (100.0 - square_height) / 2
     metadata = "".join(
         f"<tr><th>{html.escape(str(key))}</th><td>{html.escape(str(value))}</td></tr>"
         for key, value in summary.items()
@@ -107,10 +119,10 @@ def render_card(summary: dict[str, Any]) -> str:
   <table>{metadata}</table>
   <div class="grid">
     <div>
-      <h3>Full Cover 2.35:1</h3>
-      <div class="frame wide">
+      <h3>Full source (uncropped)</h3>
+      <div class="frame wide" style="aspect-ratio: {ratio:.8f}">
         <img src="{src}" alt="{title}">
-        <div class="safe"></div>
+        <div class="safe" style="left: {square_left:.4f}%; top: {square_top:.4f}%; width: {square_width:.4f}%; height: {square_height:.4f}%"></div>
       </div>
     </div>
     <div>
@@ -132,8 +144,13 @@ def render_card(summary: dict[str, Any]) -> str:
       </div>
     </div>
   </div>
-  <p class="note">Dashed box marks an approximate center safe area. This local
-  preview is a first-pass check; final approval still requires WeChat backend
+  <h3>Mobile wide (360 px) and small wide (120 px)</h3>
+  <div class="mobile-wide"><img src="{src}" alt="{title}"></div>
+  <div class="small-wide"><img src="{src}" alt="{title}"></div>
+  <p class="note">Dashed box marks the center-square crop within the full source.
+  It does not preserve the entire left title on a wide cover. Check subject
+  survival separately from wide-cover text readability. Dimensions and ratios
+  do not certify visual compliance; final approval requires WeChat backend
   mobile preview.</p>
 </section>
 """
@@ -237,6 +254,7 @@ def render_page(summaries: list[dict[str, Any]]) -> str:
       border: 1px solid #b6c2d0;
     }}
     .wide {{ aspect-ratio: 900 / 383; }}
+    .frame.wide img {{ object-fit: contain; }}
     .square {{ aspect-ratio: 1 / 1; }}
     .share {{ aspect-ratio: 5 / 4; }}
     .frame img {{
@@ -248,12 +266,12 @@ def render_page(summaries: list[dict[str, Any]]) -> str:
     }}
     .safe {{
       position: absolute;
-      left: 16.666%;
+      left: 28.7222%;
       top: 0;
-      width: 66.666%;
+      width: 42.5556%;
       height: 100%;
-      border-left: 2px dashed rgba(255, 255, 255, 0.9);
-      border-right: 2px dashed rgba(255, 255, 255, 0.9);
+      box-sizing: border-box;
+      border: 2px dashed rgba(255, 255, 255, 0.9);
       box-shadow: inset 0 0 0 1px rgba(15, 45, 82, 0.65);
       pointer-events: none;
     }}
@@ -271,6 +289,9 @@ def render_page(summaries: list[dict[str, Any]]) -> str:
       object-fit: cover;
       object-position: center center;
     }}
+    .mobile-wide {{ width: 360px; max-width: 100%; }}
+    .small-wide {{ width: 120px; margin-top: 12px; }}
+    .mobile-wide img, .small-wide img {{ width: 100%; height: auto; display: block; }}
     .note {{
       margin: 12px 0 0;
       color: #596579;

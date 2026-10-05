@@ -6,7 +6,7 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.05-1228'
+release = '2026.10.05-1236'
 version = '2026.10.05'
 
 # -- SEO Meta Tags
@@ -76,3 +76,26 @@ html_show_sourcelink = False
 
 html_favicon = "../_static/favicon.png"
 
+
+# Keep operational-board assets page-local and content-versioned. Raw HTML
+# script/link tags bypass Sphinx's asset hashes and may remain cached after RTD
+# publishes a new build. The JSON URL likewise changes whenever its bytes do.
+def _add_publication_board_assets(app, pagename, templatename, context, doctree):
+    if pagename != 'PublicationProgress':
+        return
+    import hashlib
+    from pathlib import Path
+
+    app.add_css_file('publication-board.css')
+    app.add_js_file('publication-board.js', loading_method='defer')
+    data = Path(app.confdir).parent / '_static/publication-board-data.json'
+    version = hashlib.sha256(data.read_bytes()).hexdigest()[:16]
+    source = 'data-source="_static/publication-board-data.json"'
+    if context['body'].count(source) != 1:
+        raise ValueError('Publication board must contain exactly one data source')
+    context['body'] = context['body'].replace(
+        source, f'data-source="_static/publication-board-data.json?v={version}"')
+
+
+def setup(app):
+    app.connect('html-page-context', _add_publication_board_assets)

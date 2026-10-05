@@ -17,7 +17,8 @@ class PublicationBoardPageTests(unittest.TestCase):
     def test_page_has_local_assets_and_accessible_readonly_controls(self):
         source = (ROOT / 'docs/source/PublicationProgress.rst').read_text()
         for asset in ('publication-board.css', 'publication-board.js', 'publication-board-data.json'):
-            self.assertIn('_static/' + asset, source)
+            if asset.endswith('.json'):
+                self.assertIn('_static/' + asset, source)
             self.assertTrue((ROOT / 'docs/_static' / asset).is_file())
         self.assertIn('aria-live="polite"', source)
         self.assertIn('<noscript>', source)
@@ -25,8 +26,49 @@ class PublicationBoardPageTests(unittest.TestCase):
             self.assertIn('name="' + name + '"', source)
         self.assertNotRegex(source, r'(?i)contenteditable|draggable|type="(?:password|file)"')
         scripts = re.findall(r'<script\s+src="([^"]+)"', source)
-        self.assertEqual(scripts, ['_static/publication-board.js'])
+        self.assertEqual(scripts, [])
 
     def test_generated_progress_has_stable_board_entry(self):
         self.assertIn('PublicationProgress.html', (ROOT / 'project/publication-progress.md').read_text())
         self.assertIn('PublicationProgress.html', (ROOT / 'README.rst').read_text())
+
+    def test_build_versions_assets_only_on_board_page(self):
+        import hashlib
+        import runpy
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        config = runpy.run_path(str(ROOT / 'docs/source/conf.py'))
+        app = SimpleNamespace(confdir=ROOT / 'docs/source', add_css_file=Mock(), add_js_file=Mock())
+        hook = config['_add_publication_board_assets']
+        context = {'body': '<div data-source="_static/publication-board-data.json"></div>'}
+        hook(app, 'index', 'page.html', context, None)
+        app.add_css_file.assert_not_called()
+        app.add_js_file.assert_not_called()
+        self.assertNotIn('?v=', context['body'])
+        hook(app, 'PublicationProgress', 'page.html', context, None)
+        app.add_css_file.assert_called_once_with('publication-board.css')
+        app.add_js_file.assert_called_once_with('publication-board.js', loading_method='defer')
+        digest = hashlib.sha256((ROOT / 'docs/_static/publication-board-data.json').read_bytes()).hexdigest()[:16]
+        self.assertIn('publication-board-data.json?v=' + digest, context['body'])
+
+    def test_data_cache_version_changes_with_generated_bytes(self):
+        import runpy
+        import tempfile
+        from types import SimpleNamespace
+        from unittest.mock import Mock
+        hook = runpy.run_path(str(ROOT / 'docs/source/conf.py'))['_add_publication_board_assets']
+        with tempfile.TemporaryDirectory() as folder:
+            docs = Path(folder)
+            (docs / '_static').mkdir()
+            data = docs / '_static/publication-board-data.json'
+            app = SimpleNamespace(confdir=docs / 'source', add_css_file=Mock(), add_js_file=Mock())
+            def render(payload):
+                data.write_text(payload)
+                context = {'body': '<div data-source="_static/publication-board-data.json"></div>'}
+                hook(app, 'PublicationProgress', 'page.html', context, None)
+                return context['body']
+            original = render('{"papers": []}')
+            self.assertEqual(original, render('{"papers": []}'))
+            self.assertNotEqual(original, render('{"papers": [{"status": "drafting"}]}'))
+            with self.assertRaisesRegex(ValueError, 'exactly one'):
+                hook(app, 'PublicationProgress', 'page.html', {'body': ''}, None)

@@ -5,7 +5,6 @@
 
 .. raw:: html
 
-   <link rel="stylesheet" href="_static/publication-board.css">
    <div id="publication-board" data-source="_static/publication-board-data.json">
      <p class="board-intro">RTD 全文精解与公众号，独立记录、只读查看。制作与状态维护由助手完成。</p>
      <div id="board-summary" class="board-summary" aria-label="全部论文概览"></div>
@@ -27,4 +26,3 @@
      <noscript><p>交互看板需要 JavaScript；可使用下方的仓库进度清单。</p></noscript>
      <p class="board-footer">进度随仓库清单更新并重新构建，不查询公众号后台。<a href="https://github.com/lichao689/woeai/blob/main/project/publication-progress.md">查看仓库进度清单</a> · <a href="https://github.com/lichao689/woeai/blob/main/project/guides/publication-registry.md">状态说明</a></p>
    </div>
-   <script src="_static/publication-board.js" defer></script>

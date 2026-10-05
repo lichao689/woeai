@@ -8,8 +8,7 @@ const vm = require('node:vm');
 const script = fs.readFileSync(path.join(__dirname, '../../docs/_static/publication-board.js'), 'utf8');
 const fixture = fs.readFileSync(path.join(__dirname, '../../docs/_static/publication-board-data.json'), 'utf8');
 const walk = node => [node, ...node.children.flatMap(walk)];
-const cards = column => column.children.filter(node => node.tag === 'article');
-const count = column => Number(column.children[0].children[0].textContent);
+const rows = ui => walk(ui.ids['board-results']).filter(node => node.className === 'board-paper-row');
 function freeze(value) {
   if (value && typeof value === 'object') {
     Object.values(value).forEach(freeze);
@@ -92,29 +91,48 @@ function boot(response) {
     }
   });
   vm.runInContext(script, context);
-  return {ids, form, tracks, controls, data, requests, get focused() { return focused; },
+  return {ids, form, tracks, controls, data, requests, statusLabels: context.window.PublicationBoard.STATUS, get focused() { return focused; },
     ready: new Promise(resolve => setImmediate(resolve))};
 }
 
-test('DOM: loading gates controls; show-all preserves totals and focuses the first new detail', async () => {
+test('DOM: semantic table shows one row per paper and both channels; details span all columns', async () => {
   const ui = boot();
   assert(ui.controls.every(control => control.disabled));
   await ui.ready;
   assert(ui.controls.every(control => !control.disabled));
-  const columns = ui.ids['board-results'].children;
-  assert.equal(columns.length, 5);
-  assert.equal(columns.reduce((sum, column) => sum + count(column), 0), ui.data.papers.length);
-  for (const column of columns) {
-    assert.equal(cards(column).length, Math.min(count(column), 4));
-    const more = column.children.find(node => node.className === 'board-show-more');
-    if (count(column) <= 4) { assert.equal(more, undefined); continue; }
-    assert.match(more.attributes['aria-label'], /显示全部/);
-    more.emit('click');
-    assert.equal(cards(column).length, count(column));
-    assert.equal(ui.focused, cards(column)[4].querySelector('summary'));
-    assert(!column.children.includes(more));
+  const table = ui.ids['board-results'].querySelector('table');
+  assert(table);
+  const headers = table.querySelector('thead').children[0].children;
+  assert.deepEqual(headers.map(node => node.textContent), ['题目', '年份', '研究方向', 'RTD 状态', '公众号状态', '详情']);
+  assert(headers.every(node => node.tag === 'th' && node.attributes.scope === 'col'));
+  assert.equal(rows(ui).length, ui.data.papers.length);
+  const years = rows(ui).map(row => Number(row.children[1].textContent));
+  assert.deepEqual(years, [...years].sort((a, b) => b - a));
+  assert.equal(new Set(walk(table).filter(node => node.id).map(node => node.id)).size, ui.data.papers.length);
+  for (const row of rows(ui)) {
+    assert.equal(row.children.length, 6);
+    assert.equal(row.children[0].tag, 'th');
+    assert.equal(row.children[0].attributes.scope, 'row');
+    const paper = ui.data.papers.find(paper => paper.title === row.children[0].textContent);
+    assert(paper);
+    assert.match(row.children[3].textContent, new RegExp(ui.statusLabels[paper.rtd.status]));
+    assert.match(row.children[4].textContent, new RegExp(ui.statusLabels[paper.wechat.status]));
+    const toggle = row.querySelector('button');
+    const detail = row.parent.children[row.parent.children.indexOf(row) + 1];
+    assert.equal(detail.className, 'board-detail-row');
+    assert.equal(detail.children[0].attributes.colspan, '6');
+    assert.equal(toggle.attributes['aria-controls'], detail.id);
+    assert.equal(detail.hidden, true);
+    assert.equal(toggle.attributes['aria-expanded'], 'false');
+    toggle.emit('click');
+    assert.equal(detail.hidden, false);
+    assert.equal(toggle.attributes['aria-expanded'], 'true');
+    assert.equal(toggle.attributes['aria-label'], `收起详情：${paper.title}`);
+    assert.match(toggle.textContent, /收起/);
+    toggle.emit('click');
+    assert.equal(detail.hidden, true);
+    assert.equal(toggle.attributes['aria-expanded'], 'false');
   }
-  assert.equal(columns.reduce((sum, column) => sum + cards(column).length, 0), ui.data.papers.length);
   assert(!walk(ui.ids['board-results']).some(node =>
     ['input', 'select', 'textarea', 'form'].includes(node.tag) || node.attributes.contenteditable));
   for (const section of walk(ui.ids['board-results']).filter(node => node.className === 'board-track-detail')) {
@@ -130,34 +148,31 @@ test('DOM: loading gates controls; show-all preserves totals and focuses the fir
     options: {credentials: 'omit', cache: 'no-cache'}}]);
 });
 
-test('DOM: hidden papers remain searchable; empty results, reset and repeated track switches work', async () => {
+test('DOM: all papers remain searchable; empty results, reset and repeated track switches work', async () => {
   const ui = boot();
   await ui.ready;
   const fields = ui.form.elements;
-  // Select a paper outside every initially rendered column, then search all data.
-  const visibleTitles = new Set(walk(ui.ids['board-results'])
-    .filter(node => node.tag === 'h3').map(node => node.textContent));
-  const hidden = ui.data.papers.find(paper => !visibleTitles.has(paper.title));
-  assert(hidden);
-  fields.query.value = hidden.title;
+  const target = ui.data.papers[ui.data.papers.length - 1];
+  fields.query.value = target.title;
   ui.form.emit('input');
-  assert(walk(ui.ids['board-results']).some(node => node.tag === 'h3' && node.textContent === hidden.title));
+  assert.equal(rows(ui).length, 1);
+  assert.equal(rows(ui)[0].children[0].textContent, target.title);
   fields.query.value = 'this-paper-does-not-exist-987654321';
   ui.form.emit('input');
   assert.equal(ui.ids['board-results'].children[0].className, 'board-empty-results');
   assert.match(ui.ids['board-notice'].textContent, /显示 0 \//);
-  fields.query.value = hidden.title;
-  fields.year.value = String(hidden.year);
-  fields.direction.value = hidden.family;
+  fields.query.value = target.title;
+  fields.year.value = String(target.year);
+  fields.direction.value = target.family;
   fields.unfinished.checked = true;
   for (let i = 0; i < 6; i++) {
     const selected = ui.tracks[i % 2];
     fields.status.value = 'blocked';
     selected.emit('click');
     assert.equal(fields.status.value, '');
-    assert.equal(fields.query.value, hidden.title);
-    assert.equal(fields.year.value, String(hidden.year));
-    assert.equal(fields.direction.value, hidden.family);
+    assert.equal(fields.query.value, target.title);
+    assert.equal(fields.year.value, String(target.year));
+    assert.equal(fields.direction.value, target.family);
     assert.equal(fields.unfinished.checked, true);
     assert.equal(selected.attributes['aria-pressed'], 'true');
     assert.equal(ui.tracks[(i + 1) % 2].attributes['aria-pressed'], 'false');
@@ -167,7 +182,9 @@ test('DOM: hidden papers remain searchable; empty results, reset and repeated tr
   assert.equal(ui.tracks[1].attributes['aria-pressed'], 'true');
   assert.equal(ui.focused, fields.query);
   for (const field of Object.values(fields)) { assert.equal(field.value, ''); assert.equal(field.checked, false); }
-  assert.equal(ui.ids['board-results'].children.reduce((sum, column) => sum + count(column), 0), ui.data.papers.length);
+  assert.equal(rows(ui).length, ui.data.papers.length);
+  assert.deepEqual(ui.ids['board-results'].querySelector('thead').children[0].children.map(node => node.textContent),
+    ['题目', '年份', '研究方向', 'RTD 状态', '公众号状态', '详情']);
   let prevented = false;
   ui.form.emit('submit', {preventDefault() { prevented = true; }});
   assert(prevented);

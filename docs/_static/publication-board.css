@@ -22,23 +22,32 @@ body:has(#publication-board) .wy-nav-content { max-width: 1600px !important; }
 #publication-board input[type="checkbox"] { min-height: 16px; width: 16px; height: 16px; margin: 0; accent-color: #28658b; }
 #publication-board .board-explainer { color: #586775; font-size: 12px; margin-bottom: 14px; }
 #publication-board #board-notice { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
-#publication-board .board-results { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 12px; align-items: start; }
-#publication-board .board-column { min-width: 0; background: #f4f6f8; padding: 10px; border-top: 3px solid #a8b6c1; }
-#publication-board .board-column-review { border-color: #ad7b22; }
-#publication-board .board-column-complete { border-color: #37745e; }
-#publication-board .board-column-blocked { border-color: #a84943; }
-#publication-board .board-column h2 { font-size: 14px; line-height: 1.5; border: 0; padding: 0; margin: 2px 0 14px; display: flex; gap: 6px; justify-content: space-between; }
-#publication-board .board-count { color: #536674; font-weight: 500; }
-#publication-board .board-paper { background: #fff; border: 1px solid #d7dfe5; border-radius: 3px; padding: 13px; margin-bottom: 10px; overflow-wrap: anywhere; }
-#publication-board .board-paper:last-child { margin-bottom: 0; }
-#publication-board .board-paper h3 { font-size: 14px; font-weight: 650; line-height: 1.5; margin: 0 0 12px; font-family: inherit; }
-#publication-board .board-paper .board-meta { font-size: 11px; color: #60717e; margin: 0 0 9px; }
-#publication-board .board-paper :is(.board-kind,.board-other) { font-size: 11px; color: #586775; margin: 4px 0; }
-#publication-board .board-paper .board-paper-status { font-size: 12px; font-weight: 600; margin: 0 0 2px; }
-#publication-board .board-paper details { border-top: 1px solid #e3e9ed; margin-top: 12px; padding-top: 8px; font-size: 12px; }
-#publication-board .board-paper summary { cursor: pointer; color: #205d80; padding: 4px 0; font-weight: 600; }
-#publication-board .board-paper details[open] summary { margin-bottom: 10px; }
-#publication-board .board-paper details p { margin-bottom: 8px; }
+#publication-board .board-results { width: 100%; max-width: 100%; overflow-x: auto; border-top: 1px solid #b8c6d0; }
+#publication-board .board-results:focus-visible { outline: 3px solid #2874a1; outline-offset: 2px; }
+#publication-board .board-table { width: 100%; min-width: 900px; table-layout: fixed; border-collapse: collapse; font-size: 13px; margin: 0; }
+#publication-board .board-table caption { text-align: left; padding: 10px 12px; color: #586775; font-size: 12px; }
+#publication-board .board-table th, #publication-board .board-table td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid #d7dfe5; overflow-wrap: anywhere; line-height: 1.55; }
+#publication-board .board-table thead th { background: #eef2f5; color: #425665; font-weight: 600; }
+#publication-board .board-table thead th:nth-child(1) { width: 40%; }
+#publication-board .board-table thead th:nth-child(2) { width: 6%; }
+#publication-board .board-table thead th:nth-child(3) { width: 18%; }
+#publication-board .board-table thead th:nth-child(4) { width: 12%; }
+#publication-board .board-table thead th:nth-child(5) { width: 14%; }
+#publication-board .board-table thead th:nth-child(6) { width: 10%; }
+#publication-board .board-title { font-weight: 600; }
+#publication-board .board-year { white-space: nowrap; font-variant-numeric: tabular-nums; }
+#publication-board .board-subdirection { display: block; color: #586775; font-size: 12px; margin-top: 3px; }
+#publication-board .board-paper-row:hover { background: #f6f9fb; }
+#publication-board .board-status { font-size: 12px; }
+#publication-board .board-status-review { color: #79541d; }
+#publication-board .board-status-complete { color: #28634c; }
+#publication-board .board-status-blocked { color: #9b3833; }
+#publication-board .board-action button { color: #205d80; font-size: 12px; white-space: nowrap; min-height: 32px; padding: 4px 8px; }
+#publication-board .board-detail-row[hidden] { display: none; }
+#publication-board .board-table .board-detail-row > td { padding: 0; }
+#publication-board .board-paper-detail { background: #f4f7f9; padding: 18px 24px; font-size: 12px; }
+#publication-board .board-paper-detail p { margin: 0 0 8px; }
+#publication-board .board-detail-workflows { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
 #publication-board .board-track-detail { border-top: 1px solid #d7dfe5; padding-top: 12px; margin-top: 14px; }
 #publication-board .board-track-detail h4 { font-family: inherit; font-size: 13px; margin: 0 0 6px; }
 #publication-board .board-track-detail ul { margin: 8px 0 10px 16px; }
@@ -46,17 +55,11 @@ body:has(#publication-board) .wy-nav-content { max-width: 1600px !important; }
 #publication-board .board-gaps { color: #79541d; }
 #publication-board .board-links { display: flex; flex-direction: column; gap: 6px; }
 #publication-board a { color: #205d80; text-decoration: underline; text-underline-offset: 2px; }
-#publication-board .board-empty-column { font-size: 12px; color: #647480; padding: 15px 0; margin: 0; }
-#publication-board .board-empty-results { grid-column: 1 / -1; background: #f4f6f8; padding: 30px 18px; }
+#publication-board .board-empty-results { background: #f4f6f8; padding: 30px 18px; }
 #publication-board .board-footer { margin: 28px 0 0; border-top: 1px solid #d7dfe5; padding-top: 16px; font-size: 12px; color: #586775; }
-@media (max-width: 1250px) { #publication-board .board-results { grid-template-columns: repeat(3,minmax(0,1fr)); } }
-@media (max-width: 980px) { #publication-board .board-results { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 @media (max-width: 600px) {
-  #publication-board .board-results { grid-template-columns: 1fr; }
   #publication-board .board-summary { grid-template-columns: repeat(2,1fr); gap: 18px; }
   #publication-board .board-filters label { flex-basis: calc(50% - 12px); min-width: 0; }
   #publication-board .board-filters .board-search { flex-basis: 100%; }
   #publication-board .board-tracks button { flex: 1; padding: 10px 8px; }
 }
-
-#publication-board .board-show-more { width: 100%; color: #205d80; font-size: 12px; background: transparent; border-color: #c6d2da; margin-top: 2px; }

@@ -39,7 +39,7 @@
   if (typeof document === 'undefined') return;
   const host = document.getElementById('publication-board');
   if (!host) return;
-  const { columnFor, filterPapers, STATUS, COLUMNS } = window.PublicationBoard;
+  const { columnFor, filterPapers, STATUS } = window.PublicationBoard;
   const controls = document.getElementById('board-filters');
   const results = document.getElementById('board-results');
   const summary = document.getElementById('board-summary');
@@ -96,27 +96,45 @@
     section.append(links);
     return section;
   }
-  function paperCard(paper) {
-    const workflow = paper[track];
-    const card = el('article', undefined, 'board-paper');
-    card.append(el('p', `${paper.year || '年份未登记'} · ${paper.subdirection}`, 'board-meta'));
-    card.append(el('h3', paper.title));
-    card.append(el('p', statusText(workflow), 'board-paper-status'));
-    if (track === 'rtd' && workflow.kind !== 'unregistered') card.append(el('p', workflow.kind === 'legacy_intro' ? '历史导读' : '全文型页面', 'board-kind'));
-    const other = track === 'rtd' ? 'wechat' : 'rtd';
-    card.append(el('p', `${other === 'rtd' ? 'RTD' : '公众号'}：${statusText(paper[other])}`, 'board-other'));
-    const details = el('details');
-    const toggle = el('summary', '查看详情');
+  function paperRows(paper, index) {
+    const row = el('tr', undefined, 'board-paper-row');
+    const title = el('th', paper.title, 'board-title');
+    title.setAttribute('scope', 'row');
+    const direction = el('td', undefined, 'board-direction');
+    direction.append(el('span', paper.family), el('span', paper.subdirection, 'board-subdirection'));
+    row.append(title, el('td', String(paper.year || '未登记'), 'board-year'), direction);
+    ['rtd', 'wechat'].forEach(channel => {
+      const cell = el('td', statusText(paper[channel]), `board-status board-status-${columnFor(paper[channel], channel)}`);
+      row.append(cell);
+    });
+    const action = el('td', undefined, 'board-action');
+    const toggle = el('button', '查看详情');
+    toggle.type = 'button';
     toggle.setAttribute('aria-label', `查看详情：${paper.title}`);
-    details.append(toggle);
+    toggle.setAttribute('aria-expanded', 'false');
+    const detailRow = el('tr', undefined, 'board-detail-row');
+    detailRow.id = `board-detail-${index}`;
+    detailRow.hidden = true;
+    toggle.setAttribute('aria-controls', detailRow.id);
+    toggle.addEventListener('click', () => {
+      detailRow.hidden = !detailRow.hidden;
+      toggle.setAttribute('aria-expanded', String(!detailRow.hidden));
+      toggle.textContent = detailRow.hidden ? '查看详情' : '收起详情';
+      toggle.setAttribute('aria-label', `${toggle.textContent}：${paper.title}`);
+    });
+    action.append(toggle); row.append(action);
+    const cell = el('td');
+    cell.setAttribute('colspan', '6');
+    const details = el('div', undefined, 'board-paper-detail');
     details.append(el('p', `DOI：${paper.doi || '未登记'}`, 'board-doi'));
     const sourceLabels = {unregistered:'未登记',planned:'已计划',acquired:'已取得',awaiting_audit:'待核验',verified:'已核验',blocked:'受阻'};
     details.append(el('p', `原论文来源核验：${sourceLabels[paper.source.status] || '未登记'}`));
     const bibliographyLinks = el('div', undefined, 'board-links');
     appendLinks(bibliographyLinks, paper.links || []); details.append(bibliographyLinks);
-    details.append(detailTrack(paper, 'rtd'), detailTrack(paper, 'wechat'));
-    card.append(details);
-    return card;
+    const workflows = el('div', undefined, 'board-detail-workflows');
+    workflows.append(detailTrack(paper, 'rtd'), detailTrack(paper, 'wechat'));
+    details.append(workflows); cell.append(details); detailRow.append(cell);
+    return [row, detailRow];
   }
   function values() {
     return {track, query: controls.elements.query.value, year: controls.elements.year.value,
@@ -125,34 +143,25 @@
   }
   function render() {
     const matches = filterPapers(papers, values());
-    notice.textContent = `${track === 'rtd' ? 'RTD 全文精解' : '微信公众号'} · 显示 ${matches.length} / ${papers.length} 篇，按年份倒序`;
+    notice.textContent = `${track === 'rtd' ? 'RTD 全文精解' : '微信公众号'} 筛选 · 显示 ${matches.length} / ${papers.length} 篇，按年份倒序`;
     results.replaceChildren();
     if (!matches.length) {
       results.append(el('p', '没有符合条件的论文。请调整筛选条件，或点击“重置筛选”。', 'board-empty-results'));
       return;
     }
-    COLUMNS.forEach(([key, label]) => {
-      const group = matches.filter(paper => columnFor(paper[track], track) === key);
-      const column = el('section', undefined, `board-column board-column-${key}`);
-      const heading = el('h2', label); heading.append(el('span', String(group.length), 'board-count'));
-      column.append(heading);
-      if (!group.length) column.append(el('p', '此阶段暂无论文', 'board-empty-column'));
-      group.slice(0, 4).forEach(paper => column.append(paperCard(paper)));
-      if (group.length > 4) {
-        const more = el('button', `显示全部 ${group.length} 篇`, 'board-show-more');
-        more.type = 'button';
-        more.setAttribute('aria-label', `${label}：显示全部 ${group.length} 篇论文`);
-        more.addEventListener('click', () => {
-          const firstNew = paperCard(group[4]);
-          more.replaceWith(firstNew);
-          group.slice(5).forEach(paper => column.append(paperCard(paper)));
-          firstNew.querySelector('summary').focus();
-        });
-        column.append(more);
-      }
-      results.append(column);
+    const table = el('table', undefined, 'board-table');
+    table.append(el('caption', '论文制作进度：每行一篇论文，RTD 与公众号状态独立展示'));
+    const head = el('thead');
+    const headings = el('tr');
+    ['题目', '年份', '研究方向', 'RTD 状态', '公众号状态', '详情'].forEach(label => {
+      const heading = el('th', label); heading.setAttribute('scope', 'col'); headings.append(heading);
     });
+    head.append(headings); table.append(head);
+    const body = el('tbody');
+    matches.forEach((paper, index) => body.append(...paperRows(paper, index)));
+    table.append(body); results.append(table);
   }
+
   function populateStatuses() {
     const select = controls.elements.status;
     select.replaceChildren(new Option('全部状态', ''));

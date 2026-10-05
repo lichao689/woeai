@@ -22,6 +22,9 @@ class PublicationBoardPageTests(unittest.TestCase):
             self.assertTrue((ROOT / 'docs/_static' / asset).is_file())
         self.assertIn('aria-live="polite"', source)
         self.assertIn('<noscript>', source)
+        self.assertIn('role="region" aria-label="论文进度表，可横向滚动" tabindex="0"', source)
+        self.assertIn('按 RTD 筛选', source)
+        self.assertIn('按公众号筛选', source)
         for name in ('query', 'year', 'direction', 'status', 'unfinished'):
             self.assertIn('name="' + name + '"', source)
         self.assertNotRegex(source, r'(?i)contenteditable|draggable|type="(?:password|file)"')

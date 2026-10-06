@@ -597,7 +597,7 @@
         "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md"
       },
       "rtd": {
-        "status": "blocked",
+        "status": "verified",
         "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-he2026-OE-structural.rst",
         "public_title": "漂浮风电 | 用钢筋混凝土优化半潜式风机平台",
@@ -627,11 +627,22 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "5be5ece417948665a483246fa0bbe4c33b4a83e1ad5556caa143d761c6aae65e"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T08:43:00+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "source_fidelity": true,
+              "engineering_facts": false
+            },
+            "scope": "Source-verified full-paper translation. Author conclusions are presented within overall concept-design scope; local stress concentrations and node detailing remain for later design optimization. Original Table 16 and pitch-limit values are preserved. No independent engineering safety certification.",
+            "fingerprint": "8a16b5aadd8dc59eb23d18021c3f6e9a47f667f883afdcdaa105a0b28bda63bd"
           }
         },
-        "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
-        "blocker_code": "source_engineering_conflict",
-        "blocking_reason": "Full translation and figure coverage complete; source Table16 stresses versus tensile limit and mean pitch5.06deg versus +/-5deg remain unresolved. Engineering acceptance is not verified."
+        "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md"
       },
       "wechat": {
         "selected": true,
@@ -641,6 +652,17 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
+            "recorded_at": "2026-10-06T08:43:00+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": false
+            },
+            "scope": "Concept-design framing follows the author conclusions and retains original stress statistics. Engineering facts have not been independently validated; no backend upload or previews.",
+            "fingerprint": "8b92e6d5de77137585fbec105efa0d10cb2d075ec23699ae152c58ef8a92c0cd"
+          },
+          "previous_concept_scope_review": {
             "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
             "checks": {

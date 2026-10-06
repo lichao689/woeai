@@ -98,6 +98,27 @@ class PublicationBoardTests(unittest.TestCase):
             self.assertNotIn('全文型页面仍需完整覆盖核验', track['gaps'])
             self.assertNotIn('PRIVATE_SENTINEL_DO_NOT_EXPOSE', json.dumps(track))
 
+    def test_source_verified_concept_design_does_not_certify_engineering(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            row = self.engineering_blocker_fixture(root)
+            workflow = row['custom']['rtd']
+            workflow['status'] = 'verified'
+            workflow.pop('blocker_code')
+            workflow.pop('blocking_reason')
+            workflow['evidence']['verified'] = copy.deepcopy(workflow['evidence']['awaiting_audit'])
+            self.assertIs(workflow['evidence']['verified']['checks']['engineering_facts'], False)
+            self.assertTrue(registry.workflow_verified(row, 'rtd', root))
+            track = registry.publication_board(root, [row])['papers'][0]['rtd']
+            self.assertEqual(track['status'], 'verified')
+            self.assertIs(track['verification_current'], True)
+            self.assertNotIn('全文覆盖已核对；原文工程结论与数值限值存在待澄清冲突', track['gaps'])
+            workflow['evidence']['verified']['checks']['full_paper_coverage'] = False
+            self.assertFalse(registry.workflow_verified(row, 'rtd', root))
+            workflow['evidence']['verified']['checks']['full_paper_coverage'] = True
+            (root / workflow['path']).write_text('Changed after source review')
+            self.assertFalse(registry.workflow_verified(row, 'rtd', root))
+
     def test_engineering_reason_cannot_bypass_missing_or_stale_coverage(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

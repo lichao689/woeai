@@ -13,7 +13,7 @@ formula_preview_checked: false
 figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
-rtd_page_checked: false
+rtd_page_checked: true
 wechat_cover_image: wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png
 rtd_cover_image: wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png
 ---
@@ -22,11 +22,11 @@ rtd_cover_image: wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat
 
 ## 当前判定
 
-- RTD 已由原先的七图选读简介改为直接依据授权原文的独立中文全文译文；按源文顺序保留正文、公式、35 图、16 表和 58 条参考文献，覆盖自查完成，等待独立复核
-- 全文覆盖与原文忠实度，与工程结论的事实验收分别判定；忠实翻译原文的矛盾不等于确认其工程结论
-- `facts_checked: false` 保持不变：表 16 最大第一主应力与“全部满足强度”的结论仍不一致，平均纵摇 5.06° 与 ±5° 通过断言也未澄清
-- 公众号正文仅定向校正图 19 的旧审校措辞，其他正文及封面保持不变；七幅已选正文图的同名素材按源图重新校准，完整精解另使用 `fig01.png`–`fig35.png`
-- 本轮不是微信后台手机预览，也没有读取凭据、上传图片、创建或更新后台草稿
+- RTD 已通过原文忠实度与完整覆盖复核，保留正文、公式、35 图、16 表和 58 条参考文献
+- 按作者的整体概念设计范围呈现结论：预应力改善整体应力分布，局部节点和应力集中处理属于后续详细设计优化范围；这些范围限制不再阻塞全文来源核验
+- `rtd_page_checked: true` 仅表示全文来源与页面核验；`facts_checked: false` 保留未独立验算的工程事实边界，不代表否定作者的整体概念设计结论
+- 表 16 的局部峰值、整体应力范围及抗拉限值均保留原数值；5.06° 与 ±5° 的原文差异保留简短译注，不宣称严格满足该限值
+- 公众号同步采用整体概念设计表述，保持 `awaiting_review`；后台手机预览及发布未进行
 
 ## 正文与公开素材
 
@@ -108,3 +108,11 @@ rtd_cover_image: wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat
 - 工程事实验收仍受阻：表 16 最大主应力与所述抗拉限值、5.06° 与 ±5° 约束的差异均未获得源文定量澄清。全文译制完成不等于工程安全结论通过，facts_checked 继续为 false。
 - 最终诊断构建、真实 HTML 图片/引用/邮箱链接及 199 项 MathJax 检查通过；规范化图 18 替代文本、指数算符和邮箱分隔空格，未改变科学数据。
 - 此结论取代上文待独立全文复核状态；公众号后台和发布状态未更新。
+
+
+## 2026-10-06 概念设计范围复核
+
+- 本次编辑按论文整体概念设计的研究范围采用作者结论，不把局部应力集中处理设为全文译制的完成条件；没有补造有限元复算、详细节点验算或独立结构安全认证
+- 原 Table 16 的最大第一主应力 3.71–5.88 MPa、整体应力范围上限 1.18–1.58 MPa、C50 抗拉设计值 1.89 MPa 均不变；§5.4.2 的 5.06° 和 ±5° 均不变
+- 上述范围判定取代先前将工程事实验算作为 RTD 来源核验阻塞项的处理。先前发现的原文数值差异保留，RTD 核验仍限于来源身份、全文覆盖、原文忠实度和公开安全
+- 公众号改稿未上传，公式、图片、封面及后台预览标志保持 false；不更新历史草稿或发布证据

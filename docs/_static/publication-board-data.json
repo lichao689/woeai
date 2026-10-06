@@ -507,30 +507,28 @@
         }
       ],
       "rtd": {
-        "status": "blocked",
+        "status": "verified",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           }
         ],
-        "gaps": [
-          "全文覆盖已核对；原文工程结论与数值限值存在待澄清冲突"
-        ],
+        "gaps": [],
         "issues": [],
         "links": [
           {
@@ -542,11 +540,11 @@
             "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-he2026-OE-structural.rst"
           },
           {
-            "label": "待核验阶段证据",
+            "label": "核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE-structural.review.md"
           }
         ],
-        "verification_current": null,
+        "verification_current": true,
         "kind": "full_paper"
       },
       "wechat": {

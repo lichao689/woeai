@@ -31,6 +31,16 @@ class PublicationBoardPageTests(unittest.TestCase):
         scripts = re.findall(r'<script\s+src="([^"]+)"', source)
         self.assertEqual(scripts, [])
 
+    def test_compact_header_keeps_explanations_in_native_disclosure(self):
+        source = (ROOT / 'docs/source/PublicationProgress.rst').read_text()
+        self.assertIn('<details class="board-help">', source)
+        self.assertIn('<summary>状态与筛选说明</summary>', source)
+        help_body = source.split('<details class="board-help">', 1)[1].split('</details>', 1)[0]
+        for meaning in ('独立记录', '未登记不等于未开始', '草稿不等于发布', '按所选渠道计算'):
+            self.assertIn(meaning, help_body)
+        self.assertNotIn('<details class="board-help" open', source)
+        self.assertIn('class="board-toolbar"', source)
+
     def test_generated_progress_has_stable_board_entry(self):
         self.assertIn('PublicationProgress.html', (ROOT / 'project/publication-progress.md').read_text())
         self.assertIn('PublicationProgress.html', (ROOT / 'README.rst').read_text())

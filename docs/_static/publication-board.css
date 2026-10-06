@@ -17,15 +17,15 @@ body:has(#publication-board) .rst-content h1 { margin-bottom: 12px; }
 #publication-board :is(button,input,select,summary,a):focus-visible { outline: 3px solid #2874a1; outline-offset: 3px; }
 #publication-board .board-toolbar { display: flex; align-items: start; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 10px; }
 #publication-board .board-tracks { display: flex; flex: 0 0 auto; gap: 0; }
-#publication-board .board-tracks button { border: 0; border-radius: 0; padding: 6px 12px; border-bottom: 3px solid transparent; }
+#publication-board .board-tracks button { border: 0; border-radius: 0; white-space: nowrap; padding: 6px 12px; border-bottom: 3px solid transparent; }
 #publication-board .board-tracks button[aria-pressed="true"] { color: #205d80; font-weight: 700; border-color: #28658b; background: #f0f6fa; }
 #publication-board .board-filters { display: flex; flex-wrap: wrap; align-items: end; gap: 8px 10px; margin-bottom: 10px; }
-#publication-board .board-filters label { margin: 0; font-size: 12px; font-weight: 600; flex: 1 1 125px; min-width: 0; }
-#publication-board .board-filters .board-search { flex: 2 1 190px; }
+#publication-board .board-filters label { margin: 0; font-size: 12px; font-weight: 600; flex: 1 1 110px; min-width: 0; }
+#publication-board .board-filters .board-search { flex: 2 1 160px; }
 #publication-board .board-filters label :is(select,input:not([type="checkbox"])) { display: block; width: 100%; margin-top: 4px; font-size: 13px; font-weight: 400; }
 #publication-board .board-filters .board-checkbox { display: flex; align-items: center; gap: 7px; min-height: 38px; flex: 0 0 auto; font-size: 13px; }
 #publication-board input[type="checkbox"] { min-height: 16px; width: 16px; height: 16px; margin: 0; accent-color: #28658b; }
-#publication-board .board-help { flex: 1 1 180px; min-width: 0; font-size: 13px; color: #586775; }
+#publication-board .board-help { flex: 1 1 150px; min-width: 0; font-size: 13px; color: #586775; }
 #publication-board .board-help summary { cursor: pointer; width: fit-content; min-height: 38px; padding: 8px 0; }
 #publication-board .board-help[open] { flex-basis: 100%; }
 #publication-board .board-explainer { margin: 0 0 6px; }

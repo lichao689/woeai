@@ -1,203 +1,107 @@
 ---
 publication_ref: ref-li2024-POF
-zotero_key: 2YG78T62
 doi: 10.1063/5.0194006
-research_family: 建筑结构抗风
-subdirection: 数值风洞与湍动入流
-publication_mode: first_publish
-wechat_status: ready_to_publish
+wechat_status: awaiting_review
 wechat_author: Li Chao
 source_checked: true
+facts_checked: true
 abstract_checked: true
+body_images_upload_approved: true
 copyright_checked: true
 public_safety_checked: true
 formula_preview_checked: false
 figure_preview_checked: false
 cover_image_checked: false
-body_images_upload_approved: true
-rtd_page_checked: true
+wechat_backend_preview_checked: false
+rtd_page_checked: false
+wechat_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png
 rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png
 ---
 
-# ref-li2024-POF 发布说明
+# ref-li2024-POF 原文核验记录
 
-## 正文文件
+## 正文与公开素材
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-li2024-POF.md`
-- RTD 配套页: `docs/source/paper-notes/ref-li2024-POF.rst`
-- 微信草稿作者字段: `Li Chao`
+- RTD正文: `docs/source/paper-notes/ref-li2024-POF.rst`
+- 封面素材: `wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png`
+- 论文图 3 VPRFG 方法流程图: `wechat/assets/public-safe/ref-li2024-POF/fig3-vprfg-flowchart.png`
+- 论文图 4 以 von Karman 能谱为目标生成湍流的能谱: `wechat/assets/public-safe/ref-li2024-POF/fig4-von-karman-energy-spectrum.jpg`
+- 论文图 7 初始时刻不同网格的 Q 准则等值面: `wechat/assets/public-safe/ref-li2024-POF/fig7-q-criterion-isosurfaces.jpg`
+- 论文图 9 衰减盒湍流能谱: `wechat/assets/public-safe/ref-li2024-POF/fig9-decaying-box-energy-spectra.jpg`
 
-## RTD 转换记录
+## 当前核验结果
 
-- 内容母版: `wechat/articles/draft-public-safe/ref-li2024-POF.md`
-- 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-li2024-POF`
-- 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-li2024-POF --check`
-- RTD 顶部封面: `wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png`
-- 转换规则: 正文措辞、公式、正文图片和延伸阅读链接来自 Markdown；封面图等平台字段来自 review note 或后续 cover integration。微信底部“阅读原文”默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-li2024-POF.html`）；只有人工明确指定其他目标或留空时才写入 front matter 覆盖默认值。
-
-## 微信草稿箱记录
-
-- 草稿状态: updated via official WeChat draft API, pending WeChat backend preview
-- 草稿 media_id: `OW4ZgzIulHGwsx2YUygitxOm-FaRJOc1RnchrVP-Vi-lmkVFUH1xSKpmSCuw4SG7`
-- 更新时间: `2026-06-10T21:14:49+08:00`
-- 更新说明: 使用 `academic-clean` 主题和 `mathjax-svg` 公式渲染路线重新提交，封面使用 v2 短文字封面。
-- 发布状态: not published; final publication remains manual in the WeChat backend
-
-## 证据来源
-
-- DOI: https://doi.org/10.1063/5.0194006
-- Zotero: `2YG78T62`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
-- PDF / 作者稿: Zotero attachment key `RIVR33QT`; attachment record mode is `imported_url`, but a local PDF exists in Zotero private storage and was used as the evidence source for body claims and figure extraction.
-- WOEAI 网站记录: `docs/source/Publications.rst` anchor `ref-li2024-POF`; research placement checked against `docs/source/StructuralWindEngineering.rst`.
+- 公众号: awaiting_review；当前稿件尚未完成后台手机预览
+- RTD全文覆盖: 未完成，缺项详见下文
+- 事实检查: 已核对所用事实；原文内部差异保留出处
 
 ## 源文件获取记录
 
-- Zotero key: `2YG78T62`
-- Zotero 元数据: checked via Zotero Desktop Local API / local controller export
-- Zotero 附件记录: checked via Zotero Desktop Local API / local controller export; PDF attachment key `RIVR33QT`, content type `application/pdf`, link mode `imported_url`
-- 本地 PDF 附件: exists
-- PDF 附件候选: single PDF-like attachment plus an HTML attachment record
-- PDF 选择优先级: author manuscript > publisher version of record > OA platform PDF > preprint > other
-- 已选 PDF 类型: Zotero local paper PDF resolved from the `imported_url` attachment record; treated as the available publisher/version-of-record evidence source for this article
-- 低优先级选择原因: no web, preprint, or lower-priority source was used; the important nuance is attachment mode `imported_url` while the local PDF file exists
-- PDF 来源类型: Zotero local attachment; no web PDF download used
-- PDF 私有存放: Zotero private attachment plus ignored local extraction artifacts under `wechat/.local/ref-li2024-POF/`; no PDF committed to this public repository
-- Zotero Web API `/file`: not needed and not attempted because the local PDF exists
-- 网页 PDF 下载: not used
-- 网页 PDF 批准记录: not applicable
-- 摘要依据: Zotero `abstractNote` and PDF abstract on `PDF file page 2`
-- 正文证据依据: PDF body text and local PDF page renders
-- 图片依据: PDF embedded images and page-render crop from the local PDF
-- 私有信息边界: no absolute private file path, credential, cookie, raw API payload, or downloaded PDF content is recorded here
+- DOI: https://doi.org/10.1063/5.0194006
+- 来源: 用户授权的期刊出版版PDF，身份与论文题名、作者及DOI核对一致
+- 文件页数: 15；以下PDF file page均为文件物理页码
+- 当前核验副本SHA-256: `855a45aad06339d34c5f411f2a075eb1b8bf1acc903dccfb695ca273bdbe05c3`
+- 当前核验副本与历史原始副本的字节等价性未建立；不混同两者哈希
 
 ## 关键事实证据定位记录
 
-- 摘要:
-  - 文章使用: 中文摘要为英文原摘要的忠实翻译，不附英文原摘要。
-  - 证据位置: Zotero Desktop Local API `abstractNote`; PDF abstract on `PDF file page 2`.
-- 核心结论: VPRFG 先生成矢量势场，再由旋度生成脉动速度场，使均匀各向同性湍流满足无散条件。
-  - 证据位置: `PDF file page 5`, Section II.B, Eqs. (15)-(17); conclusion restatement on `PDF file page 11`.
-- 核心结论: 方法显式引入三维空间互谱密度和 Taylor 冻结假设，使生成湍流能够联系能谱、一维空间 PSD、时间 PSD、空间相干函数、湍动能和 Reynolds 应力。
-  - 证据位置: `PDF file page 4`, Section II.A; `PDF file page 6`, Section II.C; `PDF file page 8`, Section II.D-E; conclusion on `PDF file page 12`.
-- 核心结论: 以 von Karman 能谱为目标的数值算例显示，生成能谱整体贴近目标曲线，较高网格分辨率覆盖更宽波数范围。
-  - 证据位置: `PDF file page 9`, Section III.A and Fig. 4.
-- 核心结论: 衰减盒湍流 LES 与 Comte-Bellot and Corrsin 实验数据对比显示，采用 Eq. (17) 生成的流场在湍动能衰减、三维能谱和空间相关系数上具有较高一致性。
-  - 证据位置: `PDF file page 11` through `PDF file page 13`, Section III.B, Figs. 7-11, conclusion text.
-- 核心结论: 当前研究范围限定在均匀各向同性湍流，任意非均匀各向异性三维空间互谱密度构造仍需后续研究。
-  - 证据位置: `PDF file page 13` and `PDF file page 14`, conclusion limitation paragraph.
-- 关键图:
-  - Fig. 3 `Flowchart of the VPRFG method`: `PDF file page 8`; used as article Figure 3.
-  - Fig. 4 `Energy spectra of generated turbulence using the von Karman energy spectrum as target`: `PDF file page 9`; used as article Figure 4.
-  - Fig. 7 `Iso-surfaces of the Q-criterion for different grids at the initial moment of U0 t/M = 42`: `PDF file page 12`; used as article Figure 7.
-  - Fig. 9 `Energy spectra for decaying box turbulence`: `PDF file page 13`; used as article Figure 9.
-- 关键公式:
-  - Paper Eq. (15), `\mathbf{u}=\nabla\times\boldsymbol{\psi}`: `PDF file page 5`; used in article as the core vector-potential construction.
-  - Paper Eq. (16), vector potential random summation: `PDF file page 5`; used in article with equivalent vector notation.
-  - Paper Eq. (17), component-wise velocity generated from the vector potential field: `PDF file page 5`; summarized in the article as the implementation form behind the vector notation.
-  - Paper Eq. (27), divergence-free proof: `PDF file page 6`; used in article as a display formula.
-  - Paper Eq. (29), Taylor frozen-hypothesis transport relation: `PDF file page 6`; used in article as a display formula.
-  - Paper Eq. (47), generated energy spectrum approaches the target spectrum: `PDF file page 8`; used in article as a display formula.
-  - Paper Eq. (48), turbulent kinetic energy equals the integral/area of the spectrum: `PDF file page 8`; used in article as a display formula.
-  - Editorial explanatory formulas: none; article formulas are paper-derived or equivalent vector notation for paper equations.
-- 页码口径: PDF file page numbers are used, not journal printed page numbers or article pagination.
-- 页码审计依据: local ignored PDF page renders and `paper.txt` extraction under the paper's `.local` workspace were used only for evidence-location audit; no absolute private source PDF path is recorded.
+- 题名、DOI及通讯作者Chen Lingwei：PDF file pages 1–2；中文摘要对应PDF file page 2。
+- 矢量势、旋度及分量式：PDF file page 5式（15）–（18）；现有两组构造公式符号与原图一致。
+- 频率必须与正号相位配套取负号：PDF file page 6式（25）；同页式（27）、（29）确认连续无散和t−τ/x+Uτ方向。
+- 谱与湍动能：PDF file page 8式（47）–（48）；谱限在PDF file pages 8–9式（49）–（51），有限域和网格有截谱。
+- von Karman验证：PDF file page 9 Section III.A，128³/256³/384³；盒湍流：PDF file pages 9–10 Section III.B，0.2π m域、128³/256³、CBC时刻42/98/171。
+- C1/C3采用式（17），C2/C4采用式（18）：PDF file page 10 Table I；面通量与单元速度散度不同：PDF file page 11 Table II及正文。
+- C4初始能量偏高、离散式改变初始统计：PDF file pages 11–13、Figs.7–11；空间相关参考由目标谱及式（5）、（8）推算。
+- 图7当前素材缺原子图标签：图注已补左上C1、右上C2、左下C3、右下C4，上排128³/Q=500，下排256³/Q=2000，不能把全部视觉差异仅归因于网格。
+- 当前仅HIT，未解决任意非均匀各向异性CSD构造：PDF file pages 13–14。
 
-## 图片使用记录
+### 当前选图与公式
 
-1. 图 3: VPRFG 方法流程图
-   - 用途: 方法流程说明
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-li2024-POF/fig3-vprfg-flowchart.png`
-   - 来源/版权: paper PDF page-render crop; author/user paper scope treated as usable for this WOEAI article
-   - 抽取方式: crop from `PDF file page 8` rendered page image because the flowchart is vector/page content rather than a clean standalone embedded raster
-   - 公众号图名: 论文图 3 VPRFG 方法流程图
-   - 公众号说明: 方法从目标平均速度、目标能谱、计算域和网格参数出发，生成波数、幅值、频率和相位，最后由矢量势场旋度得到脉动速度场。
-   - 移动端预览: pending WeChat backend mobile preview
-2. 图 4: 以 von Karman 能谱为目标生成湍流的能谱
-   - 用途: 说明目标能谱满足能力
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-li2024-POF/fig4-von-karman-energy-spectrum.jpg`
-   - 来源/版权: paper PDF embedded image; author/user paper scope treated as usable for this WOEAI article
-   - 抽取方式: `pdfimages` embedded raster from `PDF file page 9`
-   - 公众号图名: 论文图 4 以 von Karman 能谱为目标生成湍流的能谱
-   - 公众号说明: 不同网格分辨率下生成能谱整体贴近目标曲线，高分辨率网格覆盖更宽波数范围。
-   - 移动端预览: pending WeChat backend mobile preview
-3. 图 7: 初始时刻不同网格的 Q 准则等值面
-   - 用途: 展示生成湍流的三维涡结构
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-li2024-POF/fig7-q-criterion-isosurfaces.jpg`
-   - 来源/版权: paper PDF embedded image; author/user paper scope treated as usable for this WOEAI article
-   - 抽取方式: `pdfimages` embedded raster from `PDF file page 12`, resized to mobile/repo-friendly public asset
-   - 公众号图名: 论文图 7 初始时刻不同网格的 Q 准则等值面
-   - 公众号说明: Q 准则等值面展示生成湍流中的涡结构；网格分辨率提高后，小尺度结构更加丰富。
-   - 移动端预览: pending WeChat backend mobile preview
-4. 图 9: 衰减盒湍流能谱
-   - 用途: 展示 LES 衰减盒湍流验证
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-li2024-POF/fig9-decaying-box-energy-spectra.jpg`
-   - 来源/版权: paper PDF embedded image; author/user paper scope treated as usable for this WOEAI article
-   - 抽取方式: `pdfimages` embedded raster from `PDF file page 13`
-   - 公众号图名: 论文图 9 衰减盒湍流能谱
-   - 公众号说明: 衰减盒湍流算例把 VPRFG 生成的初始场放入 LES 中检验，能谱随时间演化并与实验数据保持较好一致。
-   - 移动端预览: pending WeChat backend mobile preview
+- 原Fig.3：PDF file page 8；已重新比对现有公开素材、原图及中文说明。
+- 原Fig.4：PDF file page 9；已重新比对现有公开素材、原图及中文说明。
+- 原Fig.7：PDF file page 12；已重新比对现有公开素材、原图及中文说明。
+- 原Fig.9：PDF file page 13；已重新比对现有公开素材、原图及中文说明。
 
-## 公式检查
+- 原式（15）：PDF file page 5；当前使用的符号、符号方向与条件已核对。
+- 原式（16）：PDF file page 5；当前使用的符号、符号方向与条件已核对。
+- 原式（25）：PDF file page 6；当前使用的符号、符号方向与条件已核对。
+- 原式（27）：PDF file page 6；当前使用的符号、符号方向与条件已核对。
+- 原式（29）：PDF file page 6；当前使用的符号、符号方向与条件已核对。
+- 原式（47）：PDF file page 8；当前使用的符号、符号方向与条件已核对。
+- 原式（48）：PDF file page 8；当前使用的符号、符号方向与条件已核对。
 
-- 使用公式: yes
-- 呈现方式: Markdown LaTeX formula embedded in the relevant narrative sections; default API renderer is `mathjax-svg` with source `data-formula` metadata, with `lightweight` HTML kept only as fallback
-- 微信公式渲染路线: `mathjax-svg`; this article still needs final WeChat backend mobile preview before publication
-- RTD 呈现方式: Sphinx MathJax through `.. math::` and `:math:` generated by `wechat/tools/markdown_to_rtd.py`
-- 行内变量/量纲: formula markup applied to vector quantities, divergence-free condition, target/calculated spectra, wave numbers, grid sizes, and nondimensional validation times
-- 文字性下标: use explicit roman text such as `\mathrm{avg}`, `\mathrm{C}`, and `\mathrm{T}` where abbreviations or word-like subscripts appear
-- 固定公式小节: not used; formulas appear in `方法贡献` and `关键发现`
-- 移动端预览: pending WeChat backend mobile preview
+## 当前事实修正与完整度
 
-## 封面图
+### 2026-10-05 重建审计结果
 
-- 封面状态: selected v2 cover from upgraded batch cover workflow, pending WeChat backend preview
-- 封面素材: `wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png`
-- 尺寸: `900 x 383 px`
-- 生成方式: image-gen public-safe candidate selected after upgraded batch `wechat-cover` comparison
-- 设计意图: 用入口边界、三维湍流涡结构和矢量势到无散湍流的抽象机制表达“VPRFG + 数值风洞入流控制”。
-- 文字策略: short embedded Chinese hook; category tag `数值风洞`; hook `让湍流天然无散`
-- 源候选图: `wechat/.local/cover-candidates/batch-2026-06-10/ref-li2024-POF-v2-imagegen.png`
-- 本地裁剪预览: `wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html`
-- 批量候选联系表: `wechat/.local/cover-candidates/batch-2026-06-10/contact-sheet-v2.png`
-- 裁剪预览结果: passed local ratio, file-size, small-thumbnail, and text-quality checks (`900 x 383 px`, ratio delta `0.0`)
-- 微信后台预览: pending WeChat backend mobile preview
+### 阅读范围与当前复核
 
-## 公开安全
+- PDF file page 1：出版封面；2–4：摘要、引言与HIT统计；5–9：构造、无散/Taylor证明、统计推导与算法；9–13：验证；11–14：结论及边界；14–15：参考文献。无附录。
+- 本次重建以已完成逐页全文阅读的保留结论为起点，重新抽取现存全文、计算PDF校验值，并重新回查上述证据页、现有选图和公式。没有复用已丢失文件的旧指纹或旧验收状态。
+- 图像核对范围是现有导读采用的原图及相关量化证据，不宣称所有原图逐一完成全文译制；微信后台手机预览未执行。
 
-- [x] No WeChat AppSecret, token, cookie, or credential appears.
-- [x] No Zotero API key appears.
-- [x] No private partner name appears.
-- [x] No unconfirmed project status appears.
-- [x] Reader-facing Markdown has no production notes, pending placeholders, or private paths.
-- [x] Reader-facing Markdown uses direct Markdown hyperlinks under `延伸阅读`.
-- [x] Figure captions use a Chinese figure-title line translated from the paper title plus a separate Chinese explanatory line.
-- [x] The imported-url/local-PDF nuance is recorded without exposing absolute private paths.
+### RTD独立事实修正
 
-## 发布前任务
+1. 收紧“天然无散”为连续数学构造，区分单元中心离散速度散度与面通量守恒；补均匀无散平均速度条件。
+2. 重新核对六组展示公式，并补原式（25）的频率负号；保留原Taylor平移方向。
+3. 补有限域/网格/时间步截谱边界，统计量必须相容，不能彼此独立任意指定。
+4. 明示式（18）C2/C4初始统计偏离和C4能量过高，避免所有工况均准确的泛化。
+5. 对图7缺失子图标签用正文图注补全工况、网格、Q阈值；说明空间相关参照由参考谱推得。
 
-- [x] 用 Zotero/local artifacts 核对作者、期刊、年份、DOI、摘要和附件记录。
-- [x] 使用本地 PDF 证据审计正文、关键图和关键公式。
-- [x] 导入已确认可用的正文图。
-- [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、公式、DOI 和延伸阅读链接一致。
-- [x] 生成并本地审核公众号封面图。
-- [x] 将 RTD 配套页挂入相关科研方向页的 `学术进展 Academic Progress`，归入 `建筑结构抗风 / 数值风洞与湍动入流`。
-- [ ] 公众号后台手机预览正文、公式和图片。
-- [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
+### 公众号独立事实核对
 
-## 表达修订记录
+- 公众号源稿直接对照原论文摘要、方法、结果、图题、公式及限制，逐项执行与上述问题对应的修正；未由RTD转换生成，也未用公众号覆盖RTD。
+- 忠实中文摘要保留原论文报告值；需要限定的统计单位、样本、网格、频率或适用条件在正文中明确。原文内部冲突不擅自统一。
 
-- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键结论卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：现实矛盾式。关键卡证据：矢量势构造、任意目标谱、无散推导、Taylor 冻结假设和盒湍流验证均已在关键事实证据定位记录中标到 PDF file pages 4-13 及 Eqs. (15)-(17)、(27)、(29)、(47)、(48)。
+### 原文疑点
 
-## 检查记录
+- 当前PDF下载哈希不同于历史原始源哈希。题名、作者、DOI、正文公式与所选图匹配，事实审计可基于当前获准PDF；未取得历史原始字节，不能确认字节或全部页像素等价，亦不猜测差异原因。
+- PDF file page 11将衰减描述为exponentially，但式（56）为关于移位无量纲时间的幂律；导读未照搬“指数衰减”。
+- 原文“严格零散度”在Table II实际为浮点量级而非数学零，导读明确连续/离散区别。
 
-- cover-v2 generation: selected `wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png` from upgraded batch `wechat-cover` image-gen workflow
-- cover-v2 preview: passed (`python3 .agents/skills/wechat-cover/scripts/cover_preview.py -o wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html ...`)
-- RTD generate: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-li2024-POF`)
-- RTD sync check: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-li2024-POF --check`)
-- public-safety: passed (`python3 scripts/check-public-safe-content.py`)
-- markdown whitespace: passed (`git diff --check -- wechat/articles/draft-public-safe/ref-li2024-POF.md wechat/articles/review/ref-li2024-POF.review.md wechat/articles/review/ref-li2024-POF.cover-brief.md docs/source/paper-notes/ref-li2024-POF.rst wechat/assets/public-safe/ref-li2024-POF`)
+### 忠实度与完整度分别判定
+
+- 现有导读文本事实及所用图/公式已重新对照并修正；原文疑点按页定位保留，图像后台可读性仍需预览。
+- RTD仍为历史选择性导读，尚缺完整I–IV节、57个编号公式、11幅图、2张表和60条参考文献；全文完整度为false，仍需按原文顺序扩写，不能因事实审计通过改称全文精解完成。
+- 当前本地修訂未自动更新微信后台；无新增上传、发布、提交或推送。历史转换、预览及检查日志不能充当当前构建结果。

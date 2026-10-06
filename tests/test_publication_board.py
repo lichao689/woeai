@@ -13,27 +13,57 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class PublicationBoardTests(unittest.TestCase):
     def setUp(self):
-        self.row = copy.deepcopy(registry.load_registry(ROOT)[0])
+        # Explicit baseline, independent of legitimate progress in live data.
+        self.row = {
+            'id': 'EXAMPLE', 'type': 'article-journal', 'title': 'Example paper',
+            'issued': {'date-parts': [[2026]]}, 'DOI': '10.1016/j.buildenv.2026.114811',
+            'custom': {
+                'publication_ref': 'ref-zhao2026-BE',
+                'research_family': '建筑结构抗风', 'subdirection': '数值风洞与湍动入流',
+                'source': {'status': 'unregistered'},
+                'rtd': {'path': 'docs/source/paper-notes/ref-zhao2026-BE.rst',
+                        'status': 'awaiting_audit', 'kind': 'legacy_intro', 'issues': [], 'evidence': {}},
+                'wechat': {'path': 'wechat/articles/draft-public-safe/ref-zhao2026-BE.md',
+                           'review_path': 'wechat/articles/review/ref-zhao2026-BE.review.md',
+                           'selected': True, 'status': 'draft_created', 'issues': [], 'evidence': {}},
+            },
+        }
 
     def board(self, root=ROOT):
         return registry.publication_board(root, [self.row])['papers'][0]
 
-    def test_inventory_and_independent_conservative_states(self):
-        rows = registry.load_registry(ROOT)
-        board = registry.publication_board(ROOT, rows)
+    def test_inventory_projects_current_registry_without_false_completion(self):
+        rows = registry.load_registry(ROOT); board = registry.publication_board(ROOT, rows)
         self.assertEqual(board['schema_version'], 1)
-        papers = board['papers']
-        self.assertEqual(len(papers), 75)
-        self.assertEqual(len({paper['ref'] for paper in papers}), 75)
+        papers = board['papers']; self.assertEqual(len(papers), 75)
+        self.assertEqual(len({p['ref'] for p in papers}), 75)
         self.assertEqual(sum(p['wechat']['selected'] for p in papers), 17)
-        self.assertEqual(sum(p['rtd']['kind'] == 'legacy_intro' for p in papers), 14)
-        self.assertEqual(sum(p['rtd']['kind'] == 'full_paper' for p in papers), 3)
-        self.assertEqual(sum(p['rtd']['status'] == 'awaiting_audit' for p in papers), 17)
-        self.assertEqual(sum(p['rtd']['status'] == 'unregistered' for p in papers), 58)
-        self.assertEqual(sum(p['wechat']['status'] == 'draft_created' for p in papers), 17)
-        self.assertFalse(any(p['rtd']['verification_current'] for p in papers))
-        self.assertFalse(any(p['wechat']['verification_current'] for p in papers))
-        self.assertTrue(all(c['value'] is None for p in papers for t in ('rtd', 'wechat') for c in p[t]['checks']))
+        self.assertEqual(json.loads((ROOT / registry.BOARD_PATH).read_text()), board)
+        by_ref = {p['ref']: p for p in papers}
+        for row in rows:
+            custom = row['custom']; paper = by_ref[custom['publication_ref']]
+            self.assertEqual(paper['source']['status'], custom['source']['status'])
+            self.assertEqual(paper['rtd']['kind'], custom['rtd']['kind'])
+            for channel in ('rtd', 'wechat'):
+                workflow = custom[channel]; projected = paper[channel]
+                self.assertEqual(projected['status'], workflow['status'])
+                evidence = workflow.get('evidence', {})
+                for check in projected['checks']:
+                    expected_value = expected_stage = None
+                    for stage in dict.fromkeys(['verified', workflow['status'], *registry.BOARD_STAGES]):
+                        value = evidence.get(stage, {}).get('checks', {}).get(check['key'])
+                        if type(value) is bool:
+                            expected_value, expected_stage = value, stage; break
+                    self.assertIs(check['value'], expected_value)
+                    self.assertEqual(check['stage'], expected_stage)
+                complete = workflow['status'] in ({'verified'} if channel == 'rtd' else {'ready_to_publish', 'published'})
+                if complete:
+                    self.assertTrue(registry.workflow_verified(row, channel, ROOT))
+                    self.assertIs(projected['verification_current'], True)
+                elif 'verified' not in evidence:
+                    self.assertIsNone(projected['verification_current'])
+            if custom['rtd']['kind'] == 'legacy_intro':
+                self.assertIsNot(paper['rtd']['verification_current'], True)
 
     def test_projection_uses_explicit_field_allowlists(self):
         marker = 'PRIVATE_SENTINEL_DO_NOT_EXPOSE'
@@ -167,6 +197,30 @@ class PublicationBoardTests(unittest.TestCase):
         self.assertIsNone(paper['wechat']['verification_current'])
         self.assertTrue(all(check['stage'] == 'drafting' for check in paper['rtd']['checks']))
         self.assertIn('全文型页面仍需完整覆盖核验', paper['rtd']['gaps'])
+
+    def test_fact_audit_without_previews_cannot_inherit_rtd_completion(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); custom = self.row['custom']
+            custom['source'] = {'status': 'verified', 'sha256': 'a' * 64}
+            review_path = custom['wechat']['review_path']
+            for value in (custom['rtd']['path'], custom['wechat']['path'], review_path):
+                path = root / value; path.parent.mkdir(parents=True, exist_ok=True); path.write_text('audited content')
+            rtd = custom['rtd']; rtd.update(status='verified', kind='full_paper')
+            rtd['evidence'] = {'verified': {'recorded_at': '2026-10-05T00:00:00Z', 'review_path': review_path,
+                'checks': {key: True for key, _ in registry.BOARD_CHECKS['rtd']}}}
+            rtd['evidence']['verified']['fingerprint'] = registry.workflow_fingerprint(self.row, 'rtd', root)
+            wc = custom['wechat']; wc['status'] = 'awaiting_review'
+            for facts in (True, False):
+                wc['evidence'] = {'awaiting_review': {'checks': {'source_identity': True, 'facts': facts, 'public_safety': True}}}
+                paper = self.board(root)
+                self.assertIs(paper['rtd']['verification_current'], True)
+                self.assertEqual(paper['wechat']['status'], 'awaiting_review')
+                self.assertFalse(registry.workflow_verified(self.row, 'wechat', root))
+                checks = {c['key']: c for c in paper['wechat']['checks']}
+                self.assertIs(checks['facts']['value'], facts)
+                for key in ('formula_preview', 'figure_preview', 'cover_preview'):
+                    self.assertIsNone(checks[key]['value'])
+                if facts is False: self.assertIn('事实核验：未通过', paper['wechat']['gaps'])
 
     def test_wechat_readiness_publication_and_rtd_are_independent(self):
         with tempfile.TemporaryDirectory() as directory:

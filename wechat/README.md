@@ -375,7 +375,7 @@ Use `wechat/backlog/selected-papers.yml` to track selected papers and publicatio
 - `publication_mode`: one of `first_publish`, `rewrite`, or `republish`; this records the publication intent, while `wechat_status` records workflow progress.
 - `previous_published_url`: the earlier public WeChat URL, if this article is being rewritten or republished.
 - `latest_published_url`: the newest public WeChat URL after publication.
-- `wechat_draft_media_id`: optional non-sensitive draft `media_id` returned by the WeChat draft API after the article is created in the Official Account draft box.
+- `wechat_draft_media_id` is a private backend identifier returned by the WeChat draft API. Keep its value only in ignored private operational records, never in public reviews, backlog, or registry data.
 - `wechat_draft_created_at`: optional Beijing-time timestamp for the first successful draft-box creation.
 - `wechat_draft_updated_at`: optional Beijing-time timestamp for the latest successful draft-box update.
 - `wechat_author`: optional WeChat draft author field; default to the paper's

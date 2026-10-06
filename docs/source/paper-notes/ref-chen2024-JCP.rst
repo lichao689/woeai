@@ -99,8 +99,8 @@ CMRFG 相干性改进且质量平衡的 LES 入流湍流生成方法论文精解
 - :math:`u_i^c`：与第 :math:`i` 个分量相关的修正后脉动速度。
 - :math:`\mathbf{U}`：瞬时速度向量，:math:`\mathbf{U}=(U_1,U_2,U_3)^T`，其中 :math:`U_i` 分别表示 :math:`i=1,2,3` 时的纵向、横向和竖向瞬时速度。
 - :math:`\overline{\mathbf{U}}`：平均速度向量，:math:`\overline{\mathbf{U}}=(U_{avg},0,0)^T`，其中 :math:`U_{avg}` 为纵向平均速度。
-- :math:`U_{B0}`：由目标平均速度确定的恒定体积平均速度。
-- :math:`U_B(t)`：瞬时体积平均速度。
+- :math:`U_{B0}`：由目标平均速度确定的恒定截面平均速度。
+- :math:`U_B(t)`：瞬时截面平均速度。
 - :math:`U_H`：参考速度。
 - :math:`\mathbf{x}`：空间坐标，:math:`\mathbf{x}=(x_1,x_2,x_3)^T`，其中 :math:`x_j` 在 :math:`j=1,2,3` 时分别代表 :math:`X`、:math:`Y`、:math:`Z` 方向坐标。
 - :math:`\Delta f`：频率步长。
@@ -125,7 +125,7 @@ CMRFG 相干性改进且质量平衡的 LES 入流湍流生成方法论文精解
 
 随着计算技术快速发展，大涡模拟（LES）已经广泛应用于计算风工程（computational wind engineering, CWE）。由于非定常入流湍流生成（inflow turbulence generation, ITG）方法在保证 LES 准确性方面具有关键作用，相关研究受到越来越多关注 [1,2]。ITG 方法面临的主要挑战不仅包括再现真实湍流统计特征，还包括保证与 Navier-Stokes（NS）方程和边界条件相容 [3,4]。目前，ITG 方法已经受到大量研究关注，现有方法的综合综述可见文献 [5–9]。
 
-ITG 方法分为三类：前驱数据库、循环法和合成湍流。首先，在使用前驱数据库或循环法时，需要通过前驱模拟生成所需随机场，然后将其储存为主模拟的入流边界条件 [8,10,11]。这两类方法的缺点是需要较高计算资源，并且需要预先储存大量数据 [12]。相比之下，合成湍流方法因简单性和高计算效率而被广泛采用。整体而言，合成湍流方法可以分为合成随机 Fourier 方法、基于本征正交分解的方法、合成数字滤波方法、合成相干涡方法和合成体积力方法 [8,9]。多种 ITG 方法已在文献 [13–18] 中进行了比较。在这些方法中，合成随机 Fourier 方法由圆函数叠加构成，因此更容易从谱角度控制湍流特征，也被称为谱方法。
+ITG 方法分为三类：前驱数据库、循环法和合成湍流。首先，在使用前驱数据库或循环法时，需要通过前驱模拟生成所需随机场，然后将其储存为主模拟的入流边界条件 [8,10,11]。这两类方法的缺点是需要较高计算资源，并且需要预先储存大量数据 [12]。相比之下，合成湍流方法因简单性和高计算效率而被广泛采用。整体而言，合成湍流方法可以分为合成随机 Fourier 方法、基于本征正交分解的方法、合成数字滤波方法、合成相干涡方法和合成体积力方法 [8,9]。多种 ITG 方法已在文献 [13–18] 中进行了比较。在这些方法中，合成随机 Fourier 方法由三角函数叠加构成，因此更容易从谱角度控制湍流特征，也被称为谱方法。
 
 一般而言，合成随机 Fourier 方法可以分为两组。第一组通过加权幅值波叠加（weighted amplitude wave superposition, WAWS）方法合成湍流场，这类方法与零散度条件和并行算法不相容，如文献 [19–28] 所示。第二组是基于随机流生成（Random-Flow-Generation-Based, RFG-based）的方法，该方法最早由 Kraichnan [29] 提出，用于通过并行算法生成均匀各向同性无散度随机场。随后，Smirnov 等提出 RFG 方法，将原始方法扩展到满足 Gaussian 谱模型的各向异性湍流场 [30]；Yu 和 Bai 将 RFG 方法扩展到满足非均匀湍流无散度性质 [31]；Saad 等开发了一组可扩展在线工具，用于生成合成各向同性湍流 [32,33]。之后，Huang 等提出离散合成 RFG（DSRFG）方法，可满足任意三维能谱 [34]；Castro 等提出修正 DSRFG（MDSRFG）方法，用以增强时间相关性的控制 [35]；但这两种方法的局限是三维能谱通常未知。因此，一致离散 RFG（CDRFG）[36,37] 和窄带合成 RFG（NSRFG）[38] 方法被发展出来，通过引入经验空间调整参数来施加任意速度时间功率谱密度（PSD）并近似空间相干函数。然而，这些经验参数在不同情况下需要通过多次试算确定。相比之下，Patruno 等提出了嵌入无散度条件和 Taylor 冻结假设的规定波向量 RFG（PRFG）方法，用于生成具有目标谱和积分长度尺度的均匀各向异性无散度随机场 [39]。此外，PRFG3 新方法被提出以满足完整三维能谱 [40]，Bervida 等将其扩展到生成非均匀大气边界层湍流场 [41]。
 
@@ -258,7 +258,7 @@ ITG 方法分为三类：前驱数据库、循环法和合成湍流。首先，�
    U_B(t)=\frac{1}{A}\iint_S\left[U_{avg}+u_1(\mathbf{x},t)\right]dx_2dx_3,\quad
    A=\iint_S dx_2dx_3. \qquad (15)
 
-其中，:math:`u_i^c` 为第 :math:`i` 个修正后脉动速度；:math:`U_{B0}` 为由目标平均速度确定的恒定体积平均速度；:math:`U_B(t)` 为瞬时体积平均速度；:math:`A` 为入口面面积。谱方法生成流场的入口质量通量修正在文献 [26] 中有图示。通过这种方式，可以防止人工压力脉动，并能以合理精度获得建筑风压结果。然而，需要注意的是，当入流湍流严重不平衡时，对应的速度修正系数可能较大，导致初始湍流特征发生显著变化，并导致与无散度条件和 Taylor 冻结假设不相容。
+其中，:math:`u_i^c` 为第 :math:`i` 个修正后脉动速度；:math:`U_{B0}` 为由目标平均速度确定的恒定截面平均速度；:math:`U_B(t)` 为瞬时截面平均速度；:math:`A` 为入口面面积。谱方法生成流场的入口质量通量修正在文献 [26] 中有图示。通过这种方式，可以防止人工压力脉动，并能以合理精度获得建筑风压结果。然而，需要注意的是，当入流湍流严重不平衡时，对应的速度修正系数可能较大，导致初始湍流特征发生显著变化，并导致与无散度条件和 Taylor 冻结假设不相容。
 
 2.3 单波传播数值模拟
 ~~~~~~~~~~~~~~~~~~~~
@@ -585,6 +585,9 @@ ITG 方法分为三类：前驱数据库、循环法和合成湍流。首先，�
 
    \begin{aligned}
    Coh_{ii,C}(r_2,|f_n|)&=\frac{G_{ii}(\mathbf{x},r_2,|f_n|)}{\sqrt{G_{ii}(\mathbf{x},|f_n|)}\sqrt{G_{ii}(\mathbf{x}+r_2\mathbf{e}_2,|f_n|)}}\\
+   &=\frac{C_{ii}(\mathbf{x},r_2,|f_n|)+jQ_{ii}(\mathbf{x},r_2,|f_n|)}{\sqrt{G_{ii}(\mathbf{x},|f_n|)}\sqrt{G_{ii}(\mathbf{x}+r_2\mathbf{e}_2,|f_n|)}}\\
+   &=\frac{\frac{1}{2}S_{ii,T}(|f_n|)\Delta f\int_{-\infty}^{\infty}\cos(k_{2,n}r_2)g_{k_{2,n}}(k_{2,n},|f_n|)dk_{2,n}[\delta(|f_n|-f_n)+\delta(|f_n|+f_n)]}{\frac{1}{2}S_{ii,T}(|f_n|)\Delta f[\delta(|f_n|-f_n)+\delta(|f_n|+f_n)]}\\
+   &\quad+j\frac{\frac{1}{2}S_{ii,T}(|f_n|)\Delta f\int_{-\infty}^{\infty}\sin(k_{2,n}r_2)g_{k_{2,n}}(k_{2,n},|f_n|)dk_{2,n}[\delta(|f_n|-f_n)-\delta(|f_n|+f_n)]}{\frac{1}{2}S_{ii,T}(|f_n|)\Delta f[\delta(|f_n|-f_n)+\delta(|f_n|+f_n)]}\\
    &=\int_{-\infty}^{\infty}\cos(k_{2,n}r_2)g_{k_{2,n}}(k_{2,n},|f_n|)dk_{2,n}
    +j\int_{-\infty}^{\infty}\sin(k_{2,n}r_2)g_{k_{2,n}}(k_{2,n},|f_n|)dk_{2,n}.
    \end{aligned}\qquad (43)
@@ -607,6 +610,10 @@ ITG 方法分为三类：前驱数据库、循环法和合成湍流。首先，�
 
    \begin{aligned}
    G_C(k_2,|f_n|)&=\frac{1}{2\pi}\int_{-\infty}^{\infty}Coh_{ii,C}(r_2,|f_n|)\exp(-jk_2r_2)dr_2\\
+   &=\int_{-\infty}^{\infty}g_{k_{2,n}}(k_{2,n},|f_n|)dk_{2,n}\left[\frac{1}{2\pi}\int_{-\infty}^{\infty}\cos(k_{2,n}r_2)\exp(-jk_2r_2)dr_2\right.\\
+   &\qquad\left.+\frac{j}{2\pi}\int_{-\infty}^{\infty}\sin(k_{2,n}r_2)\exp(-jk_2r_2)dr_2\right]\\
+   &=\int_{-\infty}^{\infty}g_{k_{2,n}}(k_{2,n},|f_n|)\left[\frac{1}{2}(\delta(k_2-k_{2,n})+\delta(k_2+k_{2,n}))\right.\\
+   &\qquad\left.+\frac{1}{2}(\delta(k_2-k_{2,n})-\delta(k_2+k_{2,n}))\right]dk_{2,n}\\
    &=\int_{-\infty}^{\infty}g_{k_{2,n}}(k_{2,n},|f_n|)\delta(k_2-k_{2,n})dk_{2,n}=g_{k_{2,n}}(k_2,|f_n|),
    \end{aligned}\qquad (46)
 

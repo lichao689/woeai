@@ -39,6 +39,7 @@ from woeai.publications.registry import (  # noqa: E402
     merge_zotero_items,
     research_map as registry_research_map,
     save_registry,
+    validate_zotero_bibliography_audits,
     write_views,
 )
 
@@ -887,6 +888,8 @@ def write_outputs(args: argparse.Namespace) -> None:
     # preserve absent records, but that alone cannot keep an incomplete fetch
     # from truncating public pages and the snapshot. Fail before any write.
     validate_research_map(items, research_map)
+    if records is not None:
+        validate_zotero_bibliography_audits(records, items)
     merged_records = merge_zotero_items(records, items) if records is not None else None
     page = build_publications_rst(items, research_map)
     by_year_page = build_publications_by_year_rst(items)

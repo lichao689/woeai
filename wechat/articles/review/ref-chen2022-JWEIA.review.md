@@ -1,228 +1,91 @@
 ---
 publication_ref: ref-chen2022-JWEIA
-zotero_key: DD8PJ6PS
 doi: 10.1016/j.jweia.2022.105147
-research_family: 建筑结构抗风
-subdirection: 数值风洞与湍动入流
-publication_mode: first_publish
-wechat_status: ready_to_publish
-wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit4_Ck2xWeM7xecGd_nTuEQEmxtVuA3kOCpCq8eKwNdFf
-wechat_draft_created_at: 2026-06-17T18:15:47+08:00
-wechat_draft_updated_at: 2026-06-17T18:17:40+08:00
+wechat_status: awaiting_review
 wechat_author: Chen Lingwei
 source_checked: true
+facts_checked: true
 abstract_checked: true
+body_images_upload_approved: true
 copyright_checked: true
 public_safety_checked: true
 formula_preview_checked: false
 figure_preview_checked: false
 cover_image_checked: false
-body_images_upload_approved: true
-rtd_page_checked: true
-rtd_cover_image: wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png
 wechat_backend_preview_checked: false
+rtd_page_checked: false
+wechat_cover_image: wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png
+rtd_cover_image: wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png
 ---
 
-# ref-chen2022-JWEIA 发布说明
+# ref-chen2022-JWEIA 原文核验记录
 
-## 正文文件
+## 正文与公开素材
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-chen2022-JWEIA.md`
-- RTD 论文精解页: `docs/source/paper-notes/ref-chen2022-JWEIA.rst`
-- 预期 RTD 阅读原文: `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-chen2022-JWEIA.html`
-- 微信草稿作者字段: `Chen Lingwei`
+- RTD正文: `docs/source/paper-notes/ref-chen2022-JWEIA.rst`
+- 封面素材: `wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png`
+- 论文图 2 CIRFG 方法流程图: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig02-cirfg-flowchart.png`
+- 论文图 9 Y 方向空间相关系数对比: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig09-spatial-correlation-y.png`
+- 论文图 11 不同速度分量之间互相关系数对比: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig11-cross-correlation-components.png`
+- 论文图 17 X 方向湍流强度剖面发展: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig17-turbulence-intensity-x-development.png`
+- 论文图 20 建筑表面平均风压系数分布等值图: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig20-mean-pressure-contours.png`
 
-## RTD / 微信关系记录
+## 当前核验结果
 
-- RTD 页面类型: 独立全文论文精解，按已批准论文源文件整理，不由公众号正文派生。
-- 微信正文类型: 精简版公众号导读，面向移动端阅读。
-- RTD 顶部微信公众号文章链接: 当前待发布；RTD 页已预留“精简版微信公众号文章：待发布”。
-- 微信底部 `content_source_url`: 默认指向本论文 RTD 论文精解页。
-
-## 证据来源
-
-- DOI: https://doi.org/10.1016/j.jweia.2022.105147
-- Zotero: `DD8PJ6PS`
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-chen2022-JWEIA` as paper `[34]`.
-- 论文精解源: `docs/source/paper-notes/ref-chen2022-JWEIA.rst`
-- PDF / 作者稿: this WeChat pass used the already prepared RTD 论文精解 and public-safe extracted paper figures; it did not re-read a private local PDF.
+- 公众号: awaiting_review；当前稿件尚未完成后台手机预览
+- RTD全文覆盖: 未完成，缺项详见下文
+- 事实检查: 已核对所用事实；原文内部差异保留出处
 
 ## 源文件获取记录
 
-- Zotero key: `DD8PJ6PS`
-- Zotero 元数据: not re-queried in this pass; public metadata checked against `docs/source/Publications.rst` and the existing RTD 论文精解.
-- Zotero 附件记录: not re-queried in this pass.
-- 本地 PDF 附件: not re-opened in this pass; original RTD 论文精解 was prepared from approved source material.
-- PDF 附件候选: not audited in this pass.
-- PDF 选择优先级: author manuscript > publisher version of record > OA platform PDF > preprint > other.
-- 已选 PDF 类型: existing approved source material used for RTD 论文精解; exact attachment class not re-audited in this pass.
-- 低优先级选择原因: not applicable in this pass.
-- PDF 来源类型: existing approved paper source used for RTD 论文精解; no web PDF download was used in this pass.
-- PDF 私有存放: not recorded; no absolute private file path is recorded here.
-- Zotero Web API `/file`: not needed in this pass.
-- 网页 PDF 下载: not used.
-- 网页 PDF 批准记录: not applicable.
-- 摘要依据: existing RTD 论文精解 abstract, which records a faithful Chinese translation of the paper abstract.
-- 正文证据依据: existing RTD 论文精解, public WOEAI publication record, and public-safe extracted paper figures.
-- 图片依据: public-safe paper figure assets under `wechat/assets/public-safe/ref-chen2022-JWEIA/`, copied from the prepared paper-note asset set.
-- 私有信息边界: no absolute private file path, credential, cookie, raw API payload, raw downloaded PDF content, or private preview URL is recorded here.
+- DOI: https://doi.org/10.1016/j.jweia.2022.105147
+- 来源: 用户授权的期刊出版版PDF，身份与论文题名、作者及DOI核对一致
+- 文件页数: 24；以下PDF file page均为文件物理页码
+- 当前核验副本SHA-256: `78d8978e6af583567ab92d71d5e968c245c72e6e12052ea17470d2791ff61342`
 
 ## 关键事实证据定位记录
 
-- 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
-  - 证据位置: `docs/source/paper-notes/ref-chen2022-JWEIA.rst` section `摘要`; exact PDF page audit pending PDF page audit.
-- 核心结论: CIRFG 通过显式嵌入目标湍流特征处理空间相关性和速度分量互相关性，无需经验参数即可施加指定湍流特征。
-  - 证据位置: RTD 论文精解 sections `3 一致性改进随机流生成方法 CIRFG` and `6 结论`; exact PDF page audit pending PDF page audit.
-- 核心结论: CIRFG 保留满足任意平均风速、湍流强度、频率谱、时间相关性和 X 方向空间相关性的能力。
-  - 证据位置: RTD 论文精解 sections `3.1 方法目标`, `3.2 新入流湍流生成器的推导`, and `6 结论`; exact PDF page audit pending PDF page audit.
-- 核心结论: ABL 空域模拟显示平均速度剖面与目标值吻合，湍流强度在建筑位置附近保持较好，高频谱能量存在 LES 过滤衰减。
-  - 证据位置: RTD 论文精解 section `5.2.1 ABL 湍流特征对比`; original Figs. 16-18; exact PDF page audit pending PDF page audit.
-- 核心结论: 高层建筑绕流模拟中，平均风压系数总体与 TPU 数据库一致；风压标准差和基底力/力矩系数标准差整体低于风洞试验。
-  - 证据位置: RTD 论文精解 sections `5.3.1 平均与脉动风压` and `5.3.2 平均与脉动基底力和力矩`; original Figs. 20-24 and Tables 6-7; exact PDF page audit pending PDF page audit.
-- 核心结论: 平均 $C_D$ 与 $C_{Mx}$ 相对 TPU 试验的误差基本小于 5%；C5 工况基底力/力矩系数标准差整体误差均值为 `-8.69%`。
-  - 证据位置: RTD 论文精解 section `5.3.2 平均与脉动基底力和力矩`; original Tables 6-7; exact PDF page audit pending PDF page audit.
-- 核心边界: 合理速度分量互相关系数仍需要进一步研究，CIRFG 提供的是施加能力而不是自动确定工程目标值。
-  - 证据位置: RTD 论文精解 section `6 结论`; exact PDF page audit pending PDF page audit.
-- 关键图:
-  - Fig. 2 `Flowchart of CIRFG method`: used as article Figure 2; asset `wechat/assets/public-safe/ref-chen2022-JWEIA/fig02-cirfg-flowchart.png`; exact PDF page audit pending PDF page audit.
-  - Fig. 9 `Y-direction spatial correlation coefficient comparison`: used as article Figure 9; asset `wechat/assets/public-safe/ref-chen2022-JWEIA/fig09-spatial-correlation-y.png`; exact PDF page audit pending PDF page audit.
-  - Fig. 11 `Cross-correlation coefficient comparison between different velocity components`: used as article Figure 11; asset `wechat/assets/public-safe/ref-chen2022-JWEIA/fig11-cross-correlation-components.png`; exact PDF page audit pending PDF page audit.
-  - Fig. 17 `X-direction turbulence intensity profile development`: used as article Figure 17; asset `wechat/assets/public-safe/ref-chen2022-JWEIA/fig17-turbulence-intensity-x-development.png`; exact PDF page audit pending PDF page audit.
-  - Fig. 20 `Mean pressure coefficient contour distributions on building surfaces`: used as article Figure 20; asset `wechat/assets/public-safe/ref-chen2022-JWEIA/fig20-mean-pressure-contours.png`; exact PDF page audit pending PDF page audit.
-- 关键公式:
-  - 文章使用: Eq. (2), CIRFG synthesis form `u_i(\mathbf{x},t)=\sum_{n=1}^{N} p_{i,n}\sin(\mathbf{k}_n\cdot\mathbf{x}+2\pi f_n t+\varphi_n)`.
-  - 证据位置: RTD 论文精解 section `3.2 新入流湍流生成器的推导`; original Eq. (2); exact PDF page audit pending PDF page audit.
-  - 文章使用: Eq. (15), cross-correlation target relation `\rho_{ij,C}=\xi_{ij}\rho_{ij,C}^{\max}=\rho_{ij,T}`.
-  - 证据位置: RTD 论文精解 section `3.2.1 参数 r_{i,n} 的推导`; original Eq. (15); exact PDF page audit pending PDF page audit.
-  - 文章使用: Eq. (17), Taylor frozen hypothesis wave-number relation `k_{1,n}=-2\pi f_n/U_{\mathrm{avg}}`.
-  - 证据位置: RTD 论文精解 section `3.2.2 参数 k_{1,n} 的推导`; original Eq. (17); exact PDF page audit pending PDF page audit.
-- 页码口径: when exact page audit is completed, evidence locations should use PDF file page numbers, not journal printed page numbers or article pagination.
+- 身份与摘要：PDF file page 1；题名、七名作者、期刊、年份和 DOI 与公开论文条目及两渠道相符。
+- 方法目标：PDF file page 4 Section 3.1；互相关可解条件：PDF file page 5 Eq. (9)–(16)、Table 1。Eq. (15) 还依赖随机符号期望等于尺度因子及 N→∞。
+- 直接施加 u 分量 Y 向相关：PDF file page 6–7 Section 3.2.3、Eq. (23)–(30)；v/w 分量和 Z 向未独立显式施加的边界见 PDF file page 9–10 Section 4.2.2。
+- 均匀湍流无散度与非均匀 ABL 的近似：PDF file page 4、7–8，Sections 3.1、3.2.4。入口人工压力及 outflow/参考点条件见 PDF file page 14 Section 5.2.2。
+- 压力单位：PDF file page 14 文字“最大不超过 1”，对应 PDF file page 16 Fig. 19 的压力轴单位 Pa；不是动压 1%。近壁压力标准差最大值小于 2 Pa。
+- 荷载结果：PDF file page 19–21 Section 5.3、Tables 6–7；C2 平均 CD/CMx 误差约 6%；C5 阻力标准差误差 +7.38%；C5 五项带符号相对误差均值 −8.69%，不是平均绝对误差。
+- 微信图：Fig. 2 / PDF file page 7；Fig. 9 / PDF file page 10；Fig. 11 / PDF file page 11；Fig. 17 / PDF file page 15；Fig. 20 / PDF file page 17。
+- 微信公式：合成式 Eq. (2) / PDF file page 4；互相关 Eq. (15) 与 Taylor 波数 Eq. (17) / PDF file page 5。公式及限制直接对照 PDF，不以 RTD 译文代替证据。
 
-## 图片使用记录
+## 当前事实修正与完整度
 
-1. 图 2: CIRFG 方法流程图
-   - 用途: 开篇说明 CIRFG 的生成流程
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig02-cirfg-flowchart.png`
-   - 来源/版权: prepared paper figure asset for WOEAI/user-authored paper workflow
-   - 抽取方式: copied from prepared RTD paper-note asset set
-   - 公众号图名: 论文图 2 CIRFG 方法流程图
-   - 公众号说明: 展示 CIRFG 如何从目标统计特征推导参数并生成 LES 入口湍流速度场。
-   - 移动端预览: pending WeChat backend mobile preview
-2. 图 9: Y 方向空间相关系数对比
-   - 用途: 说明 CIRFG 对目标空间相关性的匹配能力
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig09-spatial-correlation-y.png`
-   - 来源/版权: prepared paper figure asset for WOEAI/user-authored paper workflow
-   - 抽取方式: copied from prepared RTD paper-note asset set
-   - 公众号图名: 论文图 9 Y 方向空间相关系数对比
-   - 公众号说明: 比较 CDRFG、NSRFG、CIRFG 与目标空间相关系数的贴合程度。
-   - 移动端预览: pending WeChat backend mobile preview
-3. 图 11: 不同速度分量之间互相关系数对比
-   - 用途: 说明 CIRFG 对分量互相关的控制能力
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig11-cross-correlation-components.png`
-   - 来源/版权: prepared paper figure asset for WOEAI/user-authored paper workflow
-   - 抽取方式: copied from prepared RTD paper-note asset set
-   - 公众号图名: 论文图 11 不同速度分量之间互相关系数对比
-   - 公众号说明: 对比目标互相关和三种方法生成结果，突出 CIRFG 的可控性。
-   - 移动端预览: pending WeChat backend mobile preview
-4. 图 17: X 方向湍流强度剖面发展
-   - 用途: 说明 ABL 入流在计算域内的自维持能力
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig17-turbulence-intensity-x-development.png`
-   - 来源/版权: prepared paper figure asset for WOEAI/user-authored paper workflow
-   - 抽取方式: copied from prepared RTD paper-note asset set
-   - 公众号图名: 论文图 17 X 方向湍流强度剖面发展
-   - 公众号说明: 展示入口、发展区和建筑位置附近湍流强度剖面的变化。
-   - 移动端预览: pending WeChat backend mobile preview
-5. 图 20: 建筑表面平均风压系数分布等值图
-   - 用途: 说明高层建筑绕流验证中的平均风压预测
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2022-JWEIA/fig20-mean-pressure-contours.png`
-   - 来源/版权: prepared paper figure asset for WOEAI/user-authored paper workflow
-   - 抽取方式: copied from prepared RTD paper-note asset set
-   - 公众号图名: 论文图 20 建筑表面平均风压系数分布等值图
-   - 公众号说明: 比较不同工况下建筑表面平均风压系数与 TPU 数据库的整体一致性。
-   - 移动端预览: pending WeChat backend mobile preview
+### 2026-10-05 当前全文审校与覆盖结论
 
-## 公式检查
+- 本日已完整阅读同一份 24 页原文；本轮重建重新计算 PDF 哈希、重新提取全部 24 页，并重新打开所有更正涉及的原始页核验当前改文。未复用旧交付文件的内容指纹。
+- RTD：`full_paper_coverage=false`。编号对象齐全，不能掩盖正文、符号表和附录说明仍被压缩的事实。
+- 微信：摘要、三个公式、五张选图、数字和适用条件已独立对照原文修正；后台显示/上传/发布未在本轮确认。
 
-- 使用公式: yes; three display equations and inline mathematical quantities
-- 呈现方式: Markdown LaTeX source; default WeChat API rendering is MathJax SVG with `data-formula` metadata
-- 微信公式渲染路线: `mathjax-svg` unless a fallback reason is recorded
-- RTD 呈现方式: existing RTD 论文精解 uses Sphinx math directives and roles
-- 行内变量/量纲: formula markup applied to `$u$`, `$v$`, `$w$`, `$p_{i,n}$`, `$k_{1,n}$`, `$k_{2,n}$`, `$k_{3,n}$`, `$U_{\mathrm{avg}}$`, `$C_D$`, `$C_{Mx}$`, `$-8.69\%$`
-- 移动端预览: pending WeChat backend mobile preview
+### 原文到 RTD 覆盖及剩余项
 
-## 导读与关键卡检查
+- PDF file page 1：论文身份、摘要、关键词、收稿/修回/录用/上线日期已对应；作者单位及通讯脚注仍未完整译入。已修正标题，明确为论文精解。
+- PDF file page 2：符号/缩写表只保留主要条目，缺 ci、Cj、概率密度、三维谱、网格无量纲量及若干缩写，不满足全文要求。
+- PDF file page 1、3–4 Sections 1–2：综述、谱定义、边界兼容性讨论及文内引用大量压缩。本轮把 Eq. (1) 移回 Section 2，补明原始 RFG/PRFG 的例外，但没有伪称已重译整段综述。
+- PDF file page 4–8 Section 3：各子节和 Eq. (2)–(36) 均存在；四步推导解释及 Eq. (15)、(20)、(26) 的中间展开仍被缩写。Table 1 可解性和 N→∞ 限制已补。
+- PDF file page 8–11 Section 4：基本、空间及分量互相关验证仍为概括；验证的 20 s、20000 步、0.001 s 等设置及逐分量解释未全部译入。
+- PDF file page 11–13 Section 5.1：本轮补网格尺寸/层数/首层厚度、y+、边界、压力参考点、求解器/格式、时间步/后处理及 C4/C5 目标不是实测标定值的说明。
+- PDF file page 13–21 Sections 5.2–5.3：主要结果在，但原文逐段分析仍有缩写。已纠正压力单位与表 7 的例外/误差统计口径。
+- PDF file page 21 Section 6：现为重组五点总结，未对应原文四个自然段的逐句翻译。
+- Fig. 1–24 全部存在。源页顺序：PDF file page 6（1）、7（2）、8（3–4）、9（5–7）、10（8–10）、11（11）、12（12）、13（13–14）、14（15–16）、15（17）、16（18–19）、17（20）、18（21）、19（22–23）、20（24）。部分分图标题、图中英文未完整中文转写。
+- Table 1–7 以图片存在。源页：PDF file page 5、8（2–3）、14（4–5）、19、20。表内完整中文译文仍缺，不把图片存在算作译文完成。
+- Eq. (1)–(39)、(A1)–(A8)、(B1)–(B3)、(C1)–(C9)、(D1)–(D6)，共 65 个编号均存在；中间推导仍有上述缺口。
+- 附录 A–D：PDF file page 21–23 的全部编号式已保留，但参数解释大幅压缩。
+- 参考文献：PDF file page 23–24 的 52 条都在；正文遗漏的引用链尚需恢复。
+- 封面紧跟微信短链接；附录在参考文献前；规定排除的出版声明尾节未混入；稳定锚点与完整引用保留。
 
-- 三句话导读:
-  - 研究对象/问题: LES 大气边界层入口湍流生成中的空间相关性和分量互相关性
-  - 重要性: 入口湍流空间结构会影响建筑绕流、表面风压和基底力矩预测
-  - 读者带走: 数值风洞入流不应只看谱和强度，还应显式控制空间相关与分量互相关
-- 与摘要/关键发现重复: no
-- 关键卡类型: 关键数字 / 关键结论
-- 关键数字证据: RTD 论文精解 sections `5.3.1`, `5.3.2`; exact PDF page audit pending
-- 无高价值关键数字时是否退化为关键结论卡: not applicable
+### 本轮重建的已核验更正与原文差异
 
-## 相关论文导航
+1. PDF file page 22 Eq. (C8)：把减法 `3.7β−0.3` 改回幂函数 `3.7β^{-0.3}`。
+2. PDF file page 14、16 Section 5.2.2/Fig. 19：将无证据的“动压 1%”改为 1 Pa，保留近壁标准差小于 2 Pa。
+3. PDF file page 4 Eq. (6) 原印 Si×Si，而 Eq. (7) 为 Si×Sj；PDF file page 5 Eq. (18) 第二行原排频率下标 n+t；PDF file page 22 Eq. (C5) 第二行重复 qx。现保留原排式并明确指出差异，不把理论推测当作作者勘误。PDF file page 7 Eq. (32) 原印末尾 Δf 仍保留。
+4. PDF file page 20 Table 7：C5 阻力标准差 +7.38% 是“全部低估”的例外；−8.69% 是五项带符号误差的均值。两个渠道均澄清。
+5. PDF file page 11 正文的 H/8、H/20、H/40、H/80 与 PDF file page 13 Fig. 14 的 H/10、H/25、H/50、H/100 不同，RTD 保留两处记录。PDF file page 8 Table 3 A3 起点 0.05、终点 1.6、间距 0.1、数量 16 不完全自洽，原表未擅改。
 
-- 公众号相关导航: omitted because no already-published related WeChat article links are added in this body.
-- RTD 相关导航: existing independent RTD paper-note page handles internal paper-note context.
-- `content_source_url`: default RTD 论文精解 URL.
-- 预期 RTD 阅读原文: `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-chen2022-JWEIA.html`
-
-## 封面图
-
-- 封面状态: selected candidate uploaded to WeChat draft; pending WeChat backend mobile preview.
-- 封面执行模式: `image-gen`
-- 候选数量: 3 image-gen-text directions generated in chat; user selected the second candidate.
-- 选中候选: `cover-wechat-900x383-imagegen-v2-selected`
-- 文字模式: exact embedded cover text in generated image
-- 生成工具: Codex image generation tool for selected candidate; bundled Python/Pillow resize only for final 900 x 383 export
-- 图像生成场景: LES 入流湍流、CIRFG 方法、数值风洞高层建筑风压验证
-- 要求文字: `数值风洞 / LES 入流新方法 / 谱与相关均匹配`
-- 出版信息行: `Journal of Wind Engineering and Industrial Aerodynamics · 2022`
-- 封面素材: `wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png`
-- 尺寸: `900 x 383 px`
-- 文件大小: `474202 bytes`
-- 本地裁剪预览: `wechat/.local/cover-previews/cover-wechat-900x383-imagegen-v2-selected.cover-preview.html`
-- 质量评分: article_specificity=5, main_subject_clarity=5, click_appeal=5, engineering_credibility=5, small_thumbnail_readability=5, crop_safety=5, text_quality=5
-- 候选取舍: 用户提供并确认三张 image-gen 候选中的第二张原图；最终封面由该图等比缩放到 900 x 383，不再使用本地重绘版本。
-- 审核状态: local visual text check and crop preview passed; WeChat backend mobile preview pending.
-- 注意: `cover_image_checked` remains `false` until the WeChat backend mobile preview is checked.
-
-## 公开安全
-
-- [x] No WeChat AppSecret, token, cookie, or credential appears.
-- [x] No Zotero API key appears.
-- [x] No private partner name appears.
-- [x] No unconfirmed project status appears in the reader-facing Markdown.
-- [x] Reader-facing Markdown has no YAML front matter, production notes, checklist, pending placeholders, or private paths.
-- [x] Reader-facing Markdown uses direct Markdown hyperlinks under `延伸阅读`; no separate `阅读原文` body section is included.
-- [x] Figure captions use a Chinese figure-title line translated from the original paper title plus a separate Chinese explanatory line.
-
-## 发布前任务
-
-- [x] 用现有 RTD 论文精解和公开论文条目核对作者、期刊、DOI、核心结论和图题。
-- [x] 用现有 RTD 论文精解核对中文摘要，并按规则不保留英文原摘要。
-- [x] 复用已导入的 public-safe 正文图。
-- [x] 确认 RTD 论文精解页已进入 `论文精解` 区域，并按二级科研方向归类。
-- [x] 确认微信草稿底部 `content_source_url` 默认指向本论文 RTD 论文精解页。
-- [ ] 补做或复核原 PDF file page 证据页码审计。
-- [x] 生成封面图并运行裁剪预览。
-- [ ] 公众号后台手机预览正文、公式、封面和图片。
-- [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
-
-## 检查记录
-
-- public-safety: passed (`python3 scripts/check-public-safe-content.py`)
-- wechat-draft-dry-run: passed (`python3 wechat/tools/wechat_draft.py dry-run --publication-ref ref-chen2022-JWEIA`)
-- publication-artifacts: passed (`python3 tools/publications/artifacts.py --check`)
-- whitespace: passed (`git diff --check`)
-- cover-preview: passed (`python .agents/skills/wechat-cover/scripts/cover_preview.py wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png --label "候选 B 原图缩放最终稿" --score article_specificity=5,main_subject_clarity=5,click_appeal=5,engineering_credibility=5,small_thumbnail_readability=5,crop_safety=5,text_quality=5`)
-- wechat-draft-create: passed (`python3 wechat/tools/wechat_draft.py create-draft --publication-ref ref-chen2022-JWEIA`)
-- wechat-draft-update: passed (`python3 wechat/tools/wechat_draft.py update-draft --publication-ref ref-chen2022-JWEIA`)
-- docs-check: not required for this cover-only pass; full docs gate already passed after the article/site changes.
+剩余工作是实质性的逐句补译、表格/图注翻译及引用恢复；构建通过也不能关闭这些缺口。

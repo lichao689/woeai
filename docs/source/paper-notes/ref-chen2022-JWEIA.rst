@@ -2,8 +2,8 @@
 
 .. role:: student-first-author
 
-数值风洞 | 把相关性写进入流湍流
-================================
+把相关性写进入流湍流：CIRFG 论文精解
+================================================
 
 精简版微信公众号文章：待发布
 
@@ -61,7 +61,7 @@
 - :math:`C_p`、:math:`C_D`、:math:`C_L`、:math:`C_{Mx}`、:math:`C_{My}`、:math:`C_{Mz}`：风压、基底阻力、基底升力与基底弯矩/扭矩系数。
 - **ABL**：Atmospheric Boundary Layer，大气边界层。
 - **CD**：Computational Domain，计算域。
-- **CDRFG**：Consistent Discrete Random Flow Generation，连续离散随机流生成方法。
+- **CDRFG**：Consistent Discrete Random Flow Generation，一致性离散随机流生成方法。
 - **CIRFG**：Consistency Improved Random Flow Generation，一致性改进随机流生成方法。
 - **CWE**：Computational Wind Engineering，计算风工程。
 - **DSRFG**：Discretizing and Synthesizing Random Flow Generation，离散合成随机流生成方法。
@@ -84,7 +84,12 @@
 
 原文首先将 ITG 方法归纳为三类：前驱数据库法、循环法、合成湍流法。前两类需要预先计算或储存大量湍流场，计算和存储成本高，对粗糙元分布及计算域形式也较敏感。合成湍流法由于算法简洁、计算效率高，在工程 LES 中应用最广。
 
-在合成随机 Fourier 方法中，WAWS 类方法难以满足无散度条件且不适用于并行算法；RFG 类方法从 Kraichnan 的均匀各向同性无散度随机场生成方法发展而来，随后出现了 DSRFG、MDSRFG、CDRFG、NSRFG、PRFG、CIRFG 前身方法等。原文认为，既有 RFG 类方法仍有两类突出不足：其一，空间相关性通常依赖经验调整参数，实际使用需要反复试算；其二，通常没有显式考虑不同速度分量之间的互相关性，而这可能影响 LES 模拟精度。
+在合成随机 Fourier 方法中，WAWS 类方法难以满足无散度条件且不适用于并行算法；RFG 类方法从 Kraichnan 的均匀各向同性无散度随机场生成方法发展而来，随后出现了 DSRFG、MDSRFG、CDRFG、NSRFG、PRFG、CIRFG 前身方法等。原文认为，既有 RFG 类方法仍有两类突出不足：其一，除 PRFG 和 PRFG³ 等方法外，空间相关性通常依赖经验调整参数，实际使用需要反复试算；其二，除原始 RFG 外，通常没有显式考虑不同速度分量之间的互相关性，而这可能影响 LES 模拟精度。
+
+2 既有 RFG 方法简要分析
+------------------------
+
+原文第 2 节对既有 RFG 类方法进行了对比分析，重点服务于后续 CIRFG 推导。文中指出，DSRFG 通过离散目标三维能谱并合成湍流来生成满足任意三维谱的湍流场；MDSRFG 在 DSRFG 基础上引入时间调整参数以改善时间相关性；CDRFG 和 NSRFG 则通过改变频率分布来满足任意时间谱，例如式 (1) 所示 von Karman 谱。
 
 论文选择 von Karman 一侧时间谱作为目标谱，写为式 (1)：
 
@@ -102,11 +107,6 @@
    \right.\qquad (1)
 
 其中，:math:`I_u,I_v,I_w` 为三个速度分量的湍流强度，:math:`L_u^x,L_v^x,L_w^x` 为 :math:`X` 方向湍流积分尺度。
-
-2 既有 RFG 方法简要分析
-------------------------
-
-原文第 2 节对既有 RFG 类方法进行了对比分析，重点服务于后续 CIRFG 推导。文中指出，DSRFG 通过离散目标三维能谱并合成湍流来生成满足任意三维谱的湍流场；MDSRFG 在 DSRFG 基础上引入时间调整参数以改善时间相关性；CDRFG 和 NSRFG 则通过改变频率分布来满足任意时间谱，例如式 (1) 所示 von Karman 谱。
 
 原文强调，CDRFG 的关键问题是计算量较大，因为每一步需要解非线性方程获得波数矩阵；NSRFG 通过更简洁的表达式提高了计算效率，并将空间相关性扩展到三个方向。但是，这些方法共同存在两个限制：空间相关性依赖经验参数；未显式考虑不同速度分量之间的互相关性。CIRFG 的目标即是在保留 NSRFG 高效率的同时，以显式嵌入目标湍流特征的方式改进这两点。
 
@@ -171,10 +171,12 @@ CIRFG 采用与 NSRFG 类似的简洁形式：
    R_{ij}^t(\tau)&=E\left[u_i(\mathbf{x},t)u_j(\mathbf{x},t+\tau)\right] \\
    &=\sum_{n=1}^N \left[\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
    \mathrm{sign}(r_{i,n})\mathrm{sign}(r_{j,n})g_{r_{i,n}}(r_{i,n})g_{r_{j,n}}(r_{j,n})dr_{i,n}dr_{j,n}\right] \\
-   &\quad\times\left[\int_0^{2\pi}\sqrt{S_i^t(f_n)S_j^t(f_n)}\Delta f\cos(2\pi f_n\tau)g_{\varphi_n}(\varphi_n)d\varphi_n\right] \\
+   &\quad\times\left[\int_0^{2\pi}\sqrt{S_i^t(f_n)S_i^t(f_n)}\Delta f\cos(2\pi f_n\tau)g_{\varphi_n}(\varphi_n)d\varphi_n\right] \\
    &=\sum_{n=1}^N E\left[\mathrm{sign}(r_{i,n})\mathrm{sign}(r_{j,n})\right]
-   \sqrt{S_i^t(f_n)S_j^t(f_n)}\Delta f\cos(2\pi f_n\tau).
+   \sqrt{S_i^t(f_n)S_i^t(f_n)}\Delta f\cos(2\pi f_n\tau).
    \end{aligned}\qquad (6)
+
+原文式 (6) 的两处谱乘积均印为 :math:`S_i^t(f_n)S_i^t(f_n)`，而紧随其后的式 (7) 使用 :math:`S_i^t(f_n)S_j^t(f_n)`。此处保留两式的原排式差异。
 
 计算得到的互相关系数为：
 
@@ -236,7 +238,7 @@ CIRFG 采用与 NSRFG 类似的简洁形式：
    =-1\times(d_i+d_j-2d_id_j)+1\times(1+2d_id_j-d_i-d_j)
    =1+4d_id_j-2d_i-2d_j.\qquad (14)
 
-当 :math:`N\to\infty` 时：
+假设 :math:`E[\mathrm{sign}(r_i)\mathrm{sign}(r_j)]=\xi_{ij}`，且 :math:`N\to\infty` 时：
 
 .. math::
 
@@ -260,6 +262,8 @@ CIRFG 采用与 NSRFG 类似的简洁形式：
 
    **表 1** 联立方程的解。
 
+表 1 给出式 (16) 的可解条件。目标分量互相关系数必须使 :math:`d_u,d_v,d_w\in[0,1]` 的联立方程有解；其他情形没有解，需要重新选择合理的目标互相关系数。因此，这里的“任意互相关”不意味着任意三元目标组合均可实现。
+
 3.2.2 参数 :math:`k_{1,n}` 的推导
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -276,9 +280,11 @@ CIRFG 采用与 NSRFG 类似的简洁形式：
    \begin{aligned}
    u_i(\mathbf{x},t-\tau)
    &=\sum_{n=1}^{N}p_{i,n}\sin\left[\mathbf{k}_n\cdot\mathbf{x}+2\pi f_n(t-\tau)+\varphi_n\right]\\
-   &=\sum_{n=1}^{N}p_{i,n}\sin\left[k_{1,n}(x_1+U_{avg}\tau)+k_{2,n}x_2+k_{3,n}x_3+2\pi f_nt+\varphi_n\right]\\
+   &=\sum_{n=1}^{N}p_{i,n}\sin\left[k_{1,n}(x_1+U_{avg}\tau)+k_{2,n}x_2+k_{3,n}x_3+2\pi f_{n+t}+\varphi_n\right]\\
    &=u_i(\mathbf{x}+U_{avg}\tau\mathbf{e}_1,t).
    \end{aligned}\qquad (18)
+
+原文式 (18) 第二行将频率项排为 :math:`2\pi f_{n+t}`，与第一行的时间依赖形式不同；此处按原排式保留该差异。
 
 于是：
 
@@ -562,7 +568,15 @@ CDRFG 生成的不同速度分量互相关系数接近 0；NSRFG 结果接近 1�
 
 论文进一步将 CIRFG 应用于高层建筑 LES。建筑为方形截面高层模型，宽度 :math:`B=0.1\,\mathrm{m}`，深度 :math:`D=0.1\,\mathrm{m}`，高度 :math:`H=0.4\,\mathrm{m}`，与 TPU 风洞试验保持 1/400 缩尺。风攻角为 :math:`0^\circ`，建筑高度处参考平均速度为 11 m/s，对应 Reynolds 数约 :math:`7.53\times 10^4`。计算域尺寸为 :math:`20H\times 10H\times 4H`，阻塞率为 0.13%。
 
-网格方面，计算域被划分为背景网格和三个局部加密区域。论文采用多面体网格以兼顾局部加密和总网格量控制，并设置两组网格方案验证无关性。G1 约 332 万单元，G2 约 496 万单元；用于空域 ABL 流验证时，去除建筑后约 242 万单元。
+计算域被划分为背景网格和三个局部加密区域。原文第 5.1 节给出的网格尺寸依次为 :math:`H/8`、:math:`H/20`、:math:`H/40` 和 :math:`H/80`，建筑表面固定网格尺寸为 :math:`H/200`。Fluent Meshing 用于生成计算域主体的多面体网格，以兼顾建筑周围局部加密和总网格量。采用 last-ratio 方法在地面及建筑表面附近添加 5 层棱柱网格，首层厚度分别为 :math:`B/200` 和 :math:`B/2000`，末层纵横比设为 10%。两种方案的表面网格增长率分别为 1.2 和 1.05，通过 size-field 方法生成约 332 万单元的 G1 和约 496 万单元的 G2。与 G1 对应的空域计算去除建筑及 Zone 4，生成约 242 万单元，用于验证 ABL 流场自维持性；G1 示意见图 15。
+
+建筑壁面的平均 :math:`y^+_{1st}` 约为 0.64，最大值小于 5，约 0.4% 的建筑表面网格的 :math:`y^+_{1st}` 大于 2。流向和横向平均分辨率 :math:`\Delta x^+`、:math:`\Delta z^+` 均约为 50.7，近似满足 Piomelli and Chasnov (1996) 的要求。地面平均 :math:`y^+_{1st}` 约为 3.14，最大值小于 15，平均 :math:`\Delta x^+` 和 :math:`\Delta z^+` 约为 125.7。为平衡计算资源与精度，地面分辨率未严格满足壁面解析 LES 的限制；原文认为其对高层建筑绕流精度的影响可能较小。
+
+表 4 给出边界条件。入口施加平均速度剖面及满足表 2 目标特征的脉动速度，出口采用 outflow，顶部及侧面采用 symmetry，地面及建筑表面采用无滑移壁面。为减小非物理压力脉动对建筑表面风压的影响，在建筑上方 :math:`(5H,0,3H)` 处设置压力参考点。
+
+模拟使用 ANSYS FLUENT 2019 R2。LES 亚格子应力采用 WALE 模型（Nicoud and Ducros, 1999），压力—速度耦合采用 PISO（Issa, 1986）。压力离散采用二阶格式，动量离散采用有界中心差分，时间离散采用有界二阶隐式格式。为满足 CFL 条件，时间步长设为 :math:`0.0005\,\mathrm{s}`，共求解 18000 步，即 :math:`9\,\mathrm{s}`；取最后 :math:`8\,\mathrm{s}` 进行后处理，以减小初始湍流发展不足的影响。
+
+表 5 列出六个建筑绕流工况。C1、C2 用于不同方法的比较，C6 与 C3 比较以检查网格无关性。TPU 数据库未提供速度分量的目标互相关系数，C4、C5 中的系数仅用于考察其对 LES 的影响，并非实验标定值。建筑绕流之前还分别进行与 C1、C2、C3 对应的空域 ABL 模拟，除网格外采用相同数值设置。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-chen2022-JWEIA/fig13-computational-domain-bc.png
    :alt: 图13 计算域和边界条件示意图
@@ -577,6 +591,8 @@ CDRFG 生成的不同速度分量互相关系数接近 0；NSRFG 结果接近 1�
    :width: 85%
 
    **图 14** 不同网格区域的计算网格尺寸。
+
+原文此图标注的 Zone 1--4 尺寸为 :math:`H/10`、:math:`H/25`、:math:`H/50`、:math:`H/100`，与第 5.1 节正文的 :math:`H/8`、:math:`H/20`、:math:`H/40`、:math:`H/80` 不同。这里保留两处记录，不代替原文选定一组值。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-chen2022-JWEIA/fig15-g1-schematic.png
    :alt: 图15 G1网格示意图
@@ -631,7 +647,7 @@ CDRFG 生成的不同速度分量互相关系数接近 0；NSRFG 结果接近 1�
 5.2.2 流场压力分析
 ^^^^^^^^^^^^^^^^^^
 
-论文进一步比较了与速度监测点相同位置处的压力均值和标准差。所有模拟工况的平均压力很小，最大值不超过建筑位置处速度压力的 1%。在入口附近，各工况均出现非物理压力波动，主要原因是 RFG 类方法生成的非均匀湍流场与 Navier--Stokes 方程和计算域边界条件不完全相容。论文同时指出，采用 outflow 出口边界并设置合适的压力参考点，可使建筑位置附近的压力波动接近 0，因此当前设置对 CWE 应用是合理的；但若采用 pressure-outlet 边界，则需要类似 VBIC 的修正方法，否则非物理压力波动可能污染建筑表面压力测量。
+论文进一步比较了与速度监测点相同位置处的压力均值和标准差。所有模拟工况的平均压力较小，在未来建筑位置处的最大值不超过 :math:`1\,\mathrm{Pa}`。在入口附近，各工况均出现非物理压力波动，主要原因是 RFG 类方法生成的非均匀湍流场与 Navier--Stokes 方程和计算域边界条件不完全相容。论文同时指出，采用 outflow 出口边界并设置合适的压力参考点，可使未来建筑位置 :math:`X/H_{ref}=5` 附近的压力波动接近 0，近壁最大值小于 :math:`2\,\mathrm{Pa}`，因此当前设置对 CWE 应用是合理的；但若采用 pressure-outlet 边界，则需要类似 VBIC 的修正方法，否则非物理压力波动可能污染建筑表面压力测量。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-chen2022-JWEIA/fig19-pressure-profiles-x.png
    :alt: 图19 X方向压力均值和标准差剖面对比
@@ -695,7 +711,7 @@ CDRFG 生成的不同速度分量互相关系数接近 0；NSRFG 结果接近 1�
 
 平均系数方面，:math:`C_D` 与 :math:`C_{Mx}` 相对于 TPU 试验的误差基本小于 5%，NSRFG 工况 C2 接近 6%。由于来流攻角为 :math:`0^\circ` 且模型对称，理论上 :math:`C_L`、:math:`C_{My}`、:math:`C_{Mz}` 均应为 0，故原文未计算其相对误差。
 
-标准差方面，各基底力/力矩系数均小于风洞试验值，这仍主要与 LES 湍流能量过滤有关。文中以各项相对误差均值衡量整体表现，C1--C6 分别为 :math:`-13.45\%`、:math:`-24.48\%`、:math:`-12.54\%`、:math:`-14.67\%`、:math:`-8.69\%`、:math:`-11.99\%`。C5 的整体误差最小，表明合适的速度分量互相关性可能是影响 LES 准确性的重要因素。总基底力/力矩系数谱方面，各 LES 工况与 TPU 数据库总体吻合。
+标准差方面，原文将总体偏低主要归因于 LES 湍流能量过滤。但表 7 存在例外：C5 的阻力系数标准差为 0.2816，高于试验的 0.2623，相对误差为 :math:`+7.38\%`；因此，原文正文“均小于”的概括不能替代表中逐项结果。文中以各项相对误差均值衡量整体表现，C1--C6 分别为 :math:`-13.45\%`、:math:`-24.48\%`、:math:`-12.54\%`、:math:`-14.67\%`、:math:`-8.69\%`、:math:`-11.99\%`。这些是带正负号的相对误差均值，C5 的均值绝对值最小，不能将 :math:`-8.69\%` 当作平均绝对误差。原文据此认为合适的速度分量互相关性可能是影响 LES 准确性的重要因素。总基底力/力矩系数谱方面，各 LES 工况与 TPU 数据库总体吻合。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-chen2022-JWEIA/fig23-base-forces-moments.png
    :alt: 图23 基底力和力矩示意图
@@ -820,7 +836,7 @@ CDRFG 方法（Aboshosha et al., 2015; Melaku et al., 2017）用于生成满足�
 
    \begin{bmatrix}
    p_x^{m,n} & p_y^{m,n} & p_z^{m,n}\\
-   q_x^{m,n} & q_y^{m,n} & q_z^{m,n}\\
+   q_x^{m,n} & q_x^{m,n} & q_x^{m,n}\\
    k_x^{m,n} & k_y^{m,n} & k_z^{m,n}
    \end{bmatrix}
    \begin{bmatrix}
@@ -828,6 +844,8 @@ CDRFG 方法（Aboshosha et al., 2015; Melaku et al., 2017）用于生成满足�
    \end{bmatrix}
    =
    \begin{bmatrix}0\\0\\1\end{bmatrix}.\qquad (C5)
+
+原文式 (C5) 第二行三项均排为 :math:`q_x^{m,n}`；这与通常按三个方向列出的写法有差异，此处保留原式，不代替原文作勘误。
 
 .. math::
 
@@ -840,7 +858,7 @@ CDRFG 方法（Aboshosha et al., 2015; Melaku et al., 2017）用于生成满足�
 .. math::
 
    \gamma=\begin{cases}
-   3.7\beta-0.3, & \beta<6.0,\\
+   3.7\beta^{-0.3}, & \beta<6.0,\\
    2.1, & \beta\ge 6.0.
    \end{cases}\qquad (C8)
 

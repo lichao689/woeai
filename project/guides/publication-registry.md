@@ -41,15 +41,23 @@ RTD `kind` 单独区分 `legacy_intro`、`full_paper`、`unregistered`。
 58 篇未登记。17 篇旧 `ready_to_publish` 只按历史 API 草稿记录登记为 `draft_created`，
 没有确认手机预览或发布 URL；9 组 backlog/review 时间冲突原样记录在 `conflicts`，待核对。
 
+以上为迁移日历史基线，并非永久状态。本轮17篇、371页来源审校见
+[审校记录](../research/2026-10-05-existing-paper-source-audit.md)。只有Chen2024-POF达到RTD完整覆盖；
+其余缺口保留。公众号当前改稿回到`awaiting_review`，不继承旧版本上传/预览状态。
+
 Review 文件提供事实证据，不能以其中的旧 front matter 状态覆盖清单。
 历史记录保存在 `legacy_backlog` / `historical_draft_evidence`，不视为当前版本核验。
 确认冲突时保留原始双方值并补充解决依据，不静默删除或覆盖。
 
 核验完成时记录：
 
-1. `custom.source.status = verified` 和原批准论文的 `sha256`（不存 PDF 私有路径）
+1. `custom.source.status = verified` 和实际核验的获授权论文副本 `sha256`（不存 PDF 私有路径）
 2. 渠道 `evidence.verified` 的 `recorded_at`、公开安全的 `review_path`、逐项 `checks`
 3. `workflow_fingerprint(record, channel, root)` 输出的 `fingerprint`
+
+`sha256_scope=current_audited_copy`标明当前审查字节，另存`historical_original_sha256`及匹配情况；
+不同副本不宣称原始字节等价。`source_audit`记录阅读页数与视觉范围。未完成渠道可以在
+`awaiting_audit`/`awaiting_review`记录当前阶段指纹，但不会升级为完整验收；未做手机预览不填通过。
 
 RTD 必须有 `source_identity`、`full_paper_coverage`、`public_safety` 全为 true。
 微信必须有 `source_identity`、`facts`、`public_safety`、`formula_preview`、`figure_preview`、
@@ -61,6 +69,10 @@ RTD 必须有 `source_identity`、`full_paper_coverage`、`public_safety` 全为
 旧证据保留但不再生效，检查失败且进度页标出失效；重核验，或把当前状态退回待核验/待审核。
 Zotero 更新可保留旧核验记录，不能把旧证据自动刷新为当前。
 `published` 还须有 `https://mp.weixin.qq.com/s...` 公开链接；草稿上传成功不是发布。
+
+源文通讯作者纠正保存在`custom.bibliography_audit`，包含旧值、支持值和页码证据。
+Zotero更新器在清单/页面/快照写入前核对；缺失或冲突的作者/标记会停止刷新。
+它不修改远端Zotero，也不静默替换入站元数据，须先核对上游再继续。
 
 ## 微信后台操作边界
 
@@ -114,3 +126,9 @@ Issue 放 DOI / Zotero key / publication_ref、正文和 review 路径、当前�
 Sphinx 构建只在看板页加载专用 CSS / JavaScript，并自动附加内容哈希；
 数据 URL 也带生成 JSON 的内容哈希。清单、样式或脚本更新后，新的页面引用新的
 缓存版本，避免部署成功但浏览器继续使用旧资产。不要改回未版本化的原始 script/link 标签。
+
+## Public review records and synchronization identities
+
+Public article reviews retain DOI, source-page evidence, source hashes, current accuracy and coverage results, and public body/asset links. Internal bibliography identifiers, historical backend timestamps and private preview locators belong in ignored private production records. Current review status must not inherit historical draft readiness.
+
+The existing registry and compatibility data still use bibliographic synchronization identities. Review minimization does not change the registry schema, upstream matching, or historical snapshots. A future private identity-map adapter keyed by stable publication_ref requires a separate explicit migration with matching/uniqueness tests; do not delete identifiers ad hoc or claim repository-wide identity removal.

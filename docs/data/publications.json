@@ -44,7 +44,16 @@
         "metrics": "影响因子: 7.6 (Q1). 中科院分区: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "103c778b7a10e8a4320a74d2db9b0259dec7a072fe6419c27a52338010410b73",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "103c778b7a10e8a4320a74d2db9b0259dec7a072fe6419c27a52338010410b73",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 17,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -53,15 +62,40 @@
         "public_title": "数值风洞 | 如何把卫星影像转成 CFD 可用城市几何",
         "order": 1,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "70626ed1bb68f2f73430d237d221a22660a51c318019a7c75d911d9aab959862"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2026-BE.md",
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "766e484b765699558c7981b21c0fe4217a0a564c6be6f79638e99cfe42466ed7"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 1,
         "legacy_backlog": {
@@ -96,7 +130,17 @@
             "review_source": "wechat/articles/review/ref-zhao2026-BE.review.md",
             "resolution": "unresolved"
           }
-        ]
+        ],
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 17,
+        "source_page_count": 17,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.buildenv.2026.114811"
@@ -145,7 +189,16 @@
         "metrics": "中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "b662589b7176e79eef12617c493413cbfd2cbc23e4000e5c01408a494a97535b",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "cc086ee04517edafccf93ba9ae92fa1528172bef203246a8f5cb9080d37a11c5",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_established",
+        "pages": 16,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-he2026-OE.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -154,15 +207,40 @@
         "public_title": "结构抗风 | 用内置矩形立柱提升液舱阻尼器设计效率",
         "order": 2,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "062a95bf035bc204125111e03fabb8d5907dba2af8d6bcbbc3536538d02eec1a"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-he2026-OE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2026-OE.md",
         "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "1fdaa44e3595d4008c9288135b798c46eaf3aa4d6ccfab5ad13c7766c35ccfa5"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 2,
         "legacy_backlog": {
@@ -197,7 +275,17 @@
             "review_source": "wechat/articles/review/ref-he2026-OE.review.md",
             "resolution": "unresolved"
           }
-        ]
+        ],
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 16,
+        "source_page_count": 16,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.oceaneng.2026.124728"
@@ -249,7 +337,16 @@
         "metrics": "影响因子: 5.9 (Q1). 中科院分区: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "8d71e47664aa4cae4cac628a49aa72cd4f89648143db298eb617db2d95e6501a",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "8d71e47664aa4cae4cac628a49aa72cd4f89648143db298eb617db2d95e6501a",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 25,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -258,15 +355,40 @@
         "public_title": "数值风洞 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测",
         "order": 0,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "8e90a292452b7375cc07ba4cb9434500d1a495ef05dd6b7ed559d3d7a18b15a0"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2026-BS.md",
         "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "3f4052086c1d7c14780c814df6bdf063be7ca74ff7743e61317f00bec323dc4c"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 0,
         "legacy_backlog": {
@@ -301,7 +423,17 @@
             "review_source": "wechat/articles/review/ref-zhao2026-BS.review.md",
             "resolution": "unresolved"
           }
-        ]
+        ],
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 25,
+        "source_page_count": 25,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1007/s12273-025-1379-7"
@@ -420,7 +552,16 @@
         "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "22e9741d76a825d7730bc8da3656b70b980988693e4f04d995cf40b304c79bca",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "22e9741d76a825d7730bc8da3656b70b980988693e4f04d995cf40b304c79bca",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 25,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -429,15 +570,40 @@
         "public_title": "漂浮风电 | 用钢筋混凝土优化半潜式风机平台",
         "order": 11,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "5be5ece417948665a483246fa0bbe4c33b4a83e1ad5556caa143d761c6aae65e"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2026-OE-structural.md",
         "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": false
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload. Strength-assessment and figure/text inconsistencies require source clarification.",
+            "fingerprint": "996eaa624b8dfb9cb5a0b55041b36729236af3fb7d40be1f56cbe838fe92090e"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 11,
         "legacy_backlog": {
@@ -463,7 +629,17 @@
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
-        }
+        },
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 25,
+        "source_page_count": 25,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.oceaneng.2025.123951"
@@ -513,7 +689,16 @@
         "metrics": "影响因子: 9.1 (Q1). 中科院分区: 1. 引用次数: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "74fafba653edad10e497c9cc029394655ea3dd5c2b3bb9157ee016739e8f4780",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "74fafba653edad10e497c9cc029394655ea3dd5c2b3bb9157ee016739e8f4780",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 24,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-tang2026-RE.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -522,15 +707,40 @@
         "public_title": "数值风洞 | 如何高效重建城市风能中的高时间分辨率风场",
         "order": 3,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "59753dc3593e1962da6773861d3ded4fe31ebc59c7be86d7ad12e9d2ed96763d"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-tang2026-RE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-tang2026-RE.md",
         "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "63bdbf5ea4230366e9c15f7ce307c0668c83d43ff6b11f99f3d8ccb3515674f4"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 3,
         "legacy_backlog": {
@@ -556,7 +766,17 @@
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
-        }
+        },
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 24,
+        "source_page_count": 24,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.renene.2025.124336"
@@ -674,7 +894,16 @@
         "metrics": "中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "46bbc70638422f7f8bed76447cf18b1533af9bc82c62475d38bac8664b17bca1",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "76897514c580f6d489944264a7edf76c66604a83e41036f4388230a814084a80",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_established",
+        "pages": 19,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-he2025-POF.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -683,15 +912,40 @@
         "public_title": "结构抗风 | 让高层建筑 TLD 在非线性晃荡中更会耗能",
         "order": 10,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "2c7e85bd129e4334cff1974aef7ac3099eb4932458da32f14be1063d0977e5ad"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-he2025-POF.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2025-POF.md",
         "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "3ea34ac11de9bafb07f860287f0f25ed90483849e39e3c06aec9544667b02564"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 10,
         "legacy_backlog": {
@@ -726,7 +980,17 @@
             "review_source": "wechat/articles/review/ref-he2025-POF.review.md",
             "resolution": "unresolved"
           }
-        ]
+        ],
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 19,
+        "source_page_count": 19,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1063/5.0293483"
@@ -777,7 +1041,16 @@
         "metrics": "影响因子: 7.4 (Q1). 中科院分区: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "9c68cfe79bddd2b50839d9251df3e18579a0f20edbe6ad8738a1ed252e27f26c",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "9c68cfe79bddd2b50839d9251df3e18579a0f20edbe6ad8738a1ed252e27f26c",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 24,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -786,15 +1059,40 @@
         "public_title": "结构抗风 | 别只看单方向峰值：高层建筑二维矢量响应极值怎么算",
         "order": 9,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "b04e5e7b02b681e3dbac3dde83f809025f5b075faa5ba1bb3c9c7e23caf9a64c"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-yang2025-JBE.md",
         "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "b5e9c19a0a1764fb3ce7ac280e4baa65d56696b7de057b8293aebd1315ca143e"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 9,
         "legacy_backlog": {
@@ -820,7 +1118,17 @@
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
-        }
+        },
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 24,
+        "source_page_count": 24,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.jobe.2025.113635"
@@ -939,7 +1247,16 @@
         "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2. 引用次数: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "597a79ff7b94eec72871358e5562a1aed9187085af80793c88338eb2bb7644dd",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "597a79ff7b94eec72871358e5562a1aed9187085af80793c88338eb2bb7644dd",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 20,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -948,15 +1265,40 @@
         "public_title": "漂浮风电 | 为半潜式风机找到可信的等效静力波浪荷载",
         "order": 12,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "ba06ab63ec3933988216fe3be29fa4f65fc5b90dcd8311d16f689998ccb04602"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zheng2025-OE.md",
         "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "707fc1bce77fcd6050a8e2c57feb2366f0d17b32f0d8c97796b86c7e3e41eba8"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 12,
         "legacy_backlog": {
@@ -991,7 +1333,17 @@
             "review_source": "wechat/articles/review/ref-zheng2025-OE.review.md",
             "resolution": "unresolved"
           }
-        ]
+        ],
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 20,
+        "source_page_count": 20,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.oceaneng.2025.121336"
@@ -1110,7 +1462,16 @@
         "metrics": "影响因子: 7.4 (Q1). 中科院分区: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "6707673bdeab318e494bd2055506c6053e0196e921baba73e988ff0ed252ec10",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "6707673bdeab318e494bd2055506c6053e0196e921baba73e988ff0ed252ec10",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 19,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -1119,15 +1480,40 @@
         "public_title": "结构抗风 | 用图神经网络预测高层建筑结构响应",
         "order": 8,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "fd5c7cca63a3f0e3db2443d5697e4b446613e66458374d9e8b816a1eecc61ca8"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-tang2025-JBE.md",
         "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "b67f914386d63a10360c51ad4b8b2b1dd9922ab30157d5d82797f825dfd151e8"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 8,
         "legacy_backlog": {
@@ -1153,7 +1539,17 @@
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
-        }
+        },
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 19,
+        "source_page_count": 19,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.jobe.2025.112131"
@@ -1339,7 +1735,16 @@
         "metrics": "影响因子: 12.0 (Q1). 中科院分区: 1. 引用次数: 6."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "c1dceebf21a54b93e7595851052191a2198f508bb4d0a55e1dc8eccb36765b08",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "c1dceebf21a54b93e7595851052191a2198f508bb4d0a55e1dc8eccb36765b08",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 24,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -1348,15 +1753,40 @@
         "public_title": "数值风洞 | 用 3D Gaussian Splatting 重建城市建筑几何",
         "order": 4,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "7101303ebe934dae7efae2f1b3cf4c8465187216823c78852cdc0d34876be182"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2025-SCS.md",
         "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "2986b588bfae16fce788eeb4c6d7496ca484bc531817365de0653ed4e5578147"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 4,
         "legacy_backlog": {
@@ -1382,7 +1812,32 @@
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
-        }
+        },
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 24,
+        "source_page_count": 24,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
+      },
+      "bibliography_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "field": "corresponding_authors",
+        "historical_value": [
+          "Li Chao"
+        ],
+        "source_supported_value": [
+          "Wang Xiaolu"
+        ],
+        "evidence_locator": "PDF file page 1, corresponding-author superscripts and footnote",
+        "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
+        "public_citations_corrected": true,
+        "upstream_zotero_modified": false,
+        "upstream_followup_required": true
       }
     },
     "DOI": "10.1016/j.scs.2025.106237"
@@ -1499,24 +1954,58 @@
         "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "9dcb3b944803d7a71a181f9b1a7fa6f44cd9a2394330ff49162c1e1b4ad85b8a",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "9dcb3b944803d7a71a181f9b1a7fa6f44cd9a2394330ff49162c1e1b4ad85b8a",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 24,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-chen2024-POF.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
+        "status": "verified",
         "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-chen2024-POF.rst",
         "public_title": "数值风洞 | LES 高层建筑风荷载评估中人工压力脉动抑制方法对比",
         "order": 16,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "verified": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": true
+            },
+            "scope": "Full source-content coverage independently reviewed on current bytes.",
+            "fingerprint": "5c6265ff51878c9c5e9af289553d03858c66e2652d10d57c4b8fc55d53500e3d"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-chen2024-POF.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2024-POF.md",
         "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "3a4df3fac5845fff7c716b5048cbb05be8b22e9fdd0f4bba874c1a8dcef77e29"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 16,
         "legacy_backlog": {
@@ -1538,7 +2027,17 @@
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
-        }
+        },
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 24,
+        "source_page_count": 24,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1063/5.0240163"
@@ -1724,7 +2223,16 @@
         "metrics": "影响因子: 6.4 (Q1). 中科院分区: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "784571951eef0b9c0106c9a519fc8356e400b5aafa4f7d9ea57342e8c2ba4405",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "784571951eef0b9c0106c9a519fc8356e400b5aafa4f7d9ea57342e8c2ba4405",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 22,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-wang2024-ES.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -1733,15 +2241,40 @@
         "public_title": "数值风洞 | 让 LES 入流按目标风场自动收敛",
         "order": 7,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "212fa88e8f52488122c508c16b8e0bee3d7aa750a8eb270f72f48da69510e6db"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-wang2024-ES.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-wang2024-ES.md",
         "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "72e62bd8eb40ffd2afe54923b2fba15ab6afe0a1d5a9662605d61e6d19b29465"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 7,
         "legacy_backlog": {
@@ -1776,7 +2309,33 @@
             "review_source": "wechat/articles/review/ref-wang2024-ES.review.md",
             "resolution": "unresolved"
           }
-        ]
+        ],
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 22,
+        "source_page_count": 22,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
+      },
+      "bibliography_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "field": "corresponding_authors",
+        "historical_value": [
+          "Li Chao"
+        ],
+        "source_supported_value": [
+          "Li Chao",
+          "Zhou Shengtao"
+        ],
+        "evidence_locator": "PDF file page 1, corresponding-author superscripts and footnote",
+        "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
+        "public_citations_corrected": true,
+        "upstream_zotero_modified": false,
+        "upstream_followup_required": true
       }
     },
     "DOI": "10.1016/j.engstruct.2024.118742"
@@ -2032,7 +2591,16 @@
         "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "855a45aad06339d34c5f411f2a075eb1b8bf1acc903dccfb695ca273bdbe05c3",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "3b78e2e6ae2a6d1131a8706203887c42e868559352b2ed009e6ac8b847fd19fc",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_established",
+        "pages": 15,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-li2024-POF.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -2041,15 +2609,40 @@
         "public_title": "数值风洞 | 用矢量势随机流生成无散湍流",
         "order": 5,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "cb24418a243df754f845f25bb9423920df22396996d7dbd10956007a0fc8fee4"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-li2024-POF.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2024-POF.md",
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "ef4624570ea8654a2209a682b7f382a88ca8195fda2507e10c7964d10c03f03d"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 5,
         "legacy_backlog": {
@@ -2075,7 +2668,17 @@
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
-        }
+        },
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 15,
+        "source_page_count": 15,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1063/5.0194006"
@@ -2124,7 +2727,16 @@
         "metrics": "影响因子: 3.8 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "60ab26625848c6c428b15f221a4f2a3a647ad34bc29c1aaea3e00ad777e16693",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "60ab26625848c6c428b15f221a4f2a3a647ad34bc29c1aaea3e00ad777e16693",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 31,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -2133,15 +2745,40 @@
         "public_title": "数值风洞 | 让 LES 入流湍流更连贯也更守恒",
         "order": 6,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "0eb774a8743461a7d03e2e971423df7a9deea347b0a053d68307b0b2697b2bae"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2024-JCP.md",
         "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "afb282c9189635422d6f91799a80ff11e1d9f29e68178dc1012effaf8b7a9911"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 6,
         "legacy_backlog": {
@@ -2176,7 +2813,17 @@
             "review_source": "wechat/articles/review/ref-chen2024-JCP.review.md",
             "resolution": "unresolved"
           }
-        ]
+        ],
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 31,
+        "source_page_count": 31,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.jcp.2023.112706"
@@ -2295,7 +2942,16 @@
         "metrics": "影响因子: 11.0 (Q1). 中科院分区: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "0339a5a26859683341f52de5ecc0c5fd517ab94e38840866dc5885ccf0420b8f",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "0339a5a26859683341f52de5ecc0c5fd517ab94e38840866dc5885ccf0420b8f",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 20,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -2304,15 +2960,40 @@
         "public_title": "漂浮风电 | 用长期动力优化选择浮式风机下部结构",
         "order": 13,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "2528aebf168d4e84b6144f1e89044d4692c39d3b647f33ebc6e17228c8c26a32"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhou2023-AE.md",
         "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "8c590c3d4a77d3192140ddf5d7a7a2f1194bf7e396888b7a4137dbbdae551d43"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 13,
         "legacy_backlog": {
@@ -2347,7 +3028,17 @@
             "review_source": "wechat/articles/review/ref-zhou2023-AE.review.md",
             "resolution": "unresolved"
           }
-        ]
+        ],
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 20,
+        "source_page_count": 20,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.apenergy.2023.121941"
@@ -3274,7 +3965,16 @@
         "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "78d8978e6af583567ab92d71d5e968c245c72e6e12052ea17470d2791ff61342",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "78d8978e6af583567ab92d71d5e968c245c72e6e12052ea17470d2791ff61342",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 24,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -3283,15 +3983,40 @@
         "public_title": "数值风洞 | 把相关性写进入流湍流",
         "order": 14,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "1bcd144dc058ab35cfc0ee3f5f8e295387edb8449f5b251b3dbd9f98e2d139b1"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2022-JWEIA.md",
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "45a3a646af2467ff2748ab19b1a41395f5ede9ec32883e92fe917b14887e799a"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 14,
         "legacy_backlog": {
@@ -3317,7 +4042,17 @@
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
-        }
+        },
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 24,
+        "source_page_count": 24,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1016/j.jweia.2022.105147"
@@ -3369,7 +4104,16 @@
         "metrics": "影响因子: 1.8 (Q2). 中科院分区: 3."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "a93b07709c4acebdd38215a10076c71a45fb323cad7c6c13dcc017d7ce617700",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "a308ab9c5342271ddd3924aff56056398d9154b97543b03aac2cb39a6518460f",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_established",
+        "pages": 22,
+        "identity_checked_at": "2026-10-05T15:57:17+00:00",
+        "review_path": "wechat/articles/review/ref-li2022-SOS.review.md"
       },
       "rtd": {
         "status": "awaiting_audit",
@@ -3378,15 +4122,40 @@
         "public_title": "漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变",
         "order": 15,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "full_paper_coverage": false
+            },
+            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
+            "fingerprint": "609119ff98fc3024c2ab10c0e802e00700dd9bab08be7456b121f8cc0b512a5e"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-li2022-SOS.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2022-SOS.md",
         "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
         "issues": [],
-        "evidence": {},
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true
+            },
+            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
+            "fingerprint": "c55b09ef2af8dcd7c15bdcfa1653ab4a863cd7c6087f93c374466ef00d05bfc2"
+          }
+        },
         "latest_published_url": "",
         "selection_order": 15,
         "legacy_backlog": {
@@ -3421,7 +4190,17 @@
             "review_source": "wechat/articles/review/ref-li2022-SOS.review.md",
             "resolution": "unresolved"
           }
-        ]
+        ],
+        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+      },
+      "source_audit": {
+        "recorded_at": "2026-10-05T15:57:17+00:00",
+        "source_text_pages_read": 22,
+        "source_page_count": 22,
+        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
+        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
       }
     },
     "DOI": "10.1080/17445302.2021.1937801"

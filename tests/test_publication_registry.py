@@ -4,25 +4,54 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 
 class RegistryTests(unittest.TestCase):
-    def test_migration_preserves_complete_inventory_and_conservative_states(self):
-        from woeai.publications.registry import load_registry
+    def setUp(self):
+        # Workflow fixtures do not inherit live audit approvals.
+        self.row = {
+            'id': 'EXAMPLE', 'type': 'article-journal', 'title': 'Example paper',
+            'issued': {'date-parts': [[2026]]}, 'DOI': '10.1016/j.buildenv.2026.114811',
+            'custom': {
+                'publication_ref': 'ref-zhao2026-BE',
+                'research_family': '建筑结构抗风', 'subdirection': '数值风洞与湍动入流',
+                'source': {'status': 'unregistered'},
+                'rtd': {'path': 'docs/source/paper-notes/ref-zhao2026-BE.rst',
+                        'status': 'awaiting_audit', 'kind': 'legacy_intro', 'issues': [], 'evidence': {}},
+                'wechat': {'path': 'wechat/articles/draft-public-safe/ref-zhao2026-BE.md',
+                           'review_path': 'wechat/articles/review/ref-zhao2026-BE.review.md',
+                           'selected': True, 'status': 'draft_created', 'issues': [], 'evidence': {}},
+            },
+        }
+
+    def test_inventory_preserves_records_and_current_evidence_gates(self):
+        from woeai.publications.registry import load_registry, validate_registry, workflow_verified, workflow_fingerprint, BOARD_CHECKS
         rows = load_registry(ROOT)
         self.assertEqual(len(rows), 75)
         self.assertEqual(len({r['id'] for r in rows}), 75)
         self.assertEqual(sum(r['custom']['wechat']['selected'] for r in rows), 17)
-        self.assertEqual(sum(r['custom']['rtd']['status'] == 'unregistered' for r in rows), 58)
-        self.assertEqual(sum(r['custom']['rtd']['kind'] == 'legacy_intro' for r in rows), 14)
-        self.assertEqual(sum(r['custom']['rtd']['kind'] == 'full_paper' for r in rows), 3)
-        self.assertFalse(any(r['custom']['rtd']['status'] == 'verified' for r in rows))
-        self.assertFalse(any(r['custom']['wechat']['status'] in ('ready_to_publish','published') for r in rows))
-        self.assertEqual(sum(bool(r['custom']['wechat'].get('conflicts')) for r in rows),9)
-        self.assertTrue(all('author' not in r for r in rows))
+        self.assertEqual(validate_registry(rows, ROOT), [])
+        for row in rows:
+            with self.subTest(publication=row['id']):
+                custom = row['custom']
+                if custom['rtd']['kind'] == 'legacy_intro':
+                    self.assertNotEqual(custom['rtd']['status'], 'verified')
+                    self.assertFalse(workflow_verified(row, 'rtd', ROOT))
+                for channel, completed in (('rtd', {'verified'}), ('wechat', {'ready_to_publish', 'published'})):
+                    workflow = custom[channel]
+                    if workflow['status'] in completed:
+                        self.assertTrue(workflow_verified(row, channel, ROOT))
+                        evidence = workflow['evidence']['verified']
+                        self.assertEqual(evidence['fingerprint'], workflow_fingerprint(row, channel, ROOT))
+                        for key, _ in BOARD_CHECKS[channel]:
+                            self.assertIs(evidence['checks'].get(key), True)
+                checks = custom['wechat'].get('evidence', {}).get('verified', {}).get('checks', {})
+                if not all(checks.get(key) is True for key in ('formula_preview', 'figure_preview', 'cover_preview')):
+                    self.assertNotIn(custom['wechat']['status'], {'ready_to_publish', 'published'})
+                    self.assertFalse(workflow_verified(row, 'wechat', ROOT))
 
     def test_verified_requires_current_source_and_channel_evidence(self):
         import copy
         import tempfile
         from woeai.publications.registry import load_registry, workflow_fingerprint, workflow_verified
-        row=copy.deepcopy(load_registry(ROOT)[0])
+        row=copy.deepcopy(self.row)
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); rtd=row['custom']['rtd']; path=root/rtd['path']; path.parent.mkdir(parents=True); path.write_text('body')
             review=root/'review.md'; review.write_text('coverage record')
@@ -87,7 +116,7 @@ class RegistryTests(unittest.TestCase):
         import copy
         import tempfile
         from woeai.publications.registry import load_registry, workflow_fingerprint
-        row=copy.deepcopy(load_registry(ROOT)[0])
+        row=copy.deepcopy(self.row)
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); rtd=row['custom']['rtd']; wc=row['custom']['wechat']
             rtd['review_path']='review.md'
@@ -125,7 +154,7 @@ class RegistryTests(unittest.TestCase):
         import copy
         import tempfile
         from woeai.publications.registry import load_registry, workflow_fingerprint
-        row=copy.deepcopy(load_registry(ROOT)[0])
+        row=copy.deepcopy(self.row)
         with tempfile.TemporaryDirectory() as d:
             root=Path(d); body=root/row['custom']['rtd']['path']; body.parent.mkdir(parents=True)
             body.write_text('.. figure:: ../_static/shared.png\n')
@@ -141,3 +170,25 @@ class RegistryTests(unittest.TestCase):
                 for channel in ('rtd','wechat'):
                     with self.subTest(publication=row['id'],channel=channel):
                         self.assertRegex(workflow_fingerprint(row,channel,ROOT),r'^[a-f0-9]{64}$')
+
+    def test_wechat_each_backend_preview_requires_explicit_true(self):
+        import tempfile
+        from woeai.publications.registry import BOARD_CHECKS, workflow_fingerprint, workflow_verified
+        row = self.row
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            row['custom']['source'] = {'status': 'verified', 'sha256': 'a' * 64}
+            workflow = row['custom']['wechat']; workflow['status'] = 'ready_to_publish'
+            for key in ('path', 'review_path'):
+                path = root / workflow[key]; path.parent.mkdir(parents=True, exist_ok=True); path.write_text('public content')
+            checks = {key: True for key, _ in BOARD_CHECKS['wechat']}
+            workflow['evidence'] = {'verified': {'recorded_at': '2026-10-05T00:00:00Z', 'review_path': workflow['review_path'], 'checks': checks}}
+            workflow['evidence']['verified']['fingerprint'] = workflow_fingerprint(row, 'wechat', root)
+            self.assertTrue(workflow_verified(row, 'wechat', root))
+            for key in ('formula_preview', 'figure_preview', 'cover_preview'):
+                for value in (None, False, 'true', 1):
+                    with self.subTest(key=key, value=value):
+                        if value is None: checks.pop(key)
+                        else: checks[key] = value
+                        self.assertFalse(workflow_verified(row, 'wechat', root)); checks[key] = True
+            self.assertTrue(workflow_verified(row, 'wechat', root))

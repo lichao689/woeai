@@ -13,6 +13,9 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, quote, urlencode, urlsplit
 
+from woeai.publications.authors import corresponding_author_display_names, creator_name_index
+from woeai.publications.textutils import normalize_author_name
+
 REGISTRY_PATH = Path('docs/data/publications.json')
 MAP_PATH = Path('docs/data/publication-research-map.json')
 BACKLOG_PATH = Path('wechat/backlog/selected-papers.yml')
@@ -211,6 +214,43 @@ def validate_registry(records: list[dict[str, Any]], root: Path, *, check_eviden
         public=json.dumps(custom,ensure_ascii=False)
         if re.search(r'wechat_draft_media_id|"media_id"|/Users/|/home/|/tmp/|access_token|appsecret|source\.pdf',public,re.I): problems.append(f'{prefix}: private operational material in public registry')
     return problems
+
+
+def validate_zotero_bibliography_audits(records: list[dict[str, Any]], items: list[dict[str, Any]]) -> None:
+    """Stop refreshes that would undo a source-backed author correction.
+
+    Audit evidence constrains publication; it never mutates upstream metadata
+    or grants workflow approval. Keep the guard after follow-up is complete.
+    """
+    by_key = {record['id']: record for record in records}
+    problems = []
+    for item in items:
+        key = item['key']
+        audit = by_key.get(key, {}).get('custom', {}).get('bibliography_audit', {})
+        if not isinstance(audit, dict) or audit.get('field') != 'corresponding_authors':
+            continue
+        expected = audit.get('source_supported_value')
+        if not isinstance(expected, list) or not expected or any(
+            not isinstance(name, str) or not normalize_author_name(name) for name in expected
+        ):
+            problems.append(f'{key}: corresponding_authors audit requires a nonempty source_supported_value name list')
+            continue
+        if any(not isinstance(audit.get(field), str) or not audit[field].strip()
+               for field in ('review_path', 'evidence_locator')):
+            problems.append(f'{key}: corresponding_authors audit requires review_path and evidence_locator')
+            continue
+        source = f'reconcile upstream metadata with {audit["review_path"]} ({audit["evidence_locator"]}) before refreshing'
+        index = creator_name_index(item)
+        missing = [name for name in expected if normalize_author_name(name) not in index]
+        if missing:
+            problems.append(f'{key}: Zotero corresponding_authors cannot identify audited creators {missing!r}; {source}')
+            continue
+        expected_names = {normalize_author_name(index[normalize_author_name(name)]) for name in expected}
+        actual = corresponding_author_display_names(item)
+        if expected_names != {normalize_author_name(name) for name in actual}:
+            problems.append(f'{key}: Zotero corresponding_authors {actual!r} conflict with source_supported_value {expected!r}; {source}')
+    if problems:
+        raise ValueError('; '.join(problems))
 
 
 def merge_zotero_items(records: list[dict[str,Any]], items: list[dict[str,Any]]) -> list[dict[str,Any]]:

@@ -1,200 +1,101 @@
 ---
 publication_ref: ref-zhao2026-BS
-zotero_key: CGKPKZ8I
 doi: 10.1007/s12273-025-1379-7
-research_family: 建筑结构抗风
-subdirection: 数值风洞与湍动入流
-publication_mode: first_publish
-wechat_status: ready_to_publish
-wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit8W5lJ84JuQVMz4NFRpBMgLqu_P2CwMhp5uLAs3CfZau
-wechat_draft_created_at: 2026-06-09T12:31:43+08:00
-wechat_draft_updated_at: 2026-06-10T02:50:06+08:00
+wechat_status: awaiting_review
 wechat_author: Zhao Peisheng
-rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png
 source_checked: true
+facts_checked: true
 abstract_checked: true
+body_images_upload_approved: true
 copyright_checked: true
 public_safety_checked: true
 formula_preview_checked: false
 figure_preview_checked: false
 cover_image_checked: false
-body_images_upload_approved: true
-rtd_page_checked: true
+wechat_backend_preview_checked: false
+rtd_page_checked: false
+wechat_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png
+rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png
 ---
 
-# ref-zhao2026-BS 发布说明
+# ref-zhao2026-BS 原文核验记录
 
-## 正文文件
+## 正文与公开素材
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`
-- RTD 配套页: `docs/source/paper-notes/ref-zhao2026-BS.rst`
-- 微信草稿作者字段: `Zhao Peisheng`
+- RTD正文: `docs/source/paper-notes/ref-zhao2026-BS.rst`
+- 封面素材: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
+- 论文图 1 所提出框架的工作流程: `wechat/assets/public-safe/ref-zhao2026-BS/fig-01-workflow.png`
+- 论文图 2 深圳建筑分块划分示意图: `wechat/assets/public-safe/ref-zhao2026-BS/fig-02-block-division.png`
+- 论文图 21 气象自动站的位置与观测环境: `wechat/assets/public-safe/ref-zhao2026-BS/fig-21-stations.png`
+- 论文图 25 WebGIS 中风速与风压数据的可视化展示: `wechat/assets/public-safe/ref-zhao2026-BS/fig-25-webgis.png`
 
-## RTD 转换记录
+## 当前核验结果
 
-- 内容母版: `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`
-- 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS`
-- 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS --check`
-- RTD 顶部封面: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
-- 转换规则: 正文措辞、公式、正文图片和延伸阅读链接来自 Markdown；封面图等平台字段来自本 review note。微信底部“阅读原文”默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-zhao2026-BS.html`）；只有人工明确指定其他目标或留空时才写入 front matter 覆盖默认值。
-
-## 微信草稿箱记录
-
-- 草稿状态: updated via official WeChat draft API, pending WeChat backend preview
-- 草稿 media_id: `OW4ZgzIulHGwsx2YUygit8W5lJ84JuQVMz4NFRpBMgLqu_P2CwMhp5uLAs3CfZau`
-- 创建时间: `2026-06-09T12:31:43+08:00`
-- 更新时间: `2026-06-10T21:14:24+08:00`
-- 更新说明: 使用 `academic-clean` 主题和 `mathjax-svg` 公式渲染路线重新提交，封面切换为 v2 短文字封面。
-- 阅读原文: 默认使用当前论文 RTD 解读页 `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-zhao2026-BS.html`；读者侧链接放在正文 `延伸阅读` 中。
-- 发布状态: not published; final publication remains manual in the WeChat backend
-
-## 证据来源
-
-- DOI: https://doi.org/10.1007/s12273-025-1379-7
-- Zotero: `CGKPKZ8I`
-- 摘要来源: Zotero Local API `abstractNote`; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
-- PDF / 作者稿: 用户确认其为论文作者，可以直接使用该论文 PDF 中的图片；本稿图片已从 PDF 内嵌图片条带抽取并拼接为正文素材。
+- 公众号: awaiting_review；当前稿件尚未完成后台手机预览
+- RTD全文覆盖: 未完成，缺项详见下文
+- 事实检查: 已核对所用事实；原文内部差异保留出处
 
 ## 源文件获取记录
 
-- Zotero key: `CGKPKZ8I`
-- Zotero 元数据: checked via Zotero Desktop Local API
-- Zotero 附件记录: checked via Zotero Desktop Local API
-- 本地 PDF 附件: exists
-- PDF 附件候选: not fully enumerated in this review note; used the available Zotero local paper PDF already checked for this article
-- PDF 选择优先级: author manuscript > publisher version of record > OA platform PDF > preprint > other
-- 已选 PDF 类型: Zotero local paper PDF; treated as the article's usable paper PDF for body evidence and figure extraction
-- 低优先级选择原因: not applicable; no lower-priority web/preprint source was used
-- PDF 来源类型: Zotero local attachment; author-confirmed WOEAI/user-authored paper
-- PDF 私有存放: Zotero private attachment / local private working copy; no PDF committed to this public repository
-- Zotero Web API `/file`: not needed
-- 网页 PDF 下载: not used
-- 网页 PDF 批准记录: not applicable
-- 摘要依据: Zotero `abstractNote`, with faithful Chinese translation and original English abstract kept in the public article
-- 正文证据依据: paper PDF body and public publication metadata
-- 图片依据: PDF embedded figures extracted from the paper PDF
-- 私有信息边界: no absolute private file path, credential, cookie, raw API payload, or downloaded PDF content is recorded here
+- DOI: https://doi.org/10.1007/s12273-025-1379-7
+- 来源: 用户授权的期刊出版版PDF，身份与论文题名、作者及DOI核对一致
+- 文件页数: 25；以下PDF file page均为文件物理页码
+- 当前核验副本SHA-256: `8d71e47664aa4cae4cac628a49aa72cd4f89648143db298eb617db2d95e6501a`
 
 ## 关键事实证据定位记录
 
-- 摘要:
-  - 文章使用: 中文摘要为英文原摘要的忠实翻译，不附英文原摘要。
-  - 证据位置: Zotero Desktop Local API `abstractNote`; PDF abstract location: `pending PDF page audit`.
-- 核心结论: 预计算 CFD 数据库将中尺度气象输入、微尺度 CFD 计算和数据库组织连接起来，用于快速城市微尺度风环境预测。
-  - 证据位置: PDF file page 04, Fig. 1; paper workflow and WRF/CFD/database discussion around Sections 3.2-3.3.
-- 核心结论: 深圳研究区域按 `1 km x 1 km` 区块组织，并以区块模拟结果构建可调用数据库。
-  - 证据位置: PDF file page 05, Fig. 2; Section 3.3.1 text on block division and computational domain.
-- 核心结论: 验证部分使用气象自动站数据、90°/120°主风向和不同风速阈值，`11 m/s` 阈值用于高风速条件比较。
-  - 证据位置: PDF file page 18, Fig. 21 and Table 7; validation discussion below Fig. 21.
-- 核心结论: WebGIS 平台展示风速和风压数据，使预计算 CFD 数据库进入可视化和工程沟通场景。
-  - 证据位置: PDF file page 22, Fig. 25; text above Section 5.4 describing Cesium/WebGIS visualization.
-- 关键图:
-  - Fig. 1 `Workflow of the proposed framework`: PDF file page 04; used as article Figure 1.
-  - Fig. 2 `Schematic diagram of block division of buildings in Shenzhen`: PDF file page 05; used as article Figure 2.
-  - Fig. 21 `Locations and observation environment of meteorological automatic stations`: PDF file page 18; used as article Figure 21.
-  - Fig. 25 `Visual representation of wind speed and wind pressure data on WebGIS`: PDF file page 22; used as article Figure 25.
-- 关键公式:
-  - Article formula `E = (K_CFD - K_m) / K_m x 100%`: editorial explanatory formula added in the WeChat article to explain wind-speed-ratio relative error. It is not recorded here as a numbered paper equation. The paper evidence it explains is the field-validation comparison around PDF file page 18 and the subsequent validation discussion.
-  - Paper Eq. (10) on PDF file page 22 is visible in the source page but is not used in the current WeChat article body.
-- 页码审计依据: local ignored PDF file page renders under `wechat/.local/ref-zhao2026-BS/pdf-pages/` were used only for evidence-location audit; no absolute private source PDF path is recorded.
+- 摘要和题名：PDF file page 1；中文摘要逐段对应原文。
+- 1 km × 1 km区块：PDF file page 3 Section 2、PDF file page 5 Fig.2及Section 3.3.1。
+- 4Hmax建议及3Hmax可选：PDF file page 14 Tables 2–4和PDF file page 24结论；限文中深圳算例。
+- 公共界面取平均：PDF file page 15 Section 3.5.1；过渡区减少差异，但不保证两块严格相等。
+- 风速比误差公式：PDF file page 17式（9），不是编辑添加的解释式。原E为带符号相对误差，不擅加绝对值。
+- PA参考站筛选及样本量：PDF file page 18 Section 4.2、Table 7；11 m/s下90°和120°分别26、22个十分钟样本。
+- 分风向误差：PDF file page 19 Section 4.3、Figs.22–23；90°低于17%，120°低于20%，指平均风速比比较。
+- 几何变化重算受影响区块及周边、单区块CFD约27小时及数据处理/写入另约4小时：PDF file page 20 Section 5.2。
+- WebGIS应用：PDF file pages 21–23 Sections 5.3–5.4、Fig.25；植被、公交站等小型设施省略：PDF file page 24。
 
-## 封面图
+### 当前选图与公式
 
-- 封面状态: selected v2 cover from upgraded batch cover workflow; existing WeChat draft still needs a live API update before backend preview changes
-- 封面素材: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
-- 生成原图: `wechat/.local/cover-candidates/batch-2026-06-10/ref-zhao2026-BS-v2-imagegen.png`
-- 尺寸: final `900 x 383 px`
-- 生成方式: image-gen public-safe candidate selected after upgraded batch `wechat-cover` comparison
-- 设计意图: 用模块化城市区块、风场流线、数据网格和数据库层表达“城市微尺度风环境 + 预计算 CFD 数据库 + 快速调用”。
-- 文字策略: short embedded Chinese hook; category tag `数值风洞`; hook `把风场预先算好`
-- 本地裁剪预览: `wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html`
-- 批量候选联系表: `wechat/.local/cover-candidates/batch-2026-06-10/contact-sheet-v2.png`
-- 裁剪预览结果: passed local ratio, file-size, small-thumbnail, and text-quality checks (`900 x 383 px`, ratio delta `0.0`)
-- 微信后台预览: pending live draft update and WeChat backend mobile preview
+- 原Fig.1：PDF file page 4；已重新比对现有公开素材、原图及中文说明。
+- 原Fig.2：PDF file page 5；已重新比对现有公开素材、原图及中文说明。
+- 原Fig.21：PDF file page 18；已重新比对现有公开素材、原图及中文说明。
+- 原Fig.25：PDF file page 22；已重新比对现有公开素材、原图及中文说明。
 
-## 图片使用记录
+- 原式（9）：PDF file page 17；当前使用的符号、符号方向与条件已核对。
 
-首次 API 实操策略: upload all four approved body images and replace their local Markdown paths with WeChat image URLs in the submitted HTML.
+## 当前事实修正与完整度
 
-1. 图 1: 所提出框架的工作流程
-   - 用途: 方法总览首图
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BS/fig-01-workflow.png`
-   - 来源/版权: paper PDF embedded images; author confirmed usable
-   - API 实操: approved for upload in first live draft test
-   - 公众号图名: 论文图 1 所提出框架的工作流程
-   - 公众号说明: 将城市微尺度风场计算前置，并面向快速预测和工程应用调用。
-   - 移动端预览: pending WeChat backend mobile preview
-2. 图 2: 深圳建筑分块划分示意图
-   - 用途: 解释 `1 km x 1 km` 区块数据库
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BS/fig-02-block-division.png`
-   - 来源/版权: paper PDF embedded images; author confirmed usable
-   - API 实操: approved for upload in first live draft test
-   - 公众号图名: 论文图 2 深圳建筑分块划分示意图
-   - 公众号说明: 城市区域被组织为可计算、可拼接、可入库的微尺度风场单元。
-   - 移动端预览: pending WeChat backend mobile preview
-3. 图 21: 气象自动站的位置与观测环境
-   - 用途: 展示实测验证数据来源
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BS/fig-21-stations.png`
-   - 来源/版权: paper PDF embedded images; author confirmed usable
-   - API 实操: approved for upload in first live draft test
-   - 公众号图名: 论文图 21 气象自动站的位置与观测环境
-   - 公众号说明: 用现场监测数据检验区块 CFD 数据库的预测能力。
-   - 移动端预览: pending WeChat backend mobile preview
-4. 图 25: WebGIS 中风速与风压数据的可视化展示
-   - 用途: 展示 WebGIS 平台应用效果
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-zhao2026-BS/fig-25-webgis.png`
-   - 来源/版权: paper PDF embedded images; author confirmed usable
-   - API 实操: approved for upload in first live draft test
-   - 公众号图名: 论文图 25 WebGIS 中风速与风压数据的可视化展示
-   - 公众号说明: 让预计算 CFD 数据库具备查询、展示和工程沟通能力。
-   - 移动端预览: pending WeChat backend mobile preview
+### 2026-10-05 重建审计结果
 
-## 公式检查
+### 阅读范围与当前复核
 
-- 使用公式: yes
-- 呈现方式: Markdown LaTeX formula embedded in the relevant findings section; default API renderer is `mathjax-svg` with source `data-formula` metadata, with `lightweight` HTML kept only as fallback
-- 微信公式渲染路线: MathJax SVG route validated by 2026-06-10 single-article stress draft; this article still needs final WeChat backend mobile preview before publication
-- RTD 呈现方式: Sphinx MathJax with `.. math::` and `:math:` roles
-- 行内变量/量纲: formula markup applied to `X_L`, `R`, `H_{\mathrm{max}}`, block dimensions, wind-speed threshold, wind directions, and percentages
-- 文字性下标: use explicit roman text such as `\mathrm{max}`, `\mathrm{CFD}`, and `\mathrm{m}` in WeChat/RTD formulas
-- 固定公式小节: removed; formula appears only where needed in the validation discussion
-- 移动端预览: pending WeChat backend mobile preview
+- PDF file pages 1–3：摘要、引言及框架；4–8：建模、WRF、CFD与数值设置；9–14：网格与过渡区；14–16：区块拼接；17–20：实测验证；20–23：数据库及应用；23–24：结论；24–25：参考文献。无附录。
+- 本次重建以已完成逐页全文阅读的保留结论为起点，重新抽取现存全文、计算PDF校验值，并重新回查上述证据页、现有选图和公式。没有复用已丢失文件的旧指纹或旧验收状态。
+- 图像核对范围是现有导读采用的原图及相关量化证据，不宣称所有原图逐一完成全文译制；微信后台手机预览未执行。
 
-## 公开安全
+### RTD独立事实修正
 
-- [x] No WeChat AppSecret, token, cookie, or credential appears.
-- [x] No Zotero API key appears.
-- [x] No private partner name appears.
-- [x] No unconfirmed project status appears.
-- [x] Reader-facing Markdown has no production notes, pending placeholders, or private paths.
-- [x] Reader-facing Markdown has no fixed `公式说明` section or `联系入口` section.
-- [x] Reader-facing Markdown uses direct Markdown hyperlinks under `延伸阅读`; rendered HTML should show Chinese link text only.
-- [x] Figure captions use a Chinese figure-title line translated from the paper title plus a separate Chinese explanatory line.
+1. 将两渠道“平均风速误差”修正为风速比相对误差，补PA参考站、26/22样本范围，避免把局部高风速验证写成全域精度保证。
+2. 明确式（9）的原文身份，纠正旧review误记为编辑式的问题。
+3. 补充公共界面平均处理，以及3Hmax/4Hmax建议的案例边界。
+4. 把几何变更后直接复用的暗示改为受影响区块及周边重算，并补充27+4小时前期成本。
+5. 移除AI/数字孪生性能已获本文验证的暗示，补充中性边界层和行人高度小型设施省略限制。
 
-## 发布前任务
+### 公众号独立事实核对
 
-- [x] 用 Zotero/PDF 核对作者、期刊、页码、DOI、公式和图题。
-- [x] 用 Zotero Local API `abstractNote` 核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
-- [x] 导入已确认可用的原始高清图。
-- [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
-- [x] 将 RTD 配套页挂入 `科研方向 Research` 页面的 `学术进展 Academic Progress`，归入 `建筑结构抗风 / 数值风洞与湍动入流`。
-- [ ] 公众号后台手机预览正文、公式和图片。
-- [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
+- 公众号源稿直接对照原论文摘要、方法、结果、图题、公式及限制，逐项执行与上述问题对应的修正；未由RTD转换生成，也未用公众号覆盖RTD。
+- 忠实中文摘要保留原论文报告值；需要限定的统计单位、样本、网格、频率或适用条件在正文中明确。原文内部冲突不擅自统一。
 
-## 表达修订记录
+### 原文疑点
 
-- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：现实矛盾式。关键卡证据：区块尺度、过渡区长度、气象站风速阈值和相对误差均已在关键事实证据定位记录中标到 PDF file pages 04-22 及 Figs. 1、2、21、25。
+- PDF file page 19 Table 8部分风速与参考点风速不能直接复算出同表风速比；导读未复制这些表值，保留待作者澄清。
+- PDF file page 19分风向正文为17%/20%，PDF file page 20汇总又称三个站低于17%；导读采用分风向描述，不暗中统一原文。
+- PDF file pages 10、14、16–17部分正文称湍流强度，而Figs.13–15、20图题称湍动能；未把这两种量混用于所选图说明。
+- PDF file page 7顶部边界“symmetric (no-slip)”以及PDF file page 8式（2）中的黏度符号/密度因子存在需要作者校对之处；当前导读未据此新增模型公式。
 
-## 检查记录
+### 忠实度与完整度分别判定
 
-- image extraction: `pdfimages -all` from paper PDF, then `ffmpeg` vertical stitching of embedded image strips
-- cover-v2 generation: selected `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png` from upgraded batch `wechat-cover` image-gen workflow
-- cover-v2 preview: passed (`python3 .agents/skills/wechat-cover/scripts/cover_preview.py -o wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html ...`)
-- public-safety: passed (`/opt/homebrew/bin/python3.12 scripts/check-public-safe-content.py`)
-- markdown whitespace: passed (`git diff --check` on WeChat article-related files)
-- image links: passed (4 Markdown image links resolve to local public-safe assets)
-- docs-check: passed (`PYTHON_BIN=/opt/homebrew/bin/python3.12 ./scripts/check-docs.sh`)
+- 现有导读文本事实及所用图/公式已重新对照并修正；原文疑点按页定位保留，图像后台可读性仍需预览。
+- RTD仍为历史选择性导读，尚缺完整1–6节、26幅图、11张表、式（1）–（11）和完整参考文献；全文完整度为false，仍需按原文顺序扩写，不能因事实审计通过改称全文精解完成。
+- 当前本地修訂未自动更新微信后台；无新增上传、发布、提交或推送。历史转换、预览及检查日志不能充当当前构建结果。

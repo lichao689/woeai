@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check public WeChat content for obvious secret patterns."""
+"""Check public content for secrets, private backend data, and layout issues."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SCAN_ROOTS = [ROOT / "wechat", ROOT / "docs/source/paper-notes", ROOT / "docs/data"]
+SCAN_ROOTS = [ROOT / "wechat", ROOT / "docs/source/paper-notes", ROOT / "docs/data", ROOT / "project/research", ROOT / "project/plans"]
 
 SECRET_PATTERNS = [
     ("appsecret", re.compile(r"(?i)appsecret['\"]?\s*[:=]\s*['\"]?[A-Za-z0-9_-]{8,}")),
@@ -18,6 +18,93 @@ SECRET_PATTERNS = [
     ("zotero_api_key", re.compile(r"(?i)zotero[-_ ]?api[-_ ]?key['\"]?\s*[:=]\s*['\"]?[A-Za-z0-9_.-]{8,}")),
     ("wechat_token_or_secret", re.compile(r"(?i)wechat[-_ ]?(token|secret)['\"]?\s*[:=]\s*['\"]?[A-Za-z0-9_.-]{8,}")),
 ]
+# Backend identifiers are private operational data even though they are not
+# credentials. Match labelled values rather than arbitrary opaque strings so
+# public Zotero citation keys and explanatory mentions remain valid.
+BACKEND_FIELD = (
+    r"(?:[a-z0-9]+_)*(?:media_id|draft_id|publish_id|"
+    r"backend_response|api_response|wechat_response|draft_response|publish_response|cover_response)"
+)
+BACKEND_VALUE_PATTERN = re.compile(
+    rf"(?<![a-z0-9_])(?P<field>{BACKEND_FIELD})(?![a-z0-9_])"
+    r"[`'\"*]*[ \t]*"
+    r"(?:(?P<assignment>[:=：])\s*(?:[>|][+-]?\s*)?|"
+    r"(?P<prose>is\b|was\b|为|是)\s*|(?=[`'\"]))"
+    r"(?P<quote>[`'\"]*)"
+    r"(?P<value>[^\s`'\"，。；,;<>]+)",
+    re.I,
+)
+BACKEND_EMPTY_VALUES = {"null", "none", "nil", "redacted", "[redacted]", "{}", "[]", "~"}
+BACKEND_FIELD_DESCRIPTION = re.compile(r"optional\s+(?:existing\s+)?draft\b", re.I)
+
+
+def private_backend_matches(text: str):
+    for match in BACKEND_VALUE_PATTERN.finditer(text):
+        value = match.group("value")
+        if value.lower() in BACKEND_EMPTY_VALUES:
+            continue
+        # Existing workflow documentation describes this optional field. This
+        # narrow prose exception must not permit quoted identifier values.
+        if not match.group("quote") and BACKEND_FIELD_DESCRIPTION.match(text, match.start("value")):
+            continue
+        # In prose, ordinary words ("media_id is returned") explain the field.
+        # Quoted values and opaque identifiers instead record an actual value.
+        if match.group("prose") and not match.group("quote"):
+            if not re.search(r"[0-9_+/=-]", value):
+                continue
+        if value[0].isascii() and (value[0].isalnum() or value[0] in "{[_-/+"):
+            yield match
+
+
+# Public bibliographic item keys are intentional citation locators. Only
+# attachment/child labels identify private Zotero source records.
+PRIVATE_SOURCE_PATTERNS = [
+    ("attachment_identifier", re.compile(
+        r"(?i:(?:\b(?:zotero[ _-]+|pdf[ _-]+)?attachment(?:[ _-]+(?:keys?|ids?))?|"
+        r"\bzotero[ _-]+child(?:[ _-]+(?:keys?|ids?))?|\battach_key))"
+        r"[`'\"*]*\s*[:=：]?\s*[\[`'\"]*"
+        r"(?-i:[A-Z0-9]{8})(?![A-Za-z0-9_])"
+    )),
+    ("attachment_identifier", re.compile(
+        r"(?i:\bZotero (?:Desktop )?Local API children\s*[:：]\s*(?:passed\s*)?)"
+        r"[([`'\" ]*(?-i:[A-Z0-9]{8})(?![A-Za-z0-9_])"
+    )),
+    ("local_source_path", re.compile(
+        r"(?<![A-Za-z0-9])(?:file://)?"
+        r"(?:/(?:Users|home|root|tmp|workspace|mnt|private|var|Volumes)/|~/|[A-Za-z]:[\\/])"
+        r"[^\s`\"'<>]*?\.(?:pdf|txt)(?![A-Za-z0-9])", re.I
+    )),
+    ("library_operational_identifier", re.compile(
+        r"(?i:\b(?:library[ _-]+(?:(?:file|folder|asset)[ _-]+)?ids?|"
+        r"(?:file|folder|asset)[ _-]+ids?))"
+        r"[`'\"*]*\s*[:=：]\s*[`'\"]*"
+        r"(?:[A-Za-z0-9_-]{8,})(?![A-Za-z0-9_-])"
+    )),
+    ("library_operational_identifier", re.compile(
+        r"\bsediment://file[_-][A-Za-z0-9_-]+", re.I
+    )),
+]
+
+
+def private_attachment_table_lines(text: str):
+    """Check attachment columns without flagging bibliographic key columns."""
+    columns: list[int] = []
+    for line_no, line in enumerate(text.splitlines(), 1):
+        if "|" not in line:
+            columns = []
+            continue
+        cells = line.strip().strip("|").split("|")
+        headers = [index for index, cell in enumerate(cells) if re.search(
+            r"^\s*[`*]*(?:(?:pdf|zotero)[ _-]+)?(?:attachment|child)(?:[ _-]+(?:keys?|ids?))?[`*]*\s*$", cell, re.I
+        )]
+        if headers:
+            columns = headers
+            continue
+        if any(index < len(cells) and re.search(r"(?<![A-Za-z0-9_])[A-Z0-9]{8}(?![A-Za-z0-9_])", cells[index])
+               for index in columns):
+            yield line_no
+
+
 PUBLIC_DRAFT_FORBIDDEN_PATTERNS = [
     ("yaml_front_matter", re.compile(r"\A---\s*$", re.M)),
     ("pending_placeholder", re.compile(r"(?i)\bpending\b|待上传|待确认")),
@@ -31,6 +118,56 @@ PUBLIC_BODY_FORBIDDEN_PATTERNS = [
     # aligned/cases/bmatrix. Use \qquad (N) for equation numbering instead.
     ("latex_tag_in_math", re.compile(r"\\tag\{")),
 ]
+# Review notes have a stricter public contract than the bibliography/registry:
+# retain current scientific evidence, not internal citation or draft history.
+REVIEW_FORBIDDEN_PATTERNS = [
+    ("review_zotero_identifier", re.compile(
+        r"(?i:\bzotero_(?:key|item_key|item_id)[`'\"]*\s*[:=：])|"
+        r"(?i:\bZotero(?:[ _-]+(?:item|citation))?(?:[ _-]+(?:key|id))?)"
+        r"[`'\"*]*\s*[:=：]?\s*[`'\"]*[A-Z0-9]{8}(?![A-Za-z0-9_])|"
+        r"zotero://[^\s`'\"]+", re.M
+    )),
+    ("review_draft_history", re.compile(r"\bwechat_draft_(?:created|updated)_at\b", re.I)),
+    ("review_preview_field", re.compile(
+        r"\b(?:local_)?(?:preview_(?:html|file)(?:_path)?|preview_path|html_preview(?:_path)?|local_html_path|offline_html(?:_path)?)"
+        r"[`'\"]*\s*[:=：]", re.I
+    )),
+    ("review_private_path", re.compile(
+        r"(?<![A-Za-z0-9])(?:file://)?"
+        r"(?:/(?:Users|home|root|tmp|workspace|mnt|private|var|Volumes)/|~/|[A-Za-z]:[\\/]|"
+        r"(?:wechat/)?\.local/|wechat-preview-html/)"
+        r"[^\s`'\"<>]+", re.I
+    )),
+]
+
+
+REVIEW_READY_FLAGS = (
+    "formula_preview_checked",
+    "figure_preview_checked",
+    "cover_image_checked",
+    "wechat_backend_preview_checked",
+)
+
+
+def stale_review_ready_lines(text: str) -> list[int]:
+    """Readiness is a current front-matter claim, not a forbidden prose word."""
+    front = re.match(r"\A---[ \t]*\r?\n(?P<body>.*?)^---[ \t]*$", text, re.M | re.S)
+    if front is None:
+        return []
+    body = front.group("body")
+    ready = list(re.finditer(
+        r"^wechat_status:[ \t]*(['\"]?)ready_to_publish\1[ \t]*(?:#.*)?$", body, re.M
+    ))
+    if not ready:
+        return []
+    for flag in REVIEW_READY_FLAGS:
+        values = re.findall(rf"^{flag}:[ \t]*(.*)$", body, re.M)
+        # Missing, duplicated, or non-boolean flags cannot establish readiness.
+        if len(values) != 1 or not re.fullmatch(r"true[ \t]*(?:#.*)?", values[0], re.I):
+            return [text.count("\n", 0, front.start("body") + match.start()) + 1 for match in ready]
+    return []
+
+
 RST_HEADING_MARKERS = set("=-~^`#*")
 REVIEW_REQUIRED_SECTIONS = [
     "## 源文件获取记录",
@@ -145,6 +282,20 @@ def scan_path(path: Path, root: Path) -> list[str]:
             line_no = text.count("\n", 0, match.start()) + 1
             rel = path.relative_to(ROOT).as_posix()
             findings.append(f"{rel}:{line_no}: possible secret pattern ({label})")
+    for match in private_backend_matches(text):
+        line_no = text.count("\n", 0, match.start()) + 1
+        rel = path.relative_to(ROOT).as_posix()
+        # Never print the matched value, including for backend response blobs.
+        field = match.group("field").lower()
+        findings.append(f"{rel}:{line_no}: private backend data ({field})")
+    for label, pattern in PRIVATE_SOURCE_PATTERNS:
+        for match in pattern.finditer(text):
+            line_no = text.count("\n", 0, match.start()) + 1
+            rel = path.relative_to(ROOT).as_posix()
+            findings.append(f"{rel}:{line_no}: private source locator ({label})")
+    for line_no in private_attachment_table_lines(text):
+        rel = path.relative_to(ROOT).as_posix()
+        findings.append(f"{rel}:{line_no}: private source locator (attachment_identifier)")
     if is_reader_facing_draft(path, root):
         for label, pattern in PUBLIC_DRAFT_FORBIDDEN_PATTERNS:
             for match in pattern.finditer(text):
@@ -160,6 +311,14 @@ def scan_path(path: Path, root: Path) -> list[str]:
         findings.extend(rtd_deep_dive_layout_findings(path, text))
     if is_review_note(path, root):
         rel = path.relative_to(ROOT).as_posix()
+        for line_no in stale_review_ready_lines(text):
+            findings.append(f"{rel}:{line_no}: review readiness lacks current preview approvals (review_stale_ready)")
+        for label, pattern in REVIEW_FORBIDDEN_PATTERNS:
+            for match in pattern.finditer(text):
+                line_no = text.count("\n", 0, match.start()) + 1
+                findings.append(
+                    f"{rel}:{line_no}: review contains private or obsolete workflow content ({label})"
+                )
         for section in REVIEW_REQUIRED_SECTIONS:
             if section not in text:
                 label = section.replace("## ", "", 1)

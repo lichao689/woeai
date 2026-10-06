@@ -116,12 +116,14 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         with self.assertRaises(self.updater.ZoteroError):
             self.updater.validate_research_map(items, {})
 
-    def run_registry_refresh(self, root: Path, *, dry_run: bool, partial: bool = False):
+    def run_registry_refresh(self, root: Path, *, dry_run: bool, partial: bool = False,
+                             corresponding_extra: str | None = None):
         items = [{
             "key": "TEST1234",
             "data": {
                 "itemType": "journalArticle",
                 "title": "Fresh Zotero metadata",
+                "extra": corresponding_extra,
                 "date": "2026-05-01",
                 "publicationTitle": "Journal of Tests",
                 "creators": [{"creatorType": "author", "firstName": "Chao", "lastName": "Li"}],
@@ -222,6 +224,30 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         ), contextlib.redirect_stderr(errors):
             self.assertEqual(self.updater.main(), 1)
         self.assertEqual(errors.getvalue(), "error: Invalid registry\n")
+
+    def test_source_audit_conflict_stops_before_public_writes(self) -> None:
+        for expected in (["Wang Xiaolu"], ["Li Chao", "Zhou Shengtao"]):
+            for marker in ("_通讯作者", None):
+                with self.subTest(expected=expected, marker=marker):
+                    root, records = self.make_registry_repo()
+                    records[0]["custom"]["bibliography_audit"] = {
+                        "field": "corresponding_authors", "source_supported_value": expected,
+                        "review_path": "wechat/articles/review/example.review.md",
+                        "evidence_locator": "PDF file page 1, corresponding-author footnote",
+                    }
+                    (root / "docs/data/publications.json").write_text(json.dumps(records), encoding="utf-8")
+                    for name in ("docs/source/Publications.rst", "docs/source/PublicationsByYear.rst",
+                                 "docs/source/Teaching.rst", "docs/data/snapshot.json",
+                                 "docs/data/publication-research-map.json", "wechat/backlog/selected-papers.yml",
+                                 "project/publication-progress.md", "docs/_static/publication-board-data.json"):
+                        path = root / name; path.parent.mkdir(parents=True, exist_ok=True)
+                        path.write_text(f"Existing content: {name}\n", encoding="utf-8")
+                    before = {p.relative_to(root): p.read_bytes() for p in root.rglob("*") if p.is_file()}
+                    with patch.object(self.updater, "save_registry") as save, patch.object(self.updater, "write_views") as views:
+                        with self.assertRaisesRegex(ValueError, "TEST1234.*corresponding_authors.*PDF file page 1"):
+                            self.run_registry_refresh(root, dry_run=False, corresponding_extra=marker)
+                        save.assert_not_called(); views.assert_not_called()
+                    self.assertEqual({p.relative_to(root): p.read_bytes() for p in root.rglob("*") if p.is_file()}, before)
 
     def test_corresponding_author_tag_marks_group_leader(self) -> None:
         item = make_item(

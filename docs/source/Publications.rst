@@ -62,7 +62,7 @@
 
 .. _ref-zhao2025-SCS:
 
-[60] :doc:`2025 SCS | 用 3D Gaussian Splatting 重建城市建筑几何 <paper-notes/ref-zhao2025-SCS>` :student-first-author:`Zhao Peisheng`; **Li Chao**\*; Jiang Jianxun; Chen Lingwei; Wang Xiaolu, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: **12.0 (Q1)**. 中科院分区: **1**. 引用次数: **6**.
+[60] :doc:`2025 SCS | 用 3D Gaussian Splatting 重建城市建筑几何 <paper-notes/ref-zhao2025-SCS>` :student-first-author:`Zhao Peisheng`; **Li Chao**; Jiang Jianxun; Chen Lingwei; Wang Xiaolu\*, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: **12.0 (Q1)**. 中科院分区: **1**. 引用次数: **6**.
 
 .. _ref-chen2024-POF:
 
@@ -74,7 +74,7 @@
 
 .. _ref-wang2024-ES:
 
-[55] :doc:`2024 ES | 让 LES 入流按目标风场自动收敛 <paper-notes/ref-wang2024-ES>` :student-first-author:`Wang Jinghan`; **Li Chao**\*; Chen Lingwei; Zhou Shengtao; Hu Gang; Ou Jinping, A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES[J]. **Engineering Structures**, 2024, 318: 118742. https://doi.org/10.1016/j.engstruct.2024.118742. 影响因子: **6.4 (Q1)**. 中科院分区: **1**.
+[55] :doc:`2024 ES | 让 LES 入流按目标风场自动收敛 <paper-notes/ref-wang2024-ES>` :student-first-author:`Wang Jinghan`; **Li Chao**\*; Chen Lingwei; Zhou Shengtao\*; Hu Gang; Ou Jinping, A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES[J]. **Engineering Structures**, 2024, 318: 118742. https://doi.org/10.1016/j.engstruct.2024.118742. 影响因子: **6.4 (Q1)**. 中科院分区: **1**.
 
 .. _ref-jiang2024-POF:
 

@@ -48,7 +48,7 @@
 
 :ref:`[61] <ref-yan2025-POF>` Yan Lei; Cai Huaiqiang; Wang Qiulei; Chen Lingwei; **Li Chao**; Hu Gang\*, Deep reinforcement learning-based active flow control for a tall building[J]. **Physics of Fluids**, 2025, 37(4): 045132. https://doi.org/10.1063/5.0267175. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
-:ref:`[60] <ref-zhao2025-SCS>` :student-first-author:`Zhao Peisheng`; **Li Chao**\*; Jiang Jianxun; Chen Lingwei; Wang Xiaolu, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: **12.0 (Q1)**. 中科院分区: **1**. 引用次数: **6**.
+:ref:`[60] <ref-zhao2025-SCS>` :student-first-author:`Zhao Peisheng`; **Li Chao**; Jiang Jianxun; Chen Lingwei; Wang Xiaolu\*, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237. 影响因子: **12.0 (Q1)**. 中科院分区: **1**. 引用次数: **6**.
 
 :ref:`[59] <ref-liang2025-OE>` Liang Jun; Wang Ying\*; **Li Chao**; Ou Jinping, Fatigue analysis of monopile-supported offshore wind turbine under varied supported conditions[J]. **Ocean Engineering**, 2025, 320: 120279. https://doi.org/10.1016/j.oceaneng.2024.120279. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
@@ -61,7 +61,7 @@
 
 :ref:`[56] <ref-liu2024-JWEIA>` Liu Shizeng; Zhang Wentong\*; Li Qiang; Yan Shicheng; Zhang Shihong; **Li Chao**; Li Lixiao, Engineering method for quantifying the coupling effect of transmission tower-line system under strong winds[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2024, 255: 105954. https://doi.org/10.1016/j.jweia.2024.105954. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
-:ref:`[55] <ref-wang2024-ES>` :student-first-author:`Wang Jinghan`; **Li Chao**\*; Chen Lingwei; Zhou Shengtao; Hu Gang; Ou Jinping, A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES[J]. **Engineering Structures**, 2024, 318: 118742. https://doi.org/10.1016/j.engstruct.2024.118742. 影响因子: **6.4 (Q1)**. 中科院分区: **1**.
+:ref:`[55] <ref-wang2024-ES>` :student-first-author:`Wang Jinghan`; **Li Chao**\*; Chen Lingwei; Zhou Shengtao\*; Hu Gang; Ou Jinping, A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES[J]. **Engineering Structures**, 2024, 318: 118742. https://doi.org/10.1016/j.engstruct.2024.118742. 影响因子: **6.4 (Q1)**. 中科院分区: **1**.
 
 :ref:`[54] <ref-he2024-JBE>` :student-first-author:`He Xin`; **Li Chao**\*; Chen Lingwei; Yang Junhui; Hu Gang; Ou Jinping, Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper[J]. **Journal of Building Engineering**, 2024, 96: 110660. https://doi.org/10.1016/j.jobe.2024.110660. 影响因子: **7.4 (Q1)**. 中科院分区: **1**.
 

@@ -29,7 +29,7 @@
 --------
 
 - 论文题名: A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations
-- 作者: :student-first-author:`Zhao Peisheng`; **Li Chao**\*; Jiang Jianxun; Chen Lingwei; Wang Xiaolu
+- 作者: :student-first-author:`Zhao Peisheng`; **Li Chao**; Jiang Jianxun; Chen Lingwei; Wang Xiaolu\*
 - 期刊: Sustainable Cities and Society
 - 年份: 2025
 - DOI: https://doi.org/10.1016/j.scs.2025.106237
@@ -43,9 +43,9 @@
 关键数字 / 关键结论卡
 ---------------------
 
-- 相比 COLMAP，本文框架的点云精度平均提高约 :math:`12\%`；结论部分概括密集建筑点云生成速度比传统方法快 :math:`2`-:math:`3` 倍。
+- 在选定的5栋建筑中，相比 COLMAP，本文框架的点云距离精度平均提高约 :math:`12\%`；结论部分概括密集建筑点云生成速度比传统方法快 :math:`2`-:math:`3` 倍。
 - 生成建筑几何达到 LoD2 和 LoD2.5，并强调规则边界和网格质量，而不只是视觉重建效果。
-- CFD 网格收敛分析中，速度场与压力场最大 GCI 为 :math:`3.76\%`，湍流量最大 GCI 为 :math:`4.89\%`。
+- CFD 基础网格的速度场与压力场两项中，最大 GCI 为 :math:`3.76\%`，基础网格的湍流量最大 GCI 为 :math:`4.89\%`。
 
 摘要
 ----
@@ -94,6 +94,8 @@
 
 **针对问题 1，论文用同一数据集比较了本文框架与 COLMAP、Context Capture、NeuS、NeuDA 等方法。** 结果显示，本文方法相对 COLMAP 的点云精度平均提高约 :math:`12\%`，并且在生成速度上明显更快。结论部分进一步概括为：密集建筑点云生成速度比传统方法快 :math:`2`-:math:`3` 倍，同时保持较高精度。
 
+这组比较仅使用5栋代表建筑。表 2 中 B4 的距离误差反而高于 COLMAP，且方法的完整性和召回率存在不足，平均改善不代表每栋建筑都更好。原摘要写速度提升3–5倍，结论写2–3倍，未统一比较基准；因此两种概括不能作为同一端到端加速保证。
+
 这组结果的意义在于，城市风环境模拟通常不是单体建筑问题，而是建筑群和街区尺度问题。只有点云生成效率足够高，几何重建流程才有可能进入更大范围、更频繁更新的城市风环境评估。
 
 2. 几何模型达到 LoD2 和 LoD2.5，并更适合 CFD
@@ -116,9 +118,9 @@
 3. CFD 应用显示网格收敛和风场连续性
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**针对问题 3，为了验证几何拓扑的有效性，论文进一步开展三维不可压缩牛顿流体模拟，采用 :math:`k`-:math:`\omega` SST RANS 湍流模型求解稳态速度和压力。** 计算域按照最高建筑高度 :math:`H_{\mathrm{max}}` 设置：上游方向取 :math:`5H_{\mathrm{max}}`，侧向取 :math:`5H_{\mathrm{max}}`，下游取 :math:`15H_{\mathrm{max}}`，高度取 :math:`6H_{\mathrm{max}}`；加密区覆盖研究区域内所有建筑，直径为 :math:`20H_{\mathrm{max}}`、高度为 :math:`2H_{\mathrm{max}}`。
+**针对问题 3，为了验证几何拓扑的有效性，论文进一步开展三维不可压缩牛顿流体模拟，采用 :math:`k`-:math:`\omega` SST RANS 湍流模型求解稳态速度和压力。** 计算域按照最高建筑高度 :math:`H_{\mathrm{max}}` 设置：上游边界距加密区取 :math:`5H_{\mathrm{max}}`，侧向边界距加密区取 :math:`5H_{\mathrm{max}}`，下游边界距加密区取 :math:`15H_{\mathrm{max}}`，高度取 :math:`6H_{\mathrm{max}}`；加密区覆盖研究区域内所有建筑，直径为 :math:`20H_{\mathrm{max}}`、高度为 :math:`2H_{\mathrm{max}}`。
 
-网格收敛分析中，粗、中、细三套网格的单元数分别约为 :math:`7.9` 百万、:math:`16.8` 百万和 :math:`37.9` 百万。论文报告速度场与压力场的最大 GCI 为 :math:`3.76\%`，湍流量最大 GCI 为 :math:`4.89\%`，并据此选择基础网格用于后续工况和行人舒适度评估。
+网格收敛分析中，粗、中、细三套网格的单元数分别约为 :math:`7.9` 百万、:math:`16.8` 百万和 :math:`37.9` 百万。论文表 3 中，基础网格速度和压力的 GCI 分别为 :math:`3.51\%` 和 :math:`3.76\%`，二者最大值为 :math:`3.76\%`，基础网格的湍流量最大 GCI 为 :math:`4.89\%`，并据此选择基础网格用于后续工况和行人舒适度评估。这些是基础网格的离散化指标；粗网格的对应 GCI 更高，不能把 :math:`3.76\%` 解释为所有网格、所有物理误差的上限。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-zhao2025-SCS/fig-25-velocity-magnitude.png
    :alt: 论文图 25 研究区域 2 m 高度处的速度幅值
@@ -161,14 +163,16 @@
 - 建筑群和街区尺度 CFD 模型生成；
 - 行人风环境、局地强风和舒适度分析；
 - 城市风场数据在 WebGIS 或工程平台中的表达；
-- 与后续 AI 代理模型、预计算 CFD 数据库或数字孪生流程结合。
+- 与其他快速预测流程结合的可能性；AI 代理模型或数字孪生并未在本文中得到验证。
 
 适用边界
 --------
 
 这项研究并不意味着 3DGS 可以在所有城市环境中无条件生成完美 CFD 几何。论文也明确给出了几个限制。
 
-首先，当建筑颜色接近背景颜色、颜色变化不明显，或者存在强光、阴影、植被遮挡时，点云细节仍然可能丢失。其次，当前几何模型生成算法主要关注建筑部分，而植被和地形对城市风环境也很重要，后续仍需要进一步纳入几何建模流程。第三，对于形态复杂的建筑和高密度居住区，建筑点云可能相互连接，导致单体建筑分离和几何生成效果下降。
+首先，当建筑颜色接近背景颜色、颜色变化不明显，或者存在强光、阴影、植被遮挡时，点云细节仍然可能丢失。其次，当前精细几何生成重点是建筑；论文已经分离植被和地形点云，并以简化植被棱柱及冠层阻力源项参与 CFD，采用的是简化表示，尚未解析全部植被形态。植被和地形的精细表达仍需改进。第三，对于形态复杂的建筑和高密度居住区，建筑点云可能相互连接，导致单体建筑分离和几何生成效果下降。
+
+此外，SfM 前处理在大场景中仍可能耗时数小时至数天，密集点云阶段的加速不等于整体流程同比例加速。网格收敛是数值一致性检查，不能替代现场风速的独立验证。
 
 因此，更准确的理解是：本文框架适合为典型城市风场模拟提供更快、更可用的建筑几何生成路径，但在复杂建筑、密集街区、特殊光照和高风险工程场景下，仍需要人工复核、数据质量控制和专项 CFD 验证。
 
@@ -181,7 +185,7 @@
 完整引用
 --------
 
-[60] :student-first-author:`Zhao Peisheng`; **Li Chao**\*; Jiang Jianxun; Chen Lingwei; Wang Xiaolu, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237.
+[60] :student-first-author:`Zhao Peisheng`; **Li Chao**; Jiang Jianxun; Chen Lingwei; Wang Xiaolu\*, A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations[J]. **Sustainable Cities and Society**, 2025, 123: 106237. https://doi.org/10.1016/j.scs.2025.106237.
 
 收录信息见 :ref:`WOEAI 学术成果页对应条目 <ref-zhao2025-SCS>`。
 

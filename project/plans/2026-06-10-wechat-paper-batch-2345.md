@@ -42,12 +42,12 @@ Process these four selected backlog entries:
 
 Zotero attachment inventory from the 2026-06-10 pre-plan check:
 
-| publication_ref | PDF attachment key | Attachment mode | Notes |
+| publication_ref | PDF provenance locator | Attachment mode | Notes |
 |---|---|---|---|
-| `ref-zhao2025-SCS` | `8DSM76PX` | `imported_file` | PDF and HTML attachment records exist |
-| `ref-li2024-POF` | `RIVR33QT` | `imported_url` | PDF and HTML attachment records exist; verify the local PDF file before treating it as evidence |
-| `ref-tang2025-JBE` | `G2D6USRE` | `imported_file` | PDF and HTML attachment records exist |
-| `ref-he2026-OE-structural` | `UY7S47UC` | `imported_file` | PDF and HTML attachment records exist |
+| `ref-zhao2025-SCS` | Private provenance record | `imported_file` | PDF and HTML attachment records exist |
+| `ref-li2024-POF` | Private provenance record | `imported_url` | PDF and HTML attachment records exist; verify the local PDF file before treating it as evidence |
+| `ref-tang2025-JBE` | Private provenance record | `imported_file` | PDF and HTML attachment records exist |
+| `ref-he2026-OE-structural` | Private provenance record | `imported_file` | PDF and HTML attachment records exist |
 
 Do not automatically scrape or download PDFs from publisher pages, DOI pages, search results, Google Scholar, ResearchGate, or Sci-Hub. Web pages may verify public metadata only. If a needed local PDF is unavailable, record the gap in the review note and stop short of inventing PDF-derived facts.
 
@@ -182,16 +182,16 @@ Expected:
 Run these commands locally for each PDF attachment key. Keep resolved paths in shell variables only; do not paste them into committed files.
 
 ```bash
-ATTACH_KEY=8DSM76PX
+ATTACH_KEY=PRIVATE_ATTACHMENT_KEY
 find "$HOME/Zotero/storage/$ATTACH_KEY" -maxdepth 1 -type f -iname '*.pdf' -print
 
-ATTACH_KEY=RIVR33QT
+ATTACH_KEY=PRIVATE_ATTACHMENT_KEY
 find "$HOME/Zotero/storage/$ATTACH_KEY" -maxdepth 1 -type f -iname '*.pdf' -print
 
-ATTACH_KEY=G2D6USRE
+ATTACH_KEY=PRIVATE_ATTACHMENT_KEY
 find "$HOME/Zotero/storage/$ATTACH_KEY" -maxdepth 1 -type f -iname '*.pdf' -print
 
-ATTACH_KEY=UY7S47UC
+ATTACH_KEY=PRIVATE_ATTACHMENT_KEY
 find "$HOME/Zotero/storage/$ATTACH_KEY" -maxdepth 1 -type f -iname '*.pdf' -print
 ```
 
@@ -262,7 +262,7 @@ Acceptance:
 
 - [ ] **Step 2: Extract and insert public-safe figures**
 
-Use the local PDF attachment `8DSM76PX` as the first evidence source. Store final figures under:
+Use the local PDF attachment Private provenance record as the first evidence source. Store final figures under:
 
 ```text
 wechat/assets/public-safe/ref-zhao2025-SCS/
@@ -374,12 +374,12 @@ Expected:
 
 - [ ] **Step 1: Confirm local PDF evidence for imported-url attachment**
 
-Use attachment key `RIVR33QT`.
+Use attachment key Private provenance record.
 
 Run:
 
 ```bash
-ATTACH_KEY=RIVR33QT
+ATTACH_KEY=PRIVATE_ATTACHMENT_KEY
 find "$HOME/Zotero/storage/$ATTACH_KEY" -maxdepth 1 -type f -iname '*.pdf' -print
 ```
 
@@ -542,7 +542,7 @@ Acceptance:
 
 - [ ] **Step 2: Extract and insert figures**
 
-Use attachment key `G2D6USRE`. Store final figures under:
+Use attachment key Private provenance record. Store final figures under:
 
 ```text
 wechat/assets/public-safe/ref-tang2025-JBE/
@@ -662,7 +662,7 @@ Acceptance:
 
 - [ ] **Step 2: Extract and insert figures**
 
-Use attachment key `UY7S47UC`. Store final figures under:
+Use attachment key Private provenance record. Store final figures under:
 
 ```text
 wechat/assets/public-safe/ref-he2026-OE-structural/

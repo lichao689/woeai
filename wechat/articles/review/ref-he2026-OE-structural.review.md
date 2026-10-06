@@ -1,243 +1,83 @@
 ---
 publication_ref: ref-he2026-OE-structural
-zotero_key: EMID6LAJ
 doi: 10.1016/j.oceaneng.2025.123951
-research_family: 海上漂浮风电
-subdirection: 浮式混凝土平台结构设计
-publication_mode: first_publish
-wechat_status: ready_to_publish
+wechat_status: awaiting_review
 wechat_author: He Weiwen
 source_checked: true
+facts_checked: false
 abstract_checked: true
+body_images_upload_approved: true
 copyright_checked: true
 public_safety_checked: true
 formula_preview_checked: false
 figure_preview_checked: false
 cover_image_checked: false
-body_images_upload_approved: true
-rtd_page_checked: true
+wechat_backend_preview_checked: false
+rtd_page_checked: false
 wechat_cover_image: wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png
 rtd_cover_image: wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png
-wechat_backend_preview_checked: false
 ---
 
-# ref-he2026-OE-structural 发布说明
+# ref-he2026-OE-structural 原文核验记录
 
-## 正文文件
+## 正文与公开素材
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-he2026-OE-structural.md`
-- RTD 配套页: `docs/source/paper-notes/ref-he2026-OE-structural.rst`
-- 封面简报: `wechat/articles/review/ref-he2026-OE-structural.cover-brief.md`
-- 微信草稿作者字段: `He Weiwen`
+- RTD正文: `docs/source/paper-notes/ref-he2026-OE-structural.rst`
+- 封面素材: `wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png`
+- 论文图 1 研究路线: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-01-research-route.jpg`
+- 论文图 7 新型平台概念设计: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-07-platform-concept.jpg`
+- 论文图 10 新型平台水动力模型: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-10-hydrodynamic-model.jpg`
+- 论文图 16 目标函数对比: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-16-objective-functions.jpg`
+- 论文图 19 两类平台在 135 度波向下的 RAO 对比: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-19-raos-comparison.jpg`
+- 论文图 27 总建造成本对比: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-27-construction-costs.jpg`
+- 论文图 29 新型平台强度分析有限元模型: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-29-strength-fem.jpg`
 
-## RTD 转换记录
+## 当前核验结果
 
-- 内容母版: `wechat/articles/draft-public-safe/ref-he2026-OE-structural.md`
-- 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-he2026-OE-structural`
-- 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-he2026-OE-structural --check`
-- RTD 顶部封面: `wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png`
-- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；封面图等平台字段来自 review note。微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-he2026-OE-structural.html`）。
-- 导航状态: 已由 controller/final integration task 挂入 `docs/source/Research.rst` 和首页最新学术进展，归入 `海上漂浮风电 / 浮式混凝土平台结构设计`.
-
-## 微信草稿箱记录
-
-- 草稿状态: updated via official WeChat draft API, pending WeChat backend preview
-- 草稿 media_id: `OW4ZgzIulHGwsx2YUygit68aShIl2MymtSVw34JLDaS0Ib-iz4X5TflMhXMPWvjV`
-- 更新时间: `2026-06-10T21:14:09+08:00`
-- 更新说明: 使用 `academic-clean` 主题和 `mathjax-svg` 公式渲染路线重新提交，封面使用 v2 短文字封面。
-- 发布状态: not published; final publication remains manual in the WeChat backend
-
-## 证据来源
-
-- DOI: https://doi.org/10.1016/j.oceaneng.2025.123951
-- Zotero: `EMID6LAJ`
-- PDF attachment key: `UY7S47UC`
-- 摘要来源: Zotero Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
-- PDF / 作者稿: local Zotero imported PDF attachment exists; PDF body and embedded images were used for article evidence and body figures.
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-he2026-OE-structural` as paper `[70]`; `docs/source/FloatingOffshoreWindTurbine.rst` lists it under `浮式混凝土平台结构设计`.
+- 公众号: awaiting_review；当前稿件尚未完成后台手机预览
+- RTD全文覆盖: 未完成，缺项详见下文
+- 事实检查: 仍有原文图文或强度口径冲突，需澄清
 
 ## 源文件获取记录
 
-- Zotero key: `EMID6LAJ`
-- Zotero 元数据: checked via Zotero Desktop Local API artifact
-- Zotero 附件记录: checked via Zotero Desktop Local API artifact; PDF attachment and HTML attachment records exist
-- 本地 PDF 附件: exists
-- PDF 附件候选: single PDF-like attachment in checked child records
-- PDF 选择优先级: author manuscript > publisher version of record > OA platform PDF > preprint > other
-- 已选 PDF 类型: Zotero local imported PDF attachment, treated as the usable paper PDF for this WOEAI/user-authored article
-- 低优先级选择原因: not applicable; no web, preprint, or lower-priority substitute source was used
-- PDF 来源类型: Zotero local attachment
-- PDF 私有存放: Zotero private attachment and ignored local working artifacts under `wechat/.local/ref-he2026-OE-structural/`
-- Zotero Web API `/file`: not needed
-- 网页 PDF 下载: not used
-- 网页 PDF 批准记录: not applicable
-- 摘要依据: Zotero `abstractNote` and PDF abstract on PDF file page 1
-- 正文证据依据: PDF body, Zotero metadata, and public WOEAI publication record
-- 图片依据: PDF embedded figures extracted from the local paper PDF and copied into public-safe body JPG assets
-- 私有信息边界: no absolute private file path, credential, cookie, raw API payload, raw downloaded PDF content, or private preview URL is recorded here
+- DOI: https://doi.org/10.1016/j.oceaneng.2025.123951
+- 来源: 用户授权的期刊出版版PDF，身份与论文题名、作者及DOI核对一致
+- 文件页数: 25；以下PDF file page均为文件物理页码
+- 当前核验副本SHA-256: `22e9741d76a825d7730bc8da3656b70b980988693e4f04d995cf40b304c79bca`
 
 ## 关键事实证据定位记录
 
-- 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
-  - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
-- 核心结论: 本文提出一种基于模块化构件的新型钢筋混凝土半潜式 FOWT 平台，并把概念设计、主尺度优化、性能比较和结构强度分析组织成完整路线。
-  - 证据位置: PDF file page 3, Fig. 1; PDF file page 5, Section 3.1, Fig. 7.
-- 核心结论: 研究采用 ROM 快速计算长期动力响应，并建立参数化水动力模型支持主尺度优化。
-  - 证据位置: PDF file pages 3-4, Section 2.1; PDF file page 8, Fig. 10.
-- 核心结论: 多目标优化采用 NSGA-II，目标函数包括塔底疲劳损伤、导缆孔疲劳损伤和总建造成本；优化在第 `164` 代收敛，并形成 `50` 个 Pareto 最优方案。
-  - 证据位置: PDF file pages 8-11, Sections 4.3-4.5, Figs. 12-16.
-- 核心结论: Pareto 分析显示导缆孔疲劳损伤 `D_FairLd` 与总建造成本 `TC` 的相关性突出，提示混凝土平台设计中平台和系泊系统需要一体化优化。
-  - 证据位置: PDF file page 11, Section 4.5.2, Fig. 16.
-- 核心结论: 与 LIFES 50+ OO-Star 比较时，新平台在论文设定的长期服务性能指标上提高约 `36%`，塔底和导缆孔最大累计疲劳损伤分别降低约 `36%` 和 `21%`。
-  - 证据位置: PDF file pages 13-14, Sections 5.2-5.3, Fig. 19, Table 8.
-- 核心结论: 成本比较中，新平台总建造成本约为 `3.48` 百万欧元，平台本体约 `1.49` 百万欧元；平台本体成本相较 NAUTILUS 和 Olav Olsen Y 分别降低约 `75%` 和 `71%`，相较 OO-Star 约低 `30%`。
-  - 证据位置: PDF file page 18, Section 5.5, Fig. 27.
-- 核心结论: 仅普通配筋时，六个 ULS 荷载工况中的第一主应力均超过 C50 混凝土设计抗拉强度 `1.89 MPa`；加入预应力筋后，整体应力范围低于设计抗拉强度，最大应力平均降低约 `69%`，内部加劲应力降低约 `50%`。
-  - 证据位置: PDF file pages 18-22, Section 6, Figs. 28-35, Table 16.
-- 核心边界: 论文明确指出研究仍局限于数值模拟，后续需要缩尺水池试验进一步提高结果可靠性。
-  - 证据位置: PDF file page 23, Section 7, final limitation paragraph.
-- 关键图:
-  - Fig. 1 `Research route`: PDF file page 3; used as article Figure 1; asset `wechat/assets/public-safe/ref-he2026-OE-structural/fig-01-research-route.jpg`.
-  - Fig. 7 `Novel platform concept design`: PDF file page 5; used as article Figure 7; asset `wechat/assets/public-safe/ref-he2026-OE-structural/fig-07-platform-concept.jpg`.
-  - Fig. 10 `Hydrodynamic model of the novel platform`: PDF file page 8; used as article Figure 10; asset `wechat/assets/public-safe/ref-he2026-OE-structural/fig-10-hydrodynamic-model.jpg`.
-  - Fig. 16 `Comparison of objective functions`: PDF file page 11; used as article Figure 16; asset `wechat/assets/public-safe/ref-he2026-OE-structural/fig-16-objective-functions.jpg`.
-  - Fig. 19 `Comparison of RAOs for two types of platforms under 135 degree wave direction`: PDF file page 14; used as article Figure 19; asset `wechat/assets/public-safe/ref-he2026-OE-structural/fig-19-raos-comparison.jpg`.
-  - Fig. 27 `Comparison of total construction costs`: PDF file page 18; used as article Figure 27; asset `wechat/assets/public-safe/ref-he2026-OE-structural/fig-27-construction-costs.jpg`.
-  - Fig. 29 `Strength analysis finite element model of novel platform`: PDF file page 19; used as article Figure 29; asset `wechat/assets/public-safe/ref-he2026-OE-structural/fig-29-strength-fem.jpg`.
-- 关键公式:
-  - 文章使用: total construction cost equation for `TC`.
-  - 证据位置: PDF file page 8, Section 4.3, Eq. (6).
-  - 文章使用: inline indicators `$D_{\mathrm{TwrBs}}$`, `$D_{\mathrm{FairLd}}$`, `$TC$`, `$10\,\mathrm{MW}$`, `$60\,\mathrm{m}$`, and ULS stress quantities.
-  - 证据位置: PDF file pages 1, 8, 14, 18, 22-23.
-- 页码口径: evidence locations use PDF file page numbers, not journal printed page numbers or article pagination.
+本节是本轮核对后的当前证据，页码均为PDF物理文件页序。
 
-## 图片使用记录
 
-1. 图 1: 研究路线
-   - 用途: 开篇总览图
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-01-research-route.jpg`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 1 研究路线
-   - 公众号说明: 概括概念设计、多目标优化、性能比较和强度分析路径。
-   - 移动端预览: pending WeChat backend mobile preview
-2. 图 7: 新型平台概念设计
-   - 用途: 平台构型说明
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-07-platform-concept.jpg`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 7 新型平台概念设计
-   - 公众号说明: 展示圆柱、方柱和圆板等模块构件组合。
-   - 移动端预览: pending WeChat backend mobile preview
-3. 图 10: 新型平台水动力模型
-   - 用途: 参数化分析模型说明
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-10-hydrodynamic-model.jpg`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 10 新型平台水动力模型
-   - 公众号说明: 展示用于快速动力响应分析的水动力模型。
-   - 移动端预览: pending WeChat backend mobile preview
-4. 图 16: 目标函数对比
-   - 用途: Pareto 目标关系说明
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-16-objective-functions.jpg`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 16 目标函数对比
-   - 公众号说明: 展示疲劳损伤和总建造成本之间的多目标关系。
-   - 移动端预览: pending WeChat backend mobile preview
-5. 图 19: 两类平台在 135 度波向下的 RAO 对比
-   - 用途: 水动力性能比较证据
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-19-raos-comparison.jpg`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 19 两类平台在 135 度波向下的 RAO 对比
-   - 公众号说明: 对比新平台和 OO-Star 在不同自由度下的波浪响应幅值。
-   - 移动端预览: pending WeChat backend mobile preview
-6. 图 27: 总建造成本对比
-   - 用途: 成本比较证据
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-27-construction-costs.jpg`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 27 总建造成本对比
-   - 公众号说明: 分别展示平台和系泊系统对总建造成本的贡献。
-   - 移动端预览: pending WeChat backend mobile preview
-7. 图 29: 新型平台强度分析有限元模型
-   - 用途: 强度验证模型说明
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-he2026-OE-structural/fig-29-strength-fem.jpg`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 29 新型平台强度分析有限元模型
-   - 公众号说明: 展示整体结构、内部加劲、预应力筋和边界条件。
-   - 移动端预览: pending WeChat backend mobile preview
+- 摘要与身份：PDF file page 1；恢复中文摘要遗漏的全球约80%潜在海上风能资源位于水深超过60 m海域。其余摘要保留原文判断归属，强度口径另见下方未决项。
+- 方法：PDF file page 3–5，§2，8自由度频域ROM、平台刚体/塔架柔体、MDA代表海况及Kriging长期响应；现有导读未当作全耦合时域模型。
+- 成本式：PDF file page 8，§4.3 Eq.(6)，四项质量×单价之和除以0.7；补明人工及其他费用占总成本30%的假设。
+- 优化：PDF file page 9–11，§4.5、Fig.13–16，164代收敛、50个Pareto方案及导缆孔疲劳/成本反向权衡成立。
+- 长期指标：PDF file page 12，§5.3；PDF file page 14，Table8。塔底疲劳0.3926→0.2503约降36%，导缆孔0.2891→0.2271约降21%。这不是已实证的寿命延长比例。倾角5.2884°→8.4970°约增61%，仍低于该文10°约束；两渠道不再弱化此不利结果。
+- 成本：PDF file page 18，§5.5、Fig.27。新平台1.49+系泊1.99=总成本3.48百万欧元；75%/71%/30%是平台部分相对NAUTILUS/Olav Olsen Y/OO-Star的下降，不是总成本下降。
+- 强度：PDF file page 18–23，§6；Table16在PDF file page 23。普通配筋六工况最大第一主应力超过1.89 MPa；预应力最大值平均降约69%，§7另报告加劲应力降50%。这些降幅成立，但强度通过结论存在下列未决项。
+- 未决图文冲突：PDF file page 12，§5.2称横摇/纵摇背景波频RAO略低；PDF file page 14，Fig.19(d)(e)放大图区新平台红线高于OO-Star蓝线。现稿不确认这两个方向的背景波频优势。
+- 未决强度口径：PDF file page 23，Table16预应力最大应力为5.53/5.73/5.77/5.88/3.71/5.82 MPa，正文却依据整体范围−5.70至1.58 MPa称满足1.89 MPa抗拉要求。原文提局部应力集中，但未充分说明忽略局部峰值的定量依据；当前不能宣称全部峰值均达标，事实核验状态为需原文澄清。
+- 其他源文问题：PDF file page 17，§5.4.2报最大平均纵摇5.06°又称满足±5°；未采纳该通过断言。PDF file page 3–5与6–8公式编号重启，全文扩写须用章节区分。
+- 已用图：Fig.1/7/10/16/19/27/29分别为PDF file page 3/5/8/11/14/18/19。对照原图后保留图19冲突，未改图或猜测哪一方正确。
+- 适用限制：PDF file page 23，§7末段，仅数值研究，仍需缩尺水池试验。
 
-## 公式检查
+## 当前事实修正与完整度
 
-- 使用公式: yes; one display formula and inline mathematical variables/quantities
-- 呈现方式: Markdown LaTeX source; default WeChat API rendering is MathJax SVG with `data-formula` metadata
-- 微信公式渲染路线: `mathjax-svg` unless a fallback reason is recorded
-- RTD 呈现方式: Sphinx math roles/directives generated by `wechat/tools/markdown_to_rtd.py`
-- 行内变量/量纲: formula markup applied to `$60\,\mathrm{m}$`, `$10\,\mathrm{MW}$`, `$D_{\mathrm{TwrBs}}$`, `$D_{\mathrm{FairLd}}$`, `$TC$`, `$1.89\,\mathrm{MPa}$`, percentages, and cost quantities
-- 移动端预览: pending WeChat backend mobile preview
+### 2026-10-05 原文审校与完整度结论
 
-## 封面图
+- 原文共25页，已完整读审；本轮重新校验存续PDF并检查相关源图、公式、表格，重新建立既有两渠道改稿，不声称找回此前未保留的输出字节
+- 当前事实与修改依据见上方已更新的现行证据段；RTD和公众号分别与原文对照，没有相互转换覆盖
+- 原文覆盖清单：§1–7；Fig.1–35；Table1–16；§2 Eq.(1)–(9)与§4重启编号Eq.(1)–(7)；参考文献PDF file page 24–25，无附录
+- 现有RTD为选读简介：仅七幅选图及成本公式；尚未逐段保留全文、全部图表公式、文内引用和参考文献链，顶部也缺全文精解要求的精简版链接行
+- 因此全文完整度未完成；原文全页已读、选图已核对不等于RTD全文精解完成
+- 事实状态：需原文澄清，不通过无保留事实验收；Fig.19图文及Table16局部峰值口径冲突仍在
+- 原文数值模拟未重新运行；未进行后台上传、更新或发布；新的离线检查结果以本轮执行记录为准
 
-- 封面状态: selected v2 cover from upgraded batch cover workflow, pending WeChat backend preview
-- 封面简报: `wechat/articles/review/ref-he2026-OE-structural.cover-brief.md`
-- 封面素材: `wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png`
-- 尺寸: `900 x 383 px`
-- 生成方式: image-gen public-safe candidate selected after upgraded batch `wechat-cover` comparison
-- 设计方向: reinforced-concrete semi-submersible FOWT platform, visible concrete pontoons and columns, wind/wave context, optimization and stress cues
-- 文字策略: short embedded Chinese hook; category tag `漂浮风电`; hook `混凝土平台如何优化`
-- 源候选图: `wechat/.local/cover-candidates/batch-2026-06-10/ref-he2026-OE-structural-v2-imagegen.png`
-- 本地裁剪预览: `wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html`
-- 批量候选联系表: `wechat/.local/cover-candidates/batch-2026-06-10/contact-sheet-v2.png`
-- 裁剪预览结果: passed local ratio, file-size, small-thumbnail, and text-quality checks (`900 x 383 px`, ratio delta `0.0`)
-- 微信后台预览: pending WeChat backend mobile preview
+### 本轮离线验证
 
-## 公开安全
-
-- [x] No WeChat AppSecret, token, cookie, or credential appears.
-- [x] No Zotero API key appears.
-- [x] No private partner name appears.
-- [x] No unconfirmed project status appears.
-- [x] Reader-facing Markdown has no YAML front matter, production notes, checklist, pending placeholders, or private paths.
-- [x] Reader-facing Markdown uses direct Markdown hyperlinks under `延伸阅读`; no separate `阅读原文` body section is included.
-- [x] Figure captions use a Chinese figure-title line translated from the original paper title plus a separate Chinese explanatory line.
-
-## 发布前任务
-
-- [x] 用 Zotero/PDF 核对作者、期刊、页码、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要补入中文摘要。
-- [x] 从 PDF 抽取并导入可用正文图。
-- [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
-- [x] 由 controller/final integration task 将 RTD 配套页挂入相关科研方向页的 `学术进展 Academic Progress`。
-- [x] 生成最终封面图。
-- [x] 运行本地封面裁剪预览。
-- [ ] 公众号后台手机预览正文、公式和图片。
-- [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
-
-## 表达修订记录
-
-- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：具体数字式。关键卡证据：长期响应、成本比较和 ULS 强度分析数字均已在关键事实证据定位记录中标到 PDF file pages 8-18 及 Figs. 16、19、27、29。
-
-## 检查记录
-
-- figure extraction: copied selected local extracted PDF embedded JPG images to public-safe asset names
-- cover-v2 generation: selected `wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png` from upgraded batch `wechat-cover` image-gen workflow
-- cover-v2 preview: passed (`python3 .agents/skills/wechat-cover/scripts/cover_preview.py -o wechat/.local/cover-previews/batch-2026-06-10-v2-quality-board.html ...`)
-- cover generation: generated `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)` with bundled Python/Pillow local raster generator
-- cover-preview: passed (`python .agents/skills/wechat-cover/scripts/cover_preview.py -o wechat/.local/cover-previews/ref-he2026-OE-structural.cover-preview.html removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`)
-- rtd-generation: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-he2026-OE-structural`)
-- rtd-sync-check: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-he2026-OE-structural --check`)
-- wechat-preflight: passed (`python3 wechat/tools/wechat_draft.py preflight --publication-ref ref-he2026-OE-structural --theme academic-clean`)
-- wechat-dry-run: passed (`python3 wechat/tools/wechat_draft.py dry-run --publication-ref ref-he2026-OE-structural --theme academic-clean`)
-- public-safety: passed (`python3 scripts/check-public-safe-content.py`)
-- whitespace: passed (`git diff --check -- wechat/articles/draft-public-safe/ref-he2026-OE-structural.md wechat/articles/review/ref-he2026-OE-structural.review.md wechat/articles/review/ref-he2026-OE-structural.cover-brief.md docs/source/paper-notes/ref-he2026-OE-structural.rst wechat/assets/public-safe/ref-he2026-OE-structural`)
+- 公共安全扫描、产物检查、原生图片/图题/链接目标检查及差异空白检查通过
+- 本篇官方工具无提交dry-run通过，使用MathJax SVG；未执行凭据读取、上传或后台更新
+- Sphinx标准总构建由整批统一执行；本子批次未重复启动共享构建，微信后台手机预览未执行

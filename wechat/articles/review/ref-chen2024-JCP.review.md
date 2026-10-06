@@ -1,213 +1,89 @@
 ---
 publication_ref: ref-chen2024-JCP
-zotero_key: Y76UWP9R
 doi: 10.1016/j.jcp.2023.112706
-research_family: 建筑结构抗风
-subdirection: 数值风洞与湍动入流
-publication_mode: first_publish
-wechat_status: ready_to_publish
-wechat_draft_media_id: OW4ZgzIulHGwsx2YUygit8jZYVoX9eNK1vrIQKOcGi8CkjVV77kRKQEP6OlmtkpH
-wechat_draft_created_at: 2026-06-10T20:04:58+08:00
-wechat_draft_updated_at: 2026-06-10T20:04:58+08:00
+wechat_status: awaiting_review
 wechat_author: Chen Lingwei
 source_checked: true
+facts_checked: true
 abstract_checked: true
+body_images_upload_approved: true
 copyright_checked: true
 public_safety_checked: true
 formula_preview_checked: false
 figure_preview_checked: false
 cover_image_checked: false
-body_images_upload_approved: true
-rtd_page_checked: true
 wechat_backend_preview_checked: false
+rtd_page_checked: false
+wechat_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v1.png
+rtd_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v1.png
 ---
 
-# ref-chen2024-JCP 发布说明
+# ref-chen2024-JCP 原文核验记录
 
-## 正文文件
+## 正文与公开素材
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-chen2024-JCP.md`
-- RTD 配套页: `docs/source/paper-notes/ref-chen2024-JCP.rst`
-- 微信草稿作者字段: `Chen Lingwei`
+- RTD正文: `docs/source/paper-notes/ref-chen2024-JCP.rst`
+- 封面素材: `wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v1.png`
+- 论文图 7 CMRFG 方法流程图: `wechat/assets/public-safe/ref-chen2024-JCP/fig-07-cmrfg-workflow.png`
+- 论文图 4 SW1 至 SW4 工况流场统计脉动: `wechat/assets/public-safe/ref-chen2024-JCP/fig-04-statistical-flow-fluctuations.png`
+- 论文图 17 不同空间间距下的 Y 方向空间相干函数对比: `wechat/assets/public-safe/ref-chen2024-JCP/fig-17-spatial-coherence-validation.png`
+- 论文图 28 脉动压力系数分布云图: `wechat/assets/public-safe/ref-chen2024-JCP/fig-28-pressure-fluctuation-contours.png`
+- 论文图 30 8 s 时刻 Q=1000 的等值面，按瞬时速度大小着色（流向从左到右）: `wechat/assets/public-safe/ref-chen2024-JCP/fig-30-q-criterion-vortices.png`
 
-## RTD 转换记录
+## 当前核验结果
 
-- 内容母版: `wechat/articles/draft-public-safe/ref-chen2024-JCP.md`
-- 正式转换命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-chen2024-JCP`
-- 同步检查命令: `python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-chen2024-JCP --check`
-- RTD 顶部封面: not set for this package; body figures are inserted in the article flow
-- 转换规则: 正文措辞、正文图片、公式语义和延伸阅读链接来自 Markdown；平台字段来自 review note。微信底部 `content_source_url` 默认使用当前论文 RTD 解读页（`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/ref-chen2024-JCP.html`）。
-- 导航状态: shared integration files were intentionally not modified in this worker task. Existing public record already contains `ref-chen2024-JCP` in `docs/source/Publications.rst`, `docs/source/PublicationsByYear.rst`, `docs/data/publication-research-map.json`, and the building structural wind direction page.
-
-## 证据来源
-
-- DOI: https://doi.org/10.1016/j.jcp.2023.112706
-- Zotero: `Y76UWP9R`
-- PDF attachment key: `XQVFX5D7`
-- 摘要来源: Zotero Desktop Local API `abstractNote` and PDF abstract; 中文摘要为英文原摘要的忠实翻译，公众号正文与 RTD 页不再保留英文原摘要（2026-06-11 规则更新）。
-- PDF / 作者稿: Zotero local imported PDF attachment exists; the selected local publisher-record PDF was used for article evidence and body figures.
-- 公开网站记录: `docs/source/Publications.rst` contains `ref-chen2024-JCP` as paper `[50]` and maps it under `建筑结构抗风 / 数值风洞与湍动入流`; `docs/source/PublicationsByYear.rst` contains the by-year citation view; `docs/source/StructuralWindEngineering.rst` lists it under `数值风洞与湍动入流`.
+- 公众号: awaiting_review；当前稿件尚未完成后台手机预览
+- RTD全文覆盖: 未完成，缺项详见下文
+- 事实检查: 已核对所用事实；原文内部差异保留出处
 
 ## 源文件获取记录
 
-- Zotero key: `Y76UWP9R`
-- Zotero 元数据: checked via Zotero Desktop Local API
-- Zotero 附件记录: checked via Zotero Desktop Local API; one PDF attachment record and one HTML attachment record exist
-- 本地 PDF 附件: exists
-- PDF 附件候选: one PDF-like Zotero local imported attachment, key `XQVFX5D7`, content type `application/pdf`, link mode `imported_file`
-- PDF 选择优先级: author manuscript > publisher version of record > OA platform PDF > preprint > other
-- 已选 PDF 类型: Zotero local imported publisher-record PDF, treated as the usable paper PDF for this WOEAI/user-authored article
-- 低优先级选择原因: not applicable; no web, preprint, or lower-priority substitute source was used
-- PDF 来源类型: Zotero local attachment
-- PDF 私有存放: Zotero private attachment and ignored local working artifacts under `wechat/.local/ref-chen2024-JCP/`
-- Zotero Web API `/file`: not needed
-- 网页 PDF 下载: not used
-- 网页 PDF 批准记录: not applicable
-- 摘要依据: Zotero `abstractNote` and PDF abstract on PDF file page 1
-- 正文证据依据: PDF body, Zotero metadata, and public WOEAI publication record
-- 图片依据: PDF embedded figures extracted from the local paper PDF and copied into public-safe body PNG assets
-- 私有信息边界: no absolute private file path, credential, cookie, raw API payload, raw downloaded PDF content, or private preview URL is recorded here
+- DOI: https://doi.org/10.1016/j.jcp.2023.112706
+- 来源: 用户授权的期刊出版版PDF，身份与论文题名、作者及DOI核对一致
+- 文件页数: 31；以下PDF file page均为文件物理页码
+- 当前核验副本SHA-256: `60ab26625848c6c428b15f221a4f2a3a647ad34bc29c1aaea3e00ad777e16693`
 
 ## 关键事实证据定位记录
 
-- 摘要:
-  - 文章使用: 中文摘要忠实翻译英文摘要，不附英文原摘要。
-  - 证据位置: Zotero `abstractNote`; PDF file page 1 abstract.
-- 核心结论: 论文提出 coherence-improved and mass-balanced random flow generation (CMRFG) 方法，用于 LES 入口湍流生成。
-  - 证据位置: PDF file page 1 abstract; PDF file pages 11-15, Section 3.2.
-- 核心结论: 单波传输分析显示，同时满足无散度条件、Taylor 冻结假设和入口质量平衡条件时，生成流场可避免非物理压力波动并在中心区域自持发展。
-  - 证据位置: PDF file pages 4-9, Section 2; PDF file page 29, Section 6.
-- 核心结论: 入口质量不平衡时，入口附近最大压力波动可达到动压的 `0.84` 倍，`X=2 m` 处人工压力波动仍可达到约 `15%` 动压。
-  - 证据位置: PDF file pages 7-8, Section 2.3.2, Fig. 4.
-- 核心结论: CMRFG 通过目标空间相干函数确定 $k_{2,n}$ 的概率密度，并通过波数周期修正满足入口质量平衡。
-  - 证据位置: PDF file pages 11-15, Section 3.2, Fig. 7, Eqs. (48)-(55).
-- 核心结论: 与 CIRFG 相比，CMRFG 生成的 Y 方向空间相干函数在不同空间间距下更接近目标值。
-  - 证据位置: PDF file page 21, Section 4.4, Fig. 17.
-- 核心结论: 各向异性湍流 LES 中，带质量平衡修正的 HA1 算例入口质量通量保持为 `1`，未修正 HA2 算例随时间波动；HA2 在 `x/M=30` 位置非期望压力波动约为 `12%` 动压，HA1 中心感兴趣区域脉动压力系数约为 `1.5%`。
-  - 证据位置: PDF file pages 25-27, Section 5.2.3, Figs. 27-29.
-- 核心结论: CMRFG 生成的各向异性湍流涡结构具有随机性并沿流向逐步衰减，速度标准差、湍流动能和空间谱总体与实验目标一致。
-  - 证据位置: PDF file pages 26-29, Sections 5.2.4 and 6, Figs. 30-35.
-- 核心边界: 论文聚焦均匀湍流；CMRFG 可扩展到非均匀湍流，但更真实的非均匀湍流空间相干函数确定仍需后续研究。
-  - 证据位置: PDF file page 29, Section 6 final paragraph.
-- 核心边界: 各向异性算例仍存在入口与侧边界交界处的局部非物理压力波动，与边界不相容有关。
-  - 证据位置: PDF file page 27, Section 5.2.3; PDF file page 29, Section 6.
-- 关键图:
-  - Fig. 4 `Statistical fluctuations of flow fields for cases SW1 to SW4`: PDF file page 8; used as article Figure 4; asset `wechat/assets/public-safe/ref-chen2024-JCP/fig-04-statistical-flow-fluctuations.png`.
-  - Fig. 7 `Flowchart of CMRFG method`: PDF file page 14; used as article Figure 7; asset `wechat/assets/public-safe/ref-chen2024-JCP/fig-07-cmrfg-workflow.png`.
-  - Fig. 17 `Comparison of spatial coherence functions in Y-direction at different spatial separations`: PDF file page 21; used as article Figure 17; asset `wechat/assets/public-safe/ref-chen2024-JCP/fig-17-spatial-coherence-validation.png`.
-  - Fig. 28 `Contour diagram of fluctuating pressure coefficient distributions`: PDF file page 25; used as article Figure 28; asset `wechat/assets/public-safe/ref-chen2024-JCP/fig-28-pressure-fluctuation-contours.png`.
-  - Fig. 30 `Iso-surface of the Q-criterion (Q = 1000) coloured by the magnitude of the instantaneous velocity at the 8 s`: PDF file page 26; used as article Figure 30; asset `wechat/assets/public-safe/ref-chen2024-JCP/fig-30-q-criterion-vortices.png`.
-- 关键公式:
-  - 文章使用: editorial explanatory formula `\int_S u_1'(t)\,\mathrm{d}S = 0`, summarizing the inlet mass-balanced condition in Section 2.2.1.
-  - 证据位置: PDF file page 5, Section 2.2.1, Eq. (8).
-  - 文章使用: inline variables and quantities including `$k_{2,n}$`, `$S$`, `$u_1'$`, `$X=2\,\mathrm{m}$`, `$x/M=30$`, `$5.12\,\mathrm{m} \times 5.12\,\mathrm{m} \times 2.56\,\mathrm{m}$`, `$8\,\mathrm{s}$`.
-  - 证据位置: PDF file pages 5, 7-8, 11-15, and 25-28.
-- 页码口径: evidence locations use PDF file page numbers, not journal printed page numbers or article pagination.
+- 身份与摘要：PDF file page 1；期刊卷年为 2024，在线发表日为 2023-12-05，DOI 和五名作者一致。
+- 单波验证：PDF file page 4–9 Section 2、Eqs. (1)–(18)、Table 1。SW1 的入口边缘最大压力标准差约为动压 0.84 倍，X=2 m 处约 15%；SW4 双向周期修正使初始 TKE 从约 1.64 降为 1.53 m²/s²，降低约 6.7%。
+- 相干输入范围：PDF file page 13 Eq. (48) 后段直接选定 u 分量的 Y 向相干函数；PDF file page 16 说明共用波数可能造成 v/w 三维互谱偏差。实部与绝对值的区别及负相干见 PDF file page 17–18。
+- 入口质量平衡式：PDF file page 5 Eq. (8)；波数周期修正：PDF file page 14–15 Eq. (54)–(55)。均匀网格质量通量严格恒定；非均匀网格可能仍需小幅修正。
+- 随机实现筛选：PDF file page 20–22 Section 4.4、5.1.1，CBC 每工况 50 次并保留最佳拟合随机参数；PDF file page 26 Section 5.2.2，KCM 入流独立 20 次。
+- HA2 在 x/M=30 约 12%，HA1 中心区域约 1.5%，但入口/侧边交线仍有局部人工压力：PDF file page 27；只验证均匀湍流：PDF file page 29 Section 6。
+- 微信图：Fig. 4 / PDF file page 8；Fig. 7 / PDF file page 14；Fig. 17 / PDF file page 21；Fig. 28 / PDF file page 25；Fig. 30 / PDF file page 26。最后一图保留 Q=1000、8 s、按瞬时速度着色和从左到右的流向。
 
-## 图片使用记录
+## 当前事实修正与完整度
 
-1. 图 7: CMRFG 方法流程
-   - 用途: 开篇说明方法生成流程
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2024-JCP/fig-07-cmrfg-workflow.png`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 图像复核: visually verified against PDF file page 14 / Fig. 7 and local extracted image inventory; asset is the English CMRFG workflow figure
-   - 公众号图名: 论文图 7 CMRFG 方法流程
-   - 公众号说明: 展示 CMRFG 如何从目标谱、相关和相干函数生成质量平衡的入口湍流场。
-   - 移动端预览: pending WeChat backend mobile preview
-2. 图 4: 不同单波条件下的流场统计波动
-   - 用途: 说明入口质量平衡对压力波动的影响
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2024-JCP/fig-04-statistical-flow-fluctuations.png`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 4 不同单波条件下的流场统计波动
-   - 公众号说明: 对比质量不平衡、质量通量修正和波数周期修正下的压力与速度统计波动。
-   - 移动端预览: pending WeChat backend mobile preview
-3. 图 17: 不同空间间距下的 Y 方向空间相干函数对比
-   - 用途: 说明 CMRFG 对目标空间相干函数的匹配能力
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2024-JCP/fig-17-spatial-coherence-validation.png`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 17 不同空间间距下的 Y 方向空间相干函数对比
-   - 公众号说明: 展示 CMRFG 相比 CIRFG 更接近目标空间相干函数。
-   - 移动端预览: pending WeChat backend mobile preview
-4. 图 28: 脉动压力系数分布云图
-   - 用途: 说明质量平衡修正对各向异性湍流 LES 压力污染的抑制
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2024-JCP/fig-28-pressure-fluctuation-contours.png`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 28 脉动压力系数分布云图
-   - 公众号说明: 对比带质量平衡修正与不带修正时计算域中的人工压力波动。
-   - 移动端预览: pending WeChat backend mobile preview
-5. 图 30: Q 准则等值面显示的瞬时涡结构
-   - 用途: 展示 CMRFG 生成湍流在计算域内的空间发展
-   - 图片状态: inserted in reader-facing Markdown
-   - 素材文件: `wechat/assets/public-safe/ref-chen2024-JCP/fig-30-q-criterion-vortices.png`
-   - 来源/版权: paper PDF embedded figure; WOEAI/user-authored paper workflow scope
-   - 抽取方式: copied from local extracted PDF embedded image
-   - 公众号图名: 论文图 30 Q 准则等值面显示的瞬时涡结构
-   - 公众号说明: 展示随机涡结构随流向发展和衰减。
-   - 移动端预览: pending WeChat backend mobile preview
+### 2026-10-05 当前全文审校与覆盖结论
 
-## 公式检查
+- 本日已完整阅读同一份 31 页原文；本轮重新校验 PDF 哈希和全部页面，重新打开恢复的 Eq. (43)/(46) 及微信事实定位页核对当前文本。当前输出不是旧文件字节恢复。
+- RTD：`full_paper_coverage=false`。主 PDF 的各节与全部编号公式/图表/参考文献有对应，但被引用的附录 A/B 源文不在本 PDF 中，部分分图及图中文字仍须补齐。
+- 微信：已独立按原文修正积分符号、相干范围、实部/负值、50/20 次随机筛选以及 SW4 的 TKE 代价；没有用 RTD 代替源文。
 
-- 使用公式: yes; one editorial explanatory display formula and inline mathematical quantities
-- 呈现方式: Markdown LaTeX source; default WeChat API rendering is MathJax SVG with `data-formula` metadata
-- 微信公式渲染路线: `mathjax-svg` unless a fallback reason is recorded
-- RTD 呈现方式: Sphinx math roles/directives generated by `wechat/tools/markdown_to_rtd.py`
-- 行内变量/量纲: formula markup applied to `$k_{2,n}$`, `$S$`, `$u_1'$`, `$X=2\,\mathrm{m}$`, `$x/M=30$`, `$5.12\,\mathrm{m} \times 5.12\,\mathrm{m} \times 2.56\,\mathrm{m}$`, `$8\,\mathrm{s}$`
-- 移动端预览: pending WeChat backend mobile preview
+### 原文到 RTD 的覆盖
 
-## 封面图
+- 身份、摘要、关键词：PDF file page 1；符号表：PDF file page 2–3，已对应。bulk velocity 已按面积分定义改为截面平均速度。
+- Section 1：PDF file page 1、3–4，文献综述与引用、论文结构均在。
+- Sections 2.1–2.3.2：PDF file page 4–9，单波、质量修正公式、Table 1、四个工况、设置及正负结果均在。
+- Sections 3.1–3.2.3：PDF file page 9–16，回顾、相干推导、质量平衡、截断/符号调整及限制均在。本轮恢复 PDF file page 12 Eq. (43) 的同相/正交谱与 Dirac 比值展开、PDF file page 13 Eq. (46) 的 Fourier/Dirac 中间步骤。
+- Sections 4.1–4.4：PDF file page 16–21，CBC 数据、实部/负相干、非遍历性、50 次集合与最佳实现筛选均在。
+- Sections 5.1–5.2.4：PDF file page 21–29，HI1–HI5、HA1–HA2、LES/准 DNS、20 次筛选、边界压力、能谱局限均在。
+- Section 6：PDF file page 29，四段结论及仅验证均匀湍流的边界均在。
+- Fig. 1–35 全部在。源页：PDF file page 5（1）、6（2）、7（3）、8（4）、9（5–6）、14（7）、16（8–9）、17（10–11）、18（12）、19（13–14）、20（15–16）、21（17–18）、22（19–21）、23（22–23）、24（24–25）、25（26–28）、26（29–30）、27（31–33）、28（34）、29（35）。部分分图说明如 Fig. 4、8–9、11、14–17、19–22、25–26、31、34–35 未逐项中文转写；流程/边界图的关键英文还需全量对照。
+- Table 1–5 为中文可编辑表，源页为 PDF file page 7、18（2–3）、21、24；全部原表参数在。
+- Eq. (1)–(64) 均在，补回上述两个被缩写的推导链。
+- 参考文献 [1]–[58] 来自 PDF file page 30–31，均在，正文引用编号有对应。
+- 附录 A/B：正文 PDF file page 10、15–18、23–24 多次引用，至少涉及 A12、B18；PDF file page 29 结论之后直接是声明及参考文献，当前源中无附录正文。未凭理论自行补写，不能声称附录已读/已译。
+- 结论/参考文献之间未混入禁止的出版尾注；封面位置及稳定完整引用保留。
 
-- 封面状态: regenerated with image-gen-text; WeChat draft updated; pending WeChat backend mobile preview
-- 候选数量: 3 concept directions documented in `wechat/articles/review/ref-chen2024-JCP.cover-brief.md`; 1 selected image-gen-text cover exported
-- 选中候选: `cover-wechat-900x383-imagegen-v1`
-- 文字模式: image-gen-text
-- 生成工具: Codex image generation tool
-- 图像生成场景: LES 入流湍流生成、城市数值风洞、CFD 流线与方法流程
-- 要求文字: `数值风洞 / 入流更连贯 / 守恒湍流生成`
-- 备用封面: `removed during 2026-06-11 slimming cleanup (cover-wechat-900x383-v1.png)`
-- 封面素材: `wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v1.png`
-- 尺寸: `900 x 383 px`
-- 本地总览图: `wechat/.local/cover-previews/batch-10-imagegen-contact-sheet.png`
-- 本地裁剪预览: `wechat/.local/cover-previews/batch-10-imagegen-cover-preview.html`
-- 审核状态: local visual text check and crop preview passed; WeChat backend mobile preview pending
-- 草稿状态: existing WeChat draft has been live-updated to this regenerated cover; pending WeChat backend mobile preview and proofread
-- 注意: `cover_image_checked` remains `false` until the WeChat backend mobile preview is checked.
+### 更正及需要保留的边界
 
-## 公开安全
+1. Eq. (43)/(46) 补齐中间式；微信质量平衡改为 u1(x,t) 的面积分，保持空间依赖（PDF file page 5 Eq. (8)）。
+2. 微信补清只有 u 分量/Y 向相干直接输入、保留相干实部及负值、CBC 50 次/KCM 20 次及最佳实现筛选（PDF file page 13、17–18、20、26）。
+3. SW4 双向周期修正的 TKE 降低约 6.7% 不能省略（PDF file page 7–9）；Fig. 30 的 Q=1000、8 s、速度着色及流向已补。
+4. 摘要“没有人工压力”按原文保留；正文 PDF file page 27、29 的入口/侧边交界残余压力必须同时保留。
+5. Table 5 的 256×256×128 = 8,388,608，而 PDF file page 25 正文为 8.34 million，未擅自统一。PDF file page 17 Fig. 10、正文及 PDF file page 18 Table 3 对附录 A 的式号有 A8/A9/A11/A12 的不同指向，需附录源文才能判定。
 
-- [x] No WeChat AppSecret, token, cookie, or credential appears.
-- [x] No Zotero API key appears.
-- [x] No private partner name appears.
-- [x] No unconfirmed project status appears.
-- [x] Reader-facing Markdown has no YAML front matter, production notes, checklist, pending placeholders, or private paths.
-- [x] Reader-facing Markdown uses direct Markdown hyperlinks under `延伸阅读`; no separate `阅读原文` body section is included.
-- [x] Figure captions use a Chinese figure-title line translated from the original paper title plus a separate Chinese explanatory line.
-
-## 发布前任务
-
-- [x] 用 Zotero/PDF 核对作者、期刊、DOI 和图题。
-- [x] 用 Zotero/PDF 摘要核对中文摘要，并按 2026-06-11 规则移除英文原摘要。
-- [x] 从 PDF 抽取并导入可用正文图。
-- [x] 由公众号正文转换生成 RTD 配套页，保持标题、正文、图片、DOI 和延伸阅读链接一致。
-- [ ] 公众号后台手机预览正文、公式、封面和图片。
-- [x] 微信公众号草稿已创建并回填 `wechat_status` 与草稿 media_id；正式发布后再回填 `latest_published_url`。
-
-## 表达修订记录
-
-- 2026-06-11: 按新表达规范完成批量修订——补入`三句话导读`和关键数字卡；删除英文摘要段，仅保留中文摘要；`研究问题`编号化；`关键发现`各小节首句回扣编号问题且加粗一句结论；图注改为`论文图 N`格式；`延伸阅读`前加入固定结尾块。开头策略：现实矛盾式。关键卡证据：入口质量不平衡的压力波动、HA2/HA1 压力污染对比和空间相干验证均已在关键事实证据定位记录中标到 PDF file pages 7-8、21、25-29。
-
-## 检查记录
-
-- Zotero metadata: passed via Zotero Desktop Local API
-- PDF extraction: passed (`pdftotext`, `pdfimages -list`, selected embedded images copied to public-safe assets)
-- rtd-generation: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-chen2024-JCP`)
-- rtd-sync-check: passed (`python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-chen2024-JCP --check`)
-- public-safety: passed (`python3 scripts/check-public-safe-content.py`)
-- whitespace: passed (`git diff --check`)
+剩余项：取得获准的 Appendix A/B 并审校翻译；补齐分图/关键图中文字。主 PDF 正文覆盖与含附录完整性分开判定。

@@ -45,6 +45,9 @@ RTD `kind` 单独区分 `legacy_intro`、`full_paper`、`unregistered`。
 [审校记录](../research/2026-10-05-existing-paper-source-audit.md)。只有Chen2024-POF达到RTD完整覆盖；
 其余缺口保留。公众号当前改稿回到`awaiting_review`，不继承旧版本上传/预览状态。
 
+2026-10-06 第一批全文重建后，Chen2022-JWEIA、Li2024-POF 和 Zhao2026-BE 新通过独立全文与原图覆盖审校；
+见[第一批记录](../research/2026-10-06-full-paper-completion-batch-01.md)。其他篇目的状态继续按当前清单和各自证据判断。
+
 Review 文件提供事实证据，不能以其中的旧 front matter 状态覆盖清单。
 历史记录保存在 `legacy_backlog` / `historical_draft_evidence`，不视为当前版本核验。
 确认冲突时保留原始双方值并补充解决依据，不静默删除或覆盖。

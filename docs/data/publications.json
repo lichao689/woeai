@@ -56,8 +56,8 @@
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhao2026-BE.rst",
         "public_title": "数值风洞 | 如何把卫星影像转成 CFD 可用城市几何",
         "order": 1,
@@ -73,6 +73,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "70626ed1bb68f2f73430d237d221a22660a51c318019a7c75d911d9aab959862"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T05:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim.",
+            "fingerprint": "104cc3a02d34770f6c17d9bbf9e0f5497260b123e2ff503e4228d8f9779d13b5"
           }
         },
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md"
@@ -85,15 +96,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T05:24:57+00:00",
             "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "766e484b765699558c7981b21c0fe4217a0a564c6be6f79638e99cfe42466ed7"
+            "scope": "Previously source-checked introduction retained; source figure assets calibrated and independently compared with original PDF; no backend preview/upload.",
+            "fingerprint": "a4a2199feea4de4a271fb3d0bb1bc04f813eb19b2bdcde35ea094df89d69c745"
           }
         },
         "latest_published_url": "",
@@ -2603,8 +2614,8 @@
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-li2024-POF.rst",
         "public_title": "数值风洞 | 用矢量势随机流生成无散湍流",
         "order": 5,
@@ -2620,6 +2631,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "cb24418a243df754f845f25bb9423920df22396996d7dbd10956007a0fc8fee4"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T05:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim.",
+            "fingerprint": "3200386553d0910ec6894944b11b248ef6b86953ea2e73f4d9fddabdd7850f67"
           }
         },
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md"
@@ -2632,15 +2654,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T05:24:57+00:00",
             "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "ef4624570ea8654a2209a682b7f382a88ca8195fda2507e10c7964d10c03f03d"
+            "scope": "Previously source-checked introduction retained; source figure assets calibrated and independently compared with original PDF; no backend preview/upload.",
+            "fingerprint": "6ab421438b2bf3300b065fedfd5c436845b95ff8ef7d827314d6dc1d9ca1e039"
           }
         },
         "latest_published_url": "",
@@ -3977,7 +3999,7 @@
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
+        "status": "verified",
         "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-chen2022-JWEIA.rst",
         "public_title": "数值风洞 | 把相关性写进入流湍流",
@@ -3994,6 +4016,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "1bcd144dc058ab35cfc0ee3f5f8e295387edb8449f5b251b3dbd9f98e2d139b1"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T05:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim.",
+            "fingerprint": "ce7b233398f86df81a118c51a857d3c752f6ad0fa8d933f07cb4aca3ec5e8f39"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md"
@@ -4006,15 +4039,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T05:24:57+00:00",
             "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "45a3a646af2467ff2748ab19b1a41395f5ede9ec32883e92fe917b14887e799a"
+            "scope": "Previously source-checked introduction retained; source figure assets calibrated and independently compared with original PDF; no backend preview/upload.",
+            "fingerprint": "6fce27b820d924d61615b0899d3633141d496297a9049fd3e73eda575ef37d4a"
           }
         },
         "latest_published_url": "",

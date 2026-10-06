@@ -22,33 +22,28 @@
         }
       ],
       "rtd": {
-        "status": "awaiting_audit",
+        "status": "verified",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": false,
-            "stage": "awaiting_audit"
+            "value": true,
+            "stage": "verified"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           }
         ],
-        "gaps": [
-          "历史导读，不能视为全文核验完成",
-          "原文身份：仅有待核验阶段记录",
-          "全文覆盖：未通过",
-          "公开安全：仅有待核验阶段记录"
-        ],
+        "gaps": [],
         "issues": [],
         "links": [
           {
@@ -60,12 +55,12 @@
             "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-zhao2026-BE.rst"
           },
           {
-            "label": "待核验阶段证据",
+            "label": "核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BE.review.md"
           }
         ],
-        "verification_current": null,
-        "kind": "legacy_intro"
+        "verification_current": true,
+        "kind": "full_paper"
       },
       "wechat": {
         "status": "awaiting_review",
@@ -2891,33 +2886,28 @@
         }
       ],
       "rtd": {
-        "status": "awaiting_audit",
+        "status": "verified",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": false,
-            "stage": "awaiting_audit"
+            "value": true,
+            "stage": "verified"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           }
         ],
-        "gaps": [
-          "历史导读，不能视为全文核验完成",
-          "原文身份：仅有待核验阶段记录",
-          "全文覆盖：未通过",
-          "公开安全：仅有待核验阶段记录"
-        ],
+        "gaps": [],
         "issues": [],
         "links": [
           {
@@ -2929,12 +2919,12 @@
             "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-li2024-POF.rst"
           },
           {
-            "label": "待核验阶段证据",
+            "label": "核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2024-POF.review.md"
           }
         ],
-        "verification_current": null,
-        "kind": "legacy_intro"
+        "verification_current": true,
+        "kind": "full_paper"
       },
       "wechat": {
         "status": "awaiting_review",
@@ -4812,33 +4802,28 @@
         }
       ],
       "rtd": {
-        "status": "awaiting_audit",
+        "status": "verified",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": false,
-            "stage": "awaiting_audit"
+            "value": true,
+            "stage": "verified"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           }
         ],
-        "gaps": [
-          "全文型页面仍需完整覆盖核验",
-          "原文身份：仅有待核验阶段记录",
-          "全文覆盖：未通过",
-          "公开安全：仅有待核验阶段记录"
-        ],
+        "gaps": [],
         "issues": [],
         "links": [
           {
@@ -4850,11 +4835,11 @@
             "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-chen2022-JWEIA.rst"
           },
           {
-            "label": "待核验阶段证据",
+            "label": "核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2022-JWEIA.review.md"
           }
         ],
-        "verification_current": null,
+        "verification_current": true,
         "kind": "full_paper"
       },
       "wechat": {

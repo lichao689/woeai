@@ -67,6 +67,41 @@ class RegistryTests(unittest.TestCase):
             path.write_text('changed body')
             self.assertFalse(workflow_verified(row,'rtd',root))
 
+    def test_supplemental_source_identity_is_validated_and_fingerprinted(self):
+        import copy
+        import tempfile
+        from woeai.publications.registry import workflow_fingerprint, workflow_verified, validate_registry
+        row = copy.deepcopy(self.row)
+        source = row['custom']['source']
+        source.update(status='verified', sha256='a' * 64, supplements=[{
+            'id': 'appendix-a', 'title': 'Appendix A', 'status': 'verified',
+            'sha256': 'b' * 64, 'sha256_scope': 'current_audited_copy', 'pages': 3,
+        }])
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            rtd = row['custom']['rtd']
+            body = root / rtd['path']; body.parent.mkdir(parents=True); body.write_text('body')
+            (root / 'review.md').write_text('Main paper and appendix reviewed')
+            rtd.update(status='verified', kind='full_paper')
+            evidence = {'recorded_at': '2026-10-06', 'review_path': 'review.md',
+                        'checks': {'source_identity': True, 'full_paper_coverage': True, 'public_safety': True}}
+            rtd['evidence']['verified'] = evidence
+            evidence['fingerprint'] = workflow_fingerprint(row, 'rtd', root)
+            self.assertTrue(workflow_verified(row, 'rtd', root))
+            for field, replacement in [('sha256', 'c' * 64), ('pages', 4), ('title', 'Replacement appendix')]:
+                changed = copy.deepcopy(row)
+                changed['custom']['source']['supplements'][0][field] = replacement
+                self.assertFalse(workflow_verified(changed, 'rtd', root))
+            for replacement in [None, {}, [{}], [dict(source['supplements'][0], sha256='bad')],
+                                [dict(source['supplements'][0], status='awaiting_audit')],
+                                [dict(source['supplements'][0], pages=0)], source['supplements'] * 2]:
+                changed = copy.deepcopy(row)
+                changed['custom']['source']['supplements'] = replacement
+                # A fresh hash cannot bless invalid or unaudited source identity.
+                changed['custom']['rtd']['evidence']['verified']['fingerprint'] = workflow_fingerprint(changed, 'rtd', root)
+                self.assertFalse(workflow_verified(changed, 'rtd', root))
+                self.assertTrue(any('supplemental source identity' in p for p in validate_registry([changed], root)))
+
     def test_issue_urls_are_links_not_completion_authority(self):
         import copy
         from woeai.publications.registry import load_registry, validate_registry

@@ -2960,33 +2960,28 @@
         }
       ],
       "rtd": {
-        "status": "blocked",
+        "status": "verified",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": false,
-            "stage": "awaiting_audit"
+            "value": true,
+            "stage": "verified"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           }
         ],
-        "gaps": [
-          "全文型页面仍需完整覆盖核验",
-          "原文身份：仅有待核验阶段记录",
-          "全文覆盖：未通过",
-          "公开安全：仅有待核验阶段记录"
-        ],
+        "gaps": [],
         "issues": [],
         "links": [
           {
@@ -2998,11 +2993,11 @@
             "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-chen2024-JCP.rst"
           },
           {
-            "label": "待核验阶段证据",
+            "label": "核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-JCP.review.md"
           }
         ],
-        "verification_current": null,
+        "verification_current": true,
         "kind": "full_paper"
       },
       "wechat": {

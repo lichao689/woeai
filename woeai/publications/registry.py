@@ -158,12 +158,35 @@ def workflow_fingerprint(record: dict[str, Any], channel: str, root: Path) -> st
     return hashlib.sha256(json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
 
 
+def _supplemental_sources_valid(source: dict[str, Any]) -> bool:
+    """Optional appendix sources are part of source identity, never loose hashes."""
+    supplements = source.get('supplements', [])
+    if not isinstance(supplements, list):
+        return False
+    identifiers = set()
+    for item in supplements:
+        if not isinstance(item, dict):
+            return False
+        identifier = item.get('id')
+        if (not isinstance(identifier, str) or not identifier or identifier in identifiers
+                or item.get('status') != 'verified'
+                or not isinstance(item.get('sha256'), str)
+                or not SHA256.fullmatch(item['sha256'])
+                or not isinstance(item.get('title'), str) or not item['title'].strip()
+                or type(item.get('pages')) is not int or item['pages'] < 1
+                or item.get('sha256_scope') != 'current_audited_copy'):
+            return False
+        identifiers.add(identifier)
+    return True
+
+
 def workflow_verified(record: dict[str,Any], channel: str, root: Path) -> bool:
     workflow=record['custom'][channel]; source=record['custom'].get('source',{})
     required=tuple(key for key, _label in BOARD_CHECKS[channel])
     if channel=='rtd' and (workflow.get('status')!='verified' or workflow.get('kind')!='full_paper'): return False
     if channel=='wechat' and workflow.get('status') not in {'ready_to_publish','published'}: return False
     if source.get('status')!='verified' or not SHA256.fullmatch(source.get('sha256','')): return False
+    if not _supplemental_sources_valid(source): return False
     evidence=workflow.get('evidence',{}).get('verified',{})
     if not evidence.get('recorded_at') or not evidence.get('review_path'): return False
     if not all(evidence.get('checks',{}).get(k) is True for k in required): return False
@@ -191,6 +214,8 @@ def validate_registry(records: list[dict[str, Any]], root: Path, *, check_eviden
         refs.add(ref)
         if row.get('type')!='article-journal' or not isinstance(row.get('title'),str) or not row.get('title'): problems.append(f'{prefix}: invalid CSL type/title')
         if set(row)-allowed: problems.append(f'{prefix}: unknown CSL properties')
+        if not _supplemental_sources_valid(custom.get('source', {})):
+            problems.append(f'{prefix}: invalid supplemental source identity')
         family=custom.get('research_family'); sub=custom.get('subdirection')
         if sub not in RESEARCH_SUBDIRECTION_ORDER.get(family,()): problems.append(f'{prefix}: invalid research mapping')
         for channel,states in (('rtd',RTD_STATES),('wechat',WECHAT_STATES)):

@@ -59,7 +59,10 @@ Review 文件提供事实证据，不能以其中的旧 front matter 状态覆�
 3. `workflow_fingerprint(record, channel, root)` 输出的 `fingerprint`
 
 `sha256_scope=current_audited_copy`标明当前审查字节，另存`historical_original_sha256`及匹配情况；
-不同副本不宣称原始字节等价。`source_audit`记录阅读页数与视觉范围。未完成渠道可以在
+不同副本不宣称原始字节等价。附录来源记录在 `source.supplements`：每份具有唯一 `id`、
+题名、页数、`verified` 状态、当前核验副本 SHA-256 和 `sha256_scope=current_audited_copy`。
+整个来源对象进入渠道指纹；替换附录哈希、身份或页数都会使既有核验失效，
+已登记附录的身份字段缺失或无效时不能通过核验。`source_audit`记录阅读页数与视觉范围。未完成渠道可以在
 `awaiting_audit`/`awaiting_review`记录当前阶段指纹，但不会升级为完整验收；未做手机预览不填通过。
 
 RTD 必须有 `source_identity`、`full_paper_coverage`、`public_safety` 全为 true。

@@ -87,6 +87,21 @@ class PaperInlineRoleTests(unittest.TestCase):
                               if link.startswith('mailto:')}
                     self.assertTrue(emails <= mailto,
                                     f'{ref}: missing complete mailto links: {emails - mailto}')
+                    if ref == 'ref-chen2024-JCP' and by_ref[ref]['source'].get('supplements'):
+                        self.assertIn('附录 A 空间相干函数与空间相关函数', text)
+                        self.assertIn('附录 B 均匀各向同性湍流特征的计算', text)
+                        self.assertNotIn('相关附录推导未收入本页', text)
+                        for target in ('a8', 'a9', 'a11', 'a12', 'b7', 'b8', 'b13', 'b18'):
+                            self.assertTrue(any(link.endswith(f'#chen2024-jcp-{target}')
+                                                for link in parsed.links), target)
+                        for appendix, count in (('a', 13), ('b', 18)):
+                            for number in range(1, count + 1):
+                                self.assertIn(f'id="chen2024-jcp-{appendix}{number}"',
+                                              (output / (ref + '.html')).read_text())
+                        for appendix, count in (('a', 5), ('b', 1)):
+                            for number in range(1, count + 1):
+                                self.assertTrue(any(link.endswith(f'#chen2024-jcp-{appendix}-ref-{number}')
+                                                    for link in parsed.links))
                     if ref == 'ref-li2024-POF':
                         for target in (15, 1, 21, 23, 41, 43):
                             self.assertTrue(any(link.endswith(f'#li2024-reference-{target}')

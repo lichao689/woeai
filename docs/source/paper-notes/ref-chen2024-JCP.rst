@@ -41,7 +41,7 @@ CMRFG 相干性改进且质量平衡的 LES 入流湍流生成方法论文精解
 
 .. note::
 
-   **来源范围**：本页覆盖 31 页主文 PDF。原文引用的附录 A、B 未包含在该来源中，相关附录推导未收入本页。
+   **来源范围**：本页依据 31 页主文 PDF，以及另行提供的附录 A（3 页）和附录 B（4 页），按原文顺序译录正文与附录。附录保留各自的公式编号和参考文献；原件中的公式、术语及引用差异在相应位置另作校核说明。
 
 摘要
 ----
@@ -770,14 +770,14 @@ ITG 方法分为三类：前驱数据库、循环法和合成湍流。首先，�
 
 首先，一维单侧空间 PSD 和单侧时间 PSD 如图 8 所示。接着，通过对空间 PSD 进行反 Fourier 变换计算空间相关系数，如图 10 所示。可以看到，纵向空间相关系数 :math:`\rho_{uu}(r_1)` 始终为正，而横向空间相关系数 :math:`\rho_{vv}(r_1)` 在 :math:`r_1/M>1.2` 附近出现负值，这与文献 [51] 的观察结果一致。
 
-此外，基于附录 B 中式 (B13) 至式 (B18)，与 :math:`u` 分量相关的 :math:`Y` 方向空间相干函数如图 9 所示。必须强调，图 9 描述的是空间相干函数的实部，而不是其绝对幅值。根据附录 B，由于考虑的是均匀各向同性湍流，理论上计算得到的空间相干函数应为实函数且对称。参考附录 A 可知，空间相关函数由空间相干函数的实部确定。因此，本文只绘制实部。由图 9(a) 可见，当 :math:`r_2=0` 时，空间相干函数保持为 1，这与式 (50) 的推导结论一致。图 9(b) 给出了不同空间间隔处的空间相干函数。随着频率增大，空间相干函数趋近于 0。此外，随着距离增大，相干函数值快速降低，并在约 :math:`r_2/M>1.2` 后出现负值。
+此外，基于附录 B 中 :ref:`式（B13） <chen2024-jcp-b13>` 至 :ref:`式（B18） <chen2024-jcp-b18>` ，与 :math:`u` 分量相关的 :math:`Y` 方向空间相干函数如图 9 所示。必须强调，图 9 描述的是空间相干函数的实部，而不是其绝对幅值。根据附录 B，由于考虑的是均匀各向同性湍流，理论上计算得到的空间相干函数应为实函数且对称。参考附录 A 可知，空间相关函数由空间相干函数的实部确定。因此，本文只绘制实部。由图 9(a) 可见，当 :math:`r_2=0` 时，空间相干函数保持为 1，这与式 (50) 的推导结论一致。图 9(b) 给出了不同空间间隔处的空间相干函数。随着频率增大，空间相干函数趋近于 0。此外，随着距离增大，相干函数值快速降低，并在约 :math:`r_2/M>1.2` 后出现负值。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-chen2024-JCP/fig10.png
    :alt: 图 10 CBC 实验数据纵向和横向空间相关系数
    :align: center
    :width: 75%
 
-   **图 10** CBC 实验数据的纵向和横向空间相关系数。 图例依次为 :math:`\rho_{uu}(r_1)` （式 B7）、 :math:`\rho_{vv}(r_1)` （式 B7）、 :math:`\rho_{uu}(r_2)` （式 A8）和 :math:`\rho_{uu}^\prime(r_2)` （式 A9）；这些式号按原图保留。横轴为 :math:`r_j/M` ，纵轴为 :math:`\rho_{ii}(r_j)` 。
+   **图 10** CBC 实验数据的纵向和横向空间相关系数。 图例依次为 :math:`\rho_{uu}(r_1)` （ :ref:`式 B7 <chen2024-jcp-b7>` ）、 :math:`\rho_{vv}(r_1)` （ :ref:`式 B7 <chen2024-jcp-b7>` ）、 :math:`\rho_{uu}(r_2)` （ :ref:`式 A8 <chen2024-jcp-a8>` ）和 :math:`\rho_{uu}^\prime(r_2)` （ :ref:`式 A9 <chen2024-jcp-a9>` ）；这些式号按原图保留。横轴为 :math:`r_j/M` ，纵轴为 :math:`\rho_{ii}(r_j)` 。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-chen2024-JCP/fig11.png
    :alt: 图 11 CBC 实验数据 k2 概率密度函数示意图
@@ -786,7 +786,11 @@ ITG 方法分为三类：前驱数据库、循环法和合成湍流。首先，�
 
    **图 11** CBC 实验数据 :math:`k_2` 概率密度函数示意图。 （a） :math:`g_{k_2}(k_2,f)` 的三维示意图；（b）频率为 1、100、200 和 500 Hz 时的概率密度函数曲线。波数 :math:`k_2` 的单位为 :math:`\mathrm{m^{-1}}` ；此图 PDF 指概率密度函数。
 
-在图 10 中，根据附录 A 中式 (A12) 计算的横向空间相关系数 :math:`\rho_{uu}(r_2)` 在 :math:`r_2/M>1.2` 时开始出现负值。这与空间相干函数开始变为负值的位置相对应。作为比较，文中用附录 A 中式 (A9) 对空间相干函数绝对值积分得到空间相关系数 :math:`\rho'_{uu}(r_2)` 。当仅考虑空间相干函数绝对值时，空间相关系数始终保持为正，无法准确估计横向空间相关。因此，CMRFG 方法输入参数应包含空间相干函数实部，以生成与实际空间相关一致的湍流。
+.. note::
+
+   **译校说明（不属于原文）**：图 10 的图例引用 :ref:`式（A8） <chen2024-jcp-a8>` ，邻近正文引用 :ref:`式（A12） <chen2024-jcp-a12>` ，表 3 引用 :ref:`式（A11） <chen2024-jcp-a11>` 。三式分别是双侧连续积分、单侧离散求和、单侧连续积分，本页保留各处原号。它们给出相关函数 :math:`R`，成为相关系数 :math:`\rho` 时还需除以零间距值； :ref:`式（B7） <chen2024-jcp-b7>` 与 :ref:`式（B8） <chen2024-jcp-b8>` 分别对应相关函数及其归一化。因此，图例中的式（B7）是简写，不能替代归一化步骤。
+
+在图 10 中，根据附录 A 中 :ref:`式（A12） <chen2024-jcp-a12>` 计算的横向空间相关系数 :math:`\rho_{uu}(r_2)` 在 :math:`r_2/M>1.2` 时开始出现负值。这与空间相干函数开始变为负值的位置相对应。作为比较，文中用附录 A 中 :ref:`式（A9） <chen2024-jcp-a9>` 对空间相干函数绝对值积分得到空间相关系数 :math:`\rho'_{uu}(r_2)` 。当仅考虑空间相干函数绝对值时，空间相关系数始终保持为正，无法准确估计横向空间相关。因此，CMRFG 方法输入参数应包含空间相干函数实部，以生成与实际空间相关一致的湍流。
 
 此外，使用式 (48) 计算不同频率处波数 :math:`k_{2,n}` 的概率密度函数，如图 11 所示。对于均匀各向同性湍流， :math:`g_{k_2}(k_2,f)` 表示二维轴对称函数。在固定频率下，低波数范围内的概率密度值高于高波数范围内的概率密度值，说明湍流能量更集中于低波数范围。
 
@@ -852,7 +856,7 @@ ITG 方法分为三类：前驱数据库、循环法和合成湍流。首先，�
    * - 空间相干函数
      - :math:`Coh_{uu,T}(f,r_2)` 根据附录 B 计算，结果见图 9。
    * - 空间相关系数
-     - :math:`\rho_{uu}(r_1)` 和 :math:`\rho_{vv}(r_1)` 由附录 B 中式 (B7) 和式 (B8) 得到； :math:`\rho_{uu}(r_2)` 由附录 A 中式 (A11) 计算，结果见图 10。此外， :math:`\rho_{uu}(r_1)=\rho_{vv}(r_2)` ， :math:`\rho_{vv}(r_1)=\rho_{uu}(r_2)` 。
+     - :math:`\rho_{uu}(r_1)` 和 :math:`\rho_{vv}(r_1)` 由附录 B 中 :ref:`式（B7） <chen2024-jcp-b7>` 和 :ref:`式（B8） <chen2024-jcp-b8>` 得到； :math:`\rho_{uu}(r_2)` 由附录 A 中 :ref:`式（A11） <chen2024-jcp-a11>` 计算，结果见图 10。此外， :math:`\rho_{uu}(r_1)=\rho_{vv}(r_2)` ， :math:`\rho_{vv}(r_1)=\rho_{uu}(r_2)` 。
    * - 互相关系数
      - :math:`\rho_{uv,T}=\rho_{uw,T}=\rho_{vw,T}=0`
    * - CMRFG 参数
@@ -1176,6 +1180,482 @@ ITG 方法分为三类：前驱数据库、循环法和合成湍流。首先，�
 此外，文中通过 LES 模拟均匀各向同性和各向异性湍流场来验证所提出方法的性能。总体而言，CMRFG 生成的湍流场与实验结果吻合良好。对于各向同性算例，CMRFG 方法生成的湍流能够较好匹配三维能谱以及纵向和横向空间相关。对于空间衰减各向异性算例，结果表明 CMRFG 方法获得的入流湍流不存在非物理压力脉动。然而，由边界不相容引起的入口与侧面交线处仍存在局部非物理压力脉动，因此仍需类似 VBIC 方法 [3] 的进一步研究。
 
 最后，需要注意的是，本文仅聚焦于模拟均匀湍流。CMRFG 方法可以按照文献 [3,41] 中的流程扩展到模拟非均匀湍流。然而，当前的挑战是确定更真实的非均匀湍流空间相干函数，这需要未来进一步研究。
+
+
+.. _chen2024-jcp-appendix-a:
+
+附录 A 空间相干函数与空间相关函数
+---------------------------------
+
+根据文献 :ref:`附录 A 文献 [1] <chen2024-jcp-a-ref-1>` 、 :ref:`附录 A 文献 [2] <chen2024-jcp-a-ref-2>` ，:math:`Y` 方向的时空互相关函数与时间互谱密度（cross-spectral density, CSD）之间的关系可表示为
+
+.. _chen2024-jcp-a1:
+
+.. math::
+
+   R_{ii}(\mathbf{x},r_2,\tau)
+   =\int_{-\infty}^{\infty}G_{ii}(\mathbf{x},r_2,f)e^{j2\pi f\tau}\,df.
+   \qquad (A1)
+
+.. _chen2024-jcp-a2:
+
+.. math::
+
+   \begin{aligned}
+   G_{ii}(\mathbf{x},r_2,f)
+   &=\int_{-\infty}^{\infty}R_{ii}(\mathbf{x},r_2,\tau)e^{-j2\pi f\tau}\,d\tau\\
+   &=C_{ii}(\mathbf{x},r_2,f)+jQ_{ii}(\mathbf{x},r_2,f).
+   \end{aligned}
+   \qquad (A2)
+
+其中，:math:`R_{ii}(\mathbf{x},r_2,\tau)` 是与第 :math:`i` 个分量相关的 :math:`Y` 方向时空互相关函数，即坐标 :math:`\mathbf{x}` 与 :math:`\mathbf{x}+r_2\mathbf{e}_2` 之间的时空互相关；:math:`G_{ii}(\mathbf{x},r_2,f)` 是与第 :math:`i` 个分量相关的 :math:`Y` 方向双侧时间 CSD；:math:`C_{ii}(\mathbf{x},r_2,f)` 是与第 :math:`i` 个分量相关的 :math:`Y` 方向双侧时间同相谱密度（co-spectrum），它是偶函数；:math:`Q_{ii}(\mathbf{x},r_2,f)` 是与第 :math:`i` 个分量相关的 :math:`Y` 方向双侧时间正交谱密度（quad-spectrum），它是奇函数。同时，双侧时间 CSD :math:`G_{ii}(\mathbf{x},r_2,f)` 可改写为
+
+.. _chen2024-jcp-a3:
+
+.. math::
+
+   G_{ii}(\mathbf{x},r_2,f)
+   =\left|G_{ii}(\mathbf{x},r_2,f)\right|
+   \exp\left(j\arg G_{ii}(\mathbf{x},r_2,f)\right).
+   \qquad (A3)
+
+其中，:math:`\arg G_{ii}(\mathbf{x},r_2,f)` 为相位谱。进而可得
+
+.. _chen2024-jcp-a4:
+
+.. math::
+
+   \left|G_{ii}(\mathbf{x},r_2,f)\right|
+   =\sqrt{\left[C_{ii}(\mathbf{x},r_2,f)\right]^2
+   +\left[Q_{ii}(\mathbf{x},r_2,f)\right]^2}.
+   \qquad (A4)
+
+.. _chen2024-jcp-a5:
+
+.. math::
+
+   \arg G_{ii}(\mathbf{x},r_2,f)
+   =\tan^{-1}\left(\frac{Q_{ii}(\mathbf{x},r_2,f)}
+   {C_{ii}(\mathbf{x},r_2,f)}\right).
+   \qquad (A5)
+
+于是，空间相干函数可计算为
+
+.. _chen2024-jcp-a6:
+
+.. math::
+
+   \begin{aligned}
+   \mathrm{Coh}_{ii}(\mathbf{x},r_2,f)
+   &=\frac{G_{ii}(\mathbf{x},r_2,f)}
+   {\sqrt{G_{ii}(\mathbf{x},f)G_{ii}(\mathbf{x}+r_2\mathbf{e}_2,f)}}\\
+   &=\frac{C_{ii}(\mathbf{x},r_2,f)+jQ_{ii}(\mathbf{x},r_2,f)}
+   {\sqrt{G_{ii}(\mathbf{x},f)G_{ii}(\mathbf{x}+r_2\mathbf{e}_2,f)}}.
+   \end{aligned}
+   \qquad (A6)
+
+其中，:math:`\mathrm{Coh}_{ii}(\mathbf{x},r_2,f)` 是与第 :math:`i` 个分量相关的 :math:`Y` 方向空间相干函数；:math:`G_{ii}(\mathbf{x},f)` 和 :math:`G_{ii}(\mathbf{x}+r_2\mathbf{e}_2,f)` 表示第 :math:`i` 个分量的时间功率谱密度（power spectral density, PSD）。注意，此处的 :math:`\mathrm{Coh}_{ii}(\mathbf{x},r_2,f)` 并未取绝对值，因此它也是复数谱。根据双侧时间 CSD 的性质，空间相干函数的实部是偶函数，而虚部是奇函数。
+
+根据 :ref:`式（A1） <chen2024-jcp-a1>` 、 :ref:`式（A2） <chen2024-jcp-a2>` 以及 :math:`Q_{ii}(\mathbf{x},r_2,f)` 为奇函数这一性质，令 :math:`\tau=0`，可得空间相关函数
+
+.. _chen2024-jcp-a7:
+
+.. math::
+
+   \begin{aligned}
+   R_{ii}(\mathbf{x},r_2)
+   &=R_{ii}(\mathbf{x},r_2,\tau=0)
+   =\int_{-\infty}^{\infty}G_{ii}(\mathbf{x},r_2,f)\,df\\
+   &=\int_{-\infty}^{\infty}
+   \left[C_{ii}(\mathbf{x},r_2,f)+jQ_{ii}(\mathbf{x},r_2,f)\right]\,df\\
+   &=\int_{-\infty}^{\infty}C_{ii}(\mathbf{x},r_2,f)\,df.
+   \end{aligned}
+   \qquad (A7)
+
+此外，将 :ref:`式（A6） <chen2024-jcp-a6>` 代入 :ref:`式（A7） <chen2024-jcp-a7>` ，可推导出空间相关函数与空间相干函数之间的关系
+
+.. _chen2024-jcp-a8:
+
+.. math::
+
+   \begin{aligned}
+   R_{ii}(\mathbf{x},r_2)
+   &=\int_{-\infty}^{\infty}
+   \sqrt{G_{ii}(\mathbf{x},f)G_{ii}(\mathbf{x}+r_2\mathbf{e}_2,f)}
+   \mathrm{Coh}_{ii}(\mathbf{x},r_2,f)\,df\\
+   &=\int_{-\infty}^{\infty}
+   \sqrt{G_{ii}(\mathbf{x},f)G_{ii}(\mathbf{x}+r_2\mathbf{e}_2,f)}
+   \operatorname{Re}\left[\mathrm{Coh}_{ii}(\mathbf{x},r_2,f)\right]\,df.
+   \end{aligned}
+   \qquad (A8)
+
+:ref:`式（A8） <chen2024-jcp-a8>` 表明，空间相关函数可表示为空间相干函数的积分，并且仅由其实部决定。这意味着，具有相同空间相关函数的不同湍流场可能表现出不同形式的空间相干函数。因此，空间相干函数是表征湍流空间相关性的一项更基本的统计参数。
+
+前述讨论表明，不对空间相干函数取绝对值，而对其进行积分，即可得到空间相关函数。然而，如果对空间相干函数取绝对值，则空间相关函数表示为
+
+.. _chen2024-jcp-a9:
+
+.. math::
+
+   R'_{ii}(\mathbf{x},r_2)
+   =\int_{-\infty}^{\infty}
+   \sqrt{G_{ii}(\mathbf{x},f)G_{ii}(\mathbf{x}+r_2\mathbf{e}_2,f)}
+   \left|\mathrm{Coh}_{ii}(\mathbf{x},r_2,f)\right|\,df.
+   \qquad (A9)
+
+根据 :ref:`式（A9） <chen2024-jcp-a9>` ，由于所有被积函数均为非负，其积分结果必然非负。换言之，对空间相关函数的绝对值进行积分，意味着计算得到的空间相关系数非负。然而，如文献 :ref:`附录 A 文献 [3] <chen2024-jcp-a-ref-3>` 所述，对于某些 :math:`r_2` 值，横向相关函数会出现负值。相应的数值算例见第 4.1 节。因此，对空间相关函数取绝对值会因缺少相位信息而无法准确重建空间相关函数。
+
+此外，根据文献 :ref:`附录 A 文献 [1] <chen2024-jcp-a-ref-1>` 、 :ref:`附录 A 文献 [4] <chen2024-jcp-a-ref-4>` 对实际风场的测量，空间相干函数的绝对值预计近似服从指数形式，即
+
+.. _chen2024-jcp-a10:
+
+.. math::
+
+   \left|\mathrm{Coh}_{ii,\mathrm{E}}(r_2,f)\right|
+   =\exp\left(-\frac{C_i^y f}{U_{\mathrm{avg,T}}}r_2\right).
+   \qquad (A10)
+
+其中，:math:`\left|\mathrm{Coh}_{ii,\mathrm{E}}(r_2,f)\right|` 是与第 :math:`i` 个分量相关的 :math:`Y` 方向经验空间相干函数的绝对值；:math:`C_i^y` 表示衰减系数。 :ref:`式（A10） <chen2024-jcp-a10>` 中给出的指数形式是空间相干函数绝对值的拟合公式，其结果非负，并且缺少相位谱信息。因此，它仍无法准确重建横向空间相关函数。还需要进一步研究，以获得对真实风场空间相干函数的更好近似。
+
+进一步而言，在实际应用中，更常用单侧时间 PSD 表示。现在，将 :ref:`式（A8） <chen2024-jcp-a8>` 改写为
+
+.. _chen2024-jcp-a11:
+
+.. math::
+
+   R_{ii}(\mathbf{x},r_2)
+   =\int_0^{\infty}
+   \sqrt{S_{ii}(\mathbf{x},f)S_{ii}(\mathbf{x}+r_2\mathbf{e}_2,f)}
+   \mathrm{Coh}_{ii}(\mathbf{x},r_2,f)\,df.
+   \qquad (A11)
+
+其中，:math:`S_{ii}(\mathbf{x},f)` 为第 :math:`i` 个分量的单侧时间 PSD。随后， :ref:`式（A11） <chen2024-jcp-a11>` 可离散为
+
+.. _chen2024-jcp-a12:
+
+.. math::
+
+   R_{ii}(\mathbf{x},r_2)
+   =\sum_{n=1}^{N}
+   \sqrt{S_{ii}(\mathbf{x},f_n)S_{ii}(\mathbf{x}+r_2\mathbf{e}_2,f_n)}
+   \mathrm{Coh}_{ii}(\mathbf{x},r_2,f_n)\Delta f_n.
+   \qquad (A12)
+
+Hémon 和 Santi :ref:`附录 A 文献 [5] <chen2024-jcp-a-ref-5>` 提出了目标空间相干函数的表达式
+
+.. _chen2024-jcp-a13:
+
+.. math::
+
+   R_{ii,\mathrm{T}}(\mathbf{x},r_2)
+   =\sum_{n=1}^{N}
+   \sqrt{S_{ii,\mathrm{T}}(\mathbf{x},f_n)
+   S_{ii,\mathrm{T}}(\mathbf{x}+r_2\mathbf{e}_2,f_n)}
+   \mathrm{Coh}_{ii,\mathrm{T}}(\mathbf{x},r_2,f_n).
+   \qquad (A13)
+
+其中，:math:`\mathrm{Coh}_{ii,\mathrm{T}}(\mathbf{x},r_2,f_n)` 为目标空间相干函数。比较 :ref:`式（A12） <chen2024-jcp-a12>` 与 :ref:`式（A13） <chen2024-jcp-a13>` 可知，Hémon 和 Santi 提出的表达式适用于 :math:`\Delta f=1\,\mathrm{Hz}` 的条件。为了具有更一般的适用性，应在 :ref:`式（A13） <chen2024-jcp-a13>` 中乘以离散频率间隔，将其调整为 :ref:`式（A12） <chen2024-jcp-a12>` 的形式。
+
+.. note::
+
+   **译校说明（不属于原文）**：本附录的公式及措辞按原文保留，以下几点需在理解或实现时区分。
+
+   - :ref:`式（A5） <chen2024-jcp-a5>` 原文写作 :math:`\tan^{-1}(Q_{ii}/C_{ii})`。这一比值的反正切不能单独确定复数所处象限；计算完整相位时，需采用能够区分象限的复数辐角或 :math:`\operatorname{atan2}(Q_{ii},C_{ii})`，本页未将其替换进原式。
+   - :ref:`式（A9） <chen2024-jcp-a9>` 后一段的“对空间相关函数的绝对值进行积分”和“对空间相关函数取绝对值”均对应原文的 spatial correlation function；但式（A9）实际取绝对值的是空间相干函数 :math:`\mathrm{Coh}_{ii}`，原文此处存在 correlation/coherence 用词不一致。
+   - :ref:`式（A6） <chen2024-jcp-a6>` 将 :math:`\mathrm{Coh}_{ii}` 定义为复数，而 :ref:`式（A11） <chen2024-jcp-a11>` 至 :ref:`式（A13） <chen2024-jcp-a13>` 的单侧积分或求和没有显式写出取实部运算。由 :ref:`式（A8） <chen2024-jcp-a8>` 的第二行可知，一般复相干情形下，实值空间相关函数应由 :math:`\operatorname{Re}[\mathrm{Coh}_{ii}]` 构造；当相干函数为实数时，该区别消失。此处保留原式，未补写实部符号。
+   - :ref:`式（A13） <chen2024-jcp-a13>` 前的原文称其为“目标空间相干函数的表达式”，但等号左端是目标空间相关函数 :math:`R_{ii,\mathrm{T}}`。译文保留原称谓，以免将译校判断混入原文。
+
+附录 A 参考文献
+~~~~~~~~~~~~~~~
+
+.. _chen2024-jcp-a-ref-1:
+
+[1] A.G. Davenport, The spectrum of horizontal gustiness near the ground in high winds, Q J ROY METEOR SOC. 87 (1961) 194-211.
+
+.. _chen2024-jcp-a-ref-2:
+
+[2] K. Shin, J. Hammond, Fundamentals of signal processing for sound and vibration engineers., John Wiley & Sons, England, 2008.
+
+.. _chen2024-jcp-a-ref-3:
+
+[3] H. Tennekes, J. Lumley, A first course in turbulence., MIT Press, 1972.
+
+.. _chen2024-jcp-a-ref-4:
+
+[4] M. Shiotani, Y. Iwatani, K. Kuroha, Magnitudes and horizontal correlations of vertical velocities in high winds, Journal of the Meteorological Society of Japan. Ser. II. 56 (1978) 35-42.
+
+.. _chen2024-jcp-a-ref-5:
+
+[5] P. Hémon, F. Santi, Simulation of a spatially correlated turbulent velocity field using biorthogonal decomposition, J WIND ENG IND AEROD. 95 (2007) 21-29.
+
+.. _chen2024-jcp-appendix-b:
+
+附录 B 均匀各向同性湍流特征的计算
+---------------------------------
+
+根据文献 :ref:`附录 B 文献 [1] <chen2024-jcp-b-ref-1>` ，对于均匀各向同性湍流，三维空间互谱密度（CSD）的表达式由三维能谱确定，即
+
+.. _chen2024-jcp-b1:
+
+.. math::
+
+   \Phi_{ij}(\mathbf{k})
+   =\frac{E(k)}{4\pi k^2}
+   \left(\delta_{ij}-\frac{k_i k_j}{k^2}\right).
+   \qquad (B1)
+
+其中，:math:`\Phi_{ij}(\mathbf{k})` 是与第 :math:`i` 个和第 :math:`j` 个速度分量相关的三维空间 CSD；:math:`k` 是波数向量的模，即 :math:`k=|\mathbf{k}|`；:math:`E(k)` 表示三维能谱；:math:`\delta_{ij}` 为 Kronecker 符号。因此，可以计算其他低维湍流特征，包括一维空间功率谱密度（PSD）、时间 PSD 和空间相干函数。
+
+**（1）一维单侧空间 PSD 与空间相关函数**
+
+一维单侧纵向空间 PSD :math:`S_{uu}(k_1)` 可表示为三维空间谱 :math:`\Phi_{uu}(\mathbf{k})` 的积分，计算为
+
+.. _chen2024-jcp-b2:
+
+.. math::
+
+   \begin{aligned}
+   S_{uu}(k_1)
+   &=2\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+   \Phi_{uu}(\mathbf{k})\,dk_2dk_3\\
+   &=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+   \frac{E(k)}{2\pi k^2}\left(1-\frac{k_1^2}{k^2}\right)\,dk_2dk_3,
+   \quad k_1\in(0,\infty).
+   \end{aligned}
+   \qquad (B2)
+
+在 :math:`k_1` 固定的平面上进行积分时，被积函数关于 :math:`k_1` 轴呈径向对称。因此，引入径向坐标 :math:`k_r`，可得
+
+.. _chen2024-jcp-b3:
+
+.. math::
+
+   k_r^2=k_2^2+k_3^2=k^2-k_1^2.
+   \qquad (B3)
+
+且在 :math:`k_1` 固定时有 :math:`k_r\,dk_r=k\,dk`， :ref:`式（B2） <chen2024-jcp-b2>` 可改写为
+
+.. _chen2024-jcp-b4:
+
+.. math::
+
+   \begin{aligned}
+   S_{uu}(k_1)
+   &=\int_0^{\infty}\frac{E(k)}{2\pi k^2}
+   \left(1-\frac{k_1^2}{k^2}\right)2\pi k_r\,dk_r\\
+   &=\int_{k_1}^{\infty}\frac{E(k)}{k}
+   \left(1-\frac{k_1^2}{k^2}\right)\,dk,
+   \quad k_1\in(0,\infty).
+   \end{aligned}
+   \qquad (B4)
+
+类似地，一维单侧横向空间 PSD :math:`S_{vv}(k_1)` 表示为
+
+.. _chen2024-jcp-b5:
+
+.. math::
+
+   \begin{aligned}
+   S_{vv}(k_1)
+   &=2\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+   \Phi_{vv}(\mathbf{k})\,dk_2dk_3\\
+   &=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}
+   \frac{E(k)}{2\pi k^2}\left(1-\frac{k_2^2}{k^2}\right)\,dk_2dk_3,
+   \quad k_1\in(0,\infty).
+   \end{aligned}
+   \qquad (B5)
+
+令 :math:`k_2=k_r\cos\theta`、:math:`k_3=k_r\sin\theta`，可得
+
+.. _chen2024-jcp-b6:
+
+.. math::
+
+   \begin{aligned}
+   S_{vv}(k_1)
+   &=\int_0^{2\pi}d\theta\int_0^{\infty}
+   \frac{E(k)}{2\pi k^2}
+   \left(1-\frac{(k_r\cos\theta)^2}{k^2}\right)k_r\,dk_r\\
+   &=\int_0^{2\pi}d\theta\int_{k_1}^{\infty}
+   \frac{E(k)}{2\pi k^2}
+   \left[1-\frac{(k^2-k_1^2)(\cos\theta)^2}{k^2}\right]k\,dk\\
+   &=\frac{1}{2}\int_{k_1}^{\infty}\frac{E(k)}{k}
+   \left(1+\frac{k_1^2}{k^2}\right)\,dk,
+   \quad k_1\in(0,\infty).
+   \end{aligned}
+   \qquad (B6)
+
+得到单侧空间 PSD 后，对其进行 Fourier 逆变换，即可得到相应的 :math:`X` 方向一维空间相关函数
+
+.. _chen2024-jcp-b7:
+
+.. math::
+
+   R_{ii}(r_1)
+   =\int_{-\infty}^{\infty}\frac{1}{2}S_{ii}(k_1)
+   \exp(jk_1r_1)\,dk_1,
+   \quad k_1\in(-\infty,\infty).
+   \qquad (B7)
+
+对 :ref:`式（B7） <chen2024-jcp-b7>` 归一化，得到 :math:`X` 方向一维空间相关系数
+
+.. _chen2024-jcp-b8:
+
+.. math::
+
+   \rho_{ii}(r_1)=\frac{R_{ii}(r_1)}{R_{ii}(r_1=0)}.
+   \qquad (B8)
+
+**（2）一维单侧时间 PSD**
+
+假设湍流场满足 Taylor 冻结假设，并以平均速度 :math:`U_{\mathrm{avg}}` 沿 :math:`X` 方向平流输运，则脉动速度的关系可计算为
+
+.. _chen2024-jcp-b9:
+
+.. math::
+
+   u_i(\mathbf{x},t-\tau)
+   =u_i(\mathbf{x}+U_{\mathrm{avg}}\tau\mathbf{e}_1,t).
+   \qquad (B9)
+
+令 :math:`r_1=U_{\mathrm{avg}}\tau`，:math:`X` 方向一维空间相关函数可表示为
+
+.. _chen2024-jcp-b10:
+
+.. math::
+
+   \begin{aligned}
+   R_{ii}(r_1)
+   &=E\left[u_i(\mathbf{x},t)u_i(\mathbf{x}+r_1\mathbf{e}_1,t)\right]\\
+   &=E\left[u_i(\mathbf{x},t)
+   u_i(\mathbf{x}+U_{\mathrm{avg}}\tau\mathbf{e}_1,t)\right]\\
+   &=E\left[u_i(\mathbf{x},t)u_i(\mathbf{x},t-\tau)\right]
+   =R_{ii}(-\tau)=R_{ii}(\tau).
+   \end{aligned}
+   \qquad (B10)
+
+令 :math:`k_1=-2\pi f/U_{\mathrm{avg}}`，一维双侧空间 PSD 与时间 PSD 之间的关系可表示为
+
+.. _chen2024-jcp-b11:
+
+.. math::
+
+   \begin{aligned}
+   G_{ii}(k_1)
+   &=\frac{1}{2\pi}\int_{-\infty}^{\infty}
+   R_{ii}(r_1)\exp(-jk_1r_1)\,dr_1\\
+   &=\frac{1}{2\pi}\int_{-\infty}^{\infty}
+   R_{ii}(\tau)
+   \exp\left(-j\frac{-2\pi f}{U_{\mathrm{avg}}}
+   U_{\mathrm{avg}}\tau\right)d(U_{\mathrm{avg}}\tau)\\
+   &=\frac{U_{\mathrm{avg}}}{2\pi}\int_{-\infty}^{\infty}
+   R_{ii}(\tau)\exp\left(-j2\pi(-f)\tau\right)d(\tau)\\
+   &=\frac{U_{\mathrm{avg}}}{2\pi}G_{ii}(-f)
+   =\frac{U_{\mathrm{avg}}}{2\pi}G_{ii}(f).
+   \end{aligned}
+   \qquad (B11)
+
+将 :ref:`式（B11） <chen2024-jcp-b11>` 写成单侧 PSD 形式，可得
+
+.. _chen2024-jcp-b12:
+
+.. math::
+
+   S_{ii}(f)=\frac{2\pi}{U_{\mathrm{avg}}}S_{ii}(k_1),
+   \quad k_1=-\frac{2\pi f}{U_{\mathrm{avg}}}.
+   \qquad (B12)
+
+**（3）与 u 分量相关的 Y 方向空间相干函数**
+
+下面推导 :math:`u` 分量的 :math:`Y` 方向空间相干函数。首先，根据 :ref:`式（B1） <chen2024-jcp-b1>` ，计算二维双侧空间 CSD 为
+
+.. _chen2024-jcp-b13:
+
+.. math::
+
+   \begin{aligned}
+   G_{uu}(k_1,k_2)
+   &=\int_{-\infty}^{\infty}\Phi_{uu}(\mathbf{k})\,dk_3\\
+   &=\int_{-\infty}^{\infty}\frac{E(k)}{2\pi k^2}
+   \left(1-\frac{k_1^2}{k^2}\right)\,dk_3.
+   \end{aligned}
+   \qquad (B13)
+
+当 :math:`k_3>0` 时，有
+
+.. _chen2024-jcp-b14:
+
+.. math::
+
+   dk_3=d\sqrt{k^2-(k_1^2+k_2^2)}
+   =\frac{k}{\sqrt{k^2-(k_1^2+k_2^2)}}\,dk.
+   \qquad (B14)
+
+又因为 :math:`\Phi_{uu}(\mathbf{k})` 是关于 :math:`k_3` 的轴对称函数，所以 :ref:`式（B13） <chen2024-jcp-b13>` 可表示为
+
+.. _chen2024-jcp-b15:
+
+.. math::
+
+   \begin{aligned}
+   G_{uu}(k_1,k_2)
+   &=2\int_{\sqrt{k_1^2+k_2^2}}^{\infty}
+   \frac{E(k)}{4\pi k^4}(k^2-k_1^2)
+   \frac{k}{\sqrt{k^2-(k_1^2+k_2^2)+\varepsilon}}\,dk\\
+   &=\int_{\sqrt{k_1^2+k_2^2}}^{\infty}
+   \frac{E(k)}{2\pi k^3}
+   \frac{k^2-k_1^2}{\sqrt{k^2-(k_1^2+k_2^2)+\varepsilon}}\,dk.
+   \end{aligned}
+   \qquad (B15)
+
+其中，:math:`\varepsilon` 是一个很小的值，用于防止分母为零。
+
+接下来，沿 :math:`G_{uu}(k_1,k_2)` 的 :math:`k_2` 维度进行一维 Fourier 逆变换，得到 :math:`Y` 轴间距为 :math:`r_2` 时 :math:`X` 方向的一维空间 CSD，即
+
+.. _chen2024-jcp-b16:
+
+.. math::
+
+   G_{uu}(k_1,r_2)
+   =\int_{-\infty}^{\infty}G_{uu}(k_1,k_2)
+   \exp(jk_2r_2)\,dk_2.
+   \qquad (B16)
+
+随后，根据 Taylor 假设，:math:`X` 方向的一维空间 CSD 可转换为时间 CSD 形式。根据 :ref:`式（B11） <chen2024-jcp-b11>` ，可得
+
+.. _chen2024-jcp-b17:
+
+.. math::
+
+   G_{uu}(f,r_2)=\frac{2\pi}{U_{\mathrm{avg}}}G_{uu}(k_1,r_2),
+   \quad k_1=-\frac{2\pi f}{U_{\mathrm{avg}}}.
+   \qquad (B17)
+
+因此，对于空间均匀湍流，空间相干函数计算为
+
+.. _chen2024-jcp-b18:
+
+.. math::
+
+   \mathrm{Coh}_{uu}(f,r_2)
+   =\frac{G_{uu}(f,r_2)}{G_{uu}(f,r_2=0)}.
+   \qquad (B18)
+
+回顾推导过程，由于均匀各向同性湍流的特殊性质，:math:`\Phi_{uu}(\mathbf{k})` 是关于全部三个波数轴对称的实函数。因此，得到的 :math:`G_{uu}(k_1,k_2)` 也是关于波数轴对称的实函数。沿 :math:`k_2` 轴进行 Fourier 逆变换后，:math:`G_{uu}(k_1,r_2)` 仍是没有虚部的对称实函数。最后，:math:`G_{uu}(f,r_2)` 和 :math:`\mathrm{Coh}_{uu}(f,r_2)` 也都是对称实函数。
+
+.. note::
+
+   **译校说明（不属于原文）**：本附录保留原式，并区分以下系数与记号问题。
+
+   - :ref:`式（B13） <chen2024-jcp-b13>` 最右端原文系数为 :math:`E(k)/(2\pi k^2)`，而从 :ref:`式（B1） <chen2024-jcp-b1>` 中的 :math:`\Phi_{uu}` 直接积分应得到 :math:`E(k)/(4\pi k^2)`。 :ref:`式（B15） <chen2024-jcp-b15>` 第一行采用 :math:`E(k)/(4\pi k^4)` 并在积分前乘以 2，也与式（B1）的系数一致。因此，式（B13）最右端与式（B1）、式（B15）之间存在二倍系数不一致，本页未静默改写。
+   - :ref:`式（B7） <chen2024-jcp-b7>` 将前文定义为单侧谱的 :math:`S_{ii}(k_1)` 用于全实轴积分， :ref:`式（B12） <chen2024-jcp-b12>` 又以 :math:`k_1=-2\pi f/U_{\mathrm{avg}}` 求值。解释或实现这两式时，需要明确单侧谱在负波数处的偶延拓约定；原文没有在这两处另行写出该约定，本页保留原有积分域和负号。
+
+附录 B 参考文献
+~~~~~~~~~~~~~~~
+
+.. _chen2024-jcp-b-ref-1:
+
+[1] S.B. Pope, Turbulent Flows., Cambridge University Press, 2000.
 
 
 参考文献

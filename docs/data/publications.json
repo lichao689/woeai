@@ -2894,10 +2894,30 @@
         "historical_original_byte_equivalence": "hash_matches",
         "pages": 31,
         "identity_checked_at": "2026-10-05T15:57:17+00:00",
-        "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md"
+        "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+        "supplements": [
+          {
+            "id": "appendix-a",
+            "title": "Appendix A. Spatial coherence function and spatial correlation function",
+            "status": "verified",
+            "kind": "user_provided_appendix_pdf",
+            "sha256": "f67843a2b23458f311f0dd3230304c38bc7b6d37af66cd46e0843d95c5626f84",
+            "sha256_scope": "current_audited_copy",
+            "pages": 3
+          },
+          {
+            "id": "appendix-b",
+            "title": "Appendix B. Calculation of homogeneous isotropic turbulence characteristics",
+            "status": "verified",
+            "kind": "user_provided_appendix_pdf",
+            "sha256": "36e0371d69ad18a1319d1c44a89cbcc593b2fe6ca4b3b9316cc6f5f9a0419117",
+            "sha256_scope": "current_audited_copy",
+            "pages": 4
+          }
+        ]
       },
       "rtd": {
-        "status": "blocked",
+        "status": "verified",
         "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-chen2024-JCP.rst",
         "public_title": "数值风洞 | 让 LES 入流湍流更连贯也更守恒",
@@ -2915,11 +2935,20 @@
             },
             "scope": "Previously reviewed main PDF coverage and calibrated figures retained; source Appendix A/B still unavailable. Nomenclature guide version refreshed only. Reader-facing source-range notice added to RTD; source identity, main text, images and missing Appendix A/B blocker unchanged.",
             "fingerprint": "ddf229dd8759e9e2351281167fb198f9f18d0afac580690abfce8da7db03ad63"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T09:01:19+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full 31-page main paper plus 3-page Appendix A and 4-page Appendix B; independent paragraph and pixel-math audit, 95 equations, 35 figures, 5 tables, 58 main and 6 appendix references. Source discrepancies explicitly annotated; no silent corrections.",
+            "fingerprint": "136ec21c8bcbbee8d3309bdcdb3ae2041400f5ce5bb2a84fe4446641b6f39b8d"
           }
         },
-        "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
-        "blocking_reason": "Missing authorized source text for Appendix A and Appendix B",
-        "blocker_code": "missing_source_appendices"
+        "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md"
       },
       "wechat": {
         "selected": true,
@@ -2929,15 +2958,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T07:57:50+00:00",
+            "recorded_at": "2026-10-06T09:01:19+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Previously audited introduction retained; figure source pixels calibrated and independently inspected. No upload or backend previews. Reader-facing source-range notice added to RTD; source identity, main text, images and missing Appendix A/B blocker unchanged.",
-            "fingerprint": "514b67ee70bd1a1f82e914f6ddcd4902dbe9a2a630487697550147cf38d160d0"
+            "scope": "Previously source-audited introduction retained. Supplemental source identities recorded and RTD appendices completed; no WeChat upload or backend formula/figure/cover preview. Current source set and review fingerprint refreshed only.",
+            "fingerprint": "d7cd4a881ebd34f11b97e972657818e99ca1652363ee46c9f87a9e0353033ff7"
           }
         },
         "latest_published_url": "",
@@ -2978,13 +3007,18 @@
         "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
       },
       "source_audit": {
-        "recorded_at": "2026-10-05T15:57:17+00:00",
-        "source_text_pages_read": 31,
-        "source_page_count": 31,
-        "audit_basis": "Complete source reading plus fresh source-evidence review of current rebuilt outputs; exact scope recorded in each review.",
-        "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
+        "recorded_at": "2026-10-06T09:01:19+00:00",
+        "source_text_pages_read": 38,
+        "source_page_count": 38,
+        "audit_basis": "Main-paper audit retained; user-provided Appendices A and B read and translated in full, with independent page-pixel equation review.",
+        "visual_scope": "All 35 main-paper figures previously calibrated; all 7 appendix pages inspected, including every A1–A13 and B1–B18 equation.",
         "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
-        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
+        "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md",
+        "source_page_breakdown": {
+          "main": 31,
+          "appendix-a": 3,
+          "appendix-b": 4
+        }
       }
     },
     "DOI": "10.1016/j.jcp.2023.112706"

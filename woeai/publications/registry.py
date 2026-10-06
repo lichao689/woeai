@@ -356,6 +356,27 @@ def _board_published_url(value: Any) -> str | None:
     return 'https://mp.weixin.qq.com/s?' + urlencode(safe)
 
 
+def _engineering_conflict_has_current_coverage(root: Path, record: dict[str, Any]) -> bool:
+    """Display a fixed blocker only with current source-coverage proof, never promote status."""
+    workflow = record['custom']['rtd']
+    if (workflow.get('status') != 'blocked'
+            or workflow.get('kind') != 'full_paper'
+            or workflow.get('blocker_code') != 'source_engineering_conflict'):
+        return False
+    evidence = workflow.get('evidence', {})
+    entry = evidence.get('awaiting_audit', {}) if isinstance(evidence, dict) else {}
+    checks = entry.get('checks', {}) if isinstance(entry, dict) else {}
+    if (not isinstance(checks, dict) or checks.get('source_fidelity') is not True
+            or checks.get('engineering_facts') is not False):
+        return False
+    # Reuse the strict source, coverage, public-path and fingerprint gate on a
+    # copy. The real engineering-blocked workflow and its evidence stay intact.
+    candidate = copy.deepcopy(record)
+    candidate['custom']['rtd']['status'] = 'verified'
+    candidate['custom']['rtd']['evidence']['verified'] = copy.deepcopy(entry)
+    return workflow_verified(candidate, 'rtd', root)
+
+
 def _board_track(root: Path, record: dict[str, Any], channel: str) -> dict[str, Any]:
     workflow = record['custom'][channel]
     states = RTD_STATES if channel == 'rtd' else WECHAT_STATES
@@ -424,7 +445,10 @@ def _board_track(root: Path, record: dict[str, Any], channel: str) -> dict[str, 
         gaps.append('原文来源尚未核验')
     if channel == 'rtd' and workflow.get('kind') == 'legacy_intro':
         gaps.append('历史导读，不能视为全文核验完成')
-    if channel == 'rtd' and workflow.get('kind') == 'full_paper' and current is not True:
+    engineering_conflict = channel == 'rtd' and _engineering_conflict_has_current_coverage(root, record)
+    if engineering_conflict:
+        gaps.append('全文覆盖已核对；原文工程结论与数值限值存在待澄清冲突')
+    elif channel == 'rtd' and workflow.get('kind') == 'full_paper' and current is not True:
         gaps.append('全文型页面仍需完整覆盖核验')
     if channel == 'wechat' and status == 'draft_created':
         gaps.append('草稿创建不代表已完成手机预览或已发布')
@@ -435,7 +459,7 @@ def _board_track(root: Path, record: dict[str, Any], channel: str) -> dict[str, 
             gaps.append(f'{check["label"]}：未记录')
         elif check['value'] is False:
             gaps.append(f'{check["label"]}：未通过')
-        elif check['stage'] != 'verified':
+        elif check['stage'] != 'verified' and not engineering_conflict:
             gaps.append(f'{check["label"]}：仅有{BOARD_STAGES[check["stage"]]}阶段记录')
     conflicts = workflow.get('conflicts', [])
     if isinstance(conflicts, list) and any(

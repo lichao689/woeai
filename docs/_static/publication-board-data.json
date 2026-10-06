@@ -507,7 +507,7 @@
         }
       ],
       "rtd": {
-        "status": "awaiting_audit",
+        "status": "blocked",
         "checks": [
           {
             "key": "source_identity",
@@ -518,7 +518,7 @@
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": false,
+            "value": true,
             "stage": "awaiting_audit"
           },
           {
@@ -529,10 +529,7 @@
           }
         ],
         "gaps": [
-          "历史导读，不能视为全文核验完成",
-          "原文身份：仅有待核验阶段记录",
-          "全文覆盖：未通过",
-          "公开安全：仅有待核验阶段记录"
+          "全文覆盖已核对；原文工程结论与数值限值存在待澄清冲突"
         ],
         "issues": [],
         "links": [
@@ -550,7 +547,7 @@
           }
         ],
         "verification_current": null,
-        "kind": "legacy_intro"
+        "kind": "full_paper"
       },
       "wechat": {
         "status": "awaiting_review",
@@ -995,33 +992,28 @@
         }
       ],
       "rtd": {
-        "status": "awaiting_audit",
+        "status": "verified",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": false,
-            "stage": "awaiting_audit"
+            "value": true,
+            "stage": "verified"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           }
         ],
-        "gaps": [
-          "历史导读，不能视为全文核验完成",
-          "原文身份：仅有待核验阶段记录",
-          "全文覆盖：未通过",
-          "公开安全：仅有待核验阶段记录"
-        ],
+        "gaps": [],
         "issues": [],
         "links": [
           {
@@ -1033,12 +1025,12 @@
             "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-yang2025-JBE.rst"
           },
           {
-            "label": "待核验阶段证据",
+            "label": "核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-yang2025-JBE.review.md"
           }
         ],
-        "verification_current": null,
-        "kind": "legacy_intro"
+        "verification_current": true,
+        "kind": "full_paper"
       },
       "wechat": {
         "status": "awaiting_review",
@@ -1813,33 +1805,28 @@
         }
       ],
       "rtd": {
-        "status": "awaiting_audit",
+        "status": "verified",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": false,
-            "stage": "awaiting_audit"
+            "value": true,
+            "stage": "verified"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
             "value": true,
-            "stage": "awaiting_audit"
+            "stage": "verified"
           }
         ],
-        "gaps": [
-          "历史导读，不能视为全文核验完成",
-          "原文身份：仅有待核验阶段记录",
-          "全文覆盖：未通过",
-          "公开安全：仅有待核验阶段记录"
-        ],
+        "gaps": [],
         "issues": [],
         "links": [
           {
@@ -1851,12 +1838,12 @@
             "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-zhao2025-SCS.rst"
           },
           {
-            "label": "待核验阶段证据",
+            "label": "核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2025-SCS.review.md"
           }
         ],
-        "verification_current": null,
-        "kind": "legacy_intro"
+        "verification_current": true,
+        "kind": "full_paper"
       },
       "wechat": {
         "status": "awaiting_review",

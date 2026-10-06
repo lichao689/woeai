@@ -65,6 +65,64 @@ class PublicationBoardTests(unittest.TestCase):
             if custom['rtd']['kind'] == 'legacy_intro':
                 self.assertIsNot(paper['rtd']['verification_current'], True)
 
+    def engineering_blocker_fixture(self, root):
+        row = copy.deepcopy(self.row)
+        row['custom']['source'].update(status='verified', sha256='a' * 64)
+        workflow = row['custom']['rtd']
+        workflow.update(status='blocked', kind='full_paper',
+                        blocker_code='source_engineering_conflict',
+                        blocking_reason='PRIVATE_SENTINEL_DO_NOT_EXPOSE',
+                        review_path='wechat/articles/review/ref-zhao2026-BE.review.md')
+        for name in (workflow['path'], workflow['review_path'], 'project/guides/paper-deep-dive-rst.md'):
+            path = root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text('Public source-backed content')
+        evidence = {'recorded_at': '2026-10-06T07:00:00+00:00',
+                    'review_path': workflow['review_path'],
+                    'checks': {'source_identity': True, 'public_safety': True,
+                               'full_paper_coverage': True, 'source_fidelity': True,
+                               'engineering_facts': False}}
+        workflow['evidence'] = {'awaiting_audit': evidence}
+        evidence['fingerprint'] = registry.workflow_fingerprint(row, 'rtd', root)
+        return row
+
+    def test_current_coverage_and_engineering_conflict_are_separate(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            row = self.engineering_blocker_fixture(root)
+            track = registry.publication_board(root, [row])['papers'][0]['rtd']
+            self.assertEqual(track['status'], 'blocked')
+            self.assertIsNone(track['verification_current'])
+            self.assertFalse(registry.workflow_verified(row, 'rtd', root))
+            self.assertIn('全文覆盖已核对；原文工程结论与数值限值存在待澄清冲突', track['gaps'])
+            self.assertNotIn('全文型页面仍需完整覆盖核验', track['gaps'])
+            self.assertNotIn('PRIVATE_SENTINEL_DO_NOT_EXPOSE', json.dumps(track))
+
+    def test_engineering_reason_cannot_bypass_missing_or_stale_coverage(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            original = self.engineering_blocker_fixture(root)
+            mutations = (
+                lambda w: w.update(blocker_code='missing_source_appendices'),
+                lambda w: w.update(blocker_code='PRIVATE_SENTINEL_DO_NOT_EXPOSE'),
+                lambda w: w['evidence']['awaiting_audit']['checks'].update(full_paper_coverage=False),
+                lambda w: w['evidence']['awaiting_audit']['checks'].update(source_fidelity=False),
+                lambda w: w['evidence']['awaiting_audit']['checks'].update(engineering_facts=True),
+                lambda w: w['evidence']['awaiting_audit'].update(fingerprint='0' * 64),
+                lambda w: w['evidence']['awaiting_audit'].update(recorded_at=''),
+            )
+            for mutate in mutations:
+                row = copy.deepcopy(original)
+                mutate(row['custom']['rtd'])
+                track = registry.publication_board(root, [row])['papers'][0]['rtd']
+                self.assertIn('全文型页面仍需完整覆盖核验', track['gaps'])
+                self.assertNotIn('全文覆盖已核对；原文工程结论与数值限值存在待澄清冲突', track['gaps'])
+                self.assertNotIn('PRIVATE_SENTINEL_DO_NOT_EXPOSE', json.dumps(track))
+                self.assertFalse(registry.workflow_verified(row, 'rtd', root))
+            (root / original['custom']['rtd']['path']).write_text('Changed after review')
+            track = registry.publication_board(root, [original])['papers'][0]['rtd']
+            self.assertIn('全文型页面仍需完整覆盖核验', track['gaps'])
+
     def test_projection_uses_explicit_field_allowlists(self):
         marker = 'PRIVATE_SENTINEL_DO_NOT_EXPOSE'
         self.row['custom']['extra'] = marker

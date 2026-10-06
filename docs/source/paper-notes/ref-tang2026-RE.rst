@@ -26,7 +26,7 @@
 - c：深圳职业技术大学建设工程学院，中国深圳，518055
 - d：哈尔滨工业大学机电工程与自动化学院，中国深圳，518055
 
-通讯作者脚注：\* Chao Li，哈尔滨工业大学智能土木与海洋工程学院，中国深圳，518055；\*\* Zihan Zhao，深圳职业技术大学建设工程学院，中国深圳，518055。原文通讯邮箱：lichaosz@hit.edu.cn（C. Li）；zhaozihan319@qq.com（Z. Zhao）。
+通讯作者脚注：\* Chao Li，哈尔滨工业大学智能土木与海洋工程学院，中国深圳，518055；\*\* Zihan Zhao，深圳职业技术大学建设工程学院，中国深圳，518055。原文通讯邮箱：lichaosz@hit.edu.cn （C. Li）；zhaozihan319@qq.com （Z. Zhao）。
 
 期刊：Renewable Energy，256（2026），124336。DOI：https://doi.org/10.1016/j.renene.2025.124336。
 

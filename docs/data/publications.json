@@ -75,15 +75,15 @@
             "fingerprint": "70626ed1bb68f2f73430d237d221a22660a51c318019a7c75d911d9aab959862"
           },
           "verified": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "4f3ad02ee5b99320316389904fc101e10871806e8e5892954b4f02844038d892"
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "4f9fffed51abd0a987015b5c8e5570366d7f34595dd6e3a81bcd53bad0f5b908"
           }
         },
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md"
@@ -96,15 +96,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T05:24:57+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Previously source-checked introduction retained; source figure assets calibrated and independently compared with original PDF; no backend preview/upload.",
-            "fingerprint": "a4a2199feea4de4a271fb3d0bb1bc04f813eb19b2bdcde35ea094df89d69c745"
+            "scope": "WeChat introduction and scientific assets unchanged; linked review only records source-email formatting repair in RTD. No backend upload or previews.",
+            "fingerprint": "7a06499cc71e046fa722074e021f1e2c508fd9e5a88642023cf990ccdfd8e75e"
           }
         },
         "latest_published_url": "",
@@ -597,14 +597,27 @@
         "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "blocked",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-he2026-OE-structural.rst",
         "public_title": "漂浮风电 | 用钢筋混凝土优化半潜式风机平台",
         "order": 11,
         "issues": [],
         "evidence": {
           "awaiting_audit": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "source_fidelity": true,
+              "engineering_facts": false
+            },
+            "scope": "Exhaustive source fidelity and all35 scientific figures independently passed. Engineering conclusions remain blocked by original stress/limit and pitch/limit contradictions; no claim of engineering safety.",
+            "fingerprint": "8348fa44b7f47a7ff38130e5211911cd834059e538934ac9aa5c0591e6ce8218"
+          },
+          "previous_coverage_audit": {
             "recorded_at": "2026-10-06T02:08:11+00:00",
             "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
             "checks": {
@@ -616,7 +629,9 @@
             "fingerprint": "5be5ece417948665a483246fa0bbe4c33b4a83e1ad5556caa143d761c6aae65e"
           }
         },
-        "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md"
+        "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
+        "blocker_code": "source_engineering_conflict",
+        "blocking_reason": "Full translation and figure coverage complete; source Table16 stresses versus tensile limit and mean pitch5.06deg versus +/-5deg remain unresolved. Engineering acceptance is not verified."
       },
       "wechat": {
         "selected": true,
@@ -626,15 +641,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": false
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload. Strength-assessment and figure/text inconsistencies require source clarification.",
-            "fingerprint": "996eaa624b8dfb9cb5a0b55041b36729236af3fb7d40be1f56cbe838fe92090e"
+            "scope": "Existing introduction retained except approved Fig19 local-crossing wording correction. Every selected source figure calibrated; unresolved engineering claims remain facts=false. No backend upload or previews.",
+            "fingerprint": "4f1bbb3f72640c7105a1c3721e618073031f341ab7d9842fa24453d70ec735ae"
           }
         },
         "latest_published_url": "",
@@ -753,15 +768,15 @@
             "fingerprint": "59753dc3593e1962da6773861d3ded4fe31ebc59c7be86d7ad12e9d2ed96763d"
           },
           "verified": {
-            "recorded_at": "2026-10-06T07:25:10+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
-            "fingerprint": "5b61468d6046d6e82957637a77211c8346708eb359c675bd7788ef65c2884d9f"
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "116bcb99c8e29c4e8fd15adee48229a04f61f461477558c2d2bc707259bcbf85"
           }
         },
         "review_path": "wechat/articles/review/ref-tang2026-RE.review.md"
@@ -774,15 +789,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T07:25:10+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Previously source-audited introduction retained; selected figure pixels calibrated and independently inspected. No backend upload or preview.",
-            "fingerprint": "f6e9cff3cdca6eb0ffaf3c19e25f842a50d842905a2704ced21b34d0d5ad894c"
+            "scope": "WeChat introduction and scientific assets unchanged; linked review only records source-email formatting repair in RTD. No backend upload or previews.",
+            "fingerprint": "605b6582ef739db9c8322098ef4e99cb5a305a919a1b7977dd09c96a9947a90b"
           }
         },
         "latest_published_url": "",
@@ -1108,8 +1123,8 @@
         "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-yang2025-JBE.rst",
         "public_title": "结构抗风 | 别只看单方向峰值：高层建筑二维矢量响应极值怎么算",
         "order": 9,
@@ -1125,6 +1140,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "b04e5e7b02b681e3dbac3dde83f809025f5b075faa5ba1bb3c9c7e23caf9a64c"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Exhaustive original-paper translation and all scientific figures independently reviewed; source inconsistencies and limitations retained.",
+            "fingerprint": "7bf6372ab631b8b5e80ceeb0ae9f06cef8f55de1a0666ae7466974e974610605"
           }
         },
         "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md"
@@ -1137,15 +1163,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "b5e9c19a0a1764fb3ce7ac280e4baa65d56696b7de057b8293aebd1315ca143e"
+            "scope": "Previously source-audited introduction retained; every selected source figure calibrated and independently inspected. No backend upload or previews.",
+            "fingerprint": "62e3798811d24b4c8a260d2312903436ee8104ed28290500e3b15977ca448d43"
           }
         },
         "latest_published_url": "",
@@ -1333,15 +1359,15 @@
             "fingerprint": "ba06ab63ec3933988216fe3be29fa4f65fc5b90dcd8311d16f689998ccb04602"
           },
           "verified": {
-            "recorded_at": "2026-10-06T07:25:10+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
-            "fingerprint": "f8758c01fa6ab90314f740d72d58396c29f5f6f2af2089a487310b6c22ebce57"
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "acd23ff447b395977270c17060e8590a22b214440f9017011d9664e9d844ff47"
           }
         },
         "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md"
@@ -1354,15 +1380,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T07:25:10+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Previously source-audited introduction retained; selected figure pixels calibrated and independently inspected. No backend upload or preview.",
-            "fingerprint": "94720f98c47be390cc5c8dc5b5491972db767694a398edc4deeb1a7b314e678f"
+            "scope": "WeChat introduction and scientific assets unchanged; linked review only records source-email formatting repair in RTD. No backend upload or previews.",
+            "fingerprint": "2f08d443218dc7bf242f4355ed8cb00f9765487bf7b0a414dc3a8431613f52e1"
           }
         },
         "latest_published_url": "",
@@ -1824,8 +1850,8 @@
         "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhao2025-SCS.rst",
         "public_title": "数值风洞 | 用 3D Gaussian Splatting 重建城市建筑几何",
         "order": 4,
@@ -1841,6 +1867,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "7101303ebe934dae7efae2f1b3cf4c8465187216823c78852cdc0d34876be182"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Exhaustive original-paper translation and all scientific figures independently reviewed; source inconsistencies and limitations retained.",
+            "fingerprint": "28c1f24f4c4ff50bce2a9f85238c83ba6530026baa09d84af05ce5134738c434"
           }
         },
         "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md"
@@ -1853,15 +1890,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "2986b588bfae16fce788eeb4c6d7496ca484bc531817365de0653ed4e5578147"
+            "scope": "Previously source-audited introduction retained; every selected source figure calibrated and independently inspected. No backend upload or previews.",
+            "fingerprint": "78da7e2ce33d9732a620441d87962ee1045ef9697c6b7d322e2801fcc3705919"
           }
         },
         "latest_published_url": "",
@@ -2331,15 +2368,15 @@
             "fingerprint": "212fa88e8f52488122c508c16b8e0bee3d7aa750a8eb270f72f48da69510e6db"
           },
           "verified": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "aa526ebbd5c683d7142a78d964b9a3ab39426176889ae9e161f76a2675501474"
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "5e996822236b8c58fd2036cf167fb24ace5d08bf9e6e051e11a3d26f3b394a84"
           }
         },
         "review_path": "wechat/articles/review/ref-wang2024-ES.review.md"
@@ -2352,15 +2389,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T06:48:26+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Previously source-audited introduction retained; selected figure pixels calibrated and independently inspected. No backend upload or preview.",
-            "fingerprint": "99f1197523f714fb493e80e2b08e1dec2580be8fdac3ebd747875ca2cd669267"
+            "scope": "WeChat introduction and scientific assets unchanged; linked review only records source-email formatting repair in RTD. No backend upload or previews.",
+            "fingerprint": "54bc975063aedc193a157b39dade7f7454c58b640ae7bfe44446fb3e230aa0ea"
           }
         },
         "latest_published_url": "",
@@ -2846,7 +2883,7 @@
         "issues": [],
         "evidence": {
           "awaiting_audit": {
-            "recorded_at": "2026-10-06T06:07:32+00:00",
+            "recorded_at": "2026-10-06T07:57:50+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
             "checks": {
               "source_identity": true,
@@ -2854,12 +2891,13 @@
               "public_safety": true,
               "main_pdf_coverage": true
             },
-            "scope": "All main-PDF content and35 figures independently verified; Appendix A/B source is absent from the authorized31-page PDF, so full-paper coverage remains blocked.",
-            "fingerprint": "d153d472f896ad99a009b6c012edd19f9086125b913cbd02fcb51d2b454c9bd1"
+            "scope": "Previously reviewed main PDF coverage and calibrated figures retained; source Appendix A/B still unavailable. Nomenclature guide version refreshed only. Reader-facing source-range notice added to RTD; source identity, main text, images and missing Appendix A/B blocker unchanged.",
+            "fingerprint": "ddf229dd8759e9e2351281167fb198f9f18d0afac580690abfce8da7db03ad63"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
-        "blocking_reason": "Missing authorized source text for Appendix A and Appendix B"
+        "blocking_reason": "Missing authorized source text for Appendix A and Appendix B",
+        "blocker_code": "missing_source_appendices"
       },
       "wechat": {
         "selected": true,
@@ -2869,15 +2907,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T06:07:32+00:00",
+            "recorded_at": "2026-10-06T07:57:50+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Previously audited introduction retained; figure source pixels calibrated and independently inspected. No upload or backend previews.",
-            "fingerprint": "01a349c65684c7f1ba2f8d99ea259063c0905e4a8fc56173393b85893d021de3"
+            "scope": "Previously audited introduction retained; figure source pixels calibrated and independently inspected. No upload or backend previews. Reader-facing source-range notice added to RTD; source identity, main text, images and missing Appendix A/B blocker unchanged.",
+            "fingerprint": "514b67ee70bd1a1f82e914f6ddcd4902dbe9a2a630487697550147cf38d160d0"
           }
         },
         "latest_published_url": "",
@@ -4108,15 +4146,15 @@
             "fingerprint": "1bcd144dc058ab35cfc0ee3f5f8e295387edb8449f5b251b3dbd9f98e2d139b1"
           },
           "verified": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "a86d2f262dd2d3dd3b60bfdbbedbd49c5e6efc74dc3234b889444de0c1155eba"
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "f899f2e56e83738b1fea9ce0782f44d732c51f8932598195303bdf279597f231"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md"
@@ -4129,15 +4167,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T05:52:28+00:00",
+            "recorded_at": "2026-10-06T07:45:33+00:00",
             "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Previously source-checked introduction retained; source figure assets calibrated and independently compared with original PDF; no backend preview/upload.",
-            "fingerprint": "418fd5f706c38d481d270272be514041871687b861e2cf813e882c1a280f1669"
+            "scope": "WeChat introduction and scientific assets unchanged; linked review only records source-email formatting repair in RTD. No backend upload or previews.",
+            "fingerprint": "7f77dff73ad68126214b18760fa971c25d0100b086912b2209e9e7162e590645"
           }
         },
         "latest_published_url": "",

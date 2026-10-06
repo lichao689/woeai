@@ -31,7 +31,7 @@
 - :sup:`b` 深圳市建筑设计研究总院有限公司，中国深圳
 - :sup:`c` 深圳市城市规划与国土资源研究中心，中国深圳
 
-**原论文通讯作者脚注**：\* 通讯作者；电子邮箱：lichaosz@hit.edu.cn（C. Li）
+**原论文通讯作者脚注**：\* 通讯作者；电子邮箱：lichaosz@hit.edu.cn （C. Li）
 
 **期刊**：Journal of Wind Engineering & Industrial Aerodynamics, 229 (2022) 105147
 

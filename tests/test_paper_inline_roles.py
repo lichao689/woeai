@@ -1,4 +1,4 @@
-"""Render current verified papers: successful Sphinx builds can leak literal roles."""
+"""Render full-paper pages, including blocked sources, to check real HTML boundaries."""
 from html.parser import HTMLParser
 import json
 import os
@@ -8,6 +8,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -27,10 +28,10 @@ class VisibleText(HTMLParser):
 
 
 class PaperInlineRoleTests(unittest.TestCase):
-    def test_verified_papers_render_roles_instead_of_literal_markup(self):
+    def test_full_paper_pages_render_roles_and_complete_links(self):
         rows = json.loads((ROOT / 'docs/data/publications.json').read_text())
         papers = [row['custom'] for row in rows
-                  if row['custom'].get('rtd', {}).get('status') == 'verified']
+                  if row['custom'].get('rtd', {}).get('kind') == 'full_paper']
         self.assertTrue(papers)
         with tempfile.TemporaryDirectory(prefix='woeai-inline-roles-') as tmp:
             source = Path(tmp) / 'source'
@@ -42,7 +43,8 @@ class PaperInlineRoleTests(unittest.TestCase):
                 "html_theme = 'basic'\n"
             )
             refs = [paper['publication_ref'] for paper in papers]
-            index = 'Verified papers\n===============\n\n.. toctree::\n\n'
+            by_ref = {paper['publication_ref']: paper for paper in papers}
+            index = 'Full-paper pages\n================\n\n.. toctree::\n\n'
             index += ''.join(f'   {ref}\n' for ref in refs)
             index += '\n'
             index += ''.join(f'.. _{ref}:\n\n{ref}\n' + '-' * len(ref)
@@ -72,6 +74,19 @@ class PaperInlineRoleTests(unittest.TestCase):
                     text = ''.join(parsed.text)
                     self.assertNotIn(':ref:', text)
                     self.assertNotIn(':math:', text)
+                    if by_ref[ref]['rtd'].get('blocker_code') == 'missing_source_appendices':
+                        self.assertIn('原文引用的附录 A、B', text)
+                        self.assertIn('相关附录推导未收入本页', text)
+                    # Docutils may silently truncate an email next to Chinese
+                    # punctuation even though its full text remains visible.
+                    emails = set(re.findall(
+                        r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}',
+                        (source / (ref + '.rst')).read_text(),
+                    ))
+                    mailto = {unquote(link[7:]).split('?')[0] for link in parsed.links
+                              if link.startswith('mailto:')}
+                    self.assertTrue(emails <= mailto,
+                                    f'{ref}: missing complete mailto links: {emails - mailto}')
                     if ref == 'ref-li2024-POF':
                         for target in (15, 1, 21, 23, 41, 43):
                             self.assertTrue(any(link.endswith(f'#li2024-reference-{target}')

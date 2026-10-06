@@ -29,7 +29,7 @@
 - 期刊：Engineering Structures，2024 年，第 318 卷，文章号 118742
 - DOI：https://doi.org/10.1016/j.engstruct.2024.118742
 - 收稿：2024 年 1 月 4 日；修回：2024 年 7 月 22 日；录用：2024 年 8 月 5 日
-- 通讯脚注：原文单星号脚注写“通讯作者地址：哈尔滨工业大学（深圳），中国深圳，518055”；双星号脚注写“通讯作者”。通讯邮箱：lichaosz@hit.edu.cn（C. Li）；zhoushengtao1991@foxmail.com（S. Zhou）
+- 通讯脚注：原文单星号脚注写“通讯作者地址：哈尔滨工业大学（深圳），中国深圳，518055”；双星号脚注写“通讯作者”。通讯邮箱：lichaosz@hit.edu.cn （C. Li）；zhoushengtao1991@foxmail.com （S. Zhou）
 
 .. note::
 

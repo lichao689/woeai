@@ -92,7 +92,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x3
 8. PDF file page 8 Table 2 原引文 [9]、[8] 与作者—年份参考文献体例不同；保留编号并说明未给出对应关系，不推定映射。
 9. PDF file page 3 Section 2 原有 MCDRFG 缩写，与前文 MDSRFG 不一致；照录该处并加译注。
 10. PDF file page 20 Table 7：C5 阻力标准差 +7.38% 是原文“均低估”的例外；六个误差汇总值是带符号相对误差均值，C5 最接近零，而非数值最小或平均绝对误差。
-11. PDF file page 23–24：保留 Lumley and Panofsky (1964) 出版信息中的异常排版文本，以及 Tennekes et al. (1972) 中重复列出的 Lumley 作者；未悄然补写或删去。
+11. PDF file page 23–24：Lumley and Panofsky (1964) 出版信息中的排版残留已按下方页面复核说明显式规范化；Tennekes et al. (1972) 中重复列出的 Lumley 作者仍按原条目保留。
 
 ## 本轮检查
 
@@ -110,3 +110,10 @@ rtd_cover_image: wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x3
 - 独立审校逐段逐句对照全部授权源页，逐式检查公式、逐值检查表格、逐条检查参考文献，并逐张对照最终图片与完整 PDF 原页。
 - 全文内容与原图覆盖审核通过；原文内部差异继续保留，不把源文问题擅自改成译文结论。批次构建和部署独立验收，公众号后台状态未变。
 - 复核发现并修复网格无关性验证目的句、三维谱分量释义和平均力系数上横线；24 幅图均与原生图像或同一区域源页渲染逐像素一致。
+
+
+### 2026-10-06 页面内联语法复核
+
+- 对照最终生成 HTML 检查内联引用与公式，修正全角括号旁的 RST 角色边界，避免引用或公式源码以普通文字显示；所有公式及引用角色内部文本保持不变。
+- 新增实际 Sphinx 渲染回归，覆盖当前全部已核验全文页面，并检查页面可见文本中不存在字面 :ref: 或 :math: 残留；参考文献链接目标保持有效。
+- PDF file page 23 的 Lumley–Panofsky（1964）条目在原始页面像素中确有出版信息排版残留，不是提取器误读。公开检索条目仅清除残留字符，保留作者、年份、书名及 John Wiley and Sons，明确附注且未补造出版地；原文异常继续作为源文问题记录。

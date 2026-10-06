@@ -1985,7 +1985,7 @@
         "issues": [],
         "evidence": {
           "verified": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T05:52:28+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
             "checks": {
               "source_identity": true,
@@ -1993,7 +1993,7 @@
               "full_paper_coverage": true
             },
             "scope": "Full source-content coverage independently reviewed on current bytes.",
-            "fingerprint": "5c6265ff51878c9c5e9af289553d03858c66e2652d10d57c4b8fc55d53500e3d"
+            "fingerprint": "8c028012feb23fd7434c353d2a8206da3669c52863446714e652ade33e8311c2"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2024-POF.review.md"
@@ -2006,7 +2006,7 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T05:52:28+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
             "checks": {
               "source_identity": true,
@@ -2014,7 +2014,7 @@
               "facts": true
             },
             "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "3a4df3fac5845fff7c716b5048cbb05be8b22e9fdd0f4bba874c1a8dcef77e29"
+            "fingerprint": "a97067405e43677e49ea6430bfa6a8e25ec461d73f49f5c50ef83c59995a38ea"
           }
         },
         "latest_published_url": "",
@@ -2633,7 +2633,7 @@
             "fingerprint": "cb24418a243df754f845f25bb9423920df22396996d7dbd10956007a0fc8fee4"
           },
           "verified": {
-            "recorded_at": "2026-10-06T05:24:57+00:00",
+            "recorded_at": "2026-10-06T05:52:28+00:00",
             "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
             "checks": {
               "source_identity": true,
@@ -2641,7 +2641,7 @@
               "public_safety": true
             },
             "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim.",
-            "fingerprint": "3200386553d0910ec6894944b11b248ef6b86953ea2e73f4d9fddabdd7850f67"
+            "fingerprint": "dfc3ab8087372e526cfed50284ac6c3148688d37a301b5343a9b8635e2e2adb8"
           }
         },
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md"
@@ -2654,7 +2654,7 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T05:24:57+00:00",
+            "recorded_at": "2026-10-06T05:52:28+00:00",
             "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
             "checks": {
               "source_identity": true,
@@ -2662,7 +2662,7 @@
               "facts": true
             },
             "scope": "Previously source-checked introduction retained; source figure assets calibrated and independently compared with original PDF; no backend preview/upload.",
-            "fingerprint": "6ab421438b2bf3300b065fedfd5c436845b95ff8ef7d827314d6dc1d9ca1e039"
+            "fingerprint": "12c7c1df1128fda3516bcbcc70b77f9a81688f34b4a61824bf0dec724c43a446"
           }
         },
         "latest_published_url": "",
@@ -4018,7 +4018,7 @@
             "fingerprint": "1bcd144dc058ab35cfc0ee3f5f8e295387edb8449f5b251b3dbd9f98e2d139b1"
           },
           "verified": {
-            "recorded_at": "2026-10-06T05:24:57+00:00",
+            "recorded_at": "2026-10-06T05:52:28+00:00",
             "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
             "checks": {
               "source_identity": true,
@@ -4026,7 +4026,7 @@
               "public_safety": true
             },
             "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim.",
-            "fingerprint": "ce7b233398f86df81a118c51a857d3c752f6ad0fa8d933f07cb4aca3ec5e8f39"
+            "fingerprint": "4a8e3d994d64e85406b915a65d7e1bc0332268bfb164d3ec652b04bb215ba7d8"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md"
@@ -4039,7 +4039,7 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T05:24:57+00:00",
+            "recorded_at": "2026-10-06T05:52:28+00:00",
             "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
             "checks": {
               "source_identity": true,
@@ -4047,7 +4047,7 @@
               "facts": true
             },
             "scope": "Previously source-checked introduction retained; source figure assets calibrated and independently compared with original PDF; no backend preview/upload.",
-            "fingerprint": "6fce27b820d924d61615b0899d3633141d496297a9049fd3e73eda575ef37d4a"
+            "fingerprint": "418fd5f706c38d481d270272be514041871687b861e2cf813e882c1a280f1669"
           }
         },
         "latest_published_url": "",

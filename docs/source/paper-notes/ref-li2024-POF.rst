@@ -42,15 +42,15 @@
 I 引言
 --------
 
-在大涡模拟（large eddy simulation，LES）中，生成真实的湍流入流对保证模拟准确性至关重要 :ref:`[1] <li2024-reference-1>`。过去几十年，入流湍流生成（inflow turbulence generation，ITG）发展迅速，主要可分为前驱数据库、循环方法和合成湍流三类。关于这一主题的综合评述可参见文献 :ref:`[2–6] <li2024-reference-2>`，不同方法之间的详细比较见文献 :ref:`[7–12] <li2024-reference-7>`。目前，ITG 面临的主要挑战不仅在于再现真实的湍流统计特征，还在于保证与 Navier–Stokes（NS）方程及边界条件相容 :ref:`[13,14] <li2024-reference-13>`。在 ITG 方法中，合成湍流方法因其清晰性和较高计算效率而被广泛采用。因此，下文仅讨论合成湍流方法。
+在大涡模拟（large eddy simulation，LES）中，生成真实的湍流入流对保证模拟准确性至关重要 :ref:`[1] <li2024-reference-1>` 。过去几十年，入流湍流生成（inflow turbulence generation，ITG）发展迅速，主要可分为前驱数据库、循环方法和合成湍流三类。关于这一主题的综合评述可参见文献 :ref:`[2–6] <li2024-reference-2>` ，不同方法之间的详细比较见文献 :ref:`[7–12] <li2024-reference-7>` 。目前，ITG 面临的主要挑战不仅在于再现真实的湍流统计特征，还在于保证与 Navier–Stokes（NS）方程及边界条件相容 :ref:`[13,14] <li2024-reference-13>` 。在 ITG 方法中，合成湍流方法因其清晰性和较高计算效率而被广泛采用。因此，下文仅讨论合成湍流方法。
 
-合成湍流方法可分为合成随机 Fourier 方法（synthetic random Fourier method，SRFM）:ref:`[15–18] <li2024-reference-15>`、合成数字滤波方法（synthetic digital filtering method，SDFM）:ref:`[1,13,19,20] <li2024-reference-1>`、合成相干涡方法（synthetic coherent eddy method，SCEM）:ref:`[21,22] <li2024-reference-21>` 和合成体积力方法（synthetic volume forcing method，SVFM）:ref:`[23,24] <li2024-reference-23>`。其中，SRFM 的基本公式由相互叠加的三角函数构成。这种形式有助于从频谱角度更加直接地实现指定的湍流特征。SRFM 主要可分为两类。第一类通过加权幅值波叠加（weighted amplitude wave superposition，WAWS）方法合成湍流场，该方法最早由文献 :ref:`[18] <li2024-reference-18>` 提出，并在后续研究中得到发展 :ref:`[25–28] <li2024-reference-25>`。这类方法的缺点是不满足零散度条件，而且不适用于并行算法。
+合成湍流方法可分为合成随机 Fourier 方法（synthetic random Fourier method，SRFM） :ref:`[15–18] <li2024-reference-15>` 、合成数字滤波方法（synthetic digital filtering method，SDFM） :ref:`[1,13,19,20] <li2024-reference-1>` 、合成相干涡方法（synthetic coherent eddy method，SCEM） :ref:`[21,22] <li2024-reference-21>` 和合成体积力方法（synthetic volume forcing method，SVFM） :ref:`[23,24] <li2024-reference-23>` 。其中，SRFM 的基本公式由相互叠加的三角函数构成。这种形式有助于从频谱角度更加直接地实现指定的湍流特征。SRFM 主要可分为两类。第一类通过加权幅值波叠加（weighted amplitude wave superposition，WAWS）方法合成湍流场，该方法最早由文献 :ref:`[18] <li2024-reference-18>` 提出，并在后续研究中得到发展 :ref:`[25–28] <li2024-reference-25>` 。这类方法的缺点是不满足零散度条件，而且不适用于并行算法。
 
-第二类 SRFM 称为基于随机流生成（Random-Flow-Generation-based，RFG-based）的方法，最初由 Kraichnan :ref:`[15] <li2024-reference-15>` 提出，用于生成均匀各向同性无散流场。Kraichnan 的方法 :ref:`[15] <li2024-reference-15>` 使用服从正态分布的频率，因此所生成湍流的时间相关函数只能近似为 Gaussian 函数的形式。随后，Bechara 等 :ref:`[16] <li2024-reference-16>` 改进了原方法，使其能够生成具有任意能谱的均匀各向同性湍流（homogeneous isotropic turbulence，HIT），但该方法未指定频率分布形式，即没有考虑湍流的时间相关性。在文献 :ref:`[16] <li2024-reference-16>` 的基础上，Davidson :ref:`[29–32] <li2024-reference-29>` 改进了一种湍流生成方法，能够生成符合指定湍流长度尺度、时间尺度和能谱的各向异性湍流。该方法又被引入格子 Boltzmann 方法框架，用于混合 RANS/LES-LBM 界面 :ref:`[33] <li2024-reference-33>`。与此同时，Saad 等 :ref:`[34,35] <li2024-reference-34>` 解决了原方法在方程离散过程中质量守恒不足的问题，并开发了生成 HIT 的开源代码。最近，Guo 等 :ref:`[36] <li2024-reference-36>` 利用 Lund 矩阵变换扩展了文献 :ref:`[16] <li2024-reference-16>` 的方法，从而更加高效地生成具有任意能谱的低散度非均匀各向异性湍流。
+第二类 SRFM 称为基于随机流生成（Random-Flow-Generation-based，RFG-based）的方法，最初由 Kraichnan :ref:`[15] <li2024-reference-15>` 提出，用于生成均匀各向同性无散流场。Kraichnan 的方法 :ref:`[15] <li2024-reference-15>` 使用服从正态分布的频率，因此所生成湍流的时间相关函数只能近似为 Gaussian 函数的形式。随后，Bechara 等 :ref:`[16] <li2024-reference-16>` 改进了原方法，使其能够生成具有任意能谱的均匀各向同性湍流（homogeneous isotropic turbulence，HIT），但该方法未指定频率分布形式，即没有考虑湍流的时间相关性。在文献 :ref:`[16] <li2024-reference-16>` 的基础上，Davidson :ref:`[29–32] <li2024-reference-29>` 改进了一种湍流生成方法，能够生成符合指定湍流长度尺度、时间尺度和能谱的各向异性湍流。该方法又被引入格子 Boltzmann 方法框架，用于混合 RANS/LES-LBM 界面 :ref:`[33] <li2024-reference-33>` 。与此同时，Saad 等 :ref:`[34,35] <li2024-reference-34>` 解决了原方法在方程离散过程中质量守恒不足的问题，并开发了生成 HIT 的开源代码。最近，Guo 等 :ref:`[36] <li2024-reference-36>` 利用 Lund 矩阵变换扩展了文献 :ref:`[16] <li2024-reference-16>` 的方法，从而更加高效地生成具有任意能谱的低散度非均匀各向异性湍流。
 
-此外，Smirnov 等 :ref:`[17] <li2024-reference-17>` 提出了 RFG 方法，用于生成符合 Gaussian 能谱模型的非均匀各向异性湍流；Yu 和 Bai :ref:`[37] <li2024-reference-37>` 则通过引入矢量势改进 RFG 技术，保证生成非均匀湍流时满足无散条件。然而，Yu 和 Bai :ref:`[37] <li2024-reference-37>` 的工作同样没有考虑所生成湍流的时间相关性；如果用于非均匀流场的正交变换随空间变化，在最后一步对矢量场的涡量施加正交变换，会使所生成的流场不能严格满足零散度条件。随后，研究者提出离散合成 RFG（discrete and synthetic RFG，DSRFG）方法 :ref:`[38] <li2024-reference-38>`，以实现任意各向异性三维能谱。在 DSRFG 方法基础上，Castro 和 Paz :ref:`[39] <li2024-reference-39>` 提出了增强版本，即修正 DSRFG（modified DSRFG，MDSRFG）方法，以实现可调节的时间相关性。同时，Wang 等 :ref:`[40] <li2024-reference-40>` 提出了一种利用非均匀能谱的高效精确 DSRFG 方法。需要指出，基于 DSRFG 的方法旨在生成任意三维能谱。而一致性离散 RFG（consistent discrete RFG，CDRFG）:ref:`[41,42] <li2024-reference-41>` 和窄带合成 RFG（narrowband synthesis RFG，NSRFG）:ref:`[43] <li2024-reference-43>` 方法，则是为实现非均匀时间功率谱密度而提出的。这两种方法的缺点是通过引入经验参数来近似空间相关性。因此，研究者提出了一致性改进 RFG（consistency improved RFG，CIRFG）方法 :ref:`[44] <li2024-reference-44>`，以保证指定的空间相关函数及不同速度分量之间的互相关；最近又提出相干性改进且质量平衡的 RFG（coherence-improved and mass-balanced RFG，CMRFG）方法 :ref:`[45] <li2024-reference-45>`，以改善所生成湍流的空间相干性。此外，Patruno 和 Ricci :ref:`[46,47] <li2024-reference-46>` 从三维空间互谱密度的角度，系统提出了指定波矢 RFG3（prescribed-wavevector RFG3，PRFG3）方法，并用它生成均匀湍流。该方法通过修正波矢或能量实现无散条件，这可能改变初始统计特征，并使算法相对复杂。随后，PRFG3 方法又被扩展，用于生成与欧洲规范相一致的非均匀大气边界层湍流 :ref:`[48] <li2024-reference-48>`。
+此外，Smirnov 等 :ref:`[17] <li2024-reference-17>` 提出了 RFG 方法，用于生成符合 Gaussian 能谱模型的非均匀各向异性湍流；Yu 和 Bai :ref:`[37] <li2024-reference-37>` 则通过引入矢量势改进 RFG 技术，保证生成非均匀湍流时满足无散条件。然而，Yu 和 Bai :ref:`[37] <li2024-reference-37>` 的工作同样没有考虑所生成湍流的时间相关性；如果用于非均匀流场的正交变换随空间变化，在最后一步对矢量场的涡量施加正交变换，会使所生成的流场不能严格满足零散度条件。随后，研究者提出离散合成 RFG（discrete and synthetic RFG，DSRFG）方法 :ref:`[38] <li2024-reference-38>` ，以实现任意各向异性三维能谱。在 DSRFG 方法基础上，Castro 和 Paz :ref:`[39] <li2024-reference-39>` 提出了增强版本，即修正 DSRFG（modified DSRFG，MDSRFG）方法，以实现可调节的时间相关性。同时，Wang 等 :ref:`[40] <li2024-reference-40>` 提出了一种利用非均匀能谱的高效精确 DSRFG 方法。需要指出，基于 DSRFG 的方法旨在生成任意三维能谱。而一致性离散 RFG（consistent discrete RFG，CDRFG） :ref:`[41,42] <li2024-reference-41>` 和窄带合成 RFG（narrowband synthesis RFG，NSRFG） :ref:`[43] <li2024-reference-43>` 方法，则是为实现非均匀时间功率谱密度而提出的。这两种方法的缺点是通过引入经验参数来近似空间相关性。因此，研究者提出了一致性改进 RFG（consistency improved RFG，CIRFG）方法 :ref:`[44] <li2024-reference-44>` ，以保证指定的空间相关函数及不同速度分量之间的互相关；最近又提出相干性改进且质量平衡的 RFG（coherence-improved and mass-balanced RFG，CMRFG）方法 :ref:`[45] <li2024-reference-45>` ，以改善所生成湍流的空间相干性。此外，Patruno 和 Ricci :ref:`[46,47] <li2024-reference-46>` 从三维空间互谱密度的角度，系统提出了指定波矢 RFG3（prescribed-wavevector RFG3，PRFG3）方法，并用它生成均匀湍流。该方法通过修正波矢或能量实现无散条件，这可能改变初始统计特征，并使算法相对复杂。随后，PRFG3 方法又被扩展，用于生成与欧洲规范相一致的非均匀大气边界层湍流 :ref:`[48] <li2024-reference-48>` 。
 
-SCEM 是另一种广泛应用的合成湍流方法，最初由 Jarrin 等 :ref:`[21] <li2024-reference-21>` 提出的合成涡方法（synthetic eddy method，SEM）发展而来。SEM 利用空间随机分布的相干结构叠加以及 Lund 矩阵变换，合成各向异性湍流场。随后，Pamiès 等 :ref:`[49] <li2024-reference-49>` 改进 SEM，使边界层湍流沿壁面法向呈现更真实的尺度分布；Luo 等 :ref:`[50] <li2024-reference-50>` 则提出多尺度 SEM（multi-scale SEM，MSSEM）方法，通过拟合算法逼近目标时间 PSD。上述基于 SEM 的方法的主要缺点是不能满足无散条件，从而产生非物理压力波动。为解决这一问题，生成无散湍流场的一种常用方法是先合成矢量势场，再对其取旋度，相关工作见文献 :ref:`[22,37,51–54] <li2024-reference-22>`。早期，Kornev 和 Hassel :ref:`[22] <li2024-reference-22>` 将标量场与随机方向矢量相乘来表示矢量势场，但仅限于生成弱各向异性湍流。随后，Poletto 等 :ref:`[51] <li2024-reference-51>` 将速度涡量作为矢量势场，并通过三个坐标轴方向的长度尺度量化涡的尺寸。此后，Kröger 和 Kornev :ref:`[55] <li2024-reference-55>` 利用特定形状函数计算矢量势场，该函数通过涡的三个长度尺度和三个强度因子描述。这种方法允许生成具有所需 Reynolds 应力和积分长度尺度的任意各向异性湍流。然而，文献 :ref:`[55] <li2024-reference-55>` 指出，受所采用形状函数的限制，只能精确满足两个长度尺度。此外，Sescu 和 Hixon :ref:`[52] <li2024-reference-52>` 提出了一种更一般的矢量势场计算方法，解决了文献 :ref:`[55] <li2024-reference-55>` 所遇到的积分长度尺度各向异性问题。Kim 和 Haeri :ref:`[54] <li2024-reference-54>` 应用文献 :ref:`[52] <li2024-reference-52>` 提出的方法，生成符合 von Kármán 能谱的 HIT。最近，Cai 等 :ref:`[53] <li2024-reference-53>` 提出了连续 MSSEM（continuous MSSEM，CMSSEM），采用满足特定概率密度函数（probability density function，PDF）的无量纲随机变量来确定涡的长度尺度，使生成的 HIT 符合指定能谱。
+SCEM 是另一种广泛应用的合成湍流方法，最初由 Jarrin 等 :ref:`[21] <li2024-reference-21>` 提出的合成涡方法（synthetic eddy method，SEM）发展而来。SEM 利用空间随机分布的相干结构叠加以及 Lund 矩阵变换，合成各向异性湍流场。随后，Pamiès 等 :ref:`[49] <li2024-reference-49>` 改进 SEM，使边界层湍流沿壁面法向呈现更真实的尺度分布；Luo 等 :ref:`[50] <li2024-reference-50>` 则提出多尺度 SEM（multi-scale SEM，MSSEM）方法，通过拟合算法逼近目标时间 PSD。上述基于 SEM 的方法的主要缺点是不能满足无散条件，从而产生非物理压力波动。为解决这一问题，生成无散湍流场的一种常用方法是先合成矢量势场，再对其取旋度，相关工作见文献 :ref:`[22,37,51–54] <li2024-reference-22>` 。早期，Kornev 和 Hassel :ref:`[22] <li2024-reference-22>` 将标量场与随机方向矢量相乘来表示矢量势场，但仅限于生成弱各向异性湍流。随后，Poletto 等 :ref:`[51] <li2024-reference-51>` 将速度涡量作为矢量势场，并通过三个坐标轴方向的长度尺度量化涡的尺寸。此后，Kröger 和 Kornev :ref:`[55] <li2024-reference-55>` 利用特定形状函数计算矢量势场，该函数通过涡的三个长度尺度和三个强度因子描述。这种方法允许生成具有所需 Reynolds 应力和积分长度尺度的任意各向异性湍流。然而，文献 :ref:`[55] <li2024-reference-55>` 指出，受所采用形状函数的限制，只能精确满足两个长度尺度。此外，Sescu 和 Hixon :ref:`[52] <li2024-reference-52>` 提出了一种更一般的矢量势场计算方法，解决了文献 :ref:`[55] <li2024-reference-55>` 所遇到的积分长度尺度各向异性问题。Kim 和 Haeri :ref:`[54] <li2024-reference-54>` 应用文献 :ref:`[52] <li2024-reference-52>` 提出的方法，生成符合 von Kármán 能谱的 HIT。最近，Cai 等 :ref:`[53] <li2024-reference-53>` 提出了连续 MSSEM（continuous MSSEM，CMSSEM），采用满足特定概率密度函数（probability density function，PDF）的无量纲随机变量来确定涡的长度尺度，使生成的 HIT 符合指定能谱。
 
 与 SCEM 相比，基于 RFG 的方法具有以更简单算法满足目标能谱或时间 PSD 的优势。然而，基于 RFG 的方法的主要限制来自无散条件的约束。该条件要求每个速度分量具有相同的波数矢量空间分布，这对实现完全各向异性湍流构成了重大挑战。此外，除文献 :ref:`[37] <li2024-reference-37>` 外，上述基于 RFG 的方法在生成非均匀湍流时，均不能严格满足无散条件。对于 SCEM，利用 SEM 生成矢量势场，可以构造严格零散度的湍流场。然而，在 SCEM 中实现目标频谱，需要使用拟合算法确定大量未知量，使过程相对复杂。因此，本研究的目标是在从矢量势场生成湍流场的框架下，与 Yu 和 Bai :ref:`[37] <li2024-reference-37>` 的工作不同，采用更简洁的基于 RFG 的方法生成矢量势，同时考虑时空相关性，具体而言就是嵌入 Taylor 冻结假设。作为实现这一目标的初始阶段，本研究仅关注严格 HIT 的生成。
 
@@ -62,7 +62,7 @@ II 理论与方法
 II.A 均匀各向同性湍流的统计特征
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-根据文献 :ref:`[56] <li2024-reference-56>`，不可压缩 HIT 的三维空间互谱密度可表示为
+根据文献 :ref:`[56] <li2024-reference-56>` ，不可压缩 HIT 的三维空间互谱密度可表示为
 
 .. math::
 
@@ -71,14 +71,14 @@ II.A 均匀各向同性湍流的统计特征
    \quad \forall i\in\{1,2,3\},\ \forall j\in\{1,2,3\}.
    \qquad (1)
 
-其中，:math:`\Phi_{ij}(\mathbf{k})` 是与第 :math:`i` 和第 :math:`j` 个速度分量有关的三维空间 CSD；:math:`\mathbf{k}` 表示波数矢量，即 :math:`\mathbf{k}=(k_1,k_2,k_3)^{\mathrm T}`，:math:`(\cdot)^{\mathrm T}` 表示转置运算；:math:`\kappa` 为波数矢量的模，即 :math:`\kappa=|\mathbf{k}|`；:math:`\delta_{ij}` 为 Kronecker delta；:math:`E(\kappa)` 为能谱函数，也是一个标量函数。能谱定义为将 :math:`\Phi_{ij}(\mathbf{k})` 的迹的一半沿半径为 :math:`\kappa` 的球壳积分，即
+其中， :math:`\Phi_{ij}(\mathbf{k})` 是与第 :math:`i` 和第 :math:`j` 个速度分量有关的三维空间 CSD； :math:`\mathbf{k}` 表示波数矢量，即 :math:`\mathbf{k}=(k_1,k_2,k_3)^{\mathrm T}` ， :math:`(\cdot)^{\mathrm T}` 表示转置运算； :math:`\kappa` 为波数矢量的模，即 :math:`\kappa=|\mathbf{k}|` ； :math:`\delta_{ij}` 为 Kronecker delta； :math:`E(\kappa)` 为能谱函数，也是一个标量函数。能谱定义为将 :math:`\Phi_{ij}(\mathbf{k})` 的迹的一半沿半径为 :math:`\kappa` 的球壳积分，即
 
 .. math::
 
    E(\kappa)=\oint\frac12\left[\Phi_{11}(\mathbf{k})+\Phi_{22}(\mathbf{k})+\Phi_{33}(\mathbf{k})\right]\mathrm dS(\kappa).
    \qquad (2)
 
-其中，:math:`S(\kappa)` 是波数空间中以原点为中心、半径为 :math:`\kappa` 的球壳。于是，湍动能 :math:`K` 等于 :math:`E(\kappa)` 的积分，写为
+其中， :math:`S(\kappa)` 是波数空间中以原点为中心、半径为 :math:`\kappa` 的球壳。于是，湍动能 :math:`K` 等于 :math:`E(\kappa)` 的积分，写为
 
 .. math::
 
@@ -93,7 +93,7 @@ II.A 均匀各向同性湍流的统计特征
    \begin{cases}2K/3,&i=j,\\0,&i\ne j,\end{cases}
    \qquad (4)
 
-其中，:math:`\langle\cdot\rangle` 表示集合平均运算。
+其中， :math:`\langle\cdot\rangle` 表示集合平均运算。
 
 此外，对于 HIT，一维单边纵向（脉动速度平行于相对位移方向）空间 PSD 可由能谱表示为
 
@@ -128,14 +128,14 @@ II.A 均匀各向同性湍流的统计特征
    \rho_{ii}(r_j)=\frac{R_{ii}(r_j)}{R_{ii}(r_j=0)}.
    \qquad (8)
 
-另外，Taylor 冻结假设 :ref:`[57] <li2024-reference-57>` 认为，湍流涡随平均流速输运，并在通过固定观察者所需的时间内保持尺度和结构不变。假定沿 :math:`x` 方向输运的湍流满足 Taylor 冻结假设，则单边时间 PSD 与 :math:`x` 方向的一维单边空间 PSD 可以相互转换 :ref:`[44,45] <li2024-reference-44>`，表示为
+另外，Taylor 冻结假设 :ref:`[57] <li2024-reference-57>` 认为，湍流涡随平均流速输运，并在通过固定观察者所需的时间内保持尺度和结构不变。假定沿 :math:`x` 方向输运的湍流满足 Taylor 冻结假设，则单边时间 PSD 与 :math:`x` 方向的一维单边空间 PSD 可以相互转换 :ref:`[44,45] <li2024-reference-44>` ，表示为
 
 .. math::
 
    S_{ii}(f)=\frac{2\pi}{U_{\mathrm{avg}}}S_{ii}(k_1).
    \qquad (9)
 
-其中，:math:`k_1=-2\pi f/U_{\mathrm{avg}}`，:math:`U_{\mathrm{avg}}` 表示沿 :math:`x` 方向输运的平均速度。
+其中， :math:`k_1=-2\pi f/U_{\mathrm{avg}}` ， :math:`U_{\mathrm{avg}}` 表示沿 :math:`x` 方向输运的平均速度。
 
 此外，根据文献 :ref:`[45] <li2024-reference-45>` 附录 B 的在线补充材料，可推导出 :math:`u` 分量沿 :math:`Y` 方向的空间相干函数表达式：
 
@@ -144,7 +144,7 @@ II.A 均匀各向同性湍流的统计特征
    \operatorname{Coh}_{uu}(f,r_2)=\frac{G_{uu}(f,r_2)}{G_{uu}(f,r_2=0)}.
    \qquad (10)
 
-其中，:math:`r_2` 为沿 :math:`Y` 方向两点间的距离；:math:`G_{uu}(f,r_2)` 表示双边一维时间 CSD，可通过式（11）—（13）计算。
+其中， :math:`r_2` 为沿 :math:`Y` 方向两点间的距离； :math:`G_{uu}(f,r_2)` 表示双边一维时间 CSD，可通过式（11）—（13）计算。
 
 .. math::
 
@@ -182,7 +182,7 @@ II.B 矢量势随机流生成（VPRFG）
    \mathbf u(\mathbf x,t)=\nabla\times\boldsymbol\psi(\mathbf x,t).
    \qquad (15)
 
-其中，:math:`\mathbf U=(U_1,U_2,U_3)^{\mathrm T}` 表示瞬时速度矢量，:math:`i=1,2,3` 时，:math:`U_i` 分别为纵向、横向和竖向瞬时速度；:math:`\overline{\mathbf U}=(U_{\mathrm{avg,T}},0,0)^{\mathrm T}` 为平均速度矢量，下标 :math:`\mathrm T` 表示目标值；:math:`\mathbf u=(u_1,u_2,u_3)^{\mathrm T}` 为脉动速度矢量，:math:`i=1,2,3` 时，:math:`u_i` 分别表示纵向 :math:`u`、横向 :math:`v` 和竖向 :math:`w` 脉动速度分量；:math:`\mathbf x=(x_1,x_2,x_3)^{\mathrm T}` 表示空间坐标，:math:`j=1,2,3` 时，:math:`x_j` 分别表示 :math:`x,y,z` 方向坐标；:math:`t` 表示时间；:math:`\boldsymbol\psi=(\psi_1,\psi_2,\psi_3)^{\mathrm T}` 为合成矢量势场。与文献 :ref:`[37] <li2024-reference-37>` 不同，所提方法中计算矢量势场的公式采用文献 :ref:`[43,44] <li2024-reference-43>` 中更简洁的形式，表示为
+其中， :math:`\mathbf U=(U_1,U_2,U_3)^{\mathrm T}` 表示瞬时速度矢量， :math:`i=1,2,3` 时， :math:`U_i` 分别为纵向、横向和竖向瞬时速度； :math:`\overline{\mathbf U}=(U_{\mathrm{avg,T}},0,0)^{\mathrm T}` 为平均速度矢量，下标 :math:`\mathrm T` 表示目标值； :math:`\mathbf u=(u_1,u_2,u_3)^{\mathrm T}` 为脉动速度矢量， :math:`i=1,2,3` 时， :math:`u_i` 分别表示纵向 :math:`u` 、横向 :math:`v` 和竖向 :math:`w` 脉动速度分量； :math:`\mathbf x=(x_1,x_2,x_3)^{\mathrm T}` 表示空间坐标， :math:`j=1,2,3` 时， :math:`x_j` 分别表示 :math:`x,y,z` 方向坐标； :math:`t` 表示时间； :math:`\boldsymbol\psi=(\psi_1,\psi_2,\psi_3)^{\mathrm T}` 为合成矢量势场。与文献 :ref:`[37] <li2024-reference-37>` 不同，所提方法中计算矢量势场的公式采用文献 :ref:`[43,44] <li2024-reference-43>` 中更简洁的形式，表示为
 
 .. math::
 
@@ -190,7 +190,7 @@ II.B 矢量势随机流生成（VPRFG）
    \sin(\mathbf k_n\cdot\mathbf x+2\pi f_n t+\varphi_n).
    \qquad (16)
 
-其中，:math:`\mathbf p_n=(p_{1,n},p_{2,n},p_{3,n})^{\mathrm T}` 为幅值矢量；:math:`\mathbf k_n=(k_{1,n},k_{2,n},k_{3,n})^{\mathrm T}` 为波数矢量；:math:`f_n` 为频率；:math:`\varphi_n` 为随机相位角。在生成均匀湍流时，将式（16）代入式（15），得到
+其中， :math:`\mathbf p_n=(p_{1,n},p_{2,n},p_{3,n})^{\mathrm T}` 为幅值矢量； :math:`\mathbf k_n=(k_{1,n},k_{2,n},k_{3,n})^{\mathrm T}` 为波数矢量； :math:`f_n` 为频率； :math:`\varphi_n` 为随机相位角。在生成均匀湍流时，将式（16）代入式（15），得到
 
 .. math::
 
@@ -208,7 +208,7 @@ II.B 矢量势随机流生成（VPRFG）
    \end{bmatrix}.
    \end{aligned}\qquad (17)
 
-在有限体积法（finite volume method，FVM）框架下，若采用二阶中心差分离散格式，并假定均匀网格尺寸为 :math:`(\Delta x_1,\Delta x_2,\Delta x_3)`，则在整数索引为 :math:`(i,j,k)` 的同位网格上，式（17）可离散为
+在有限体积法（finite volume method，FVM）框架下，若采用二阶中心差分离散格式，并假定均匀网格尺寸为 :math:`(\Delta x_1,\Delta x_2,\Delta x_3)` ，则在整数索引为 :math:`(i,j,k)` 的同位网格上，式（17）可离散为
 
 .. math::
 
@@ -234,7 +234,7 @@ II.B 矢量势随机流生成（VPRFG）
    \sqrt{\frac{2E_{\mathrm T}(\kappa_n)\Delta\kappa}{\kappa_n^2}}.
    \qquad (19)
 
-其中，:math:`r_{i,n}` 服从 :math:`-0.5` 至 :math:`0.5` 范围内的均匀分布，其概率密度函数为 :math:`g_{r_{i,n}}(r_{i,n})=1,\ r_{i,n}\in[-0.5,0.5]`；:math:`E_{\mathrm T}(\kappa_n)` 为目标能谱；:math:`\kappa_n` 为第 :math:`n` 个模态波数矢量的模，即 :math:`\kappa_n=|\mathbf k_n|`。能谱采用等间距矩形法离散，如图 1 所示。相应的波数间隔大小和序列表示为
+其中， :math:`r_{i,n}` 服从 :math:`-0.5` 至 :math:`0.5` 范围内的均匀分布，其概率密度函数为 :math:`g_{r_{i,n}}(r_{i,n})=1,\ r_{i,n}\in[-0.5,0.5]` ； :math:`E_{\mathrm T}(\kappa_n)` 为目标能谱； :math:`\kappa_n` 为第 :math:`n` 个模态波数矢量的模，即 :math:`\kappa_n=|\mathbf k_n|` 。能谱采用等间距矩形法离散，如图 1 所示。相应的波数间隔大小和序列表示为
 
 .. math::
 
@@ -246,7 +246,7 @@ II.B 矢量势随机流生成（VPRFG）
    \kappa_n=\kappa_{\min}+(n-1)\Delta\kappa.
    \qquad (21)
 
-其中，:math:`\kappa_{\min}` 和 :math:`\kappa_{\max}` 分别为波数矢量模的最小值和最大值。
+其中， :math:`\kappa_{\min}` 和 :math:`\kappa_{\max}` 分别为波数矢量模的最小值和最大值。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-li2024-POF/fig01-energy-spectrum-discretization.png
    :alt: 图 1 能谱离散示意图
@@ -255,7 +255,7 @@ II.B 矢量势随机流生成（VPRFG）
 
    **图 1** 能谱离散示意图。
 
-   纵轴为能谱 :math:`E(\kappa)`，横轴为波数模 :math:`\kappa`；灰色矩形表示离散谱段，标注依次为 :math:`\kappa_1,\kappa_2,\ldots,\kappa_{N-1},\kappa_N`。
+   纵轴为能谱 :math:`E(\kappa)` ，横轴为波数模 :math:`\kappa` ；灰色矩形表示离散谱段，标注依次为 :math:`\kappa_1,\kappa_2,\ldots,\kappa_{N-1},\kappa_N` 。
 
 由于 HIT 的能量在波数空间中半径为 :math:`\kappa_n` 的球面上均匀分布，如图 2 所示，波数矢量可表示为
 
@@ -269,7 +269,7 @@ II.B 矢量势随机流生成（VPRFG）
    \widehat k_{3,n}=\cos(\alpha_n),
    \end{cases}\qquad (22)
 
-其中，:math:`\widehat{\mathbf k}_n` 为均匀分布在单位球面上的矢量；:math:`\alpha_n` 和 :math:`\beta_n` 分别表示球坐标系中的随机极角和方位角，其概率密度函数为
+其中， :math:`\widehat{\mathbf k}_n` 为均匀分布在单位球面上的矢量； :math:`\alpha_n` 和 :math:`\beta_n` 分别表示球坐标系中的随机极角和方位角，其概率密度函数为
 
 .. math::
 
@@ -288,7 +288,7 @@ II.B 矢量势随机流生成（VPRFG）
 
    **图 2** 波数矢量示意图。
 
-   三坐标轴为 :math:`k_1,k_2,k_3`，绿色箭头为 :math:`\mathbf k_n`；:math:`\alpha_n` 为极角，:math:`\beta_n` 为方位角，:math:`\mathrm dS(\kappa_n)` 为球面面积微元。
+   三坐标轴为 :math:`k_1,k_2,k_3` ，绿色箭头为 :math:`\mathbf k_n` ； :math:`\alpha_n` 为极角， :math:`\beta_n` 为方位角， :math:`\mathrm dS(\kappa_n)` 为球面面积微元。
 
 此外，与文献 :ref:`[37] <li2024-reference-37>` 不同，为保证所生成湍流满足 Taylor 冻结假设，频率与波数矢量第一分量之间的关系表示为
 
@@ -309,7 +309,7 @@ II.B 矢量势随机流生成（VPRFG）
 II.C 无散条件与 Taylor 冻结假设
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-根据文献 :ref:`[47] <li2024-reference-47>`，满足无散条件和 Taylor 冻结假设，是湍流正确平流输运的必要条件。接下来，我们证明 VPRFG 方法生成的湍流满足这两个条件。
+根据文献 :ref:`[47] <li2024-reference-47>` ，满足无散条件和 Taylor 冻结假设，是湍流正确平流输运的必要条件。接下来，我们证明 VPRFG 方法生成的湍流满足这两个条件。
 
 首先，对于均匀湍流，结合式（17），所生成湍流的散度可计算为
 
@@ -332,14 +332,14 @@ II.C 无散条件与 Taylor 冻结假设
    +2\pi f_n t+\varphi_n.
    \end{aligned}\qquad (28)
 
-其中，:math:`\tau` 为时间间隔。结合式（17）和（28），可以得出所提方法生成的湍流满足 Taylor 冻结假设，表示为
+其中， :math:`\tau` 为时间间隔。结合式（17）和（28），可以得出所提方法生成的湍流满足 Taylor 冻结假设，表示为
 
 .. math::
 
    u_i(\mathbf x,t-\tau)=u_i(\mathbf x+U_{\mathrm{avg,T}}\tau\mathbf e_1,t).
    \qquad (29)
 
-其中，:math:`\mathbf e_1=(1,0,0)^{\mathrm T}` 是 :math:`x` 方向的单位矢量。与文献 :ref:`[37] <li2024-reference-37>` 不同，上述结果证明 VPRFG 方法能够同时满足无散条件和 Taylor 冻结假设。因此，所生成湍流近似符合 Navier–Stokes（NS）方程，这对湍流的准确输运至关重要。
+其中， :math:`\mathbf e_1=(1,0,0)^{\mathrm T}` 是 :math:`x` 方向的单位矢量。与文献 :ref:`[37] <li2024-reference-37>` 不同，上述结果证明 VPRFG 方法能够同时满足无散条件和 Taylor 冻结假设。因此，所生成湍流近似符合 Navier–Stokes（NS）方程，这对湍流的准确输运至关重要。
 
 II.D 所生成湍流的统计特征
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -347,7 +347,7 @@ II.D 所生成湍流的统计特征
 II.D.1 平均脉动速度
 ^^^^^^^^^^^^^^^^^^^^^
 
-现在推导 VPRFG 方法生成的湍流的统计特征。根据式（16），:math:`\boldsymbol\psi` 第 :math:`i` 个分量对 :math:`x_j` 的导数的集合平均可表示为
+现在推导 VPRFG 方法生成的湍流的统计特征。根据式（16）， :math:`\boldsymbol\psi` 第 :math:`i` 个分量对 :math:`x_j` 的导数的集合平均可表示为
 
 .. math::
 
@@ -356,7 +356,7 @@ II.D.1 平均脉动速度
    \cos(\mathbf k_n\cdot\mathbf x+2\pi f_n t+\varphi_n)\right\rangle.
    \qquad (30)
 
-其中，:math:`\langle\cdot\rangle` 表示集合平均运算。由于式（30）中随机变量的概率密度函数已知，可以通过求期望得到集合平均。
+其中， :math:`\langle\cdot\rangle` 表示集合平均运算。由于式（30）中随机变量的概率密度函数已知，可以通过求期望得到集合平均。
 
 根据式（26），参数 :math:`\varphi_n` 服从均匀分布，因此有
 
@@ -369,12 +369,12 @@ II.D.1 平均脉动速度
    \,\mathrm d\varphi_n=0.
    \end{aligned}\qquad (31)
 
-将式（31）代入式（30），可得 :math:`\langle\partial\psi_i(\mathbf x,t)/\partial x_j\rangle=0`。因此，根据式（17），平均脉动速度为 :math:`\langle\mathbf u(\mathbf x,t)\rangle=(0,0,0)^{\mathrm T}`。
+将式（31）代入式（30），可得 :math:`\langle\partial\psi_i(\mathbf x,t)/\partial x_j\rangle=0` 。因此，根据式（17），平均脉动速度为 :math:`\langle\mathbf u(\mathbf x,t)\rangle=(0,0,0)^{\mathrm T}` 。
 
 II.D.2 三维空间互谱密度
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-下一步推导 VPRFG 方法所生成湍流的三维空间 CSD 的计算形式。类似于式（31），对于任意给定相位角 :math:`\theta`，均有
+下一步推导 VPRFG 方法所生成湍流的三维空间 CSD 的计算形式。类似于式（31），对于任意给定相位角 :math:`\theta` ，均有
 
 .. math::
 
@@ -396,9 +396,9 @@ II.D.2 三维空间互谱密度
    &=\left\langle\sum_{n=1}^{N}\frac12 p_{i,n}p_{j,n}\cos(\mathbf k_n\cdot\mathbf r)\right\rangle.
    \end{aligned}\qquad (33)
 
-其中，:math:`\mathbf r` 是两个空间点之间的相对距离矢量。
+其中， :math:`\mathbf r` 是两个空间点之间的相对距离矢量。
 
-此外，由于参数 :math:`r_{i,n}` 在 :math:`-0.5` 至 :math:`0.5` 间均匀分布，:math:`\operatorname{sign}(r_{i,n})\operatorname{sign}(r_{j,n})` 的概率质量函数（probability mass function，PMF）可写为
+此外，由于参数 :math:`r_{i,n}` 在 :math:`-0.5` 至 :math:`0.5` 间均匀分布， :math:`\operatorname{sign}(r_{i,n})\operatorname{sign}(r_{j,n})` 的概率质量函数（probability mass function，PMF）可写为
 
 .. math::
 
@@ -410,7 +410,7 @@ II.D.2 三维空间互谱密度
    \end{cases}
    \quad\forall i\ne j.\qquad (34)
 
-进一步，:math:`\operatorname{sign}(r_{i,n})\operatorname{sign}(r_{j,n})` 的集合平均为
+进一步， :math:`\operatorname{sign}(r_{i,n})\operatorname{sign}(r_{j,n})` 的集合平均为
 
 .. math::
 
@@ -428,7 +428,7 @@ II.D.2 三维空间互谱密度
    0,&i\ne j.
    \end{cases}\qquad (36)
 
-根据式（22），:math:`\mathbf k_n` 均匀分布在半径为 :math:`\kappa_n` 的球面上，因此 :math:`\mathbf k_n` 的三维概率密度函数可表示为
+根据式（22）， :math:`\mathbf k_n` 均匀分布在半径为 :math:`\kappa_n` 的球面上，因此 :math:`\mathbf k_n` 的三维概率密度函数可表示为
 
 .. math::
 
@@ -437,7 +437,7 @@ II.D.2 三维空间互谱密度
    \quad k_{i,n}\in[-\kappa_n,\kappa_n],\quad i=1,2,3.
    \qquad (37)
 
-其中，:math:`\delta(\cdot)` 为 Dirac 函数。此外，:math:`\cos(\mathbf k_n\cdot\mathbf r)` 的集合平均可计算为
+其中， :math:`\delta(\cdot)` 为 Dirac 函数。此外， :math:`\cos(\mathbf k_n\cdot\mathbf r)` 的集合平均可计算为
 
 .. math::
 
@@ -469,7 +469,7 @@ II.D.2 三维空间互谱密度
    =\frac1{4\pi\kappa_n^2}\delta(|\mathbf k|-\kappa_n).
    \end{aligned}\qquad (39)
 
-其中，:math:`\mathcal F_{\mathbf k}\{\cdot\}` 表示三维 Fourier 变换运算。利用式（39）的结果，对式（36）进行三维 Fourier 变换，可得到矢量势场的三维空间 CSD：
+其中， :math:`\mathcal F_{\mathbf k}\{\cdot\}` 表示三维 Fourier 变换运算。利用式（39）的结果，对式（36）进行三维 Fourier 变换，可得到矢量势场的三维空间 CSD：
 
 .. math::
 
@@ -526,7 +526,7 @@ II.D.2 三维空间互谱密度
    (\kappa^2\delta_{ij}-k_i k_j).
    \qquad (45)
 
-比较式（44）和（45），可得 :math:`\Phi_{ij,\mathrm C}(\mathbf k)\approx\Phi_{ij,\mathrm T}(\mathbf k)`，表明 VPRFG 方法生成的湍流能够满足指定的三维空间 CSD。如第 II.A 节所述，如果生成的 HIT 满足目标三维空间 CSD 和 Taylor 冻结假设，那么相应的能谱、一维空间 PSD、时间 PSD、Reynolds 应力、湍动能等统计量就自然得到满足。因此，VPRFG 方法自然实现了上述湍流特征。
+比较式（44）和（45），可得 :math:`\Phi_{ij,\mathrm C}(\mathbf k)\approx\Phi_{ij,\mathrm T}(\mathbf k)` ，表明 VPRFG 方法生成的湍流能够满足指定的三维空间 CSD。如第 II.A 节所述，如果生成的 HIT 满足目标三维空间 CSD 和 Taylor 冻结假设，那么相应的能谱、一维空间 PSD、时间 PSD、Reynolds 应力、湍动能等统计量就自然得到满足。因此，VPRFG 方法自然实现了上述湍流特征。
 
 II.D.3 其他低维统计特征
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -576,7 +576,7 @@ II.E 算法汇总
 
 VPRFG 方法的流程见图 3，其算法可概括如下：
 
-1. 确定输入参数，包括目标平均速度 :math:`U_{\mathrm{avg,T}}`、能谱 :math:`E_{\mathrm T}(\kappa)`、谱段数量 :math:`N`、计算域尺寸 :math:`(L_1,L_2,L_3)`、网格尺寸 :math:`(\Delta g_1,\Delta g_2,\Delta g_3)`、最小波长与网格尺寸的比值 :math:`(N_{g1},N_{g2},N_{g3})`（其中 :math:`N_{gi}\ge2`）以及时间步长 :math:`\Delta t`。
+1. 确定输入参数，包括目标平均速度 :math:`U_{\mathrm{avg,T}}` 、能谱 :math:`E_{\mathrm T}(\kappa)` 、谱段数量 :math:`N` 、计算域尺寸 :math:`(L_1,L_2,L_3)` 、网格尺寸 :math:`(\Delta g_1,\Delta g_2,\Delta g_3)` 、最小波长与网格尺寸的比值 :math:`(N_{g1},N_{g2},N_{g3})` （其中 :math:`N_{gi}\ge2` ）以及时间步长 :math:`\Delta t` 。
 
 2. 计算波数矢量模的最小值：
 
@@ -585,7 +585,7 @@ VPRFG 方法的流程见图 3，其算法可概括如下：
       \kappa_{\min}=\max\left(\frac{2\pi}{L_1},\frac{2\pi}{L_2},\frac{2\pi}{L_3}\right).
       \qquad (49)
 
-3. 计算波数矢量模的最大值。根据 Nyquist 采样定理，要求 :math:`f_{\max}\le1/(2\Delta t)`；结合式（25），:math:`k_{1,\max}` 可计算为
+3. 计算波数矢量模的最大值。根据 Nyquist 采样定理，要求 :math:`f_{\max}\le1/(2\Delta t)` ；结合式（25）， :math:`k_{1,\max}` 可计算为
 
    .. math::
 
@@ -601,17 +601,17 @@ VPRFG 方法的流程见图 3，其算法可概括如下：
       \frac{2\pi}{N_{g3}\Delta g_3}\right).
       \qquad (51)
 
-4. 利用式（20）和（21），计算波数间隔 :math:`\Delta\kappa` 并生成等间距的波数模序列 :math:`\kappa_n`。
+4. 利用式（20）和（21），计算波数间隔 :math:`\Delta\kappa` 并生成等间距的波数模序列 :math:`\kappa_n` 。
 
-5. 生成服从 :math:`-0.5` 至 :math:`0.5` 范围内均匀分布的随机数 :math:`r_{i,n}`。
+5. 生成服从 :math:`-0.5` 至 :math:`0.5` 范围内均匀分布的随机数 :math:`r_{i,n}` 。
 
-6. 利用式（19）生成幅值矢量 :math:`\mathbf p_n`。
+6. 利用式（19）生成幅值矢量 :math:`\mathbf p_n` 。
 
-7. 利用式（22）—（24）计算分布在半径为 :math:`\kappa_n` 的球面上的随机波数矢量 :math:`\mathbf k_n`。
+7. 利用式（22）—（24）计算分布在半径为 :math:`\kappa_n` 的球面上的随机波数矢量 :math:`\mathbf k_n` 。
 
-8. 利用式（25）计算频率 :math:`f_n`。
+8. 利用式（25）计算频率 :math:`f_n` 。
 
-9. 根据式（26）生成随机相位角 :math:`\varphi_n`。
+9. 根据式（26）生成随机相位角 :math:`\varphi_n` 。
 
 10. 利用式（17）或（18）合成均匀各向同性脉动速度。
 
@@ -640,9 +640,9 @@ III.A von Kármán 能谱的模拟
    \frac{(\kappa/\kappa_e)^4}{[1+(\kappa/\kappa_e)^2]^{17/6}}.
    \qquad (52)
 
-其中，:math:`\alpha` 为比例常数，计算为 :math:`\alpha=55\Gamma(5/6)/(9\sqrt\pi\,\Gamma(1/3))\approx1.453`；:math:`\sigma_{\mathrm{iso}}` 为 HIT 中每个速度分量的标准差（standard deviation，STD），即 :math:`\sigma_{\mathrm{iso}}=\sigma_u=\sigma_v=\sigma_w`；:math:`\kappa_e` 与能量达到最大值处的波数相关，最大值出现在 :math:`\sqrt{12/5}\,\kappa_e`。与文献 :ref:`[35] <li2024-reference-35>` 一样，模拟中采用参数 :math:`\sigma_{\mathrm{iso}}=0.25\,\mathrm{m/s}`、:math:`\kappa_e=40\sqrt{5/12}\,\mathrm{m^{-1}}`。随后，可利用式（5）和（6）计算一维空间 PSD，并根据式（9）得到目标 von Kármán 时间 PSD。
+其中， :math:`\alpha` 为比例常数，计算为 :math:`\alpha=55\Gamma(5/6)/(9\sqrt\pi\,\Gamma(1/3))\approx1.453` ； :math:`\sigma_{\mathrm{iso}}` 为 HIT 中每个速度分量的标准差（standard deviation，STD），即 :math:`\sigma_{\mathrm{iso}}=\sigma_u=\sigma_v=\sigma_w` ； :math:`\kappa_e` 与能量达到最大值处的波数相关，最大值出现在 :math:`\sqrt{12/5}\,\kappa_e` 。与文献 :ref:`[35] <li2024-reference-35>` 一样，模拟中采用参数 :math:`\sigma_{\mathrm{iso}}=0.25\,\mathrm{m/s}` 、 :math:`\kappa_e=40\sqrt{5/12}\,\mathrm{m^{-1}}` 。随后，可利用式（5）和（6）计算一维空间 PSD，并根据式（9）得到目标 von Kármán 时间 PSD。
 
-此外，采用边长为 :math:`0.2\pi\,\mathrm m` 的立方体生成初始三维速度场，对应最小波数为 :math:`\kappa_{\min}=10\,\mathrm{m^{-1}}`。初始速度场分别采用三种分辨率的均匀网格生成，网格数量为 :math:`128^3`、:math:`256^3` 和 :math:`384^3`。同时，为验证所生成湍流的时间 PSD，我们计算坐标 :math:`(0,0,0.1\pi\,\mathrm m)` 处的脉动速度时程。平均速度设为 :math:`10\,\mathrm{m/s}`，总模拟时长为 :math:`5\,\mathrm s`。此外，选取沿 :math:`Y` 方向间距分别为 :math:`0.005`、:math:`0.01` 和 :math:`0.015\,\mathrm m` 的三对点，模拟空间相干函数。计算三种网格分辨率下特定点的速度时程时，对应采用的时间步长分别为 :math:`0.0005`、:math:`0.00025` 和 :math:`0.00016\,\mathrm s`。上述模拟均采用 VPRFG 方法的式（17），并取 :math:`N=5000`。
+此外，采用边长为 :math:`0.2\pi\,\mathrm m` 的立方体生成初始三维速度场，对应最小波数为 :math:`\kappa_{\min}=10\,\mathrm{m^{-1}}` 。初始速度场分别采用三种分辨率的均匀网格生成，网格数量为 :math:`128^3` 、 :math:`256^3` 和 :math:`384^3` 。同时，为验证所生成湍流的时间 PSD，我们计算坐标 :math:`(0,0,0.1\pi\,\mathrm m)` 处的脉动速度时程。平均速度设为 :math:`10\,\mathrm{m/s}` ，总模拟时长为 :math:`5\,\mathrm s` 。此外，选取沿 :math:`Y` 方向间距分别为 :math:`0.005` 、 :math:`0.01` 和 :math:`0.015\,\mathrm m` 的三对点，模拟空间相干函数。计算三种网格分辨率下特定点的速度时程时，对应采用的时间步长分别为 :math:`0.0005` 、 :math:`0.00025` 和 :math:`0.00016\,\mathrm s` 。上述模拟均采用 VPRFG 方法的式（17），并取 :math:`N=5000` 。
 
 对于周期盒湍流，能谱定义为 :ref:`[53] <li2024-reference-53>`
 
@@ -652,7 +652,7 @@ III.A von Kármán 能谱的模拟
    |\widehat{\mathbf u}_{\mathbf k}|^2.
    \qquad (53)
 
-其中，:math:`\kappa\in\mathbb N^+`，:math:`\widehat{\mathbf u}_{\mathbf k}` 为脉动速度的第 :math:`\kappa` 个 Fourier 系数。图 4 给出以 von Kármán 能谱为目标时，VPRFG 方法所生成湍流场的能谱。总体而言，所提方法能够较好地模拟目标能谱，而更高的网格分辨率能够覆盖更宽的能谱范围。此外，图 5 给出以 von Kármán 能谱为目标时的时间谱。可以看到，所生成湍流的每个脉动速度分量均与目标 von Kármán 时间 PSD 良好吻合。同时，图 6 表明空间相干函数均接近预期值。这归因于所提方法能够满足 Taylor 冻结假设。类似地，随着网格分辨率和时间步分辨率提高，生成的湍流能够覆盖更宽的时间 PSD 和空间相干函数范围。
+其中， :math:`\kappa\in\mathbb N^+` ， :math:`\widehat{\mathbf u}_{\mathbf k}` 为脉动速度的第 :math:`\kappa` 个 Fourier 系数。图 4 给出以 von Kármán 能谱为目标时，VPRFG 方法所生成湍流场的能谱。总体而言，所提方法能够较好地模拟目标能谱，而更高的网格分辨率能够覆盖更宽的能谱范围。此外，图 5 给出以 von Kármán 能谱为目标时的时间谱。可以看到，所生成湍流的每个脉动速度分量均与目标 von Kármán 时间 PSD 良好吻合。同时，图 6 表明空间相干函数均接近预期值。这归因于所提方法能够满足 Taylor 冻结假设。类似地，随着网格分辨率和时间步分辨率提高，生成的湍流能够覆盖更宽的时间 PSD 和空间相干函数范围。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-li2024-POF/fig04-von-karman-energy-spectrum.png
    :alt: 图 4 以 von Kármán 能谱为目标生成的湍流能谱
@@ -661,7 +661,7 @@ III.A von Kármán 能谱的模拟
 
    **图 4** 以 von Kármán 能谱为目标生成的湍流能谱。
 
-   横轴为波数 :math:`\kappa\,(\mathrm{m^{-1}})`，纵轴为 :math:`E(\kappa)\,(\mathrm{m^3s^{-2}})`。图例 Target 为目标值，另外三条曲线分别为 :math:`128^3`、:math:`256^3` 和 :math:`384^3` 网格结果。
+   横轴为波数 :math:`\kappa\,(\mathrm{m^{-1}})` ，纵轴为 :math:`E(\kappa)\,(\mathrm{m^3s^{-2}})` 。图例 Target 为目标值，另外三条曲线分别为 :math:`128^3` 、 :math:`256^3` 和 :math:`384^3` 网格结果。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-li2024-POF/fig05-temporal-spectra.png
    :alt: 图 5 以 von Kármán 能谱为目标时坐标点处的时间谱
@@ -670,21 +670,21 @@ III.A von Kármán 能谱的模拟
 
    **图 5** 以 von Kármán 能谱为目标时，点 :math:`(0,0,0.1\pi\,\mathrm m)` 处的时间谱。
 
-   子图（a）、（b）、（c）依次为 :math:`u`、:math:`v`、:math:`w` 分量。横轴为频率 :math:`f\,(\mathrm{Hz})`，纵轴分别为 :math:`S_{uu}(f)`、:math:`S_{vv}(f)`、:math:`S_{ww}(f)`，单位为 :math:`\mathrm{m^2s^{-1}}`。Target 为目标值，grid 为网格。
+   子图（a）、（b）、（c）依次为 :math:`u` 、 :math:`v` 、 :math:`w` 分量。横轴为频率 :math:`f\,(\mathrm{Hz})` ，纵轴分别为 :math:`S_{uu}(f)` 、 :math:`S_{vv}(f)` 、 :math:`S_{ww}(f)` ，单位为 :math:`\mathrm{m^2s^{-1}}` 。Target 为目标值，grid 为网格。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-li2024-POF/fig06-spatial-coherence.png
    :alt: 图 6 以 von Kármán 能谱为目标时 Y 方向不同间距的空间相干函数
    :align: center
    :width: 100%
 
-   **图 6** 以 von Kármán 能谱为目标时，:math:`Y` 方向不同空间间距的空间相干函数。
+   **图 6** 以 von Kármán 能谱为目标时， :math:`Y` 方向不同空间间距的空间相干函数。
 
-   子图（a）、（b）、（c）的间距 :math:`r_2` 依次为 :math:`0.005`、:math:`0.01`、:math:`0.015\,\mathrm m`。横轴为频率，纵轴为 :math:`\operatorname{Coh}_{uu}(f,r_2)` 的实部；Target 为目标值，另外三组曲线为不同网格分辨率的计算结果。
+   子图（a）、（b）、（c）的间距 :math:`r_2` 依次为 :math:`0.005` 、 :math:`0.01` 、 :math:`0.015\,\mathrm m` 。横轴为频率，纵轴为 :math:`\operatorname{Coh}_{uu}(f,r_2)` 的实部；Target 为目标值，另外三组曲线为不同网格分辨率的计算结果。
 
 III.B 时间衰减均匀各向同性盒湍流的 LES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-时间衰减均匀各向同性湍流是一个理想化问题，旨在增进我们对湍流理论和模型的理解。为进一步评价 VPRFG 方法的性能，我们采用 Comte-Bellot 和 Corrsin（CBC）实验 :ref:`[60] <li2024-reference-60>` 获得的能谱作为 LES 的初始条件。如文献 :ref:`[53] <li2024-reference-53>` 所述，模拟在各边长为 :math:`0.2\pi\,\mathrm m` 的立方体计算域内进行，对应最小波数为 :math:`\kappa_{\min}=10\,\mathrm{m^{-1}}`。模拟采用两种分辨率的均匀网格，网格数量为 :math:`128^3` 和 :math:`256^3`。使用实验时刻 :math:`U_0t/M=42` 的 CBC 能谱作为初始目标值，其中 :math:`U_0` 为 :math:`10\,\mathrm{m/s}` 的平均速度，:math:`M` 为 :math:`0.0508\,\mathrm m` 的实验格栅尺寸。然后，VPRFG 方法取 :math:`N=5000`，生成初始时刻的三维脉动速度场。运动黏度设为 :math:`\nu=1.5\times10^{-5}\,\mathrm{m^2/s}`。模拟采用 OpenFOAM v2206 的瞬态求解器 pimpleFoam。湍流模型选用壁面自适应局部涡黏性（wall-adapting local eddy-viscosity，WALE）模型，计算域六个边界面均设置为周期边界。时间离散采用 backward 格式，空间离散采用 Gauss linear 格式。为使两种网格分辨率下的最大 CFL 数近似相同，时间步长分别设为 :math:`0.0005` 和 :math:`0.00025\,\mathrm s`。本小节后半部分给出 :math:`0`、:math:`0.28` 和 :math:`0.66\,\mathrm s` 时刻的结果，分别对应 CBC 实验中的 :math:`U_0t/M=42,98,171`。表 I 列出时间衰减均匀各向同性盒湍流的各工况。C1 和 C3 工况采用式（17）生成湍流场，用于对比在 FVM 框架下不能严格满足零散度对结果的影响。相反，C2 和 C4 工况采用式（18）生成严格零散度的湍流场，以研究网格离散误差对湍流特征的影响。
+时间衰减均匀各向同性湍流是一个理想化问题，旨在增进我们对湍流理论和模型的理解。为进一步评价 VPRFG 方法的性能，我们采用 Comte-Bellot 和 Corrsin（CBC）实验 :ref:`[60] <li2024-reference-60>` 获得的能谱作为 LES 的初始条件。如文献 :ref:`[53] <li2024-reference-53>` 所述，模拟在各边长为 :math:`0.2\pi\,\mathrm m` 的立方体计算域内进行，对应最小波数为 :math:`\kappa_{\min}=10\,\mathrm{m^{-1}}` 。模拟采用两种分辨率的均匀网格，网格数量为 :math:`128^3` 和 :math:`256^3` 。使用实验时刻 :math:`U_0t/M=42` 的 CBC 能谱作为初始目标值，其中 :math:`U_0` 为 :math:`10\,\mathrm{m/s}` 的平均速度， :math:`M` 为 :math:`0.0508\,\mathrm m` 的实验格栅尺寸。然后，VPRFG 方法取 :math:`N=5000` ，生成初始时刻的三维脉动速度场。运动黏度设为 :math:`\nu=1.5\times10^{-5}\,\mathrm{m^2/s}` 。模拟采用 OpenFOAM v2206 的瞬态求解器 pimpleFoam。湍流模型选用壁面自适应局部涡黏性（wall-adapting local eddy-viscosity，WALE）模型，计算域六个边界面均设置为周期边界。时间离散采用 backward 格式，空间离散采用 Gauss linear 格式。为使两种网格分辨率下的最大 CFL 数近似相同，时间步长分别设为 :math:`0.0005` 和 :math:`0.00025\,\mathrm s` 。本小节后半部分给出 :math:`0` 、 :math:`0.28` 和 :math:`0.66\,\mathrm s` 时刻的结果，分别对应 CBC 实验中的 :math:`U_0t/M=42,98,171` 。表 I 列出时间衰减均匀各向同性盒湍流的各工况。C1 和 C3 工况采用式（17）生成湍流场，用于对比在 FVM 框架下不能严格满足零散度对结果的影响。相反，C2 和 C4 工况采用式（18）生成严格零散度的湍流场，以研究网格离散误差对湍流特征的影响。
 
 .. list-table:: 表 I 时间衰减均匀各向同性盒湍流工况
    :header-rows: 1
@@ -711,7 +711,7 @@ III.B 时间衰减均匀各向同性盒湍流的 LES
      - :math:`256\times256\times256`
      - 0.00025
 
-接下来分析结果。首先，对散度误差相关结果进行统计评价。评价采用速度散度的绝对值 :math:`\varepsilon_{\mathrm{div}}(\mathbf u)` 和网格单元各面通量之和的绝对值 :math:`\varepsilon_{\mathrm{div}}(\phi)`，分别定义为
+接下来分析结果。首先，对散度误差相关结果进行统计评价。评价采用速度散度的绝对值 :math:`\varepsilon_{\mathrm{div}}(\mathbf u)` 和网格单元各面通量之和的绝对值 :math:`\varepsilon_{\mathrm{div}}(\phi)` ，分别定义为
 
 .. math::
 
@@ -724,19 +724,19 @@ III.B 时间衰减均匀各向同性盒湍流的 LES
    \varepsilon_{\mathrm{div}}(\phi)=\left|\sum(\mathbf U_f\cdot\mathbf S_f)\right|.
    \qquad (55)
 
-其中，:math:`\mathbf U_f` 表示网格单元面上的速度；:math:`\mathbf S_f` 为网格单元的面矢量。表 II 给出基于空间平均计算的 :math:`\varepsilon_{\mathrm{div}}(\mathbf u)` 和 :math:`\varepsilon_{\mathrm{div}}(\phi)` 的均值与标准差。在初始时刻 :math:`t=0\,\mathrm s`，速度场直接由 VPRFG 方法生成。可以看到，C2 和 C4 采用式（18）离散的流场较好地满足零散度约束，其均值和标准差在 :math:`10^{-7}` 或 :math:`10^{-6}` 量级。相比之下，C1 和 C3 的均值和标准差约处于 :math:`6` 至 :math:`10` 范围。进一步分析 :math:`t=0.001\,\mathrm s` 的散度误差，因为该时刻足够接近初始时刻，湍流性质不太可能已经发生显著变化。此时，经过 pimpleFoam 求解器的压力–速度耦合迭代，输出新的体矢量场 :math:`\mathbf u` 和面标量场 :math:`\phi`，并对其进行散度误差分析。结果表明，新的 :math:`\phi` 较好地满足零散度条件，:math:`\varepsilon_{\mathrm{div}}(\phi)` 的均值和标准差约为 :math:`10^{-6}` 量级。然而，由于数值算法误差，:math:`t=0.001\,\mathrm s` 时计算的 :math:`\mathbf u` 不能严格满足零散度，:math:`\varepsilon_{\mathrm{div}}(\mathbf u)` 的均值和标准差在 :math:`0` 至 :math:`5` 范围内。这意味着，即使初始 :math:`\mathbf u` 严格满足零散度，在迭代时间步中，由于计算误差也不能严格保持 :math:`\mathbf u` 的零散度水平，而面标量场 :math:`\phi` 实际上满足该条件。因此，在 FVM 框架下，可能不必坚持初始时刻的速度严格满足零散度，因为这可能导致湍流特征发生额外变化；本小节后半部分将对此进一步说明。
+其中， :math:`\mathbf U_f` 表示网格单元面上的速度； :math:`\mathbf S_f` 为网格单元的面矢量。表 II 给出基于空间平均计算的 :math:`\varepsilon_{\mathrm{div}}(\mathbf u)` 和 :math:`\varepsilon_{\mathrm{div}}(\phi)` 的均值与标准差。在初始时刻 :math:`t=0\,\mathrm s` ，速度场直接由 VPRFG 方法生成。可以看到，C2 和 C4 采用式（18）离散的流场较好地满足零散度约束，其均值和标准差在 :math:`10^{-7}` 或 :math:`10^{-6}` 量级。相比之下，C1 和 C3 的均值和标准差约处于 :math:`6` 至 :math:`10` 范围。进一步分析 :math:`t=0.001\,\mathrm s` 的散度误差，因为该时刻足够接近初始时刻，湍流性质不太可能已经发生显著变化。此时，经过 pimpleFoam 求解器的压力–速度耦合迭代，输出新的体矢量场 :math:`\mathbf u` 和面标量场 :math:`\phi` ，并对其进行散度误差分析。结果表明，新的 :math:`\phi` 较好地满足零散度条件， :math:`\varepsilon_{\mathrm{div}}(\phi)` 的均值和标准差约为 :math:`10^{-6}` 量级。然而，由于数值算法误差， :math:`t=0.001\,\mathrm s` 时计算的 :math:`\mathbf u` 不能严格满足零散度， :math:`\varepsilon_{\mathrm{div}}(\mathbf u)` 的均值和标准差在 :math:`0` 至 :math:`5` 范围内。这意味着，即使初始 :math:`\mathbf u` 严格满足零散度，在迭代时间步中，由于计算误差也不能严格保持 :math:`\mathbf u` 的零散度水平，而面标量场 :math:`\phi` 实际上满足该条件。因此，在 FVM 框架下，可能不必坚持初始时刻的速度严格满足零散度，因为这可能导致湍流特征发生额外变化；本小节后半部分将对此进一步说明。
 
 .. list-table:: 表 II 散度误差的均值与标准差
    :header-rows: 1
    :widths: 8 15 15 15 15 16 16
 
    * - 工况
-     - :math:`\varepsilon_{\mathrm{div}}(\mathbf u)`，0 s，均值
-     - :math:`\varepsilon_{\mathrm{div}}(\mathbf u)`，0 s，标准差
-     - :math:`\varepsilon_{\mathrm{div}}(\mathbf u)`，0.001 s，均值
-     - :math:`\varepsilon_{\mathrm{div}}(\mathbf u)`，0.001 s，标准差
-     - :math:`\varepsilon_{\mathrm{div}}(\phi)`，0.001 s，均值
-     - :math:`\varepsilon_{\mathrm{div}}(\phi)`，0.001 s，标准差
+     - :math:`\varepsilon_{\mathrm{div}}(\mathbf u)` ，0 s，均值
+     - :math:`\varepsilon_{\mathrm{div}}(\mathbf u)` ，0 s，标准差
+     - :math:`\varepsilon_{\mathrm{div}}(\mathbf u)` ，0.001 s，均值
+     - :math:`\varepsilon_{\mathrm{div}}(\mathbf u)` ，0.001 s，标准差
+     - :math:`\varepsilon_{\mathrm{div}}(\phi)` ，0.001 s，均值
+     - :math:`\varepsilon_{\mathrm{div}}(\phi)` ，0.001 s，标准差
    * - C1
      - 6.71
      - 7.26
@@ -780,7 +780,7 @@ III.B 时间衰减均匀各向同性盒湍流的 LES
    =20\left(\frac{U_0t}{M}-3.5\right)^{1.25}.
    \qquad (56)
 
-因此，实验湍动能衰减曲线可由 :math:`K=\tfrac12(\sigma_u^2+\sigma_v^2+\sigma_w^2)` 计算。图 8 描绘衰减盒湍流的湍动能随时间的演化。在图 8 中，实验湍动能衰减曲线采用对数坐标表示，呈现为一条下降直线。这表明湍动能呈指数衰减。图 8 显示，在初始时刻 :math:`U_0t/M=42`，随着网格分辨率提高，由式（17）生成的湍流场的动能更有效地趋近目标值。由于式（18）生成的初始湍流特征已发生变化，需要发展到 :math:`U_0t/M=120` 才接近实验值。相比之下，由式（17）生成的湍流场经过较短的发展时间，就形成近似线性的动能衰减曲线，整体上接近实验值。此外，图 9 给出不同网格下衰减盒湍流的能谱。利用式（53）计算不同时刻盒湍流场的能谱。显然，C4 在初始时刻的能谱能量水平高于目标值，对应于图 8 中过高的初始湍动能。同时，其他工况在所选时刻能够有效满足目标能谱。此外，更高分辨率的网格能够覆盖更宽的能谱范围。这一观察结果表明，VPRFG 方法生成的湍流场符合局部各向同性假设。
+因此，实验湍动能衰减曲线可由 :math:`K=\tfrac12(\sigma_u^2+\sigma_v^2+\sigma_w^2)` 计算。图 8 描绘衰减盒湍流的湍动能随时间的演化。在图 8 中，实验湍动能衰减曲线采用对数坐标表示，呈现为一条下降直线。这表明湍动能呈指数衰减。图 8 显示，在初始时刻 :math:`U_0t/M=42` ，随着网格分辨率提高，由式（17）生成的湍流场的动能更有效地趋近目标值。由于式（18）生成的初始湍流特征已发生变化，需要发展到 :math:`U_0t/M=120` 才接近实验值。相比之下，由式（17）生成的湍流场经过较短的发展时间，就形成近似线性的动能衰减曲线，整体上接近实验值。此外，图 9 给出不同网格下衰减盒湍流的能谱。利用式（53）计算不同时刻盒湍流场的能谱。显然，C4 在初始时刻的能谱能量水平高于目标值，对应于图 8 中过高的初始湍动能。同时，其他工况在所选时刻能够有效满足目标能谱。此外，更高分辨率的网格能够覆盖更宽的能谱范围。这一观察结果表明，VPRFG 方法生成的湍流场符合局部各向同性假设。
 
 .. note::
 
@@ -793,7 +793,7 @@ III.B 时间衰减均匀各向同性盒湍流的 LES
 
    **图 7** 初始时刻 :math:`U_0t/M=42` 不同网格的 Q 准则等值面。
 
-   （a）C1：:math:`128^3` 网格，:math:`Q=500`；（b）C2：:math:`128^3` 网格，:math:`Q=500`；（c）C3：:math:`256^3` 网格，:math:`Q=2000`；（d）C4：:math:`256^3` 网格，:math:`Q=2000`。色标为速度模 :math:`|\mathbf U|\,(\mathrm{m/s})`。C1/C3 采用式（17），C2/C4 采用式（18），网格、生成公式和等值面阈值应分别辨认。
+   （a）C1： :math:`128^3` 网格， :math:`Q=500` ；（b）C2： :math:`128^3` 网格， :math:`Q=500` ；（c）C3： :math:`256^3` 网格， :math:`Q=2000` ；（d）C4： :math:`256^3` 网格， :math:`Q=2000` 。色标为速度模 :math:`|\mathbf U|\,(\mathrm{m/s})` 。C1/C3 采用式（17），C2/C4 采用式（18），网格、生成公式和等值面阈值应分别辨认。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-li2024-POF/fig08-tke-decay.png
    :alt: 图 8 衰减盒湍流的湍动能随时间演化
@@ -802,7 +802,7 @@ III.B 时间衰减均匀各向同性盒湍流的 LES
 
    **图 8** 衰减盒湍流的湍动能随时间演化。
 
-   横轴为 :math:`U_0t/M`，纵轴为湍动能 :math:`K\,(\mathrm{m^2/s^2})`。Expt. 表示实验；C1/C2 为 :math:`128^3` 网格，C3/C4 为 :math:`256^3` 网格。
+   横轴为 :math:`U_0t/M` ，纵轴为湍动能 :math:`K\,(\mathrm{m^2/s^2})` 。Expt. 表示实验；C1/C2 为 :math:`128^3` 网格，C3/C4 为 :math:`256^3` 网格。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-li2024-POF/fig09-decaying-box-energy-spectra.png
    :alt: 图 9 衰减盒湍流的能谱
@@ -811,7 +811,7 @@ III.B 时间衰减均匀各向同性盒湍流的 LES
 
    **图 9** 衰减盒湍流的能谱。
 
-   子图（a）、（b）、（c）分别对应 :math:`U_0t/M=42,98,171`。横轴为波数 :math:`k\,(\mathrm{m^{-1}})`，纵轴为能谱 :math:`E(k)\,(\mathrm{m^3s^{-2}})`；Expt. 为实验，其余曲线为 C1—C4 工况。
+   子图（a）、（b）、（c）分别对应 :math:`U_0t/M=42,98,171` 。横轴为波数 :math:`k\,(\mathrm{m^{-1}})` ，纵轴为能谱 :math:`E(k)\,(\mathrm{m^3s^{-2}})` ；Expt. 为实验，其余曲线为 C1—C4 工况。
 
 最后，图 10 和图 11 分别给出不同网格下衰减盒湍流的纵向和横向空间相关系数。图中的目标空间相关系数采用式（5）和（8）计算。计算空间相关函数定义为 :ref:`[45] <li2024-reference-45>`
 
@@ -821,7 +821,7 @@ III.B 时间衰减均匀各向同性盒湍流的 LES
    u(j\Delta r)u[(j+m)\Delta r].
    \qquad (57)
 
-其中，:math:`m` 为整数，:math:`r_m=m\Delta r` 且 :math:`0\le m<M`；:math:`\Delta r` 为空间步长，:math:`M` 为矢量 :math:`r_m` 的长度。随后对式（57）归一化，计算空间相关系数。总体而言，式（18）生成的湍流场在初始时刻的空间相关系数明显偏离目标值。然而，式（17）生成的湍流场与目标值更加接近；随着时间发展，所有工况均表现出与实验值更好的一致性。
+其中， :math:`m` 为整数， :math:`r_m=m\Delta r` 且 :math:`0\le m<M` ； :math:`\Delta r` 为空间步长， :math:`M` 为矢量 :math:`r_m` 的长度。随后对式（57）归一化，计算空间相关系数。总体而言，式（18）生成的湍流场在初始时刻的空间相关系数明显偏离目标值。然而，式（17）生成的湍流场与目标值更加接近；随着时间发展，所有工况均表现出与实验值更好的一致性。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-li2024-POF/fig10-longitudinal-spatial-correlation.png
    :alt: 图 10 衰减盒湍流的纵向空间相关系数
@@ -830,7 +830,7 @@ III.B 时间衰减均匀各向同性盒湍流的 LES
 
    **图 10** 衰减盒湍流的纵向空间相关系数。
 
-   子图（a）、（b）、（c）分别对应 :math:`U_0t/M=42,98,171`。横轴为 :math:`r_1/M`，纵轴为 :math:`\rho_{uu}(r_1)`；图例 Expt. 对应由实验参考能谱推得的目标相关系数，C1—C4 为各计算工况。
+   子图（a）、（b）、（c）分别对应 :math:`U_0t/M=42,98,171` 。横轴为 :math:`r_1/M` ，纵轴为 :math:`\rho_{uu}(r_1)` ；图例 Expt. 对应由实验参考能谱推得的目标相关系数，C1—C4 为各计算工况。
 
 .. figure:: ../../../wechat/assets/public-safe/ref-li2024-POF/fig11-transverse-spatial-correlation.png
    :alt: 图 11 衰减盒湍流的横向空间相关系数
@@ -839,7 +839,7 @@ III.B 时间衰减均匀各向同性盒湍流的 LES
 
    **图 11** 衰减盒湍流的横向空间相关系数。
 
-   子图（a）、（b）、（c）分别对应 :math:`U_0t/M=42,98,171`。横轴为 :math:`r_2/M`，纵轴为 :math:`\rho_{uu}(r_2)`；图例 Expt. 对应由实验参考能谱推得的目标相关系数，C1—C4 为各计算工况。
+   子图（a）、（b）、（c）分别对应 :math:`U_0t/M=42,98,171` 。横轴为 :math:`r_2/M` ，纵轴为 :math:`\rho_{uu}(r_2)` ；图例 Expt. 对应由实验参考能谱推得的目标相关系数，C1—C4 为各计算工况。
 
 IV 结论
 ---------
@@ -1100,4 +1100,4 @@ IV 结论
 
 Li Chao; Chen Lingwei; Wang Jinghan; Zhang Wentong; Wang Xiangjie; Wang Zhuoran; Hu Gang. A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra. Physics of Fluids, 2024, 36(3): 035127. https://doi.org/10.1063/5.0194006.
 
-收录信息见 :ref:`WOEAI 学术成果页对应条目 <ref-li2024-POF>`。
+收录信息见 :ref:`WOEAI 学术成果页对应条目 <ref-li2024-POF>` 。

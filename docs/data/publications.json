@@ -928,8 +928,8 @@
         "review_path": "wechat/articles/review/ref-he2025-POF.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-he2025-POF.rst",
         "public_title": "结构抗风 | 让高层建筑 TLD 在非线性晃荡中更会耗能",
         "order": 10,
@@ -945,6 +945,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "2c7e85bd129e4334cff1974aef7ac3099eb4932458da32f14be1063d0977e5ad"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T06:40:54+00:00",
+            "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved.",
+            "fingerprint": "bf7dd4c7e263a79555d7d2c9665934682cc3f47bf81dafac9756a105b744b543"
           }
         },
         "review_path": "wechat/articles/review/ref-he2025-POF.review.md"
@@ -957,15 +968,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T06:40:54+00:00",
             "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "3ea34ac11de9bafb07f860287f0f25ed90483849e39e3c06aec9544667b02564"
+            "scope": "Previously audited introduction retained; all scientific figure assets independently calibrated. No new backend preview or upload.",
+            "fingerprint": "56232ca1ef27bdbf4a3b172759cd7f48fbccdfd28bbfb93b0243a23251783d6f"
           }
         },
         "latest_published_url": "",
@@ -1496,8 +1507,8 @@
         "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-tang2025-JBE.rst",
         "public_title": "结构抗风 | 用图神经网络预测高层建筑结构响应",
         "order": 8,
@@ -1513,6 +1524,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "fd5c7cca63a3f0e3db2443d5697e4b446613e66458374d9e8b816a1eecc61ca8"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T06:40:54+00:00",
+            "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved.",
+            "fingerprint": "22a2a18368f121b22908901d3e1c4a4cb05cd835e55874f3db2f081cab0c4b64"
           }
         },
         "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md"
@@ -1525,15 +1547,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T06:40:54+00:00",
             "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "b67f914386d63a10360c51ad4b8b2b1dd9922ab30157d5d82797f825dfd151e8"
+            "scope": "Previously audited introduction retained; all scientific figure assets independently calibrated. No new backend preview or upload.",
+            "fingerprint": "9f470f23b2aa68a1c0ca4d5aa30f103f0fbbc44c9a26baae24194064bdbe2972"
           }
         },
         "latest_published_url": "",
@@ -1996,15 +2018,15 @@
         "issues": [],
         "evidence": {
           "verified": {
-            "recorded_at": "2026-10-06T05:52:28+00:00",
+            "recorded_at": "2026-10-06T06:40:54+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
             "checks": {
               "source_identity": true,
-              "public_safety": true,
-              "full_paper_coverage": true
+              "full_paper_coverage": true,
+              "public_safety": true
             },
-            "scope": "Full source-content coverage independently reviewed on current bytes.",
-            "fingerprint": "8c028012feb23fd7434c353d2a8206da3669c52863446714e652ade33e8311c2"
+            "scope": "Previously verified full text retained; all 24 source figures independently recalibrated and inspected.",
+            "fingerprint": "db85cb2e5eca50772ede1e4f05a9aa7cad3f3e8551779621e838f5ec10a9b464"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2024-POF.review.md"
@@ -2017,15 +2039,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T05:52:28+00:00",
+            "recorded_at": "2026-10-06T06:40:54+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "a97067405e43677e49ea6430bfa6a8e25ec461d73f49f5c50ef83c59995a38ea"
+            "scope": "Previously audited introduction retained; all scientific figure assets independently calibrated. No new backend preview or upload.",
+            "fingerprint": "72a91b6f447860ea86d65448b4dc285e23d282254b99bfc4928b3886e2c8f725"
           }
         },
         "latest_published_url": "",

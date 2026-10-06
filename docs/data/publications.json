@@ -212,8 +212,8 @@
         "review_path": "wechat/articles/review/ref-he2026-OE.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-he2026-OE.rst",
         "public_title": "结构抗风 | 用内置矩形立柱提升液舱阻尼器设计效率",
         "order": 2,
@@ -229,6 +229,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "062a95bf035bc204125111e03fabb8d5907dba2af8d6bcbbc3536538d02eec1a"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T06:07:32+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed.",
+            "fingerprint": "b7599da02a01ed62c94ea9a57e2e97da5a7b60a757498830e6593ac1a79dbcd2"
           }
         },
         "review_path": "wechat/articles/review/ref-he2026-OE.review.md"
@@ -241,15 +252,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T06:07:32+00:00",
             "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "1fdaa44e3595d4008c9288135b798c46eaf3aa4d6ccfab5ad13c7766c35ccfa5"
+            "scope": "Previously audited introduction retained; figure source pixels calibrated and independently inspected. No upload or backend previews.",
+            "fingerprint": "14a357ba031ac7c5a0c3512715799ac2aa1d75ea048d8508b5026702e4842af4"
           }
         },
         "latest_published_url": "",
@@ -2761,7 +2772,7 @@
         "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
+        "status": "blocked",
         "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-chen2024-JCP.rst",
         "public_title": "数值风洞 | 让 LES 入流湍流更连贯也更守恒",
@@ -2769,18 +2780,20 @@
         "issues": [],
         "evidence": {
           "awaiting_audit": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T06:07:32+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
             "checks": {
               "source_identity": true,
+              "full_paper_coverage": false,
               "public_safety": true,
-              "full_paper_coverage": false
+              "main_pdf_coverage": true
             },
-            "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
-            "fingerprint": "0eb774a8743461a7d03e2e971423df7a9deea347b0a053d68307b0b2697b2bae"
+            "scope": "All main-PDF content and35 figures independently verified; Appendix A/B source is absent from the authorized31-page PDF, so full-paper coverage remains blocked.",
+            "fingerprint": "d153d472f896ad99a009b6c012edd19f9086125b913cbd02fcb51d2b454c9bd1"
           }
         },
-        "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md"
+        "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+        "blocking_reason": "Missing authorized source text for Appendix A and Appendix B"
       },
       "wechat": {
         "selected": true,
@@ -2790,15 +2803,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T06:07:32+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "afb282c9189635422d6f91799a80ff11e1d9f29e68178dc1012effaf8b7a9911"
+            "scope": "Previously audited introduction retained; figure source pixels calibrated and independently inspected. No upload or backend previews.",
+            "fingerprint": "01a349c65684c7f1ba2f8d99ea259063c0905e4a8fc56173393b85893d021de3"
           }
         },
         "latest_published_url": "",
@@ -2976,8 +2989,8 @@
         "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhou2023-AE.rst",
         "public_title": "漂浮风电 | 用长期动力优化选择浮式风机下部结构",
         "order": 13,
@@ -2993,6 +3006,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "2528aebf168d4e84b6144f1e89044d4692c39d3b647f33ebc6e17228c8c26a32"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T06:07:32+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed.",
+            "fingerprint": "ab1175d2dcdb812c1606292c15dd1424b54fee91e1d3d13ec11723ebe981e51a"
           }
         },
         "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md"
@@ -3005,15 +3029,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T06:07:32+00:00",
             "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "8c590c3d4a77d3192140ddf5d7a7a2f1194bf7e396888b7a4137dbbdae551d43"
+            "scope": "Previously audited introduction retained; figure source pixels calibrated and independently inspected. No upload or backend previews.",
+            "fingerprint": "b29c1c1e082dda68e5aaad87f4c51fcdfe2907a8c9a69a7a3a4cec437ba823b8"
           }
         },
         "latest_published_url": "",

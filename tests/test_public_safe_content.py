@@ -483,6 +483,29 @@ class PublicSafeContentTests(unittest.TestCase):
             self.assertIn("Public-safety check passed", stdout)
             self.assertEqual(stderr, "")
 
+    def test_rtd_preserves_scientific_nomenclature_after_conclusion(self) -> None:
+        checker = load_checker()
+        path = ROOT / "docs/source/paper-notes/ref-example.rst"
+        for title in ("符号与缩写", "符号表", "缩写表", "Nomenclature", "nomenclature"):
+            with self.subTest(title=title):
+                text = (
+                    "精简版微信公众号文章：待发布\n\n"
+                    ".. image:: ../../../wechat/assets/public-safe/ref-example/cover-wechat.png\n\n"
+                    "5 结论\n------\n\nConclusion.\n\n"
+                    f"{title}\n{'-' * 20}\n\nScientific definitions.\n\n"
+                    "参考文献\n--------\n\n- Reference.\n"
+                )
+                self.assertEqual(checker.rtd_deep_dive_layout_findings(path, text), [])
+
+    def test_nomenclature_exception_does_not_allow_declarations_or_suffixes(self) -> None:
+        checker = load_checker()
+        for title in (
+            "CRediT 作者贡献声明", "利益冲突声明", "数据可用性", "致谢", "补充材料",
+            "符号与缩写及致谢", "Nomenclature and acknowledgments", "符号表（声明）",
+        ):
+            with self.subTest(title=title):
+                self.assertFalse(checker.is_allowed_post_conclusion_heading(title))
+
     def test_rtd_paper_deep_dive_rejects_disallowed_section_between_conclusion_and_references(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir) / "repo"

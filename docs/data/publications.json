@@ -75,15 +75,15 @@
             "fingerprint": "70626ed1bb68f2f73430d237d221a22660a51c318019a7c75d911d9aab959862"
           },
           "verified": {
-            "recorded_at": "2026-10-06T05:24:57+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim.",
-            "fingerprint": "104cc3a02d34770f6c17d9bbf9e0f5497260b123e2ff503e4228d8f9779d13b5"
+            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "4f3ad02ee5b99320316389904fc101e10871806e8e5892954b4f02844038d892"
           }
         },
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md"
@@ -231,15 +231,15 @@
             "fingerprint": "062a95bf035bc204125111e03fabb8d5907dba2af8d6bcbbc3536538d02eec1a"
           },
           "verified": {
-            "recorded_at": "2026-10-06T06:07:32+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed.",
-            "fingerprint": "b7599da02a01ed62c94ea9a57e2e97da5a7b60a757498830e6593ac1a79dbcd2"
+            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "a232c137b5570a1756abca096307d462ed774b58c8da3b66c9ee5dd86c2e996e"
           }
         },
         "review_path": "wechat/articles/review/ref-he2026-OE.review.md"
@@ -371,8 +371,8 @@
         "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhao2026-BS.rst",
         "public_title": "数值风洞 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测",
         "order": 0,
@@ -388,6 +388,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "8e90a292452b7375cc07ba4cb9434500d1a495ef05dd6b7ed559d3d7a18b15a0"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T07:25:10+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
+            "fingerprint": "24b14175fabecc6b0159c34ac489e1753c876edf39106aab6a69791f9df5bcd3"
           }
         },
         "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md"
@@ -400,15 +411,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T07:25:10+00:00",
             "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "3f4052086c1d7c14780c814df6bdf063be7ca74ff7743e61317f00bec323dc4c"
+            "scope": "Previously source-audited introduction retained; selected figure pixels calibrated and independently inspected. No backend upload or preview.",
+            "fingerprint": "295c9204805e558646d8090f9d0291313c3759bc8ba06eff6d4f505f855ebbba"
           }
         },
         "latest_published_url": "",
@@ -723,8 +734,8 @@
         "review_path": "wechat/articles/review/ref-tang2026-RE.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-tang2026-RE.rst",
         "public_title": "数值风洞 | 如何高效重建城市风能中的高时间分辨率风场",
         "order": 3,
@@ -740,6 +751,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "59753dc3593e1962da6773861d3ded4fe31ebc59c7be86d7ad12e9d2ed96763d"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T07:25:10+00:00",
+            "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
+            "fingerprint": "5b61468d6046d6e82957637a77211c8346708eb359c675bd7788ef65c2884d9f"
           }
         },
         "review_path": "wechat/articles/review/ref-tang2026-RE.review.md"
@@ -752,15 +774,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T07:25:10+00:00",
             "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "63bdbf5ea4230366e9c15f7ce307c0668c83d43ff6b11f99f3d8ccb3515674f4"
+            "scope": "Previously source-audited introduction retained; selected figure pixels calibrated and independently inspected. No backend upload or preview.",
+            "fingerprint": "f6e9cff3cdca6eb0ffaf3c19e25f842a50d842905a2704ced21b34d0d5ad894c"
           }
         },
         "latest_published_url": "",
@@ -947,15 +969,15 @@
             "fingerprint": "2c7e85bd129e4334cff1974aef7ac3099eb4932458da32f14be1063d0977e5ad"
           },
           "verified": {
-            "recorded_at": "2026-10-06T06:40:54+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved.",
-            "fingerprint": "bf7dd4c7e263a79555d7d2c9665934682cc3f47bf81dafac9756a105b744b543"
+            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "ba1fe6823ea16c30291c795d6a57f343e52c8ec2115336896d4153717d810f59"
           }
         },
         "review_path": "wechat/articles/review/ref-he2025-POF.review.md"
@@ -1292,8 +1314,8 @@
         "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zheng2025-OE.rst",
         "public_title": "漂浮风电 | 为半潜式风机找到可信的等效静力波浪荷载",
         "order": 12,
@@ -1309,6 +1331,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "ba06ab63ec3933988216fe3be29fa4f65fc5b90dcd8311d16f689998ccb04602"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T07:25:10+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
+            "fingerprint": "f8758c01fa6ab90314f740d72d58396c29f5f6f2af2089a487310b6c22ebce57"
           }
         },
         "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md"
@@ -1321,15 +1354,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T07:25:10+00:00",
             "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "707fc1bce77fcd6050a8e2c57feb2366f0d17b32f0d8c97796b86c7e3e41eba8"
+            "scope": "Previously source-audited introduction retained; selected figure pixels calibrated and independently inspected. No backend upload or preview.",
+            "fingerprint": "94720f98c47be390cc5c8dc5b5491972db767694a398edc4deeb1a7b314e678f"
           }
         },
         "latest_published_url": "",
@@ -1526,15 +1559,15 @@
             "fingerprint": "fd5c7cca63a3f0e3db2443d5697e4b446613e66458374d9e8b816a1eecc61ca8"
           },
           "verified": {
-            "recorded_at": "2026-10-06T06:40:54+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved.",
-            "fingerprint": "22a2a18368f121b22908901d3e1c4a4cb05cd835e55874f3db2f081cab0c4b64"
+            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "ae4fe6d7ab6a343717b81112bf9c03adc679411da97fefeb9889fe84778a0384"
           }
         },
         "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md"
@@ -2018,15 +2051,15 @@
         "issues": [],
         "evidence": {
           "verified": {
-            "recorded_at": "2026-10-06T06:40:54+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Previously verified full text retained; all 24 source figures independently recalibrated and inspected.",
-            "fingerprint": "db85cb2e5eca50772ede1e4f05a9aa7cad3f3e8551779621e838f5ec10a9b464"
+            "scope": "Previously verified full text retained; all 24 source figures independently recalibrated and inspected. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "b200a4c16d1037c50dd760a356069aef8784f6f922d48bccbccd7e31f00d4da7"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2024-POF.review.md"
@@ -2298,15 +2331,15 @@
             "fingerprint": "212fa88e8f52488122c508c16b8e0bee3d7aa750a8eb270f72f48da69510e6db"
           },
           "verified": {
-            "recorded_at": "2026-10-06T06:48:26+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
-            "fingerprint": "ceb5840fbef81c13735c50c2b7ed8bf76051f7e74151f6dcac45fafc6c1b8780"
+            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "aa526ebbd5c683d7142a78d964b9a3ab39426176889ae9e161f76a2675501474"
           }
         },
         "review_path": "wechat/articles/review/ref-wang2024-ES.review.md"
@@ -2677,15 +2710,15 @@
             "fingerprint": "cb24418a243df754f845f25bb9423920df22396996d7dbd10956007a0fc8fee4"
           },
           "verified": {
-            "recorded_at": "2026-10-06T05:52:28+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim.",
-            "fingerprint": "dfc3ab8087372e526cfed50284ac6c3148688d37a301b5343a9b8635e2e2adb8"
+            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "79082fa4ff050015cc8fb233a7a2a0fffb9422f1f4914c8eee19cc5c96dc17ab"
           }
         },
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md"
@@ -3041,15 +3074,15 @@
             "fingerprint": "2528aebf168d4e84b6144f1e89044d4692c39d3b647f33ebc6e17228c8c26a32"
           },
           "verified": {
-            "recorded_at": "2026-10-06T06:07:32+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed.",
-            "fingerprint": "ab1175d2dcdb812c1606292c15dd1424b54fee91e1d3d13ec11723ebe981e51a"
+            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "6dfcd99c1793c6c3b80ae09ad5f4a081f95001d86698b75130c8905b05f26ef3"
           }
         },
         "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md"
@@ -4075,15 +4108,15 @@
             "fingerprint": "1bcd144dc058ab35cfc0ee3f5f8e295387edb8449f5b251b3dbd9f98e2d139b1"
           },
           "verified": {
-            "recorded_at": "2026-10-06T05:52:28+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim.",
-            "fingerprint": "4a8e3d994d64e85406b915a65d7e1bc0332268bfb164d3ec652b04bb215ba7d8"
+            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "a86d2f262dd2d3dd3b60bfdbbedbd49c5e6efc74dc3234b889444de0c1155eba"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md"
@@ -4225,15 +4258,15 @@
             "fingerprint": "609119ff98fc3024c2ab10c0e802e00700dd9bab08be7456b121f8cc0b512a5e"
           },
           "verified": {
-            "recorded_at": "2026-10-06T06:48:26+00:00",
+            "recorded_at": "2026-10-06T07:25:11+00:00",
             "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
             "checks": {
               "source_identity": true,
               "full_paper_coverage": true,
               "public_safety": true
             },
-            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
-            "fingerprint": "749681673f3aee593e247850fded2d5004eae85b63b81add8a9ff4d5e886c715"
+            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "79f2f7c7f26fcb2486cdeff51aff4efcacf79ccce901c4401ffd946bb607bd2c"
           }
         },
         "review_path": "wechat/articles/review/ref-li2022-SOS.review.md"

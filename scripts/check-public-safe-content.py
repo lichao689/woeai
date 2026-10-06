@@ -226,7 +226,14 @@ def is_conclusion_heading(title: str) -> bool:
 
 
 def is_allowed_post_conclusion_heading(title: str) -> bool:
-    return title.startswith("附录") or title.lower().startswith("appendix")
+    # Scientific nomenclature can follow the conclusion in the source paper.
+    # Keep a narrow exact-title exception; declarations remain disallowed.
+    return (
+        title.startswith("附录")
+        or title.lower().startswith("appendix")
+        or title in {"符号与缩写", "符号表", "缩写表"}
+        or title.lower() == "nomenclature"
+    )
 
 
 def rtd_deep_dive_layout_findings(path: Path, text: str) -> list[str]:

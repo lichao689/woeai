@@ -2279,8 +2279,8 @@
         "review_path": "wechat/articles/review/ref-wang2024-ES.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-wang2024-ES.rst",
         "public_title": "数值风洞 | 让 LES 入流按目标风场自动收敛",
         "order": 7,
@@ -2296,6 +2296,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "212fa88e8f52488122c508c16b8e0bee3d7aa750a8eb270f72f48da69510e6db"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T06:48:26+00:00",
+            "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
+            "fingerprint": "ceb5840fbef81c13735c50c2b7ed8bf76051f7e74151f6dcac45fafc6c1b8780"
           }
         },
         "review_path": "wechat/articles/review/ref-wang2024-ES.review.md"
@@ -2308,15 +2319,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T06:48:26+00:00",
             "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "72e62bd8eb40ffd2afe54923b2fba15ab6afe0a1d5a9662605d61e6d19b29465"
+            "scope": "Previously source-audited introduction retained; selected figure pixels calibrated and independently inspected. No backend upload or preview.",
+            "fingerprint": "99f1197523f714fb493e80e2b08e1dec2580be8fdac3ebd747875ca2cd669267"
           }
         },
         "latest_published_url": "",
@@ -4195,8 +4206,8 @@
         "review_path": "wechat/articles/review/ref-li2022-SOS.review.md"
       },
       "rtd": {
-        "status": "awaiting_audit",
-        "kind": "legacy_intro",
+        "status": "verified",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-li2022-SOS.rst",
         "public_title": "漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变",
         "order": 15,
@@ -4212,6 +4223,17 @@
             },
             "scope": "Existing output corrected; full-paper omissions or missing appendix source remain.",
             "fingerprint": "609119ff98fc3024c2ab10c0e802e00700dd9bab08be7456b121f8cc0b512a5e"
+          },
+          "verified": {
+            "recorded_at": "2026-10-06T06:48:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
+            "fingerprint": "749681673f3aee593e247850fded2d5004eae85b63b81add8a9ff4d5e886c715"
           }
         },
         "review_path": "wechat/articles/review/ref-li2022-SOS.review.md"
@@ -4224,15 +4246,15 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T02:08:11+00:00",
+            "recorded_at": "2026-10-06T06:48:26+00:00",
             "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
               "facts": true
             },
-            "scope": "Current introduction independently checked against source; source contradictions disclosed. No current backend previews or upload.",
-            "fingerprint": "c55b09ef2af8dcd7c15bdcfa1653ab4a863cd7c6087f93c374466ef00d05bfc2"
+            "scope": "Previously source-audited introduction retained; selected figure pixels calibrated and independently inspected. No backend upload or preview.",
+            "fingerprint": "ce9231c41576345e51eccc7255cc39168430f3604449a51d38d1e7daa48a6fa2"
           }
         },
         "latest_published_url": "",

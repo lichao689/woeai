@@ -103,10 +103,10 @@ items:
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "2026-10-07: user confirmed the previous version was updated in the existing draft on 2026-10-06; this offline revision has not been uploaded or mobile-previewed. June timestamp conflicts remain unresolved; no publication confirmed."
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:04:58+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:23:55+08:00"
+    wechat_draft_updated_at: "2026-10-06T17:51:36+00:00"
   - publication_ref: ref-wang2024-ES
     zotero_key: "3HGIR6QR"
     title: "A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES"

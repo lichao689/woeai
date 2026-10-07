@@ -2958,15 +2958,18 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-06T09:01:19+00:00",
-            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "recorded_at": "2026-10-07",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.offline.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
-              "facts": true
+              "facts": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
             },
-            "scope": "Previously source-audited introduction retained. Supplemental source identities recorded and RTD appendices completed; no WeChat upload or backend formula/figure/cover preview. Current source set and review fingerprint refreshed only.",
-            "fingerprint": "d7cd4a881ebd34f11b97e972657818e99ca1652363ee46c9f87a9e0353033ff7"
+            "scope": "Offline editorial revision of previously audited facts; 29 MathJax SVG fragments and five embedded images checked. No fresh PDF audit or upload. Browser mobile/crop inspection blocked by administrator policy. Backend preview remains unconfirmed.",
+            "fingerprint": "11de6fecb406c18148fdf91d5552f61556232daf7f8edec0636b5feb9460a555"
           }
         },
         "latest_published_url": "",
@@ -2988,7 +2991,7 @@
           "wechat_draft_created_at": "2026-06-10T20:04:58+08:00"
         },
         "draft_created_at": "2026-06-10T20:04:58+08:00",
-        "draft_updated_at": "2026-06-11T11:23:55+08:00",
+        "draft_updated_at": "2026-10-06T17:51:36+00:00",
         "historical_draft_evidence": {
           "source": "wechat/backlog/selected-papers.yml (pre-migration)",
           "status": "ready_to_publish",
@@ -3004,7 +3007,20 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+        "revision_note": "2026-10-07: user confirmed the previous version was updated in the existing draft on 2026-10-06; this offline revision has not been uploaded or mobile-previewed. June timestamp conflicts remain unresolved; no publication confirmed.",
+        "confirmed_draft_update": {
+          "event_at": "2026-10-06T17:51:36+00:00",
+          "reported_at": "2026-10-06T17:52:00+00:00",
+          "reported_at_precision": "minute",
+          "source": "User-confirmed successful existing-draft update; event and report times are distinct.",
+          "theme": "academic-clean",
+          "math_renderer": "mathjax-svg",
+          "body_image_count": 5,
+          "cover_included": true,
+          "current_revision_uploaded": false,
+          "backend_preview_confirmed": false,
+          "review_path": "wechat/articles/review/ref-chen2024-JCP.offline.review.md"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-06T09:01:19+00:00",

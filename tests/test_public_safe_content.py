@@ -22,6 +22,35 @@ def load_checker():
 
 
 class PublicSafeContentTests(unittest.TestCase):
+    def test_only_approved_public_mapping_snapshot_gets_backend_id_exception(self):
+        approved = (ROOT / "wechat/data/draft-map.json").read_bytes()
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            wechat_root = root / "wechat"
+            path = wechat_root / "data/draft-map.json"
+            path.parent.mkdir(parents=True)
+            path.write_bytes(approved)
+            result, _stdout, stderr = self.run_checker(root, wechat_root)
+            self.assertEqual(result, 0, stderr)
+            copied = wechat_root / "data/other.json"
+            copied.write_bytes(approved)
+            result, _stdout, stderr = self.run_checker(root, wechat_root)
+            self.assertEqual(result, 1)
+            self.assertIn("private backend data", stderr)
+
+    def test_public_mapping_exception_does_not_allow_extra_secret_fields(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir)
+            wechat_root = root / "wechat"
+            path = wechat_root / "data/draft-map.json"
+            path.parent.mkdir(parents=True)
+            path.write_text('[{"publication_ref":"ref-example","wechat_draft_media_id":"fake-draft","access_token":"FAKE_ONLY_VALUE_LONG"}]')
+            result, _stdout, stderr = self.run_checker(root, wechat_root)
+            self.assertEqual(result, 1)
+            self.assertIn("unapproved public draft mapping", stderr)
+            self.assertIn("possible secret pattern", stderr)
+            self.assertNotIn("FAKE_ONLY_VALUE_LONG", stderr)
+
     def run_checker(self, root: Path, wechat_root: Path, *extra_roots: Path) -> tuple[int, str, str]:
         checker = load_checker()
         checker.ROOT = root

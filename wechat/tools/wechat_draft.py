@@ -58,6 +58,7 @@ from woeai.wechat.review import (  # noqa: E402,F401
     parse_title as parse_title_text,
 )
 from woeai.wechat.runtime_config import ConfigurationError, effective_app_id, load_account, require_supported_source
+from woeai.wechat.draft_mapping import load_public_draft_mapping
 
 CONFIG_PATH = Path.home() / ".config/woeai/wechat_official_account.env"
 RUNNER_CONFIG_PATH = Path.home() / ".config/woeai/wechat_runner.env"
@@ -102,6 +103,9 @@ class ArticleContext:
     existing_media_id: str
     theme: str
     math_renderer: str
+    article_index: int | None = 0
+    draft_mapping_source: str = "private"
+    draft_mapping_app_id: str = ""
 
 
 class WeChatError(RuntimeError):
@@ -703,29 +707,55 @@ def read_private_drafts(backlog_path: Path) -> dict[str, dict[str, Any]]:
     records = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(records, dict) or any(not isinstance(item, dict) for item in records.values()):
         raise ValueError("Private draft records must map publication references to objects")
-    allowed = {"media_id", "wechat_draft_media_id", "created_at", "updated_at"}
+    allowed = {"media_id", "wechat_draft_media_id", "created_at", "updated_at", "article_index", "app_id"}
     for ref, record in records.items():
         if (
             re.fullmatch(r"ref-[A-Za-z0-9_-]+", ref) is None
             or set(record) - allowed
-            or any(not isinstance(value, str) for value in record.values())
+            or any(not isinstance(value, str) for key, value in record.items() if key != "article_index")
+            or ("article_index" in record and (type(record["article_index"]) is not int or record["article_index"] < 0))
+            or ("app_id" in record and re.fullmatch(r"wx[0-9a-f]{16}", record["app_id"]) is None)
             or ("media_id" in record and "wechat_draft_media_id" in record
                 and record["media_id"] != record["wechat_draft_media_id"])
         ):
-            raise ValueError("Invalid private draft mapping schema; only draft IDs and timestamps are allowed")
+            raise ValueError("Invalid private draft mapping schema")
     return records
 
 
 def existing_draft_media_id(backlog_path: Path, publication_ref: str) -> str:
-    record = read_private_drafts(backlog_path).get(publication_ref, {})
+    return resolve_draft_mapping(backlog_path, publication_ref)["media_id"]
+
+
+def read_public_drafts(backlog_path: Path) -> dict[str, dict[str, Any]]:
+    private_path = private_drafts_path(backlog_path)
+    if private_path is None:
+        return {}
+    path = private_path.parent.parent / "data/draft-map.json"
+    return load_public_draft_mapping(path, set(read_backlog_publication_refs(backlog_path)))
+
+
+def resolve_draft_mapping(backlog_path: Path, publication_ref: str) -> dict[str, Any]:
+    private = read_private_drafts(backlog_path)
+    public = read_public_drafts(backlog_path)
+    record = private.get(publication_ref, {})
+    source = "private" if publication_ref in private else "none"
     media_id = record.get("media_id", record.get("wechat_draft_media_id", ""))
-    if not isinstance(media_id, str):
-        raise ValueError("Private draft media_id must be a string")
+    if source == "private" and (not isinstance(media_id, str) or not media_id.strip()):
+        raise ValueError("Private draft media_id must be a nonempty string")
+    if source == "none":
+        if publication_ref in public:
+            record = public[publication_ref]
+            source = "public"
+            media_id = record["wechat_draft_media_id"]
     if not media_id and find_registry_root(backlog_path) is None:
         # Compatibility for a standalone pre-registry checkout, never for a
         # generated view in a registry-backed repository.
         media_id = read_backlog_item(backlog_path, publication_ref).get("wechat_draft_media_id", "")
-    return media_id
+        source = "legacy" if media_id else "none"
+    # A private override does not turn an unverified public article index into 0.
+    default_index = None if publication_ref in public else 0
+    return {"media_id": media_id, "article_index": record.get("article_index", default_index),
+            "source": source, "app_id": record.get("app_id", "")}
 
 
 def registered_publication(backlog_path: Path, publication_ref: str) -> tuple[Path, list[dict[str, Any]], dict[str, Any]]:
@@ -741,7 +771,10 @@ def registered_publication(backlog_path: Path, publication_ref: str) -> tuple[Pa
     return root, records, matches[0]
 
 
-def save_private_draft(backlog_path: Path, publication_ref: str, media_id: str, now: str) -> None:
+def save_private_draft(
+    backlog_path: Path, publication_ref: str, media_id: str, now: str,
+    *, article_index: int | None = None, app_id: str = "",
+) -> None:
     path = private_drafts_path(backlog_path)
     if path is None:
         raise RuntimeError("Cannot locate private draft storage")
@@ -749,6 +782,10 @@ def save_private_draft(backlog_path: Path, publication_ref: str, media_id: str, 
     record = records.setdefault(publication_ref, {})
     record["media_id"] = media_id
     record["updated_at"] = now
+    if article_index is not None:
+        record["article_index"] = article_index
+    if app_id:
+        record["app_id"] = app_id
     record.pop("wechat_draft_media_id", None)
     path.parent.mkdir(parents=True, exist_ok=True)
     # Same-directory atomic replacement keeps an interrupted write from losing
@@ -777,6 +814,8 @@ def update_backlog_after_success(
     action: str,
     *,
     fingerprint: str | None = None,
+    article_index: int = 0,
+    app_id: str = "",
 ) -> None:
     """Record a confirmed draft operation, never human publication readiness."""
     from woeai.publications.registry import save_registry, workflow_fingerprint, write_views
@@ -798,7 +837,7 @@ def update_backlog_after_success(
     }
     # Preserve the confirmed remote identifier privately even if public view
     # regeneration subsequently fails. It is never passed to registry writers.
-    save_private_draft(backlog_path, publication_ref, media_id, now)
+    save_private_draft(backlog_path, publication_ref, media_id, now, article_index=article_index, app_id=app_id)
     save_registry(root, records)
     write_views(root, records)
 
@@ -826,7 +865,8 @@ def build_context(
     content_source_url = resolve_content_source_url(publication_ref, front)
     cover_path = parse_cover_path(review_path)
     body_images = parse_markdown_images(article_path)
-    existing_media_id = existing_draft_media_id(backlog_path, publication_ref)
+    draft_mapping = resolve_draft_mapping(backlog_path, publication_ref)
+    existing_media_id = draft_mapping["media_id"]
     return ArticleContext(
         publication_ref=publication_ref,
         article_path=article_path.resolve(),
@@ -842,6 +882,9 @@ def build_context(
         existing_media_id=existing_media_id,
         theme=theme,
         math_renderer=math_renderer,
+        article_index=draft_mapping["article_index"],
+        draft_mapping_source=draft_mapping["source"],
+        draft_mapping_app_id=draft_mapping["app_id"],
     )
 
 
@@ -983,6 +1026,9 @@ def dry_run_summary(ctx: ArticleContext) -> dict[str, Any]:
         "digest": ctx.digest,
         "content_source_url": ctx.content_source_url,
         "existing_media_id": ctx.existing_media_id,
+        "article_index": ctx.article_index,
+        "article_index_verified": type(ctx.article_index) is int and ctx.article_index >= 0,
+        "draft_mapping_source": ctx.draft_mapping_source,
         "wechat_related_links": related_wechat_links(ctx.publication_ref),
         "theme": ctx.theme,
         "math_renderer": ctx.math_renderer,
@@ -1054,14 +1100,14 @@ def command_content_source_plan(args: argparse.Namespace) -> int:
     return 0
 
 
-def fetch_remote_draft_article(token: str, media_id: str) -> dict[str, Any]:
+def fetch_remote_draft_article(token: str, media_id: str, article_index: int = 0) -> dict[str, Any]:
     response = api_post_json(DRAFT_GET_URL, token, {"media_id": media_id})
     if "news_item" not in response:
         raise WeChatError("draft_get", response)
     news_items = response.get("news_item") or []
-    if not news_items:
+    if not isinstance(news_items, list) or type(article_index) is not int or not 0 <= article_index < len(news_items):
         raise WeChatError("draft_get", {"errcode": "empty_news_item", "errmsg": "Draft has no articles"})
-    first = news_items[0]
+    first = news_items[article_index]
     if not isinstance(first, dict):
         raise WeChatError("draft_get", {"errcode": "invalid_news_item", "errmsg": "Draft first article is not an object"})
     return first
@@ -1079,7 +1125,7 @@ def audit_remote_content_source(token: str, ctx: ArticleContext) -> dict[str, An
             "needs_update": True,
             "message": "private draft records have no media_id",
         }
-    article = fetch_remote_draft_article(token, ctx.existing_media_id)
+    article = fetch_remote_draft_article(token, ctx.existing_media_id, getattr(ctx, "article_index", 0))
     remote_url = str(article.get("content_source_url", ""))
     matches = remote_url == ctx.content_source_url
     return {
@@ -1098,6 +1144,9 @@ def audit_remote_content_source(token: str, ctx: ArticleContext) -> dict[str, An
 def command_audit_content_source(args: argparse.Namespace) -> int:
     refs = read_backlog_publication_refs(WECHAT_ROOT / "backlog/selected-papers.yml") if args.all else [args.publication_ref]
     contexts = [build_context(ref, args.theme, args.math_renderer) for ref in refs]
+    for ctx in contexts:
+        require_draft_account(ctx)
+        require_draft_article_index(ctx)
     token_record = fetch_access_token(force_refresh=False)
     token = token_record["access_token"]
     items = [audit_remote_content_source(token, ctx) for ctx in contexts]
@@ -1119,13 +1168,30 @@ def command_audit_content_source(args: argparse.Namespace) -> int:
     return 0 if summary["ok"] else 1
 
 
+def require_draft_account(ctx: ArticleContext) -> str:
+    account = load_account(WECHAT_ROOT / ".local/account.json")
+    expected = ctx.draft_mapping_app_id
+    if ctx.draft_mapping_source == "public" or (not expected and ctx.publication_ref in read_public_drafts(ctx.backlog_path)):
+        expected = account.get("public_draft_mapping_app_id", "")
+        if not expected:
+            raise ConfigurationError("draft_account_unbound")
+    if expected and account.get("app_id") != expected:
+        raise ConfigurationError("account_mismatch")
+    return account.get("app_id", "")
+
+
+def require_draft_article_index(ctx: ArticleContext) -> None:
+    if type(ctx.article_index) is not int or ctx.article_index < 0:
+        raise ConfigurationError("draft_article_index_unverified")
+
+
 def command_create_or_update(args: argparse.Namespace) -> int:
     ctx = build_context(args.publication_ref, args.theme, args.math_renderer)
     requested_action = "update" if args.update else "create"
     if requested_action == "update" and not ctx.existing_media_id:
-        raise RuntimeError("Cannot update: private draft records have no media_id")
+        raise RuntimeError("Cannot update: draft mapping has no media_id")
     if requested_action == "create" and ctx.existing_media_id and not args.new_copy:
-        raise RuntimeError("A private draft record already exists; use update-draft or --new-copy")
+        raise RuntimeError("A draft mapping already exists; use update-draft or --new-copy")
     problems = validate_context(ctx)
     if problems:
         print(json.dumps({"ok": False, "stage": "validation", "problems": problems}, ensure_ascii=False, indent=2))
@@ -1155,6 +1221,9 @@ def command_create_or_update(args: argparse.Namespace) -> int:
     # request is in flight, the saved evidence stays stale rather than falsely
     # certifying the new content as delivered.
     fingerprint = workflow_fingerprint(record, "wechat", root)
+    account_id = require_draft_account(ctx)
+    if requested_action == "update":
+        require_draft_article_index(ctx)
     token_record = fetch_access_token(force_refresh=False)
     token = token_record["access_token"]
 
@@ -1190,12 +1259,16 @@ def command_create_or_update(args: argparse.Namespace) -> int:
         response = api_post_json(
             DRAFT_UPDATE_URL,
             token,
-            {"media_id": media_id, "index": 0, "articles": article},
+            {"media_id": media_id, "index": ctx.article_index, "articles": article},
         )
         if response.get("errcode") not in {0, "0"}:
             raise WeChatError("draft_update", response)
 
-    update_backlog_after_success(ctx.backlog_path, ctx.publication_ref, media_id, requested_action, fingerprint=fingerprint)
+    update_backlog_after_success(
+        ctx.backlog_path, ctx.publication_ref, media_id, requested_action,
+        fingerprint=fingerprint, article_index=ctx.article_index if requested_action == "update" else 0,
+        app_id=account_id,
+    )
     print(
         json.dumps(
             {

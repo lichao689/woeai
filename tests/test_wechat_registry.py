@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import contextlib
+from dataclasses import replace
 import importlib.util
 import io
 import json
@@ -279,6 +280,152 @@ class WeChatRegistryTests(unittest.TestCase):
         private_path.write_text("[]")
         with self.assertRaises(ValueError):
             self.draft.existing_draft_media_id(self.backlog, "ref-example")
+
+    def write_public_mapping(self, records):
+        path = self.root / "wechat/data/draft-map.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps([{"publication_ref": ref, **item} for ref, item in records.items()]), encoding="utf-8")
+        return path
+
+    def test_public_mapping_resolves_update_without_inventing_index_or_reading_credentials(self):
+        ctx = self.context()
+        self.write_public_mapping({"ref-example": {"wechat_draft_media_id": "public-test-draft"}})
+        with (
+            mock.patch.object(self.draft, "parse_front_matter", return_value={"body_images_upload_approved": "true"}),
+            mock.patch.object(self.draft, "parse_cover_path", return_value=ctx.cover_path),
+            mock.patch.object(self.draft, "fetch_access_token", side_effect=AssertionError("credential read")),
+        ):
+            loaded = self.draft.build_context("ref-example", math_renderer="lightweight")
+        self.assertEqual(loaded.action, "update")
+        self.assertEqual(loaded.existing_media_id, "public-test-draft")
+        self.assertIsNone(loaded.article_index)
+        self.assertEqual(loaded.draft_mapping_source, "public")
+
+    def test_private_mapping_overrides_public_without_assuming_index(self):
+        self.write_public_mapping({"ref-example": {"wechat_draft_media_id": "public-test-draft"}})
+        self.draft.save_private_draft(self.backlog, "ref-example", "private-test-draft", "old-time")
+        ctx = self.context()
+        with mock.patch.object(self.draft, "parse_front_matter", return_value={"body_images_upload_approved": "true"}), mock.patch.object(self.draft, "parse_cover_path", return_value=ctx.cover_path):
+            loaded = self.draft.build_context("ref-example", math_renderer="lightweight")
+        self.assertEqual(loaded.existing_media_id, "private-test-draft")
+        self.assertIsNone(loaded.article_index)
+        self.assertEqual(loaded.draft_mapping_source, "private")
+
+    def write_account_binding(self, *, bound="wx0000000000000000", selected="wx0000000000000000"):
+        path = self.root / "wechat/.local/account.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps({"app_id": selected, "credential_source": "legacy-file", "public_draft_mapping_app_id": bound}))
+
+    def test_public_update_requires_account_binding_before_credentials(self):
+        ctx = replace(self.context(existing_media_id="public-test-draft"), draft_mapping_source="public", article_index=2)
+        for bound in (None, "wx1111111111111111"):
+            if bound is not None:
+                self.write_account_binding(bound=bound)
+            with (
+                mock.patch.object(self.draft, "build_context", return_value=ctx),
+                mock.patch.object(self.draft, "validate_context", return_value=[]),
+                mock.patch.object(self.draft, "fetch_access_token", side_effect=AssertionError("credential read")) as token,
+                self.assertRaises(self.draft.ConfigurationError),
+            ):
+                self.draft.command_create_or_update(self.args(update=True))
+            token.assert_not_called()
+
+    def test_public_update_uses_selected_index_and_preserves_it_in_private_writeback(self):
+        ctx = replace(self.context(existing_media_id="public-test-draft"), draft_mapping_source="public", article_index=2)
+        self.write_account_binding()
+        with self.live_stub(ctx, {"errcode": 0}) as post:
+            self.assertEqual(self.draft.command_create_or_update(self.args(update=True)), 0)
+        self.assertEqual(post.call_args.args[2]["index"], 2)
+        loaded = self.draft.resolve_draft_mapping(self.backlog, "ref-example")
+        self.assertEqual(loaded["source"], "private")
+        self.assertEqual(loaded["article_index"], 2)
+        self.assertEqual(loaded["app_id"], "wx0000000000000000")
+
+    def test_content_source_audit_reads_selected_article_index(self):
+        ctx = replace(self.context(existing_media_id="public-test-draft"), article_index=1)
+        with mock.patch.object(self.draft, "api_post_json", return_value={"news_item": [
+            {"content_source_url": "https://example.org/wrong"},
+            {"content_source_url": ctx.content_source_url},
+        ]}):
+            result = self.draft.audit_remote_content_source("fake-token", ctx)
+        self.assertTrue(result["matches_expected"])
+
+    def test_bad_public_mapping_never_falls_back_to_create(self):
+        for item in [
+            {"wechat_draft_media_id": "", "article_index": 0},
+            {"wechat_draft_media_id": "fake-draft", "article_index": True},
+            {"wechat_draft_media_id": "fake-draft", "article_index": -1},
+            {"wechat_draft_media_id": "fake-draft", "article_index": 0, "access_token": "FAKE_ONLY"},
+        ]:
+            with self.subTest(item=item):
+                self.write_public_mapping({"ref-example": item})
+                with self.assertRaises(ValueError):
+                    self.draft.existing_draft_media_id(self.backlog, "ref-example")
+
+    def test_public_mapping_rejects_unknown_refs_duplicate_keys_and_target_collisions(self):
+        self.write_public_mapping({"ref-unknown": {"wechat_draft_media_id": "fake-draft"}})
+        with self.assertRaises(ValueError):
+            self.draft.existing_draft_media_id(self.backlog, "ref-example")
+        path = self.write_public_mapping({})
+        path.write_text('[{"publication_ref":"ref-example","wechat_draft_media_id":"a","wechat_draft_media_id":"b"}]')
+        with self.assertRaises(ValueError):
+            self.draft.existing_draft_media_id(self.backlog, "ref-example")
+        self.write_registry([record(), record("ref-other")])
+        self.write_public_mapping({ref: {"wechat_draft_media_id": "same-draft"} for ref in ["ref-example", "ref-other"]})
+        with self.assertRaises(ValueError):
+            self.draft.existing_draft_media_id(self.backlog, "ref-example")
+
+    def test_empty_private_override_does_not_silently_choose_public_target(self):
+        self.write_public_mapping({"ref-example": {"wechat_draft_media_id": "fake-draft"}})
+        path = self.root / "wechat/.local/registry-drafts.json"
+        path.parent.mkdir(parents=True)
+        path.write_text(json.dumps({"ref-example": {"media_id": ""}}))
+        with self.assertRaises(ValueError):
+            self.draft.existing_draft_media_id(self.backlog, "ref-example")
+
+    def test_public_mapping_blocks_duplicate_creation_before_credentials(self):
+        ctx = replace(self.context(existing_media_id="public-test-draft"), draft_mapping_source="public")
+        with mock.patch.object(self.draft, "build_context", return_value=ctx), mock.patch.object(self.draft, "fetch_access_token", side_effect=AssertionError("credential read")) as token, self.assertRaises(RuntimeError):
+            self.draft.command_create_or_update(self.args())
+        token.assert_not_called()
+
+    def test_private_account_binding_still_blocks_mismatch_after_public_writeback(self):
+        ctx = replace(self.context(existing_media_id="public-test-draft"), draft_mapping_source="public", article_index=2)
+        self.write_account_binding()
+        with self.live_stub(ctx, {"errcode": 0}):
+            self.draft.command_create_or_update(self.args(update=True))
+        self.write_account_binding(selected="wx1111111111111111")
+        ctx = replace(ctx, draft_mapping_source="private", draft_mapping_app_id="wx0000000000000000")
+        with mock.patch.object(self.draft, "build_context", return_value=ctx), mock.patch.object(self.draft, "validate_context", return_value=[]), mock.patch.object(self.draft, "fetch_access_token", side_effect=AssertionError("credential read")) as token, self.assertRaises(self.draft.ConfigurationError):
+            self.draft.command_create_or_update(self.args(update=True))
+        token.assert_not_called()
+
+    def test_public_audit_requires_binding_before_network_or_credentials(self):
+        ctx = replace(self.context(existing_media_id="public-test-draft"), draft_mapping_source="public")
+        args = SimpleNamespace(all=False, publication_ref="ref-example", theme="academic-clean", math_renderer="lightweight")
+        with mock.patch.object(self.draft, "build_context", return_value=ctx), mock.patch.object(self.draft, "fetch_access_token", side_effect=AssertionError("credential read")) as token, self.assertRaises(self.draft.ConfigurationError):
+            self.draft.command_audit_content_source(args)
+        token.assert_not_called()
+
+    def test_unknown_public_article_index_blocks_update_before_credentials(self):
+        ctx = replace(self.context(existing_media_id="public-test-draft"), draft_mapping_source="public", article_index=None)
+        self.write_account_binding()
+        with mock.patch.object(self.draft, "build_context", return_value=ctx), mock.patch.object(self.draft, "validate_context", return_value=[]), mock.patch.object(self.draft, "fetch_access_token", side_effect=AssertionError("credential read")) as token, self.assertRaisesRegex(self.draft.ConfigurationError, "draft_article_index_unverified"):
+            self.draft.command_create_or_update(self.args(update=True))
+        token.assert_not_called()
+
+    def test_copying_public_target_to_private_override_does_not_confirm_index_zero(self):
+        ctx = self.context()
+        self.write_public_mapping({"ref-example": {"wechat_draft_media_id": "same-public-draft"}})
+        self.write_account_binding()
+        self.draft.save_private_draft(self.backlog, "ref-example", "same-public-draft", "old-time", app_id="wx0000000000000000")
+        with mock.patch.object(self.draft, "parse_front_matter", return_value={"body_images_upload_approved": "true"}), mock.patch.object(self.draft, "parse_cover_path", return_value=ctx.cover_path):
+            loaded = self.draft.build_context("ref-example", math_renderer="lightweight")
+        self.assertEqual(loaded.draft_mapping_source, "private")
+        self.assertIsNone(loaded.article_index)
+        with mock.patch.object(self.draft, "build_context", return_value=loaded), mock.patch.object(self.draft, "validate_context", return_value=[]), mock.patch.object(self.draft, "fetch_access_token", side_effect=AssertionError("credential read")) as token, self.assertRaisesRegex(self.draft.ConfigurationError, "draft_article_index_unverified"):
+            self.draft.command_create_or_update(self.args(update=True))
+        token.assert_not_called()
 
 
 if __name__ == "__main__":

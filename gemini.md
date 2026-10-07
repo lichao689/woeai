@@ -118,6 +118,21 @@ compatibility views, not additional authorities. After registry edits run
 `python3 tools/publications/registry.py --write` and `--check`. Keep private draft
 IDs in ignored operational storage, never the public registry.
 
+An explicit user approval on 2026-10-07 permits the 17 existing draft mappings
+in `wechat/data/draft-map.json` to be public. This is the sole exception to the
+private draft-ID rule: each array item contains only `publication_ref` and
+`wechat_draft_media_id`. The approved snapshot is pinned by the public-safety
+checker. No account IDs, article indices, timestamps, image paths, API responses,
+credentials, tokens, or other private metadata are approved for this table.
+Changes to the approved records require renewed authorization. Do not copy this
+table into the public registry, backlog, article/review files, or other paths.
+
+Runtime lookup prefers ignored private records and falls back to this public
+table. Missing or invalid mappings must not silently create a replacement
+draft. Public records have no confirmed article index; never infer zero.
+Live use requires a privately confirmed account binding and article index;
+offline `update` planning alone does not verify either or authorize a live call.
+
 ## Independent channel outputs
 
 **WeChat is a reader-facing introduction.** Its source is

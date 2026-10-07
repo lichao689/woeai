@@ -11,7 +11,7 @@ from pathlib import Path
 
 
 class ConfigurationError(RuntimeError):
-    CODES = {"invalid_account_config", "account_mismatch", "network_secret_unverified"}
+    CODES = {"invalid_account_config", "account_mismatch", "network_secret_unverified", "draft_account_unbound", "draft_article_index_unverified"}
 
     def __init__(self, code: str):
         self.code = code if code in self.CODES else "invalid_account_config"
@@ -28,10 +28,14 @@ def load_account(path: Path) -> dict[str, str]:
         raise ConfigurationError("invalid_account_config") from None
     if (
         not isinstance(data, dict)
-        or set(data) - {"app_id", "credential_source"}
+        or set(data) - {"app_id", "credential_source", "public_draft_mapping_app_id"}
         or not isinstance(data.get("app_id"), str)
         or re.fullmatch(r"wx[0-9a-f]{16}", data["app_id"]) is None
         or data.get("credential_source") not in {"legacy-file", "network-secret"}
+        or ("public_draft_mapping_app_id" in data and (
+            not isinstance(data["public_draft_mapping_app_id"], str)
+            or re.fullmatch(r"wx[0-9a-f]{16}", data["public_draft_mapping_app_id"]) is None
+        ))
     ):
         raise ConfigurationError("invalid_account_config")
     return data

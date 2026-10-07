@@ -90,3 +90,68 @@ belongs in the offline smoke check. Secure credential setup, actual API/egress
 verification and a named create/update-draft action require the applicable
 explicit authorization. Never auto-publish, mass-send or configure credentials
 as part of stage-one setup. No live operation is performed by these scripts.
+
+## Private account configuration and delivery limits
+
+The optional `wechat/.local/account.json` is ignored by Git. It contains exactly
+`app_id` (the account's `wx` plus 16 hexadecimal characters) and
+`credential_source` (`legacy-file` or `network-secret`). Keep actual account IDs
+and draft mappings private; never put AppSecret, tokens or extra fields in this
+file. No real account example belongs in the public repository.
+
+`python wechat/tools/wechat_draft.py account-check` validates only this nonsecret
+configuration. It prints presence/source status, without displaying the AppID,
+reading credentials or contacting WeChat. Missing configuration preserves the
+legacy-file behavior; an existing malformed file fails rather than falling back.
+
+`legacy-file` retains the external credential file at
+`~/.config/woeai/wechat_official_account.env`. AppID may come from `account.json`;
+if also present in the credential file it must match. `config-check` still reads
+that private credential file and requires the corresponding authorization.
+It reports unknown-key counts, never their arbitrary names. Account selection
+also prevents reuse of a token cache belonging to another account; a legacy
+cache without account identity is refreshed when an explicit account is set.
+
+The supported file route is a manual setup on an explicitly authorized runner:
+the account owner provisions that external file through an approved secure
+channel, with owner-only access (0600). This workflow does not provision it,
+copy Mac credentials, or turn a direct environment variable into a protected
+secret. Without an approved credential route, keep producing offline content;
+the account owner can separately manage drafts and publication manually.
+Backend browser access by an agent is not an alternative credential route.
+
+`network-secret` is a reserved, **unverified and disabled** source. Selecting it
+blocks credential checks and token acquisition before any credential/environment
+secret or token cache is read, including when a cached token exists. There is no
+raw-environment fallback or invented placeholder syntax. The interface does not
+claim that Personal vault is connected.
+
+The [official cloud environment documentation](https://learn.chatgpt.com/docs/environments/cloud-environments)
+distinguishes direct environment values from proxy-substituted Network secrets
+for allowed HTTPS services on port 443. It does not establish this client's
+compatibility with WeChat's query parameters, URL encoding, or returned access
+tokens. Enabling that route requires separate verification of all three, the
+actual allowed destination and egress, and explicit authorization for live tests.
+Never supply an AppSecret in chat or assume an ordinary environment value has
+proxy protection.
+
+Existing draft IDs belong in `wechat/.local/registry-drafts.json`, mapping each
+`ref-...` to an object with `media_id` and optional `created_at` / `updated_at`
+strings. The legacy key `wechat_draft_media_id` is accepted; if both ID keys are
+present they must agree. Unknown fields are rejected before use or writeback.
+Restore only authorized nonsecret mapping data, retain existing records, and
+keep the file private (0600). Do not fabricate IDs or create replacement drafts
+to compensate for a missing mapping. Successful writes keep the mapping out of
+the public registry and generated backlog.
+
+CLI failures use allowlisted diagnostic fields instead of raw exceptions or API
+responses. `wechat_rejected_ip` is emitted only for an integer 40164 with a complete
+recognized allowlist message and valid, consistent IP addresses; an unrecognized
+message still fails without exposing it. A token-check cache hit reports
+`network_verified: false`; a successful token request reports `true` for that
+invocation only. Neither certifies future connectivity or draft permissions.
+
+`dry-run` and `preflight` validate content/assets and list planned actions; they
+do not render final HTML. Run the renderer or offline smoke script separately
+for actual MathJax/image rendering. No offline result certifies mobile preview,
+WeChat authorization, IP allowlisting, or successful draft delivery.

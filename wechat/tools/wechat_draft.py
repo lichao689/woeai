@@ -26,6 +26,7 @@ from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
@@ -56,6 +57,7 @@ from woeai.wechat.review import (  # noqa: E402,F401
     parse_front_matter,
     parse_title as parse_title_text,
 )
+from woeai.wechat.runtime_config import ConfigurationError, effective_app_id, load_account, require_supported_source
 
 CONFIG_PATH = Path.home() / ".config/woeai/wechat_official_account.env"
 RUNNER_CONFIG_PATH = Path.home() / ".config/woeai/wechat_runner.env"
@@ -106,7 +108,59 @@ class WeChatError(RuntimeError):
     def __init__(self, stage: str, payload: dict[str, Any]):
         self.stage = stage
         self.payload = payload
-        super().__init__(f"{stage}: {payload}")
+        # Exceptions can reach tracebacks outside main(); keep their text safe too.
+        super().__init__("WeChat API operation failed")
+
+
+def wechat_rejected_ip(payload: dict[str, Any]) -> str | None:
+    """Accept only the complete allowlist diagnostic, not IP-like secret text."""
+    if type(payload.get("errcode")) is not int or payload["errcode"] != 40164:
+        return None
+    message = payload.get("errmsg")
+    if not isinstance(message, str):
+        return None
+    match = re.fullmatch(
+        r"invalid ip ([0-9A-Fa-f:.]+)(?: ipv6 ([0-9A-Fa-f:.]+))?, not in whitelist"
+        r"(?: rid: [A-Za-z0-9_-]+)?", message
+    )
+    if not match:
+        return None
+    try:
+        address = ipaddress.ip_address(match[1])
+        if match[2]:
+            mapped = ipaddress.IPv6Address(match[2])
+            if mapped != address and mapped.ipv4_mapped != address:
+                return None
+    except ValueError:
+        return None
+    return str(address)
+
+
+def safe_error_summary(exc: Exception) -> dict[str, Any]:
+    """Allowlist diagnostic fields; never serialize exception text or API bodies."""
+    result: dict[str, Any] = {"ok": False, "stage": "local_error", "message": "Operation failed; private error details omitted"}
+    if isinstance(exc, ConfigurationError):
+        result["error_type"] = "ConfigurationError"
+        result["configuration_error"] = exc.code
+    elif isinstance(exc, WeChatError):
+        stages = {"fetch_access_token", "upload_cover", "upload_body_image", "draft_add", "draft_update", "draft_get"}
+        result["stage"] = exc.stage if exc.stage in stages else "wechat_api_error"
+        result["error_type"] = "WeChatError"
+        code = exc.payload.get("errcode") if isinstance(exc.payload, dict) else None
+        if type(code) is int and -1 <= code <= 999999:
+            result["errcode"] = code
+        rejected_ip = wechat_rejected_ip(exc.payload) if isinstance(exc.payload, dict) else None
+        if rejected_ip:
+            result["wechat_rejected_ip"] = rejected_ip
+    elif isinstance(exc, HTTPError):
+        result["error_type"] = "HTTPError"
+        if type(exc.code) is int and 100 <= exc.code <= 599:
+            result["http_status"] = exc.code
+    elif isinstance(exc, URLError):
+        result["error_type"] = "URLError"
+    else:
+        result["error_type"] = next((kind.__name__ for kind in (ValueError, OSError, RuntimeError) if isinstance(exc, kind)), "Exception")
+    return result
 
 
 def repo_relative(path: Path) -> str:
@@ -155,8 +209,12 @@ def parse_env_file(path: Path, *, required: bool) -> dict[str, str]:
     return values
 
 
-def load_env(path: Path = CONFIG_PATH) -> dict[str, str]:
-    return parse_env_file(path, required=True)
+def load_env(path: Path | None = None) -> dict[str, str]:
+    account = load_account(WECHAT_ROOT / ".local/account.json")
+    require_supported_source(account)
+    values = parse_env_file(CONFIG_PATH if path is None else path, required=True)
+    values["WECHAT_OFFICIAL_ACCOUNT_APP_ID"] = effective_app_id(account, values)
+    return values
 
 
 def load_runner_config(path: Path = RUNNER_CONFIG_PATH) -> dict[str, str]:
@@ -240,8 +298,7 @@ def fetch_public_ip() -> dict[str, Any]:
                 {
                     "endpoint": endpoint,
                     "ok": False,
-                    "error_type": type(exc).__name__,
-                    "message": str(exc),
+                    "error": safe_error_summary(exc),
                 }
             )
     return {
@@ -291,7 +348,10 @@ def egress_ip_summary(args: argparse.Namespace | None = None, *, require_expecte
     }
 
 
-def credential_status(path: Path = CONFIG_PATH) -> dict[str, Any]:
+def credential_status(path: Path | None = None) -> dict[str, Any]:
+    account = load_account(WECHAT_ROOT / ".local/account.json")
+    require_supported_source(account)
+    path = CONFIG_PATH if path is None else path
     status: dict[str, Any] = {
         "file_exists": path.exists(),
         "mode_octal": None,
@@ -300,7 +360,7 @@ def credential_status(path: Path = CONFIG_PATH) -> dict[str, Any]:
         "app_id_length": 0,
         "app_secret_present": False,
         "app_secret_length": 0,
-        "unknown_keys": [],
+        "unknown_key_count": 0,
         "format_errors": [],
     }
     if not path.exists():
@@ -319,8 +379,8 @@ def credential_status(path: Path = CONFIG_PATH) -> dict[str, Any]:
         value = value.strip().strip('"').strip("'")
         values[key] = value
         if key not in {"WECHAT_OFFICIAL_ACCOUNT_APP_ID", "WECHAT_OFFICIAL_ACCOUNT_APP_SECRET"}:
-            status["unknown_keys"].append(key)
-    appid = values.get("WECHAT_OFFICIAL_ACCOUNT_APP_ID", "")
+            status["unknown_key_count"] += 1
+    appid = effective_app_id(account, values)
     secret = values.get("WECHAT_OFFICIAL_ACCOUNT_APP_SECRET", "")
     status["app_id_present"] = bool(appid)
     status["app_id_starts_with_wx"] = appid.startswith("wx")
@@ -381,12 +441,20 @@ def api_post_multipart(url: str, token: str, file_path: Path, extra_params: dict
 
 
 def fetch_access_token(force_refresh: bool = False) -> dict[str, Any]:
+    account = load_account(WECHAT_ROOT / ".local/account.json")
+    require_supported_source(account)
     now = int(time.time())
     if not force_refresh and TOKEN_CACHE_PATH.exists():
         try:
             cached = json.loads(TOKEN_CACHE_PATH.read_text(encoding="utf-8"))
-            if cached.get("access_token") and int(cached.get("expires_at", 0)) > now:
-                return {**cached, "from_cache": True}
+            if (
+                isinstance(cached, dict)
+                and isinstance(cached.get("access_token"), str) and cached["access_token"]
+                and type(cached.get("expires_at")) is int and cached["expires_at"] > now
+                and (not account.get("app_id") or cached.get("app_id") == account["app_id"])
+            ):
+                return {"access_token": cached["access_token"], "expires_at": cached["expires_at"],
+                        "from_cache": True, "network_verified": False}
         except (json.JSONDecodeError, OSError, ValueError):
             pass
 
@@ -400,11 +468,12 @@ def fetch_access_token(force_refresh: bool = False) -> dict[str, Any]:
         TOKEN_URL,
         {"grant_type": "client_credential", "appid": appid, "secret": secret},
     )
-    if "access_token" not in data:
+    if not isinstance(data, dict) or not isinstance(data.get("access_token"), str) or not data["access_token"]:
         raise WeChatError("fetch_access_token", data)
 
     expires_in = int(data.get("expires_in", 7200))
     record = {
+        "app_id": appid,
         "access_token": data["access_token"],
         "expires_in": expires_in,
         "fetched_at": now,
@@ -417,7 +486,7 @@ def fetch_access_token(force_refresh: bool = False) -> dict[str, Any]:
     os.chmod(tmp_path, 0o600)
     tmp_path.replace(TOKEN_CACHE_PATH)
     os.chmod(TOKEN_CACHE_PATH, 0o600)
-    return {**record, "from_cache": False}
+    return {**record, "from_cache": False, "network_verified": True}
 
 
 def parse_cover_path(review_path: Path) -> Path:
@@ -634,6 +703,16 @@ def read_private_drafts(backlog_path: Path) -> dict[str, dict[str, Any]]:
     records = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(records, dict) or any(not isinstance(item, dict) for item in records.values()):
         raise ValueError("Private draft records must map publication references to objects")
+    allowed = {"media_id", "wechat_draft_media_id", "created_at", "updated_at"}
+    for ref, record in records.items():
+        if (
+            re.fullmatch(r"ref-[A-Za-z0-9_-]+", ref) is None
+            or set(record) - allowed
+            or any(not isinstance(value, str) for value in record.values())
+            or ("media_id" in record and "wechat_draft_media_id" in record
+                and record["media_id"] != record["wechat_draft_media_id"])
+        ):
+            raise ValueError("Invalid private draft mapping schema; only draft IDs and timestamps are allowed")
     return records
 
 
@@ -783,8 +862,7 @@ def validate_context(ctx: ArticleContext) -> list[dict[str, Any]]:
         problems.append(
             {
                 "kind": "public_safety_check_error",
-                "error_type": type(exc).__name__,
-                "message": str(exc),
+                "error": safe_error_summary(exc),
             }
         )
     return problems
@@ -855,11 +933,24 @@ def command_config_check(_args: argparse.Namespace) -> int:
     return 0
 
 
+def command_account_check(_args: argparse.Namespace) -> int:
+    path = WECHAT_ROOT / ".local/account.json"
+    account = load_account(path)
+    print(json.dumps({
+        "ok": True, "stage": "account_configuration", "file_exists": path.exists(),
+        "app_id_present": bool(account.get("app_id")),
+        "credential_source": account["credential_source"],
+        "network_secret_verified": False,
+        "will_read_credentials": False, "will_contact_wechat": False,
+    }, indent=2))
+    return 0
+
+
 def command_token_check(args: argparse.Namespace) -> int:
     try:
         token = fetch_access_token(force_refresh=args.force_refresh)
     except WeChatError as exc:
-        print(json.dumps({"ok": False, "stage": exc.stage, "response": exc.payload}, ensure_ascii=False, indent=2))
+        print(json.dumps(safe_error_summary(exc), ensure_ascii=False, indent=2))
         return 1
     print(
         json.dumps(
@@ -867,6 +958,7 @@ def command_token_check(args: argparse.Namespace) -> int:
                 "ok": True,
                 "stage": "access_token_available",
                 "from_cache": bool(token.get("from_cache")),
+                "network_verified": token.get("network_verified") is True and token.get("from_cache") is False,
                 "expires_at": token.get("expires_at"),
                 "cache_path": str(TOKEN_CACHE_PATH),
                 "cache_mode_octal": oct(stat.S_IMODE(TOKEN_CACHE_PATH.stat().st_mode)),
@@ -1130,6 +1222,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command", required=True)
 
     sub.add_parser("config-check", help="Check local credential file shape without printing secrets")
+    sub.add_parser("account-check", help="Check private nonsecret account settings without reading credentials")
 
     token = sub.add_parser("token-check", help="Fetch or reuse access_token without printing it")
     token.add_argument("--force-refresh", action="store_true")
@@ -1187,6 +1280,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     try:
+        if args.command == "account-check":
+            return command_account_check(args)
         if args.command == "config-check":
             return command_config_check(args)
         if args.command == "token-check":
@@ -1204,12 +1299,12 @@ def main(argv: list[str] | None = None) -> int:
         if args.command in {"create-draft", "update-draft"}:
             return command_create_or_update(args)
     except WeChatError as exc:
-        print(json.dumps({"ok": False, "stage": exc.stage, "response": exc.payload}, ensure_ascii=False, indent=2))
+        print(json.dumps(safe_error_summary(exc), ensure_ascii=False, indent=2))
         return 1
     except Exception as exc:
         print(
             json.dumps(
-                {"ok": False, "stage": "local_error", "error_type": type(exc).__name__, "message": str(exc)},
+                safe_error_summary(exc),
                 ensure_ascii=False,
                 indent=2,
             )

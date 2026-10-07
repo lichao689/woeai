@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Render a WOEAI WeChat Markdown article to a copy-ready local HTML page.
+"""Render a WOEAI WeChat Markdown article to an offline review HTML page.
 
 This is intentionally a small WOEAI-specific renderer. It covers the article
 shape used in `wechat/articles/draft-public-safe/`: headings, paragraphs,
 lists, images with following captions, bold text, links, inline math, and
 display math. Math output defaults to MathJax SVG pre-rendering; the
 lightweight renderer is only a limited fallback for selected LaTeX patterns.
-The output is a local HTML file with inline styles, so copying from the browser
-into the WeChat Official Account editor has a better chance of keeping the
-layout.
+The output is a local HTML file with inline styles for offline review.
+The historical command filename is retained; draft delivery uses the separately
+authorized official API workflow, not browser clipboard submission.
 """
 
 from __future__ import annotations
@@ -95,11 +95,6 @@ BASE_STYLES = {
         "margin:18px 0;padding:16px;text-align:center;overflow-x:auto;"
         "border:1px solid #d4dee8;background:#f7fafc;color:#18344f;"
         "font-family:'Times New Roman',Georgia,serif;font-size:18px;line-height:1.5;"
-    ),
-    "button": (
-        "position:sticky;top:0;z-index:10;display:flex;gap:10px;align-items:center;"
-        "justify-content:center;padding:12px;background:#eef3f7;border-bottom:1px solid #d7dce2;"
-        "font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;"
     ),
 }
 
@@ -610,12 +605,6 @@ def render_markdown(
 
 def render_page(article_html: str, title: str, theme: str = DEFAULT_THEME) -> str:
     styles = theme_styles(theme)
-    button_style = styles["button"]
-    button_inner_style = (
-        "border:0;background:#23486f;color:#fff;padding:8px 14px;"
-        "font-size:14px;border-radius:4px;cursor:pointer;"
-    )
-    note_style = "font-size:13px;color:#4b5563;"
     return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
@@ -624,48 +613,12 @@ def render_page(article_html: str, title: str, theme: str = DEFAULT_THEME) -> st
   <title>{html.escape(title)}</title>
 </head>
 <body style="margin:0;background:#eef1f4;">
-  <div style="{html.escape(button_style, quote=True)}">
-    <button id="copy" style="{html.escape(button_inner_style, quote=True)}">复制公众号正文</button>
-    <span id="status" style="{html.escape(note_style, quote=True)}">复制后粘贴到公众号编辑器。若图片没带过去，再手动上传图片。</span>
-  </div>
+  <aside style="padding:12px 18px;font:14px/1.6 sans-serif;color:#4b5563;text-align:center;">
+    本页仅供离线审阅，不执行上传，不代表微信手机预览效果
+  </aside>
   <main id="article" style="{html.escape(styles["article"], quote=True)}">
 {article_html}
   </main>
-  <script>
-    const button = document.getElementById('copy');
-    const status = document.getElementById('status');
-    button.addEventListener('click', async () => {{
-      const article = document.getElementById('article');
-      const html = article.outerHTML;
-      const text = article.innerText;
-      try {{
-        if (navigator.clipboard && window.ClipboardItem) {{
-          await navigator.clipboard.write([
-            new ClipboardItem({{
-              'text/html': new Blob([html], {{type: 'text/html'}}),
-              'text/plain': new Blob([text], {{type: 'text/plain'}})
-            }})
-          ]);
-        }} else {{
-          const range = document.createRange();
-          range.selectNode(article);
-          const selection = window.getSelection();
-          selection.removeAllRanges();
-          selection.addRange(range);
-          document.execCommand('copy');
-          selection.removeAllRanges();
-        }}
-        status.textContent = '已复制。现在可以去公众号编辑器粘贴。';
-      }} catch (error) {{
-        const range = document.createRange();
-        range.selectNode(article);
-        const selection = window.getSelection();
-        selection.removeAllRanges();
-        selection.addRange(range);
-        status.textContent = '浏览器限制了自动复制：正文已选中，请按 Command+C。';
-      }}
-    }});
-  </script>
 </body>
 </html>
 """

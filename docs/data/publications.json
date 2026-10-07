@@ -2968,8 +2968,8 @@
               "figure_preview": false,
               "cover_preview": false
             },
-            "scope": "Offline editorial revision of previously audited facts; 29 MathJax SVG fragments and five embedded images checked. No fresh PDF audit or upload. Browser mobile/crop inspection blocked by administrator policy. Backend preview remains unconfirmed.",
-            "fingerprint": "11de6fecb406c18148fdf91d5552f61556232daf7f8edec0636b5feb9460a555"
+            "scope": "Offline editorial revision of previously audited facts; 29 MathJax SVG fragments and five embedded images checked. No fresh PDF audit or upload. Browser mobile/crop inspection blocked by administrator policy. Backend preview remains unconfirmed. Follow-up: checked original public figure pixels and clarified panel/legend reading cues; removed obsolete manual-copy instructions from the offline preview wrapper. No deployment or mobile-preview confirmation.",
+            "fingerprint": "1c7958043e4ba5dad918811fd8460d849fc53907938508611d4ba90cc0d2793d"
           }
         },
         "latest_published_url": "",

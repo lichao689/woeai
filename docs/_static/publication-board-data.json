@@ -3027,7 +3027,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -3067,6 +3067,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",

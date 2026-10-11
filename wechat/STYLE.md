@@ -40,19 +40,15 @@ fixed WeChat closing sentence (anchored on `点击阅读原文`); it appends a
 impact factor or CAS partition) plus a `:ref:` link to the Publications entry;
 and it appends the internal `相关论文精解` navigation.
 
-## Default Structure
+## Flexible Structure And Editorial Review
 
-1. `论文信息`
-2. `三句话导读`
-3. `关键数字 / 关键结论卡`
-4. `摘要`
-5. `研究问题`
-6. `方法贡献`
-7. `关键发现`
-8. `工程意义`
-9. `适用边界`
-10. `图文说明` when a separate figure summary is useful
-11. `延伸阅读` or platform-generated related-paper navigation when useful
+Follow [自然写作审校](../.agents/skills/wechat-paper/references/natural-scientific-writing.md)
+for every new article and revision. Keep paper metadata, a faithful translated
+abstract, evidence, figure captions, and limitations, but arrange the main story
+around the paper's actual question and evidence. Metadata and abstract may move
+to the end. Do not force 三句话导读, 数字卡, numbered research questions,
+question-number callbacks, or one bold sentence per subsection. Optional entry
+cards must add information rather than repeat the opening or abstract.
 
 ## Title Format
 
@@ -76,7 +72,7 @@ the title, account, author, and timestamp above the body.
 
 ## Abstract Handling
 
-- Add an `摘要` section immediately after `论文信息`.
+- Keep an `摘要` section after `论文信息`; both may appear at the end of the article.
 - For Chinese papers, use the Chinese abstract.
 - For English papers, provide a faithful Chinese translation of the original
   abstract from Zotero `abstractNote`, the paper PDF, an author manuscript, or
@@ -176,9 +172,9 @@ The public-safety script must fail a review note that omits either
 - Lead with an engineering question and answer it with scholarly evidence.
 - No hype.
 - No unsupported partner names or project claims.
-- Unify narration on `我们` for research actions and decisions (`我们比较了...`,
-  `我们建议...`). When citing specific numeric results, `论文中给出的结果` is
-  acceptable for precision. Avoid detached third-party phrasing.
+- Use a natural authorial voice where supported. “我们” is available, not a
+  compulsory subject in every paragraph. Never invent the author’s experience,
+  emotions or motivations; preserve source attribution and certainty.
 - Use DOI in `论文信息` for scholarly traceability.
 - Do not include a WOEAI publication anchor in reader-facing WeChat articles
   when the linked RTD publication item or paper companion page duplicates the
@@ -212,10 +208,9 @@ unsupported causality or production-readiness claims. Useful patterns are
 “<工程决策>，为什么不能只看<常用指标>？” and
 “<约束>下，<具体方法>怎样改进<目标>？”; fill them only from evidence.
 
-- Opening: 80–140 Chinese characters for problem, change and bounded takeaway.
-- Three-sentence guide: decision/problem → actual innovation/evidence → usable
-  takeaway with its condition; not a condensed abstract repeated verbatim.
-- Key card: 2–3 distinct results with the relevant metric, baseline and conditions.
+- Opening: enter the actual problem clearly; length follows the argument, not a fixed quota.
+- Optional guide or key card: only when it reduces reading effort without
+  repeating the opening, abstract, or results. Never force a fixed item count.
 - Cover: a short problem/method hook under the cover contract; never stronger
   than the body. Changing approved cover words requires fresh confirmation.
 - Sharing digest, when requested: 60–100 Chinese characters for relevance,
@@ -236,27 +231,20 @@ A wording/style update never changes source-audited, published or preview state.
     `别只看单方向峰值`).
   - 具体数字式: lead with a citable number from the paper.
   - 场景式: a concrete scenario the reader recognizes.
-- When the paper provides citable numbers, put a quantified hook in the first
-  one or two paragraphs. Never invent numbers; if no suitable public number
-  exists, record `待确认可公开的量化数字` in the review note instead.
-- In each `关键发现` subsection, bold exactly one conclusion sentence so the
-  bolded sentences alone form a readable summary. Keep other bold usage
-  restrained.
-- Write `研究问题` as a numbered list of questions. Open each `关键发现`
-  subsection by answering back to a numbered question, for example
-  `针对问题 1，...`.
+- Place evidence-backed numbers where they help explain the argument. A numeric
+  opening is optional; do not create a missing-number task to satisfy a template.
+- Use bold sparingly where it helps reading; no fixed count. Explain how results
+  answer the scientific question without mechanical “针对问题 1” callbacks.
 
 ## Link Domain
 
 - For WOEAI website links embedded in WeChat articles and WeChat draft API
   payloads, prefer the Read the Docs project domain:
   `https://woeai.readthedocs.io/zh-cn/latest/`.
-- Use that domain for RTD companion pages, direction pages, and homepage-style
-  links when those links are useful to the reader.
-- Put reader-facing links under `延伸阅读`. Use direct Markdown hyperlinks such
-  as `[WOEAI | 建筑结构抗风方向介绍](...)`, not a label followed by a naked URL.
-- Rendered WeChat HTML must show only the Chinese link text. It must not expose
-  the raw English URL after the link text.
+- Use the site link through the bottom 阅读原文 field. Body 延伸阅读 is
+  exclusively for confirmed published WeChat article URLs. If none exist, omit
+  the entire section, including its heading. Do not substitute homepage links,
+  draft/preview links, placeholders or uncited plain-text titles.
 - The WeChat backend bottom `阅读原文` entry is controlled by the API
   `content_source_url` field, not by body Markdown. By default it points to
   the current paper's RTD companion page:
@@ -264,36 +252,58 @@ A wording/style update never changes source-audited, published or preview state.
   The review front matter field `wechat_content_source_url` can override this
   per article, including an explicitly blank value when the editor wants no
   bottom link.
-- Every paper article ends its body with this fixed closing sentence as its own
-  paragraph immediately before `延伸阅读`:
-  `如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。`
-  This sentence is WeChat-channel-specific; `markdown_to_rtd.py` recognizes the
-  `点击阅读原文` anchor and skips the paragraph, so the RTD page carries no
-  closing block.
-- Keep DOI links visible in `论文信息`; do not duplicate DOI in `延伸阅读`
-  unless it is the only useful external reading path.
+- End with a short, relevant 阅读原文 invitation when useful. No mandatory
+  recruitment paragraph or repeated promotional sign-off. Keep DOI visible in
+  论文信息 for scholarly traceability, not as extended reading.
 - This WeChat-link rule does not automatically change the public website's own
   canonical SEO URL or homepage contact display.
 
-## Lead Cards And Related Links
+## Related Links
 
-Every new paper article should include a compact `三句话导读` near the top. The
-three sentences should answer: what the paper studies, why it matters, and what
-the reader can take away. Do not copy the abstract or repeat the key findings
-in shorter form.
-
-Every new paper article should include `关键数字 / 关键结论卡`. Prefer
-high-value numbers when the paper has them and the review note can point to
-their evidence. If there are no high-value numbers, use `关键结论卡` with only
-2-3 non-overlapping conclusions. Do not force low-value numeric details such as
-ordinary case IDs, sample counts, or routine parameter settings into the card.
-
-For related paper navigation in the WeChat body, include only already-published
-WeChat article links. Omit related papers that do not yet have a public WeChat
-URL. RTD related-paper navigation is generated separately as internal
-paper-note links.
+Only confirmed published WeChat articles from `latest_published_url` may appear
+in body related navigation. Omit the section when no valid links exist, notably
+the first article. Verify title/destination and actual tap behavior in the
+WeChat preview; a valid Markdown href does not prove WeChat allows the link.
+RTD internal related-paper navigation remains independent.
 
 ## Formula Handling
+
+- Use transparent SVG formulas that inherit the adjacent text color through
+  `currentColor`. Use standard `span`/`section` containers and set the first SVG
+  group's fill/stroke both as presentation attributes and inline styles. Preserve
+  vector geometry, fraction bars, baseline, explicit internal colors and LaTeX
+  metadata. Formula blocks must not impose a fixed foreground or background.
+- This follows the [WeChat SVG guidance](https://github.com/wechatjs/verify-article-structure-spec/blob/main/verify_article_structure.md#44-svg)
+  and the export structure used by [doocs/md](https://github.com/doocs/md/blob/main/packages/core/src/extensions/katex.ts).
+  These sources support the approach, not a guarantee for every phone reader.
+- Check computed formula paint against adjacent body text in light/dark browser
+  fixtures, then verify saved API structure and both actual WeChat phone modes.
+  Browser emulation or API success cannot certify phone appearance. If inheritance
+  fails on a phone, record it and investigate before changing the agreed design;
+  do not silently replace transparent formulas with opaque white tiles.
+
+### Validated dark-mode workflow
+
+1. Render canonical LaTeX with MathJax SVG. Export standard `span` (inline) or
+   `section` (display), retaining source metadata and original SVG geometry.
+2. On the first SVG `g`, retain `fill="currentColor" stroke="currentColor"`
+   and inline `style="fill:currentColor;stroke:currentColor;"`. Inherit the
+   surrounding text color. Do not impose black/white glyph colors or a white tile;
+   preserve child-level explicit scientific colors and legitimate fraction bars.
+3. Keep formula blocks transparent with inherited color. Check inline, display,
+   fractions and multiline formulas in light/dark browser fixtures and mobile width.
+4. After updating the existing draft, read back SVG paint, standard containers,
+   LaTeX and geometry. WeChat may remove redundant outer `color:inherit` and
+   `background:transparent`; this alone is not a rendering failure. Check whether
+   forced ancestor styles remain, then verify the actual phone reader.
+5. Record phone light/dark outcomes separately. Never transfer one article's
+   acceptance to every article/device, or infer whole-article publication readiness.
+
+JCP sample validation: the user confirmed normal dark-mode formula colors on
+2026-10-11 at 17:15 UTC after the same-draft update at 15:23 UTC (candidate
+`960ce68f3dc9777cfc9305162f55e5bcdb71fe2c`). This validates the combined method
+for that preview, not which individual CSS change caused the improvement.
+Phone OS/WeChat version and a separate light-mode confirmation were not supplied.
 
 - Use Markdown LaTeX as the canonical formula source in WeChat article drafts: `$...$` for inline formulas and `$$...$$` for display formulas.
 - Render WeChat formulas through the selected WeChat Markdown or API workflow
@@ -301,7 +311,8 @@ paper-note links.
   preview.
 - Use MathJax SVG pre-rendering as the default formula route for the official
   API path. In this route, Markdown LaTeX is converted before submission into
-  `<mjx-container jax="SVG">...<svg>...</svg></mjx-container>` HTML, so WeChat
+  standard `<span>...<svg>...</svg></span>` (inline) or `<section>` (display)
+  HTML after replacing MathJax's internal `mjx-container`, so WeChat
   does not need to run MathJax or load external scripts. A 2026-06-10 single
   article stress test with multiple inline and display SVG formulas was accepted
   by the official draft API and approved by user preview.

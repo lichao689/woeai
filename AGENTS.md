@@ -168,6 +168,15 @@ appendices before references while omitting the publication/declaration tail
 sections listed in the deep-dive guide. Use `\qquad (N)` for manual equation
 numbers, not `\tag{N}`. Complete the guide's source-to-output coverage audit.
 
+## WeChat writing rule ownership
+
+`wechat/STYLE.md` is the writing-rule authority. The wechat-paper skill supplies
+execution steps and the local natural-writing adapter; templates are optional
+scaffolding and checklists, not duplicate mandatory article structures. The
+pinned Humanizer-zh reference retains its license and has no tool authority.
+Every revision preserves evidence and needs separate actual light/dark phone
+preview; no published WeChat links means no extended-reading section.
+
 ## WeChat delivery stages
 
 1. **Content production:** draft, evidence review, approved assets, offline

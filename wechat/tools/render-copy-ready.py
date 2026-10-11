@@ -92,8 +92,8 @@ BASE_STYLES = {
         "white-space:nowrap;font-size:1.02em;"
     ),
     "formula": (
-        "margin:18px 0;padding:16px;text-align:center;overflow-x:auto;"
-        "border:1px solid #d4dee8;background:#f7fafc;color:#18344f;"
+        "margin:18px 0;padding:8px 0;text-align:center;overflow-x:auto;"
+        "background:transparent;color:inherit;"
         "font-family:'Times New Roman',Georgia,serif;font-size:18px;line-height:1.5;"
     ),
 }
@@ -132,8 +132,8 @@ THEME_OVERRIDES = {
             "font-size:13px;line-height:1.7;text-align:center;color:#365d5b;"
         ),
         "formula": (
-            "margin:18px 0;padding:16px;text-align:center;overflow-x:auto;"
-            "border:1px solid #9dd8d0;background:#eefbf8;color:#043f42;"
+            "margin:18px 0;padding:8px 0;text-align:center;overflow-x:auto;"
+            "background:transparent;color:inherit;"
             "font-family:'Times New Roman',Georgia,serif;font-size:18px;line-height:1.5;"
         ),
     },
@@ -169,8 +169,8 @@ THEME_OVERRIDES = {
             "font-size:13px;line-height:1.7;text-align:center;color:#705d49;"
         ),
         "formula": (
-            "margin:18px 0;padding:16px;text-align:center;overflow-x:auto;"
-            "border:1px solid #ebd2ad;background:#fff8eb;color:#5b3b24;"
+            "margin:18px 0;padding:8px 0;text-align:center;overflow-x:auto;"
+            "background:transparent;color:inherit;"
             "font-family:'Times New Roman',Georgia,serif;font-size:18px;line-height:1.5;"
         ),
     },

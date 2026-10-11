@@ -655,12 +655,40 @@ def escape_markdown_link_label(value: str) -> str:
 
 
 def append_wechat_related_navigation(markdown_text: str, links: list[dict[str, str]]) -> str:
-    if not links or "## 相关论文导航" in markdown_text:
-        return markdown_text
-    lines = ["", "## 相关论文导航", ""]
+    """Rebuild this optional section only from registered public article links."""
+    from woeai.publications.registry import public_wechat_article_url
+
+    # Markdown headings inside fenced code are examples, not navigation.
+    kept = []
+    skipping = False
+    fence = None
+    for line in markdown_text.splitlines(keepends=True):
+        marker = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+        if fence:
+            if marker and marker[1][0] == fence[0] and len(marker[1]) >= len(fence) and not marker[2].strip():
+                fence = None
+        elif marker:
+            fence = marker[1]
+        else:
+            heading = re.match(r"^ {0,3}(#{1,2})[ \t]+(.+?)[ \t]*#*[ \t]*$", line.rstrip("\r\n"))
+            if heading:
+                skipping = len(heading[1]) == 2 and heading[2] in {"延伸阅读", "相关论文导航"}
+        if not skipping:
+            kept.append(line)
+    text = "".join(kept).rstrip()
+    lines = []
+    seen = set()
     for link in links:
-        lines.append(f"- [{escape_markdown_link_label(link['title'])}]({link['url']})")
-    return markdown_text.rstrip() + "\n" + "\n".join(lines) + "\n"
+        raw = link.get("url", "")
+        # Preview URLs are not publication evidence, even if their path is /s.
+        url = public_wechat_article_url(raw)
+        if not url or url in seen:
+            continue
+        seen.add(url)
+        lines.append(f"- [{escape_markdown_link_label(link['title'])}]({url})")
+    if not lines:
+        return text + "\n"
+    return text + "\n\n## 延伸阅读\n\n" + "\n".join(lines) + "\n"
 
 
 def planned_content_source_items(publication_refs: list[str]) -> list[dict[str, Any]]:

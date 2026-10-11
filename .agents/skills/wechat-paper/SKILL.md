@@ -378,34 +378,11 @@ with WeChat Markdown. Its `--check` is not a quality gate for independent RTD.
 
 ## Article Structure
 
-Use this default order unless the paper strongly requires a small adjustment:
-
-1. `论文信息`
-2. `三句话导读`
-3. `关键数字 / 关键结论卡`
-4. `摘要`
-5. `研究问题`
-6. `方法贡献`
-7. `关键发现`
-8. `工程意义`
-9. `适用边界`
-10. `图文说明` when public-safe images are inserted
-11. `延伸阅读` or platform-generated related-paper navigation when useful
-
-Put reader-facing links under `延伸阅读`. Use direct Markdown hyperlinks, not a
-label followed by a naked URL. Keep DOI visible in `论文信息`, and do not repeat
-it in `延伸阅读` unless it is the only useful external reading path. Do not
-include a WOEAI publication-page anchor in the reader-facing article when that
-public page merely duplicates the article or paper record.
-
-For new articles, add `三句话导读` near the top. The three sentences should say
-what the paper studies, why it matters, and what the reader can take away. They
-are entry guidance, not a compressed duplicate of `摘要` or `关键发现`.
-
-For new articles, add `关键数字 / 关键结论卡`. Use high-value numbers only when
-they carry real explanatory value and can be traced to paper evidence in the
-review note. If the paper has no high-value numbers, use `关键结论卡` with 2-3
-non-overlapping conclusions instead of forcing low-value numeric detail.
+Read [自然写作审校](references/natural-scientific-writing.md) and current
+`wechat/STYLE.md` before every new article or revision. This replaces fixed
+three-sentence guides, numeric cards and question-number callbacks. Keep facts,
+faithful abstract, paper metadata, captions and limitations, but organize the
+story by the actual evidence. Optional modules must not duplicate the story.
 
 Use this title pattern:
 
@@ -472,45 +449,20 @@ Write for technically literate readers who may include prospective students, col
 
 Tone:
 
-- Write from the author's perspective and voice. The article should read like WOEAI or the authors are explaining their own paper to readers.
-- Use `我们` as the default subject for research actions, method choices,
-  comparisons, interpretation, and recommendations. Prefer wording such as
-  `我们提出...`, `我们构建...`, `我们比较了...`, `我们发现...`, and `我们建议...`.
-- Do not let detached third-person subjects replace the authorial voice when
-  the sentence describes research work or judgment. Avoid patterns such as
-  `它说明...`, `该研究发现...`, `本文认为...`, and `从公开摘要可确认...`; recast
-  them as first-person explanations unless doing so would distort the source.
-- Use `论文`, `模型`, `方法`, or `结果` as the subject only for static facts,
-  definitions, reported values, or citation precision. When citing specific
-  numeric results, `论文中给出的结果` is acceptable.
-- Keep abstract translation faithful. Do not force `我们` into the translated
-  abstract if the original abstract would be distorted; strengthen first-person
-  narration mainly in `三句话导读`, `研究问题`, `方法贡献`, `关键发现`, `工程意义`,
-  and `适用边界`.
-- Lead with an engineering question and answer it with scholarly evidence.
-- No hype.
-- No unsupported partner names or project claims.
-- Keep limitations visible.
-- Avoid standing outside the paper as a detached reviewer unless explicitly writing a review note.
-
-Opening and skim path:
-
-- Vary the opening strategy across articles. Choose from: real-world
-  contradiction, counter-intuition (challenge a common assumption), concrete
-  number lead, or scenario lead. Adjacent articles in the same batch should not
-  reuse the same strategy.
-- When the paper provides citable numbers, put a quantified hook in the first
-  one or two paragraphs (for example a maximum error reduction, a speedup, or
-  a deviation percentage). Never invent numbers; if no suitable number exists,
-  record a `待确认可公开的量化数字` item in the review note instead.
-- In each `关键发现` subsection, bold exactly one conclusion sentence so a
-  skimming reader can follow the bolded sentences alone. Keep other bold usage
-  restrained.
-- Write `研究问题` as a numbered list of questions. Open each `关键发现`
-  subsection with a sentence that answers back to a numbered question, for
-  example `针对问题 1，...`.
+- Use a natural, evidence-backed authorial voice. Do not force every research
+  sentence to start with 我们, invent experience or emotion, or turn an academic
+  account into exaggerated banter. Preserve qualifications, attribution and
+  scientific uncertainty; follow the linked natural-writing editing sequence.
+- Vary meaningful openings without inventing engineering deployments. Use numbers
+  where they explain the argument, not as compulsory hooks. Bold sparingly, with
+  no fixed count; no numbered-question callbacks are required.
 
 ## Formula Handling
+
+Follow the transparent inherited-color contract in `wechat/STYLE.md`. Check actual WeChat
+phone light and dark modes separately. API acceptance and desktop simulation
+are not mobile preview evidence. Do not set preview flags from those checks.
+
 
 Do not render formulas as raster images by default.
 
@@ -518,7 +470,7 @@ Use Markdown LaTeX as the canonical formula source in WeChat article drafts:
 `$...$` for inline formulas and `$$...$$` for display formulas. For the official
 WeChat API path, use MathJax SVG pre-rendering as the default formula route:
 convert the LaTeX before submission into
-`<mjx-container jax="SVG">...<svg>...</svg></mjx-container>` HTML, then verify
+standard `span` (inline) / `section` (display) HTML containing SVG, then verify
 the resulting formula display in the final WeChat backend mobile preview. In
 this route WeChat does not need to run MathJax or load external scripts.
 Preserve the source LaTeX in the SVG formula container when possible, using
@@ -651,30 +603,16 @@ If image rights or final high-resolution assets are not ready for a non-authored
 
 ## Closing Block And Extended Reading Links
 
-Immediately before `延伸阅读`, every paper article ends its body with this
-fixed closing sentence as its own paragraph:
+Use a brief relevant 阅读原文 invitation, not a compulsory recruitment closing.
+The API `content_source_url` points to the independent RTD deep dive unless
+explicitly overridden. Do not copy this closing to RTD.
 
-`如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。`
-
-This sentence is WeChat-channel-specific: the bottom `阅读原文` entry it refers
-to is provided by the WeChat API `content_source_url`, which defaults to the
-current paper's RTD deep-dive page. This WeChat-specific closing block is not
-part of the original paper and must not be copied into the independent RTD
-translation.
-
-Add only a `延伸阅读` section near the end of the article when there are useful
-reader-facing links. For related paper navigation in the WeChat body, include
-only already-published WeChat article links from `latest_published_url`. Omit
-related papers that do not yet have public WeChat URLs.
-
-RTD related-paper navigation is generated separately as internal paper-note
-links and should point only to existing `docs/source/paper-notes/*.rst` pages.
-
-Do not add a separate `阅读原文` section. Keep the DOI visible in `论文信息`.
-Do not include a WOEAI publication-page anchor in the reader-facing article
-when that public page merely duplicates the article or paper record. Do not
-imply that the repository hosts the full paper PDF unless a public author
-manuscript or approved download link is actually available.
+Body 延伸阅读 may contain only verified published WeChat articles from
+`latest_published_url`. No available public article means no heading or section;
+first articles have no filler homepage/direction links. Never use draft or preview
+URLs. Verify destinations and tapping in the actual WeChat preview rather than
+assuming Markdown href implies platform support. Keep DOI in 论文信息.
+RTD related-paper navigation remains separate and internal.
 
 ## Draft Quality Gates
 
@@ -694,17 +632,12 @@ Before calling a draft ready:
   of the original abstract from Zotero `abstractNote`, the PDF abstract, an
   author manuscript, or another approved source; the article contains no
   `**英文摘要**` block.
-- The article uses a first-person authorial voice in explanatory sections:
-  `我们` is the normal subject for research actions and judgments, and detached
-  wording such as `它说明`, `该研究发现`, `本文认为`, or `从公开摘要可确认` has been
-  recast unless needed for citation precision or faithful abstract translation.
-- `研究问题` is a numbered question list, and each `关键发现` subsection opens
-  by answering back to a numbered question.
-- Each `关键发现` subsection bolds exactly one conclusion sentence.
+- The natural-writing pass preserves facts, conditions, attribution and limits;
+  no invented experience, forced question callbacks, redundant cards or rigid
+  bold quotas remain. Faithful abstract translation stays unchanged by tone edits.
 - Figure caption-title lines use the `论文图 N` original-number format and the
   explanatory line does not restate the article's main argument.
-- The fixed closing sentence appears as its own paragraph immediately before
-  `延伸阅读`.
+- The closing is short and relevant; 延伸阅读 is omitted when no confirmed published WeChat link exists.
 - Authorized current-workspace PDFs/manuscripts and manifests are checked
   before requesting another copy. If source bytes are missing, Zotero Web API
   `/file` is tried when authorized access is available; otherwise the review
@@ -731,13 +664,9 @@ Before calling a draft ready:
 - The reader-facing article has no YAML front matter, pending fields, figure plans, private notes, or human checklist.
 - Important formulas are not images and have explanations.
 - For author-confirmed papers, suitable PDF figures are extracted into `wechat/assets/public-safe/<publication_ref>/` and inserted into the article. For non-authored or unclear papers, suitable figure recommendations are recorded in the review note until rights are confirmed.
-- The article uses `延伸阅读` for useful reader-facing links, direct Markdown
-  hyperlinks instead of naked URLs, and no separate `阅读原文` section.
-- New articles include `三句话导读` and `关键数字 / 关键结论卡`; these entry
-  modules do not repeat the abstract or key-findings wording, and key numbers
-  have review-note evidence when used.
-- WeChat related-paper navigation contains only already-published WeChat
-  article links; unpublished related papers are omitted.
+- Optional 延伸阅读 contains only confirmed published WeChat links; no draft,
+  preview, placeholder or substitute homepage links. Both phone appearance modes
+  have separate pending/passed results; failed deep-color formulas block preview acceptance.
 - RTD related-paper navigation uses internal paper-note links only.
 - The WeChat API `content_source_url` defaults to the current paper's RTD
   deep-dive page unless the review note explicitly overrides it or explicitly
@@ -779,3 +708,12 @@ When generating a draft, return:
 - commands/checks run.
 
 Do not claim the article is publish-ready until the WeChat backend mobile preview has checked formulas and figures.
+
+### Dark-mode formula delivery checkpoint
+
+Apply the validated dark-mode workflow in `wechat/STYLE.md` (the authoritative
+contract). Use the repository renderer, inspect the saved draft's SVG paint and
+standard containers, then record light/dark phone outcomes independently. The
+JCP sample's dark-mode confirmation on 2026-10-11 is a working precedent, not
+a substitute for future article checks. Do not restore opaque white formula tiles
+or mark figures, cover, light-mode preview or publication accepted from that report.

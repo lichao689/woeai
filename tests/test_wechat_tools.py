@@ -43,6 +43,16 @@ class WeChatToolTests(unittest.TestCase):
         self.assertIn("<div", display)
         self.assertIn("CFD", display)
 
+    def test_display_formula_has_no_fixed_foreground_or_background_in_any_theme(self):
+        renderer = load_script(ROOT / "wechat/tools/render-copy-ready.py", "woeai_formula_theme")
+        for theme in renderer.AVAILABLE_THEMES:
+            with mock.patch.object(renderer, "render_mathjax_svg", return_value="<svg></svg>"):
+                output = renderer.render_display_math("x", styles=renderer.theme_styles(theme), math_renderer="mathjax-svg")
+            self.assertIn("color:inherit", output)
+            self.assertIn("background:transparent", output)
+            self.assertNotIn("background:#", output)
+            self.assertNotIn("color:#", output)
+
     def test_markdown_to_rtd_preserves_blank_line_after_list(self) -> None:
         converter = load_script(ROOT / "wechat/tools/markdown_to_rtd.py", "woeai_markdown_to_rtd_test")
 
@@ -288,6 +298,40 @@ class WeChatToolTests(unittest.TestCase):
             ctx = draft.build_context("ref-zhao2026-BS", "academic-clean", "lightweight")
 
         self.assertEqual(ctx.author, "Zhao Peisheng")
+
+    def test_related_navigation_omits_stale_links_when_nothing_is_published(self):
+        draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_related_empty")
+        source = "正文\n\n## 延伸阅读\n\n- [旧站外链接](https://example.com)\n\n## 论文信息\n\n保留这段\n"
+        result = draft.append_wechat_related_navigation(source, [])
+        self.assertNotIn("延伸阅读", result)
+        self.assertNotIn("example.com", result)
+        self.assertIn("保留这段", result)
+
+    def test_related_navigation_regenerates_once_from_publication_records(self):
+        draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_related_once")
+        links = [{"title": "已发表", "url": "https://mp.weixin.qq.com/s/real-article"}]
+        source = "正文\n\n## 相关论文导航\n\n- [过时](https://example.com)\n"
+        result = draft.append_wechat_related_navigation(source, links)
+        self.assertEqual(result.count("## 延伸阅读"), 1)
+        self.assertNotIn("过时", result)
+        self.assertEqual(result, draft.append_wechat_related_navigation(result, links))
+        for url in ["https://example.com", "https://mp.weixin.qq.com/sneaky", "https://mp.weixin.qq.com/s/real?preview=1", "https://mp.weixin.qq.com/s/real?%70review=1", "https://mp.weixin.qq.com/s/real?is%5Ftemp%5Furl=1", "https://mp.weixin.qq.com/s/real?preview"]:
+            with self.subTest(url=url):
+                self.assertNotIn("## 延伸阅读", draft.append_wechat_related_navigation("正文", [{"title":"bad", "url":url}]))
+
+    def test_related_navigation_preserves_fenced_heading_examples(self):
+        draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_related_fence")
+        for fence in ["```", "~~~~"]:
+            source = f"正文\n\n{fence}markdown\n## 延伸阅读\n例子\n{fence}\n\n保留结尾\n"
+            self.assertEqual(draft.append_wechat_related_navigation(source, []), source)
+
+    def test_related_navigation_stops_at_h1_and_handles_empty_eof(self):
+        draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_related_eof")
+        self.assertEqual(draft.append_wechat_related_navigation("正文\n\n## 延伸阅读", []), "正文\n")
+        source = "正文\n\n## 延伸阅读\nold\n\n# 附录\nkeep\n"
+        result = draft.append_wechat_related_navigation(source, [])
+        self.assertIn("# 附录\nkeep", result)
+        self.assertNotIn("old", result)
 
     def test_cover_preview_renders_candidate_labels_and_small_thumbnail(self) -> None:
         preview = load_script(

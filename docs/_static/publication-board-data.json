@@ -3027,7 +3027,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "draft_created",
+        "status": "awaiting_review",
         "checks": [
           {
             "key": "source_identity",
@@ -3067,7 +3067,6 @@
           }
         ],
         "gaps": [
-          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -3084,6 +3083,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-JCP.language.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-JCP.review.md"
           }
         ],

@@ -84,18 +84,39 @@ function centerDisplaySvg(rendered, formula) {
   });
 }
 
+// WeChat's SVG guidance recommends currentColor. Pair presentation
+// attributes with inline paint styles, and use standard HTML containers.
+// Reference: doocs/md packages/core/src/extensions/katex.ts (2026-10-11).
+// This must still be checked in the actual phone reader after API delivery.
+function withInheritedPaint(rendered) {
+  const viewBox = rendered.match(/<svg\b[^>]*\bviewBox="([^"]+)"/);
+  const values = viewBox ? viewBox[1].trim().split(/\s+/).map(Number) : [];
+  if (values.length !== 4 || !values.every(Number.isFinite) || values[2] <= 0 || values[3] <= 0) {
+    throw new Error("Formula SVG requires a finite positive viewBox");
+  }
+  return rendered.replace(/<g\b([^>]*)>/, (_match, attrs) => {
+    const painted = addOrAppendStyle(attrs, "fill:currentColor;stroke:currentColor;");
+    return `<g${painted}>`;
+  });
+}
+
 function withFormulaMetadata(rendered, formula) {
+  if (/data-mjx-error=|data-mml-node="merror"/.test(rendered)) {
+    throw new Error("MathJax could not render this formula");
+  }
   const tex = String(formula.tex ?? "");
   const formulaType = formula.display ? "block-equation" : "inline-equation";
   const metadata = ` data-formula="${escapeAttribute(tex)}" data-formula-type="${formulaType}"`;
   const containerStyle = formula.display
     ? "display:block;text-align:center;margin:0 auto;max-width:100%;overflow-x:auto;"
     : "display:inline-block;vertical-align:middle;";
+  const containerTag = formula.display ? "section" : "span";
   const withContainer = rendered.replace(/<mjx-container\b([^>]*)>/, (_match, attrs) => {
     const styledAttrs = addOrAppendStyle(attrs, containerStyle);
-    return `<mjx-container${metadata}${styledAttrs}>`;
+    return `<${containerTag}${metadata}${styledAttrs}>`;
   });
-  return centerDisplaySvg(withContainer, formula);
+  const standardContainer = withContainer.replace(/<\/mjx-container>/g, `</${containerTag}>`);
+  return withInheritedPaint(centerDisplaySvg(standardContainer, formula));
 }
 
 function main() {
@@ -104,7 +125,9 @@ function main() {
   const mj = loadMathJax();
   const adaptor = mj.liteAdaptor();
   mj.RegisterHTMLHandler(adaptor);
-  const tex = new mj.TeX({ packages: mj.AllPackages });
+  // Do not silently turn unsupported TeX into red literal text.
+  const packages = mj.AllPackages.filter((name) => !["noerrors", "noundefined"].includes(name));
+  const tex = new mj.TeX({ packages });
   const svg = new mj.SVG({ fontCache: "none" });
   const html = mj.mathjax.document("", { InputJax: tex, OutputJax: svg });
   const items = formulas.map((formula, index) => {
@@ -115,9 +138,12 @@ function main() {
   process.stdout.write(JSON.stringify({ ok: true, items }));
 }
 
-try {
-  main();
-} catch (error) {
-  process.stdout.write(JSON.stringify({ ok: false, error: error.message }));
-  process.exit(1);
+if (require.main === module) {
+  try {
+    main();
+  } catch (error) {
+    process.stdout.write(JSON.stringify({ ok: false, error: error.message }));
+    process.exit(1);
+  }
 }
+module.exports = { withFormulaMetadata };

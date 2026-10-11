@@ -370,7 +370,7 @@ def _board_file(root: Path, value: Any, prefix: str, suffix: str) -> str | None:
     return None
 
 
-def _board_published_url(value: Any) -> str | None:
+def public_wechat_article_url(value: Any) -> str | None:
     """Keep public WeChat permalink data, dropping tracking and unknown fields."""
     if not isinstance(value, str) or re.search(r'[\s\\\x00-\x1f\x7f]', value):
         return None
@@ -379,6 +379,8 @@ def _board_published_url(value: Any) -> str | None:
     except ValueError:
         return None
     if url.scheme != 'https' or url.netloc != 'mp.weixin.qq.com':
+        return None
+    if {key.lower() for key in parse_qs(url.query, keep_blank_values=True)} & {'preview', 'tempkey', 'is_temp_url'}:
         return None
     if re.fullmatch(r'/s/[A-Za-z0-9_-]{1,128}', url.path):
         return f'https://mp.weixin.qq.com{url.path}'
@@ -464,7 +466,7 @@ def _board_track(root: Path, record: dict[str, Any], channel: str) -> dict[str, 
         path = _board_file(root, workflow.get('path'), 'wechat/articles/draft-public-safe/', '.md')
         if path:
             links.append({'label': '公众号草稿源文件', 'url': BOARD_REPOSITORY + quote(path, safe='/')})
-        published = _board_published_url(workflow.get('latest_published_url'))
+        published = public_wechat_article_url(workflow.get('latest_published_url'))
         if published:
             links.append({'label': '公众号已发布原文', 'url': published})
     review_paths = []

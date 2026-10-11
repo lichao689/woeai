@@ -52,11 +52,7 @@
   manuscript, or another approved source; the article contains no `**英文摘要**`
   block.
 - [ ] Related direction page exists.
-- [ ] The `三句话导读` states the paper's object/problem, importance, and reader
-  takeaway without repeating the abstract or key-findings wording.
-- [ ] The `关键数字 / 关键结论卡` uses high-value numbers with evidence when
-  available; if there are no high-value numbers, it uses only key conclusions
-  rather than forcing low-value numeric detail.
+- [ ] 已执行自然写作审校；可选导读或数字卡有独立用途，不与正文重复。
 
 ## Engineering Story And Series Consistency
 
@@ -77,15 +73,10 @@
 
 - [ ] The opening strategy differs from adjacent articles (现实矛盾式 /
   反常识式 / 具体数字式 / 场景式).
-- [ ] A quantified hook appears in the first one or two paragraphs when the
-  paper provides citable numbers; otherwise the review note records
-  `待确认可公开的量化数字`.
-- [ ] Narration is unified on `我们` for research actions and decisions.
-- [ ] `研究问题` is a numbered question list and each `关键发现` subsection
-  opens by answering back to a numbered question.
-- [ ] Each `关键发现` subsection bolds exactly one conclusion sentence.
-- [ ] The fixed closing sentence appears as its own paragraph immediately
-  before `延伸阅读`.
+- [ ] 数字放在有解释价值的位置；开头不强制数字钩子。
+- [ ] 作者语气自然；不编造经历、情绪、动机，不强制每段“我们”。
+- [ ] 无强制问题编号回扣或加粗数量；关键限定、归因、否定和确定程度保留。
+- [ ] 结尾简短相关，无已发布公众号链接时完全省略延伸阅读。
 
 ## Copyright
 
@@ -104,12 +95,17 @@
 - [ ] The selected WeChat formula renderer is `mathjax-svg` unless this review
   note explicitly records a fallback reason.
 - [ ] The WeChat backend mobile preview preserves the
-  `<mjx-container jax="SVG">` / inline SVG formula output clearly.
+  standard `span` / `section` containers and inline SVG formula output clearly.
 - [ ] SVG formula containers preserve source metadata such as `data-formula`
   and `data-formula-type` where practical.
 - [ ] Formulas are not rendered as raster images unless final WeChat preview proves an image fallback is needed.
 - [ ] Important formulas have plain-language explanations.
-- [ ] Formula display has been checked in the final WeChat backend mobile preview.
+- [ ] SVG 根组 currentColor 属性及内联 fill/stroke 保留，无强制黑白字或人为白底；分式横线与显式内部颜色保留。
+- [ ] API 清洗外层 inherit/transparent 时记录清洗结果，并以实际手机预览验证效果，不单凭样式缺失判失败。
+- [ ] 实际微信手机浅色模式公式预览通过（记录设备/版本/时间）。
+- [ ] 实际微信手机深色模式公式预览通过（记录设备/版本/时间）。
+- [ ] 离线模拟、API 回查没有被当作上述两项通过的证据。
+- [ ] 延伸阅读真实链接在实际预览中可点击；无可用链接时整节省略。
 - [ ] Each figure has a Chinese figure-title line in the `论文图 N` format
   translated from the original paper title, with identical alt text, followed
   by a separate Chinese explanatory line.
@@ -120,22 +116,11 @@
   smaller italic Chinese figure-title line, then separate explanatory line.
 - [ ] Figure clarity has been checked in the final WeChat backend mobile preview.
 
-## RTD Companion Page
+## Independent RTD Page
 
-- [ ] The reader-facing Markdown article is treated as the public content master before generating RTD and WeChat outputs.
-- [ ] The RTD companion page is generated with `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref>`, not by maintaining a separate Markdown route in Sphinx.
-- [ ] `python3 wechat/tools/markdown_to_rtd.py --publication-ref <publication_ref> --check` passes.
-- [ ] The RTD companion page preserves the same body text, images, and DOI link as the WeChat article, with the documented channel adaptations only.
-- [ ] The RTD page title has no WeChat title-category prefix.
-- [ ] The RTD page carries no WeChat closing block.
-- [ ] The RTD `完整引用` section contains the full citation truncated at the
-  DOI and a `:ref:` link to the Publications entry.
-- [ ] The RTD related-paper navigation uses internal paper-note links only and
-  points only to existing RTD companion pages.
-- [ ] The approved cover image appears near the top of the RTD page below the
-  title and is recorded in the review note.
-- [ ] The RTD companion page is listed under `学术进展 Academic Progress` on the relevant research-direction page.
-- [ ] The entry is grouped by second-level research subdirection and sorted by publication date descending until a more specific sorting rule exists.
+- [ ] RTD 按全文精解指南从获授权原文独立维护，不由公众号改稿覆盖。
+- [ ] 公众号语气修订未改 RTD 正文、附录、原图或其核验状态。
+- [ ] 底部阅读原文指向正确的独立精解页，RTD 相关导航仍为站内链接。
 
 ## Public Safety
 

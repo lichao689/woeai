@@ -2988,14 +2988,14 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2024-JCP.md",
         "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-11T13:36:01+00:00",
-            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "recorded_at": "2026-10-11T17:15:42+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.language.review.md",
             "checks": {
               "source_identity": true,
               "public_safety": true,
@@ -3004,8 +3004,8 @@
               "figure_preview": false,
               "cover_preview": false
             },
-            "scope": "User-selected generated v2 cover; unchanged article.29 MathJax SVG fragments,5 embedded images,0 rendering errors. Offline checks only; no current live upload or backend mobile preview.",
-            "fingerprint": "1dca8a034d4c51a2e13854fa07c0cf32f598e6aa8a78e93959c81b307c87b55c"
+            "scope": "Source-audited facts retained; same draft updated and read back. User confirmed dark-mode formula colors; light-mode, figures and cover remain separately unconfirmed. Workflow/review documentation updated afterward; article and renderer unchanged.",
+            "fingerprint": "179ecc498f2d97e033074188777881cb20410fd19775bb0510bc3ad9d248fdf6"
           },
           "previous_awaiting_review_before_cover_v2": {
             "recorded_at": "2026-10-07",
@@ -3022,9 +3022,39 @@
             "fingerprint": "1c7958043e4ba5dad918811fd8460d849fc53907938508611d4ba90cc0d2793d"
           },
           "draft_created": {
+            "fingerprint": "71c236802323370245039ad7be39dd937f02596d79f33b8782fd0722be2ec2a8",
+            "recorded_at": "2026-10-11T15:23:33+00:00",
+            "operation": "update"
+          },
+          "previous_awaiting_review_before_natural_edit": {
+            "recorded_at": "2026-10-11T13:36:01+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "User-selected generated v2 cover; unchanged article.29 MathJax SVG fragments,5 embedded images,0 rendering errors. Offline checks only; no current live upload or backend mobile preview.",
+            "fingerprint": "1dca8a034d4c51a2e13854fa07c0cf32f598e6aa8a78e93959c81b307c87b55c"
+          },
+          "previous_draft_update_before_natural_edit": {
             "fingerprint": "1dca8a034d4c51a2e13854fa07c0cf32f598e6aa8a78e93959c81b307c87b55c",
             "recorded_at": "2026-10-11T13:58:11+00:00",
             "operation": "update"
+          },
+          "phone_dark_formula_confirmation": {
+            "recorded_at": "2026-10-11T17:15:42+00:00",
+            "source": "User explicitly confirmed normal formula colors in dark-mode preview.",
+            "candidate_commit": "960ce68f3dc9777cfc9305162f55e5bcdb71fe2c",
+            "checks": {
+              "dark_mode_formula_preview": true,
+              "light_mode_formula_preview": false
+            },
+            "device_and_wechat_version": "not supplied",
+            "scope": "Dark-mode formula colors only; not full article/figure/cover acceptance or publication."
           }
         },
         "latest_published_url": "",
@@ -3046,7 +3076,7 @@
           "wechat_draft_created_at": "2026-06-10T20:04:58+08:00"
         },
         "draft_created_at": "2026-06-10T20:04:58+08:00",
-        "draft_updated_at": "2026-10-11T13:58:11+00:00",
+        "draft_updated_at": "2026-10-11T15:23:33+00:00",
         "historical_draft_evidence": {
           "source": "wechat/backlog/selected-papers.yml (pre-migration)",
           "status": "ready_to_publish",
@@ -3062,21 +3092,28 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "2026-10-11: candidate ccd56d9a7278f832b4ad203001196cca588d3ae9 updated the same existing draft at 13:58:11 UTC; official API readback passed at 14:02:24 UTC for title, v2 cover, five body images, original link, body text and 29 formulas. Mobile preview unperformed; not published or mass-sent. Historical timestamp conflicts retained.",
+        "revision_note": "2026-10-11: same original draft updated15:23UTC. User confirmed dark-mode formula colors17:15UTC despite outer-style sanitization. Light-mode, figures, cover, links and publication remain unconfirmed; workflow records the validated method.",
         "confirmed_draft_update": {
-          "event_at": "2026-10-11T13:58:11+00:00",
-          "readback_at": "2026-10-11T14:02:24+00:00",
-          "source": "Authorized official API existing-draft update and readback, reported by local delivery executor.",
-          "candidate_commit": "ccd56d9a7278f832b4ad203001196cca588d3ae9",
+          "event_at": "2026-10-11T15:23:33+00:00",
+          "readback_at": "2026-10-11T15:23:38+00:00",
+          "diagnostic_at": "2026-10-11T15:24:42+00:00",
+          "source": "Authorized official API same-draft update and readback, reported by local delivery executor.",
+          "candidate_commit": "960ce68f3dc9777cfc9305162f55e5bcdb71fe2c",
           "theme": "academic-clean",
           "math_renderer": "mathjax-svg",
           "body_image_count": 5,
-          "formula_count": 29,
+          "formula_count": 23,
           "cover_included": true,
           "current_revision_uploaded": true,
           "backend_preview_confirmed": false,
           "operation": "update",
-          "readback_verified": true
+          "readback_verified": false,
+          "content_readback_verified": true,
+          "svg_inherited_paint_preserved": true,
+          "standard_formula_containers_preserved": true,
+          "block_outer_inherit_transparent_styles_preserved": false,
+          "forced_ancestor_color_or_background_found": false,
+          "limitation": "At15:24UTC readback, phone appearance remained unverified after outer-style sanitization. Subsequent user dark-mode-only confirmation is recorded separately; other preview checks remain pending."
         },
         "previous_confirmed_draft_update": {
           "event_at": "2026-10-06T17:51:36+00:00",
@@ -3090,6 +3127,21 @@
           "current_revision_uploaded": false,
           "backend_preview_confirmed": false,
           "review_path": "wechat/articles/review/ref-chen2024-JCP.offline.review.md"
+        },
+        "previous_confirmed_draft_update_before_natural_edit": {
+          "event_at": "2026-10-11T13:58:11+00:00",
+          "readback_at": "2026-10-11T14:02:24+00:00",
+          "source": "Authorized official API existing-draft update and readback, reported by local delivery executor.",
+          "candidate_commit": "ccd56d9a7278f832b4ad203001196cca588d3ae9",
+          "theme": "academic-clean",
+          "math_renderer": "mathjax-svg",
+          "body_image_count": 5,
+          "formula_count": 29,
+          "cover_included": true,
+          "current_revision_uploaded": false,
+          "backend_preview_confirmed": false,
+          "operation": "update",
+          "readback_verified": true
         }
       },
       "source_audit": {

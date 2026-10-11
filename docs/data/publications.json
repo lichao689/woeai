@@ -2962,6 +2962,17 @@
             "fingerprint": "ddf229dd8759e9e2351281167fb198f9f18d0afac580690abfce8da7db03ad63"
           },
           "verified": {
+            "recorded_at": "2026-10-11T13:36:01+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Cover-only update: user-selected generated v2. Original full-paper text, appendices, equations, tables, scientific figures and references unchanged; carry forward the 2026-10-06 full-coverage audit. Live old-version HTML and all36 image bytes verified on2026-10-11; new cover deployment pending.",
+            "fingerprint": "d2d037199b913afbdca4fd8c5146113964ef3b7e7d4e573b78b362a7358e2797"
+          },
+          "previous_verified_before_cover_v2": {
             "recorded_at": "2026-10-06T09:01:19+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
             "checks": {
@@ -2983,6 +2994,20 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
+            "recorded_at": "2026-10-11T13:36:01+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "checks": {
+              "source_identity": true,
+              "public_safety": true,
+              "facts": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "User-selected generated v2 cover; unchanged article.29 MathJax SVG fragments,5 embedded images,0 rendering errors. Offline checks only; no current live upload or backend mobile preview.",
+            "fingerprint": "1dca8a034d4c51a2e13854fa07c0cf32f598e6aa8a78e93959c81b307c87b55c"
+          },
+          "previous_awaiting_review_before_cover_v2": {
             "recorded_at": "2026-10-07",
             "review_path": "wechat/articles/review/ref-chen2024-JCP.offline.review.md",
             "checks": {
@@ -3032,7 +3057,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "2026-10-07: user confirmed the previous version was updated in the existing draft on 2026-10-06; this offline revision has not been uploaded or mobile-previewed. June timestamp conflicts remain unresolved; no publication confirmed.",
+        "revision_note": "2026-10-11: selected cover v2 and unchanged latest article pass offline rendering; current live draft update and backend preview unconfirmed. Historical timestamp conflicts retained.",
         "confirmed_draft_update": {
           "event_at": "2026-10-06T17:51:36+00:00",
           "reported_at": "2026-10-06T17:52:00+00:00",

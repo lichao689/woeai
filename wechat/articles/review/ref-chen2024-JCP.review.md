@@ -14,8 +14,8 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v1.png
-rtd_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v1.png
+wechat_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png
+rtd_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png
 ---
 
 # ref-chen2024-JCP 原文核验记录
@@ -24,7 +24,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-chen2024-JCP.md`
 - RTD正文: `docs/source/paper-notes/ref-chen2024-JCP.rst`
-- 封面素材: `wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v1.png`
+- 封面素材: `wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png`
 - 论文图 7 CMRFG 方法流程图: `wechat/assets/public-safe/ref-chen2024-JCP/fig-07-cmrfg-workflow.png`
 - 论文图 4 SW1 至 SW4 工况流场统计脉动: `wechat/assets/public-safe/ref-chen2024-JCP/fig-04-statistical-flow-fluctuations.png`
 - 论文图 17 不同空间间距下的 Y 方向空间相干函数对比: `wechat/assets/public-safe/ref-chen2024-JCP/fig-17-spatial-coherence-validation.png`
@@ -34,7 +34,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383
 ## 当前核验结果
 
 - 公众号: awaiting_review；当前稿件尚未完成后台手机预览
-- RTD全文覆盖: 未完成，缺项详见下文
+- RTD全文覆盖: 已完成主文及附录 A/B；前期缺项记录保留于下文，已被后续复核结论替代
 - 事实检查: 已核对所用事实；原文内部差异保留出处
 
 ## 源文件获取记录
@@ -133,3 +133,14 @@ rtd_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383
 - 公共安全检查、清单与生成物校验、168 项 Python 测试、7 项前端测试通过。17 篇实际 Sphinx HTML 的行内角色、引用和完整 mailto 链接回归通过；全部 4,998 个数学片段经 MathJax SVG 渲染无错误，其中本篇 892 个。
 - 本地标准站点构建到 sitemap 扩展时受环境 socket 权限限制；保留原配置，另以仅移除 sitemap 的诊断构建确认 HTML 无警告成功。诊断构建不充当标准门禁通过；发布验收仍需最终提交对应的完整 CI 与 RTD 构建成功。
 - 公众号保持 awaiting_review；本次附录工作未上传后台，未做手机公式/图片/封面预览，不继承旧版发布准备状态。
+
+
+## 2026-10-11 线上核验与封面定稿
+
+- 线上既有 JCP 全文含附录 A/B、892 个数学片段，35 幅正文图和旧封面与原仓库字节一致。本次核验部署，不重复宣称完成新的逐句全文审校。
+- 用户选择“数值风洞 | 入流相干与守恒 / 让压力计算更可信”，并采用候选 B（方法机制）；允许等比缩放与必要的微量边缘裁切。
+- 新封面由内置图像生成工具生成，原图 1920×819，导出 900×383、421420 bytes；没有后叠文字、重绘原论文结果或改变正文原图。Journal of Computational Physics · 2024 来自既有书目。
+- 本地已查看全图、360×153 宽图和 120×120 中心裁切：主文字正确，入口平面在方形缩略图中仍可辨认。最终版为用户选定构图；不将生成图的字形、元素位置视为经过像素级字体/网格测量，也不把这些检查当作后台裁切验收。
+- RTD 本轮只替换顶部封面引用，正文、附录、公式、表格、35 幅科学图像及参考文献与已核验版本相同；承接 2026-10-06 全文覆盖证据，不凭新封面改写论文结论。
+- 公众号主文未改，真实离线渲染通过：29 个 MathJax SVG 片段、5 幅正文图、0 数学错误。preflight/dry-run 不读取凭据、不联系微信、不更新草稿。
+- 公众号仍 awaiting_review；本轮新封面及最新正文尚未确认后台上传，手机公式/图片/封面实际预览及人工发布未完成。

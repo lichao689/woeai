@@ -41,3 +41,23 @@
 - migration_status: specification-updated; existing-image-not-regenerated
 - design_contract_checked: pending; 尺寸一致不证明旧图符合新布局、字级或科学对象裁切
 - backend_preview_status: unchanged; 此次简报维护没有新增后台手机预览
+
+## 2026-10-11 本轮文字确认
+
+- cover_text_confirmation: user-confirmed
+- confirmed_cover_text: 数值风洞 | 入流相干与守恒 / 让压力计算更可信
+- confirmed_text_mode: image-gen-text
+- cover_execution_mode: image-gen
+- publication_metadata_line: Journal of Computational Physics · 2024
+- confirmation_note: 用户在本轮对话选择方案 1。
+- 本轮候选：均匀湍流入口与下游流场；波数约束方法；压力敏感数值风洞验收。三版沿用同一系列网格和蓝色令牌，不绘制建筑群以冒充已验证对象。
+- 本轮尚未选择最终候选，后台预览状态仍为未完成。
+
+### 本轮定稿与裁切检查
+
+- selected candidate: B / 方法机制
+- final cover path: `wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png`
+- 原候选尺寸 1920×819；用户允许等比缩放及微量边缘裁切，正式输出 900×383；不改写文字、不修改科学图形。
+- 三候选均已保存供审阅，A/C 不作为网页或草稿正式封面。旧 v1 文件保留溯源。
+- 已查看正式全图、360×153 宽图、120×120 中心方图；主标题清晰、入口平面在中心方图中保留。最终为用户确认构图，不宣称生成图严格满足所有像素网格或字体公差。
+- backend_preview_status: pending；本轮尚无后台上传或手机预览证据。

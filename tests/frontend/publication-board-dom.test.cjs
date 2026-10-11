@@ -54,8 +54,8 @@ function boot(response) {
   const ids = Object.fromEntries(['publication-board', 'board-filters', 'board-results',
     'board-summary', 'board-notice', 'board-reset'].map(id => [id, new Element('div')]));
   const form = ids['board-filters'];
-  form.elements = Object.fromEntries(['query', 'year', 'direction', 'status', 'unfinished']
-    .map(name => [name, new Element(['year', 'direction', 'status'].includes(name) ? 'select' : 'input')]));
+  form.elements = Object.fromEntries(['query', 'year', 'direction', 'status', 'production', 'unfinished']
+    .map(name => [name, new Element(['year', 'direction', 'status', 'production'].includes(name) ? 'select' : 'input')]));
   form.reset = () => Object.values(form.elements).forEach(control => {
     control.value = ''; control.checked = false;
   });
@@ -103,14 +103,14 @@ test('DOM: semantic table shows one row per paper and both channels; details spa
   const table = ui.ids['board-results'].querySelector('table');
   assert(table);
   const headers = table.querySelector('thead').children[0].children;
-  assert.deepEqual(headers.map(node => node.textContent), ['题目', '年份', '研究方向', 'RTD 状态', '公众号状态', '详情']);
+  assert.deepEqual(headers.map(node => node.textContent), ['题目', '年份', '研究方向', 'RTD 状态', '公众号状态', '内容制作', '详情']);
   assert(headers.every(node => node.tag === 'th' && node.attributes.scope === 'col'));
   assert.equal(rows(ui).length, ui.data.papers.length);
   const years = rows(ui).map(row => Number(row.children[1].textContent));
   assert.deepEqual(years, [...years].sort((a, b) => b - a));
   assert.equal(new Set(walk(table).filter(node => node.id).map(node => node.id)).size, ui.data.papers.length);
   for (const row of rows(ui)) {
-    assert.equal(row.children.length, 6);
+    assert.equal(row.children.length, 7);
     assert.equal(row.children[0].tag, 'th');
     assert.equal(row.children[0].attributes.scope, 'row');
     const paper = ui.data.papers.find(paper => paper.title === row.children[0].textContent);
@@ -120,7 +120,7 @@ test('DOM: semantic table shows one row per paper and both channels; details spa
     const toggle = row.querySelector('button');
     const detail = row.parent.children[row.parent.children.indexOf(row) + 1];
     assert.equal(detail.className, 'board-detail-row');
-    assert.equal(detail.children[0].attributes.colspan, '6');
+    assert.equal(detail.children[0].attributes.colspan, '7');
     assert.equal(toggle.attributes['aria-controls'], detail.id);
     assert.equal(detail.hidden, true);
     assert.equal(toggle.attributes['aria-expanded'], 'false');
@@ -184,7 +184,7 @@ test('DOM: all papers remain searchable; empty results, reset and repeated track
   for (const field of Object.values(fields)) { assert.equal(field.value, ''); assert.equal(field.checked, false); }
   assert.equal(rows(ui).length, ui.data.papers.length);
   assert.deepEqual(ui.ids['board-results'].querySelector('thead').children[0].children.map(node => node.textContent),
-    ['题目', '年份', '研究方向', 'RTD 状态', '公众号状态', '详情']);
+    ['题目', '年份', '研究方向', 'RTD 状态', '公众号状态', '内容制作', '详情']);
   let prevented = false;
   ui.form.emit('submit', {preventDefault() { prevented = true; }});
   assert(prevented);

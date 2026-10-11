@@ -26,7 +26,7 @@ class RegistryTests(unittest.TestCase):
         rows = load_registry(ROOT)
         self.assertEqual(len(rows), 75)
         self.assertEqual(len({r['id'] for r in rows}), 75)
-        self.assertEqual(sum(r['custom']['wechat']['selected'] for r in rows), 17)
+        self.assertEqual(sum(r['custom']['wechat']['selected'] for r in rows), sum(r['custom']['content_production'] == 'included' for r in rows))
         self.assertEqual(validate_registry(rows, ROOT), [])
         for row in rows:
             with self.subTest(publication=row['id']):

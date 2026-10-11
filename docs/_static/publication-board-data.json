@@ -6,6 +6,7 @@
       "title": "A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment",
       "year": 2026,
       "doi": "10.1016/j.buildenv.2026.114811",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -131,6 +132,7 @@
       "title": "Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks",
       "year": 2026,
       "doi": "10.1016/j.oceaneng.2026.124728",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -256,6 +258,7 @@
       "title": "A fast prediction framework for urban microscale wind environment based on precomputed CFD database",
       "year": 2026,
       "doi": "10.1007/s12273-025-1379-7",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -381,6 +384,7 @@
       "title": "Simulation of non-stationary winds in typhoon field based on turbulent coherent structure and AR-GARCH model",
       "year": 2026,
       "doi": "10.1016/j.jweia.2025.106302",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -491,6 +495,7 @@
       "title": "Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete",
       "year": 2026,
       "doi": "10.1016/j.oceaneng.2025.123951",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式混凝土平台结构设计",
       "source": {
@@ -615,6 +620,7 @@
       "title": "A novel framework for temporal super-resolution of wind in urban energy applications",
       "year": 2026,
       "doi": "10.1016/j.renene.2025.124336",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -739,6 +745,7 @@
       "title": "On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom",
       "year": 2025,
       "doi": "10.1016/j.cscm.2025.e05031",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "数值风浪流水池",
       "source": {
@@ -849,6 +856,7 @@
       "title": "Numerical investigation of nonlinear sloshing features and vibration mitigation efficiency of the implanted pole tuned liquid damper",
       "year": 2025,
       "doi": "10.1063/5.0293483",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -974,6 +982,7 @@
       "title": "Statistical extremes of 2D vectorial response for wind-excited tall buildings",
       "year": 2025,
       "doi": "10.1016/j.jobe.2025.113635",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -1098,6 +1107,7 @@
       "title": "Evaluation of urban wind effects on flight path planning of delivery drones using computational fluid dynamics simulations",
       "year": 2025,
       "doi": "10.1063/5.0281373",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -1208,6 +1218,7 @@
       "title": "Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine",
       "year": 2025,
       "doi": "10.1016/j.oceaneng.2025.121336",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式混凝土平台结构设计",
       "source": {
@@ -1333,6 +1344,7 @@
       "title": "中心与偏心布置半潜风机动力特性的模型试验",
       "year": 2025,
       "doi": "10.16511/j.cnki.qhdxxb.2025.27.037",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "数值风浪流水池",
       "source": {
@@ -1435,7 +1447,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -1443,6 +1455,7 @@
       "title": "Training and application of graph neural networks for predicting structural responses targeted at tall building structures",
       "year": 2025,
       "doi": "10.1016/j.jobe.2025.112131",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -1567,6 +1580,7 @@
       "title": "A synthetic approach for high-fidelity aerodynamic performance optimization of large-scale wind turbine blades based on hybrid deep learning networks",
       "year": 2025,
       "doi": "10.1063/5.0264659",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -1677,6 +1691,7 @@
       "title": "Deep reinforcement learning-based active flow control for a tall building",
       "year": 2025,
       "doi": "10.1063/5.0267175",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -1787,6 +1802,7 @@
       "title": "A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations",
       "year": 2025,
       "doi": "10.1016/j.scs.2025.106237",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -1911,6 +1927,7 @@
       "title": "Fatigue analysis of monopile-supported offshore wind turbine under varied supported conditions",
       "year": 2025,
       "doi": "10.1016/j.oceaneng.2024.120279",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -2021,6 +2038,7 @@
       "title": "Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment",
       "year": 2024,
       "doi": "10.1063/5.0240163",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -2145,6 +2163,7 @@
       "title": "Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework",
       "year": 2024,
       "doi": "10.1063/5.0237112",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -2247,7 +2266,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -2255,6 +2274,7 @@
       "title": "Engineering method for quantifying the coupling effect of transmission tower-line system under strong winds",
       "year": 2024,
       "doi": "10.1016/j.jweia.2024.105954",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -2365,6 +2385,7 @@
       "title": "A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES",
       "year": 2024,
       "doi": "10.1016/j.engstruct.2024.118742",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -2490,6 +2511,7 @@
       "title": "Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper",
       "year": 2024,
       "doi": "10.1016/j.jobe.2024.110660",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -2592,7 +2614,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -2600,6 +2622,7 @@
       "title": "Identification of no-fly zones for delivery drone path planning in various urban wind environments",
       "year": 2024,
       "doi": "10.1063/5.0221281",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -2710,6 +2733,7 @@
       "title": "Bilevel optimization of non-uniform offshore wind farm layout and cable routing for the refined LCOE using an enhanced PSO",
       "year": 2024,
       "doi": "10.1016/j.oceaneng.2024.117244",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -2820,6 +2844,7 @@
       "title": "A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra",
       "year": 2024,
       "doi": "10.1063/5.0194006",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -2944,6 +2969,7 @@
       "title": "A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation",
       "year": 2024,
       "doi": "10.1016/j.jcp.2023.112706",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -3073,6 +3099,7 @@
       "title": "Dynamic Failure Mode Analysis for a Transmission Tower-Line System Induced by Strong Winds",
       "year": 2024,
       "doi": "10.3390/en17184679",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -3183,6 +3210,7 @@
       "title": "Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization",
       "year": 2023,
       "doi": "10.1016/j.apenergy.2023.121941",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -3308,6 +3336,7 @@
       "title": "Multiscale simulation of the urban wind environment under typhoon weather conditions",
       "year": 2023,
       "doi": "10.1007/s12273-023-0991-7",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -3410,7 +3439,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -3418,6 +3447,7 @@
       "title": "Numerical study of flow characteristics of tornado-like vortices considering both swirl ratio and aspect ratio",
       "year": 2023,
       "doi": "10.1016/j.jweia.2023.105468",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -3528,6 +3558,7 @@
       "title": "Efficient optimization design method of jacket structures for offshore wind turbines",
       "year": 2023,
       "doi": "10.1016/j.marstruc.2023.103372",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -3630,7 +3661,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -3638,6 +3669,7 @@
       "title": "Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra",
       "year": 2023,
       "doi": "10.1016/j.istruc.2022.12.073",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -3740,7 +3772,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -3748,6 +3780,7 @@
       "title": "Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method",
       "year": 2023,
       "doi": "10.1016/j.jweia.2023.105326",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -3850,7 +3883,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -3858,6 +3891,7 @@
       "title": "Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine",
       "year": 2023,
       "doi": "10.1063/5.0131279",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "数值风浪流水池",
       "source": {
@@ -3960,7 +3994,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -3968,6 +4002,7 @@
       "title": "Reconstruction of dynamic wind forces on a transmission steel lattice tower using aeroelastic wind tunnel test data",
       "year": 2023,
       "doi": "10.1016/j.engstruct.2022.115167",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -4070,7 +4105,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -4078,6 +4113,7 @@
       "title": "半潜式浮式风机长期动力响应的全局敏感性分析",
       "year": 2023,
       "doi": "10.13788/j.cnki.cbgc.2023.S1.12",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -4188,6 +4224,7 @@
       "title": "基于数值风洞试验的核电厂微地形风场分析与验证",
       "year": 2023,
       "doi": "",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -4286,7 +4323,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -4294,6 +4331,7 @@
       "title": "基于首次超越破坏的输电塔强风易损性分析",
       "year": 2023,
       "doi": "",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -4392,7 +4430,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -4400,6 +4438,7 @@
       "title": "浮式风机动力系统的线性耦合动力学分析",
       "year": 2023,
       "doi": "10.13788/j.cnki.cbgc.2023.S1.10",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -4510,6 +4549,7 @@
       "title": "Pedestrian level wind flow field of elevated tall buildings with dense tandem arrangement",
       "year": 2022,
       "doi": "10.1016/j.buildenv.2022.109745",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -4620,6 +4660,7 @@
       "title": "Operational modal analysis and continuous dynamic monitoring of high‐rise building based on wireless distributed synchronized data acquisition system",
       "year": 2022,
       "doi": "10.1002/stc.3063",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -4730,6 +4771,7 @@
       "title": "Consistency improved random flow generation method for large eddy simulation of atmospheric boundary layer",
       "year": 2022,
       "doi": "10.1016/j.jweia.2022.105147",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -4854,6 +4896,7 @@
       "title": "Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures",
       "year": 2022,
       "doi": "10.1080/17445302.2021.1937801",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式混凝土平台结构设计",
       "source": {
@@ -4979,6 +5022,7 @@
       "title": "DRLinFluids: An open-source Python platform of coupling deep reinforcement learning and OpenFOAM",
       "year": 2022,
       "doi": "10.1063/5.0103113",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -5089,6 +5133,7 @@
       "title": "Applicability of wake models to predictions of turbine-induced velocity deficit and wind farm power generation",
       "year": 2022,
       "doi": "10.3390/en15197431",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -5199,6 +5244,7 @@
       "title": "Long term effect of operating loads on large monopile-supported offshore wind turbines in sand",
       "year": 2022,
       "doi": "10.1016/j.oceaneng.2021.110404",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -5309,6 +5355,7 @@
       "title": "Wind load investigation of self-supported lattice transmission tower based on wind tunnel tests",
       "year": 2022,
       "doi": "10.1016/j.engstruct.2021.113575",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -5419,6 +5466,7 @@
       "title": "Machine learning-enabled estimation of crosswind load effect on tall buildings",
       "year": 2022,
       "doi": "10.1016/j.jweia.2021.104860",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -5529,6 +5577,7 @@
       "title": "Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses",
       "year": 2022,
       "doi": "10.3390/app12083729",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -5631,7 +5680,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -5639,6 +5688,7 @@
       "title": "Aerodynamic characteristics of a square cylinder with corner fins",
       "year": 2021,
       "doi": "10.1186/s43251-021-00042-x",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -5749,6 +5799,7 @@
       "title": "Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions",
       "year": 2021,
       "doi": "10.1007/s10652-021-09796-4",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -5851,7 +5902,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -5859,6 +5910,7 @@
       "title": "New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain",
       "year": 2021,
       "doi": "10.1016/j.atmosres.2021.105507",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -5961,7 +6013,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -5969,6 +6021,7 @@
       "title": "Machine learning-based prediction of crosswind vibrations of rectangular cylinders",
       "year": 2021,
       "doi": "10.1016/j.jweia.2021.104549",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -6079,6 +6132,7 @@
       "title": "Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics",
       "year": 2021,
       "doi": "10.1016/j.oceaneng.2021.108585",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -6181,7 +6235,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -6189,6 +6243,7 @@
       "title": "基于NWP/CFD嵌套的复杂地形风场模拟研究",
       "year": 2021,
       "doi": "",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -6287,7 +6342,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -6295,6 +6350,7 @@
       "title": "RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model",
       "year": 2020,
       "doi": "10.1016/j.jweia.2020.104281",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -6397,7 +6453,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -6405,6 +6461,7 @@
       "title": "Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines: A case study by using surrogate models",
       "year": 2020,
       "doi": "10.1016/j.renene.2020.04.014",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -6507,7 +6564,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -6515,6 +6572,7 @@
       "title": "Wind energy harvesting performance of tandem circular cylinders with triangular protrusions",
       "year": 2019,
       "doi": "10.1016/j.jfluidstructs.2019.102780",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -6625,6 +6683,7 @@
       "title": "High-solidity straight-bladed vertical axis wind turbine: Numerical simulation and validation",
       "year": 2019,
       "doi": "10.1016/j.jweia.2019.103960",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -6735,6 +6794,7 @@
       "title": "Observed sub-hectometer-scale low level jets in surface-layer velocity profiles of landfalling typhoons",
       "year": 2019,
       "doi": "10.1016/j.jweia.2019.04.016",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -6845,6 +6905,7 @@
       "title": "Structural Analysis of Large-Scale Vertical-Axis Wind Turbines, Part I: Wind Load Simulation",
       "year": 2019,
       "doi": "10.3390/en12132573",
+      "content_production": "excluded",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -6955,6 +7016,7 @@
       "title": "超高层建筑风荷载的数值模拟",
       "year": 2019,
       "doi": "",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -7061,6 +7123,7 @@
       "title": "Vortex induced vibration of an inclined finite-length square cylinder",
       "year": 2018,
       "doi": "10.1016/j.euromechflu.2017.12.004",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -7171,6 +7234,7 @@
       "title": "Optimization of blade pitch in H-rotor vertical axis wind turbines through computational fluid dynamics simulations",
       "year": 2018,
       "doi": "10.1016/j.apenergy.2017.12.035",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -7273,7 +7337,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -7281,6 +7345,7 @@
       "title": "复杂地形下基于计算流体动力学的风速比计算",
       "year": 2018,
       "doi": "",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -7379,7 +7444,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -7387,6 +7452,7 @@
       "title": "Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions",
       "year": 2017,
       "doi": "10.3390/en10122097",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "数值风浪流水池",
       "source": {
@@ -7489,7 +7555,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -7497,6 +7563,7 @@
       "title": "Effects of inflow conditions on mountainous/urban wind environment simulation",
       "year": 2017,
       "doi": "10.1007/s12273-017-0348-1",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -7599,7 +7666,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -7607,6 +7674,7 @@
       "title": "Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine",
       "year": 2017,
       "doi": "10.3390/app7060509",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -7709,7 +7777,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -7717,6 +7785,7 @@
       "title": "Slope stability analysis based on measured strains along soil nails using FBG sensing technology",
       "year": 2013,
       "doi": "",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -7823,6 +7892,7 @@
       "title": "2.5D large eddy simulation of vertical axis wind turbine in consideration of high angle of attack flow",
       "year": 2013,
       "doi": "10.1016/j.renene.2012.09.011",
+      "content_production": "included",
       "family": "海上漂浮风电",
       "subdirection": "浮式风机系统一体化分析与优化",
       "source": {
@@ -7925,7 +7995,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -7933,6 +8003,7 @@
       "title": "A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets",
       "year": 2012,
       "doi": "10.1016/j.jweia.2011.12.004",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -8035,7 +8106,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -8043,6 +8114,7 @@
       "title": "基于超越阈值概率的行人风环境数值评估",
       "year": 2012,
       "doi": "",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
@@ -8141,7 +8213,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -8149,6 +8221,7 @@
       "title": "Large eddy simulation of wind loads on a long-span spatial lattice roof",
       "year": 2010,
       "doi": "10.12989/was.2010.13.1.057",
+      "content_production": "included",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -8251,7 +8324,7 @@
         "issues": [],
         "links": [],
         "verification_current": null,
-        "selected": false
+        "selected": true
       }
     },
     {
@@ -8259,6 +8332,7 @@
       "title": "开口空间结构表面风压分布规律研究",
       "year": 2010,
       "doi": "",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "高层建筑抗风与优化",
       "source": {
@@ -8365,6 +8439,7 @@
       "title": "复杂地形风能评估的CFD方法",
       "year": 2009,
       "doi": "",
+      "content_production": "excluded",
       "family": "建筑结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {

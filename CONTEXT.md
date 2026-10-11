@@ -306,3 +306,11 @@ workflows without editing controls or backend calls. README and the generated
 progress checklist link to it; academic pages, sidebar, and global toctree do not.
 The browser reads an allowlisted generated projection, checked for freshness by
 the registry gate. Hiding a navigation link is not access control.
+
+**Content Production Decision**:
+`custom.content_production` decides whether to create both independent channel outputs.
+Public label: `内容制作`. Values: `pending` (待确认), `included` (制作),
+`excluded` (不制作). Authorship is only a suggestion aid, never selection authority.
+The decision is independent of verification and publication; exclusion preserves bibliography,
+existing outputs and audit history, and is not a completed task. The compatibility field
+`custom.wechat.selected` mirrors `included`. No single-channel options are supported.

@@ -6,8 +6,8 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.07-1053'
-version = '2026.10.07'
+release = '2026.10.11-2024'
+version = '2026.10.11'
 
 # -- SEO Meta Tags
 html_meta = {

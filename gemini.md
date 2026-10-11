@@ -133,6 +133,15 @@ draft. Public records have no confirmed article index; never infer zero.
 Live use requires a privately confirmed account binding and article index;
 offline `update` planning alone does not verify either or authorize a live call.
 
+## Content production selection
+
+`custom.content_production` is the editorial decision: `pending`, `included`,
+or `excluded`, displayed as 待确认、制作、不制作. Included always covers both
+RTD and WeChat. Never infer this decision from author order or correspondence.
+Preserve existing output and evidence on exclusion; do not delete it or count
+exclusion as completion. Keep `custom.wechat.selected` as an exact compatibility
+mirror of `included`. New records start pending until the owner decides.
+
 ## Independent channel outputs
 
 **WeChat is a reader-facing introduction.** Its source is

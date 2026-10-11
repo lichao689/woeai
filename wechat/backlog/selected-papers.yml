@@ -182,6 +182,21 @@ items:
     publication_history: []
     wechat_draft_created_at: "2026-06-10T12:12:50+08:00"
     wechat_draft_updated_at: "2026-06-11T11:24:55+08:00"
+  - publication_ref: ref-zheng2025-QHDXXB
+    zotero_key: "H4RZBAIG"
+    title: "中心与偏心布置半潜风机动力特性的模型试验"
+    research_family: "海上漂浮风电"
+    subdirection: "数值风浪流水池"
+    original_year: 2025
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
   - publication_ref: ref-zheng2025-OE
     zotero_key: "5W2SZJUT"
     title: "Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine"
@@ -257,3 +272,393 @@ items:
     publication_history: []
     wechat_draft_created_at: "2026-06-18T18:38:00+08:00"
     wechat_draft_updated_at: "2026-06-18T18:38:00+08:00"
+  - publication_ref: ref-tang2024-POF
+    zotero_key: "FVGTMSEA"
+    title: "Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2024
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-he2024-JBE
+    zotero_key: "YMKXLNSP"
+    title: "Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper"
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
+    original_year: 2024
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhao2023-BS
+    zotero_key: "FVQQHCGS"
+    title: "Multiscale simulation of the urban wind environment under typhoon weather conditions"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2023
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zheng2023-MS
+    zotero_key: "5GPZ54VV"
+    title: "Efficient optimization design method of jacket structures for offshore wind turbines"
+    research_family: "海上漂浮风电"
+    subdirection: "浮式风机系统一体化分析与优化"
+    original_year: 2023
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhang2023-S
+    zotero_key: "TYK2GQCU"
+    title: "Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra"
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
+    original_year: 2023
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-wang2023-JWEIA
+    zotero_key: "GKUAVJEK"
+    title: "Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2023
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zheng2023-JRSE
+    zotero_key: "TQ9RNRCC"
+    title: "Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine"
+    research_family: "海上漂浮风电"
+    subdirection: "数值风浪流水池"
+    original_year: 2023
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhang2023-ES
+    zotero_key: "QN2824VG"
+    title: "Reconstruction of dynamic wind forces on a transmission steel lattice tower using aeroelastic wind tunnel test data"
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
+    original_year: 2023
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-feng2023-HKXYGC
+    zotero_key: "FT67Z85H"
+    title: "基于数值风洞试验的核电厂微地形风场分析与验证"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2023
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhao2023-GYJZ
+    zotero_key: "R2C3HY74"
+    title: "基于首次超越破坏的输电塔强风易损性分析"
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
+    original_year: 2023
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-yang2022-AS
+    zotero_key: "WUGUPVR4"
+    title: "Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses"
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
+    original_year: 2022
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhao2021-EFM
+    zotero_key: "3VYYMGTH"
+    title: "Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2021
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhao2021-AR
+    zotero_key: "VEJ6LL7P"
+    title: "New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2021
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhou2021-OE
+    zotero_key: "H8SGIEYU"
+    title: "Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics"
+    research_family: "海上漂浮风电"
+    subdirection: "浮式风机系统一体化分析与优化"
+    original_year: 2021
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhao2021-TYNXB
+    zotero_key: "JGSIKX3F"
+    title: "基于NWP/CFD嵌套的复杂地形风场模拟研究"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2021
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-li2020-JWEIA
+    zotero_key: "3ZY69PVB"
+    title: "RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2020
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhou2020-RE
+    zotero_key: "74H4VLG2"
+    title: "Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines: A case study by using surrogate models"
+    research_family: "海上漂浮风电"
+    subdirection: "浮式风机系统一体化分析与优化"
+    original_year: 2020
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-li2018-AE
+    zotero_key: "YJN53AF9"
+    title: "Optimization of blade pitch in H-rotor vertical axis wind turbines through computational fluid dynamics simulations"
+    research_family: "海上漂浮风电"
+    subdirection: "浮式风机系统一体化分析与优化"
+    original_year: 2018
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-xiao2018-KXJSYGC
+    zotero_key: "YF5RIBAN"
+    title: "复杂地形下基于计算流体动力学的风速比计算"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2018
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-zhou2017-E
+    zotero_key: "DRCNU3JT"
+    title: "Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions"
+    research_family: "海上漂浮风电"
+    subdirection: "数值风浪流水池"
+    original_year: 2017
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-li2017-BS
+    zotero_key: "77THBZDM"
+    title: "Effects of inflow conditions on mountainous/urban wind environment simulation"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2017
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-li2017-AS
+    zotero_key: "NJ4KP6WJ"
+    title: "Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine"
+    research_family: "海上漂浮风电"
+    subdirection: "浮式风机系统一体化分析与优化"
+    original_year: 2017
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-li2013-RE
+    zotero_key: "U5FHR599"
+    title: "2.5D large eddy simulation of vertical axis wind turbine in consideration of high angle of attack flow"
+    research_family: "海上漂浮风电"
+    subdirection: "浮式风机系统一体化分析与优化"
+    original_year: 2013
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-li2012-JWEIA
+    zotero_key: "2ND9BWQV"
+    title: "A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2012
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-li2012-GCLX
+    zotero_key: "LASEFQSH"
+    title: "基于超越阈值概率的行人风环境数值评估"
+    research_family: "建筑结构抗风"
+    subdirection: "数值风洞与湍动入流"
+    original_year: 2012
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""
+  - publication_ref: ref-li2010-WAS
+    zotero_key: "9N6EYMBU"
+    title: "Large eddy simulation of wind loads on a long-span spatial lattice roof"
+    research_family: "建筑结构抗风"
+    subdirection: "高层建筑抗风与优化"
+    original_year: 2010
+    repost_priority: ""
+    wechat_status: "unregistered"
+    publication_mode: "first_publish"
+    previous_published_url: ""
+    latest_published_url: ""
+    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    publication_history: []
+    wechat_draft_created_at: ""
+    wechat_draft_updated_at: ""

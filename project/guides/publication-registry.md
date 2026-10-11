@@ -14,7 +14,7 @@ Zotero 继续是题名、作者、DOI 等书目信息的上游；更新器只合
 
 以下文件全部自动生成，不手工编辑：
 
-- `wechat/backlog/selected-papers.yml`：17 篇已选文章的兼容读取视图
+- `wechat/backlog/selected-papers.yml`：已纳入内容制作论文的兼容读取视图
 - `docs/data/publication-research-map.json`：全部论文的科研分类视图
 - [论文制作进度](../publication-progress.md)：全量可点击清单，含两个渠道的 issue 链接
 
@@ -126,8 +126,7 @@ Issue 放 DOI / Zotero key / publication_ref、正文和 review 路径、当前�
 先选择 RTD / 微信公众号，再按题名或 DOI、年份、研究方向、原始状态筛选。
 “仅看未完成”按当前渠道判断：RTD 须有效核验；公众号须已发布且核验有效。
 切换渠道保留关键词、年份、方向和未完成选项，清空原渠道状态；“重置筛选”
-清除所有筛选并保留当前渠道。展开论文可查看两个渠道、检查项、缺口及公开链接。每列先显示 4 篇，
-可点击“显示全部”展开；列计数和筛选始终覆盖全部论文。
+清除所有筛选并保留当前渠道。展开论文可查看两个渠道、检查项、缺口及公开链接。每行一篇论文，两个渠道状态与内容制作决策分列展示；筛选覆盖全部论文。
 未记录检查项不等于未通过；历史阶段检查不等于当前版本验收。
 
 看板没有编辑、拖动改状态、后台登录或微信接口。助手维护唯一清单，运行
@@ -145,3 +144,19 @@ Sphinx 构建只在看板页加载专用 CSS / JavaScript，并自动附加内�
 Public article reviews retain DOI, source-page evidence, source hashes, current accuracy and coverage results, and public body/asset links. Internal bibliography identifiers, historical backend timestamps and private preview locators belong in ignored private production records. Current review status must not inherit historical draft readiness.
 
 The existing registry and compatibility data still use bibliographic synchronization identities. Review minimization does not change the registry schema, upstream matching, or historical snapshots. A future private identity-map adapter keyed by stable publication_ref requires a separate explicit migration with matching/uniqueness tests; do not delete identifiers ad hoc or claim repository-wide identity removal.
+
+## 内容制作（2026-10-11）
+
+`custom.content_production` 是独立的制作决策，只有三种值：
+
+- `pending`：待确认，不自动安排制作。
+- `included`：制作，固定包含 RTD 全文精解与公众号导读两个渠道。
+- `excluded`：不制作，保留书目和历史产物，不计入“仅看未完成”。
+
+本次将已选 17 篇设为 `included`，其余 58 篇设为 `pending`。后续由维护者明确
+确认；一作/通讯只用于建议排序，不能自动决定，也不公开记录私人选择原因。
+不提供单渠道选项。制作决策不等于制作进度，不删除或改写渠道历史证据、已有网页或草稿。
+`custom.wechat.selected` 保留为兼容镜像，必须等于内容制作是否为 `included`；
+修改决策时同步镜像，生成器和草稿读取器只将纳入制作的记录放进制作队列。
+旧数据缺少该字段时允许读取历史 selected；本仓库 75 篇均显式登记，新条目应写 pending。
+Zotero 书目刷新保留该决策，不从作者顺序重算。看板增加独立列及筛选，不增加编辑功能。

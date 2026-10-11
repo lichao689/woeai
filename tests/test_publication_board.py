@@ -37,7 +37,7 @@ class PublicationBoardTests(unittest.TestCase):
         self.assertEqual(board['schema_version'], 1)
         papers = board['papers']; self.assertEqual(len(papers), 75)
         self.assertEqual(len({p['ref'] for p in papers}), 75)
-        self.assertEqual(sum(p['wechat']['selected'] for p in papers), 17)
+        self.assertEqual(sum(p['wechat']['selected'] for p in papers), sum(r['custom']['content_production'] == 'included' for r in rows))
         self.assertEqual(json.loads((ROOT / registry.BOARD_PATH).read_text()), board)
         by_ref = {p['ref']: p for p in papers}
         for row in rows:
@@ -158,7 +158,7 @@ class PublicationBoardTests(unittest.TestCase):
                 'checks': {'source_identity': True, marker: True},
             }, marker: {'checks': {'public_safety': True}}}
         paper = self.board()
-        self.assertEqual(set(paper), {'ref', 'title', 'year', 'doi', 'family', 'subdirection', 'source', 'links', 'rtd', 'wechat'})
+        self.assertEqual(set(paper), {'ref', 'title', 'year', 'doi', 'family', 'subdirection', 'source', 'links', 'rtd', 'wechat', 'content_production'})
         self.assertEqual(paper['source'], {'status': 'unregistered'})
         self.assertEqual(set(paper['rtd']), {'status', 'kind', 'checks', 'gaps', 'issues', 'links', 'verification_current'})
         self.assertEqual(set(paper['wechat']), {'status', 'selected', 'checks', 'gaps', 'issues', 'links', 'verification_current'})

@@ -52,6 +52,17 @@ BOARD_STAGES = {
 BOARD_SOURCE_STATES = {'unregistered', 'planned', 'acquired', 'awaiting_audit', 'verified', 'blocked'}
 
 
+CONTENT_PRODUCTION = {'pending': '待确认', 'included': '制作', 'excluded': '不制作'}
+
+
+def content_is_selected(record: dict[str, Any]) -> bool:
+    """Explicit dual-channel decision; legacy selection is read-only compatibility."""
+    custom = record['custom']
+    if 'content_production' not in custom:
+        return custom.get('wechat', {}).get('selected') is True
+    return custom['content_production'] == 'included'
+
+
 def load_registry(root: Path) -> list[dict[str, Any]]:
     records = json.loads((root / REGISTRY_PATH).read_text(encoding='utf-8'))
     if not isinstance(records, list):
@@ -208,6 +219,12 @@ def validate_registry(records: list[dict[str, Any]], root: Path, *, check_eviden
     for row in records:
         key=row.get('id'); custom=row.get('custom',{}); ref=custom.get('publication_ref','')
         prefix=str(key)
+        if 'content_production' in custom:
+            decision = custom['content_production']
+            if not isinstance(decision, str) or decision not in CONTENT_PRODUCTION:
+                problems.append(f'{prefix}: invalid content_production')
+            elif custom.get('wechat', {}).get('selected') is not (decision == 'included'):
+                problems.append(f'{prefix}: wechat.selected must mirror content_production')
         if not isinstance(key,str) or not key or key in ids: problems.append(f'{prefix}: duplicate/missing id')
         ids.add(key)
         if not re.fullmatch(r'ref-[A-Za-z0-9_-]+',ref) or ref in refs: problems.append(f'{prefix}: invalid/duplicate publication_ref')
@@ -325,7 +342,7 @@ def backlog_row(record: dict[str,Any]) -> dict[str,Any]:
          'publication_mode':workflow.get('publication_mode',legacy.get('publication_mode','first_publish')),
          'previous_published_url':workflow.get('previous_published_url',''),
          'latest_published_url':workflow.get('latest_published_url',''),
-         'revision_note':workflow.get('revision_note','Historical draft evidence; current backend preview and publication unconfirmed.'),
+         'revision_note':workflow.get('revision_note', 'Historical draft evidence; current backend preview and publication unconfirmed.' if workflow.get('historical_draft_evidence') else 'Selected for content production; no current draft upload or publication confirmed.'),
          'publication_history':workflow.get('publication_history',[]),
          'wechat_draft_created_at':workflow.get('draft_created_at',''),
          'wechat_draft_updated_at':workflow.get('draft_updated_at','')}
@@ -528,6 +545,7 @@ def publication_board(root: Path, records: list[dict[str, Any]]) -> dict[str, An
         source_status = custom.get('source', {}).get('status')
         papers.append({
             'ref': ref, 'title': record['title'], 'year': year, 'doi': doi,
+            'content_production': custom.get('content_production') if isinstance(custom.get('content_production'), str) and custom['content_production'] in CONTENT_PRODUCTION else 'pending',
             'family': custom['research_family'], 'subdirection': custom['subdirection'],
             'source': {'status': source_status if source_status in BOARD_SOURCE_STATES else 'unregistered'},
             'links': links,
@@ -539,7 +557,7 @@ def publication_board(root: Path, records: list[dict[str, Any]]) -> dict[str, An
 
 def generated_views(root: Path, records: list[dict[str,Any]]) -> dict[Path,str]:
     mapping={'generated_from':REGISTRY_PATH.as_posix(),'items':research_map(records)}
-    selected=sorted((r for r in records if r['custom']['wechat']['selected'] is True),key=lambda r:r['custom']['wechat'].get('selection_order',r['custom'].get('order',0)))
+    selected=sorted((r for r in records if content_is_selected(r)),key=lambda r:r['custom']['wechat'].get('selection_order',r['custom'].get('order',0)))
     lines=['# GENERATED from docs/data/publications.json; do not edit.','schema_version: 2',
            'description: Generated compatibility view; registry owns workflow state.','items:']
     for row in selected:
@@ -550,7 +568,7 @@ def generated_views(root: Path, records: list[dict[str,Any]]) -> dict[Path,str]:
     dashboard=['# 论文制作进度（自动生成）','','[打开只读看板](https://woeai.readthedocs.io/zh-cn/latest/PublicationProgress.html)（公开独立页面，不加入网站左侧栏）。','','来源：[publications.json](../docs/data/publications.json)。只修改清单，运行生成命令；不要手改本页。',
                '',f'共 {len(records)} 篇；公众号已选 {len(selected)} 篇。未登记表示没有结构化记录，不等于尚未开始。',
                '现有页面可访问不等于全文核验完成；历史草稿记录不等于已预览或已发布。',
-               '', '| 论文 | RTD | 公众号 | 问题与证据 |','| --- | --- | --- | --- |']
+               '', '| 论文 | 内容制作 | RTD | 公众号 | 问题与证据 |','| --- | --- | --- | --- | --- |']
     labels={'unregistered':'未登记','planned':'已计划','drafting':'制作中','awaiting_audit':'待全文核验','verified':'已核验','blocked':'受阻',
             'awaiting_review':'待审核','draft_created':'有历史/已创建草稿，待预览','ready_to_publish':'已预览待发布','published':'已发布'}
     for row in records:
@@ -573,7 +591,8 @@ def generated_views(root: Path, records: list[dict[str,Any]]) -> dict[Path,str]:
         if wc['status'] in {'ready_to_publish','published'} and not workflow_verified(row,'wechat',root): wlabel+='（核验已失效，待重审）'
         if (root/wc['path']).exists(): wlabel=f'[{wlabel}](../{wc["path"]})'
         if wc.get('latest_published_url'): wlabel+=f' [原文]({wc["latest_published_url"]})'
-        dashboard.append(f'| {publication} | {rlabel} | {wlabel} | {"；".join(details) or "—"} |')
+        production_label = CONTENT_PRODUCTION.get(c.get('content_production'), '待确认')
+        dashboard.append(f'| {publication} | {production_label} | {rlabel} | {wlabel} | {"；".join(details) or "—"} |')
     return {MAP_PATH:json.dumps(mapping,ensure_ascii=False,indent=2,sort_keys=True)+'\n',
             BACKLOG_PATH:'\n'.join(lines)+'\n',DASHBOARD_PATH:'\n'.join(dashboard)+'\n',
             BOARD_PATH:json.dumps(publication_board(root,records),ensure_ascii=False,indent=2)+'\n'}

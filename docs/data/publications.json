@@ -152,7 +152,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.buildenv.2026.114811"
   },
@@ -308,7 +309,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.oceaneng.2026.124728"
   },
@@ -467,7 +469,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1007/s12273-025-1379-7"
   },
@@ -536,7 +539,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.jweia.2025.106302"
   },
@@ -710,7 +714,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.oceaneng.2025.123951"
   },
@@ -858,7 +863,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.renene.2025.124336"
   },
@@ -927,7 +933,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.cscm.2025.e05031"
   },
@@ -1083,7 +1090,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1063/5.0293483"
   },
@@ -1232,7 +1240,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.jobe.2025.113635"
   },
@@ -1302,7 +1311,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1063/5.0281373"
   },
@@ -1458,7 +1468,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.oceaneng.2025.121336"
   },
@@ -1520,14 +1531,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zheng2025-QHDXXB.md",
         "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.16511/j.cnki.qhdxxb.2025.27.037"
   },
@@ -1675,7 +1687,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.jobe.2025.112131"
   },
@@ -1744,7 +1757,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1063/5.0264659"
   },
@@ -1812,7 +1826,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1063/5.0267175"
   },
@@ -1974,7 +1989,8 @@
         "public_citations_corrected": true,
         "upstream_zotero_modified": false,
         "upstream_followup_required": true
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.scs.2025.106237"
   },
@@ -2040,7 +2056,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.oceaneng.2024.120279"
   },
@@ -2174,7 +2191,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1063/5.0240163"
   },
@@ -2234,14 +2252,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-tang2024-POF.md",
         "review_path": "wechat/articles/review/ref-tang2024-POF.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1063/5.0237112"
   },
@@ -2310,7 +2329,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.jweia.2024.105954"
   },
@@ -2483,7 +2503,8 @@
         "public_citations_corrected": true,
         "upstream_zotero_modified": false,
         "upstream_followup_required": true
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.engstruct.2024.118742"
   },
@@ -2544,14 +2565,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-he2024-JBE.md",
         "review_path": "wechat/articles/review/ref-he2024-JBE.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.jobe.2024.110660"
   },
@@ -2620,7 +2642,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1063/5.0221281"
   },
@@ -2688,7 +2711,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.oceaneng.2024.117244"
   },
@@ -2837,7 +2861,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1063/5.0194006"
   },
@@ -3035,7 +3060,8 @@
           "appendix-a": 3,
           "appendix-b": 4
         }
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.jcp.2023.112706"
   },
@@ -3104,7 +3130,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.3390/en17184679"
   },
@@ -3261,7 +3288,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.apenergy.2023.121941"
   },
@@ -3323,14 +3351,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhao2023-BS.md",
         "review_path": "wechat/articles/review/ref-zhao2023-BS.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1007/s12273-023-0991-7"
   },
@@ -3400,7 +3429,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.jweia.2023.105468"
   },
@@ -3458,14 +3488,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zheng2023-MS.md",
         "review_path": "wechat/articles/review/ref-zheng2023-MS.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.marstruc.2023.103372"
   },
@@ -3525,14 +3556,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhang2023-S.md",
         "review_path": "wechat/articles/review/ref-zhang2023-S.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.istruc.2022.12.073"
   },
@@ -3593,14 +3625,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-wang2023-JWEIA.md",
         "review_path": "wechat/articles/review/ref-wang2023-JWEIA.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.jweia.2023.105326"
   },
@@ -3660,14 +3693,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zheng2023-JRSE.md",
         "review_path": "wechat/articles/review/ref-zheng2023-JRSE.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1063/5.0131279"
   },
@@ -3727,14 +3761,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhang2023-ES.md",
         "review_path": "wechat/articles/review/ref-zhang2023-ES.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.engstruct.2022.115167"
   },
@@ -3801,7 +3836,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.13788/j.cnki.cbgc.2023.S1.12"
   },
@@ -3860,14 +3896,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-feng2023-HKXYGC.md",
         "review_path": "wechat/articles/review/ref-feng2023-HKXYGC.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     }
   },
   {
@@ -3926,14 +3963,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhao2023-GYJZ.md",
         "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "21213/dfdg234"
   },
@@ -3998,7 +4036,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.13788/j.cnki.cbgc.2023.S1.10"
   },
@@ -4067,7 +4106,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.buildenv.2022.109745"
   },
@@ -4137,7 +4177,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1002/stc.3063"
   },
@@ -4286,7 +4327,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.jweia.2022.105147"
   },
@@ -4445,7 +4487,8 @@
         "visual_scope": "Selected output figures/formulas and claim-relevant source tables/pages; detailed per-paper scope in review.",
         "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
         "summary_path": "project/research/2026-10-05-existing-paper-source-audit.md"
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1080/17445302.2021.1937801"
   },
@@ -4515,7 +4558,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1063/5.0103113"
   },
@@ -4580,7 +4624,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.3390/en15197431"
   },
@@ -4647,7 +4692,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.oceaneng.2021.110404"
   },
@@ -4714,7 +4760,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.engstruct.2021.113575"
   },
@@ -4785,7 +4832,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.jweia.2021.104860"
   },
@@ -4843,14 +4891,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-yang2022-AS.md",
         "review_path": "wechat/articles/review/ref-yang2022-AS.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.3390/app12083729"
   },
@@ -4918,7 +4967,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1186/s43251-021-00042-x"
   },
@@ -4979,14 +5029,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-EFM.md",
         "review_path": "wechat/articles/review/ref-zhao2021-EFM.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1007/s10652-021-09796-4"
   },
@@ -5046,14 +5097,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-AR.md",
         "review_path": "wechat/articles/review/ref-zhao2021-AR.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.atmosres.2021.105507"
   },
@@ -5123,7 +5175,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.jweia.2021.104549"
   },
@@ -5183,14 +5236,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhou2021-OE.md",
         "review_path": "wechat/articles/review/ref-zhou2021-OE.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.oceaneng.2021.108585"
   },
@@ -5251,14 +5305,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-TYNXB.md",
         "review_path": "wechat/articles/review/ref-zhao2021-TYNXB.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     }
   },
   {
@@ -5317,14 +5372,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-li2020-JWEIA.md",
         "review_path": "wechat/articles/review/ref-li2020-JWEIA.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.jweia.2020.104281"
   },
@@ -5383,14 +5439,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhou2020-RE.md",
         "review_path": "wechat/articles/review/ref-zhou2020-RE.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.renene.2020.04.014"
   },
@@ -5458,7 +5515,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.jfluidstructs.2019.102780"
   },
@@ -5524,7 +5582,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.jweia.2019.103960"
   },
@@ -5593,7 +5652,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.jweia.2019.04.016"
   },
@@ -5659,7 +5719,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.3390/en12132573"
   },
@@ -5724,7 +5785,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     }
   },
   {
@@ -5789,7 +5851,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     },
     "DOI": "10.1016/j.euromechflu.2017.12.004"
   },
@@ -5850,14 +5913,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-li2018-AE.md",
         "review_path": "wechat/articles/review/ref-li2018-AE.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.apenergy.2017.12.035"
   },
@@ -5918,14 +5982,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-xiao2018-KXJSYGC.md",
         "review_path": "wechat/articles/review/ref-xiao2018-KXJSYGC.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     }
   },
   {
@@ -5987,14 +6052,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-zhou2017-E.md",
         "review_path": "wechat/articles/review/ref-zhou2017-E.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.3390/en10122097"
   },
@@ -6055,14 +6121,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-li2017-BS.md",
         "review_path": "wechat/articles/review/ref-li2017-BS.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1007/s12273-017-0348-1"
   },
@@ -6122,14 +6189,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-li2017-AS.md",
         "review_path": "wechat/articles/review/ref-li2017-AS.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.3390/app7060509"
   },
@@ -6195,7 +6263,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     }
   },
   {
@@ -6253,14 +6322,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-li2013-RE.md",
         "review_path": "wechat/articles/review/ref-li2013-RE.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.renene.2012.09.011"
   },
@@ -6319,14 +6389,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-li2012-JWEIA.md",
         "review_path": "wechat/articles/review/ref-li2012-JWEIA.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.1016/j.jweia.2011.12.004"
   },
@@ -6386,14 +6457,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-li2012-GCLX.md",
         "review_path": "wechat/articles/review/ref-li2012-GCLX.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     }
   },
   {
@@ -6452,14 +6524,15 @@
         "evidence": {}
       },
       "wechat": {
-        "selected": false,
+        "selected": true,
         "status": "unregistered",
         "path": "wechat/articles/draft-public-safe/ref-li2010-WAS.md",
         "review_path": "wechat/articles/review/ref-li2010-WAS.review.md",
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "included"
     },
     "DOI": "10.12989/was.2010.13.1.057"
   },
@@ -6524,7 +6597,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     }
   },
   {
@@ -6588,7 +6662,8 @@
         "issues": [],
         "evidence": {},
         "latest_published_url": ""
-      }
+      },
+      "content_production": "excluded"
     }
   }
 ]

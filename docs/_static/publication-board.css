@@ -32,16 +32,18 @@ body:has(#publication-board) .rst-content h1 { margin-bottom: 12px; }
 #publication-board #board-notice { font-size: 13px; font-weight: 600; margin: 0 0 8px; }
 #publication-board .board-results { width: 100%; max-width: 100%; overflow-x: auto; border-top: 1px solid #b8c6d0; }
 #publication-board .board-results:focus-visible { outline: 3px solid #2874a1; outline-offset: 2px; }
-#publication-board .board-table { width: 100%; min-width: 900px; table-layout: fixed; border-collapse: collapse; font-size: 13px; margin: 0; }
+#publication-board .board-table { width: 100%; min-width: 980px; table-layout: fixed; border-collapse: collapse; font-size: 13px; margin: 0; }
 #publication-board .board-table caption { text-align: left; padding: 10px 12px; color: #586775; font-size: 12px; }
 #publication-board .board-table th, #publication-board .board-table td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid #d7dfe5; overflow-wrap: anywhere; line-height: 1.55; }
 #publication-board .board-table thead th { background: #eef2f5; color: #425665; font-weight: 600; }
-#publication-board .board-table thead th:nth-child(1) { width: 40%; }
+#publication-board .board-table thead th:nth-child(1) { width: 36%; }
 #publication-board .board-table thead th:nth-child(2) { width: 6%; }
-#publication-board .board-table thead th:nth-child(3) { width: 18%; }
+#publication-board .board-table thead th:nth-child(3) { width: 16%; }
 #publication-board .board-table thead th:nth-child(4) { width: 12%; }
-#publication-board .board-table thead th:nth-child(5) { width: 14%; }
-#publication-board .board-table thead th:nth-child(6) { width: 10%; }
+#publication-board .board-table thead th:nth-child(5) { width: 13%; }
+#publication-board .board-table thead th:nth-child(6) { width: 8%; }
+#publication-board .board-table thead th:nth-child(7) { width: 9%; }
+#publication-board .board-production { white-space: nowrap; }
 #publication-board .board-title { font-weight: 600; }
 #publication-board .board-year { white-space: nowrap; font-variant-numeric: tabular-nums; }
 #publication-board .board-subdirection { display: block; color: #586775; font-size: 12px; margin-top: 3px; }

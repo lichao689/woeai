@@ -55,13 +55,13 @@ def _registry_backlog_items(backlog_path: Path) -> list[dict[str, str]] | None:
     root = find_registry_root(backlog_path)
     if root is None:
         return None
-    from woeai.publications.registry import backlog_row, load_registry
+    from woeai.publications.registry import backlog_row, load_registry, content_is_selected
 
     selected = []
     for index, record in enumerate(load_registry(root)):
         custom = record.get("custom", {})
         wechat = custom.get("wechat", {})
-        if wechat.get("selected") is not True:
+        if not content_is_selected(record):
             continue
         # Legacy metadata is for compatibility, never authority. Private remote
         # identifiers must not leak through the public backlog interface.

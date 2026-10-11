@@ -40,3 +40,11 @@ test('every supported state has a conservative column and readable label', () =>
   assert.equal(board.columnFor({status:'published',verification_current:null},'wechat'),'review');
   assert.equal(board.columnFor({status:'verified',verification_current:null},'rtd'),'review');
 });
+
+test('content decision filters independently; excluded is not unfinished or completed', () => {
+  const papers = ['pending','included','excluded'].map(value => paper(value,'unregistered','unregistered',{content_production:value}));
+  assert.deepEqual(board.filterPapers(papers,{production:'included'}).map(p=>p.ref),['included']);
+  assert.deepEqual(board.filterPapers(papers,{unfinished:true}).map(p=>p.ref),['pending','included']);
+  assert.equal(board.filterPapers(papers,{}).length,3);
+  assert.equal(board.columnFor(papers[2].rtd,'rtd'),'unknown');
+});

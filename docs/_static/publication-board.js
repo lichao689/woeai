@@ -7,6 +7,7 @@
     awaiting_review: '待审核', draft_created: '草稿已创建 · 待预览',
     ready_to_publish: '已预览 · 待发布', published: '已发布'
   };
+  const PRODUCTION = {pending:'待确认', included:'制作', excluded:'不制作'};
   const COLUMNS = [['unknown', '未登记'], ['working', '制作中'], ['review', '待核验 / 审核'], ['blocked', '受阻'], ['complete', '已完成']];
   function columnFor(workflow, track) {
     const status = workflow.status;
@@ -26,10 +27,11 @@
       (!filters.year || String(paper.year) === filters.year) &&
       (!filters.direction || [paper.family, paper.subdirection].includes(filters.direction)) &&
       (!filters.status || paper[track].status === filters.status) &&
-      (!filters.unfinished || columnFor(paper[track], track) !== 'complete')
+      (!filters.production || (paper.content_production || 'pending') === filters.production) &&
+      (!filters.unfinished || (paper.content_production !== 'excluded' && columnFor(paper[track], track) !== 'complete'))
     );
   }
-  const api = { columnFor, filterPapers, STATUS, COLUMNS };
+  const api = { columnFor, filterPapers, STATUS, COLUMNS, PRODUCTION };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.PublicationBoard = api;
 })(typeof window !== 'undefined' ? window : globalThis);
@@ -39,7 +41,7 @@
   if (typeof document === 'undefined') return;
   const host = document.getElementById('publication-board');
   if (!host) return;
-  const { columnFor, filterPapers, STATUS } = window.PublicationBoard;
+  const { columnFor, filterPapers, STATUS, PRODUCTION } = window.PublicationBoard;
   const controls = document.getElementById('board-filters');
   const results = document.getElementById('board-results');
   const summary = document.getElementById('board-summary');
@@ -107,6 +109,7 @@
       const cell = el('td', statusText(paper[channel]), `board-status board-status-${columnFor(paper[channel], channel)}`);
       row.append(cell);
     });
+    row.append(el('td', PRODUCTION[paper.content_production] || '待确认', 'board-production'));
     const action = el('td', undefined, 'board-action');
     const toggle = el('button', '查看详情');
     toggle.type = 'button';
@@ -124,7 +127,7 @@
     });
     action.append(toggle); row.append(action);
     const cell = el('td');
-    cell.setAttribute('colspan', '6');
+    cell.setAttribute('colspan', '7');
     const details = el('div', undefined, 'board-paper-detail');
     details.append(el('p', `DOI：${paper.doi || '未登记'}`, 'board-doi'));
     const sourceLabels = {unregistered:'未登记',planned:'已计划',acquired:'已取得',awaiting_audit:'待核验',verified:'已核验',blocked:'受阻'};
@@ -139,7 +142,7 @@
   function values() {
     return {track, query: controls.elements.query.value, year: controls.elements.year.value,
       direction: controls.elements.direction.value, status: controls.elements.status.value,
-      unfinished: controls.elements.unfinished.checked};
+      production: controls.elements.production.value, unfinished: controls.elements.unfinished.checked};
   }
   function render() {
     const matches = filterPapers(papers, values());
@@ -153,7 +156,7 @@
     table.append(el('caption', '论文制作进度：每行一篇论文，RTD 与公众号状态独立展示'));
     const head = el('thead');
     const headings = el('tr');
-    ['题目', '年份', '研究方向', 'RTD 状态', '公众号状态', '详情'].forEach(label => {
+    ['题目', '年份', '研究方向', 'RTD 状态', '公众号状态', '内容制作', '详情'].forEach(label => {
       const heading = el('th', label); heading.setAttribute('scope', 'col'); headings.append(heading);
     });
     head.append(headings); table.append(head);
@@ -194,6 +197,7 @@
         controls.elements.direction.add(new Option(family,family));
         [...new Set(papers.filter(p=>p.family===family).map(p=>p.subdirection))].forEach(direction=>controls.elements.direction.add(new Option(`　${direction}`,direction)));
       });
+      Object.entries(PRODUCTION).forEach(([value, label]) => controls.elements.production.add(new Option(label, value)));
       populateStatuses();
       document.querySelectorAll('#board-filters :disabled, [data-board-track]:disabled').forEach(control=>control.disabled=false);
       render();

@@ -11,12 +11,16 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from typing import Literal
 
 # Repo root: woeai/wechat/review.py -> parents[2]
 _REPO_ROOT = Path(__file__).resolve().parents[2]
 
 _COVER_RE = re.compile(r"-\s+封面素材:\s+`([^`]+)`")
-_COVER_FRONT_MATTER_KEYS = ("rtd_cover_image", "wechat_cover_image", "cover_image")
+_COVER_FRONT_MATTER_KEYS = {
+    "rtd": ("rtd_cover_image", "wechat_cover_image", "cover_image"),
+    "wechat": ("wechat_cover_image", "rtd_cover_image", "cover_image"),
+}
 
 
 def parse_title(markdown_text: str) -> str:
@@ -61,15 +65,17 @@ def resolve_repo_path(value: str) -> Path:
     return (_REPO_ROOT / path).resolve()
 
 
-def find_review_cover(review_path: Path) -> Path | None:
-    """Find the cover image for a review note.
+def find_review_cover(
+    review_path: Path, *, channel: Literal["rtd", "wechat"] = "rtd"
+) -> Path | None:
+    """Find a review cover, preferring the requested channel.
 
-    Checks front-matter keys (rtd_cover_image / wechat_cover_image /
-    cover_image) first, then falls back to the 封面素材 line. Returns None if
-    no cover is recorded. Callers that require a cover should raise on None.
+    Fall back to the other channel, cover_image, then the 封面素材 line.
+    The default preserves the historical RTD-first order. Returns None when
+    no cover is recorded; callers that require one should raise on None.
     """
     front = parse_front_matter(review_path)
-    for key in _COVER_FRONT_MATTER_KEYS:
+    for key in _COVER_FRONT_MATTER_KEYS[channel]:
         if front.get(key):
             return resolve_repo_path(front[key])
     if not review_path.exists():

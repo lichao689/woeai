@@ -9,14 +9,14 @@ items:
     subdirection: "数值风洞与湍动入流"
     original_year: 2026
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "2026-10-12: approved cover updated in existing draft and checked via official API; content and settings preserved. Actual mobile preview remains pending. Single-cover layout exception recorded; series standards unchanged."
     publication_history: []
     wechat_draft_created_at: "2026-06-09T12:31:43+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:22:19+08:00"
+    wechat_draft_updated_at: "2026-10-12T09:08:33+00:00"
   - publication_ref: ref-zhao2026-BE
     zotero_key: "RLAA46YB"
     title: "A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment"

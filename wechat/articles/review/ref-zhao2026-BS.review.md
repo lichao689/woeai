@@ -14,7 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png
+wechat_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-20261012-scene.png
 rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png
 ---
 
@@ -184,3 +184,24 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-
 - 本结论取代上文的待独立审校状态，公众号后台预览及发布状态不变。
 
 - 原生图 22(b)、23(b) 显示个别阈值/测站趋势与正文概括不同，已独立核实并在 4.3 节另列差异；未改变源图与原文译句。
+
+
+## 2026-10-12 公众号封面单独更新
+
+- 新公众号封面：`wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-20261012-scene.png`。
+- RTD 封面仍为旧 `cover-wechat-900x383-v2.png`；RTD 正文、论文原图和原公式不改动。
+- 用户确认文字：数值风洞 | 城市风场先算后查 / 分块 CFD 预计算数据库；期刊行 Building Simulation · 2026。
+- 生成工具：built-in image_gen；900 × 383 px；文字在生成图内，不用后叠加文字。
+- 科学元素为分块 CFD → 预计算风场数据库的机制插画，不是原论文定量结果。树木仅作环境装饰，不能理解为论文已模拟植被。
+- 已检查本地宽图及方形/5:4 裁切；固定坐标仍有偏差，用户查看成品后同意本篇例外。严格网格不标记通过，系列规范不变。
+- 完整提示词、候选淘汰理由和位置偏差见 [封面简报](ref-zhao2026-BS.cover-brief.md)。
+- 官方 API 于 2026-10-12 确认现有草稿封面更新成功；原永久素材 PNG 下载字节与批准图片一致；实际派生 JPEG 为 900 × 382，文字和场景完整。正文内容、摘要、作者、原文链接、4 幅插图、22 个公式及原设置回查通过。4 个图片标签提交时补充了与 data-src 对应的 src，回查 HTML 字节并非完全相同；完整属性级差异未还原，不声称全部差异仅限 src/data-src。规范化文本、图 URL/alt、公式元数据/SVG 几何/currentColor、文章元数据与设置等 20 项核对通过。真实后台手机预览未完成，相关预览标志保留 false。
+
+### RTD 非内容变更复核
+
+- 基线：提交 `2ebce34bf17f92795512db717f02bb711d7d3f26`；其当前 RTD 核验有效，原指纹 `24b14175fabecc6b0159c34ac489e1753c876edf39106aab6a69791f9df5bcd3` 已独立重建吻合。
+- 独立逐字节差异检查：CSL 书目信息、源文件身份/哈希、RTD 正文及规范、公众号正文及 STYLE、全部 31 个旧公开资产均未改动；未删除旧资产。
+- RTD 正文 SHA-256：`9073e4381f74d2eafa0e7b8bf8d317c40360dd2d27df376a752086dc3bd472ee`。RTD 实际引用仍是旧 v2 封面及论文原图 01–26。
+- 指纹变化来自共享审阅中的公众号封面路径/本次补充记录及新增公众号封面，未改变 RTD 学术内容。新封面为已核对的机制示意，并按用户确认的单图排版例外处理。
+- 此次未重新阅读全文 PDF；继承 2026-10-06 已记录的全文核验结论，仅对本次非内容差异及公开安全作复核。原 verified 证据原样另存于注册表历史条目，再为当前文件集记录本次限定范围复核。
+- 不把草稿 API 成功或局部图片核对当作手机预览通过，也不把新封面当作论文原始结果。

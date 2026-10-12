@@ -392,6 +392,17 @@
             "fingerprint": "8e90a292452b7375cc07ba4cb9434500d1a495ef05dd6b7ed559d3d7a18b15a0"
           },
           "verified": {
+            "recorded_at": "2026-10-12T09:13:41+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Non-content revalidation against 2ebce34: source identity, bibliography, RTD body, guide and all 31 prior assets remain byte-identical. Inherits the 2026-10-06 full-paper audit; no new full-PDF audit. Only a WeChat cover and shared review notes changed; old evidence retained.",
+            "fingerprint": "42c303570f50db15be0515a54d0645d7de7050030bc08b2226d8e6298bd1ac4c"
+          },
+          "verified_before_20261012_cover": {
             "recorded_at": "2026-10-06T07:25:10+00:00",
             "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
             "checks": {
@@ -407,7 +418,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2026-BS.md",
         "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
         "issues": [],
@@ -422,6 +433,19 @@
             },
             "scope": "Previously source-audited introduction retained; selected figure pixels calibrated and independently inspected. No backend upload or preview.",
             "fingerprint": "295c9204805e558646d8090f9d0291313c3759bc8ba06eff6d4f505f855ebbba"
+          },
+          "draft_created": {
+            "recorded_at": "2026-10-12T09:08:33+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Existing draft cover updated to user-approved image; original PNG byte match and displayed derived JPEG checked. Body content, 4 figures, 22 formulas and original settings preserved. API verification is not mobile preview. Submission-time registry fingerprint was not captured for this controlled cover-only operation; no retrospective hash is represented as submission evidence."
           }
         },
         "latest_published_url": "",
@@ -443,7 +467,7 @@
           "wechat_draft_created_at": "2026-06-09T12:31:43+08:00"
         },
         "draft_created_at": "2026-06-09T12:31:43+08:00",
-        "draft_updated_at": "2026-06-11T11:22:19+08:00",
+        "draft_updated_at": "2026-10-12T09:08:33+00:00",
         "historical_draft_evidence": {
           "source": "wechat/backlog/selected-papers.yml (pre-migration)",
           "status": "ready_to_publish",
@@ -459,7 +483,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+        "revision_note": "2026-10-12: approved cover updated in existing draft and checked via official API; content and settings preserved. Actual mobile preview remains pending. Single-cover layout exception recorded; series standards unchanged."
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",

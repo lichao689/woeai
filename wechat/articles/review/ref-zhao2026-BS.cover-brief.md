@@ -131,3 +131,56 @@ instead of repeating the full title. The local batch preview is recorded at
 - migration_status: specification-updated; existing-image-not-regenerated
 - design_contract_checked: pending; 尺寸一致不证明旧图符合新布局、字级或科学对象裁切
 - backend_preview_status: unchanged; 此次简报维护没有新增后台手机预览
+
+
+## 2026-10-12 新规范生成轮次
+
+- cover_execution_mode: image-gen
+- cover_text_confirmation: user-confirmed
+- confirmed_cover_text: 数值风洞 | 城市风场先算后查 / 分块 CFD 预计算数据库
+- confirmed_text_mode: image-gen-text
+- publication_metadata_line: Building Simulation · 2026
+- confirmation_note: 用户同意推荐选项 1；所有文字保持确认原文。
+- generation_tool: built-in image_gen
+- 证据锚点：原 review 中 Fig. 1（PDF file page 4）分块计算与数据库流程；Fig. 2（page 5）城市区块；Fig. 25（page 22）查询展示。图像仅为机制示意，不复刻定量结果。
+- 三个候选：研究场景、方法机制、工程应用；提示词要求统一网格、字体、配色及文字 0° 水平直立；实际符合情况以下方像素审阅为准。
+- candidate_count: 3 概念 × 2 轮；另有研究场景候选的位置修正实验。
+- selected_candidate_id: scene-placement-candidate（用户接受为本篇最终封面）
+- final_export_dimensions: 900 × 383 px；仅等比例导出，未叠加或改写文字。
+- local_preview: `wechat/.local/zhao-cover-latest/scene-placement-qa-crops.png`
+- 文字与裁切：确认文字完整、水平直立；900 × 383、360 × 153、120 方形及 5:4 中对象可辨认。未据此宣称后台验收。
+- 淘汰原因：首轮标题过大；第二轮场景文字整体偏低约 14 px；方法与应用候选副标题偏小，应用方案方形裁切后数据库特征较弱。
+- 独立像素复核：位置修正稿仍不符合严格网格。约值：徽标 x32/y24（规范 x36/y28）；标题 x32/y77（x36/y84）；副标题 y194（y200）；期刊 y231（y238）；路线 y281–354（y290–359）；背景场景超出指定区域。
+- design_contract_checked: failed-fixed-grid; exact-text-and-crop-local-check-passed
+- approval_state: user-approved-layout-exception; 2026-10-12 用户查看实际图像并明确同意按此视觉更新该篇草稿。仅接受本图已记录偏差，系列规范不变。
+- 科学边界：机制插画而非论文定量结果；树木仅作环境装饰，论文模型省略植被等小尺度设施，不声称模拟了植被。
+- 新草稿封面上传：2026-10-12 官方 API 成功；保留旧 v2 及历史验收记录。
+- 后台手机预览：未检查。旧 v2 与历史证据保留。
+
+- approved_final_cover_path: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-20261012-scene.png`
+- approved_final_sha256: `d61202ccb6d3448657ffc47dedbbeeb322b41fe903a9205a11c44fddaeb8cec6`
+- backend_update_state: success; 官方回读核对新原图字节、派生封面视觉及原正文/设置；尚不视为后台手机预览。
+
+
+### 2026-10-12 完整生成提示词
+
+以下为生成输入，实际网格偏差以本次验收记录为准；提示词本身不证明成品符合。
+
+#### scene
+
+Create a polished Chinese engineering research WeChat cover, final composition at 900x383 (2.35:1), high-resolution raster. Precise restrained scientific editorial illustration, not neon/cyberpunk. Fixed layout expressed in final pixels: safe area x36-864 y24-359; integrated pale #EFF6FC text zone x36-396 with NO panel/card/divider; blue #0B6FD3 badge x36 y28 size128x40 radius6; exact white badge text "数值风洞" at24px bold upright. Main hook exact "城市风场先算后查" split as "城市风场" and "先算后查", x36 y84 width360 height108, 48px heavy sans-serif, lineheight54, #073B7A. Exact subtitle "分块 CFD 预计算数据库" x36 y200 24px #334155 single line. Exact journal line "Building Simulation · 2026" x36 y238, at least18px semibold #073B7A, can wrap at word boundary. Chinese Noto Sans/Source Han Sans style. All text is horizontal 0degree upright with NO italic, slant, perspective or distortions. ONLY these four text elements; no other words/numbers/labels. Scene x420-864 y28-280; important diagnostic object must remain inside x420-620 y56-276 for center-square crop. Bottom y290-359 three small pictorial nodes linked by two fine arrows: city block geometry -> precomputed CFD block tiles -> reusable data layers. No text in route. Blend scene into text background smoothly. Paper: Zhao et al. 2026 Building Simulation, urban microscale wind precomputed CFD database: city divided into square blocks with surrounding buffer, independently computed flow stored and queried. This is a conceptual illustration, NOT measured data or a claimed exact site. No fake quantitative curves, percentages, map labels, logos, watermark, decorative interface panels. Scientific palette subdued white/steelblue, small cyan flow cues only in scene. Prioritize crisp correct Chinese and journal spelling.
+Research-scene variant: one square city CFD tile in oblique view dominates x470-610 with clearly visible building cores and a soft surrounding buffer; three neighboring tiles recede toward right, coordinated streamlines crossing them. A subtle data-layer stack far right connects the idea to reusable database. Not a generic skyline; square core and buffer are visibly diagnostic.
+
+#### method
+
+Create a polished Chinese engineering research WeChat cover, final composition at 900x383 (2.35:1), high-resolution raster. Precise restrained scientific editorial illustration, not neon/cyberpunk. Fixed layout expressed in final pixels: safe area x36-864 y24-359; integrated pale #EFF6FC text zone x36-396 with NO panel/card/divider; blue #0B6FD3 badge x36 y28 size128x40 radius6; exact white badge text "数值风洞" at24px bold upright. Main hook exact "城市风场先算后查" split as "城市风场" and "先算后查", x36 y84 width360 height108, 48px heavy sans-serif, lineheight54, #073B7A. Exact subtitle "分块 CFD 预计算数据库" x36 y200 24px #334155 single line. Exact journal line "Building Simulation · 2026" x36 y238, at least18px semibold #073B7A, can wrap at word boundary. Chinese Noto Sans/Source Han Sans style. All text is horizontal 0degree upright with NO italic, slant, perspective or distortions. ONLY these four text elements; no other words/numbers/labels. Scene x420-864 y28-280; important diagnostic object must remain inside x420-620 y56-276 for center-square crop. Bottom y290-359 three small pictorial nodes linked by two fine arrows: city block geometry -> precomputed CFD block tiles -> reusable data layers. No text in route. Blend scene into text background smoothly. Paper: Zhao et al. 2026 Building Simulation, urban microscale wind precomputed CFD database: city divided into square blocks with surrounding buffer, independently computed flow stored and queried. This is a conceptual illustration, NOT measured data or a claimed exact site. No fake quantitative curves, percentages, map labels, logos, watermark, decorative interface panels. Scientific palette subdued white/steelblue, small cyan flow cues only in scene. Prioritize crisp correct Chinese and journal spelling.
+Method variant: a single enlarged square core city block at x460-610 with a visibly wider transparent surrounding buffer ring, plus a small exploded stack of precomputed flow-field layers immediately behind/right. Two fine unlabelled arrows connect computed block to ordered data layers. Make independent block calculation plus stored reusable results the obvious visual, not just a city or decorative database cylinder.
+
+#### application
+
+Create a polished Chinese engineering research WeChat cover, final composition at 900x383 (2.35:1), high-resolution raster. Precise restrained scientific editorial illustration, not neon/cyberpunk. Fixed layout expressed in final pixels: safe area x36-864 y24-359; integrated pale #EFF6FC text zone x36-396 with NO panel/card/divider; blue #0B6FD3 badge x36 y28 size128x40 radius6; exact white badge text "数值风洞" at24px bold upright. Main hook exact "城市风场先算后查" split as "城市风场" and "先算后查", x36 y84 width360 height108, 48px heavy sans-serif, lineheight54, #073B7A. Exact subtitle "分块 CFD 预计算数据库" x36 y200 24px #334155 single line. Exact journal line "Building Simulation · 2026" x36 y238, at least18px semibold #073B7A, can wrap at word boundary. Chinese Noto Sans/Source Han Sans style. All text is horizontal 0degree upright with NO italic, slant, perspective or distortions. ONLY these four text elements; no other words/numbers/labels. Scene x420-864 y28-280; important diagnostic object must remain inside x420-620 y56-276 for center-square crop. Bottom y290-359 three small pictorial nodes linked by two fine arrows: city block geometry -> precomputed CFD block tiles -> reusable data layers. No text in route. Blend scene into text background smoothly. Paper: Zhao et al. 2026 Building Simulation, urban microscale wind precomputed CFD database: city divided into square blocks with surrounding buffer, independently computed flow stored and queried. This is a conceptual illustration, NOT measured data or a claimed exact site. No fake quantitative curves, percentages, map labels, logos, watermark, decorative interface panels. Scientific palette subdued white/steelblue, small cyan flow cues only in scene. Prioritize crisp correct Chinese and journal spelling.
+Engineering-application variant: a crisp oblique city-block map at x430-670, one square block visibly selected and pulled slightly upward, with matching precomputed flow-field layer tiles returned beside it at x680-840. Subtle building forms and consistent airflow show queryable microscale wind fields, no screen/device/UI text, no warning icons or implication of validated forecasting. Center crop retains the selected square block and matching layer.
+
+#### 最后位置修正输入
+
+Make ONLY two precise layout corrections to this otherwise approved scientific cover, preserving every existing word, glyph appearance, font sizes, palette, and main scientific scene. Coordinate system is900x383: (1) Shift the ENTIRE left text group (blue badge, two-line title, subtitle, journal line) UP exactly14px final equivalent; do not change its x positions or scale. Thus badge top28, title top84, subtitle top200, journal top238. Text exact "数值风洞", "城市风场" newline "先算后查", "分块 CFD 预计算数据库", "Building Simulation · 2026". All horizontal upright. (2) The three bottom pictorial process nodes are too tall. Uniformly reduce the process diagram nodes to fit y290-354, keeping the two arrows and the whole sequence below the journal line and inside x36-864. Do not move the main city-block scene; keep visual scientific concept identical. No new words, no replacement typography, no watermark. Output2.35:1 landscape, same clean engineering editorial cover.

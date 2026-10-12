@@ -37,6 +37,24 @@ Platform metadata such as cover image, draft media ID, and WeChat bottom
 `阅读原文` / `content_source_url` belongs in the review note or backlog, not in
 the reader-facing Markdown body.
 
+### Channel-specific review covers
+
+WeChat draft preparation prefers `wechat_cover_image`; the legacy RTD converter
+prefers `rtd_cover_image`. `find_review_cover` defaults to `channel="rtd"` for
+existing callers. If the requested channel's field is absent or blank, retain
+the compatibility fallback: the other channel's field, then `cover_image`,
+then the `封面素材` line. With no recorded cover, RTD remains optional and the
+WeChat draft entrypoint raises an error. A recorded path does not fall back
+merely because its file is missing; delivery checks must report that failure.
+
+Cover selection does not change verification fingerprints. The current RTD
+fingerprint includes the shared review and the whole per-paper public asset
+folder, so a WeChat-only cover addition can invalidate existing RTD verification.
+Retain the prior scientific audit and perform an explicitly documented,
+non-content equivalence check before renewing verification. If that check has
+not been completed, report RTD as `awaiting_audit`; do not silently refresh the
+fingerprint or claim a new full-paper audit or phone preview.
+
 For WOEAI website links embedded in WeChat draft API payloads, prefer the Read
 the Docs project domain `https://woeai.readthedocs.io/zh-cn/latest/`. The
 WeChat backend bottom `阅读原文` target defaults to the current paper's RTD

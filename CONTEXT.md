@@ -130,8 +130,8 @@ The second canonical public research family. It covers floating offshore wind re
 _Avoid_: generic `海上风电` when the public page is specifically about floating offshore wind
 
 **One-Paper WeChat Article**:
-A WeChat Official Account article whose core unit is one selected paper. It should explain the paper's problem, method, findings, boundaries, engineering significance, DOI, and selected related direction links. It should avoid repeating a WOEAI publication-page anchor when that linked page does not add reader value beyond the article itself.
-_Avoid_: forcing every article into a multi-paper theme essay
+A WeChat Official Account article whose core unit is one selected paper. Its default order is a short opening (whose first paragraph doubles as the WeChat digest), paper metadata, the faithful Chinese abstract, then a body that explains the problem, the specific change against the baseline, the evidence with its conditions, and the limits and potential uses. The abstract gives the overview; the body covers what the abstract cannot, rather than restating it. `wechat/STYLE.md` owns the detailed rules. It should avoid repeating a WOEAI publication-page anchor when that linked page does not add reader value beyond the article itself.
+_Avoid_: forcing every article into a multi-paper theme essay, three-sentence guides, numeric cards, numbered research-question callbacks, body sections that paraphrase the abstract
 
 **Publication Artifact**:
 The repository-owned artifact set for one Public Journal Paper that has entered the paper publication workflow. It is keyed by `publication_ref` and may include a WeChat Article Source, review note, RTD Paper Deep-Dive Page, public-safe cover and body assets, backlog state, and a WeChat Draft Record. It is narrower than Public Journal Paper as a workflow state, but the long-term goal is for every Public Journal Paper to enter the Paper Deep-Dive workflow.

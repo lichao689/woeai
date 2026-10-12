@@ -3,6 +3,47 @@
 WOEAI is a public Sphinx documentation site with publication tools and a
 WeChat article workflow, not an installable application package.
 
+## Project purpose
+
+The repository publicizes the group's research to attract graduate students
+and postdocs and to present its technical capability to potential engineering
+partners. It has three workstreams that share one publication registry:
+
+1. **Website**: homepage and proof pages (recruitment, engineering
+   applications, academic outputs). Guide: [homepage-content.md](project/guides/homepage-content.md).
+2. **RTD full-paper deep dives**: relatively precise, complete Chinese
+   translations of the team's papers. Guides: [paper-deep-dive-rst.md](project/guides/paper-deep-dive-rst.md)
+   and [rtd-translation-style.md](project/guides/rtd-translation-style.md).
+3. **WeChat introductions**: short, clear reader-facing articles with covers,
+   delivered to the Official Account draft box. Rules: [wechat/STYLE.md](wechat/STYLE.md).
+
+Readers are prospective students, engineering partners and academic peers.
+Persuasion comes from clearly stated problems, evidence and limits, not
+promotional wording.
+
+## Rule ownership
+
+Each rule has one authoritative file; others link to it instead of restating it.
+
+| Topic | Authority |
+| --- | --- |
+| Vocabulary and semantic constraints | `CONTEXT.md` |
+| Paper sources, evidence records, figure extraction | `project/guides/paper-sources-and-evidence.md` |
+| WeChat writing rules and article structure | `wechat/STYLE.md` |
+| WeChat de-AI editing workflow | `.agents/skills/wechat-paper/references/natural-scientific-writing.md` |
+| WeChat rendering, formula SVG, draft API, credentials, state | `wechat/README.md` |
+| WeChat execution order | `.agents/skills/wechat-paper/SKILL.md` |
+| Covers | `.agents/skills/wechat-cover/` |
+| RTD structure, coverage and audit | `project/guides/paper-deep-dive-rst.md` |
+| RTD translation quality | `project/guides/rtd-translation-style.md` |
+| Website pages | `project/guides/homepage-content.md` |
+| Registry states | `project/guides/publication-registry.md` |
+
+`wechat/STYLE.md` and `project/guides/paper-deep-dive-rst.md` are hashed into
+registry verification fingerprints. Editing them invalidates existing verified
+WeChat/RTD evidence by design; confirm with the user before changing them, and
+prefer the companion guides above for additive guidance.
+
 ## Start here
 
 1. Check `git status --short` and the target files before editing. Preserve
@@ -28,17 +69,21 @@ WeChat article workflow, not an installable application package.
 ## Task entry points
 
 - **Website content or navigation:** read [README.rst](README.rst),
+  [homepage-content.md](project/guides/homepage-content.md),
   [the public fact source packet](project/sources/2026-06-woeai-site-source-packet.md),
   and the affected `docs/source/` pages. Use the site boundaries below.
 - **WeChat article, evidence review, or backlog:** read
-  [.agents/skills/wechat-paper/SKILL.md](.agents/skills/wechat-paper/SKILL.md),
-  [wechat/STYLE.md](wechat/STYLE.md), [wechat/README.md](wechat/README.md),
-  the article/review templates, and `wechat/backlog/selected-papers.yml`.
+  [.agents/skills/wechat-paper/SKILL.md](.agents/skills/wechat-paper/SKILL.md)
+  and follow its table of authorities ([wechat/STYLE.md](wechat/STYLE.md),
+  the natural-writing guide, [wechat/README.md](wechat/README.md),
+  [paper-sources-and-evidence.md](project/guides/paper-sources-and-evidence.md),
+  and `wechat/templates/`).
 - **Cover generation, prompts, or crop review:** read
   [.agents/skills/wechat-cover/SKILL.md](.agents/skills/wechat-cover/SKILL.md)
   and its linked standards; follow its cover-text confirmation and preview gates.
 - **RTD paper deep dive:** read
   [project/guides/paper-deep-dive-rst.md](project/guides/paper-deep-dive-rst.md),
+  [rtd-translation-style.md](project/guides/rtd-translation-style.md),
   the original paper, and its `docs/source/Publications.rst` entry. Use the
   independent full-paper workflow below, including its coverage audit.
 - **Publication generation or Python tools:** inspect `woeai/publications/`,
@@ -73,6 +118,9 @@ WeChat article workflow, not an installable application package.
 
 ## Paper sources and public safety
 
+- Detailed procedures are in
+  [paper-sources-and-evidence.md](project/guides/paper-sources-and-evidence.md);
+  the bullets below are the binding summary.
 - Use the authorized source files actually available in the current workspace.
   Check ignored `wechat/.local/` sources and their manifests before requesting
   another copy; journal files may be under `journal-papers/<ZoteroKey>/source.pdf`
@@ -148,9 +196,10 @@ mirror of `included`. New records start pending until the owner decides.
 `wechat/articles/draft-public-safe/<publication_ref>.md`; review and approved
 assets live in the matching `wechat/articles/review/` and
 `wechat/assets/public-safe/` paths. Use the author's confirmed papers, original
-figures with approved reuse, faithful Chinese abstract, numbered research
-questions, restrained quantitative hooks, and visible limitations. Follow the
-paper skill/STYLE for author markers, captions, conclusion emphasis, and links.
+figures with approved reuse, a faithful Chinese abstract near the top, a body
+organized as problem / method / evidence / limits, numbers that keep their
+conditions, and visible limitations. Follow STYLE for structure, author
+markers, captions, and links.
 Apply backend wording corrections back to this Markdown before regenerating.
 
 **RTD is an independent full-paper deep dive.** Write

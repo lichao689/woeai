@@ -13,6 +13,24 @@ purpose is ordered as:
 3. academic credibility through academic outputs, teaching, public research
    support, and research directions.
 
+Three Workstreams
+-----------------
+
+- **Website**: homepage and proof pages under ``docs/source/``. See
+  `the homepage content guide <project/guides/homepage-content.md>`_.
+- **RTD full-paper deep dives** (``论文精解``): complete Chinese translations of
+  the team's papers under ``docs/source/paper-notes/``. See
+  `the deep-dive guide <project/guides/paper-deep-dive-rst.md>`_ and
+  `the translation style guide <project/guides/rtd-translation-style.md>`_.
+- **WeChat introductions**: short reader-facing articles, covers, and Official
+  Account draft delivery under ``wechat/``. See `the WeChat style guide
+  <wechat/STYLE.md>`_ and `the WeChat delivery guide <wechat/README.md>`_.
+
+All three share ``docs/data/publications.json`` and the source and evidence
+rules in `paper-sources-and-evidence.md
+<project/guides/paper-sources-and-evidence.md>`_. ``AGENTS.md`` lists which
+file owns each rule.
+
 Repository Map
 --------------
 

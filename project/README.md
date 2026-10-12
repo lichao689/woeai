@@ -12,7 +12,11 @@ sources and assets remain under `wechat/`.
 - [Domain guide](guides/domain.md): how to explore project documentation
 - [Cloud WeChat workflow](guides/cloud-wechat-workflow.md): credential-free setup
 - [Publication workflow registry](guides/publication-registry.md) and [generated progress](publication-progress.md): one bibliography, independent RTD/WeChat workflows
+- [Homepage content guide](guides/homepage-content.md): page roles, homepage writing, site boundaries
+- [Paper sources and evidence](guides/paper-sources-and-evidence.md): source acquisition, evidence records, figure extraction
 - [Paper deep-dive guide](guides/paper-deep-dive-rst.md): independent RTD articles
+- [RTD translation style](guides/rtd-translation-style.md): terminology, sentence and citation quality for deep dives
+- [WeChat style guide](../wechat/STYLE.md) and [delivery guide](../wechat/README.md): article writing and draft delivery
 - [Issue tracker](guides/issue-tracker.md) and [triage labels](guides/triage-labels.md)
 
 ## Directory map

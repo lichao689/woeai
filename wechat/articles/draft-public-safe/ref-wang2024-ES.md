@@ -17,7 +17,7 @@
 - 期刊: Engineering Structures
 - 年份: 2024
 - DOI: https://doi.org/10.1016/j.engstruct.2024.118742
-- WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
 
 ## 三句话导读
 
@@ -113,9 +113,9 @@ $$
 
 第三，CWR 方法当前仅直接反馈调整纵向湍流强度，没有同时把湍流相干性作为控制目标。因此，在高层建筑侧面脉动风压预测中，LES 结果相对风洞试验仍出现较大偏差。将 CWR 用于具体工程时，仍需要结合目标风场谱、相干性、网格分辨率、计算域尺度以及风洞或现场数据进行验证。
 
-如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
+如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
+- [WOEAI | 工程结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

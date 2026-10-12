@@ -4,7 +4,7 @@
 
 Use one design system across papers. Change the scientific subject and confirmed
 wording, not the layout, typography, rendering language or arbitrary palette.
-Retain the three existing direction color families below. This is a project
+Retain the three existing editorial-category palettes below. This is a project
 specification, not a platform-wide promise. Verify actual WeChat backend crops
 before release; change the series contract as a whole if requirements change.
 
@@ -18,7 +18,7 @@ meet the final export requirement. Inspect actual dimensions, not filenames.
 |---|---|
 | Outer safe area | x = 36–864; y = 24–359; essential text stays inside |
 | Integrated text zone | x = 36–396; width 360; low-detail shared background |
-| Direction badge | x = 36, y = 28; 128 × 40; −4° tilt; 6 px corner radius |
+| Direction badge | x = 36, y = 28; 128 × 40; 0° rotation; horizontal and upright; 6 px corner radius |
 | Main hook | x = 36, y = 84; width 360, height 108; at most two lines |
 | Subtitle | x = 36, y = 200; width 360, height 30; one line |
 | Publication line | x = 36, y = 238; width 360, height 44; at most two lines |
@@ -32,6 +32,9 @@ UI frame. Use a restrained engineering editorial illustration, coherent
 perspective and clean geometry. Do not alternate cartoons, photographs, neon
 science fiction and dense dashboards across papers. Scene/method/application
 candidates change subject emphasis within the same grid, not the design system.
+
+All lettering (badge, hook, subtitle and publication line) must be horizontal
+and upright: no italic, tilted, rotated, skewed or perspective-distorted text.
 
 ## Typography and text budget
 
@@ -60,6 +63,11 @@ limit. Never shrink the whole title to fit or accept overflow.
   ask for revised text. Do not silently shorten it or remove the subtitle.
 - Derive journal/year only from verified public metadata. Omit this line when
   either is unavailable, and record why; do not invent a source or date.
+
+The short badges 数值风洞 / 结构抗风 / 漂浮风电 are editorial categories,
+not research-family names. The two research families and collections remain
+工程结构抗风 / 海上漂浮风电. No secondary-category cover label is approved
+by this reconciliation; the rejected sample is not a series template.
 
 ## Fixed palette
 
@@ -91,7 +99,7 @@ Do not generate quantitative result curves, numerical improvements or benchmark
 wins without evidence. An unlabelled abstract curve must not imply a measured
 trend. Paper figures are evidence/inspiration, not default cover collages.
 Original figure extraction, reuse rights and public-safety rules in
-`wechat/STYLE.md` still apply. Never alter scientific figures to manufacture
+`project/guides/paper-sources-and-evidence.md` still apply. Never alter scientific figures to manufacture
 results, and do not expose private sources or project branding.
 
 ## Execution and confirmation

@@ -4,7 +4,7 @@
 
 在这篇发表于 **Renewable Energy** 的论文中，我们提出 Wind Turbulence Temporal Super-Resolution Swin-Transformer（WTT-SRST）框架，用两个低时间分辨率风场快照重建中间的高时间分辨率风场演化。文章的重点不是把深度学习当作黑箱插值器，而是在注意力计算效率、湍流物理一致性和城市风能应用之间寻找一个可解释的折中。
 
-这项工作属于 WOEAI 的 **建筑结构抗风 / 数值风洞与湍动入流** 方向，也与城市风环境、PBL 湍流、AI 代理模型和数值风洞数据加速直接相关。
+这项工作属于 WOEAI 的 **工程结构抗风 / 数值风洞与湍动入流** 方向，也与城市风环境、PBL 湍流、AI 代理模型和数值风洞数据加速直接相关。
 
 ![论文图 6 风场快照的时间超分辨率流程](../../assets/public-safe/ref-tang2026-RE/fig-06-temporal-super-resolution.jpg)
 
@@ -19,7 +19,7 @@
 - 期刊: Renewable Energy
 - 年份: 2026
 - DOI: https://doi.org/10.1016/j.renene.2025.124336
-- WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
 
 ## 三句话导读
 
@@ -144,9 +144,9 @@ WTT-SRST 使用编码-解码结构、skip connection、Sparse Window-based Atten
 
 因此，更准确的理解是：WTT-SRST 为城市风能中的高时间分辨率风场重建提供了一条更高效、更重视物理一致性的 AI 路线，但它仍应作为数值风洞和工程分析流程中的加速与补充工具，而不是替代所有高保真物理模拟。
 
-如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
+如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
+- [WOEAI | 工程结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

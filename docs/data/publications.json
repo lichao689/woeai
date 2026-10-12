@@ -14,7 +14,7 @@
     "custom": {
       "publication_ref": "ref-zhao2026-BE",
       "order": 0,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "RLAA46YB",
@@ -172,8 +172,8 @@
     "custom": {
       "publication_ref": "ref-he2026-OE",
       "order": 1,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "4FX43CFT",
         "publication_number": 74,
@@ -329,7 +329,7 @@
     "custom": {
       "publication_ref": "ref-zhao2026-BS",
       "order": 2,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "CGKPKZ8I",
@@ -489,7 +489,7 @@
     "custom": {
       "publication_ref": "ref-huang2026-JWEIA",
       "order": 3,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "IBLEEY34",
@@ -734,7 +734,7 @@
     "custom": {
       "publication_ref": "ref-tang2026-RE",
       "order": 5,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "XM44D697",
@@ -953,8 +953,8 @@
     "custom": {
       "publication_ref": "ref-he2025-POF",
       "order": 7,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "ES37XMDV",
         "publication_number": 68,
@@ -1110,8 +1110,8 @@
     "custom": {
       "publication_ref": "ref-yang2025-JBE",
       "order": 8,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "YZ2D62NB",
         "publication_number": 67,
@@ -1260,7 +1260,7 @@
     "custom": {
       "publication_ref": "ref-wang2025-POF",
       "order": 9,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "Y9QYBEKI",
@@ -1558,8 +1558,8 @@
     "custom": {
       "publication_ref": "ref-tang2025-JBE",
       "order": 12,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "4BCF65NB",
         "publication_number": 63,
@@ -1777,8 +1777,8 @@
     "custom": {
       "publication_ref": "ref-yan2025-POF",
       "order": 14,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "6KEYN5GF",
         "publication_number": 61,
@@ -1846,7 +1846,7 @@
     "custom": {
       "publication_ref": "ref-zhao2025-SCS",
       "order": 15,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "V6PLJENN",
@@ -2076,7 +2076,7 @@
     "custom": {
       "publication_ref": "ref-chen2024-POF",
       "order": 17,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "78XMAPMX",
@@ -2211,7 +2211,7 @@
     "custom": {
       "publication_ref": "ref-tang2024-POF",
       "order": 18,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "FVGTMSEA",
@@ -2279,8 +2279,8 @@
     "custom": {
       "publication_ref": "ref-liu2024-JWEIA",
       "order": 19,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "UXCUW2AL",
         "publication_number": 56,
@@ -2349,7 +2349,7 @@
     "custom": {
       "publication_ref": "ref-wang2024-ES",
       "order": 20,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "3HGIR6QR",
@@ -2523,8 +2523,8 @@
     "custom": {
       "publication_ref": "ref-he2024-JBE",
       "order": 21,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "YMKXLNSP",
         "publication_number": 54,
@@ -2592,7 +2592,7 @@
     "custom": {
       "publication_ref": "ref-jiang2024-POF",
       "order": 22,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "68N5CKGN",
@@ -2731,7 +2731,7 @@
     "custom": {
       "publication_ref": "ref-li2024-POF",
       "order": 24,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "2YG78T62",
@@ -2881,7 +2881,7 @@
     "custom": {
       "publication_ref": "ref-chen2024-JCP",
       "order": 25,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "Y76UWP9R",
@@ -3177,8 +3177,8 @@
     "custom": {
       "publication_ref": "ref-liu2024-E",
       "order": 26,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "WSTSZ48A",
         "publication_number": 49,
@@ -3405,7 +3405,7 @@
     "custom": {
       "publication_ref": "ref-zhao2023-BS",
       "order": 28,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "FVQQHCGS",
@@ -3475,7 +3475,7 @@
     "custom": {
       "publication_ref": "ref-zhang2023-JWEIA",
       "order": 29,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "F83EIB5E",
@@ -3612,8 +3612,8 @@
     "custom": {
       "publication_ref": "ref-zhang2023-S",
       "order": 31,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "TYK2GQCU",
         "publication_number": 44,
@@ -3680,7 +3680,7 @@
     "custom": {
       "publication_ref": "ref-wang2023-JWEIA",
       "order": 32,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "GKUAVJEK",
@@ -3817,8 +3817,8 @@
     "custom": {
       "publication_ref": "ref-zhang2023-ES",
       "order": 34,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "QN2824VG",
         "publication_number": 41,
@@ -3953,7 +3953,7 @@
     "custom": {
       "publication_ref": "ref-feng2023-HKXYGC",
       "order": 36,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "FT67Z85H",
@@ -4019,8 +4019,8 @@
     "custom": {
       "publication_ref": "ref-zhao2023-GYJZ",
       "order": 37,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "R2C3HY74",
         "publication_number": 38,
@@ -4153,7 +4153,7 @@
     "custom": {
       "publication_ref": "ref-gao2022-BE",
       "order": 39,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "IPVYARZP",
@@ -4223,8 +4223,8 @@
     "custom": {
       "publication_ref": "ref-hu2022-SCHM",
       "order": 40,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "DH7XTK83",
         "publication_number": 35,
@@ -4294,7 +4294,7 @@
     "custom": {
       "publication_ref": "ref-chen2022-JWEIA",
       "order": 41,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "DD8PJ6PS",
@@ -4604,7 +4604,7 @@
     "custom": {
       "publication_ref": "ref-wang2022-POF",
       "order": 43,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "F73D398X",
@@ -4809,8 +4809,8 @@
     "custom": {
       "publication_ref": "ref-zhang2022-ES",
       "order": 46,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "F9AB6YN4",
         "publication_number": 29,
@@ -4877,8 +4877,8 @@
     "custom": {
       "publication_ref": "ref-lin2022-JWEIA",
       "order": 47,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "93A562VW",
         "publication_number": 28,
@@ -4949,8 +4949,8 @@
     "custom": {
       "publication_ref": "ref-yang2022-AS",
       "order": 48,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "WUGUPVR4",
         "publication_number": 27,
@@ -5015,8 +5015,8 @@
     "custom": {
       "publication_ref": "ref-wang2021-ABE",
       "order": 49,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "SXU5CL43",
         "publication_number": 26,
@@ -5084,7 +5084,7 @@
     "custom": {
       "publication_ref": "ref-zhao2021-EFM",
       "order": 50,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "3VYYMGTH",
@@ -5153,7 +5153,7 @@
     "custom": {
       "publication_ref": "ref-zhao2021-AR",
       "order": 51,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "VEJ6LL7P",
@@ -5221,8 +5221,8 @@
     "custom": {
       "publication_ref": "ref-lin2021-JWEIA",
       "order": 52,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "5G6YFN8Y",
         "publication_number": 23,
@@ -5360,7 +5360,7 @@
     "custom": {
       "publication_ref": "ref-zhao2021-TYNXB",
       "order": 54,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "JGSIKX3F",
@@ -5428,7 +5428,7 @@
     "custom": {
       "publication_ref": "ref-li2020-JWEIA",
       "order": 55,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "3ZY69PVB",
@@ -5699,7 +5699,7 @@
     "custom": {
       "publication_ref": "ref-li2019-JWEIA",
       "order": 59,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "WHSVAKCD",
@@ -5836,8 +5836,8 @@
     "custom": {
       "publication_ref": "ref-zhou2019-WHLGDXXB",
       "order": 61,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "DNXNTCJ9",
         "publication_number": 14,
@@ -5901,8 +5901,8 @@
     "custom": {
       "publication_ref": "ref-hu2018-EJMBF",
       "order": 62,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "C75QWNRE",
         "publication_number": 13,
@@ -6037,7 +6037,7 @@
     "custom": {
       "publication_ref": "ref-xiao2018-KXJSYGC",
       "order": 64,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "YF5RIBAN",
@@ -6176,7 +6176,7 @@
     "custom": {
       "publication_ref": "ref-li2017-BS",
       "order": 66,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "77THBZDM",
@@ -6313,8 +6313,8 @@
     "custom": {
       "publication_ref": "ref-pei2013-MPE",
       "order": 68,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "D5KH2XJN",
         "publication_number": 7,
@@ -6446,7 +6446,7 @@
     "custom": {
       "publication_ref": "ref-li2012-JWEIA",
       "order": 70,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "2ND9BWQV",
@@ -6513,7 +6513,7 @@
     "custom": {
       "publication_ref": "ref-li2012-GCLX",
       "order": 71,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "LASEFQSH",
@@ -6580,8 +6580,8 @@
     "custom": {
       "publication_ref": "ref-li2010-WAS",
       "order": 72,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "9N6EYMBU",
         "publication_number": 3,
@@ -6648,8 +6648,8 @@
     "custom": {
       "publication_ref": "ref-teng2010-GCKZYGJGZ",
       "order": 73,
-      "research_family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "research_family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "legacy_bibliography": {
         "zotero_key": "KPY4XV4Z",
         "publication_number": 2,
@@ -6713,7 +6713,7 @@
     "custom": {
       "publication_ref": "ref-xiao2009-HNLGDXXB",
       "order": 74,
-      "research_family": "建筑结构抗风",
+      "research_family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "legacy_bibliography": {
         "zotero_key": "SC8R2QZE",

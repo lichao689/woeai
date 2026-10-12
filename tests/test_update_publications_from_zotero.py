@@ -55,7 +55,7 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
             "issued": {"date-parts": [[2026]]},
             "custom": {
                 "publication_ref": "ref-example2026-JOT",
-                "research_family": "建筑结构抗风",
+                "research_family": "工程结构抗风",
                 "subdirection": "数值风洞与湍动入流",
                 "order": 0,
                 "rtd": {
@@ -91,7 +91,7 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
         with patch.multiple(self.updater, ROOT=root, RESEARCH_MAP_PATH=view):
             mapping = self.updater.load_research_map()
         self.assertEqual(set(mapping), {record["id"] for record in records})
-        self.assertEqual(mapping["TEST1234"]["research_family"], "建筑结构抗风")
+        self.assertEqual(mapping["TEST1234"]["research_family"], "工程结构抗风")
 
     def test_registry_deep_dive_titles_need_only_available_rtd(self) -> None:
         root, _records = self.make_registry_repo()
@@ -400,7 +400,7 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
                 [item],
                 {
                     "TEST1234": {
-                        "research_family": "建筑结构抗风",
+                        "research_family": "工程结构抗风",
                         "subdirection": "数值风洞与湍动入流",
                     }
                 },

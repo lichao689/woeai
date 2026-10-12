@@ -13,7 +13,8 @@ public-safe, and suitable for WeChat crop behavior.
 Read only what the task needs:
 
 1. `AGENTS.md` for public-safety and WeChat API rules.
-2. `wechat/STYLE.md` for current cover rules.
+2. `wechat/STYLE.md` for article wording and short editorial-category tags;
+   `references/cover-standards.md` owns cover design rules.
 3. The target article in `wechat/articles/draft-public-safe/`.
 4. The target review note in `wechat/articles/review/`.
 5. `references/cover-standards.md` when choosing dimensions, writing prompts,
@@ -226,6 +227,6 @@ Record the confirmed choice in the cover brief or review note with:
 
 ## Helper Script
 
-Use `scripts/cover_preview.py` from the repository root. It outputs a local HTML
+Use `.agents/skills/wechat-cover/scripts/cover_preview.py` from the repository root. It outputs a local HTML
 candidate comparison board under `wechat/.local/cover-previews/` and prints
 dimension, ratio, file-size, label, and optional score metadata.

@@ -4,7 +4,7 @@
 
 如果依靠人工建模、现场点云采集或逐片区精修，城市尺度的更新速度很难跟上规划评估、灾害响应和快速工程判断的需求。这篇发表于 **Building and Environment** 的论文尝试把高分辨率 GF-7 立体卫星影像、深度学习识别、三维高度估计和几何规则化连接成一条面向 CFD 的城市几何快速重建流程。
 
-这项工作属于 WOEAI 的 **建筑结构抗风 / 数值风洞与湍动入流** 方向，也直接服务于城市风环境模拟、数值风洞前处理和工程软件化应用。
+这项工作属于 WOEAI 的 **工程结构抗风 / 数值风洞与湍动入流** 方向，也直接服务于城市风环境模拟、数值风洞前处理和工程软件化应用。
 
 ![论文图 1 所提出框架的整体流程](../../assets/public-safe/ref-zhao2026-BE/fig-01-workflow.png)
 
@@ -19,7 +19,7 @@
 - 期刊: Building and Environment
 - 年份: 2026
 - DOI: https://doi.org/10.1016/j.buildenv.2026.114811
-- WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
 
 ## 三句话导读
 
@@ -119,9 +119,9 @@ GF-7 多光谱与全色影像提供了城市尺度覆盖和局部建筑细节，
 
 最后，LoD1 城市几何适合支撑城市尺度风环境模拟和快速评估，但对于对局部细部非常敏感的专项工程，仍需要结合更高精度数据、局部复核和针对性的 CFD 建模策略。
 
-如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
+如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
+- [WOEAI | 工程结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

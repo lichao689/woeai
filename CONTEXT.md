@@ -118,12 +118,12 @@ The Chronological Publication View section titled `更早 Earlier`, grouping Pub
 _Avoid_: standalone pre-2019 year sections, `Early` without the Chinese label
 
 **Research Family**:
-The canonical public first-level research taxonomy for WOEAI. Use exactly two public research families: `建筑结构抗风` and `海上漂浮风电`. Method names such as `数值风洞` are subdirections, not first-level public families.
+The canonical public first-level research taxonomy for WOEAI. Use exactly two public research families: `工程结构抗风` and `海上漂浮风电`. Method names such as `数值风洞` are subdirections, not first-level public families.
 _Avoid_: treating `数值风洞`, `结构抗风`, or `海上风电` as peer first-level directions after this taxonomy change
 
-**建筑结构抗风**:
-The first canonical public research family. It covers building and structural wind-resistance research, including `数值风洞与湍动入流` and `高层建筑抗风与优化` as subdirections. Urban wind environment and complex terrain wind fields belong under `数值风洞与湍动入流`. Wind-induced vibration control, flow control, and historical tower-line wind-resistance proof belong under `高层建筑抗风与优化` when they are needed as supporting evidence.
-_Avoid_: expanding this into a broad all-structures direction in current public navigation
+**工程结构抗风**:
+The first canonical public research family. It covers building and structural wind-resistance research, including `数值风洞与湍动入流` and `工程结构抗风与优化` as subdirections. Urban wind environment and complex terrain wind fields belong under `数值风洞与湍动入流`. Wind-induced vibration control, flow control, and historical tower-line wind-resistance proof belong under `工程结构抗风与优化` when they are needed as supporting evidence.
+_Avoid_: implying all engineering structures or loading types have been studied; include only source-backed wind-engineering research.
 
 **海上漂浮风电**:
 The second canonical public research family. It covers floating offshore wind research, including `浮式风机系统一体化分析与优化`, `浮式混凝土平台结构设计`, and `数值风浪流水池` as subdirections.
@@ -260,7 +260,7 @@ Domain Expert: No. Keep stable publication anchors in the default Academic Outpu
 
 Dev: Can the thematic publication page use subdirections as first-level headings?
 
-Domain Expert: No. The first level must be Research Family: `建筑结构抗风` and `海上漂浮风电`. Subdirections are second-level headings inside those sections, and papers under each subdirection are listed directly in descending publication-year order.
+Domain Expert: No. The first level must be Research Family: `工程结构抗风` and `海上漂浮风电`. Subdirections are second-level headings inside those sections, and papers under each subdirection are listed directly in descending publication-year order.
 
 Dev: Should student authorship marking include only doctoral students?
 

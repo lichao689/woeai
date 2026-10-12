@@ -7,7 +7,7 @@
       "year": 2026,
       "doi": "10.1016/j.buildenv.2026.114811",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "verified"
@@ -133,8 +133,8 @@
       "year": 2026,
       "doi": "10.1016/j.oceaneng.2026.124728",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "verified"
       },
@@ -259,7 +259,7 @@
       "year": 2026,
       "doi": "10.1007/s12273-025-1379-7",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "verified"
@@ -385,7 +385,7 @@
       "year": 2026,
       "doi": "10.1016/j.jweia.2025.106302",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -621,7 +621,7 @@
       "year": 2026,
       "doi": "10.1016/j.renene.2025.124336",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "verified"
@@ -857,8 +857,8 @@
       "year": 2025,
       "doi": "10.1063/5.0293483",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "verified"
       },
@@ -983,8 +983,8 @@
       "year": 2025,
       "doi": "10.1016/j.jobe.2025.113635",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "verified"
       },
@@ -1108,7 +1108,7 @@
       "year": 2025,
       "doi": "10.1063/5.0281373",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -1456,8 +1456,8 @@
       "year": 2025,
       "doi": "10.1016/j.jobe.2025.112131",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "verified"
       },
@@ -1692,8 +1692,8 @@
       "year": 2025,
       "doi": "10.1063/5.0267175",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -1803,7 +1803,7 @@
       "year": 2025,
       "doi": "10.1016/j.scs.2025.106237",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "verified"
@@ -2039,7 +2039,7 @@
       "year": 2024,
       "doi": "10.1063/5.0240163",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "verified"
@@ -2164,7 +2164,7 @@
       "year": 2024,
       "doi": "10.1063/5.0237112",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -2275,8 +2275,8 @@
       "year": 2024,
       "doi": "10.1016/j.jweia.2024.105954",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -2386,7 +2386,7 @@
       "year": 2024,
       "doi": "10.1016/j.engstruct.2024.118742",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "verified"
@@ -2512,8 +2512,8 @@
       "year": 2024,
       "doi": "10.1016/j.jobe.2024.110660",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -2623,7 +2623,7 @@
       "year": 2024,
       "doi": "10.1063/5.0221281",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -2845,7 +2845,7 @@
       "year": 2024,
       "doi": "10.1063/5.0194006",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "verified"
@@ -2970,7 +2970,7 @@
       "year": 2024,
       "doi": "10.1016/j.jcp.2023.112706",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "verified"
@@ -3100,8 +3100,8 @@
       "year": 2024,
       "doi": "10.3390/en17184679",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -3337,7 +3337,7 @@
       "year": 2023,
       "doi": "10.1007/s12273-023-0991-7",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -3448,7 +3448,7 @@
       "year": 2023,
       "doi": "10.1016/j.jweia.2023.105468",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -3670,8 +3670,8 @@
       "year": 2023,
       "doi": "10.1016/j.istruc.2022.12.073",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -3781,7 +3781,7 @@
       "year": 2023,
       "doi": "10.1016/j.jweia.2023.105326",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -4003,8 +4003,8 @@
       "year": 2023,
       "doi": "10.1016/j.engstruct.2022.115167",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -4225,7 +4225,7 @@
       "year": 2023,
       "doi": "",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -4332,8 +4332,8 @@
       "year": 2023,
       "doi": "",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -4550,7 +4550,7 @@
       "year": 2022,
       "doi": "10.1016/j.buildenv.2022.109745",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -4661,8 +4661,8 @@
       "year": 2022,
       "doi": "10.1002/stc.3063",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -4772,7 +4772,7 @@
       "year": 2022,
       "doi": "10.1016/j.jweia.2022.105147",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "verified"
@@ -5023,7 +5023,7 @@
       "year": 2022,
       "doi": "10.1063/5.0103113",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -5356,8 +5356,8 @@
       "year": 2022,
       "doi": "10.1016/j.engstruct.2021.113575",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -5467,8 +5467,8 @@
       "year": 2022,
       "doi": "10.1016/j.jweia.2021.104860",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -5578,8 +5578,8 @@
       "year": 2022,
       "doi": "10.3390/app12083729",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -5689,8 +5689,8 @@
       "year": 2021,
       "doi": "10.1186/s43251-021-00042-x",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -5800,7 +5800,7 @@
       "year": 2021,
       "doi": "10.1007/s10652-021-09796-4",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -5911,7 +5911,7 @@
       "year": 2021,
       "doi": "10.1016/j.atmosres.2021.105507",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -6022,8 +6022,8 @@
       "year": 2021,
       "doi": "10.1016/j.jweia.2021.104549",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -6244,7 +6244,7 @@
       "year": 2021,
       "doi": "",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -6351,7 +6351,7 @@
       "year": 2020,
       "doi": "10.1016/j.jweia.2020.104281",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -6795,7 +6795,7 @@
       "year": 2019,
       "doi": "10.1016/j.jweia.2019.04.016",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -7017,8 +7017,8 @@
       "year": 2019,
       "doi": "",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -7124,8 +7124,8 @@
       "year": 2018,
       "doi": "10.1016/j.euromechflu.2017.12.004",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -7346,7 +7346,7 @@
       "year": 2018,
       "doi": "",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -7564,7 +7564,7 @@
       "year": 2017,
       "doi": "10.1007/s12273-017-0348-1",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -7786,8 +7786,8 @@
       "year": 2013,
       "doi": "",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -8004,7 +8004,7 @@
       "year": 2012,
       "doi": "10.1016/j.jweia.2011.12.004",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -8115,7 +8115,7 @@
       "year": 2012,
       "doi": "",
       "content_production": "included",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"
@@ -8222,8 +8222,8 @@
       "year": 2010,
       "doi": "10.12989/was.2010.13.1.057",
       "content_production": "included",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -8333,8 +8333,8 @@
       "year": 2010,
       "doi": "",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
-      "subdirection": "高层建筑抗风与优化",
+      "family": "工程结构抗风",
+      "subdirection": "工程结构抗风与优化",
       "source": {
         "status": "unregistered"
       },
@@ -8440,7 +8440,7 @@
       "year": 2009,
       "doi": "",
       "content_production": "excluded",
-      "family": "建筑结构抗风",
+      "family": "工程结构抗风",
       "subdirection": "数值风洞与湍动入流",
       "source": {
         "status": "unregistered"

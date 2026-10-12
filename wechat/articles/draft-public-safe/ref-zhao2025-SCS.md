@@ -17,7 +17,7 @@
 - 期刊: Sustainable Cities and Society
 - 年份: 2025
 - DOI: https://doi.org/10.1016/j.scs.2025.106237
-- WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
 
 ## 三句话导读
 
@@ -134,9 +134,9 @@ WebGIS 视图把建筑几何、插值后的风场分布和底图放在同一空�
 
 因此，更准确的理解是：本文框架适合为典型城市风场模拟提供更快、更可用的建筑几何生成路径，但在复杂建筑、密集街区、特殊光照和高风险工程场景下，仍需要人工复核、数据质量控制和专项 CFD 验证。
 
-如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
+如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
+- [WOEAI | 工程结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

@@ -17,7 +17,7 @@
 - 期刊: Journal of Building Engineering
 - 年份: 2025
 - DOI: https://doi.org/10.1016/j.jobe.2025.112131
-- WOEAI 相关方向: 建筑结构抗风 / 高层建筑抗风与优化
+- WOEAI 相关方向: 工程结构抗风 / 工程结构抗风与优化
 
 ## 三句话导读
 
@@ -157,9 +157,9 @@ Accuracy 在式（14）中定义为 $1$ 减平均绝对相对误差。表 6 的�
 
 因此，更准确的理解是：这项研究为高层建筑抗风优化中的重复结构响应分析提供了一条可验证的代理模型路线，而不是把有限元分析或工程师判断从流程中移除。
 
-如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
+如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
+- [WOEAI | 工程结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

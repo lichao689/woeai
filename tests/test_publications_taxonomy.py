@@ -19,13 +19,13 @@ from woeai.publications import (
 class ResearchTaxonomyTests(unittest.TestCase):
     def test_has_exactly_two_families_in_fixed_order(self) -> None:
         self.assertEqual(
-            RESEARCH_FAMILY_ORDER, ("建筑结构抗风", "海上漂浮风电")
+            RESEARCH_FAMILY_ORDER, ("工程结构抗风", "海上漂浮风电")
         )
 
     def test_wind_resistance_family_subdirections(self) -> None:
         self.assertEqual(
-            RESEARCH_SUBDIRECTION_ORDER["建筑结构抗风"],
-            ("数值风洞与湍动入流", "高层建筑抗风与优化"),
+            RESEARCH_SUBDIRECTION_ORDER["工程结构抗风"],
+            ("数值风洞与湍动入流", "工程结构抗风与优化"),
         )
 
     def test_floating_wind_family_subdirections(self) -> None:

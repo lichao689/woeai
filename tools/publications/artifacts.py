@@ -29,7 +29,7 @@ LATEST_MARKER = "GENERATED LATEST PAPER NOTES"
 # table-of-contents entry and was the root cause of the chen2022-JWEIA naming
 # regression.
 PAPER_NOTE_TITLE_PREFIXES: dict[str, tuple[str, ...]] = {
-    "建筑结构抗风": ("数值风洞 |", "结构抗风 |"),
+    "工程结构抗风": ("数值风洞 |", "结构抗风 |"),
     "海上漂浮风电": ("漂浮风电 |",),
 }
 PAPER_NOTE_TITLE_FORBIDDEN_SUFFIX = "论文精解"

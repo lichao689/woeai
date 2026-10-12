@@ -4,7 +4,7 @@
 
 我们在这篇发表于 **Physics of Fluids** 的论文中提出矢量势随机流生成方法，即 vector potential random flow generation (VPRFG) method。它先生成矢量势场，再通过旋度得到脉动速度场，使合成湍流在连续数学构造上满足 $\nabla \cdot \mathbf{u}=0$，同时可以按目标能谱和 Taylor 冻结假设控制湍流统计特征。
 
-这项工作属于 WOEAI 的 **建筑结构抗风 / 数值风洞与湍动入流** 方向，面向 LES 入流边界、均匀各向同性湍流基准算例，以及后续更复杂风场生成方法的基础算法问题。
+这项工作属于 WOEAI 的 **工程结构抗风 / 数值风洞与湍动入流** 方向，面向 LES 入流边界、均匀各向同性湍流基准算例，以及后续更复杂风场生成方法的基础算法问题。
 
 ## 论文信息
 
@@ -13,7 +13,7 @@
 - 期刊: Physics of Fluids
 - 年份: 2024
 - DOI: https://doi.org/10.1063/5.0194006
-- WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
 
 ## 三句话导读
 
@@ -163,9 +163,9 @@ Q 准则等值面展示了生成湍流中的涡结构。左上、右上、左下
 
 因此，这项工作最适合被理解为：在均匀各向同性湍流范围内，为数值风洞和 LES 入流生成提供一个同时兼顾目标谱、无散性和 Taylor 冻结假设的基础方法。
 
-如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
+如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
+- [WOEAI | 工程结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

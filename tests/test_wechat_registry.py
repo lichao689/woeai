@@ -26,7 +26,7 @@ def record(ref="ref-example", *, selected=True, order=0):
         "issued": {"date-parts": [[2026]]},
         "custom": {
             "publication_ref": ref,
-            "research_family": "建筑结构抗风",
+            "research_family": "工程结构抗风",
             "subdirection": "数值风洞与湍动入流",
             "source": {"status": "missing"},
             "rtd": {"status": "unregistered", "path": f"docs/source/paper-notes/{ref}.rst", "issues": [], "evidence": {}},

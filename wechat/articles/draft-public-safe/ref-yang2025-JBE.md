@@ -19,7 +19,7 @@
 - 期刊: Journal of Building Engineering
 - 年份: 2025
 - DOI: https://doi.org/10.1016/j.jobe.2025.113635
-- WOEAI 相关方向: 建筑结构抗风 / 高层建筑抗风与优化
+- WOEAI 相关方向: 工程结构抗风 / 工程结构抗风与优化
 
 ## 三句话导读
 
@@ -149,9 +149,9 @@ CDC 方法在本文比较中表现最好，但这不意味着其他方法在所�
 
 此外，论文给出的 $11$ 阶振型建议来自本文建筑模型的加速度响应分析。它说明高阶振型对加速度不可轻易忽略，但不应被机械推广为所有高层建筑的固定阶数。实际工程中仍应结合结构动力特性、模态质量参与、风荷载谱和响应目标进行校核。
 
-如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
+如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
+- [WOEAI | 工程结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

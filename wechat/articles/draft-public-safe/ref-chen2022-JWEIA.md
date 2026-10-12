@@ -17,7 +17,7 @@
 - 期刊: Journal of Wind Engineering and Industrial Aerodynamics
 - 年份: 2022
 - DOI: https://doi.org/10.1016/j.jweia.2022.105147
-- WOEAI 相关方向: 建筑结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
 
 ## 三句话导读
 
@@ -127,9 +127,9 @@ CIRFG 的价值在于把“生成后检查”前移为“生成时控制”。�
 
 此外，论文也指出，不同速度分量之间的合理互相关系数本身仍需要进一步研究。CIRFG 提供的是施加满足可解条件的目标互相关性的能力，但工程使用时仍要回答一个更前置的问题：目标互相关系数应该如何从实测、风洞或可信数据库中确定。
 
-如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
+如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
+- [WOEAI | 工程结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

@@ -17,7 +17,7 @@
 - 期刊: Physics of Fluids
 - 年份: 2025
 - DOI: https://doi.org/10.1063/5.0293483
-- WOEAI 相关方向: 建筑结构抗风 / 高层建筑抗风与优化
+- WOEAI 相关方向: 工程结构抗风 / 工程结构抗风与优化
 
 ## 三句话导读
 
@@ -155,9 +155,9 @@ $$
 
 此外，TLD 是以调谐和液体晃荡为基础的被动控制装置。即便植入式立柱提高了鲁棒性，设计仍需关注结构频率变化、施工与维护条件、液体晃荡力、水箱局部强度和长期运行可靠性，不能只用单一减振率指标替代完整工程校核。
 
-如果你对建筑结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
+如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。
 
 ## 延伸阅读
 
-- [WOEAI | 建筑结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
+- [WOEAI | 工程结构抗风方向介绍](https://woeai.readthedocs.io/zh-cn/latest/StructuralWindEngineering.html)
 - [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)

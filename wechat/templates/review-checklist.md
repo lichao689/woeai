@@ -1,137 +1,67 @@
-# WeChat Article Review Checklist
+# 公众号导读审校清单
 
-## Source
+每项的规则来源写在小节标题后。清单只用于核对，不复述规则；未通过或未执行的项
+在 review 中如实标记。
 
-- [ ] Available authorized metadata, DOI and `abstractNote` have been checked; unavailable sources are recorded, and desktop access is not a cloud prerequisite.
-- [ ] Available attachment records and current-workspace sources/manifests have been checked.
-- [ ] The review note contains a public-safe `源文件获取记录` section.
-- [ ] `scripts/check-public-safe-content.py` will fail if this section is
-  missing from the review note.
-- [ ] The source-acquisition record states the Zotero key, metadata source,
-  attachment-record status, local PDF status, PDF source type, and whether
-  Zotero Web API `/file` was attempted.
-- [ ] If multiple PDF-like attachments exist, the review note records the
-  selected attachment class using this priority: author manuscript, publisher
-  version of record, OA platform PDF, preprint, then other.
-- [ ] If a lower-priority PDF source was used, the review note explains why the
-  higher-priority source was not used.
-- [ ] Bibliographic fields are taken from Zotero metadata and the official
-  published record, not overwritten by a lower-priority PDF such as a preprint.
-- [ ] The review note contains a public-safe `关键事实证据定位记录` section.
-- [ ] `scripts/check-public-safe-content.py` will fail if this section is
-  missing from the review note.
-- [ ] The evidence-location record covers the abstract, core claims or
-  conclusions, key figures, and key formulas.
-- [ ] Evidence page references use PDF file page numbers, written as
-  `PDF file page N`, not journal printed page numbers or article pagination.
-- [ ] Key figures include PDF file page and original figure number when
-  available.
-- [ ] Key formulas include PDF file page and equation number when they are
-  original paper formulas; editorial explanatory formulas are clearly marked as
-  such.
-- [ ] Missing page audits are marked `pending PDF page audit` rather than
-  guessed.
-- [ ] The source-acquisition record states whether any web PDF download was
-  used. If yes, it records explicit user approval and the public/legal source.
-- [ ] The source-acquisition record does not expose absolute private file
-  paths, API keys, cookies, raw downloaded PDF contents, or private credentials.
-- [ ] Local PDF attachment exists and was used for PDF-derived abstract, figures, captions, and body evidence; or the review note records why it was unavailable.
-- [ ] If local PDF was unavailable, Zotero Web API `/file` access was tried when credentials were available.
-- [ ] If no PDF source was available, the review note records `需要同步 PDF 或提供作者稿` and the draft does not invent PDF-derived facts.
-- [ ] DOI matches the WOEAI publication record.
-- [ ] WOEAI publication record exists in `docs/source/Publications.rst`.
-- [ ] Journal, year, authors, and metrics are copied from source-bounded data.
-- [ ] The `论文信息` author line uses RTD-compatible markers: only Student First
-  Authors are underlined, corresponding authors use a visible `*`, and
-  `(corresponding author)` is not used.
-- [ ] The Official WeChat draft author field is the paper's first author for a
-  journal-paper article.
-- [ ] The `论文信息` block omits a separate `卷期页码` line.
-- [ ] For English papers, the `摘要` text is a faithful Chinese translation of
-  the original abstract from Zotero `abstractNote`, the PDF abstract, an author
-  manuscript, or another approved source; the article contains no `**英文摘要**`
-  block.
-- [ ] Related direction page exists.
-- [ ] 已执行自然写作审校；可选导读或数字卡有独立用途，不与正文重复。
+## 源文件与证据（paper-sources-and-evidence.md）
 
-## Engineering Story And Series Consistency
+- [ ] 当前工作区私有源文件与 manifest 已先检查；论文身份、版本与复用状态已核对。
+- [ ] 多个 PDF 时按优先级选源；使用低优先级来源有理由。
+- [ ] 书目字段来自 Zotero 元数据与正式出版记录。
+- [ ] review 含 `## 源文件获取记录` 与 `## 关键事实证据定位记录`。
+- [ ] 摘要、核心数字、所用图和公式都有 `PDF file page N` 定位，或写明 `pending PDF page audit`。
+- [ ] 原文内部矛盾已记录两处位置，正文未暗中修正。
+- [ ] 未自动抓取网页 PDF；使用的网页下载有明确批准记录。
+- [ ] review 中没有私有绝对路径、附件标识、凭据或长段原文。
 
-- [ ] Opening identifies an engineering decision and constraint before jargon.
-- [ ] Innovation explains the actual baseline, limitation and changed component.
-- [ ] Mechanism, observed association and verification scope are distinguished.
-- [ ] Numeric hooks retain metric, baseline and condition, not universal best cases.
-- [ ] Demonstrated results and potential applications are explicitly separated.
-- [ ] Application names inputs, useful decisions/outputs and missing transfer validation.
-- [ ] Title, guide, cover and requested digest do not outrun source evidence.
-- [ ] Important limitations also sit beside affected claims.
-- [ ] Cover brief uses `WOEAI-cover-v2`, confirmed wording and evidenced scientific elements.
-- [ ] Final dimensions are measured, not inferred from filenames or ratio.
-- [ ] Fixed layout, type, palette and wide/square/mobile checks meet the contract.
-- [ ] Guidance-only migration has not falsely accepted an old image or backend preview.
+## 结构与写作（STYLE.md、natural-scientific-writing.md）
 
-## Expression
+- [ ] 标题为 `<类别> | <具体问题>`，不比正文更强，不以“我们如何”开头。
+- [ ] 导语首段约 60–110 字，可单独作为微信摘要。
+- [ ] 顺序为：导语 → 论文信息 → 摘要 → 正文 3–4 节 → 结语。
+- [ ] 正文各节分别承担问题 / 方法 / 证据 / 边界，没有一节是摘要的扩写。
+- [ ] 小标题是具体句子，无“研究问题”“方法贡献”“关键发现”等空壳标题。
+- [ ] 无三句话导读、数字卡、“针对问题 N”回扣、固定招生结尾。
+- [ ] 能用一句话写出论证线。
+- [ ] 基线、具体改动、验证方式写清；无证据的“首次 / 突破 / 解决了”已删除。
+- [ ] 每个数字带指标、基线和工况；不同位置的数字没有换算成普遍降幅。
+- [ ] 已验证结果与潜在用途分开；潜在用途写明输入、输出和仍需的验证。
+- [ ] 重要限定在相应结论旁边。
+- [ ] 自然写作清单第 2 节已逐项检查；无新增经历、情绪、动机或无证据因果。
+- [ ] 开头切入方式与相邻文章不同。
 
-- [ ] The opening strategy differs from adjacent articles (现实矛盾式 /
-  反常识式 / 具体数字式 / 场景式).
-- [ ] 数字放在有解释价值的位置；开头不强制数字钩子。
-- [ ] 作者语气自然；不编造经历、情绪、动机，不强制每段“我们”。
-- [ ] 无强制问题编号回扣或加粗数量；关键限定、归因、否定和确定程度保留。
-- [ ] 结尾简短相关，无已发布公众号链接时完全省略延伸阅读。
+## 论文信息与摘要（STYLE.md 第 6 节）
 
-## Copyright
+- [ ] 只有题名、作者、期刊、年份、DOI、相关方向六项；无卷期页码行。
+- [ ] 仅学生第一作者加下划线；通讯作者用 `*`；无 `(corresponding author)`。
+- [ ] 草稿作者字段为论文第一作者。
+- [ ] 摘要为原摘要的忠实中文翻译；无 `**英文摘要**`；润色未改动摘要。
+- [ ] DOI 与学术成果页记录一致。
 
-- [ ] The paper is authored by the user/WOEAI, or reuse rights/source status are otherwise confirmed.
-- [ ] Original high-resolution paper figures are extracted from the PDF or author manuscript when they are legally safe and clear on mobile.
-- [ ] Redrawn figures are used only when original figures are unavailable, legally unsafe, low-resolution, or unsuitable for WeChat display.
-- [ ] Image source and extraction method are recorded in the separate `.review.md` file.
+## 图与公式（STYLE.md 第 7–8 节）
 
-## Formulas And Figures
+- [ ] 原图来源与复用状态已记录；团队作者论文使用原图，其他论文复用权利已确认。
+- [ ] 图题行为 `论文图 N <中文图名>`，与 alt 文本相同；读图行另起一段，不复述观点。
+- [ ] 变量与带单位的量用公式写法，不用代码格式；缩写下标用 `\mathrm{}`。
+- [ ] 重要公式后有变量解释和作用说明；公式不是图片。
 
-- [ ] WeChat draft formulas use Markdown LaTeX: `$...$` for inline formulas and `$$...$$` for display formulas.
-- [ ] RTD companion formulas use Sphinx math markup: ``:math:`...` `` for inline formulas and `.. math::` for display formulas.
-- [ ] Standalone display formulas are visually centered in both WeChat preview and RTD HTML.
-- [ ] Inline mathematical variables, symbolic parameters, metrics, dimensional quantities, and unit-bearing values use formula markup rather than code spans.
-- [ ] Word-like or abbreviation subscripts use explicit roman text in LaTeX, for example `$H_{\mathrm{max}}$` and `$K_{\mathrm{CFD}}$`.
-- [ ] The selected WeChat formula renderer is `mathjax-svg` unless this review
-  note explicitly records a fallback reason.
-- [ ] The WeChat backend mobile preview preserves the
-  standard `span` / `section` containers and inline SVG formula output clearly.
-- [ ] SVG formula containers preserve source metadata such as `data-formula`
-  and `data-formula-type` where practical.
-- [ ] Formulas are not rendered as raster images unless final WeChat preview proves an image fallback is needed.
-- [ ] Important formulas have plain-language explanations.
-- [ ] SVG 根组 currentColor 属性及内联 fill/stroke 保留，无强制黑白字或人为白底；分式横线与显式内部颜色保留。
-- [ ] API 清洗外层 inherit/transparent 时记录清洗结果，并以实际手机预览验证效果，不单凭样式缺失判失败。
-- [ ] 实际微信手机浅色模式公式预览通过（记录设备/版本/时间）。
-- [ ] 实际微信手机深色模式公式预览通过（记录设备/版本/时间）。
-- [ ] 离线模拟、API 回查没有被当作上述两项通过的证据。
-- [ ] 延伸阅读真实链接在实际预览中可点击；无可用链接时整节省略。
-- [ ] Each figure has a Chinese figure-title line in the `论文图 N` format
-  translated from the original paper title, with identical alt text, followed
-  by a separate Chinese explanatory line.
-- [ ] Figure explanatory lines carry look-at-the-figure information only and do
-  not restate the article's main argument.
-- [ ] Rendered WeChat figure-title text is centered, one font size smaller than body text, and italic.
-- [ ] RTD body figures preserve the same two-line caption meaning: centered
-  smaller italic Chinese figure-title line, then separate explanatory line.
-- [ ] Figure clarity has been checked in the final WeChat backend mobile preview.
+## 链接与公开安全（STYLE.md 第 9–10 节）
 
-## Independent RTD Page
+- [ ] 延伸阅读只含已发布公众号文章，否则整节省略。
+- [ ] `content_source_url` 默认指向本论文 RTD 精解页，或 review 中显式覆盖 / 留空。
+- [ ] 无 `winddee.cn` 硬编码、裸 URL、站内导流以外的推广语。
+- [ ] 读者正文无 front matter、`pending`、配图计划、复核清单、私有路径或版权备注。
+- [ ] 无未确认的合作单位、项目、设施、奖项或指标。
+- [ ] 无 AppSecret、token、cookie、API 原始返回或预览链接。
 
-- [ ] RTD 按全文精解指南从获授权原文独立维护，不由公众号改稿覆盖。
-- [ ] 公众号语气修订未改 RTD 正文、附录、原图或其核验状态。
-- [ ] 底部阅读原文指向正确的独立精解页，RTD 相关导航仍为站内链接。
+## RTD 独立性
 
-## Public Safety
+- [ ] 公众号改稿没有改动 RTD 精解正文、附录、原图或其核验状态。
+- [ ] 底部阅读原文指向正确的精解页；RTD 相关导航仍为站内链接。
 
-- [ ] No WeChat AppSecret, token, cookie, or credential appears.
-- [ ] No Zotero API key appears.
-- [ ] No private partner name appears.
-- [ ] No unconfirmed project status appears.
-- [ ] No private review comment appears.
-- [ ] The draft is safe to expose in a public GitHub repository.
-- [ ] WeChat body related-paper navigation contains only already-published
-  WeChat article links; unpublished related articles are omitted.
-- [ ] The WeChat API `content_source_url` is the current paper's RTD companion
-  page unless the review note explicitly overrides it or explicitly leaves it
-  blank.
+## 渲染与预览（wechat/README.md）
+
+- [ ] `preflight` 或 `dry-run` 通过；公式路线为 `mathjax-svg`，否则记录原因。
+- [ ] 实际微信手机浅色模式：公式、图片、链接已检查（记录设备 / 版本 / 时间）。
+- [ ] 实际微信手机深色模式：公式、图片、链接已检查（记录设备 / 版本 / 时间）。
+- [ ] 离线渲染、API 回查、浏览器模拟没有被当作手机预览通过的证据。

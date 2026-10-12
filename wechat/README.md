@@ -2,6 +2,17 @@
 
 This directory manages public-safe WeChat Official Account article material for WOEAI.
 
+This README owns WeChat **delivery**: rendering, formula SVG and dark-mode
+acceptance, the official draft API, credentials, and backlog state. Other rules
+live in one place each:
+
+- writing rules and article structure: [STYLE.md](STYLE.md)
+- de-AI editing workflow: [natural-scientific-writing.md](../.agents/skills/wechat-paper/references/natural-scientific-writing.md)
+- source acquisition, evidence records, figure extraction:
+  [paper-sources-and-evidence.md](../project/guides/paper-sources-and-evidence.md)
+- execution order for agents: [wechat-paper skill](../.agents/skills/wechat-paper/SKILL.md)
+- templates: [templates/](templates/)
+
 Workflow state now lives only in `docs/data/publications.json`; the backlog is a
 generated compatibility view. Read [the registry guide](../project/guides/publication-registry.md)
 and [progress view](../project/publication-progress.md). Historical statuses in
@@ -34,15 +45,8 @@ should use already-published WeChat article links only; RTD deep-dive pages use
 internal paper-note links. This does not automatically change the public
 website's own canonical SEO URL or homepage contact display.
 
-Use clear visible labels for RTD-side WOEAI links, for example:
-
-- `WOEAI | 建筑结构抗风方向介绍`
-- `WOEAI | 主页`
-
-For figure captions in Chinese WeChat articles, use a Chinese figure-title line
-translated from the paper's original title, followed by a separate Chinese
-explanatory line. The WeChat renderer should make the figure title centered,
-one font size smaller than body text, and italic.
+Figure-caption wording follows STYLE.md section 7. The WeChat renderer makes
+the figure-title line centered, one font size smaller than body text, and italic.
 
 Formula source should keep Markdown LaTeX semantics. For the official API path,
 MathJax SVG pre-rendering is the default formula route; it converts LaTeX into
@@ -63,27 +67,51 @@ Historical formula evidence (not current-run acceptance):
   about 113k characters containing multiple inline and display SVG formulas;
   the user confirmed the WeChat preview effect was satisfactory.
 
+## Formula SVG And Dark-Mode Acceptance
+
+Formula writing rules are in STYLE.md section 8; this section covers rendering.
+
+- Use transparent SVG formulas that inherit the adjacent text color through
+  `currentColor`. Use standard `span` (inline) / `section` (display)
+  containers and set the first SVG group's fill/stroke both as presentation
+  attributes and inline styles. Preserve vector geometry, fraction bars,
+  baseline, explicit internal colors and LaTeX metadata (`data-formula`,
+  `data-formula-type`). Formula blocks must not impose a fixed foreground or
+  background; do not restore opaque white formula tiles.
+- This follows the [WeChat SVG guidance](https://github.com/wechatjs/verify-article-structure-spec/blob/main/verify_article_structure.md#44-svg)
+  and the export structure used by [doocs/md](https://github.com/doocs/md/blob/main/packages/core/src/extensions/katex.ts).
+  These sources support the approach, not a guarantee for every phone reader.
+- Display formulas are centered, with horizontal overflow for wide equations.
+  RTD display formulas are centered by the site CSS.
+
+Validated workflow:
+
+1. Render canonical LaTeX with MathJax SVG; export standard containers with
+   source metadata and original SVG geometry.
+2. On the first SVG `g`, keep `fill="currentColor" stroke="currentColor"` and
+   inline `style="fill:currentColor;stroke:currentColor;"`.
+3. Check inline, display, fraction and multiline formulas in light/dark browser
+   fixtures at mobile width.
+4. After updating the draft, read back SVG paint, containers, LaTeX and
+   geometry. WeChat may strip redundant outer `color:inherit` and
+   `background:transparent`; that alone is not a failure. Check for forced
+   ancestor styles, then verify the actual phone reader.
+5. Record phone light and dark outcomes separately. One article's acceptance
+   does not transfer to other articles or devices, and does not imply
+   whole-article publication readiness.
+
+Precedent: for `ref-chen2024-JCP`, the user confirmed normal dark-mode formula
+colors on 2026-10-11 at 17:15 UTC after the same-draft update at 15:23 UTC
+(candidate `960ce68f3dc9777cfc9305162f55e5bcdb71fe2c`). Light mode, phone OS and
+WeChat version were not separately confirmed.
+
 ## Independent RTD Full-Paper Workflow
 
-Read [project/guides/paper-deep-dive-rst.md](../project/guides/paper-deep-dive-rst.md)
-before creating or updating an RTD paper deep dive. The approved PDF or author
-manuscript and the corresponding `docs/source/Publications.rst` entry are
-required. Missing full-paper source is a blocker; an abstract or WeChat article
-cannot substitute for it.
-
-Translate the complete paper body sentence by sentence in original order,
-including sections, equations, figures, tables, captions, citations, references,
-and appendices. Preserve limitations and discrepancies rather than inventing
-repairs. Keep appendices before references; omit CRediT, conflict-of-interest,
-data-availability, acknowledgements, and supplementary-material tail sections
-as specified by the guide. Use `\qquad (N)` for manual equation numbers, not
-`\tag{N}`. Place the cover immediately after the short-WeChat-link line and
-retain the final `完整引用` link to the paper's Publications anchor.
-
-Complete the guide's source-to-output coverage audit before delivery and run
-its required site checks. Keep the audit and private source details out of the
-public RST. Register pages under the Academic Outputs research-family and
-subdirection hierarchy, preserving the stable paper-note URL.
+RTD deep dives are a separate task. Follow
+[paper-deep-dive-rst.md](../project/guides/paper-deep-dive-rst.md) (structure,
+coverage and audit) and [rtd-translation-style.md](../project/guides/rtd-translation-style.md)
+(translation quality). Missing full-paper source is a blocker; an abstract or
+WeChat article cannot substitute for it.
 
 `wechat/tools/markdown_to_rtd.py` is a historical introduction-page converter.
 Use it only for explicitly requested maintenance of a legacy converted
@@ -407,95 +435,19 @@ gate is manual preview, proofreading, and confirmation in the WeChat backend.
 
 ## Workflow
 
-1. Select a paper in `wechat/backlog/selected-papers.yml` and verify its
-   `publication_ref`, WOEAI publication record, and DOI.
-2. Inventory authorized sources in the current workspace and follow the source
-   acquisition priority below. A repository clone is not a source-PDF backup.
-3. Draft the WeChat introduction from `wechat/templates/paper-explainer.md`
-   and create the separate public-safe evidence/review note.
-4. When an RTD deep dive is in scope, produce it independently from the approved
-   full paper under [the full-paper guide](../project/guides/paper-deep-dive-rst.md).
-   Never derive it from the WeChat introduction. Complete its coverage audit
-   and required Sphinx/site checks separately.
-5. Check source evidence, figure reuse, public safety, and article/asset paths.
-   Render offline HTML with the repository renderer and run `preflight` or
-   `dry-run`. Pure WeChat article/review work does not require a Sphinx build.
-6. If backend delivery is requested, assess credentials and actual-runner API
-   connectivity in the separately authorized diagnostic stage. Explain the
-   credential access, approved-image uploads, and target draft create/update,
-   then obtain explicit confirmation before live submission.
-7. After a successful live operation, record only non-sensitive draft metadata
-   and supported backlog state. Failed calls and no-submit checks do not
-   advance the state.
-8. A human previews, proofreads, and publishes in the WeChat backend. Keep
-   formula/figure/cover preview flags false until their actual backend previews
-   are checked. Apply wording corrections back to the WeChat Markdown and
-   regenerate that draft; do not synchronize its abbreviated body into RTD.
-9. Record the confirmed published URL and appropriate state in the backlog
-   and, when relevant, `wechat/index.yml`.
+The step-by-step execution order lives in the
+[wechat-paper skill](../.agents/skills/wechat-paper/SKILL.md). In outline:
 
-## Zotero Source Acquisition Priority
-
-Use this order for WOEAI paper articles:
-
-1. Inspect authorized source files and manifests already available in the
-   current workspace, including ignored `wechat/.local/` storage. Journal
-   PDFs may be under `journal-papers/<ZoteroKey>/source.pdf` or
-   `<publication_ref>/source.pdf`; inspect actual files rather than assuming
-   a historical inventory was restored. Verify paper identity, source version,
-   reuse status, and manifest before use.
-2. Check Zotero metadata, DOI, `abstractNote`, and attachment records when
-   accessible. Zotero Desktop Local API is available only on the user's actual
-   desktop; it is not a prerequisite for cloud content production. Record the
-   metadata source and unavailable checks rather than claiming a Desktop check.
-3. Use the approved local PDF or author manuscript to verify abstract, figures,
-   captions, and body evidence. If sources were transferred, keep the original
-   source SHA-256 and downloaded-copy SHA-256 separately labelled in private
-   records. A transfer hash alone does not prove original byte identity.
-4. If the source is missing, try the Zotero Web API `/file` endpoint only when
-   authorized access is available, with credentials and downloaded files kept
-   private. Otherwise request source synchronization or an approved author
-   manuscript and record `需要同步 PDF 或提供作者稿`.
-5. Do not invent PDF-derived facts. Missing full-paper source blocks an RTD
-   full-paper deep dive even if the WeChat introduction or abstract is present.
-
-This is not a general web-scraping workflow. Do not automatically scrape or
-download PDFs from publisher pages, DOI landing pages, Google Scholar,
-ResearchGate, Sci-Hub, search results, or other general web pages. Web pages
-may be used to verify public metadata only. A web PDF may be downloaded only
-after the user explicitly approves a specific public and legal source, such as
-an OA PDF, an author manuscript, or a user-provided download link. Keep such
-downloads under ignored private working paths such as
-`wechat/.local/<publication_ref>/`, never commit the PDF to the public
-repository, and record the source and approval status in the review note.
-
-Every article review note must include a public-safe `源文件获取记录` section.
-Use it to record the Zotero key, metadata source, attachment-record status,
-local PDF status, PDF source type, private-storage class, Zotero Web API
-`/file` status, web-download status, abstract source, body-evidence source, and
-figure source. Do not record absolute private file paths, credentials, cookies,
-raw API payloads, or downloaded PDF contents in committed files.
-
-When a Zotero item has multiple PDF-like attachments, choose the PDF evidence
-source in this order: author final manuscript / author manuscript, publisher
-version of record PDF, open-access platform PDF, preprint, then other
-attachments. Record the selected class in the review note. If a lower-priority
-source is used, explain why the higher-priority source was missing, unreadable,
-legally unsafe, or visually unsuitable. Journal, year, volume, issue, pages,
-DOI, and publication status still come from Zotero metadata and the official
-published record.
-
-Every article review note must also include a public-safe
-`关键事实证据定位记录` section. It should not annotate every sentence, but it
-must record evidence anchors for the abstract, core claims or conclusions, key
-figures, and key formulas. Use PDF file page, section, table, original figure
-number, or original equation number when available. If a WeChat article formula
-is an editorial explanation rather than a numbered paper equation, record that
-distinction and point to the paper evidence it explains. Mark unaudited pages
-as `pending PDF page audit` instead of guessing. Evidence locations use PDF
-file page numbers, written as `PDF file page N`, not journal printed page
-numbers or article pagination.
-
-`scripts/check-public-safe-content.py` enforces that every
-`wechat/articles/review/*.review.md` file includes both `## 源文件获取记录` and
-`## 关键事实证据定位记录`.
+1. Select an included paper and verify `publication_ref`, DOI and the WOEAI
+   publication record.
+2. Obtain and verify sources under
+   [paper-sources-and-evidence.md](../project/guides/paper-sources-and-evidence.md).
+3. Draft from `templates/paper-explainer.md` under [STYLE.md](STYLE.md), edit
+   with the natural-writing guide, and record evidence in the review note.
+4. Render offline and run `preflight` / `dry-run`. Pure WeChat article/review
+   work does not require a Sphinx build.
+5. Backend delivery only after the explicit authorization described above;
+   only a successful live operation advances state.
+6. A human previews, proofreads and publishes. Apply wording corrections back
+   to the WeChat Markdown; do not synchronize the abbreviated body into RTD.
+7. Record the confirmed published URL and state.

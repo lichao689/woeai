@@ -1,142 +1,112 @@
 ---
 publication_ref:
-zotero_key:
 doi:
 research_family:
 subdirection:
 publication_mode: first_publish
 wechat_status: drafting
+wechat_author:
 source_checked: false
 copyright_checked: false
 public_safety_checked: false
 formula_preview_checked: false
 figure_preview_checked: false
+cover_image_checked: false
+wechat_backend_preview_checked: false
 rtd_page_checked: false
 ---
 
 # <publication_ref> 发布说明
 
+填写规则：源文件与证据见 `project/guides/paper-sources-and-evidence.md`；
+写作检查见 `wechat/STYLE.md` 与 `wechat/templates/review-checklist.md`。
+本文件公开：只写存储类别和证据定位，不写私有绝对路径、附件标识、凭据或长段原文。
+
 ## 正文文件
 
-- 公众号正文:
-- RTD 论文精解页:
-
-## 证据来源
-
-- DOI:
-- Zotero:
-- PDF / 作者稿:
+- 公众号正文: `wechat/articles/draft-public-safe/<publication_ref>.md`
+- RTD 论文精解页: `docs/source/paper-notes/<publication_ref>.rst`
+- 封面素材: <public-safe 路径，或“未生成”>
 
 ## 源文件获取记录
 
-- Zotero 元数据: pending / checked via Zotero Desktop Local API
-- Zotero 附件记录: pending / checked via Zotero Desktop Local API
-- 本地 PDF 附件: pending / exists / missing
-- PDF 附件候选: single / multiple / none
-- PDF 选择优先级: author manuscript > publisher version of record > OA platform PDF > preprint > other
-- 已选 PDF 类型: author manuscript / publisher version of record / OA platform PDF / preprint / other / unavailable
-- 低优先级选择原因: not applicable / higher-priority source missing / unreadable / legally unsafe / visually unsuitable
-- PDF 来源类型: Zotero local attachment / Zotero Web API `/file` / user-provided author manuscript / approved OA PDF / unavailable
-- PDF 私有存放: not recorded / Zotero private attachment / `wechat/.local/<publication_ref>/...`
-- Zotero Web API `/file`: not needed / attempted / unavailable / failed
-- 网页 PDF 下载: not used / explicitly approved public legal source
-- 网页 PDF 批准记录: not applicable / approved by user on YYYY-MM-DD for <source label>
-- 摘要依据: Zotero `abstractNote` / PDF abstract / author manuscript / unavailable
-- 正文证据依据: PDF body / author manuscript / public metadata only / unavailable
-- 图片依据: PDF embedded figures / author manuscript figures / generated/redrawn / unavailable
-- 备注: do not record absolute private file paths, API keys, cookies, or downloaded PDF contents in this public repository
+- 元数据来源: <Zotero Web API / Zotero Desktop Local API / 注册表快照 / 不可用>
+- 附件记录: <已核对 / 不可用>
+- 本地 PDF: <存在 / 缺失>
+- 已选 PDF 类型: <作者稿 / 出版社正式版 / OA PDF / 预印本 / 其他 / 不可用>
+- 低优先级原因: <不适用 / 高优先级缺失 / 不可读 / 法律上不安全 / 图像不适用>
+- 私有存储类别: <私有工作区 / Zotero 私有附件 / 未记录>
+- Zotero Web API `/file`: <无需 / 已尝试 / 不可用 / 失败>
+- 网页 PDF 下载: <未使用 / 用户于 YYYY-MM-DD 批准的公开合法来源：<来源名称>>
+- 摘要依据: <Zotero `abstractNote` / PDF 摘要 / 作者稿 / 不可用>
+- 正文证据依据: <PDF 正文 / 作者稿 / 仅公开元数据 / 不可用>
+- 图片依据: <PDF 嵌入原图 / 作者稿原图 / 重绘 / 不可用>
+- PDF 文件页数: <N>
 
 ## 关键事实证据定位记录
 
-- 摘要:
-  - 文章使用:
-  - 证据位置: Zotero `abstractNote` / PDF file page / author manuscript / pending PDF page audit
-- 核心结论:
-  - 文章使用:
-  - 证据位置: PDF file page / section / table / pending PDF page audit
-- 关键图:
-  - 文章使用:
-  - 证据位置: PDF file page / original figure number / pending PDF page audit
-- 关键公式:
-  - 文章使用:
-  - 证据位置: PDF file page / original equation number / editorial explanatory formula based on paper evidence / pending PDF page audit
-- 页码口径: use PDF file page numbers, not journal printed page numbers or article pagination
-- 备注: record evidence anchors, not long copied PDF passages or absolute private paths
+页码一律为 `PDF file page N`；未核页写 `pending PDF page audit`。
+
+- 摘要: <来源与位置>
+- 核心结论与数字:
+  - <文章用法> — <PDF file page N，章节 / 表号；指标、基线、工况>
+- 所用原图:
+  - 论文图 N — PDF file page N
+- 所用公式:
+  - <原式 (N) — PDF file page N / 编辑解释式，依据 PDF file page N 的……>
+- 原文内部矛盾: <两处位置与正文处理方式；无则写“未发现”>
+
+## 工程叙事证据卡
+
+- 论证线（一句话）: <现有做法在 X 下不够 → 本文改了 Y → 用 Z 检验 → 结果 W → 适用到 V>
+- 工程问题与决策者: <真实约束与所需判断，不虚构项目>
+- 基线及其局限: <原文比较对象及证据位置>
+- 具体改动: <实际改变的环节；证据位置>
+- 机制与验证: <解释与验证设计；相关与因果分开>
+- 已验证结果: <指标、基线、工况、数值；证据位置>
+- 潜在用途: <输入、输出、迁移前所需验证；不是已部署>
+- 适用边界: <假设、未测工况、不可推出的结论>
+- 标题与导语依据: <对应的已核实事实>
+- 封面钩子依据: <不强于正文；文字确认状态见 cover brief>
+
+## 写作审校记录
+
+- 导语首段可单独作为微信摘要: <是 / 需修改>
+- 正文各节分工（问题 / 方法 / 证据 / 边界）及是否复述摘要: <说明>
+- 自然写作清单（natural-scientific-writing.md 第 2 节）检查结果: <说明>
+- 数字、单位、条件、归因与确定程度对照: <通过 / 修改项>
+- 是否新增原文不支持的事实、经历、情绪、动机或因果: <否 / 需修改>
 
 ## 图片使用记录
 
-1. Figure:
-   - 用途:
-   - 图片状态:
-   - 素材文件:
-   - 来源/版权:
-   - 抽取方式:
-   - 公众号图注:
-   - 移动端预览:
+1. 论文图 N:
+   - 用途: <在论证中的作用>
+   - 素材文件: <public-safe 路径>
+   - 来源 / 复用: <团队作者原图 / 已确认复用权利>
+   - 抽取方式: <pdfimages / 条带拼接 / 页面渲染裁切>
+   - 移动端预览: 未检查
 
 ## 公式检查
 
-- 使用公式:
-- 呈现方式: Markdown LaTeX source; default WeChat API rendering is MathJax SVG with `data-formula` metadata
-- 微信公式渲染路线: `mathjax-svg` unless a fallback reason is recorded
-- RTD 呈现方式:
-- 行内变量/量纲:
-- 移动端预览:
+- 使用公式: <原式 (N) / 编辑解释式>
+- 渲染路线: `mathjax-svg`（使用其他路线时写明原因）
+- 手机浅色模式: 未检查
+- 手机深色模式: 未检查
 
-## 工程叙事与衍生文案证据卡
+## 链接
 
-- 工程问题与决策者: <真实约束与所需判断，不虚构项目>
-- 基线及其局限: <原文比较对象及证据位置>
-- 具体创新: <实际改变环节，不把所有采用技术算作首创；证据位置>
-- 机制与验证: <解释与验证设计，不把相关性写成因果证明>
-- 已验证结果: <指标、基线、工况、数值；PDF file page / figure / table>
-- 潜在用途: <决策、输入、输出、迁移前所需验证；并非已部署>
-- 适用边界: <假设、未测工况及不可推出的结论>
-- 标题与导语依据: <对应已核实事实>
-- 封面钩子及副标题依据: <不强于正文；文字批准状态另记>
-- 分享摘要: <仅请求时填写，60–100 字建议服从实际字段限制>
-- 编辑状态: pending / evidence-checked; 不因此改变平台预览或发布状态
-
-## 自然写作与可选模块检查
-
-- 论证主线与段落推进:
-- 可选导读/卡片: omitted / included with reason
-- 模块是否提供独立信息，而非复述摘要或结论:
-- 数字、单位、条件、归因和确定程度对照结果:
-- 是否新增未经支持的经历、情绪、动机或因果: no / needs revision
-- 语气通读与剩余问题:
-
-## 相关论文导航
-
-- 公众号相关导航: only published WeChat article links / omitted because no published WeChat links / needs revision
-- RTD 相关导航: internal RTD paper-note links / omitted because no related RTD pages / needs revision
-- `content_source_url`: default RTD 论文精解 URL / explicit override / explicitly blank
-- 预期 RTD 阅读原文: `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`
-
-## 公开安全
-
-- [ ] No WeChat AppSecret, token, cookie, or credential appears.
-- [ ] No Zotero API key appears.
-- [ ] No private partner name appears.
-- [ ] No unconfirmed project status appears.
-- [ ] Reader-facing Markdown has no production notes, pending placeholders, or private paths.
+- 延伸阅读: <仅已发布公众号文章 / 省略：无已发布相关文章>
+- `content_source_url`: <默认 RTD 精解页 / 显式覆盖 / 显式留空>
 
 ## 发布前任务
 
-- [ ] 核对作者、期刊、页码、DOI、公式和图题。
-- [ ] 按自然写作指南通读并与事实清单对照，不以检测分数或字数变化验收。
-- [ ] 关键数字、单位、工况和限制保留；可选导读/数字卡无重复。
-- [ ] 从 PDF 或作者稿抽取并导入已确认可用的原始高清图。
-- [ ] 确认公众号正文相关论文导航只含已发布公众号文章链接。
-- [ ] 确认 RTD 论文精解页使用站内 paper-note 相关论文链接。
-- [ ] 确认 RTD 论文精解页按已批准可公开使用的论文源文件整理，不由公众号正文派生。
-- [ ] 确认 RTD 论文精解页已进入 `论文精解` 区域，并按二级科研方向归类。
-- [ ] 确认微信草稿底部 `content_source_url` 指向本论文 RTD 论文精解页，除非本 review front matter 明确覆盖或留空。
-- [ ] 公众号实际手机浅色预览：正文、公式、图片、链接。
-- [ ] 公众号实际手机深色预览：正文、公式、图片、链接。
-- [ ] 发布后回填 `latest_published_url` 和 `wechat_status`。
+- [ ] 作者、期刊、DOI、公式、图题与原文一致。
+- [ ] 按 `wechat/templates/review-checklist.md` 完成写作与公开安全检查。
+- [ ] 实际微信手机浅色预览：正文、公式、图片、链接。
+- [ ] 实际微信手机深色预览：正文、公式、图片、链接。
+- [ ] 发布后回填 `latest_published_url` 与状态。
 
 ## 检查记录
 
-- public-safety:
-- docs-check:
+- public-safety: <命令与结果>
+- preflight / dry-run: <命令与结果>

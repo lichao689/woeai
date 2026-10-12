@@ -1,411 +1,190 @@
-# WOEAI WeChat Style Guide
-
-## Article Unit
-
-Use one selected paper per article.
-
-Do not turn every article into a multi-paper theme essay. Related papers may
-appear only as compact platform-specific navigation: published WeChat article
-links in the WeChat body, and internal paper-note links on RTD.
-
-Use the reader-facing Markdown file under `wechat/articles/draft-public-safe/`
-as the public content master for the compact WeChat article. Public wording,
-formulas, figure captions, and body links for the WeChat draft should be aligned
-there before updating the draft. If a WeChat backend preview causes a public正文
-edit, apply it back to the Markdown master first, then regenerate the WeChat
-output.
-
-RTD 论文精解 pages live at `docs/source/paper-notes/<publication_ref>.rst` so
-existing `paper-notes/<publication_ref>.html` links stay stable. They are no
-longer generated from the compact WeChat article; prepare them from the
-approved paper source and follow `project/guides/paper-deep-dive-rst.md`.
-
-The historical converter remains available for maintaining legacy compact RTD
-pages:
-
-```bash
-python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS
-python3 wechat/tools/markdown_to_rtd.py --publication-ref ref-zhao2026-BS --check
-```
-
-The public Markdown owns body wording. The review note owns platform metadata
-such as the RTD top cover image and WeChat bottom `content_source_url`.
-
-The converter applies these documented channel adaptations on the RTD side:
-it strips the WeChat title-category prefix (`数值风洞 |`, `结构抗风 |`,
-`漂浮风电 |`) from the page title and related-navigation labels; it skips the
-fixed WeChat closing sentence (anchored on `点击阅读原文`); it appends a
-`完整引用` section with the full bibliographic citation (taken from the
-`docs/source/Publications.rst` anchor entry and truncated at the DOI, without
-impact factor or CAS partition) plus a `:ref:` link to the Publications entry;
-and it appends the internal `相关论文精解` navigation.
-
-## Flexible Structure And Editorial Review
-
-Follow [自然写作审校](../.agents/skills/wechat-paper/references/natural-scientific-writing.md)
-for every new article and revision. Keep paper metadata, a faithful translated
-abstract, evidence, figure captions, and limitations, but arrange the main story
-around the paper's actual question and evidence. Metadata and abstract may move
-to the end. Do not force 三句话导读, 数字卡, numbered research questions,
-question-number callbacks, or one bold sentence per subsection. Optional entry
-cards must add information rather than repeat the opening or abstract.
-
-## Title Format
-
-Use this title pattern:
-
-`<title category> | <problem-solving Chinese title>`
-
-The title category is temporarily selected from:
-
-- `数值风洞`
-- `结构抗风`
-- `漂浮风电`
-
-The second half should say what problem the paper helps solve, not only restate
-the paper topic.
-
-Keep the Markdown H1 in the article source. For WeChat draft submission and
-manual WeChat editor copy, use it only as the Official Account title field; do
-not render the H1 again inside the article body, because WeChat already displays
-the title, account, author, and timestamp above the body.
-
-## Abstract Handling
-
-- Keep an `摘要` section after `论文信息`; both may appear at the end of the article.
-- For Chinese papers, use the Chinese abstract.
-- For English papers, provide a faithful Chinese translation of the original
-  abstract from Zotero `abstractNote`, the paper PDF, an author manuscript, or
-  another approved source. Do not include the original English abstract in the
-  reader-facing article, the WeChat draft, or the RTD page; readers are
-  Chinese-first.
-- The Chinese abstract may be split into 2-3 paragraphs by meaning for mobile
-  readability. Splitting is a layout change only; the faithful-translation
-  requirement is unchanged.
-- `scripts/check-public-safe-content.py` fails any reader-facing draft that
-  still contains `**英文摘要**`.
-- Do not invent an abstract from the article body. If the original abstract is
-  unavailable, keep the article in drafting/review notes until the paper PDF,
-  author manuscript, or another approved source is available.
-
-## Paper Metadata
-
-In `论文信息`, use only:
-
-- `论文题名`
-- `作者`
-- `期刊`
-- `年份`
-- `DOI`
-- `WOEAI 相关方向`
-
-Do not add `卷期页码` as a separate line in WeChat paper articles.
-
-Write the `作者` line with the same author-marker semantics as
-`docs/source/Publications.rst`:
-
-- Student First Authors only use an underline marker. In the Markdown source,
-  write this as `<u>Student Name</u>` so RTD can convert it to
-  `:student-first-author:`.
-- Corresponding authors use `\*` immediately after the displayed name, such as
-  `**Li Chao**\*`; rendered WeChat HTML must show a normal `*`, not `\*`.
-- Do not write `(corresponding author)` in the reader-facing article.
-
-For journal-paper articles, the Official WeChat draft author field should be
-the paper's first author. Keep the full paper author list in `论文信息`.
-
-## Source Acquisition
-
-Use this Zotero-first order before drafting:
-
-1. Read metadata, DOI, and `abstractNote` from the Zotero Desktop Local API.
-2. Read attachment records from the Zotero Desktop Local API.
-3. If a local PDF attachment exists, extract or verify the abstract, figures,
-   captions, and body evidence from that PDF.
-4. If the local PDF is missing, try the Zotero Web API `/file` endpoint for the
-   attachment. Keep API keys and downloaded private working files outside the
-   public repository.
-5. If Web API file access also fails, record `需要同步 PDF 或提供作者稿` in the
-   review note and do not invent PDF-derived facts.
-
-Do not automatically scrape or download PDFs from publisher pages, DOI landing
-pages, Google Scholar, ResearchGate, Sci-Hub, search results, or other general
-web pages. Use web pages only for public metadata checks unless the user
-explicitly approves a specific public and legal PDF source, such as an OA PDF,
-an author manuscript, or a user-provided download link. Store approved web
-downloads only under ignored private working paths such as
-`wechat/.local/<publication_ref>/`, and record the source, approval, and reuse
-status in the review note.
-
-Every article review note must include a public-safe `源文件获取记录` section.
-Record the Zotero key, metadata source, attachment-record status, local PDF
-status, PDF source type, private-storage class, Zotero Web API `/file` status,
-web-download status, abstract source, body-evidence source, and figure source.
-Do not record absolute private file paths, credentials, cookies, raw API
-payloads, or downloaded PDF contents in committed files.
-
-When a Zotero item has multiple PDF-like attachments, choose the PDF evidence
-source in this order: author final manuscript / author manuscript, publisher
-version of record PDF, open-access platform PDF, preprint, then other
-attachments. Record the selected attachment class in the review note. If a
-lower-priority source is used, explain why the higher-priority source was
-missing, unreadable, legally unsafe, or visually unsuitable. Bibliographic
-fields such as journal, year, volume, issue, pages, DOI, and publication status
-still come from Zotero metadata and the official published record.
-
-Every review note must include a public-safe `关键事实证据定位记录` section.
-Do not mark every sentence, but record evidence anchors for the abstract, core
-claims or conclusions, key figures, and key formulas. Use PDF file page,
-section, table, original figure number, or original equation number when
-available. If a formula is added as an editorial explanation in the WeChat
-article rather than copied from a numbered paper equation, record that
-distinction and point to the paper evidence it explains. If exact pages have
-not been audited, mark them as `pending PDF page audit` rather than guessing.
-Evidence locations use PDF file page numbers, written as `PDF file page N`,
-not journal printed page numbers or article pagination.
-
-The public-safety script must fail a review note that omits either
-`## 源文件获取记录` or `## 关键事实证据定位记录`.
-
-## Tone
-
-- Lead with an engineering question and answer it with scholarly evidence.
-- No hype.
-- No unsupported partner names or project claims.
-- Use a natural authorial voice where supported. “我们” is available, not a
-  compulsory subject in every paragraph. Never invent the author’s experience,
-  emotions or motivations; preserve source attribution and certainty.
-- Use DOI in `论文信息` for scholarly traceability.
-- Do not include a WOEAI publication anchor in reader-facing WeChat articles
-  when the linked RTD publication item or paper companion page duplicates the
-  article content.
-
-## Engineering Story And Derived Copy
-
-Use one factual spine across title, opening, guide, key card, cover and requested
-sharing summary; give each surface a different job rather than repeat sentences.
-
-1. **Engineering question:** who needs to decide what, under which constraint?
-   Explain relevance before model acronyms. A realistic proposed scenario is
-   allowed, but do not invent a project or imply it was studied in the paper.
-2. **Specific innovation:** state the actual baseline, its relevant limitation
-   and the component this paper changes. Adopting a known method is not itself
-   novelty. Without evidence, use “研究/比较” rather than “首次/突破/解决了”.
-3. **Mechanism and evidence:** explain why the change might help, then how a
-   simulation, experiment or comparison tests it. Distinguish association from
-   demonstrated causality. Numeric hooks retain metric, baseline and conditions;
-   a best-case value is not a universal improvement or full-workflow speedup.
-4. **Engineering use:** identify a decision, required inputs, useful outputs and
-   validation still needed for transfer. Separate “论文已验证” from “潜在工程用途”;
-   a potential use is not deployment, certification or replacement for standards.
-5. **Boundary:** name conditions, assumptions and untested cases. Keep material
-   qualifiers beside the affected claim, not only in the final limitations block.
-
-Write clear Chinese titles posing a meaningful trade-off or supported contribution,
-normally 18–32 characters after the category (an editorial target, not a platform
-limit). Avoid acronym piles, curiosity gaps, “颠覆/终极/全面领先/拿来就用”,
-unsupported causality or production-readiness claims. Useful patterns are
-“<工程决策>，为什么不能只看<常用指标>？” and
-“<约束>下，<具体方法>怎样改进<目标>？”; fill them only from evidence.
-
-- Opening: enter the actual problem clearly; length follows the argument, not a fixed quota.
-- Optional guide or key card: only when it reduces reading effort without
-  repeating the opening, abstract, or results. Never force a fixed item count.
-- Cover: a short problem/method hook under the cover contract; never stronger
-  than the body. Changing approved cover words requires fresh confirmation.
-- Sharing digest, when requested: 60–100 Chinese characters for relevance,
-  innovation and one boundary. Obey the verified destination's actual field limit;
-  these editorial budgets are not claims about API limits.
-
-Keep a source-backed editorial card in the review template: problem, baseline,
-change, mechanism, demonstrated result, possible use and boundary. Trace derived
-claims to its paper locators. Missing evidence blocks a stronger headline.
-A wording/style update never changes source-audited, published or preview state.
-
-## Opening And Skim Path
-
-- Vary the opening strategy across articles; adjacent articles should not
-  reuse the same one. Strategies:
-  - 现实矛盾式: a real engineering tension the paper resolves.
-  - 反常识式: challenge a common design assumption (for example
-    `别只看单方向峰值`).
-  - 具体数字式: lead with a citable number from the paper.
-  - 场景式: a concrete scenario the reader recognizes.
-- Place evidence-backed numbers where they help explain the argument. A numeric
-  opening is optional; do not create a missing-number task to satisfy a template.
-- Use bold sparingly where it helps reading; no fixed count. Explain how results
-  answer the scientific question without mechanical “针对问题 1” callbacks.
-
-## Link Domain
-
-- For WOEAI website links embedded in WeChat articles and WeChat draft API
-  payloads, prefer the Read the Docs project domain:
-  `https://woeai.readthedocs.io/zh-cn/latest/`.
-- Use the site link through the bottom 阅读原文 field. Body 延伸阅读 is
-  exclusively for confirmed published WeChat article URLs. If none exist, omit
-  the entire section, including its heading. Do not substitute homepage links,
-  draft/preview links, placeholders or uncited plain-text titles.
-- The WeChat backend bottom `阅读原文` entry is controlled by the API
-  `content_source_url` field, not by body Markdown. By default it points to
-  the current paper's RTD companion page:
-  `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`.
-  The review front matter field `wechat_content_source_url` can override this
-  per article, including an explicitly blank value when the editor wants no
-  bottom link.
-- End with a short, relevant 阅读原文 invitation when useful. No mandatory
-  recruitment paragraph or repeated promotional sign-off. Keep DOI visible in
-  论文信息 for scholarly traceability, not as extended reading.
-- This WeChat-link rule does not automatically change the public website's own
-  canonical SEO URL or homepage contact display.
-
-## Related Links
-
-Only confirmed published WeChat articles from `latest_published_url` may appear
-in body related navigation. Omit the section when no valid links exist, notably
-the first article. Verify title/destination and actual tap behavior in the
-WeChat preview; a valid Markdown href does not prove WeChat allows the link.
-RTD internal related-paper navigation remains independent.
-
-## Formula Handling
-
-- Use transparent SVG formulas that inherit the adjacent text color through
-  `currentColor`. Use standard `span`/`section` containers and set the first SVG
-  group's fill/stroke both as presentation attributes and inline styles. Preserve
-  vector geometry, fraction bars, baseline, explicit internal colors and LaTeX
-  metadata. Formula blocks must not impose a fixed foreground or background.
-- This follows the [WeChat SVG guidance](https://github.com/wechatjs/verify-article-structure-spec/blob/main/verify_article_structure.md#44-svg)
-  and the export structure used by [doocs/md](https://github.com/doocs/md/blob/main/packages/core/src/extensions/katex.ts).
-  These sources support the approach, not a guarantee for every phone reader.
-- Check computed formula paint against adjacent body text in light/dark browser
-  fixtures, then verify saved API structure and both actual WeChat phone modes.
-  Browser emulation or API success cannot certify phone appearance. If inheritance
-  fails on a phone, record it and investigate before changing the agreed design;
-  do not silently replace transparent formulas with opaque white tiles.
-
-### Validated dark-mode workflow
-
-1. Render canonical LaTeX with MathJax SVG. Export standard `span` (inline) or
-   `section` (display), retaining source metadata and original SVG geometry.
-2. On the first SVG `g`, retain `fill="currentColor" stroke="currentColor"`
-   and inline `style="fill:currentColor;stroke:currentColor;"`. Inherit the
-   surrounding text color. Do not impose black/white glyph colors or a white tile;
-   preserve child-level explicit scientific colors and legitimate fraction bars.
-3. Keep formula blocks transparent with inherited color. Check inline, display,
-   fractions and multiline formulas in light/dark browser fixtures and mobile width.
-4. After updating the existing draft, read back SVG paint, standard containers,
-   LaTeX and geometry. WeChat may remove redundant outer `color:inherit` and
-   `background:transparent`; this alone is not a rendering failure. Check whether
-   forced ancestor styles remain, then verify the actual phone reader.
-5. Record phone light/dark outcomes separately. Never transfer one article's
-   acceptance to every article/device, or infer whole-article publication readiness.
-
-JCP sample validation: the user confirmed normal dark-mode formula colors on
-2026-10-11 at 17:15 UTC after the same-draft update at 15:23 UTC (candidate
-`960ce68f3dc9777cfc9305162f55e5bcdb71fe2c`). This validates the combined method
-for that preview, not which individual CSS change caused the improvement.
-Phone OS/WeChat version and a separate light-mode confirmation were not supplied.
-
-- Use Markdown LaTeX as the canonical formula source in WeChat article drafts: `$...$` for inline formulas and `$$...$$` for display formulas.
-- Render WeChat formulas through the selected WeChat Markdown or API workflow
-  and verify the resulting formula display in the final WeChat backend mobile
-  preview.
-- Use MathJax SVG pre-rendering as the default formula route for the official
-  API path. In this route, Markdown LaTeX is converted before submission into
-  standard `<span>...<svg>...</svg></span>` (inline) or `<section>` (display)
-  HTML after replacing MathJax's internal `mjx-container`, so WeChat
-  does not need to run MathJax or load external scripts. A 2026-06-10 single
-  article stress test with multiple inline and display SVG formulas was accepted
-  by the official draft API and approved by user preview.
-- Preserve the source LaTeX in SVG formula containers when possible, using
-  `data-formula` plus `data-formula-type="inline-equation"` or
-  `data-formula-type="block-equation"`. This makes the submitted HTML easier to
-  audit and closer to formula-heavy published WeChat examples.
-- The lightweight HTML formula path in `wechat/tools/render-copy-ready.py` is
-  only a fallback for troubleshooting or machines without the MathJax SVG
-  runtime. It is not a full LaTeX rendering engine.
-- RTD companion pages should convert the same LaTeX formula semantics to Sphinx math markup: ``:math:`...` `` for inline formulas and `.. math::` for display formulas.
-- RTD display formulas should also be visually centered through the site CSS,
-  so standalone formula alignment is consistent between RTD and WeChat.
-- Use formula markup for inline mathematical variables, symbolic parameters, metrics, dimensional quantities, and unit-bearing values in prose. Examples: `$X_L$`, `$R$`, `$4H_{\mathrm{max}}$`, `$1\,\mathrm{km} \times 1\,\mathrm{km}$`, `$11\,\mathrm{m/s}$`, and `$90^\circ$`.
-- For word-like or abbreviation subscripts in WeChat drafts, prefer explicit
-  roman text, such as `$H_{\mathrm{max}}$`, `$K_{\mathrm{CFD}}$`, and
-  `$K_{\mathrm{m}}$`. Avoid relying on commands such as `\max` in the WeChat
-  HTML renderer.
-- Do not use Markdown backticks or RST double backticks for mathematical variables or scientific quantities. Reserve code spans for paths, filenames, commands, literal field names, and code identifiers.
-- Do not render formulas as raster images by default. PNG formula images are
-  stable but can blur after upload, compression, or mobile scaling; use them
-  only as a fallback when the final WeChat preview cannot preserve a readable
-  SVG formula.
-- For formula-heavy articles, keep formulas in the normal article flow rather
-  than splitting them into artificial formula-only sections. Use inline SVG for
-  variables inside Chinese prose, and display SVG for longer formulas. If a
-  display formula is very wide, rely on horizontal overflow rather than shrinking
-  the whole article text.
-- Display SVG formulas should be visually centered in their standalone formula
-  block, with the original LaTeX source kept in `data-formula` metadata.
-- Do not create a fixed `公式说明` section by default. Put formulas in the section where they are needed, usually `方法贡献`, `关键发现`, `工程意义`, or `适用边界`.
-- Keep formulas short and readable on mobile. If a formula is long, split the explanation into nearby text rather than forcing a dense display block.
-- After each important formula, add a plain-language sentence explaining what the formula means and why it matters for the paper.
-
-## Cover Image
-
-Use [wechat-cover](../.agents/skills/wechat-cover/SKILL.md) for execution and
-text confirmation and its [series contract](../.agents/skills/wechat-cover/references/cover-standards.md)
-for every brief, prompt and crop check. `WOEAI-cover-v2` fixes 900 × 383 output,
-grid, type scale, category colors, text budgets and scientific crop core across
-papers. Do not improvise a separate style per article.
-
-Generate confirmed words inside the image; do not use post-generation text
-overlays or substitute dense paper figures as default covers. Three candidate
-concepts vary scientific emphasis within the shared system. Preserve evidence,
-reuse rights and public-safety requirements; no invented logos or result claims.
-
-During guidance-only updates retain old assets and confirmation history, marking
-migration pending. A center square retains the diagnostic object, not necessarily
-the entire left title. Local dimensions/crops cannot certify visual compliance
-or actual WeChat mobile acceptance; backend checks remain pending until performed.
-
-## Figure Handling
-
-- WOEAI WeChat paper articles are generated for the user's own authored papers unless the user explicitly says otherwise.
-- For author-confirmed papers, extract suitable original figures directly from the paper PDF or author manuscript and insert them into the reader-facing Markdown.
-- Prefer `pdfimages -all` extraction from the PDF. If a figure is stored as ordered image strips, stitch those strips back into a complete figure before using page-render cropping.
-- Store final public-safe article figures under `wechat/assets/public-safe/<publication_ref>/`.
-- After each inserted figure, write a Chinese figure-title line translated
-  faithfully from the paper's original figure title, starting with the paper's
-  original figure number in the `论文图 N` format, for example
-  `论文图 21 气象自动站的位置与观测环境`. Keep the Markdown image alt text
-  identical to the caption-title line. Put the explanatory Chinese sentence in
-  a separate following line.
-- The explanatory line carries only what the reader needs while looking at the
-  figure (reading order, what colors or line styles mean, which region to focus
-  on). It must not restate the article's main argument or repeat nearby body
-  text.
-- Rendered Chinese figure-title text should be centered, one font size smaller
-  than body text, and italic. The explanatory line should remain separate and
-  visually distinct from normal body text.
-- RTD companion pages should preserve the same two-line figure-caption meaning.
-  The converter emits `paper-note-figure` on body figures so site CSS can render
-  the Chinese figure-title line centered, smaller, and italic, with the
-  explanatory line separate below it.
-- Redraw a figure only when the original figure is unavailable, legally unsafe to reuse, too low-resolution, or visually unsuitable for a WeChat article.
-- Record figure source, extraction method, and copyright status in the separate `.review.md` file, not as internal notes inside the reader-facing article.
-- Check every figure in the WeChat backend mobile preview, not only in a Markdown editor preview.
-
-## Research Family Labels
-
-- `建筑结构抗风`
-- `海上漂浮风电`
-
-## Subdirection Labels
-
-建筑结构抗风:
-
-- `数值风洞与湍动入流`
-- `高层建筑抗风与优化`
-
-海上漂浮风电:
-
-- `浮式风机系统一体化分析与优化`
-- `浮式混凝土平台结构设计`
-- `数值风浪流水池`
+# WOEAI 公众号写作规范
+
+本文件是公众号论文导读的**写作规则**唯一来源：读者、结构、标题、正文、图注、
+公式写法、结尾与链接。其他规则各有归属，这里只给链接：
+
+| 主题 | 规则来源 |
+| --- | --- |
+| 源文件获取、证据定位、原图抽取 | [paper-sources-and-evidence.md](../project/guides/paper-sources-and-evidence.md) |
+| 去 AI 味的逐句审校流程与示例 | [natural-scientific-writing.md](../.agents/skills/wechat-paper/references/natural-scientific-writing.md) |
+| 渲染、公式 SVG、草稿 API、状态回写 | [wechat/README.md](README.md) |
+| 封面 | [wechat-cover 技能](../.agents/skills/wechat-cover/SKILL.md) 与 [WOEAI-cover-v2](../.agents/skills/wechat-cover/references/cover-standards.md) |
+| RTD 全文精解 | [paper-deep-dive-rst.md](../project/guides/paper-deep-dive-rst.md) |
+
+正文模板：[templates/paper-explainer.md](templates/paper-explainer.md)。
+当前范文：`articles/draft-public-safe/ref-chen2024-JCP.md`（论证与限定的写法）、
+`articles/draft-public-safe/ref-zhao2026-BS.md`（按本规范结构重写的样稿）。
+
+## 1 写给谁，要达到什么
+
+公众号是团队研究的对外窗口。一篇文章服务三类读者，写法要同时照顾：
+
+- **准备报考的学生**：能看懂这个方向在解决什么问题、要用到什么方法，判断自己是否
+  感兴趣。术语第一次出现要解释，不要堆缩写。
+- **潜在工程合作方**：能看出这项技术回答哪类工程决策、需要什么输入、给出什么输出、
+  离实际应用还差哪些验证。
+- **同行**：能快速核对论文信息、摘要、关键数字及其条件。
+
+吸引力来自讲清楚问题和证据，而不是宣传语。读完后读者应能复述三件事：
+解决什么问题、比原来的做法改了哪里、证据和边界在哪里。
+
+## 2 文章结构
+
+一篇文章只讲一篇论文。默认结构如下，二级标题用具体的句子，不用“研究背景”
+“方法贡献”“关键发现”这类空壳标题。
+
+1. **标题**（Markdown H1，只作为微信标题字段，不在正文重复渲染）。
+2. **导语**，1–2 段。
+   - 第一段同时是微信草稿的摘要字段（渲染器截取首段前 120 字），必须能单独成立：
+     一句话交代工程问题，一句话说明这篇论文做了什么。约 60–110 字。
+   - 第二段（可选）补充期刊、研究对象或这篇工作与已有做法的差别。
+   - 导语不概括全部结果，不列数字清单。
+3. **论文信息**：题名、作者、期刊、年份、DOI、WOEAI 相关方向。
+4. **摘要**：原摘要的忠实中文翻译，可按意思分 2–3 段。
+5. **正文** 3–4 节，通常按下面的顺序，但可按论文实际证据合并或调换：
+   - 问题：现有做法是什么，在哪种情况下不够用（给出实际基线）。
+   - 方法：这篇论文改变了哪一个环节，为什么可能有效。
+   - 证据：怎样检验，结果是多少，在什么条件下得到。
+   - 边界与用途：已验证到哪一步，潜在用途是什么，迁移前还要验证什么。
+6. **结语**：一句“点击阅读原文”的说明，告诉读者全文精解里还有什么。
+7. **延伸阅读**（仅当存在已发布的相关公众号文章时）。
+
+分工原则：**摘要负责完整概述，正文负责摘要讲不清的部分**——基线、关键图、
+数字的条件、局限。正文不逐句复述摘要；如果某一节读起来像摘要的扩写，删掉或改写。
+
+不再使用：三句话导读、关键数字卡、“研究问题 1/2/3”及“针对问题 1”回扣、
+每节一句加粗结论、固定招生结尾。
+
+篇幅参考（编辑目标，不是平台限制）：正文（不含论文信息与摘要）约 1500–3000 字，
+3–5 张原图。证据少的论文宁可短，不要注水。
+
+## 3 标题
+
+格式：`<类别> | <中文标题>`。类别暂用 `数值风洞`、`结构抗风`、`漂浮风电`。
+
+- 后半句说出这篇论文帮助解决的问题或回答的取舍，通常 18–32 个字符。
+- 可用句式：`<工程决策>，为什么不能只看<常用指标>？`、
+  `<约束>下，<具体方法>怎样改进<目标>？`、`<常见做法>，问题出在哪一步？`。
+- 不用：缩写堆叠、悬念钩子、“颠覆/终极/全面领先/拿来就用/首次”、
+  无证据的因果或可直接投产的说法。标题不能比正文更强。
+- 不以“我们如何……”开头；主语交给问题本身。
+
+已登记论文的网站导航标签来自注册表 `custom.rtd.public_title`，与公众号标题相互独立；
+改公众号标题不会改网站标签。
+
+## 4 导语与开头
+
+开头直接进入问题。相邻文章换用不同的切入方式：
+
+- **现实矛盾**：工程上需要 A，但常规做法只能给出 B。
+- **反常识**：指出一个常见检查或假设在某种情况下不够。
+- **具体数字**：用论文中带条件的一个数字开头。
+- **场景**：读者熟悉的设计或评估环节。场景只用于说明，不能写成论文已做过的工程案例。
+
+不要用“随着……的快速发展”“在……背景下”“众所周知”开头。
+
+## 5 正文写法
+
+### 5.1 论证
+
+- **问题**：谁需要做什么判断，受什么约束；先讲工程意义，再讲模型名称。
+- **基线与改动**：写出原方法、它在什么情况下不够，以及本文具体改了哪一环。
+  采用已有方法本身不算创新；没有证据时用“研究”“比较”，不用“首次”“突破”“解决了”。
+- **机制与验证**：先说为什么可能有效，再说怎样检验。区分相关与因果、
+  仿真验证与实测验证。
+- **数字**：每个数字都带上指标、比较基线和工况。不同位置、不同基线的数字
+  不能直接换算成“降低了多少”。最好情况不能写成普遍改进。
+- **用途与边界**：分开“论文已验证”和“潜在工程用途”。潜在用途说明需要什么输入、
+  给出什么输出、迁移前还要做什么验证；不是部署、认证或替代规范。
+- **限定就近放**：影响某个结论的条件写在该结论旁边，不只在末尾集中列一遍。
+
+### 5.2 语气
+
+- 用自然的作者口吻。“我们”可以用，但不必每段起句；不编造作者经历、情绪或动机。
+- 句子主语具体，一句话说一件事，长短句交替。
+- 加粗只用于全文最关键的一两处限定或结论，不设数量要求。
+- 列表只用于确实并列的条目（如适用条件）；论证用段落，不拆成要点提纲。
+- 逐句去 AI 味的检查清单和改写示例见
+  [natural-scientific-writing.md](../.agents/skills/wechat-paper/references/natural-scientific-writing.md)。
+
+### 5.3 术语
+
+- 中文术语首次出现写“中文名（英文缩写）”，之后统一用一个名称。
+- 文中只解释读者需要的缩写；一段内新缩写不超过两个。
+- 变量、参数、带单位的量用公式写法（见第 8 节），不用代码格式。
+
+## 6 论文信息与摘要
+
+### 论文信息
+
+只列：`论文题名`、`作者`、`期刊`、`年份`、`DOI`、`WOEAI 相关方向`。
+不单列卷期页码，这些属于 RTD 完整引用。
+
+作者行沿用学术成果页的标记含义：
+
+- 仅学生第一作者用 `<u>姓名</u>` 下划线；
+- 通讯作者在姓名后加 `\*`，例如 `**Li Chao**\*`，渲染后显示普通 `*`；
+- 不写 `(corresponding author)`。
+
+微信草稿的作者字段默认填论文第一作者，完整作者列表留在论文信息中。
+
+### 摘要
+
+- 中文论文用原中文摘要；英文论文用原摘要的忠实中文翻译。
+- 原英文摘要不放进公众号正文（检查脚本拒绝 `**英文摘要**`）。
+- 可按意思分 2–3 段，分段只改排版，不改内容；语气润色不触碰摘要。
+- 原摘要与正文结论范围不一致时，在摘要后加一句编辑说明，指出正文中的限定。
+- 没有可核实的原摘要时，不自拟摘要，文章停在草稿阶段。
+
+## 7 图与图注
+
+- 优先使用论文原图（抽取规则见源文件指南），一般 3–5 张，选能说明方法流程、
+  研究对象、验证证据和应用结果的图。
+- 图注两行：
+  1. 图题行：`论文图 N <中文图名>`，忠实翻译原图题，保留原图号；Markdown 图片的
+     alt 文本与这一行完全相同。
+  2. 读图行：另起一段，只写看图需要的信息——阅读顺序、颜色与线型含义、
+     应关注的区域。不复述正文观点。
+- 图放在正文讨论它的位置附近，先有文字引出，再出图。
+- 渲染后图题行居中、比正文小一号、斜体；读图行与正文样式区分。
+
+## 8 公式写法
+
+- 源文件用 Markdown LaTeX：行内 `$...$`，独立公式 `$$...$$`。
+- 变量、指标、带单位的量都用公式写法，例如 `$X_L$`、`$4H_{\mathrm{max}}$`、
+  `$11\,\mathrm{m/s}$`、`$90^\circ$`。缩写型下标写成 `\mathrm{}`，不用 `\max` 等命令。
+- 不用反引号包变量；代码格式只用于路径、命令和字段名。
+- 只放理解论证必需的公式，通常 0–3 个。公式放在需要它的段落里，不单设“公式说明”节。
+- 每个重要公式后：解释变量，并用一句话说明它在论证中的作用。
+- 公式尽量短，适合手机屏宽；长推导留给 RTD 精解。
+- 公式不做成图片。渲染与深色模式验收见 `wechat/README.md`。
+
+## 9 结尾与链接
+
+- 结语一句即可，说明“阅读原文”能看到什么，例如全文精解、公式推导、附录。
+  底部“阅读原文”由草稿 API 的 `content_source_url` 控制，默认指向本论文的
+  RTD 精解页：`https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`。
+- 正文中不另写“阅读原文”小节，不贴裸 URL。DOI 只放在论文信息中。
+- **延伸阅读**只放已确认公开发布的公众号文章（`latest_published_url`）。没有时，
+  连标题一起省略；不用主页、方向页、草稿或预览链接充数。
+- 招生与合作导流默认不写进每篇正文。确需导流时，只能原样使用下面的统一尾注，
+  放在结语之后，不逐篇改写：
+
+  > WOEAI 关注建筑结构抗风与海上漂浮风电。欢迎有志于相关方向的研究生，以及有工程
+  > 应用需求的同行联系：lichaosz@qq.com
+
+- 站内链接优先用 `https://woeai.readthedocs.io/zh-cn/latest/`，不写 `winddee.cn`。
+
+## 10 事实与公开边界
+
+- 只写论文和公开记录能支撑的内容。不写未确认的合作单位、项目、设施、奖项或指标。
+- 读者正文不能出现 YAML front matter、`pending`、`待确认`、配图计划、复核清单、
+  私有路径、版权备注或证据说明；这些放在 review 文件。
+- 后台预览中改动的文字，先改回 Markdown 源文件再重新生成。
+- 公众号导读与 RTD 精解相互独立：不从导读生成 RTD，也不用导读改动覆盖 RTD。
+
+## 11 研究方向标签
+
+- `建筑结构抗风`：`数值风洞与湍动入流`、`高层建筑抗风与优化`
+- `海上漂浮风电`：`浮式风机系统一体化分析与优化`、`浮式混凝土平台结构设计`、
+  `数值风浪流水池`

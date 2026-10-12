@@ -61,7 +61,7 @@ WOEAI 围绕建筑结构抗风、海上漂浮风电，以及支撑两类问题�
 最新学术进展 Latest Academic Progress
 ========================================
 
-首页展示最近 10 条论文解读与 RTD 配套文章，完整研究脉络见 :doc:`Research`，完整论文记录见 :doc:`Publications`。
+首页展示最近 10 篇论文精解，完整研究脉络见 :doc:`Research`，完整论文记录见 :doc:`Publications`。
 
 .. BEGIN GENERATED LATEST PAPER NOTES
 

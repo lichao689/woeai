@@ -64,7 +64,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -104,6 +104,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -190,7 +191,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -230,6 +231,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -322,47 +324,47 @@
             "key": "source_identity",
             "label": "原文身份",
             "value": true,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "facts",
             "label": "事实核验",
             "value": true,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
             "value": true,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": false,
-            "stage": "draft_created"
+            "value": null,
+            "stage": null
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": false,
-            "stage": "draft_created"
+            "value": null,
+            "stage": null
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": false,
-            "stage": "draft_created"
+            "value": null,
+            "stage": null
           }
         ],
         "gaps": [
           "草稿创建不代表已完成手机预览或已发布",
-          "原文身份：仅有草稿创建阶段记录",
-          "事实核验：仅有草稿创建阶段记录",
-          "公开安全：仅有草稿创建阶段记录",
-          "公式预览：未通过",
-          "插图预览：未通过",
-          "封面预览：未通过",
+          "原文身份：仅有待审核阶段记录",
+          "事实核验：仅有待审核阶段记录",
+          "公开安全：仅有待审核阶段记录",
+          "公式预览：未记录",
+          "插图预览：未记录",
+          "封面预览：未记录",
           "存在时间记录冲突，待核对"
         ],
         "issues": [],
@@ -372,7 +374,7 @@
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-zhao2026-BS.md"
           },
           {
-            "label": "草稿创建阶段证据",
+            "label": "待审核阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BS.review.md"
           }
         ],
@@ -554,7 +556,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -594,6 +596,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：未通过",
           "公开安全：仅有待审核阶段记录",
@@ -679,7 +682,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -719,6 +722,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -915,7 +919,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -955,6 +959,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -1041,7 +1046,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -1081,6 +1086,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -1277,7 +1283,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -1317,6 +1323,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -1514,7 +1521,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -1554,6 +1561,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -1861,7 +1869,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -1901,6 +1909,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -2097,7 +2106,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -2137,6 +2146,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -2444,7 +2454,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -2484,6 +2494,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -2903,7 +2914,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -2943,6 +2954,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -3028,7 +3040,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -3068,6 +3080,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -3269,7 +3282,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -3309,6 +3322,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -4830,7 +4844,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -4870,6 +4884,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -4955,7 +4970,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -4995,6 +5010,7 @@
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",

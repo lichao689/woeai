@@ -13,10 +13,10 @@ items:
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-12: approved cover updated in existing draft and checked via official API; content and settings preserved. Actual mobile preview remains pending. Single-cover layout exception recorded; series standards unchanged."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-09T12:31:43+08:00"
-    wechat_draft_updated_at: "2026-10-12T09:08:33+00:00"
+    wechat_draft_updated_at: "2026-10-12T12:47:58+00:00"
   - publication_ref: ref-zhao2026-BE
     zotero_key: "RLAA46YB"
     title: "A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment"
@@ -24,14 +24,14 @@ items:
     subdirection: "数值风洞与湍动入流"
     original_year: 2026
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:06:05+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:22:56+08:00"
+    wechat_draft_updated_at: "2026-10-13T03:24:37+00:00"
   - publication_ref: ref-he2026-OE
     zotero_key: "4FX43CFT"
     title: "Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks"
@@ -39,14 +39,14 @@ items:
     subdirection: "工程结构抗风与优化"
     original_year: 2026
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:06:14+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:23:08+08:00"
+    wechat_draft_updated_at: "2026-10-12T12:48:23+00:00"
   - publication_ref: ref-tang2026-RE
     zotero_key: "XM44D697"
     title: "A novel framework for temporal super-resolution of wind in urban energy applications"
@@ -54,14 +54,14 @@ items:
     subdirection: "数值风洞与湍动入流"
     original_year: 2026
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:06:25+08:00"
-    wechat_draft_updated_at: "2026-06-11T16:41:36+08:00"
+    wechat_draft_updated_at: "2026-10-12T12:48:56+00:00"
   - publication_ref: ref-zhao2025-SCS
     zotero_key: "V6PLJENN"
     title: "A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations"
@@ -69,14 +69,14 @@ items:
     subdirection: "数值风洞与湍动入流"
     original_year: 2025
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T12:11:46+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:23:33+08:00"
+    wechat_draft_updated_at: "2026-10-12T14:12:08+00:00"
   - publication_ref: ref-li2024-POF
     zotero_key: "2YG78T62"
     title: "A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra"
@@ -84,14 +84,14 @@ items:
     subdirection: "数值风洞与湍动入流"
     original_year: 2024
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T12:12:10+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:23:44+08:00"
+    wechat_draft_updated_at: "2026-10-12T14:18:00+00:00"
   - publication_ref: ref-chen2024-JCP
     zotero_key: "Y76UWP9R"
     title: "A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation"
@@ -99,14 +99,14 @@ items:
     subdirection: "数值风洞与湍动入流"
     original_year: 2024
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-11: same original draft updated15:23UTC. User confirmed dark-mode formula colors17:15UTC despite outer-style sanitization. Light-mode, figures, cover, links and publication remain unconfirmed; workflow records the validated method."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:04:58+08:00"
-    wechat_draft_updated_at: "2026-10-11T15:23:33+00:00"
+    wechat_draft_updated_at: "2026-10-12T12:41:00+00:00"
   - publication_ref: ref-wang2024-ES
     zotero_key: "3HGIR6QR"
     title: "A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES"
@@ -114,14 +114,14 @@ items:
     subdirection: "数值风洞与湍动入流"
     original_year: 2024
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:06:35+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:24:05+08:00"
+    wechat_draft_updated_at: "2026-10-12T14:17:30+00:00"
   - publication_ref: ref-tang2025-JBE
     zotero_key: "4BCF65NB"
     title: "Training and application of graph neural networks for predicting structural responses targeted at tall building structures"
@@ -129,14 +129,14 @@ items:
     subdirection: "工程结构抗风与优化"
     original_year: 2025
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T12:12:32+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:24:19+08:00"
+    wechat_draft_updated_at: "2026-10-12T14:11:37+00:00"
   - publication_ref: ref-yang2025-JBE
     zotero_key: "YZ2D62NB"
     title: "Statistical extremes of 2D vectorial response for wind-excited tall buildings"
@@ -144,14 +144,14 @@ items:
     subdirection: "工程结构抗风与优化"
     original_year: 2025
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:05:09+08:00"
-    wechat_draft_updated_at: "2026-06-11T16:42:02+08:00"
+    wechat_draft_updated_at: "2026-10-13T03:25:01+00:00"
   - publication_ref: ref-he2025-POF
     zotero_key: "ES37XMDV"
     title: "Numerical investigation of nonlinear sloshing features and vibration mitigation efficiency of the implanted pole tuned liquid damper"
@@ -159,14 +159,14 @@ items:
     subdirection: "工程结构抗风与优化"
     original_year: 2025
     repost_priority: "medium"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:05:23+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:24:43+08:00"
+    wechat_draft_updated_at: "2026-10-12T14:24:45+00:00"
   - publication_ref: ref-he2026-OE-structural
     zotero_key: "EMID6LAJ"
     title: "Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete"
@@ -174,14 +174,14 @@ items:
     subdirection: "浮式混凝土平台结构设计"
     original_year: 2026
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T12:12:50+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:24:55+08:00"
+    wechat_draft_updated_at: "2026-10-12T13:01:26+00:00"
   - publication_ref: ref-zheng2025-QHDXXB
     zotero_key: "H4RZBAIG"
     title: "中心与偏心布置半潜风机动力特性的模型试验"
@@ -204,14 +204,14 @@ items:
     subdirection: "浮式混凝土平台结构设计"
     original_year: 2025
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:05:35+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:25:07+08:00"
+    wechat_draft_updated_at: "2026-10-12T13:01:54+00:00"
   - publication_ref: ref-zhou2023-AE
     zotero_key: "3LWVP7B7"
     title: "Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization"
@@ -219,14 +219,14 @@ items:
     subdirection: "浮式风机系统一体化分析与优化"
     original_year: 2023
     repost_priority: "high"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:05:45+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:25:14+08:00"
+    wechat_draft_updated_at: "2026-10-12T13:02:39+00:00"
   - publication_ref: ref-chen2022-JWEIA
     zotero_key: "DD8PJ6PS"
     title: "Consistency improved random flow generation method for large eddy simulation of atmospheric boundary layer"
@@ -234,14 +234,14 @@ items:
     subdirection: "数值风洞与湍动入流"
     original_year: 2022
     repost_priority: "medium"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-17T18:15:47+08:00"
-    wechat_draft_updated_at: "2026-06-17T18:17:40+08:00"
+    wechat_draft_updated_at: "2026-10-12T14:25:12+00:00"
   - publication_ref: ref-li2022-SOS
     zotero_key: "5AT7UEWV"
     title: "Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures"
@@ -249,14 +249,14 @@ items:
     subdirection: "浮式混凝土平台结构设计"
     original_year: 2022
     repost_priority: "medium"
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:05:52+08:00"
-    wechat_draft_updated_at: "2026-06-11T11:25:22+08:00"
+    wechat_draft_updated_at: "2026-10-12T13:02:17+00:00"
   - publication_ref: ref-chen2024-POF
     zotero_key: "78XMAPMX"
     title: "Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment"
@@ -264,14 +264,14 @@ items:
     subdirection: "数值风洞与湍动入流"
     original_year: 2024
     repost_priority: ""
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "2026-10-05: current source-audited local version has not been uploaded or mobile-previewed; historical draft evidence retained."
+    revision_note: "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md"
     publication_history: []
     wechat_draft_created_at: "2026-06-18T18:38:00+08:00"
-    wechat_draft_updated_at: "2026-06-18T18:38:00+08:00"
+    wechat_draft_updated_at: "2026-10-13T03:25:21+00:00"
   - publication_ref: ref-tang2024-POF
     zotero_key: "FVGTMSEA"
     title: "Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework"

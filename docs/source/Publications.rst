@@ -23,7 +23,7 @@
 工程结构抗风
 ------------
 
-数值风洞与湍动入流
+数值风洞
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
@@ -156,7 +156,7 @@
 
 [1] 肖仪清; **李朝**; 欧进萍; 宋丽莉; 李秋胜, 复杂地形风能评估的CFD方法[J]. **华南理工大学学报(自然科学版)**, 2009, 37(9): 30～35.
 
-工程结构抗风与优化
+结构抗风
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
@@ -259,14 +259,27 @@
 海上漂浮风电
 ------------
 
-浮式风机系统一体化分析与优化
+一体化分析
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
    :hidden:
    :maxdepth: 1
 
+   2025 OE | 为半潜式风机找到可信的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>
    2023 AE | 用长期动力优化选择浮式风机下部结构 <paper-notes/ref-zhou2023-AE>
+
+.. _ref-zhang2025-CSICM:
+
+[69] Zhang Dongqin; Zhong Xi; Wei Kai; Zheng Shunyun; **Li Chao**; Hu Gang; Zhang Jize\*, On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom[J]. **Case Studies in Construction Materials**, 2025, 23: e05031. https://doi.org/10.1016/j.cscm.2025.e05031. 中科院分区: **2**.
+
+.. _ref-zheng2025-OE:
+
+[65] :doc:`2025 OE | 为半潜式风机找到可信的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>` :student-first-author:`Zheng Shunyun`; Liu Shangpei; **Li Chao**\*; Wang Xiaolu; Ou Jinping, Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine[J]. **Ocean Engineering**, 2025, 332: 121336. https://doi.org/10.1016/j.oceaneng.2025.121336. 影响因子: **5.5 (Q1)**. 中科院分区: **2**. 引用次数: **2**.
+
+.. _ref-zheng2025-QHDXXB:
+
+[64] :student-first-author:`郑舜云`; 周盛涛; 石兵; **李朝**\*; 胡钢; 曾宇; 李利孝, 中心与偏心布置半潜风机动力特性的模型试验[J]. **清华大学学报（自然科学版）**, 2025: 1～14.
 
 .. _ref-gong2025-POF:
 
@@ -287,6 +300,10 @@
 .. _ref-zheng2023-MS:
 
 [45] :student-first-author:`Zheng Shunyun`; **Li Chao**\*; Xiao Yiqing, Efficient optimization design method of jacket structures for offshore wind turbines[J]. **Marine Structures**, 2023, 89: 103372. https://doi.org/10.1016/j.marstruc.2023.103372. 影响因子: **5.1 (Q1)**. 中科院分区: **2**.
+
+.. _ref-zheng2023-JRSE:
+
+[42] :student-first-author:`Zheng Shunyun`; **Li Chao**\*; Wang Peicen; Zhou Shengtao; Xiao Yiqing, Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine[J]. **Journal of Renewable and Sustainable Energy**, 2023, 15(1): 013305. https://doi.org/10.1063/5.0131279. 影响因子: **1.9 (Q4)**. 中科院分区: **4**.
 
 .. _ref-xiang2023-CBGC:
 
@@ -330,6 +347,10 @@
 
 [12] **Li Chao**; Xiao Yiqing; Xu You-lin; Peng Yi-xin; Hu Gang; Zhu Songye\*, Optimization of blade pitch in H-rotor vertical axis wind turbines through computational fluid dynamics simulations[J]. **Applied Energy**, 2018, 212: 1107～1125. https://doi.org/10.1016/j.apenergy.2017.12.035. 影响因子: **11.0 (Q1)**. 中科院分区: **1**.
 
+.. _ref-zhou2017-E:
+
+[10] :student-first-author:`Zhou Shengtao`; Shan Baohua; Xiao Yiqing; **Li Chao**\*; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin, Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2017, 10(12): 2097. https://doi.org/10.3390/en10122097. 影响因子: **3.2 (Q3)**. 中科院分区: **3**.
+
 .. _ref-li2017-AS:
 
 [8] **Li Chao**; Zhuang Tongyi; Zhou Shengtao; Xiao Yiqing\*; Hu Gang, Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine[J]. **Applied Sciences**, Multidisciplinary Digital Publishing Institute, 2017, 7(6): 509. https://doi.org/10.3390/app7060509. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
@@ -338,7 +359,7 @@
 
 [6] **Li Chao**; Zhu Songye\*; Xu You-lin; Xiao Yiqing, 2.5D large eddy simulation of vertical axis wind turbine in consideration of high angle of attack flow[J]. **Renewable Energy**, 2013, 51(8.7 (Q1)): 317～330. https://doi.org/10.1016/j.renene.2012.09.011. 影响因子: **9.1 (Q1)**. 中科院分区: **1**.
 
-浮式混凝土平台结构设计
+混凝土浮体
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. toctree::
@@ -346,36 +367,15 @@
    :maxdepth: 1
 
    2026 OE | 用钢筋混凝土优化半潜式风机平台 <paper-notes/ref-he2026-OE-structural>
-   2025 OE | 为半潜式风机找到可信的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>
    2022 SOS | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变 <paper-notes/ref-li2022-SOS>
 
 .. _ref-he2026-OE-structural:
 
 [71] :doc:`2026 OE | 用钢筋混凝土优化半潜式风机平台 <paper-notes/ref-he2026-OE-structural>` :student-first-author:`He Weiwen`; **Li Chao**\*; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. **Ocean Engineering**, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
-.. _ref-zheng2025-OE:
-
-[65] :doc:`2025 OE | 为半潜式风机找到可信的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>` :student-first-author:`Zheng Shunyun`; Liu Shangpei; **Li Chao**\*; Wang Xiaolu; Ou Jinping, Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine[J]. **Ocean Engineering**, 2025, 332: 121336. https://doi.org/10.1016/j.oceaneng.2025.121336. 影响因子: **5.5 (Q1)**. 中科院分区: **2**. 引用次数: **2**.
-
 .. _ref-li2022-SOS:
 
 [33] :doc:`2022 SOS | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变 <paper-notes/ref-li2022-SOS>` **Li Chao**; Zhou Shengtao\*; Shan Baohua; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin; Yiqing Xiao, Dynamics of a Y-shaped semi-submersible floating wind turbine: a comparison of concrete and steel support structures[J]. **Ships and Offshore Structures**, Taylor & Francis, 2022, 17(8): 1663～1683. https://doi.org/10.1080/17445302.2021.1937801. 影响因子: **1.8 (Q2)**. 中科院分区: **3**.
 
-数值风浪流水池
+数值水池
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. _ref-zhang2025-CSICM:
-
-[69] Zhang Dongqin; Zhong Xi; Wei Kai; Zheng Shunyun; **Li Chao**; Hu Gang; Zhang Jize\*, On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom[J]. **Case Studies in Construction Materials**, 2025, 23: e05031. https://doi.org/10.1016/j.cscm.2025.e05031. 中科院分区: **2**.
-
-.. _ref-zheng2025-QHDXXB:
-
-[64] :student-first-author:`郑舜云`; 周盛涛; 石兵; **李朝**\*; 胡钢; 曾宇; 李利孝, 中心与偏心布置半潜风机动力特性的模型试验[J]. **清华大学学报（自然科学版）**, 2025: 1～14.
-
-.. _ref-zheng2023-JRSE:
-
-[42] :student-first-author:`Zheng Shunyun`; **Li Chao**\*; Wang Peicen; Zhou Shengtao; Xiao Yiqing, Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine[J]. **Journal of Renewable and Sustainable Energy**, 2023, 15(1): 013305. https://doi.org/10.1063/5.0131279. 影响因子: **1.9 (Q4)**. 中科院分区: **4**.
-
-.. _ref-zhou2017-E:
-
-[10] :student-first-author:`Zhou Shengtao`; Shan Baohua; Xiao Yiqing; **Li Chao**\*; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin, Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2017, 10(12): 2097. https://doi.org/10.3390/en10122097. 影响因子: **3.2 (Q3)**. 中科院分区: **3**.

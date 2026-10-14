@@ -9,7 +9,7 @@
 - 期刊: Engineering Structures
 - 年份: 2024
 - DOI: https://doi.org/10.1016/j.engstruct.2024.118742
-- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞
 
 ## 摘要
 

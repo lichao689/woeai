@@ -101,17 +101,17 @@ class WeChatToolTests(unittest.TestCase):
                 "  - publication_ref: ref-target\n"
                 "    title: Target\n"
                 "    research_family: 工程结构抗风\n"
-                "    subdirection: 数值风洞与湍动入流\n"
+                "    subdirection: 数值风洞\n"
                 "    original_year: 2026\n"
                 "  - publication_ref: ref-published\n"
                 "    title: Published\n"
                 "    research_family: 工程结构抗风\n"
-                "    subdirection: 数值风洞与湍动入流\n"
+                "    subdirection: 数值风洞\n"
                 "    original_year: 2025\n"
                 "  - publication_ref: ref-missing-rtd\n"
                 "    title: Missing RTD\n"
                 "    research_family: 工程结构抗风\n"
-                "    subdirection: 数值风洞与湍动入流\n"
+                "    subdirection: 数值风洞\n"
                 "    original_year: 2024\n",
                 encoding="utf-8",
             )
@@ -180,12 +180,12 @@ class WeChatToolTests(unittest.TestCase):
                 "  - publication_ref: ref-target\n"
                 "    title: Target\n"
                 "    research_family: 工程结构抗风\n"
-                "    subdirection: 数值风洞与湍动入流\n"
+                "    subdirection: 数值风洞\n"
                 "    original_year: 2026\n"
                 "  - publication_ref: ref-published\n"
                 "    title: Published\n"
                 "    research_family: 工程结构抗风\n"
-                "    subdirection: 数值风洞与湍动入流\n"
+                "    subdirection: 数值风洞\n"
                 "    original_year: 2025\n",
                 encoding="utf-8",
             )
@@ -265,17 +265,17 @@ class WeChatToolTests(unittest.TestCase):
         draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_wechat_draft_related_test")
 
         papers = [
-            draft.BacklogPaper("ref-target", "Target", "工程结构抗风", "数值风洞与湍动入流", 2026, "", 0),
+            draft.BacklogPaper("ref-target", "Target", "工程结构抗风", "数值风洞", 2026, "", 0),
             draft.BacklogPaper(
                 "ref-published",
                 "Published",
                 "工程结构抗风",
-                "数值风洞与湍动入流",
+                "数值风洞",
                 2025,
                 "https://mp.weixin.qq.com/s/published",
                 1,
             ),
-            draft.BacklogPaper("ref-unpublished", "Unpublished", "工程结构抗风", "数值风洞与湍动入流", 2024, "", 2),
+            draft.BacklogPaper("ref-unpublished", "Unpublished", "工程结构抗风", "数值风洞", 2024, "", 2),
         ]
 
         with mock.patch.object(draft, "parse_backlog_papers", return_value=papers), mock.patch.object(

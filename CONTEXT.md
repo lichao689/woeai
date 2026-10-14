@@ -122,12 +122,30 @@ The canonical public first-level research taxonomy for WOEAI. Use exactly two pu
 _Avoid_: treating `数值风洞`, `结构抗风`, or `海上风电` as peer first-level directions after this taxonomy change
 
 **工程结构抗风**:
-The first canonical public research family. It covers building and structural wind-resistance research, including `数值风洞与湍动入流` and `工程结构抗风与优化` as subdirections. Urban wind environment and complex terrain wind fields belong under `数值风洞与湍动入流`. Wind-induced vibration control, flow control, and historical tower-line wind-resistance proof belong under `工程结构抗风与优化` when they are needed as supporting evidence.
+The first canonical public research family. It covers building and structural wind-resistance research, including `数值风洞` and `结构抗风` as subdirections. Urban wind environment and complex terrain wind fields belong under `数值风洞`. Wind-induced vibration control, flow control, and historical tower-line wind-resistance proof belong under `结构抗风` when they are needed as supporting evidence.
 _Avoid_: implying all engineering structures or loading types have been studied; include only source-backed wind-engineering research.
 
 **海上漂浮风电**:
-The second canonical public research family. It covers floating offshore wind research, including `浮式风机系统一体化分析与优化`, `浮式混凝土平台结构设计`, and `数值风浪流水池` as subdirections.
+The second canonical public research family. It covers floating offshore wind research, including `一体化分析`, `混凝土浮体`, and `数值水池` as subdirections.
 _Avoid_: generic `海上风电` when the public page is specifically about floating offshore wind
+
+**Research Subdirection Scope**:
+The five short labels are canonical display names, not shortened technical claims.
+`数值风洞` covers wind-field/geometry/atmospheric-inflow modelling, CFD and data-driven
+wind reconstruction. `结构抗风` covers structural wind loads, responses, extremes,
+reliability and vibration-control methods. Liquid-damper method papers can serve as
+cross-domain structural-control foundations; state the actual application context.
+`一体化分析` covers coupled turbine/platform/mooring dynamics, load transfer,
+system optimization and validation. Previously approved fixed-bottom and turbine-aerodynamic
+papers remain associated foundational research, explicitly identified as such;
+they do not prove floating-system validation. `混凝土浮体` requires concrete
+floating-structure design or concrete/steel material comparison as a central question.
+`数值水池` requires numerical wave/current/free-surface hydrodynamic modelling
+or basin-method validation as a principal contribution. Physical wave-flume tests
+and generic system simulations alone do not qualify. A retained direction may
+have no current content-production papers; never fill it with misclassified evidence.
+Each paper has one primary family and one secondary direction, assigned by its main
+research question rather than the software used or an incidental application.
 
 **One-Paper WeChat Article**:
 A WeChat Official Account article whose core unit is one selected paper. Its default order is a short opening (whose first paragraph doubles as the WeChat digest), paper metadata, the faithful Chinese abstract, then a body that explains the problem, the specific change against the baseline, the evidence with its conditions, and the limits and potential uses. The abstract gives the overview; the body covers what the abstract cannot, rather than restating it. `wechat/STYLE.md` owns the detailed rules. It should avoid repeating a WOEAI publication-page anchor when that linked page does not add reader value beyond the article itself.

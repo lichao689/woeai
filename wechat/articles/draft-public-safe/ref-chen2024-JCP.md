@@ -11,7 +11,7 @@
 - 期刊: Journal of Computational Physics
 - 年份: 2024
 - DOI: https://doi.org/10.1016/j.jcp.2023.112706
-- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞
 
 ## 摘要
 

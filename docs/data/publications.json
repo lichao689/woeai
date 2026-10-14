@@ -15,7 +15,7 @@
       "publication_ref": "ref-zhao2026-BE",
       "order": 0,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "RLAA46YB",
         "publication_number": 75,
@@ -90,7 +90,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2026-BE.md",
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
         "issues": [],
@@ -147,47 +147,49 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-13T03:24:37+00:00",
-          "readback_at": "2026-10-13T03:24:42+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 4,
-          "formula_count": 16,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-13T03:24:34+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "671584f2f639b4c9d52bd01a94ad57d8588939485c9a896bfe5a73bced929e80",
-            "language_review_sha256": "a153aa50d8102866839f5bb8be553606a84e76a04f2ea8b5a5709e4082ce37f1",
-            "original_scientific_review_sha256": "b27e5b7633b19a9edf0bbc729757c4a7cd561fa3f2524f512dcbbebf3f57b362",
-            "registered_local_cover_sha256": "bbada558aaf915544d2128af8cf87d98086e7a85e16b43a848003b0d3ab69c86",
-            "workflow_fingerprint": "f23a8233608213ed474865dc4e8a05585c811e972702a383a55f2867c4c70f42"
-          },
-          "cover_operation": "reassociated_existing_repository_confirmed_material",
-          "limitation": "Approved existing material matches repository cover by exact decoded RGBA pixels; preservation of previous JPEG thumbnail was not proved. No phone visual acceptance or publication.",
-          "actual_associated_cover": {
-            "sha256": "fa019f5c76fbd90b4ca8080035463618aa3399211f69ef731f3e3c487d939411",
-            "format": "PNG",
-            "dimensions": [
-              900,
-              383
-            ],
-            "bytes": 578411,
-            "decoded_rgba_sha256": "a27174b998c3bacf71f403595bfe22aca9dc228b59b85eb8c040b01c689ae092",
-            "all_pixels_equal_approved_repository_cover": true,
-            "prior_verified_material_source_sha256_matches": true
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-13T03:24:37+00:00",
+            "readback_at": "2026-10-13T03:24:42+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 4,
+            "formula_count": 16,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-13T03:24:34+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "671584f2f639b4c9d52bd01a94ad57d8588939485c9a896bfe5a73bced929e80",
+              "language_review_sha256": "a153aa50d8102866839f5bb8be553606a84e76a04f2ea8b5a5709e4082ce37f1",
+              "original_scientific_review_sha256": "b27e5b7633b19a9edf0bbc729757c4a7cd561fa3f2524f512dcbbebf3f57b362",
+              "registered_local_cover_sha256": "bbada558aaf915544d2128af8cf87d98086e7a85e16b43a848003b0d3ab69c86",
+              "workflow_fingerprint": "f23a8233608213ed474865dc4e8a05585c811e972702a383a55f2867c4c70f42"
+            },
+            "cover_operation": "reassociated_existing_repository_confirmed_material",
+            "limitation": "Approved existing material matches repository cover by exact decoded RGBA pixels; preservation of previous JPEG thumbnail was not proved. No phone visual acceptance or publication.",
+            "actual_associated_cover": {
+              "sha256": "fa019f5c76fbd90b4ca8080035463618aa3399211f69ef731f3e3c487d939411",
+              "format": "PNG",
+              "dimensions": [
+                900,
+                383
+              ],
+              "bytes": 578411,
+              "decoded_rgba_sha256": "a27174b998c3bacf71f403595bfe22aca9dc228b59b85eb8c040b01c689ae092",
+              "all_pixels_equal_approved_repository_cover": true,
+              "prior_verified_material_source_sha256_matches": true
+            }
           }
-        }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -218,7 +220,7 @@
       "publication_ref": "ref-he2026-OE",
       "order": 1,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "4FX43CFT",
         "publication_number": 74,
@@ -292,7 +294,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2026-OE.md",
         "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
         "issues": [],
@@ -349,36 +351,38 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T12:48:23+00:00",
-          "readback_at": "2026-10-12T12:48:30+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 22,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T12:48:20+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "62681856b43603aecd5dcb37cabd24e7d3e813c9f42634bf0fa5ba0c51adac16",
-            "language_review_sha256": "01cded46a85d48a07abd3d61aad02ee1d095b4261589ed1dcbcd1b7da0bd808d",
-            "original_scientific_review_sha256": "b2db16eb19404b74284907787a40eb0ecb54f351bd0900f0478f48a5655d674e",
-            "registered_local_cover_sha256": "5e518c7529bf454408a0920f7e71cca74eecd22c9fd9d32b680650d15107fd4a",
-            "workflow_fingerprint": "95e1017ad09baa8ac5fc7001a6161b1529d3e88887a1d2785a00f651425964a3"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "bf0a85dd40e9a1a9e9f0dda8919c2936ea2a041e670f2c0e8bcd60b0d87e713f"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T12:48:23+00:00",
+            "readback_at": "2026-10-12T12:48:30+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 22,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T12:48:20+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "62681856b43603aecd5dcb37cabd24e7d3e813c9f42634bf0fa5ba0c51adac16",
+              "language_review_sha256": "01cded46a85d48a07abd3d61aad02ee1d095b4261589ed1dcbcd1b7da0bd808d",
+              "original_scientific_review_sha256": "b2db16eb19404b74284907787a40eb0ecb54f351bd0900f0478f48a5655d674e",
+              "registered_local_cover_sha256": "5e518c7529bf454408a0920f7e71cca74eecd22c9fd9d32b680650d15107fd4a",
+              "workflow_fingerprint": "95e1017ad09baa8ac5fc7001a6161b1529d3e88887a1d2785a00f651425964a3"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "bf0a85dd40e9a1a9e9f0dda8919c2936ea2a041e670f2c0e8bcd60b0d87e713f"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -409,7 +413,7 @@
       "publication_ref": "ref-zhao2026-BS",
       "order": 2,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "CGKPKZ8I",
         "publication_number": 73,
@@ -497,7 +501,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2026-BS.md",
         "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
         "issues": [],
@@ -567,36 +571,38 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T12:47:58+00:00",
-          "readback_at": "2026-10-12T12:48:04+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 4,
-          "formula_count": 22,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T12:47:55+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "089375d21af36776109d7267e7860d641500fc1d7f11d012bc07ac9ae00d489f",
-            "language_review_sha256": "e349b84bc3e2914940888c907f603dbd1d4216f454ae37005d562daa2091088f",
-            "original_scientific_review_sha256": "5753796968d3f97dfb309601c5e8882a95c8bc937871c872cb28d72511f008f3",
-            "registered_local_cover_sha256": "d61202ccb6d3448657ffc47dedbbeeb322b41fe903a9205a11c44fddaeb8cec6",
-            "workflow_fingerprint": "05d95abe33eed526180dcec005aed6452d1b7d4c4bcf5450e3776707d44d547a"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "d61202ccb6d3448657ffc47dedbbeeb322b41fe903a9205a11c44fddaeb8cec6"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T12:47:58+00:00",
+            "readback_at": "2026-10-12T12:48:04+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 4,
+            "formula_count": 22,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T12:47:55+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "089375d21af36776109d7267e7860d641500fc1d7f11d012bc07ac9ae00d489f",
+              "language_review_sha256": "e349b84bc3e2914940888c907f603dbd1d4216f454ae37005d562daa2091088f",
+              "original_scientific_review_sha256": "5753796968d3f97dfb309601c5e8882a95c8bc937871c872cb28d72511f008f3",
+              "registered_local_cover_sha256": "d61202ccb6d3448657ffc47dedbbeeb322b41fe903a9205a11c44fddaeb8cec6",
+              "workflow_fingerprint": "05d95abe33eed526180dcec005aed6452d1b7d4c4bcf5450e3776707d44d547a"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "d61202ccb6d3448657ffc47dedbbeeb322b41fe903a9205a11c44fddaeb8cec6"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -627,7 +633,7 @@
       "publication_ref": "ref-huang2026-JWEIA",
       "order": 3,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "IBLEEY34",
         "publication_number": 72,
@@ -697,7 +703,7 @@
       "publication_ref": "ref-he2026-OE-structural",
       "order": 4,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式混凝土平台结构设计",
+      "subdirection": "混凝土浮体",
       "legacy_bibliography": {
         "zotero_key": "EMID6LAJ",
         "publication_number": 71,
@@ -787,7 +793,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2026-OE-structural.md",
         "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
         "issues": [],
@@ -846,36 +852,38 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T13:01:26+00:00",
-          "readback_at": "2026-10-12T13:01:31+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 38,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T13:01:21+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "93f5bbeeffee12593c1434c47701f516124b8df1e1f5f4519d265b8231a0ef5c",
-            "language_review_sha256": "0118993fcc8d6cc3688f9719a24f82dfb322757070a039fcaab1c7dc4cc2742d",
-            "original_scientific_review_sha256": "9643de1ecda35de6a71b728f79a941984f4a23975e40539e6de5db041f450ab2",
-            "registered_local_cover_sha256": "d8444f75364974525ed0635cd666cab8ac78b3f571e6eb3a6d1e1ac5c1d93b4e",
-            "workflow_fingerprint": "ec47a09cbf5bcc0b0cb754a374abc54bcd59dd73ad46cea141a379e004a8e921"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "9a5bc4000fe9efd2ce4fd1de50a39b0a26444ce3614413a666e085f3726bb3e2"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T13:01:26+00:00",
+            "readback_at": "2026-10-12T13:01:31+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 38,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T13:01:21+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "93f5bbeeffee12593c1434c47701f516124b8df1e1f5f4519d265b8231a0ef5c",
+              "language_review_sha256": "0118993fcc8d6cc3688f9719a24f82dfb322757070a039fcaab1c7dc4cc2742d",
+              "original_scientific_review_sha256": "9643de1ecda35de6a71b728f79a941984f4a23975e40539e6de5db041f450ab2",
+              "registered_local_cover_sha256": "d8444f75364974525ed0635cd666cab8ac78b3f571e6eb3a6d1e1ac5c1d93b4e",
+              "workflow_fingerprint": "ec47a09cbf5bcc0b0cb754a374abc54bcd59dd73ad46cea141a379e004a8e921"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "9a5bc4000fe9efd2ce4fd1de50a39b0a26444ce3614413a666e085f3726bb3e2"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -906,7 +914,7 @@
       "publication_ref": "ref-tang2026-RE",
       "order": 5,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "XM44D697",
         "publication_number": 70,
@@ -981,7 +989,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-tang2026-RE.md",
         "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
         "issues": [],
@@ -1029,36 +1037,38 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T12:48:56+00:00",
-          "readback_at": "2026-10-12T12:49:02+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 59,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T12:48:51+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "d240e00fefb618e338b282742002831c60cb2ea99ef6b44f2fcfdefccef95288",
-            "language_review_sha256": "2a4b3bb71f230912ba6bd7ea468707a8e74e07767340bfab071e5e44387a7d5a",
-            "original_scientific_review_sha256": "7478969482ddee201ff252f34fe3c982cd64b5a7100c99d9c19f3a9405102a05",
-            "registered_local_cover_sha256": "9dbbc624b77550bb57a935e21dca0633b06ca06f9976439339e89b2c0345d2ed",
-            "workflow_fingerprint": "84edc35b7386e59f786e13763f7751258d10b1c8978e58aff7e0a2dca0ee95f2"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "5cb36e8e299d583a4fb3e47f518c13979369db694f1ac4647f63a7d177245266"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T12:48:56+00:00",
+            "readback_at": "2026-10-12T12:49:02+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 59,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T12:48:51+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "d240e00fefb618e338b282742002831c60cb2ea99ef6b44f2fcfdefccef95288",
+              "language_review_sha256": "2a4b3bb71f230912ba6bd7ea468707a8e74e07767340bfab071e5e44387a7d5a",
+              "original_scientific_review_sha256": "7478969482ddee201ff252f34fe3c982cd64b5a7100c99d9c19f3a9405102a05",
+              "registered_local_cover_sha256": "9dbbc624b77550bb57a935e21dca0633b06ca06f9976439339e89b2c0345d2ed",
+              "workflow_fingerprint": "84edc35b7386e59f786e13763f7751258d10b1c8978e58aff7e0a2dca0ee95f2"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "5cb36e8e299d583a4fb3e47f518c13979369db694f1ac4647f63a7d177245266"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -1089,7 +1099,7 @@
       "publication_ref": "ref-zhang2025-CSICM",
       "order": 6,
       "research_family": "海上漂浮风电",
-      "subdirection": "数值风浪流水池",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "5ALWDPSB",
         "publication_number": 69,
@@ -1159,7 +1169,7 @@
       "publication_ref": "ref-he2025-POF",
       "order": 7,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "ES37XMDV",
         "publication_number": 68,
@@ -1233,7 +1243,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2025-POF.md",
         "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
         "issues": [],
@@ -1290,36 +1300,38 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T14:24:45+00:00",
-          "readback_at": "2026-10-12T14:24:52+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 52,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T14:24:40+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "f004a8df2aa0d38053f3894ff12165fb4716641868d9ffa20bb0d87fad4defd2",
-            "language_review_sha256": "4a80fa2bc7002c443399ac19fc7654146c21e92e08ce4eb1bf1344d0479ff841",
-            "original_scientific_review_sha256": "ff6a30753a1b6163c63432f27335014980706c059379b4887b2fba750397e88c",
-            "registered_local_cover_sha256": "5aebd52c6acf1e3a713615d2b4f340bfd9485d6b28ffffb4d3029224fff63328",
-            "workflow_fingerprint": "9168302281ed006b37c025bbbe1812263a7e8150dad34c93c6d4f8d522deaa09"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "154d2d2e8ae45c3fd6f41467a318716aa04b55e91c1639ada7bc01c147e7453d"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T14:24:45+00:00",
+            "readback_at": "2026-10-12T14:24:52+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 52,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T14:24:40+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "f004a8df2aa0d38053f3894ff12165fb4716641868d9ffa20bb0d87fad4defd2",
+              "language_review_sha256": "4a80fa2bc7002c443399ac19fc7654146c21e92e08ce4eb1bf1344d0479ff841",
+              "original_scientific_review_sha256": "ff6a30753a1b6163c63432f27335014980706c059379b4887b2fba750397e88c",
+              "registered_local_cover_sha256": "5aebd52c6acf1e3a713615d2b4f340bfd9485d6b28ffffb4d3029224fff63328",
+              "workflow_fingerprint": "9168302281ed006b37c025bbbe1812263a7e8150dad34c93c6d4f8d522deaa09"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "154d2d2e8ae45c3fd6f41467a318716aa04b55e91c1639ada7bc01c147e7453d"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -1350,7 +1362,7 @@
       "publication_ref": "ref-yang2025-JBE",
       "order": 8,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "YZ2D62NB",
         "publication_number": 67,
@@ -1426,7 +1438,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-yang2025-JBE.md",
         "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
         "issues": [],
@@ -1474,47 +1486,49 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-13T03:25:01+00:00",
-          "readback_at": "2026-10-13T03:25:06+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 54,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-13T03:24:57+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "6b1e2e65a1dd59d955453177e3e0c09aae645b405aaa0d29d667ca914615ac0b",
-            "language_review_sha256": "e8aac49a73d14353816906421cdf7becadd938c486b48447f2937b153ec048cd",
-            "original_scientific_review_sha256": "d7ef02716e98c720af17355fd2b568a1f02ea3869c1e6dd7f567b719b27500cd",
-            "registered_local_cover_sha256": "af9304ce53de8c1e7cc1eeb481f8b393360d5a690d4d67c5585d60f1fb000dcf",
-            "workflow_fingerprint": "f10d23e8595ae1085682690bc3f9730ed80ccaa886fc7c01e9f9ab7b3354bd48"
-          },
-          "cover_operation": "reassociated_existing_repository_confirmed_material",
-          "limitation": "Approved existing material matches repository cover by exact decoded RGBA pixels; preservation of previous JPEG thumbnail was not proved. No phone visual acceptance or publication.",
-          "actual_associated_cover": {
-            "sha256": "1529296c87407f088144cafbd19f69ce67e7c57456637b684e20e597d6748656",
-            "format": "PNG",
-            "dimensions": [
-              900,
-              383
-            ],
-            "bytes": 473549,
-            "decoded_rgba_sha256": "4dd3b3b3ab8921d09030de4677bae3f089df40966c01ca0c12047d62841c2978",
-            "all_pixels_equal_approved_repository_cover": true,
-            "prior_verified_material_source_sha256_matches": true
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-13T03:25:01+00:00",
+            "readback_at": "2026-10-13T03:25:06+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 54,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-13T03:24:57+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "6b1e2e65a1dd59d955453177e3e0c09aae645b405aaa0d29d667ca914615ac0b",
+              "language_review_sha256": "e8aac49a73d14353816906421cdf7becadd938c486b48447f2937b153ec048cd",
+              "original_scientific_review_sha256": "d7ef02716e98c720af17355fd2b568a1f02ea3869c1e6dd7f567b719b27500cd",
+              "registered_local_cover_sha256": "af9304ce53de8c1e7cc1eeb481f8b393360d5a690d4d67c5585d60f1fb000dcf",
+              "workflow_fingerprint": "f10d23e8595ae1085682690bc3f9730ed80ccaa886fc7c01e9f9ab7b3354bd48"
+            },
+            "cover_operation": "reassociated_existing_repository_confirmed_material",
+            "limitation": "Approved existing material matches repository cover by exact decoded RGBA pixels; preservation of previous JPEG thumbnail was not proved. No phone visual acceptance or publication.",
+            "actual_associated_cover": {
+              "sha256": "1529296c87407f088144cafbd19f69ce67e7c57456637b684e20e597d6748656",
+              "format": "PNG",
+              "dimensions": [
+                900,
+                383
+              ],
+              "bytes": 473549,
+              "decoded_rgba_sha256": "4dd3b3b3ab8921d09030de4677bae3f089df40966c01ca0c12047d62841c2978",
+              "all_pixels_equal_approved_repository_cover": true,
+              "prior_verified_material_source_sha256_matches": true
+            }
           }
-        }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -1545,7 +1559,7 @@
       "publication_ref": "ref-wang2025-POF",
       "order": 9,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "Y9QYBEKI",
         "publication_number": 66,
@@ -1616,7 +1630,7 @@
       "publication_ref": "ref-zheng2025-OE",
       "order": 10,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式混凝土平台结构设计",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "5W2SZJUT",
         "publication_number": 65,
@@ -1690,7 +1704,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zheng2025-OE.md",
         "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
         "issues": [],
@@ -1747,36 +1761,38 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T13:01:54+00:00",
-          "readback_at": "2026-10-12T13:02:01+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 34,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T13:01:50+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "b0003b33105dcdd578197639d8f83042c8640eef2c688e5a75d9d4cfc1522d6a",
-            "language_review_sha256": "e17b593fb480f337da69a30299354d46b6ca087ab922774974744d2390b5eb63",
-            "original_scientific_review_sha256": "74f76f22c95fe33f7fac1746fc1a2c78330bc123a36b2cfa4e9cc9c43eba2082",
-            "registered_local_cover_sha256": "eda0134d5a5c5eba27cb89d9f130e7dde0043aff33a52e452b0d6ff4f9c4bf5d",
-            "workflow_fingerprint": "dcdd201a62a8d9f90826f1bb3393d763d7626ce66c8e8ea5fcd2ef8c92c9489d"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "64dad21e208b7b892292439498d0c91bea6510de9fca5e8f632c2004b5d646ef"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T13:01:54+00:00",
+            "readback_at": "2026-10-12T13:02:01+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 34,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T13:01:50+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "b0003b33105dcdd578197639d8f83042c8640eef2c688e5a75d9d4cfc1522d6a",
+              "language_review_sha256": "e17b593fb480f337da69a30299354d46b6ca087ab922774974744d2390b5eb63",
+              "original_scientific_review_sha256": "74f76f22c95fe33f7fac1746fc1a2c78330bc123a36b2cfa4e9cc9c43eba2082",
+              "registered_local_cover_sha256": "eda0134d5a5c5eba27cb89d9f130e7dde0043aff33a52e452b0d6ff4f9c4bf5d",
+              "workflow_fingerprint": "dcdd201a62a8d9f90826f1bb3393d763d7626ce66c8e8ea5fcd2ef8c92c9489d"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "64dad21e208b7b892292439498d0c91bea6510de9fca5e8f632c2004b5d646ef"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -1807,7 +1823,7 @@
       "publication_ref": "ref-zheng2025-QHDXXB",
       "order": 11,
       "research_family": "海上漂浮风电",
-      "subdirection": "数值风浪流水池",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "H4RZBAIG",
         "publication_number": 64,
@@ -1877,7 +1893,7 @@
       "publication_ref": "ref-tang2025-JBE",
       "order": 12,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "4BCF65NB",
         "publication_number": 63,
@@ -1952,7 +1968,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-tang2025-JBE.md",
         "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
         "issues": [],
@@ -2000,36 +2016,38 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T14:11:37+00:00",
-          "readback_at": "2026-10-12T14:11:44+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 64,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T14:11:34+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "3eab5afecbbb2b3e4144c5465f09668c4ba6cf9308c1b871640ccfa4610de541",
-            "language_review_sha256": "954d448fbe03bdc5b530382ed568d1bca7846b083dc7f79798f16dc842b65acb",
-            "original_scientific_review_sha256": "d4e16d428ac2fb32a16d4846f97f9d72d54b05bfa8e9e72ce79433373d92ec6b",
-            "registered_local_cover_sha256": "adb5305058faa5264420fd1a0d8bb784352eb919cb43c7d8f7de3169b272cea4",
-            "workflow_fingerprint": "ccf08fca61e975743b29fff2df3732b721c5762ee10b0e2cb9a9e001168885cb"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "68905a376ed24341038fd48d27addedfa77b408ee93300602f02a26a279ee5cc"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T14:11:37+00:00",
+            "readback_at": "2026-10-12T14:11:44+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 64,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T14:11:34+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "3eab5afecbbb2b3e4144c5465f09668c4ba6cf9308c1b871640ccfa4610de541",
+              "language_review_sha256": "954d448fbe03bdc5b530382ed568d1bca7846b083dc7f79798f16dc842b65acb",
+              "original_scientific_review_sha256": "d4e16d428ac2fb32a16d4846f97f9d72d54b05bfa8e9e72ce79433373d92ec6b",
+              "registered_local_cover_sha256": "adb5305058faa5264420fd1a0d8bb784352eb919cb43c7d8f7de3169b272cea4",
+              "workflow_fingerprint": "ccf08fca61e975743b29fff2df3732b721c5762ee10b0e2cb9a9e001168885cb"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "68905a376ed24341038fd48d27addedfa77b408ee93300602f02a26a279ee5cc"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -2060,7 +2078,7 @@
       "publication_ref": "ref-gong2025-POF",
       "order": 13,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "39Z372P2",
         "publication_number": 62,
@@ -2130,7 +2148,7 @@
       "publication_ref": "ref-yan2025-POF",
       "order": 14,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "6KEYN5GF",
         "publication_number": 61,
@@ -2199,7 +2217,7 @@
       "publication_ref": "ref-zhao2025-SCS",
       "order": 15,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "V6PLJENN",
         "publication_number": 60,
@@ -2273,7 +2291,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2025-SCS.md",
         "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
         "issues": [],
@@ -2321,36 +2339,38 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T14:12:08+00:00",
-          "readback_at": "2026-10-12T14:12:15+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 25,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T14:12:05+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "c3e25a696fe02f01520fdecca78de4a1c2657fbf2f2202497b3e8b6e1105042c",
-            "language_review_sha256": "22e606e990191795685e9a98dfdaf5ecbab6cf122758a0a123a325d2925570f7",
-            "original_scientific_review_sha256": "9cecb038a1878eb834dafa0f650c3359f5d81a4be9ccabaece13a73992f8a198",
-            "registered_local_cover_sha256": "3de403eb72d4aab53a0dde836a1c5d510c8d019603cdc3203faea6855654fdda",
-            "workflow_fingerprint": "ecd0c5fc4dab6884ac68541766d54341954dc6f53faa65e692e1b31f2bb67720"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "a304b52a0c4d7fe23a3a575b93f2e218df7a62c289a5c477fdd795b4eb20ebb8"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T14:12:08+00:00",
+            "readback_at": "2026-10-12T14:12:15+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 25,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T14:12:05+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "c3e25a696fe02f01520fdecca78de4a1c2657fbf2f2202497b3e8b6e1105042c",
+              "language_review_sha256": "22e606e990191795685e9a98dfdaf5ecbab6cf122758a0a123a325d2925570f7",
+              "original_scientific_review_sha256": "9cecb038a1878eb834dafa0f650c3359f5d81a4be9ccabaece13a73992f8a198",
+              "registered_local_cover_sha256": "3de403eb72d4aab53a0dde836a1c5d510c8d019603cdc3203faea6855654fdda",
+              "workflow_fingerprint": "ecd0c5fc4dab6884ac68541766d54341954dc6f53faa65e692e1b31f2bb67720"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "a304b52a0c4d7fe23a3a575b93f2e218df7a62c289a5c477fdd795b4eb20ebb8"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -2396,7 +2416,7 @@
       "publication_ref": "ref-liang2025-OE",
       "order": 16,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "PTQVD6AJ",
         "publication_number": 59,
@@ -2463,7 +2483,7 @@
       "publication_ref": "ref-chen2024-POF",
       "order": 17,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "78XMAPMX",
         "publication_number": 58,
@@ -2528,7 +2548,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2024-POF.md",
         "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
         "issues": [],
@@ -2572,47 +2592,49 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-13T03:25:21+00:00",
-          "readback_at": "2026-10-13T03:25:26+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 14,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-13T03:25:18+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "1718e3e3f89993a6fade0869430488096aafb8f40ddd73f54b5b68680623d6e8",
-            "language_review_sha256": "1d70c16b9296c833d93b100082a0b521596d4867e56ae3bb3ef9a721eba6ad22",
-            "original_scientific_review_sha256": "6bebaa62d6e19bc08de0128de8167533e78b13b15c54aa3e1afe3f604bc949d5",
-            "registered_local_cover_sha256": "550b8519836a240d29ac86bd2fcd697f3319c83eeac41ded73a9a06ed5a32beb",
-            "workflow_fingerprint": "fba2722af6a7657a8e68e4cc663e2d59467840d81c84e37884f6c2f04cb70f77"
-          },
-          "cover_operation": "reassociated_existing_repository_confirmed_material",
-          "limitation": "Approved existing material matches repository cover by exact decoded RGBA pixels; preservation of previous JPEG thumbnail was not proved. No phone visual acceptance or publication.",
-          "actual_associated_cover": {
-            "sha256": "e41150e9431ed28aeae0cc407c03c55aa45a88d92dcf34e0dc35aa42dbfa4890",
-            "format": "PNG",
-            "dimensions": [
-              900,
-              383
-            ],
-            "bytes": 481434,
-            "decoded_rgba_sha256": "f3410cf06d1b80cc8c48bf00e5e573800435b8de706bed8851bd43a831de50af",
-            "all_pixels_equal_approved_repository_cover": true,
-            "prior_verified_material_source_sha256_matches": true
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-13T03:25:21+00:00",
+            "readback_at": "2026-10-13T03:25:26+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 14,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-13T03:25:18+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "1718e3e3f89993a6fade0869430488096aafb8f40ddd73f54b5b68680623d6e8",
+              "language_review_sha256": "1d70c16b9296c833d93b100082a0b521596d4867e56ae3bb3ef9a721eba6ad22",
+              "original_scientific_review_sha256": "6bebaa62d6e19bc08de0128de8167533e78b13b15c54aa3e1afe3f604bc949d5",
+              "registered_local_cover_sha256": "550b8519836a240d29ac86bd2fcd697f3319c83eeac41ded73a9a06ed5a32beb",
+              "workflow_fingerprint": "fba2722af6a7657a8e68e4cc663e2d59467840d81c84e37884f6c2f04cb70f77"
+            },
+            "cover_operation": "reassociated_existing_repository_confirmed_material",
+            "limitation": "Approved existing material matches repository cover by exact decoded RGBA pixels; preservation of previous JPEG thumbnail was not proved. No phone visual acceptance or publication.",
+            "actual_associated_cover": {
+              "sha256": "e41150e9431ed28aeae0cc407c03c55aa45a88d92dcf34e0dc35aa42dbfa4890",
+              "format": "PNG",
+              "dimensions": [
+                900,
+                383
+              ],
+              "bytes": 481434,
+              "decoded_rgba_sha256": "f3410cf06d1b80cc8c48bf00e5e573800435b8de706bed8851bd43a831de50af",
+              "all_pixels_equal_approved_repository_cover": true,
+              "prior_verified_material_source_sha256_matches": true
+            }
           }
-        }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -2643,7 +2665,7 @@
       "publication_ref": "ref-tang2024-POF",
       "order": 18,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "FVGTMSEA",
         "publication_number": 57,
@@ -2711,7 +2733,7 @@
       "publication_ref": "ref-liu2024-JWEIA",
       "order": 19,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "UXCUW2AL",
         "publication_number": 56,
@@ -2781,7 +2803,7 @@
       "publication_ref": "ref-wang2024-ES",
       "order": 20,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "3HGIR6QR",
         "publication_number": 55,
@@ -2856,7 +2878,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-wang2024-ES.md",
         "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
         "issues": [],
@@ -2913,36 +2935,38 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T14:17:30+00:00",
-          "readback_at": "2026-10-12T14:17:37+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 4,
-          "formula_count": 28,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T14:17:26+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "a3250e4de62dac24300afbc186c6140aef643aa26fdad5de1e6764ac07f91a28",
-            "language_review_sha256": "d716013f2111ccbec60060264885515c6ca1fa31222c54d75a84d3f10e07c88d",
-            "original_scientific_review_sha256": "12d0828fa740e2495b3e397f1d6daae9a98ef322d739e4ff1aaa40ea44dc036e",
-            "registered_local_cover_sha256": "b62b33129083b71b75688c544d281503523bb6bbdb5ebb8341256cd95c0bf92a",
-            "workflow_fingerprint": "d576203c12bd2323cb64c3451b9252a7e29d4ba98b69b281191b8db3da433a88"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "f973cfbff1d0f440a5acb9af3971700db525b64b962eab5b8731e92e9c3dfb9e"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T14:17:30+00:00",
+            "readback_at": "2026-10-12T14:17:37+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 4,
+            "formula_count": 28,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T14:17:26+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "a3250e4de62dac24300afbc186c6140aef643aa26fdad5de1e6764ac07f91a28",
+              "language_review_sha256": "d716013f2111ccbec60060264885515c6ca1fa31222c54d75a84d3f10e07c88d",
+              "original_scientific_review_sha256": "12d0828fa740e2495b3e397f1d6daae9a98ef322d739e4ff1aaa40ea44dc036e",
+              "registered_local_cover_sha256": "b62b33129083b71b75688c544d281503523bb6bbdb5ebb8341256cd95c0bf92a",
+              "workflow_fingerprint": "d576203c12bd2323cb64c3451b9252a7e29d4ba98b69b281191b8db3da433a88"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "f973cfbff1d0f440a5acb9af3971700db525b64b962eab5b8731e92e9c3dfb9e"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -2989,7 +3013,7 @@
       "publication_ref": "ref-he2024-JBE",
       "order": 21,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "YMKXLNSP",
         "publication_number": 54,
@@ -3058,7 +3082,7 @@
       "publication_ref": "ref-jiang2024-POF",
       "order": 22,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "68N5CKGN",
         "publication_number": 53,
@@ -3128,7 +3152,7 @@
       "publication_ref": "ref-zhang2024-OE",
       "order": 23,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "B7KQW96B",
         "publication_number": 52,
@@ -3197,7 +3221,7 @@
       "publication_ref": "ref-li2024-POF",
       "order": 24,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "2YG78T62",
         "publication_number": 51,
@@ -3273,7 +3297,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2024-POF.md",
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
         "issues": [],
@@ -3321,36 +3345,38 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T14:18:00+00:00",
-          "readback_at": "2026-10-12T14:18:08+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 4,
-          "formula_count": 40,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T14:17:56+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "1838118df6e4e0cd87fc0c5498bf969ca18d5d60fbcf7e8d3efa97ea34f66c4d",
-            "language_review_sha256": "16d1ffc192a98fccb683029e1c9b9afc3878d53c63be1378bfeadc46dd7c1e8a",
-            "original_scientific_review_sha256": "6d3e3b3535204792d147034d3c773f292f6da2a9e3e12dcc2e446eefb41e0d5e",
-            "registered_local_cover_sha256": "33145c5bc11d9185e3114330702ceaad78f6bf52d18287649540affa2dbfbec1",
-            "workflow_fingerprint": "b58f2df1ee6baaa23a611affd9c871569bed31c3980be87d41701900f6ed4757"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "0a3b1f0be5f7d66de1731a729590d5ddb1cb566c9e79682e14ca1897c92bbe1f"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T14:18:00+00:00",
+            "readback_at": "2026-10-12T14:18:08+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 4,
+            "formula_count": 40,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T14:17:56+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "1838118df6e4e0cd87fc0c5498bf969ca18d5d60fbcf7e8d3efa97ea34f66c4d",
+              "language_review_sha256": "16d1ffc192a98fccb683029e1c9b9afc3878d53c63be1378bfeadc46dd7c1e8a",
+              "original_scientific_review_sha256": "6d3e3b3535204792d147034d3c773f292f6da2a9e3e12dcc2e446eefb41e0d5e",
+              "registered_local_cover_sha256": "33145c5bc11d9185e3114330702ceaad78f6bf52d18287649540affa2dbfbec1",
+              "workflow_fingerprint": "b58f2df1ee6baaa23a611affd9c871569bed31c3980be87d41701900f6ed4757"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "0a3b1f0be5f7d66de1731a729590d5ddb1cb566c9e79682e14ca1897c92bbe1f"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -3381,7 +3407,7 @@
       "publication_ref": "ref-chen2024-JCP",
       "order": 25,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "Y76UWP9R",
         "publication_number": 50,
@@ -3487,7 +3513,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2024-JCP.md",
         "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
         "issues": [],
@@ -3596,36 +3622,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T12:41:00+00:00",
-          "readback_at": "2026-10-12T12:41:06+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 23,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T12:40:56+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "750d2e1b0e20a23a448fff6af683988e0035fb8aecdda48a61523b788217ce79",
-            "language_review_sha256": "9648050b98a4eea42879264a9d788c6f3c5e53538f7783b42c7bec967d65f3a5",
-            "original_scientific_review_sha256": "2d56bf3b71e26f992399d6f1b7a1195b12ad0da9a3087f6592a24e5f8a1b8f85",
-            "registered_local_cover_sha256": "eddb9ab8a43ecb5439c8968dd28f62d89a1074bd4d81db91019919fabe1793d0",
-            "workflow_fingerprint": "54d0fb1afdde96fcf4db92b9e18a68d0e02cee2c39303e07fae48019aca40e64"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "eddb9ab8a43ecb5439c8968dd28f62d89a1074bd4d81db91019919fabe1793d0"
-        },
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
         "previous_confirmed_draft_update": {
           "event_at": "2026-10-06T17:51:36+00:00",
           "reported_at": "2026-10-06T17:52:00+00:00",
@@ -3675,7 +3672,38 @@
           "block_outer_inherit_transparent_styles_preserved": false,
           "forced_ancestor_color_or_background_found": false,
           "limitation": "At15:24UTC readback, phone appearance remained unverified after outer-style sanitization. Subsequent user dark-mode-only confirmation is recorded separately; other preview checks remain pending."
-        }
+        },
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T12:41:00+00:00",
+            "readback_at": "2026-10-12T12:41:06+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 23,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T12:40:56+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "750d2e1b0e20a23a448fff6af683988e0035fb8aecdda48a61523b788217ce79",
+              "language_review_sha256": "9648050b98a4eea42879264a9d788c6f3c5e53538f7783b42c7bec967d65f3a5",
+              "original_scientific_review_sha256": "2d56bf3b71e26f992399d6f1b7a1195b12ad0da9a3087f6592a24e5f8a1b8f85",
+              "registered_local_cover_sha256": "eddb9ab8a43ecb5439c8968dd28f62d89a1074bd4d81db91019919fabe1793d0",
+              "workflow_fingerprint": "54d0fb1afdde96fcf4db92b9e18a68d0e02cee2c39303e07fae48019aca40e64"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "eddb9ab8a43ecb5439c8968dd28f62d89a1074bd4d81db91019919fabe1793d0"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-06T09:01:19+00:00",
@@ -3711,7 +3739,7 @@
       "publication_ref": "ref-liu2024-E",
       "order": 26,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "WSTSZ48A",
         "publication_number": 49,
@@ -3781,7 +3809,7 @@
       "publication_ref": "ref-zhou2023-AE",
       "order": 27,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "3LWVP7B7",
         "publication_number": 48,
@@ -3856,7 +3884,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhou2023-AE.md",
         "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
         "issues": [],
@@ -3913,36 +3941,38 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T13:02:39+00:00",
-          "readback_at": "2026-10-12T13:02:47+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 14,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T13:02:35+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "9c8ce684992c235def72a3e520287565a538471d21869d98a0d3b6b6a0f9cae6",
-            "language_review_sha256": "0eeaa3ca2be2a0266067c303fda0cfc33a1594fb3e814c73e590fd9ce870c84d",
-            "original_scientific_review_sha256": "a99bad2cb8b4b74a2efdda813574965dbfbf087a5c6d37aaa9c2a3bb28d05151",
-            "registered_local_cover_sha256": "b74d8673048ff004bec188e24a6d1eef16c21bc0776ebc98d678d74a96211332",
-            "workflow_fingerprint": "55e46117a69ae8c43e22e13184d0e0705878db12cd92891c83ff192270957bf5"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "a9f8af8d325505b12c01ad8632ff739fac3a3d4218e4f889e56bd84602fa08d1"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T13:02:39+00:00",
+            "readback_at": "2026-10-12T13:02:47+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 14,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T13:02:35+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "9c8ce684992c235def72a3e520287565a538471d21869d98a0d3b6b6a0f9cae6",
+              "language_review_sha256": "0eeaa3ca2be2a0266067c303fda0cfc33a1594fb3e814c73e590fd9ce870c84d",
+              "original_scientific_review_sha256": "a99bad2cb8b4b74a2efdda813574965dbfbf087a5c6d37aaa9c2a3bb28d05151",
+              "registered_local_cover_sha256": "b74d8673048ff004bec188e24a6d1eef16c21bc0776ebc98d678d74a96211332",
+              "workflow_fingerprint": "55e46117a69ae8c43e22e13184d0e0705878db12cd92891c83ff192270957bf5"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "a9f8af8d325505b12c01ad8632ff739fac3a3d4218e4f889e56bd84602fa08d1"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -3973,7 +4003,7 @@
       "publication_ref": "ref-zhao2023-BS",
       "order": 28,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "FVQQHCGS",
         "publication_number": 47,
@@ -4043,7 +4073,7 @@
       "publication_ref": "ref-zhang2023-JWEIA",
       "order": 29,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "F83EIB5E",
         "publication_number": 46,
@@ -4114,7 +4144,7 @@
       "publication_ref": "ref-zheng2023-MS",
       "order": 30,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "5GPZ54VV",
         "publication_number": 45,
@@ -4180,7 +4210,7 @@
       "publication_ref": "ref-zhang2023-S",
       "order": 31,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "TYK2GQCU",
         "publication_number": 44,
@@ -4248,7 +4278,7 @@
       "publication_ref": "ref-wang2023-JWEIA",
       "order": 32,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "GKUAVJEK",
         "publication_number": 43,
@@ -4317,7 +4347,7 @@
       "publication_ref": "ref-zheng2023-JRSE",
       "order": 33,
       "research_family": "海上漂浮风电",
-      "subdirection": "数值风浪流水池",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "TQ9RNRCC",
         "publication_number": 42,
@@ -4385,7 +4415,7 @@
       "publication_ref": "ref-zhang2023-ES",
       "order": 34,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "QN2824VG",
         "publication_number": 41,
@@ -4453,7 +4483,7 @@
       "publication_ref": "ref-xiang2023-CBGC",
       "order": 35,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "52JRBI8E",
         "publication_number": 40,
@@ -4521,7 +4551,7 @@
       "publication_ref": "ref-feng2023-HKXYGC",
       "order": 36,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "FT67Z85H",
         "publication_number": 39,
@@ -4587,7 +4617,7 @@
       "publication_ref": "ref-zhao2023-GYJZ",
       "order": 37,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "R2C3HY74",
         "publication_number": 38,
@@ -4655,7 +4685,7 @@
       "publication_ref": "ref-zhou2023-CBGC",
       "order": 38,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "NLWWLBHY",
         "publication_number": 37,
@@ -4721,7 +4751,7 @@
       "publication_ref": "ref-gao2022-BE",
       "order": 39,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "IPVYARZP",
         "publication_number": 36,
@@ -4791,7 +4821,7 @@
       "publication_ref": "ref-hu2022-SCHM",
       "order": 40,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "DH7XTK83",
         "publication_number": 35,
@@ -4862,7 +4892,7 @@
       "publication_ref": "ref-chen2022-JWEIA",
       "order": 41,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "DD8PJ6PS",
         "publication_number": 34,
@@ -4938,7 +4968,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2022-JWEIA.md",
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
         "issues": [],
@@ -4986,36 +5016,38 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T14:25:12+00:00",
-          "readback_at": "2026-10-12T14:25:20+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 5,
-          "formula_count": 33,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T14:25:08+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "3823f76f879f1d2dbad2afb2051f71d862f7a515fa514857c64e20b58c5a9f73",
-            "language_review_sha256": "28ce705b95659e20a018b8e84180a75e15736a915224344282f4922623b1f10f",
-            "original_scientific_review_sha256": "dc776450b9396818a018db491d1035900e14e991aee918512230b2da83cf43ab",
-            "registered_local_cover_sha256": "95f6b9e0f4d3aefc4adc3c89826a74e95bbf1d82795d45e6f275a0b268c51063",
-            "workflow_fingerprint": "dae40554a28411dd514edda83e84d01f3fc2d2b8e7f92feb2604d0d1a7b370e8"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "b96a614debc3351dcb260fbffd5b8f7089e734a5bbd21dc9639bc032d19b1cb8"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T14:25:12+00:00",
+            "readback_at": "2026-10-12T14:25:20+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 5,
+            "formula_count": 33,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T14:25:08+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "3823f76f879f1d2dbad2afb2051f71d862f7a515fa514857c64e20b58c5a9f73",
+              "language_review_sha256": "28ce705b95659e20a018b8e84180a75e15736a915224344282f4922623b1f10f",
+              "original_scientific_review_sha256": "dc776450b9396818a018db491d1035900e14e991aee918512230b2da83cf43ab",
+              "registered_local_cover_sha256": "95f6b9e0f4d3aefc4adc3c89826a74e95bbf1d82795d45e6f275a0b268c51063",
+              "workflow_fingerprint": "dae40554a28411dd514edda83e84d01f3fc2d2b8e7f92feb2604d0d1a7b370e8"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "b96a614debc3351dcb260fbffd5b8f7089e734a5bbd21dc9639bc032d19b1cb8"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -5046,7 +5078,7 @@
       "publication_ref": "ref-li2022-SOS",
       "order": 42,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式混凝土平台结构设计",
+      "subdirection": "混凝土浮体",
       "legacy_bibliography": {
         "zotero_key": "5AT7UEWV",
         "publication_number": 33,
@@ -5123,7 +5155,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2022-SOS.md",
         "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
         "issues": [],
@@ -5180,36 +5212,38 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "研究问题与解决思路栏目及新规范正文已更新原草稿，18项官方API回读通过；本轮手机浅色/深色、图片/封面预览与正式发布仍待确认。交付记录：project/research/2026-10-13-wechat-core-section-delivery.md",
-        "confirmed_draft_update": {
-          "event_at": "2026-10-12T13:02:17+00:00",
-          "readback_at": "2026-10-12T13:02:22+00:00",
-          "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
-          "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
-          "operation": "update",
-          "theme": "academic-clean",
-          "math_renderer": "mathjax-svg",
-          "body_image_count": 4,
-          "formula_count": 18,
-          "current_revision_uploaded": true,
-          "readback_verified": true,
-          "backend_preview_confirmed": false,
-          "phone_light_preview_performed": false,
-          "phone_dark_preview_performed": false,
-          "offline_checks_passed": 3,
-          "readback_checks_passed": 18,
-          "fingerprint_recorded_at": "2026-10-12T13:02:13+00:00",
-          "submitted_fingerprints": {
-            "body_markdown_sha256": "732bfe51f43f1ad358f398ecdf3051d9a19cd1a6ee87a3ecc4124d0f589f1c02",
-            "language_review_sha256": "4175287d7bc0fb4a0bdab2e85d3db8a69d05d9685a09892fdbaa11225798d5b2",
-            "original_scientific_review_sha256": "e3def75f8fbe982c7c92b827907516042c1919bef70ec67eab87b9c4eb941743",
-            "registered_local_cover_sha256": "050ad867136fdc19ab7605c837dcfa073c431777486353dad4cb28ebb9fc6a6c",
-            "workflow_fingerprint": "77ca0614a779f888d26f3ca3af441afca508ad27f7d268c7655fa704234ee008"
-          },
-          "cover_operation": "preserved_existing_backend_cover",
-          "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
-          "actual_cover_before_and_after_sha256": "aae10bde5ed3fbbd35228093e41e322a7417909f10701c217edb45a5b245a9b1"
-        }
+        "revision_note": "二级研究方向简名与逐篇归属正在迁移，当前正文尚未重新投递；此前成功更新记录保留为历史证据。",
+        "confirmed_draft_update_history": [
+          {
+            "event_at": "2026-10-12T13:02:17+00:00",
+            "readback_at": "2026-10-12T13:02:22+00:00",
+            "source": "Authorized official API existing-draft update and 18-check readback, reported by local delivery executor.",
+            "candidate_commit": "abab98ec5565055f0a75e71725fe76ea76a70240",
+            "operation": "update",
+            "theme": "academic-clean",
+            "math_renderer": "mathjax-svg",
+            "body_image_count": 4,
+            "formula_count": 18,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "offline_checks_passed": 3,
+            "readback_checks_passed": 18,
+            "fingerprint_recorded_at": "2026-10-12T13:02:13+00:00",
+            "submitted_fingerprints": {
+              "body_markdown_sha256": "732bfe51f43f1ad358f398ecdf3051d9a19cd1a6ee87a3ecc4124d0f589f1c02",
+              "language_review_sha256": "4175287d7bc0fb4a0bdab2e85d3db8a69d05d9685a09892fdbaa11225798d5b2",
+              "original_scientific_review_sha256": "e3def75f8fbe982c7c92b827907516042c1919bef70ec67eab87b9c4eb941743",
+              "registered_local_cover_sha256": "050ad867136fdc19ab7605c837dcfa073c431777486353dad4cb28ebb9fc6a6c",
+              "workflow_fingerprint": "77ca0614a779f888d26f3ca3af441afca508ad27f7d268c7655fa704234ee008"
+            },
+            "cover_operation": "preserved_existing_backend_cover",
+            "limitation": "No new full-paper audit, phone visual acceptance, or publication. Existing cover preservation does not assert identity to repository cover.",
+            "actual_cover_before_and_after_sha256": "aae10bde5ed3fbbd35228093e41e322a7417909f10701c217edb45a5b245a9b1"
+          }
+        ]
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -5240,7 +5274,7 @@
       "publication_ref": "ref-wang2022-POF",
       "order": 43,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "F73D398X",
         "publication_number": 32,
@@ -5311,7 +5345,7 @@
       "publication_ref": "ref-zhang2022-E",
       "order": 44,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "88ZT9SGP",
         "publication_number": 31,
@@ -5377,7 +5411,7 @@
       "publication_ref": "ref-abdullahi2022-OE",
       "order": 45,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "H9YSVNMM",
         "publication_number": 30,
@@ -5445,7 +5479,7 @@
       "publication_ref": "ref-zhang2022-ES",
       "order": 46,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "F9AB6YN4",
         "publication_number": 29,
@@ -5513,7 +5547,7 @@
       "publication_ref": "ref-lin2022-JWEIA",
       "order": 47,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "93A562VW",
         "publication_number": 28,
@@ -5585,7 +5619,7 @@
       "publication_ref": "ref-yang2022-AS",
       "order": 48,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "WUGUPVR4",
         "publication_number": 27,
@@ -5651,7 +5685,7 @@
       "publication_ref": "ref-wang2021-ABE",
       "order": 49,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "SXU5CL43",
         "publication_number": 26,
@@ -5720,7 +5754,7 @@
       "publication_ref": "ref-zhao2021-EFM",
       "order": 50,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "3VYYMGTH",
         "publication_number": 25,
@@ -5789,7 +5823,7 @@
       "publication_ref": "ref-zhao2021-AR",
       "order": 51,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "VEJ6LL7P",
         "publication_number": 24,
@@ -5857,7 +5891,7 @@
       "publication_ref": "ref-lin2021-JWEIA",
       "order": 52,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "5G6YFN8Y",
         "publication_number": 23,
@@ -5928,7 +5962,7 @@
       "publication_ref": "ref-zhou2021-OE",
       "order": 53,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "H8SGIEYU",
         "publication_number": 22,
@@ -5996,7 +6030,7 @@
       "publication_ref": "ref-zhao2021-TYNXB",
       "order": 54,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "JGSIKX3F",
         "publication_number": 21,
@@ -6064,7 +6098,7 @@
       "publication_ref": "ref-li2020-JWEIA",
       "order": 55,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "3ZY69PVB",
         "publication_number": 20,
@@ -6132,7 +6166,7 @@
       "publication_ref": "ref-zhou2020-RE",
       "order": 56,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "74H4VLG2",
         "publication_number": 19,
@@ -6199,7 +6233,7 @@
       "publication_ref": "ref-hu2019-JOFAS",
       "order": 57,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "I4I82574",
         "publication_number": 18,
@@ -6268,7 +6302,7 @@
       "publication_ref": "ref-peng2019-JWEIA",
       "order": 58,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "HPU9VCE6",
         "publication_number": 17,
@@ -6335,7 +6369,7 @@
       "publication_ref": "ref-li2019-JWEIA",
       "order": 59,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "WHSVAKCD",
         "publication_number": 16,
@@ -6405,7 +6439,7 @@
       "publication_ref": "ref-lin2019-E",
       "order": 60,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "F6KEY453",
         "publication_number": 15,
@@ -6472,7 +6506,7 @@
       "publication_ref": "ref-zhou2019-WHLGDXXB",
       "order": 61,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "DNXNTCJ9",
         "publication_number": 14,
@@ -6537,7 +6571,7 @@
       "publication_ref": "ref-hu2018-EJMBF",
       "order": 62,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "C75QWNRE",
         "publication_number": 13,
@@ -6604,7 +6638,7 @@
       "publication_ref": "ref-li2018-AE",
       "order": 63,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "YJN53AF9",
         "publication_number": 12,
@@ -6673,7 +6707,7 @@
       "publication_ref": "ref-xiao2018-KXJSYGC",
       "order": 64,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "YF5RIBAN",
         "publication_number": 11,
@@ -6741,7 +6775,7 @@
       "publication_ref": "ref-zhou2017-E",
       "order": 65,
       "research_family": "海上漂浮风电",
-      "subdirection": "数值风浪流水池",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "DRCNU3JT",
         "publication_number": 10,
@@ -6812,7 +6846,7 @@
       "publication_ref": "ref-li2017-BS",
       "order": 66,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "77THBZDM",
         "publication_number": 9,
@@ -6881,7 +6915,7 @@
       "publication_ref": "ref-li2017-AS",
       "order": 67,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "NJ4KP6WJ",
         "publication_number": 8,
@@ -6949,7 +6983,7 @@
       "publication_ref": "ref-pei2013-MPE",
       "order": 68,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "D5KH2XJN",
         "publication_number": 7,
@@ -7015,7 +7049,7 @@
       "publication_ref": "ref-li2013-RE",
       "order": 69,
       "research_family": "海上漂浮风电",
-      "subdirection": "浮式风机系统一体化分析与优化",
+      "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "U5FHR599",
         "publication_number": 6,
@@ -7082,7 +7116,7 @@
       "publication_ref": "ref-li2012-JWEIA",
       "order": 70,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "2ND9BWQV",
         "publication_number": 5,
@@ -7149,7 +7183,7 @@
       "publication_ref": "ref-li2012-GCLX",
       "order": 71,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "LASEFQSH",
         "publication_number": 4,
@@ -7216,7 +7250,7 @@
       "publication_ref": "ref-li2010-WAS",
       "order": 72,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "9N6EYMBU",
         "publication_number": 3,
@@ -7284,7 +7318,7 @@
       "publication_ref": "ref-teng2010-GCKZYGJGZ",
       "order": 73,
       "research_family": "工程结构抗风",
-      "subdirection": "工程结构抗风与优化",
+      "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "KPY4XV4Z",
         "publication_number": 2,
@@ -7349,7 +7383,7 @@
       "publication_ref": "ref-xiao2009-HNLGDXXB",
       "order": 74,
       "research_family": "工程结构抗风",
-      "subdirection": "数值风洞与湍动入流",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "SC8R2QZE",
         "publication_number": 1,

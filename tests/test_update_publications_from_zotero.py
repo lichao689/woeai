@@ -56,7 +56,7 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
             "custom": {
                 "publication_ref": "ref-example2026-JOT",
                 "research_family": "工程结构抗风",
-                "subdirection": "数值风洞与湍动入流",
+                "subdirection": "数值风洞",
                 "order": 0,
                 "rtd": {
                     "status": "planned",
@@ -401,7 +401,7 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
                 {
                     "TEST1234": {
                         "research_family": "工程结构抗风",
-                        "subdirection": "数值风洞与湍动入流",
+                        "subdirection": "数值风洞",
                     }
                 },
             )
@@ -412,7 +412,7 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
             "[75] :doc:`2026 JOT | 如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-JOT>`",
             page,
         )
-        subdirection_index = page.index("\n数值风洞与湍动入流\n")
+        subdirection_index = page.index("\n数值风洞\n")
         toctree_index = page.index(".. toctree::", subdirection_index)
         entry_index = page.index("2026 JOT | 如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-JOT>", toctree_index)
         citation_index = page.index("[75] :doc:`2026 JOT | 如何把卫星影像转成 CFD 可用城市几何", entry_index)

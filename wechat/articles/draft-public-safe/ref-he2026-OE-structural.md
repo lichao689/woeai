@@ -9,7 +9,7 @@
 - 期刊: Ocean Engineering
 - 年份: 2026
 - DOI: https://doi.org/10.1016/j.oceaneng.2025.123951
-- WOEAI 相关方向: 海上漂浮风电 / 浮式混凝土平台结构设计
+- WOEAI 相关方向: 海上漂浮风电 / 混凝土浮体
 
 ## 摘要
 

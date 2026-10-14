@@ -31,7 +31,7 @@ WOEAI 围绕工程结构抗风和海上漂浮风电开展研究，关注强风�
 
 外部链接：`风洞试验-超高层建筑气动干扰效应 <https://www.bilibili.com/video/BV1u64y1c7J1/>`_
 
-数值风洞与湍动入流
+数值风洞
 ~~~~~~~~~~~~~~~~~~
 
 该子方向关注大气边界层湍流生成、LES 入流条件、城市风环境和复杂地形风场。城市风环境与复杂地形风场归入本子方向，因为它们都依赖可追溯的风场建模、边界条件处理和局部风环境重建。
@@ -45,7 +45,7 @@ WOEAI 围绕工程结构抗风和海上漂浮风电开展研究，关注强风�
 - :ref:`A novel vector potential random flow generation method <ref-li2024-POF>`；
 - :ref:`A coherence-improved and mass-balanced inflow turbulence generation method <ref-chen2024-JCP>`。
 
-工程结构抗风与优化
+结构抗风
 ~~~~~~~~~~~~~~~~~~
 
 该子方向关注高层建筑风荷载、结构响应预测、气动外形优化、风致振动控制和流动控制。风致振动控制、流动控制以及既有输电塔线和工程结构抗风研究在公开页面中归入本子方向，作为工程结构抗风能力的支撑证据。
@@ -79,20 +79,24 @@ WOEAI 围绕工程结构抗风和海上漂浮风电开展研究，关注强风�
 海上漂浮风电 Floating Offshore Wind Turbine
 --------------------------------------------
 
-海上漂浮风电方向关注浮式风机系统、浮式混凝土平台、风浪流环境作用、数值风浪流水池的分析、试验与优化，以及结构优化和运动/振动控制。该方向连接海洋环境作用、结构动力学、数值优化、物理模型试验和工程系统设计。
+海上漂浮风电方向关注浮式风机系统、浮式混凝土平台、风浪流环境作用、数值水池的分析、试验与优化，以及结构优化和运动/振动控制。该方向连接海洋环境作用、结构动力学、数值优化、物理模型试验和工程系统设计。
 
-浮式风机系统一体化分析与优化
+一体化分析
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-该子方向关注浮式风机系统在不同设计阶段的一体化分析、长期动力响应、系统优化和敏感性评估。
+该子方向关注风机、平台与系泊系统的耦合动力学、长期响应、荷载传递、优化和试验验证。固定式支撑结构与风机气动论文作为关联基础研究，保留其真实研究对象，不视作浮式整机验证。
 
 代表性证据包括：
 
 - :ref:`Long-term dynamic optimization of floating wind turbine substructure designs <ref-zhou2023-AE>`；
 - :ref:`Global sensitivity study on the semisubmersible substructure of a floating wind turbine <ref-zhou2021-OE>`；
-- :ref:`Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines <ref-zhou2020-RE>`。
+- :ref:`Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines <ref-zhou2020-RE>`；
+- :ref:`Equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine <ref-zheng2025-OE>`；
+- :ref:`Wind tunnel and wave flume testing for a 10 MW Y-shaped semi-submersible wind turbine <ref-zheng2023-JRSE>`。
 
-浮式混凝土平台结构设计
+关联基础研究：:ref:`Efficient optimization design method of fixed-bottom jacket structures <ref-zheng2023-MS>`。
+
+混凝土浮体
 ~~~~~~~~~~~~~~~~~~~~~~
 
 该子方向关注半潜式浮式平台、浮式混凝土基础、混凝土与钢支撑结构对比、局部浮力基础方案和结构设计优化。
@@ -100,19 +104,13 @@ WOEAI 围绕工程结构抗风和海上漂浮风电开展研究，关注强风�
 代表性证据包括：
 
 - :ref:`Reinforced-concrete semi-submersible platform structural design and optimization <ref-he2026-OE-structural>`；
-- :ref:`Equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine <ref-zheng2025-OE>`；
-- :ref:`Concrete and steel support structure comparison for a Y-shaped semi-submersible floating wind turbine <ref-li2022-SOS>`；
-- :ref:`Efficient optimization design method of jacket structures for offshore wind turbines <ref-zheng2023-MS>`。
+- :ref:`Concrete and steel support structure comparison for a Y-shaped semi-submersible floating wind turbine <ref-li2022-SOS>`。
 
-数值风浪流水池
+
+数值水池
 ~~~~~~~~~~~~~~
 
-该子方向关注风浪联合作用、海洋环境作用、数值水池、动力响应验证和多物理场多体动力学分析。
-
-代表性证据包括：
-
-- :ref:`Wind tunnel and wave flume testing for a 10 MW Y-shaped semi-submersible wind turbine <ref-zheng2023-JRSE>`；
-- :ref:`Dynamics of a Y-shaped semi-submersible floating wind turbine <ref-li2022-SOS>`。
+该子方向关注数值造波、波流传播与吸收、自由面水动力建模及水池方法验证。物理风洞—浪槽联合试验与浮式风机耦合动力响应研究按其主要问题归入一体化分析；仅使用水动力软件不构成本方向的论文归类依据。
 
 图示资料
 ~~~~~~~~

@@ -25,21 +25,60 @@ class ResearchTaxonomyTests(unittest.TestCase):
     def test_wind_resistance_family_subdirections(self) -> None:
         self.assertEqual(
             RESEARCH_SUBDIRECTION_ORDER["工程结构抗风"],
-            ("数值风洞与湍动入流", "工程结构抗风与优化"),
+            ("数值风洞", "结构抗风"),
         )
 
     def test_floating_wind_family_subdirections(self) -> None:
         self.assertEqual(
             RESEARCH_SUBDIRECTION_ORDER["海上漂浮风电"],
             (
-                "浮式风机系统一体化分析与优化",
-                "浮式混凝土平台结构设计",
-                "数值风浪流水池",
+                "一体化分析",
+                "混凝土浮体",
+                "数值水池",
             ),
         )
 
     def test_every_family_has_a_subdirection_order_entry(self) -> None:
         self.assertEqual(set(RESEARCH_FAMILY_ORDER), set(RESEARCH_SUBDIRECTION_ORDER))
+
+class TaxonomySurfaceTests(unittest.TestCase):
+    """Published navigation and reader metadata must follow the registry."""
+
+    def test_publication_sections_match_every_registry_record(self):
+        import json
+        import re
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[1]
+        rows = json.loads((root / 'docs/data/publications.json').read_text())
+        expected = {r['custom']['publication_ref']: (
+            r['custom']['research_family'], r['custom']['subdirection']) for r in rows}
+        family = subdirection = None
+        observed = {}
+        for line in (root / 'docs/source/Publications.rst').read_text().splitlines():
+            if line in RESEARCH_FAMILY_ORDER:
+                family = line
+                subdirection = None
+            elif line in RESEARCH_SUBDIRECTION_ORDER.get(family, ()):
+                subdirection = line
+            match = re.fullmatch(r'\.\. _(ref-[^:]+):', line)
+            if match and match[1] in expected:
+                self.assertNotIn(match[1], observed)
+                observed[match[1]] = (family, subdirection)
+        self.assertEqual(observed, expected)
+
+    def test_existing_article_direction_matches_registry(self):
+        import json
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[1]
+        for row in json.loads((root / 'docs/data/publications.json').read_text()):
+            c = row['custom']
+            path = root / c['wechat']['path']
+            if not path.exists():
+                continue
+            with self.subTest(ref=c['publication_ref']):
+                expected = f"- WOEAI 相关方向: {c['research_family']} / {c['subdirection']}"
+                lines = [line for line in path.read_text().splitlines() if 'WOEAI 相关方向' in line]
+                self.assertEqual(lines, [expected])
 
 
 if __name__ == "__main__":

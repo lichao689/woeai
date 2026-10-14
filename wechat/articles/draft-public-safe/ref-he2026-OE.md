@@ -9,7 +9,7 @@
 - 期刊: Ocean Engineering
 - 年份: 2026
 - DOI: https://doi.org/10.1016/j.oceaneng.2026.124728
-- WOEAI 相关方向: 工程结构抗风 / 工程结构抗风与优化
+- WOEAI 相关方向: 工程结构抗风 / 结构抗风
 
 ## 摘要
 

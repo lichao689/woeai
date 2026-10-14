@@ -9,7 +9,7 @@
 - 期刊: Journal of Wind Engineering and Industrial Aerodynamics
 - 年份: 2022
 - DOI: https://doi.org/10.1016/j.jweia.2022.105147
-- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞
 
 ## 摘要
 

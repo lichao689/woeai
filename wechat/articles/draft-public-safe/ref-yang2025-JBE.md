@@ -9,7 +9,7 @@
 - 期刊: Journal of Building Engineering
 - 年份: 2025
 - DOI: https://doi.org/10.1016/j.jobe.2025.113635
-- WOEAI 相关方向: 工程结构抗风 / 工程结构抗风与优化
+- WOEAI 相关方向: 工程结构抗风 / 结构抗风
 
 ## 摘要
 

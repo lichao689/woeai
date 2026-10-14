@@ -9,7 +9,7 @@
 - 期刊: Sustainable Cities and Society
 - 年份: 2025
 - DOI: https://doi.org/10.1016/j.scs.2025.106237
-- WOEAI 相关方向: 工程结构抗风 / 数值风洞与湍动入流
+- WOEAI 相关方向: 工程结构抗风 / 数值风洞
 
 ## 摘要
 

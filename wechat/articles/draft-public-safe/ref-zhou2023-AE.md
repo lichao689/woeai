@@ -9,7 +9,7 @@
 - 期刊: Applied Energy
 - 年份: 2023
 - DOI: https://doi.org/10.1016/j.apenergy.2023.121941
-- WOEAI 相关方向: 海上漂浮风电 / 浮式风机系统一体化分析与优化
+- WOEAI 相关方向: 海上漂浮风电 / 一体化分析
 
 ## 摘要
 

@@ -121,7 +121,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
         fragment_text = (ROOT / "docs/source/_paper-notes-fragment.rst").read_text(encoding="utf-8")
         self.assertNotIn("论文精解", fragment_text)
         self.assertNotIn(".. toctree::", fragment_text)
-        subdirection_section = section_between(text, "数值风洞与湍动入流", ("工程结构抗风与优化",))
+        subdirection_section = section_between(text, "数值风洞", ("结构抗风",))
         self.assertIn(".. toctree::", subdirection_section)
         self.assertIn("如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-BE>", subdirection_section)
         self.assertIn("按年份倒序浏览学术成果 Publications by Year <PublicationsByYear>", text)

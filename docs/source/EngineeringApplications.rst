@@ -9,7 +9,7 @@ WOEAI 将工程结构抗风、海上漂浮风电和 AI 赋能工程建模研究�
 工程结构抗风
 ~~~~~~~~~~~~
 
-数值风洞与湍动入流
+数值风洞
 ^^^^^^^^^^^^^^^^^^
 
 - 城市风环境、复杂地形风场和工程场址风环境评估；
@@ -18,7 +18,7 @@ WOEAI 将工程结构抗风、海上漂浮风电和 AI 赋能工程建模研究�
 
 公开证据：:ref:`building-wind-project-support`、:ref:`research-direction-structural-wind`、:doc:`PublicationsByYear`。
 
-工程结构抗风与优化
+结构抗风
 ^^^^^^^^^^^^^^^^^^
 
 - 高层建筑风荷载、风致响应和气动外形优化；
@@ -30,16 +30,17 @@ WOEAI 将工程结构抗风、海上漂浮风电和 AI 赋能工程建模研究�
 海上漂浮风电
 ~~~~~~~~~~~~
 
-浮式风机系统一体化分析与优化
+一体化分析
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - 面向多设计阶段的浮式风机系统分析、优化和长期动力响应评估；
 - 风机、平台、系泊和环境荷载耦合下的设计参数敏感性分析；
-- 浮式风机运动与振动控制相关工程问题。
+- 浮式风机运动与振动控制相关工程问题；
+- 风洞和水槽模型试验、等效静力波浪荷载与结构评估。
 
 公开证据：:ref:`floating-wind-project-support`、:ref:`engineering-enterprise-project-evidence`、:ref:`research-direction-floating-wind`、:doc:`PublicationsByYear`。
 
-浮式混凝土平台结构设计
+混凝土浮体
 ^^^^^^^^^^^^^^^^^^^^^^
 
 - 钢筋混凝土、FRP-钢复合筋和海水海砂混凝土半潜式平台结构设计；
@@ -48,14 +49,10 @@ WOEAI 将工程结构抗风、海上漂浮风电和 AI 赋能工程建模研究�
 
 公开证据：:ref:`floating-wind-project-support`、:ref:`engineering-enterprise-project-evidence`、:ref:`research-direction-floating-wind`。
 
-数值风浪流水池
+数值水池
 ^^^^^^^^^^^^^^
 
-- 风、浪、流联合作用下浮式风机动力响应分析；
-- 风洞和水槽模型试验、等效静力波浪荷载评估；
-- 面向半潜式浮式风机的数值风浪流水池和模型验证。
-
-公开证据：:ref:`floating-wind-project-support`、:ref:`engineering-enterprise-project-evidence`、:ref:`research-direction-floating-wind`。
+本方向聚焦数值造波、波流传播与吸收、自由面水动力建模及方法验证。具体应用须由对应论文和验证条件支持；物理水槽试验与系统响应研究不自动构成本方向的工程应用证据。
 
 .. _engineering-enterprise-project-evidence:
 

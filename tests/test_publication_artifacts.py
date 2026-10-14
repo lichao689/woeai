@@ -44,13 +44,13 @@ class PublicationArtifactsTests(unittest.TestCase):
             "  - publication_ref: ref-complete\n"
             "    title: 数值风洞 | Backlog Title\n"
             "    research_family: 工程结构抗风\n"
-            "    subdirection: 数值风洞与湍动入流\n"
+            "    subdirection: 数值风洞\n"
             "    original_year: 2026\n"
             "    wechat_status: ready_to_publish\n"
             "  - publication_ref: ref-missing-rtd\n"
             "    title: 数值风洞 | Missing RTD\n"
             "    research_family: 工程结构抗风\n"
-            "    subdirection: 数值风洞与湍动入流\n"
+            "    subdirection: 数值风洞\n"
             "    original_year: 2025\n"
             "    wechat_status: drafting\n",
             encoding="utf-8",
@@ -94,7 +94,7 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.assertIn("paper-notes/ref-complete", latest)
         self.assertNotIn("ref-missing-rtd", latest)
         self.assertIn("工程结构抗风", area)
-        self.assertIn("数值风洞与湍动入流", area)
+        self.assertIn("数值风洞", area)
         missing = next(row for row in diagnostics if row["publication_ref"] == "ref-missing-rtd")
         self.assertIn("docs/source/paper-notes/ref-missing-rtd.rst", missing["missing"])
 
@@ -108,7 +108,7 @@ class PublicationArtifactsTests(unittest.TestCase):
                 "custom": {
                     "publication_ref": "ref-complete",
                     "research_family": "工程结构抗风",
-                    "subdirection": "数值风洞与湍动入流",
+                    "subdirection": "数值风洞",
                     "order": 4,
                     "rtd": {
                         "status": "planned",
@@ -251,7 +251,7 @@ class PublicationArtifactsTests(unittest.TestCase):
                 "ref-complete",
                 "Shared Backlog Title",
                 "工程结构抗风",
-                "数值风洞与湍动入流",
+                "数值风洞",
                 2026,
                 "",
                 7,
@@ -278,7 +278,7 @@ class PublicationArtifactsTests(unittest.TestCase):
         fragment_text = (root / "docs/source/_paper-notes-fragment.rst").read_text(encoding="utf-8")
         self.assertEqual(write_result, 0)
         self.assertEqual(check_result, 0)
-        self.assertIn("- 2026 | 工程结构抗风 / 数值风洞与湍动入流", index_text)
+        self.assertIn("- 2026 | 工程结构抗风 / 数值风洞", index_text)
         # The fragment no longer owns a top-level hidden toctree; the
         # Publications generator emits paper-note toctrees under each research
         # subdirection instead.
@@ -303,7 +303,7 @@ class PublicationArtifactsTests(unittest.TestCase):
         backlog = root / "wechat/backlog/selected-papers.yml"
         backlog.write_text(
             backlog.read_text(encoding="utf-8").replace(
-                "    subdirection: 数值风洞与湍动入流\n"
+                "    subdirection: 数值风洞\n"
                 "    original_year: 2025\n",
                 "    subdirection: 未知方向\n"
                 "    original_year: 2025\n",

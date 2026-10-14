@@ -399,14 +399,14 @@ items:
     subdirection: "数值风洞"
     original_year: 2023
     repost_priority: ""
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+    revision_note: "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。"
     publication_history: []
-    wechat_draft_created_at: ""
-    wechat_draft_updated_at: ""
+    wechat_draft_created_at: "2026-10-14T13:55:28+00:00"
+    wechat_draft_updated_at: "2026-10-14T13:55:28+00:00"
   - publication_ref: ref-zhao2023-GYJZ
     zotero_key: "R2C3HY74"
     title: "基于首次超越破坏的输电塔强风易损性分析"
@@ -489,14 +489,14 @@ items:
     subdirection: "数值风洞"
     original_year: 2021
     repost_priority: ""
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+    revision_note: "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。"
     publication_history: []
-    wechat_draft_created_at: ""
-    wechat_draft_updated_at: ""
+    wechat_draft_created_at: "2026-10-14T13:58:37+00:00"
+    wechat_draft_updated_at: "2026-10-14T13:58:37+00:00"
   - publication_ref: ref-li2020-JWEIA
     zotero_key: "3ZY69PVB"
     title: "RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model"
@@ -549,14 +549,14 @@ items:
     subdirection: "数值风洞"
     original_year: 2018
     repost_priority: ""
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+    revision_note: "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。"
     publication_history: []
-    wechat_draft_created_at: ""
-    wechat_draft_updated_at: ""
+    wechat_draft_created_at: "2026-10-14T14:11:54+00:00"
+    wechat_draft_updated_at: "2026-10-14T14:11:54+00:00"
   - publication_ref: ref-zhou2017-E
     zotero_key: "DRCNU3JT"
     title: "Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions"

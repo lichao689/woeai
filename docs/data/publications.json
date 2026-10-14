@@ -7884,7 +7884,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-feng2023-HKXYGC.md",
         "review_path": "wechat/articles/review/ref-feng2023-HKXYGC.review.md",
         "issues": [],
@@ -7904,10 +7904,246 @@
             },
             "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
             "fingerprint": "888f4e2b8cc30856d297a51e80cb49cedd9be63cf1f3d7a577007d7dd23682ad"
+          },
+          "draft_created": {
+            "recorded_at": "2026-10-14T13:55:28+00:00",
+            "operation": "create",
+            "readback_at": "2026-10-14T13:55:39+00:00",
+            "receipt_path": "project/research/2026-10-14-first3-official-draft-readback.json",
+            "receipt_file_sha256": "e6740c7623bdc3357f0d9e82d71b0964f8e056be0213a8fb5cdfccfdeec38dd0",
+            "receipt_entry_sha256": "a5d435dfe3d26a9c1da5d017334c27b34a7538e12a1abe1b80e38e8a579d1477",
+            "submitted_input_fingerprint": "888f4e2b8cc30856d297a51e80cb49cedd9be63cf1f3d7a577007d7dd23682ad",
+            "submitted_input_fingerprint_kind": "workflow_fingerprint",
+            "checks": {
+              "official_draft_create": true,
+              "individual_known_draft_readback": true,
+              "body_matches_canonical_revision": true,
+              "approved_cover_material_full_pixels_match": true,
+              "author_matches_confirmed_first_author": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Actual official draft creation and individual readback only. Existing independent scientific evidence remains untouched; actual mobile preview and publication are not performed."
           }
         },
         "latest_published_url": "",
-        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。",
+        "confirmed_draft_creation_history": [
+          {
+            "event_at": "2026-10-14T13:55:28+00:00",
+            "readback_at": "2026-10-14T13:55:39+00:00",
+            "individual_checks_completed_at": "2026-10-14T13:56:39+00:00",
+            "operation": "create",
+            "source": "Authorized official API create, followed by the individual known-draft readback recorded in the safe executor export.",
+            "canonical_content_commit": "17232536c7738d694856ad9d82e3a8a830e8b3c0",
+            "receipt_path": "project/research/2026-10-14-first3-official-draft-readback.json",
+            "receipt_file_sha256": "e6740c7623bdc3357f0d9e82d71b0964f8e056be0213a8fb5cdfccfdeec38dd0",
+            "receipt_entry_sha256": "a5d435dfe3d26a9c1da5d017334c27b34a7538e12a1abe1b80e38e8a579d1477",
+            "actual_times": {
+              "uploads_started_at": "2026-10-14T13:54:16+00:00",
+              "submitted_at": "2026-10-14T13:55:24+00:00",
+              "acknowledged_at": "2026-10-14T13:55:28+00:00",
+              "readback_completed_at": "2026-10-14T13:55:39+00:00",
+              "cover_read_only_resolution_completed_at": "2026-10-14T13:56:39+00:00"
+            },
+            "pre_submission_content_fingerprints": {
+              "workflow": "888f4e2b8cc30856d297a51e80cb49cedd9be63cf1f3d7a577007d7dd23682ad",
+              "markdown_sha256": "7c2bdb45a0a4e414f2301d06e3c0808c1c8ec87489d690c36941149389dbd50c",
+              "candidate_tree": "939005abb4a1bd16787e903ad12e45bc421d7d72",
+              "package_sha256": "26e4dd806485852d39f99555eac5ff1f5cd7ab84783d88898ccce24c7e23b0ab"
+            },
+            "body_and_cover_hashes": {
+              "submitted_html_sha256": "05f97bc5c33ded222f2d5608b1374d9130526d8174c27625d9e022bbb02941e5",
+              "readback_html_sha256": "e6c6c3edef2ac779b8e70bba46b39b6c99ca580fe8bc05afe866dba7b6815946",
+              "formula_geometry_sha256": "f07d7a24ed7b93fccc2a6f50941a1adc285c97e551d637c5996dcd86fb6be562",
+              "cover_source": {
+                "sha256": "a0392a4d949149d908bdf5b09a96dcebced88fcc9ee575fca3c0e1887b4edf99",
+                "bytes": 480145,
+                "format": "PNG",
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "rgba_sha256": "7da58c2e997ec951d53453b9416a1fcef6c014daa0fe6fdc08b7d892870db8f7"
+              },
+              "cover_official_material": {
+                "sha256": "a0392a4d949149d908bdf5b09a96dcebced88fcc9ee575fca3c0e1887b4edf99",
+                "bytes": 480145,
+                "format": "PNG",
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "rgba_sha256": "7da58c2e997ec951d53453b9416a1fcef6c014daa0fe6fdc08b7d892870db8f7"
+              },
+              "cover_display": {
+                "sha256": "2117f13f19329af459cbef5c6532624ee2a0c6966be08003f32c0aa9fd2c578e",
+                "bytes": 78326,
+                "format": "JPEG",
+                "dimensions": [
+                  900,
+                  382
+                ],
+                "rgba_sha256": "d4047a8ffe674944f540c00328ce4db010110d797aab7d6a5ed9c747a677383f"
+              },
+              "body_images": [
+                {
+                  "source_sha256": "97b975be9be4e9a4fac345a8c7016be7c63ef5636ec359c0798fc10dd4b1066e",
+                  "remote_url_sha256": "6d005871e3e9c856d760c83b68b3cfc0c8797097f461f9e604d3c438f79c3d23",
+                  "ordinal": 1,
+                  "source": {
+                    "sha256": "97b975be9be4e9a4fac345a8c7016be7c63ef5636ec359c0798fc10dd4b1066e",
+                    "bytes": 165361,
+                    "format": "PNG",
+                    "dimensions": [
+                      640,
+                      319
+                    ],
+                    "rgba_sha256": "91b88df6600c50f8121e75246d1b2a575fb887a2a91f8f448627de401a6c9b3a"
+                  },
+                  "official_image": {
+                    "sha256": "97b975be9be4e9a4fac345a8c7016be7c63ef5636ec359c0798fc10dd4b1066e",
+                    "bytes": 165361,
+                    "format": "PNG",
+                    "dimensions": [
+                      640,
+                      319
+                    ],
+                    "rgba_sha256": "91b88df6600c50f8121e75246d1b2a575fb887a2a91f8f448627de401a6c9b3a"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T13:54:38+00:00"
+                },
+                {
+                  "source_sha256": "9e2724ad7ff2ff25810030d563042fcbe43082e1f3d7211697934f8b3206b8cd",
+                  "remote_url_sha256": "3ec9901d3f8b36de57f8630553b7dabaddb55bdf7410a4f8ca5ed4faa888d5b7",
+                  "ordinal": 2,
+                  "source": {
+                    "sha256": "9e2724ad7ff2ff25810030d563042fcbe43082e1f3d7211697934f8b3206b8cd",
+                    "bytes": 52486,
+                    "format": "PNG",
+                    "dimensions": [
+                      627,
+                      417
+                    ],
+                    "rgba_sha256": "16883073f2c10a9e758ff0a980eed2d8626365dda4aee02694916c46fb81a81b"
+                  },
+                  "official_image": {
+                    "sha256": "9e2724ad7ff2ff25810030d563042fcbe43082e1f3d7211697934f8b3206b8cd",
+                    "bytes": 52486,
+                    "format": "PNG",
+                    "dimensions": [
+                      627,
+                      417
+                    ],
+                    "rgba_sha256": "16883073f2c10a9e758ff0a980eed2d8626365dda4aee02694916c46fb81a81b"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T13:54:42+00:00"
+                },
+                {
+                  "source_sha256": "89be33429126c7bf3457e1e150301ed54def90a2d8023cfc926f8c897b994258",
+                  "remote_url_sha256": "de13f1e9cb8d72eb98177cdadeb7d2335a888b5321b37b0e7d5602f067e1cd89",
+                  "ordinal": 3,
+                  "source": {
+                    "sha256": "89be33429126c7bf3457e1e150301ed54def90a2d8023cfc926f8c897b994258",
+                    "bytes": 1220857,
+                    "format": "PNG",
+                    "dimensions": [
+                      4117,
+                      1838
+                    ],
+                    "rgba_sha256": "968e58c371137068129beae7014c7573a52442945e4348f27e7565c6355e27e2"
+                  },
+                  "official_image": {
+                    "sha256": "89be33429126c7bf3457e1e150301ed54def90a2d8023cfc926f8c897b994258",
+                    "bytes": 1220857,
+                    "format": "PNG",
+                    "dimensions": [
+                      4117,
+                      1838
+                    ],
+                    "rgba_sha256": "968e58c371137068129beae7014c7573a52442945e4348f27e7565c6355e27e2"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T13:55:14+00:00"
+                },
+                {
+                  "source_sha256": "b84952f1a7c89c433e7d3e390e0e3c03c2f3d692c833716c273a319b82259b6e",
+                  "remote_url_sha256": "7e5610ba2c192e6d237fd05a6a0c1b13cbabfbae0e9e01b957c56dd341dc019d",
+                  "ordinal": 4,
+                  "source": {
+                    "sha256": "b84952f1a7c89c433e7d3e390e0e3c03c2f3d692c833716c273a319b82259b6e",
+                    "bytes": 110326,
+                    "format": "PNG",
+                    "dimensions": [
+                      1212,
+                      372
+                    ],
+                    "rgba_sha256": "e926cc5a609298c677404e7231504a2cb95f1753c7e98e0fba9a7cc1f25aa0eb"
+                  },
+                  "official_image": {
+                    "sha256": "b84952f1a7c89c433e7d3e390e0e3c03c2f3d692c833716c273a319b82259b6e",
+                    "bytes": 110326,
+                    "format": "PNG",
+                    "dimensions": [
+                      1212,
+                      372
+                    ],
+                    "rgba_sha256": "e926cc5a609298c677404e7231504a2cb95f1753c7e98e0fba9a7cc1f25aa0eb"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T13:55:18+00:00"
+                }
+              ],
+              "official_current_cover_material_read_only": {
+                "sha256": "a0392a4d949149d908bdf5b09a96dcebced88fcc9ee575fca3c0e1887b4edf99",
+                "bytes": 480145,
+                "format": "PNG",
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "rgba_sha256": "7da58c2e997ec951d53453b9416a1fcef6c014daa0fe6fdc08b7d892870db8f7"
+              }
+            },
+            "verification_booleans": {
+              "title_matches": true,
+              "author_matches_confirmed_first_author": true,
+              "digest_matches": true,
+              "original_link_matches": true,
+              "full_body_text_matches": true,
+              "ai_disclosure_exactly_once_at_end": true,
+              "body_image_count_and_urls_match": true,
+              "image_alts_match": true,
+              "formula_count_matches": true,
+              "formula_metadata_matches": true,
+              "scientific_svg_geometry_matches": true,
+              "currentColor_contract_preserved": true,
+              "uploaded_cover_material_matches_approved_pixels": true,
+              "selected_cover_reference_matches": true,
+              "cover_display_present": true,
+              "same_original_draft_if_updated": true,
+              "comment_settings_match": true,
+              "cover_display_related_to_uploaded_material": true,
+              "single_matching_draft_in_full_catalog": true,
+              "official_current_cover_material_full_rgba_matches_approved_source": true
+            },
+            "body_image_count": 4,
+            "formula_svg_count": 19,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "scope": "Each draft was created once. Per-draft readback is verified; the final complete-directory check was interrupted and is not asserted globally complete. Official asset/readback checks are not phone preview or publication.",
+            "cover_verification_basis": "official current draft cover material downloaded and complete dimensions/RGBA pixels match approved source; prior derived-URL path test failure preserved"
+          }
+        ],
+        "draft_created_at": "2026-10-14T13:55:28+00:00",
+        "draft_updated_at": "2026-10-14T13:55:28+00:00"
       },
       "content_production": "included",
       "source_audit": {
@@ -10007,7 +10243,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-TYNXB.md",
         "review_path": "wechat/articles/review/ref-zhao2021-TYNXB.review.md",
         "issues": [],
@@ -10027,10 +10263,206 @@
             },
             "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
             "fingerprint": "eb795bfd1093f5957f8154cbb18bae3d30a273e2f97d5d9d255066688363e743"
+          },
+          "draft_created": {
+            "recorded_at": "2026-10-14T13:58:37+00:00",
+            "operation": "create",
+            "readback_at": "2026-10-14T13:58:51+00:00",
+            "receipt_path": "project/research/2026-10-14-first3-official-draft-readback.json",
+            "receipt_file_sha256": "e6740c7623bdc3357f0d9e82d71b0964f8e056be0213a8fb5cdfccfdeec38dd0",
+            "receipt_entry_sha256": "bfa7146721d3d12ff291c197518f75af67a715d28e5d98186ccafef20cd83b4f",
+            "submitted_input_fingerprint": "eb795bfd1093f5957f8154cbb18bae3d30a273e2f97d5d9d255066688363e743",
+            "submitted_input_fingerprint_kind": "workflow_fingerprint",
+            "checks": {
+              "official_draft_create": true,
+              "individual_known_draft_readback": true,
+              "body_matches_canonical_revision": true,
+              "approved_cover_material_full_pixels_match": true,
+              "author_matches_confirmed_first_author": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Actual official draft creation and individual readback only. Existing independent scientific evidence remains untouched; actual mobile preview and publication are not performed."
           }
         },
         "latest_published_url": "",
-        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。",
+        "confirmed_draft_creation_history": [
+          {
+            "event_at": "2026-10-14T13:58:37+00:00",
+            "readback_at": "2026-10-14T13:58:51+00:00",
+            "individual_checks_completed_at": "2026-10-14T13:58:51+00:00",
+            "operation": "create",
+            "source": "Authorized official API create, followed by the individual known-draft readback recorded in the safe executor export.",
+            "canonical_content_commit": "17232536c7738d694856ad9d82e3a8a830e8b3c0",
+            "receipt_path": "project/research/2026-10-14-first3-official-draft-readback.json",
+            "receipt_file_sha256": "e6740c7623bdc3357f0d9e82d71b0964f8e056be0213a8fb5cdfccfdeec38dd0",
+            "receipt_entry_sha256": "bfa7146721d3d12ff291c197518f75af67a715d28e5d98186ccafef20cd83b4f",
+            "actual_times": {
+              "uploads_started_at": "2026-10-14T13:57:56+00:00",
+              "submitted_at": "2026-10-14T13:58:32+00:00",
+              "acknowledged_at": "2026-10-14T13:58:37+00:00",
+              "readback_completed_at": "2026-10-14T13:58:51+00:00"
+            },
+            "pre_submission_content_fingerprints": {
+              "workflow": "eb795bfd1093f5957f8154cbb18bae3d30a273e2f97d5d9d255066688363e743",
+              "markdown_sha256": "e58fe0e1d122ffee95e97baeca1c160e457f09a1182cc130fc0ff0820e8a159a",
+              "candidate_tree": "939005abb4a1bd16787e903ad12e45bc421d7d72",
+              "package_sha256": "26e4dd806485852d39f99555eac5ff1f5cd7ab84783d88898ccce24c7e23b0ab"
+            },
+            "body_and_cover_hashes": {
+              "submitted_html_sha256": "6b30bb9bfca832ef81d981651a4bb63b53650f80b8afec991c91f0c2d7958b5b",
+              "readback_html_sha256": "ef1158c688293f9c959d59d597c100ea9c549fc38e8b7fcd7763a05322186b62",
+              "formula_geometry_sha256": "ffea3e9cc1df4b827aa3d211972d2967992c7a5b0816c509125fb43f498449d7",
+              "cover_source": {
+                "sha256": "6b99e7549dc0bbfa3609179612f60bac78e5d86ab5daa7c060d62129b472e386",
+                "bytes": 415031,
+                "format": "PNG",
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "rgba_sha256": "fb6b3ab25fa8a8a10c1bedd8e862f85869ab94c2f3332c513f5006f5e9759f19"
+              },
+              "cover_official_material": {
+                "sha256": "6b99e7549dc0bbfa3609179612f60bac78e5d86ab5daa7c060d62129b472e386",
+                "bytes": 415031,
+                "format": "PNG",
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "rgba_sha256": "fb6b3ab25fa8a8a10c1bedd8e862f85869ab94c2f3332c513f5006f5e9759f19"
+              },
+              "cover_display": {
+                "sha256": "7bde594974168f6bb7c4174002fa5aa6108f661fe63b1f4e6dd14424ab27a025",
+                "bytes": 67892,
+                "format": "JPEG",
+                "dimensions": [
+                  900,
+                  382
+                ],
+                "rgba_sha256": "aeb44091c3735cfa1ae83d78d16bff88d6ec05dfd40d8e1dc10fe90cd4d0ddb9"
+              },
+              "body_images": [
+                {
+                  "source_sha256": "c956a1e4e0715c6331a500a195a0813cc27dace07f23068c1dfa0b4bf1228c3e",
+                  "remote_url_sha256": "1f1af59e33904358bc2c462ae7453ad66516fa54ac91b0751a8bec9379dd7948",
+                  "ordinal": 1,
+                  "source": {
+                    "sha256": "c956a1e4e0715c6331a500a195a0813cc27dace07f23068c1dfa0b4bf1228c3e",
+                    "bytes": 387858,
+                    "format": "PNG",
+                    "dimensions": [
+                      960,
+                      628
+                    ],
+                    "rgba_sha256": "2d6a1e0d8e6157b9785387270b495e29e2e1f7f8ce6f1ec739dbd80e966363ff"
+                  },
+                  "official_image": {
+                    "sha256": "c956a1e4e0715c6331a500a195a0813cc27dace07f23068c1dfa0b4bf1228c3e",
+                    "bytes": 387858,
+                    "format": "PNG",
+                    "dimensions": [
+                      960,
+                      628
+                    ],
+                    "rgba_sha256": "2d6a1e0d8e6157b9785387270b495e29e2e1f7f8ce6f1ec739dbd80e966363ff"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T13:58:16+00:00"
+                },
+                {
+                  "source_sha256": "ea93e0ac503b76ace5e5096e9cf1171e3941aa5b77f99f9ed99d9434b8637c24",
+                  "remote_url_sha256": "41959431545457cf94271a0f585c3bd00876b27173b9f0befa4ee89a4b08cd08",
+                  "ordinal": 2,
+                  "source": {
+                    "sha256": "ea93e0ac503b76ace5e5096e9cf1171e3941aa5b77f99f9ed99d9434b8637c24",
+                    "bytes": 163055,
+                    "format": "PNG",
+                    "dimensions": [
+                      916,
+                      864
+                    ],
+                    "rgba_sha256": "210d29a4195a95d55e8f3cdfd185f266d2ccbd1a430983e38de96e57b1d2305c"
+                  },
+                  "official_image": {
+                    "sha256": "ea93e0ac503b76ace5e5096e9cf1171e3941aa5b77f99f9ed99d9434b8637c24",
+                    "bytes": 163055,
+                    "format": "PNG",
+                    "dimensions": [
+                      916,
+                      864
+                    ],
+                    "rgba_sha256": "210d29a4195a95d55e8f3cdfd185f266d2ccbd1a430983e38de96e57b1d2305c"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T13:58:21+00:00"
+                },
+                {
+                  "source_sha256": "afb353699b6dc6c095f8a771a66aa660bfec769855fdce405ca5c807d52b38b4",
+                  "remote_url_sha256": "97a4673da4f3882e64c13661341221a5df7e2084b3108f61204aab1cee9d810c",
+                  "ordinal": 3,
+                  "source": {
+                    "sha256": "afb353699b6dc6c095f8a771a66aa660bfec769855fdce405ca5c807d52b38b4",
+                    "bytes": 189123,
+                    "format": "PNG",
+                    "dimensions": [
+                      1928,
+                      1028
+                    ],
+                    "rgba_sha256": "49d5453ba21be68b08ff6d050129549360e1cd28619a685dcbbc7329fa9aa9a3"
+                  },
+                  "official_image": {
+                    "sha256": "afb353699b6dc6c095f8a771a66aa660bfec769855fdce405ca5c807d52b38b4",
+                    "bytes": 189123,
+                    "format": "PNG",
+                    "dimensions": [
+                      1928,
+                      1028
+                    ],
+                    "rgba_sha256": "49d5453ba21be68b08ff6d050129549360e1cd28619a685dcbbc7329fa9aa9a3"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T13:58:26+00:00"
+                }
+              ]
+            },
+            "verification_booleans": {
+              "title_matches": true,
+              "author_matches_confirmed_first_author": true,
+              "digest_matches": true,
+              "original_link_matches": true,
+              "full_body_text_matches": true,
+              "ai_disclosure_exactly_once_at_end": true,
+              "body_image_count_and_urls_match": true,
+              "image_alts_match": true,
+              "formula_count_matches": true,
+              "formula_metadata_matches": true,
+              "scientific_svg_geometry_matches": true,
+              "currentColor_contract_preserved": true,
+              "uploaded_cover_material_matches_approved_pixels": true,
+              "selected_cover_reference_matches": true,
+              "cover_display_present": true,
+              "same_original_draft_if_updated": true,
+              "comment_settings_match": true,
+              "cover_display_related_to_uploaded_material": true,
+              "single_matching_draft_in_full_catalog": true
+            },
+            "body_image_count": 3,
+            "formula_svg_count": 26,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "scope": "Each draft was created once. Per-draft readback is verified; the final complete-directory check was interrupted and is not asserted globally complete. Official asset/readback checks are not phone preview or publication."
+          }
+        ],
+        "draft_created_at": "2026-10-14T13:58:37+00:00",
+        "draft_updated_at": "2026-10-14T13:58:37+00:00"
       },
       "content_production": "included",
       "source_audit": {
@@ -10893,7 +11325,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-xiao2018-KXJSYGC.md",
         "review_path": "wechat/articles/review/ref-xiao2018-KXJSYGC.review.md",
         "issues": [],
@@ -10913,10 +11345,220 @@
             },
             "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
             "fingerprint": "d70640add4969a0b297766b4f8b52b6f99b02e6ca4497aadded73ef6832e7746"
+          },
+          "draft_created": {
+            "recorded_at": "2026-10-14T14:11:54+00:00",
+            "operation": "create",
+            "readback_at": "2026-10-14T14:15:59+00:00",
+            "receipt_path": "project/research/2026-10-14-first3-official-draft-readback.json",
+            "receipt_file_sha256": "e6740c7623bdc3357f0d9e82d71b0964f8e056be0213a8fb5cdfccfdeec38dd0",
+            "receipt_entry_sha256": "bc6ef6020355bf941c1ea52cac7b6e4cbc31bc9280b445b7a314ceaae0050178",
+            "submitted_input_fingerprint": "d70640add4969a0b297766b4f8b52b6f99b02e6ca4497aadded73ef6832e7746",
+            "submitted_input_fingerprint_kind": "workflow_fingerprint",
+            "checks": {
+              "official_draft_create": true,
+              "individual_known_draft_readback": true,
+              "body_matches_canonical_revision": true,
+              "approved_cover_material_full_pixels_match": true,
+              "author_matches_confirmed_first_author": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Actual official draft creation and individual readback only. Existing independent scientific evidence remains untouched; actual mobile preview and publication are not performed."
           }
         },
         "latest_published_url": "",
-        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。",
+        "confirmed_draft_creation_history": [
+          {
+            "event_at": "2026-10-14T14:11:54+00:00",
+            "readback_at": "2026-10-14T14:15:59+00:00",
+            "individual_checks_completed_at": "2026-10-14T14:15:59+00:00",
+            "operation": "create",
+            "source": "Authorized official API create, followed by the individual known-draft readback recorded in the safe executor export.",
+            "canonical_content_commit": "17232536c7738d694856ad9d82e3a8a830e8b3c0",
+            "receipt_path": "project/research/2026-10-14-first3-official-draft-readback.json",
+            "receipt_file_sha256": "e6740c7623bdc3357f0d9e82d71b0964f8e056be0213a8fb5cdfccfdeec38dd0",
+            "receipt_entry_sha256": "bc6ef6020355bf941c1ea52cac7b6e4cbc31bc9280b445b7a314ceaae0050178",
+            "actual_times": {
+              "submitted_at": "2026-10-14T14:11:50+00:00",
+              "acknowledged_at": "2026-10-14T14:11:54+00:00",
+              "readback_resolution_completed_at": "2026-10-14T14:15:59+00:00",
+              "pre_submit_recoverability_read_at": "2026-10-14T14:09:06+00:00"
+            },
+            "pre_submission_content_fingerprints": {
+              "workflow": "d70640add4969a0b297766b4f8b52b6f99b02e6ca4497aadded73ef6832e7746",
+              "markdown_sha256": "8a043b8b691470998dc55c200a806e82e58cb9f1aaac7af119fb522b89f1d424",
+              "candidate_tree": "939005abb4a1bd16787e903ad12e45bc421d7d72",
+              "package_sha256": "26e4dd806485852d39f99555eac5ff1f5cd7ab84783d88898ccce24c7e23b0ab"
+            },
+            "body_and_cover_hashes": {
+              "submitted_html_sha256": "2fc9f7010c7464e2a68b038159a35f292df2e725ee42a4482eefc9de9606776c",
+              "reconstructed_submitted_html_sha256": "2fc9f7010c7464e2a68b038159a35f292df2e725ee42a4482eefc9de9606776c",
+              "readback_html_sha256": "096edddfce7b3cdab2a25d258cb7d7a01ffcafcee3b62ee87604e3c80946eb81",
+              "formula_geometry_sha256": "ce12665a3cb3205c81b40ca131dc5883953f2092a849ab5bbc8964f12e7792f3",
+              "cover_source": {
+                "sha256": "3d9f5c5de1888b15fb978b5bf69d9261e0dfd66f6345ccab171c878e6f66076e",
+                "bytes": 428206,
+                "format": "PNG",
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "rgba_sha256": "53afcafc724aa32e8552b264cd3ef172643b3ad0000982a87020d40da76758f8"
+              },
+              "cover_official_catalog_image": {
+                "sha256": "3d9f5c5de1888b15fb978b5bf69d9261e0dfd66f6345ccab171c878e6f66076e",
+                "bytes": 428206,
+                "format": "PNG",
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "rgba_sha256": "53afcafc724aa32e8552b264cd3ef172643b3ad0000982a87020d40da76758f8"
+              },
+              "cover_display": {
+                "sha256": "03b3ef0d1ced8c22b9284de2614663c9382434af2282bfcb47f4a1147b8f7d54",
+                "bytes": 64420,
+                "format": "JPEG",
+                "dimensions": [
+                  900,
+                  382
+                ],
+                "rgba_sha256": "f76bbbd30540ad19304b866d27d6542d69258f1859b87914ae224b870b121f35"
+              },
+              "body_images": [
+                {
+                  "source_sha256": "9bc2c1bfbe1d3bba8f6126610696a0cb13c5e6049934251283aee59c76a48fce",
+                  "remote_url_sha256": "cf47afc54107e524706860e3f15d8e003efddd119f004d16881154d3eb4982d5",
+                  "ordinal": 1,
+                  "source": {
+                    "sha256": "9bc2c1bfbe1d3bba8f6126610696a0cb13c5e6049934251283aee59c76a48fce",
+                    "bytes": 416159,
+                    "format": "PNG",
+                    "dimensions": [
+                      1015,
+                      1385
+                    ],
+                    "rgba_sha256": "1c9e98bd12b309c1feaca442f5484dd30e3c7cd0a561050b6d292bbffb0cd88c"
+                  },
+                  "official_image": {
+                    "sha256": "9bc2c1bfbe1d3bba8f6126610696a0cb13c5e6049934251283aee59c76a48fce",
+                    "bytes": 416159,
+                    "format": "PNG",
+                    "dimensions": [
+                      1015,
+                      1385
+                    ],
+                    "rgba_sha256": "1c9e98bd12b309c1feaca442f5484dd30e3c7cd0a561050b6d292bbffb0cd88c"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T14:11:19+00:00"
+                },
+                {
+                  "source_sha256": "f9a44bf26e524aee246adb68c6f697e093f20a633f3de6f8ec6e4ff1324f84d5",
+                  "remote_url_sha256": "431b789f788ab6cf8a1d81c01e5cfd74868c808c664b683b2df1d4fef7837d4a",
+                  "ordinal": 2,
+                  "source": {
+                    "sha256": "f9a44bf26e524aee246adb68c6f697e093f20a633f3de6f8ec6e4ff1324f84d5",
+                    "bytes": 466338,
+                    "format": "PNG",
+                    "dimensions": [
+                      1865,
+                      865
+                    ],
+                    "rgba_sha256": "db0da917e23cc2e0c85bf33829a50d4538a92c580f07ae56c96c55acbb924be3"
+                  },
+                  "official_image": {
+                    "sha256": "f9a44bf26e524aee246adb68c6f697e093f20a633f3de6f8ec6e4ff1324f84d5",
+                    "bytes": 466338,
+                    "format": "PNG",
+                    "dimensions": [
+                      1865,
+                      865
+                    ],
+                    "rgba_sha256": "db0da917e23cc2e0c85bf33829a50d4538a92c580f07ae56c96c55acbb924be3"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T14:11:25+00:00"
+                },
+                {
+                  "source_sha256": "4d571a07e34118952c08fbdb2946632d03982b698d08f5ae3ab5bd75dcca235a",
+                  "remote_url_sha256": "f25a518eaa293c2a8256e8272e509eff67a9a97b53745a44d726d5d30842f259",
+                  "ordinal": 3,
+                  "source": {
+                    "sha256": "4d571a07e34118952c08fbdb2946632d03982b698d08f5ae3ab5bd75dcca235a",
+                    "bytes": 637582,
+                    "format": "PNG",
+                    "dimensions": [
+                      2405,
+                      985
+                    ],
+                    "rgba_sha256": "90409791b7e9e1eff6998cce15bfab684b43c0eb7e3289427a12f72e529555cc"
+                  },
+                  "official_image": {
+                    "sha256": "4d571a07e34118952c08fbdb2946632d03982b698d08f5ae3ab5bd75dcca235a",
+                    "bytes": 637582,
+                    "format": "PNG",
+                    "dimensions": [
+                      2405,
+                      985
+                    ],
+                    "rgba_sha256": "90409791b7e9e1eff6998cce15bfab684b43c0eb7e3289427a12f72e529555cc"
+                  },
+                  "exact_rgba_pixels_match": true,
+                  "acknowledged_at": "2026-10-14T14:11:43+00:00"
+                }
+              ]
+            },
+            "verification_booleans": {
+              "official_known_created_draft_readback_succeeded": true,
+              "unique_actual_article_index_verified": true,
+              "title_matches": true,
+              "author_matches_confirmed_first_author": true,
+              "digest_matches": true,
+              "original_link_matches": true,
+              "full_body_text_matches": true,
+              "ai_disclosure_exactly_once_at_end": true,
+              "body_image_count_and_uploaded_source_url_proofs_match": true,
+              "image_alts_match": true,
+              "formula_count_matches": true,
+              "formula_metadata_matches": true,
+              "scientific_svg_geometry_matches": true,
+              "currentColor_contract_preserved": true,
+              "reconstructed_submitted_html_hash_matches_pre_submit_evidence": true,
+              "selected_cover_reference_matches": true,
+              "official_catalog_cover_full_pixels_match_approved_source": true,
+              "cover_display_present": true,
+              "comment_settings_match": true,
+              "single_create_request_acknowledged_after_complete_pre_submit_dedup": true,
+              "no_write_repeated_during_resolution": true,
+              "previous_uploaded_cover_reused_no_cover_upload_repeat": true,
+              "exhausted_material_download_api_not_retried": true,
+              "quota_not_reset": true
+            },
+            "body_image_count": 3,
+            "formula_svg_count": 12,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "scope": "Each draft was created once. Per-draft readback is verified; the final complete-directory check was interrupted and is not asserted globally complete. Official asset/readback checks are not phone preview or publication.",
+            "post_write_full_catalog_check": {
+              "status": "interrupted",
+              "error_type": "IncompleteRead",
+              "failed_at": "2026-10-14T14:12:04+00:00",
+              "not_retried": true,
+              "replaced_by_known_created_draft_readback_and_pre_submit_dedup_evidence": true
+            },
+            "cover_verification_basis": "Official catalog source full pixels verified; current draft cover media reference equals that verified material. Material download quota was not reset or retried."
+          }
+        ],
+        "draft_created_at": "2026-10-14T14:11:54+00:00",
+        "draft_updated_at": "2026-10-14T14:11:54+00:00"
       },
       "content_production": "included",
       "source_audit": {

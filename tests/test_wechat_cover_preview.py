@@ -31,6 +31,9 @@ class CoverPreviewTests(unittest.TestCase):
                         self.assertTrue(summary['target_ratio_match'])
                         self.assertEqual(summary['target_dimensions_match'], expected)
                         self.assertEqual(summary['series_v2_dimensions_match'], expected)
+                        self.assertEqual(summary['design_contract'], 'WOEAI-cover-v5')
+                        self.assertEqual(summary['badge_measurement_status'], 'not-run')
+                        self.assertFalse(summary['cover_accepted'])
                         self.assertFalse(summary['visual_contract_checked'])
                         self.assertFalse(summary['backend_preview_checked'])
 
@@ -42,6 +45,13 @@ class CoverPreviewTests(unittest.TestCase):
                 self.assertIn('left: 28.7222%; top: 0.0000%; width: 42.5556%; height: 100.0000%', rendered)
                 self.assertIn('Mobile wide (360 px)', rendered)
                 self.assertIn('does not preserve the entire left title', rendered)
+                self.assertIn('not a composition requirement', rendered)
+                self.assertIn('platform support unverified', rendered)
+                self.assertIn('run measure_badge.py', rendered)
+                self.assertLess(rendered.index('Mobile wide (360 px)'),
+                                rendered.index('<details>'))
+                self.assertLess(rendered.index('<details>'),
+                                rendered.index('class="safe"'))
 
     def test_full_source_and_square_overlay_support_nonstandard_portrait(self):
         for script in SCRIPTS:

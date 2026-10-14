@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 """Create a local WeChat cover preview page with crop-safety checks.
 
-The preview is public-safe and does not contact WeChat. It approximates common
-WeChat display crops so an editor can catch obvious cover problems before a
-backend mobile preview.
+The preview is public-safe and does not contact WeChat. Its crops are hypothetical diagnostics, not verified WeChat display behavior.
+Wide composition is reviewed first; a backend mobile preview is separate.
 """
 
 from __future__ import annotations
@@ -81,7 +80,11 @@ def cover_summary(
         "target_ratio": round(target_ratio, 4),
         "ratio_delta": round(ratio_delta, 4) if ratio_delta is not None else None,
         "target_dimensions_match": (width, height) == (target_width, target_height),
-        "series_v2_dimensions_match": (width, height) == (900, 383),
+        "series_v2_dimensions_match": (width, height) == (900, 383),  # Legacy field.
+        "series_dimensions_match": (width, height) == (900, 383),
+        "design_contract": "WOEAI-cover-v5",
+        "badge_measurement_status": "not-run",
+        "cover_accepted": False,
         "visual_contract_checked": False,
         "backend_preview_checked": False,
         "target_ratio_match": bool(ratio_delta is not None and ratio_delta <= 0.02),
@@ -122,17 +125,29 @@ def render_card(summary: dict[str, Any]) -> str:
       <h3>Full source (uncropped)</h3>
       <div class="frame wide" style="aspect-ratio: {ratio:.8f}">
         <img src="{src}" alt="{title}">
-        <div class="safe" style="left: {square_left:.4f}%; top: {square_top:.4f}%; width: {square_width:.4f}%; height: {square_height:.4f}%"></div>
       </div>
     </div>
     <div>
-      <h3>Center Square Crop</h3>
+      <h3>Mobile wide (360 px) and small wide (120 px)</h3>
+      <div class="mobile-wide"><img src="{src}" alt="{title}"></div>
+      <div class="small-wide"><img src="{src}" alt="{title}"></div>
+    </div>
+  </div>
+  <details>
+    <summary>Optional crop diagnostics (not platform verification)</summary>
+    <div class="frame wide" style="aspect-ratio: {ratio:.8f}">
+      <img src="{src}" alt="{title}">
+      <div class="safe" style="left: {square_left:.4f}%; top: {square_top:.4f}%; width: {square_width:.4f}%; height: {square_height:.4f}%"></div>
+    </div>
+    <div class="grid">
+    <div>
+      <h3>Center Square Diagnostic (not a composition requirement)</h3>
       <div class="frame square">
         <img src="{src}" alt="{title}">
       </div>
     </div>
     <div>
-      <h3>5:4 Share Crop</h3>
+      <h3>5:4 Diagnostic (platform support unverified)</h3>
       <div class="frame share">
         <img src="{src}" alt="{title}">
       </div>
@@ -144,14 +159,14 @@ def render_card(summary: dict[str, Any]) -> str:
       </div>
     </div>
   </div>
-  <h3>Mobile wide (360 px) and small wide (120 px)</h3>
-  <div class="mobile-wide"><img src="{src}" alt="{title}"></div>
-  <div class="small-wide"><img src="{src}" alt="{title}"></div>
+  </details>
   <p class="note">Dashed box marks the center-square crop within the full source.
-  It does not preserve the entire left title on a wide cover. Check subject
-  survival separately from wide-cover text readability. Dimensions and ratios
-  do not certify visual compliance; final approval requires WeChat backend
-  mobile preview.</p>
+  It does not preserve the entire left title on a wide cover. This hypothetical
+  crop does not require all scientific content to fit a center square. Review
+  horizontal composition first and verify actual platform crop support separately.
+  Dimensions and ratios do not measure the badge or certify visual compliance;
+  run measure_badge.py and review all invariants. Final backend approval requires
+  an actual WeChat mobile preview.</p>
 </section>
 """
 
@@ -217,7 +232,7 @@ def render_page(summaries: list[dict[str, Any]]) -> str:
     }}
     .grid {{
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1.25fr) 132px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 16px;
       align-items: start;
     }}

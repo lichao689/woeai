@@ -1,232 +1,138 @@
 ---
 name: wechat-cover
-description: Use when generating, improving, reviewing, or recording WOEAI WeChat Official Account cover images for paper articles, including cover briefs, image-generation prompts, candidate concepts, crop-safety previews, public-safe cover assets, and review-note cover metadata.
+description: Generate, repair or review WOEAI WeChat paper covers; maintain cover briefs, prompts and design rules. Includes exact badge measurement, evidence-grounded illustrations and crop diagnostics.
 ---
 
 # WeChat Cover
 
-Create WOEAI WeChat paper-article cover images that are content-aware,
-public-safe, and suitable for WeChat crop behavior.
+Create an article-specific horizontal cover, then verify the actual final image.
+A prompt describes intent; it is never acceptance evidence.
 
-## Required Context
+## Required context
 
-Read only what the task needs:
+Read `AGENTS.md`, `CONTEXT.md`, and
+[references/cover-standards.md](references/cover-standards.md) before every brief,
+prompt, generation, repair or review. The standards own the design contract.
+For an actual cover also read the target article and its audited evidence review;
+use `wechat-paper` for article production and backend delivery permissions.
 
-1. `AGENTS.md` for public-safety and WeChat API rules.
-2. `wechat/STYLE.md` for article wording and short editorial-category tags;
-   `references/cover-standards.md` owns cover design rules.
-3. The target article in `wechat/articles/draft-public-safe/`.
-4. The target review note in `wechat/articles/review/`.
-5. `references/cover-standards.md` when choosing dimensions, writing prompts,
-   or comparing candidate directions.
+A skill/specification/template maintenance request does not authorize image
+regeneration, article changes, a WeChat update or publication. Preserve existing
+assets and historical approvals; record migration pending rather than marking
+old images compliant. Old three-category article prefixes in `wechat/STYLE.md`
+and historical briefs need separate migration; do not copy them into new covers.
 
-If the task is part of a full paper-article workflow, use `wechat-paper` for
-the article and API path, then use this skill for the cover stage.
+## Workflow and gates
 
-## Workflow
-
-1. Extract the cover brief from the article:
-   - title category,
-   - article title,
-   - abstract or core problem,
-   - key method or finding,
-   - target readers,
-   - avoid list.
-2. Create or update `wechat/articles/review/<publication_ref>.cover-brief.md`.
-   Include at least three candidate concepts: research scene, method, and
-   engineering impact.
-3. Resolve the execution mode before the cover-text confirmation gate. Use
-   `prompt-only` only when the user explicitly asks to generate full prompts,
-   only produce prompts, or avoid image generation. Otherwise use the default
-   `image-gen` mode without asking a separate execution-mode question.
-4. Run the mandatory cover-text confirmation gate below for both execution
-   modes. Record the confirmed text choice in the cover brief or review note
-   before generating images or writing prompt-only output.
-5. If the execution mode is `prompt-only`, produce exactly three complete
-   image-generation prompts for the research scene, method, and engineering
-   impact directions, following the prompt-only response format below. Do not
-   call an image-generation tool, create image files, run crop preview, or
-   update a WeChat draft in this mode.
-6. If the execution mode is `image-gen`, generate cover candidates only through
-   the image-generation route with the confirmed cover text embedded in the
-   image. Produce at least three image-gen-text candidates in each round. Reject
-   any candidate with distorted, misspelled, incomplete, rewritten,
-   low-contrast, or unreadable Chinese text.
-7. Store public-safe cover outputs under
-   `wechat/assets/public-safe/<publication_ref>/`. Keep private experiments
-   under ignored local paths such as `wechat/.local/`.
-8. Export exactly `900 x 383 px` under `WOEAI-cover-v2`. Measure dimensions;
-   ratio alone is insufficient. Verify actual backend crops before release.
-9. Run the crop preview helper:
+1. **Evidence brief.** Use `wechat/templates/cover-brief.md`. Record the exact
+   secondary direction from the registry, research question, real geometry,
+   baseline/change, key evidence and limitations. Trace every visible scientific
+   object or comparison to a source section/figure. If an essential source is
+   absent, report the gap instead of inventing a plausible scene.
+2. **Execution mode.** Default to `image-gen`; use `prompt-only` only when the
+   user explicitly requests prompts without generation. Guidance maintenance
+   does neither. No extra mode-confirmation question is needed.
+3. **Exact words.** Apply the confirmation gate below before new generation or
+   complete prompts. An authorized repair may reuse unchanged confirmed words;
+   it must not reopen settled wording or silently rewrite it.
+4. **Composition brief.** Plan a wide editorial composition with a clear focal
+   hierarchy and useful empty space. Positions are flexible, badge size is not.
+   Use the horizontal space; a center-square diagnostic is not a design grid.
+   Prefer one explanatory relationship over cramming the whole paper into a box.
+5. **Produce.** For a new design round, generate three directions (scene, method,
+   application) inside the shared contract with confirmed text in the image.
+   If the user selected a direction or requested one local repair, work on that
+   candidate instead of generating three unnecessary variants. For prompt-only,
+   follow the output format below without generating images or previews.
+6. **Inspect final pixels.** Export exactly 900 × 383 and inspect the decoded
+   final file after any crop/resize/repair, not an earlier source or chat preview.
+   Check exact words, science, composition, contrast and all fixed invariants.
+   Run the badge measurement gate in the standards: record actual outer and ink
+   bounds, file hash, method and result. An unmeasured or oversized badge fails
+   even when the prompt specified the correct size. Nominal font size is not
+   glyph ink height. Never claim font verification from a box measurement.
+7. **Preview.** Run the helper from the repository root:
 
    ```bash
-   python .agents/skills/wechat-cover/scripts/cover_preview.py \
+   python3 .agents/skills/wechat-cover/scripts/cover_preview.py \
      wechat/assets/public-safe/<publication_ref>/<cover-file>.png \
-     --label "候选 A" \
-     --score article_specificity=4,click_appeal=5
+     --label "候选 A"
    ```
 
-   Treat this as a local first-pass comparison board. It checks dimensions,
-   common crops, and small-thumbnail readability surfaces, but final approval
-   still requires the WeChat backend mobile preview.
-10. Update the review note with:
-   - selected execution mode: `image-gen` or `prompt-only`,
-   - candidate count or prompt count,
-   - selected candidate ID, when applicable,
-   - user-confirmed cover text choice,
-   - selected text mode: `image-gen-text`,
-   - prompt-only output count and complete prompt texts, when applicable,
-   - rejected candidate reasons,
-   - cover source or prompt,
-   - generation tool,
-   - source candidate path, when applicable,
-   - final cover path, when applicable,
-   - dimensions, when applicable,
-   - local crop-preview path, when applicable,
-   - approval state,
-   - WeChat backend preview state.
-11. Run the relevant checks:
-   - `python scripts/check-public-safe-content.py`
-   - `git diff --check`
-   - `python wechat/tools/wechat_draft.py dry-run --publication-ref <ref>`
-     when the draft API path should see the selected cover.
+   Inspect full/wide/mobile views first. Center-square and 5:4 crops diagnose
+   information loss only; they neither prove WeChat's current behavior nor
+   require all scientific content to fit a center square. Verify the actual
+   backend crop controls and mobile result only within authorized backend work.
+8. **Record and deliver.** Record the selected file/hash, exact text, evidence
+   anchors, measured dimensions/badge, visual review, rejected reasons, actual
+   generation/edit tools and backend state separately. Keep experiments and
+   detailed reports in ignored storage; public reviews contain only public-safe
+   results. A failed candidate may be shown only as a clearly labelled failure,
+   never as the corrected final cover.
+9. **Checks.** Run `python3 scripts/check-public-safe-content.py` and
+   `git diff --check`; run relevant tests for helper changes. Run an offline
+   `wechat_draft.py dry-run` only when the authorized draft workflow needs to
+   consume the selected asset. No credentials or live calls for skill work.
 
-If all candidates in a round fail because the text is wrong, unreadable, or the
-visual is not article-specific, retry once with the same confirmed text. If two
-rounds fail, stop and ask the user to confirm shorter or clearer cover text.
-Do not use no-text covers or post-generation text overlays as fallbacks.
+## Mandatory cover-text confirmation
 
-## Execution Mode Rule
+For new words, present exactly five concrete combinations plus a custom option:
+`secondary direction | main hook / subtitle`. Use the five approved directions
+and text budgets in the standards. Derive hooks from audited article wording.
+Offer varied scene/method/engineering/reader/finding emphasis, not five abstract
+modes. Wait for an explicit selection; silence or a generic "continue" is not
+text approval. For custom words resolve the exact badge, hook and subtitle.
+Include a subtitle unless the user explicitly selects a no-subtitle variant.
 
-Before the cover-text confirmation gate, determine whether this run should
-generate images or only produce full prompts. Do not ask a separate
-execution-mode question.
+Record `cover_text_confirmation: user-confirmed`, `confirmed_cover_text`,
+`confirmed_text_mode: image-gen-text`, `cover_execution_mode`, verified journal
+and year, and a short public-safe confirmation note. Reusing confirmed text for
+an explicitly requested repair needs no redundant five-option question.
+Changing text, omitting a line or changing the rendering route needs the
+applicable user approval. Do not use a text-free or post-render overlay fallback
+unless the user explicitly authorizes that change; do not claim such a composite
+was generated entirely by the image tool.
 
-Use the default `image-gen` mode unless the user explicitly requests
-`prompt-only`.
+## Bounded repairs
 
-- Choose `prompt-only` for requests such as "直接生成提示词",
-  "只生成提示词", "给我完整提示词", or "不要生成图片".
-- Choose `image-gen` for all other cover-generation requests, including
-  "生成封面", "重新生成图片", "更新封面", "更新公众号草稿封面", or requests
-  that simply name a paper and ask for a cover.
+Before a repair, list the defect and all invariants that must survive. Keep the
+source candidate and review the new final file independently; "only changed the
+badge" is not evidence that the title, science or palette survived unchanged.
+Remeasure the badge and repeat the full acceptance checklist after every edit.
 
-The execution-mode rule does not replace the mandatory cover-text confirmation
-gate. Both modes still require the five cover-text options plus custom text
-before image generation or prompt-only output.
+For the same unresolved problem, allow at most two generation/edit attempts,
+including local fixes. Record attempt count and measured failure each time. At
+that limit, stop repeating the same prompt and change strategy: simplify or
+recompose the scientific scene within approved wording, or ask for the specific
+permission needed for a different rendering route. Do not keep generating,
+silently increase tolerance, blame text length for a geometry failure, or mark
+the best of several failures as passed. Tool success is not cover acceptance.
 
-## Prompt-Only Response Format
+## Prompt-only output
 
-When the user replies with a cover-text option number in `prompt-only` mode,
-the next user-facing answer must make the concrete prompts the main output.
+After text confirmation, make the three complete prompts the main output:
+`提示词 1｜研究场景`, `提示词 2｜方法机制`, `提示词 3｜工程应用`.
+Start with one short line confirming the words. Each prompt is standalone, with
+canvas, fixed badge contract, flexible horizontal composition, typography,
+category colors, exact words, verified journal/year, evidence-grounded science
+and exclusions. No placeholders, "same as above" or source-file dependencies.
+The prompt must say final raster measurements are still required; a prompt-only
+result has no measured image and cannot pass visual acceptance.
 
-- Start with one short line confirming the selected cover text.
-- Then output exactly three complete prompts, labelled in Chinese as:
-  `提示词 1｜研究场景`, `提示词 2｜方法机制`, and
-  `提示词 3｜工程应用`.
-- Each prompt must be self-contained and directly usable in an image-generation
-  tool. Do not use placeholders, ellipses, "see file", "same as above", or
-  references that require the reader to inspect the repository.
-- Do not put the prompts inside fenced code blocks by default, because long
-  image prompts become horizontally clipped in chat UIs. Use normal wrapped
-  paragraphs or block quotes. Use fenced code blocks only if the user
-  explicitly asks for copy boxes.
-- Put checks, file-write summaries, and review-note updates after the prompts,
-  in one brief sentence. Do not lead with tooling status.
-- Use Chinese headings and a Chinese one-line explanation for each direction;
-  the prompt body may follow the prompt language rule below.
+Use English instructions with exact Chinese strings by default, or Chinese
+instructions when requested. Follow the current channel's text/file format rules;
+do not require fenced blocks. Put any file/check summary after the prompts.
 
-Default prompt language:
+## Tool truthfulness and acceptance
 
-- Use an English prompt body for image-generation instructions, because most
-  general image models follow composition, lighting, layout, and style cues more
-  reliably in English.
-- Keep all cover text strings in exact Chinese inside quotes, and repeat that
-  they must remain crisp, unchanged, and not translated.
-- If the user says the target image model is Chinese-first, or explicitly asks
-  for Chinese prompts, write the prompt body in Chinese while preserving the
-  same structure and exact quoted cover text.
-- If unsure, use English prompt body plus exact Chinese cover text.
-
-## Shared Series Design
-
-Read [references/cover-standards.md](references/cover-standards.md) before every
-brief, prompt, candidate or crop review. `WOEAI-cover-v2` is the single source for
-900 × 383 output, grid, type scale, fixed category colors, text budgets and crop
-acceptance. Do not invent a new style for each paper; candidate concepts change
-the scientific emphasis inside the same system.
-
-A request to improve skills or derived briefs is guidance maintenance, not image
-generation. Preserve existing assets and confirmation/preview history; mark
-migration pending. Use `wechat/templates/cover-brief.md` for new paired briefs.
-
-## Mandatory Cover-Text Confirmation
-
-Before any new cover-generation round or prompt-only output, ask the user to
-choose the exact text plan that may appear on the cover. Do this after
-extracting the brief and resolving the execution mode, and before calling an
-image-generation tool, writing full prompts, or selecting a candidate. Do not
-infer approval from silence or from a generic "continue".
-
-Present exactly five concrete cover-text combinations plus one custom-text
-option, then wait for the user's reply. The first five options should be ready
-to use on the cover, not abstract text modes:
-
-1. `category tag` + `6-12 character Chinese hook`.
-2. `category tag` + an alternate `6-12 character Chinese hook`.
-3. `category tag` + a more engineering-facing `6-12 character Chinese hook`.
-4. `category tag` + a more reader-facing `6-12 character Chinese hook`.
-5. `category tag` + a more method- or finding-focused `6-12 character Chinese hook`.
-6. Custom cover text supplied by the user.
-
-Use the article category from `wechat/STYLE.md` when suggesting category tags.
-Each option should follow this structure:
-
-`category tag | main hook / subtitle`
-
-The category tag must be `数值风洞`, `结构抗风`, or `漂浮风电`. Derive hooks only
-from public-safe article wording or the cover brief. Keep the main hook short,
-preferably 6-12 full-width character equivalents, maximum 14. Include a short
-subtitle by default for the
-three-part cover-text system; omit it only when the user explicitly chooses a
-no-subtitle variant for readability. If the user chooses custom text, ask for
-the exact category tag, hook, and subtitle before continuing. If the user asks
-for a no-text cover, explain that this skill requires confirmed cover text and
-ask them to choose or provide text.
-
-Record the confirmed choice in the cover brief or review note with:
-
-- `cover_text_confirmation: user-confirmed`,
-- `confirmed_cover_text`,
-- `confirmed_text_mode`: `image-gen-text`,
-- `cover_execution_mode`: `image-gen` or `prompt-only`,
-- `publication_metadata_line`, when journal and year are available,
-- `confirmation_note`: short public-safe note such as "confirmed in chat".
-
-## Cover Quality Rules
-
-- Make the visual specific to the article, not generic science decoration.
-- Keep the diagnostic subject inside the contract crop core. A center square
-  cannot retain the entire left title; assess subject survival separately.
-- Make the main subject recognizable in one second on a phone-sized thumbnail.
-- Every final cover must include the confirmed cover text generated directly in
-  the image. Prefer a category tag plus a short Chinese hook; do not repeat the
-  full article title.
-- Use paper figures as source inspiration only when they remain legible as a
-  cover; do not use a detailed paper figure as the default cover.
-- Score candidates for article specificity, main-subject clarity, click appeal,
-  engineering credibility, small-thumbnail readability, crop safety, and text
-  quality when text is present.
-- Reject candidates that look like generic AI technology wallpaper, have a
-  faint or tiny subject, depend on dense labels/formulas, or include fake UI/map
-  labels or misleading publication claims.
-- Do not include unconfirmed partner names, private project details, private
-  preview URLs, raw WeChat API responses, credentials, or tokens.
-- Do not mark `cover_image_checked: true` until the WeChat backend preview has
-  actually been checked.
-
-## Helper Script
-
-Use `.agents/skills/wechat-cover/scripts/cover_preview.py` from the repository root. It outputs a local HTML
-candidate comparison board under `wechat/.local/cover-previews/` and prints
-dimension, ratio, file-size, label, and optional score metadata.
+- Name the tool actually used and distinguish generation, local image editing,
+  export/resize and measurement. Promise only parameters the tool supports.
+- Image-generation size instructions are targets, not guaranteed exact output.
+  If a tool returns only a displayed image without a readable file, report that
+  measurement/export is blocked; do not invent a file or claim dimensions checked.
+- Measure actual pixels; never use nominal font size, image dimensions, a model's
+  description, or the requested badge rectangle as measured badge geometry.
+- Local preview success, automated geometry pass and human visual review are
+  separate. No score average can override a failed invariant.
+- Set `cover_image_checked: true` only after an actual WeChat backend mobile
+  preview. Local QA never sets backend acceptance, even for an unchanged size.

@@ -534,14 +534,14 @@ items:
     subdirection: "一体化分析"
     original_year: 2018
     repost_priority: ""
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+    revision_note: "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。"
     publication_history: []
-    wechat_draft_created_at: ""
-    wechat_draft_updated_at: ""
+    wechat_draft_created_at: "2026-10-14T16:39:03+00:00"
+    wechat_draft_updated_at: "2026-10-14T16:39:03+00:00"
   - publication_ref: ref-xiao2018-KXJSYGC
     zotero_key: "YF5RIBAN"
     title: "复杂地形下基于计算流体动力学的风速比计算"
@@ -594,14 +594,14 @@ items:
     subdirection: "一体化分析"
     original_year: 2017
     repost_priority: ""
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+    revision_note: "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。"
     publication_history: []
-    wechat_draft_created_at: ""
-    wechat_draft_updated_at: ""
+    wechat_draft_created_at: "2026-10-14T16:39:44+00:00"
+    wechat_draft_updated_at: "2026-10-14T16:39:44+00:00"
   - publication_ref: ref-li2013-RE
     zotero_key: "U5FHR599"
     title: "2.5D large eddy simulation of vertical axis wind turbine in consideration of high angle of attack flow"
@@ -609,14 +609,14 @@ items:
     subdirection: "一体化分析"
     original_year: 2013
     repost_priority: ""
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+    revision_note: "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。"
     publication_history: []
-    wechat_draft_created_at: ""
-    wechat_draft_updated_at: ""
+    wechat_draft_created_at: "2026-10-14T16:38:22+00:00"
+    wechat_draft_updated_at: "2026-10-14T16:38:22+00:00"
   - publication_ref: ref-li2012-JWEIA
     zotero_key: "2ND9BWQV"
     title: "A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets"
@@ -639,14 +639,14 @@ items:
     subdirection: "数值风洞"
     original_year: 2012
     repost_priority: ""
-    wechat_status: "awaiting_review"
+    wechat_status: "draft_created"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+    revision_note: "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。"
     publication_history: []
-    wechat_draft_created_at: ""
-    wechat_draft_updated_at: ""
+    wechat_draft_created_at: "2026-10-14T16:40:32+00:00"
+    wechat_draft_updated_at: "2026-10-14T16:40:32+00:00"
   - publication_ref: ref-li2010-WAS
     zotero_key: "9N6EYMBU"
     title: "Large eddy simulation of wind loads on a long-span spatial lattice roof"

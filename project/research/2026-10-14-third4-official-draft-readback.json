@@ -1,0 +1,804 @@
+{
+  "completed_at": "2026-10-14T16:43:57+00:00",
+  "source_commit": "e0883cfd1e75a8721cb426e7f268283fde54238a",
+  "source_tree": "bc6c89ec6f6c1080bbf0114b1c0dfba4e35f582d",
+  "results": [
+    {
+      "publication_ref": "ref-li2013-RE",
+      "ok": true,
+      "operation": "create",
+      "title": "一体化分析 | 垂直轴风机功率算高了，问题只在叶尖吗？",
+      "author": "Li Chao",
+      "body_image_count": 4,
+      "formula_svg_count": 12,
+      "actual_times": {
+        "submitted_at": "2026-10-14T16:38:17+00:00",
+        "acknowledged_at": "2026-10-14T16:38:22+00:00",
+        "readback_completed_at": "2026-10-14T16:38:25+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "bc0929b47ea3136f1ee6355e821146ed20df7a5aa6be0f55659ae37d6a9e9335",
+        "markdown_sha256": "37a71b9b0d70151d1890658acd30326def5b7a52077f24fbd397bb571bbd6361",
+        "review_sha256": "2cb4d70eaa930b8cce1809d83b52667e702118dab3183076cdf59aba8effe87b",
+        "html_sha256": "5afe6d5a361f31500bcfad404ac8df8156774e07074dae1ba2fa120204bb1218",
+        "formula_geometry_sha256": "aa6e55f5d2d628f509635b93e3488f7a471ffb6d65b366fa2320b5063f3050d7",
+        "formula_metadata_sha256": "9ea08b1fa62c2bfe53406e0760be6305c565c65940c8045e04762fb790dc3f1e",
+        "source_commit": "e0883cfd1e75a8721cb426e7f268283fde54238a",
+        "source_tree": "bc6c89ec6f6c1080bbf0114b1c0dfba4e35f582d"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "li2018_scope": null,
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "c35692310e994de44959dc23d01b6a25476df832b668e1063a31e39f47993f9d",
+        "readback_html_sha256": "f243f6e2c96f1f27e47530a4d54cb8a4d69260334a39410daa0c531c745b67a5",
+        "source_cover": {
+          "sha256": "adc5f996e53d6363fef8b3c80953c4cd466711fac20aa9b69c762f1729d13958",
+          "bytes": 398961,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "d207930049140687ed1ff35b71845698396e6a549d46d7b6f29108d10c279b88"
+        },
+        "official_returned_cover_image": {
+          "sha256": "adc5f996e53d6363fef8b3c80953c4cd466711fac20aa9b69c762f1729d13958",
+          "bytes": 398961,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "d207930049140687ed1ff35b71845698396e6a549d46d7b6f29108d10c279b88"
+        },
+        "cover_display": {
+          "sha256": "d3e0dc0ae3f1344f88fecb629b4a6fb46240289f41810ed77e9e0b8e103d9975",
+          "bytes": 61544,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "3c3077d5d65c6c071d4615b8245e87c3fa746de9749c71a3df25b79621ca6121"
+        },
+        "body_images": [
+          {
+            "ordinal": 1,
+            "source": {
+              "sha256": "4b8e700514d522aea562c9badce5492cb9f10b38de484d6b526af367e53c5526",
+              "bytes": 36571,
+              "dimensions": [
+                741,
+                531
+              ],
+              "format": "PNG",
+              "rgba_sha256": "55d4e5d15d0e712e187076eacfe7346e0df11d4d2b9cef2084ac76d7a09abd31"
+            },
+            "official_image": {
+              "sha256": "4b8e700514d522aea562c9badce5492cb9f10b38de484d6b526af367e53c5526",
+              "bytes": 36571,
+              "dimensions": [
+                741,
+                531
+              ],
+              "format": "PNG",
+              "rgba_sha256": "55d4e5d15d0e712e187076eacfe7346e0df11d4d2b9cef2084ac76d7a09abd31"
+            },
+            "uploaded_url_sha256": "255ce06c85ec0b2e1768b0f6db4e66fb37ec3119ff3f5f7e2a8e0322d93ade8f",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:37:49+00:00"
+          },
+          {
+            "ordinal": 2,
+            "source": {
+              "sha256": "de105f9f9dc9f24080d184157d5b0e2c477d8fb67f7ad117c7e531b89a2ff447",
+              "bytes": 90275,
+              "dimensions": [
+                765,
+                1092
+              ],
+              "format": "PNG",
+              "rgba_sha256": "efcf2f81873af753411ed5c3b43b21829203c8a9f5d27f980809b8745791ffa1"
+            },
+            "official_image": {
+              "sha256": "de105f9f9dc9f24080d184157d5b0e2c477d8fb67f7ad117c7e531b89a2ff447",
+              "bytes": 90275,
+              "dimensions": [
+                765,
+                1092
+              ],
+              "format": "PNG",
+              "rgba_sha256": "efcf2f81873af753411ed5c3b43b21829203c8a9f5d27f980809b8745791ffa1"
+            },
+            "uploaded_url_sha256": "b2bc0b60015a349d6f664fc9e8018f07ce425efb6bdb8a58cefffe24bd62be90",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:37:53+00:00"
+          },
+          {
+            "ordinal": 3,
+            "source": {
+              "sha256": "5a924a15082e66e147f8aa775afa8d95fac2b9935ab2daec0c1b346b08d58d16",
+              "bytes": 27630,
+              "dimensions": [
+                732,
+                375
+              ],
+              "format": "PNG",
+              "rgba_sha256": "16f6af945cd428d7915122338b4eb1b7ec99ccb41e81d652c399fba45e6ad4db"
+            },
+            "official_image": {
+              "sha256": "5a924a15082e66e147f8aa775afa8d95fac2b9935ab2daec0c1b346b08d58d16",
+              "bytes": 27630,
+              "dimensions": [
+                732,
+                375
+              ],
+              "format": "PNG",
+              "rgba_sha256": "16f6af945cd428d7915122338b4eb1b7ec99ccb41e81d652c399fba45e6ad4db"
+            },
+            "uploaded_url_sha256": "931d6d1ed2fb548c4942a5e46bb68789951cec3d66a51dc1e7fb6be78ce12fa2",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:37:56+00:00"
+          },
+          {
+            "ordinal": 4,
+            "source": {
+              "sha256": "ea1a3a9c70647b4d300c56b5ed5680b3538ca429dd7ba210dfa6141c6b311e40",
+              "bytes": 402934,
+              "dimensions": [
+                1254,
+                1630
+              ],
+              "format": "JPEG",
+              "rgba_sha256": "a752df4452f9e44de72333a8b597d0eafd9ef6afa6c0a96148c7f5a089fe8442"
+            },
+            "official_image": {
+              "sha256": "96656e79ab58a5cb0528a7b05a66b07ce3eaed7649a41275357edd4fbc3df1f4",
+              "bytes": 186559,
+              "dimensions": [
+                1254,
+                1630
+              ],
+              "format": "JPEG",
+              "rgba_sha256": "ac4d6cdfef276d01e1ae746a42a8c611430b327d2d88a5281358959062d7f481"
+            },
+            "uploaded_url_sha256": "64c49c4961b89ae6d40cc91c74bbe84fd6f84fa060b40322a31bad98163ec5c4",
+            "exact_full_pixels": false,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": true,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:38:00+00:00"
+          }
+        ]
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "raw_api_responses_saved": false
+    },
+    {
+      "publication_ref": "ref-li2018-AE",
+      "ok": true,
+      "operation": "create",
+      "title": "一体化分析 | 垂直轴风机转一圈，叶片该怎样变桨？",
+      "author": "Li Chao",
+      "body_image_count": 3,
+      "formula_svg_count": 0,
+      "actual_times": {
+        "submitted_at": "2026-10-14T16:38:59+00:00",
+        "acknowledged_at": "2026-10-14T16:39:03+00:00",
+        "readback_completed_at": "2026-10-14T16:39:05+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "45cea8b544c1c33619cd1c1f426aa8be7e518833ad814bef400461e90d0c7a26",
+        "markdown_sha256": "b8a4e3827ab1a5f3b96e226a80bf3bde0367ba57055486bc04cc343e0b600b1b",
+        "review_sha256": "bd361e42aaa01d7473e75f070915db9161106b7485d14e951aa213569e810e24",
+        "html_sha256": "f95b92df22012aab10d1d6680a2a98f0e6b1b3f65a2945588dd6f95940e9e9ba",
+        "formula_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "formula_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_commit": "e0883cfd1e75a8721cb426e7f268283fde54238a",
+        "source_tree": "bc6c89ec6f6c1080bbf0114b1c0dfba4e35f582d"
+      },
+      "formula_render_applicability": "not_applicable_no_mathjax_formula_in_approved_intro",
+      "li2018_scope": {
+        "scope": "audited_19_page_main_text_only",
+        "external_code_video_or_appendix_added": false,
+        "new_source_pdf_or_attachment_read": false,
+        "registered_audited_source_pages": 19
+      },
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "cbb70ca2923a9eadc2e1156350c165f67a088942523601e69a3bb48e69041eee",
+        "readback_html_sha256": "96f86986868bc92c5e2a063edc728f4294eaa35570270e883140e53f1a172799",
+        "source_cover": {
+          "sha256": "c878f7f00a651fd9cf1ea86e3e5182ff46ce38858ca7167cab84906b227cc565",
+          "bytes": 331848,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "2f1ab4789b8e11526222e83916da126c97304963bc3e197a25fc2f166fcde816"
+        },
+        "official_returned_cover_image": {
+          "sha256": "c878f7f00a651fd9cf1ea86e3e5182ff46ce38858ca7167cab84906b227cc565",
+          "bytes": 331848,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "2f1ab4789b8e11526222e83916da126c97304963bc3e197a25fc2f166fcde816"
+        },
+        "cover_display": {
+          "sha256": "ee2592a470332a71141ceaf27a29dcd6118c755af7c3747514c93844df9593a2",
+          "bytes": 46601,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "0a830008d3936b6b27cb5e45b487683cc5e1745d80489e8712ee51d08a6674b9"
+        },
+        "body_images": [
+          {
+            "ordinal": 1,
+            "source": {
+              "sha256": "e715fbd2a1e1c896914494a345c9626a8b481870b1e4cd1c2324f4093a338add",
+              "bytes": 85199,
+              "dimensions": [
+                756,
+                618
+              ],
+              "format": "PNG",
+              "rgba_sha256": "22cbd0b9b1ffbc252e12efadd5b358fe85cb12c51b4f9d8f30d5594b9098b3af"
+            },
+            "official_image": {
+              "sha256": "e715fbd2a1e1c896914494a345c9626a8b481870b1e4cd1c2324f4093a338add",
+              "bytes": 85199,
+              "dimensions": [
+                756,
+                618
+              ],
+              "format": "PNG",
+              "rgba_sha256": "22cbd0b9b1ffbc252e12efadd5b358fe85cb12c51b4f9d8f30d5594b9098b3af"
+            },
+            "uploaded_url_sha256": "04d4e4cb12b80d0b3944596a2b434688cabf18a98ae3b9b53f7bda42db381722",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:38:33+00:00"
+          },
+          {
+            "ordinal": 2,
+            "source": {
+              "sha256": "a0cf4e7d0dc197f7b2589d96c2fd15879594625e65913f6c21a515b65be92b6a",
+              "bytes": 39336,
+              "dimensions": [
+                768,
+                495
+              ],
+              "format": "PNG",
+              "rgba_sha256": "11e48552fad05b8c9905879c3b8118a2dcf96881efd307231c364b073b51ebe6"
+            },
+            "official_image": {
+              "sha256": "a0cf4e7d0dc197f7b2589d96c2fd15879594625e65913f6c21a515b65be92b6a",
+              "bytes": 39336,
+              "dimensions": [
+                768,
+                495
+              ],
+              "format": "PNG",
+              "rgba_sha256": "11e48552fad05b8c9905879c3b8118a2dcf96881efd307231c364b073b51ebe6"
+            },
+            "uploaded_url_sha256": "4732d31538abb691cbf667a141e73c2c6ab353365d6d84eb5817ae249ab290ec",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:38:36+00:00"
+          },
+          {
+            "ordinal": 3,
+            "source": {
+              "sha256": "95f6750d9ad4ab73eaed0d65fcc67f6b0acfc3228a93807f7c1d1203a8071f5e",
+              "bytes": 692293,
+              "dimensions": [
+                1215,
+                588
+              ],
+              "format": "PNG",
+              "rgba_sha256": "39fc9a507244fe052ed83ed9148821955e9e689a21c9594009509ea5aa7dbf6e"
+            },
+            "official_image": {
+              "sha256": "95f6750d9ad4ab73eaed0d65fcc67f6b0acfc3228a93807f7c1d1203a8071f5e",
+              "bytes": 692293,
+              "dimensions": [
+                1215,
+                588
+              ],
+              "format": "PNG",
+              "rgba_sha256": "39fc9a507244fe052ed83ed9148821955e9e689a21c9594009509ea5aa7dbf6e"
+            },
+            "uploaded_url_sha256": "98b42a989dd01420adc3c09f48bedc7fef7117b813fc685d6006d975df1f4fcd",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:38:41+00:00"
+          }
+        ]
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "raw_api_responses_saved": false
+    },
+    {
+      "publication_ref": "ref-li2017-AS",
+      "ok": true,
+      "operation": "create",
+      "title": "一体化分析 | 漂浮风机装阻尼器，该调平台还是塔筒？",
+      "author": "Li Chao",
+      "body_image_count": 3,
+      "formula_svg_count": 17,
+      "actual_times": {
+        "submitted_at": "2026-10-14T16:39:39+00:00",
+        "acknowledged_at": "2026-10-14T16:39:44+00:00",
+        "readback_completed_at": "2026-10-14T16:39:47+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "45e9479916cd555cbebe53035ef0235190d0b8ed7084c30e116c1c400e10053a",
+        "markdown_sha256": "6ad37a00cf5a0713244ad2ab6d15ac514cf6b6976e63848d6a3c09777e30939e",
+        "review_sha256": "529318dc169e4d0911dbdac20369936f6b7f62a0dc7e7603b35d15048a183ca3",
+        "html_sha256": "98bcc46999d5073df93c0ff7b77d7629245d345a39085c4dd5ec7a77a9c79802",
+        "formula_geometry_sha256": "471d34efd873e0b9be9499d367e0f15c1e795712477f898a2e79de11166fbc88",
+        "formula_metadata_sha256": "91b3a5dda714227f25350b129b6184d1563426ebf086dce86688d1251deba1d5",
+        "source_commit": "e0883cfd1e75a8721cb426e7f268283fde54238a",
+        "source_tree": "bc6c89ec6f6c1080bbf0114b1c0dfba4e35f582d"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "li2018_scope": null,
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "002351ca5e05c8ae1a707af0c2cd1f02f84ee4866d91b9aac8396bf50d26ec95",
+        "readback_html_sha256": "e3e9d908d268c2a73436deb5e81bfdcb25bb46ebe63f1ef5944214a532aeaaee",
+        "source_cover": {
+          "sha256": "5f63768eb56bee59bdd76c3bcf8a43aaf81aca14098b0d3d7b408ecdeaa7adb8",
+          "bytes": 277988,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "8808ddd344330efa8ac60f9cab8ac6127055074cfc47a155782f3b527dc6d1a6"
+        },
+        "official_returned_cover_image": {
+          "sha256": "5f63768eb56bee59bdd76c3bcf8a43aaf81aca14098b0d3d7b408ecdeaa7adb8",
+          "bytes": 277988,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "8808ddd344330efa8ac60f9cab8ac6127055074cfc47a155782f3b527dc6d1a6"
+        },
+        "cover_display": {
+          "sha256": "584a6bd01d155b8a5c2c44489b9b8941753bdccd0d3f5ce7124ebfdef78df342",
+          "bytes": 44824,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "962ef14bbab3faed83c6c2a89a7b40404cf358e456f6459a090244e4c813667f"
+        },
+        "body_images": [
+          {
+            "ordinal": 1,
+            "source": {
+              "sha256": "a4eb02d12a2dd5da3e909623b288b2cdd6f1c8b09812fa215530891b22f3d9b5",
+              "bytes": 66398,
+              "dimensions": [
+                468,
+                639
+              ],
+              "format": "JPEG",
+              "rgba_sha256": "09daa944503098f65aa8d83f53e7615b3a085962d04bf8be3f6894669ae85daf"
+            },
+            "official_image": {
+              "sha256": "544b773b005d599f830df1e76894fffe128353d8d8774832e31cd1973d204076",
+              "bytes": 29698,
+              "dimensions": [
+                468,
+                639
+              ],
+              "format": "JPEG",
+              "rgba_sha256": "35a7fcca8e9e2832a043683501d668cec7438c469f949caa67a3e212245fe31f"
+            },
+            "uploaded_url_sha256": "3e82e9cd88607946c8066dce40cea514343b822878d6985cb567b437f57811d5",
+            "exact_full_pixels": false,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": true,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:39:13+00:00"
+          },
+          {
+            "ordinal": 2,
+            "source": {
+              "sha256": "c50856ace8f84d9a0ec56d258b3da405e74eeb7104fb8931d72727ad50d95066",
+              "bytes": 156416,
+              "dimensions": [
+                1239,
+                930
+              ],
+              "format": "PNG",
+              "rgba_sha256": "37cea7561fec10458b2d164b42e9cf76cc817ff5479d04db3e612c7ebb45e323"
+            },
+            "official_image": {
+              "sha256": "c50856ace8f84d9a0ec56d258b3da405e74eeb7104fb8931d72727ad50d95066",
+              "bytes": 156416,
+              "dimensions": [
+                1239,
+                930
+              ],
+              "format": "PNG",
+              "rgba_sha256": "37cea7561fec10458b2d164b42e9cf76cc817ff5479d04db3e612c7ebb45e323"
+            },
+            "uploaded_url_sha256": "1a58b3d7edeb9b54afcb205f96de06f08825e9f517f739dd69c7a5688ee7bdf6",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:39:17+00:00"
+          },
+          {
+            "ordinal": 3,
+            "source": {
+              "sha256": "f988a23088fa4f0f329a62d38c3e95d53a1dc56751e86cd7892b1fbfbf70764f",
+              "bytes": 55824,
+              "dimensions": [
+                1080,
+                444
+              ],
+              "format": "PNG",
+              "rgba_sha256": "26f7fa72a409c221ebdf7874b9586960b5850a06f34d3e49eb1036b4dbfb216c"
+            },
+            "official_image": {
+              "sha256": "f988a23088fa4f0f329a62d38c3e95d53a1dc56751e86cd7892b1fbfbf70764f",
+              "bytes": 55824,
+              "dimensions": [
+                1080,
+                444
+              ],
+              "format": "PNG",
+              "rgba_sha256": "26f7fa72a409c221ebdf7874b9586960b5850a06f34d3e49eb1036b4dbfb216c"
+            },
+            "uploaded_url_sha256": "12de9d62467cbbf5ccf8761db315aff3ff8c729d68c2d74171f6584c45081531",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:39:21+00:00"
+          }
+        ]
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "raw_api_responses_saved": false
+    },
+    {
+      "publication_ref": "ref-li2012-GCLX",
+      "ok": true,
+      "operation": "create",
+      "title": "数值风洞 | 行人觉得风大，怎样从风速算到发生概率？",
+      "author": "李朝",
+      "body_image_count": 4,
+      "formula_svg_count": 12,
+      "actual_times": {
+        "submitted_at": "2026-10-14T16:40:28+00:00",
+        "acknowledged_at": "2026-10-14T16:40:32+00:00",
+        "readback_completed_at": "2026-10-14T16:43:57+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "600d4c8cd08aa5813b3f455d3f47828501cb33eef7974099e5480a16d5bbafea",
+        "markdown_sha256": "0b4b14248a66b3e127ee46970347e371f83d0f46af0fb593ae3dc093377e8402",
+        "review_sha256": "8581934e94de4507b1ee24a1fa20a41f7e88c5bc5e4fe14c920f2d0e65b6c2a3",
+        "html_sha256": "cfa1c3c1c8367019d7679e9d86ae1be2e785024a55fbb7030d6ea6d47e40bd59",
+        "formula_geometry_sha256": "26f367166f03eca91c0047bf884bb6ff05ae2cc73578e00f13f89b0e9bd677be",
+        "formula_metadata_sha256": "bccff9dd196c53e36ba35c3096576a9e68043fff464aa4f82e096b557f15eb63",
+        "source_commit": "e0883cfd1e75a8721cb426e7f268283fde54238a",
+        "source_tree": "bc6c89ec6f6c1080bbf0114b1c0dfba4e35f582d"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "li2018_scope": null,
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "7ed9ae184bbff8b8a9a76cb0a2bba00587556d3400b4b7c2b13f9bdb8599f338",
+        "readback_html_sha256": "4765387e38fa8b48ee8e90e122d96882e62bacd05c3ae8f76ccc1ea1899b1f78",
+        "source_cover": {
+          "sha256": "1e027473a14e6429f3a8bd426e421d8208ed4990b96b32fbea985a8f0a48f11e",
+          "bytes": 358166,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "b5526cfd6e143bd486a329560bea72c8bb0b21884c76ff35c542830dab1340e7"
+        },
+        "official_returned_cover_image": {
+          "sha256": "1e027473a14e6429f3a8bd426e421d8208ed4990b96b32fbea985a8f0a48f11e",
+          "bytes": 358166,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "b5526cfd6e143bd486a329560bea72c8bb0b21884c76ff35c542830dab1340e7"
+        },
+        "cover_display": {
+          "sha256": "c9f6796abf187f0d17689d44ac92a49723f1a7d57e0a151f09a1c21efcc92fa4",
+          "bytes": 53955,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "43536806ae7955d9b26271e51e32d09f50248597c2cf2836b62ab195c2c9b5db"
+        },
+        "body_images": [
+          {
+            "ordinal": 1,
+            "source": {
+              "sha256": "807b4c4ca8030a3955e2b2e98ace39638fa19e78792acee267d84a868f4c9c9d",
+              "bytes": 177063,
+              "dimensions": [
+                513,
+                321
+              ],
+              "format": "PNG",
+              "rgba_sha256": "6f591b89b0a14eebae20789d317d610751b66ef66e50f0f4cb759d8e625a7621"
+            },
+            "official_image": {
+              "sha256": "807b4c4ca8030a3955e2b2e98ace39638fa19e78792acee267d84a868f4c9c9d",
+              "bytes": 177063,
+              "dimensions": [
+                513,
+                321
+              ],
+              "format": "PNG",
+              "rgba_sha256": "6f591b89b0a14eebae20789d317d610751b66ef66e50f0f4cb759d8e625a7621"
+            },
+            "uploaded_url_sha256": "90935a0a1687befcbb4ad2b04d8291d9a42372cef7245df3c41a9a866ee81bb5",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:39:56+00:00"
+          },
+          {
+            "ordinal": 2,
+            "source": {
+              "sha256": "fe15440cafa795bf1f781182949a92d71f8aca87e8b9eca30333978e924e9a46",
+              "bytes": 55332,
+              "dimensions": [
+                805,
+                695
+              ],
+              "format": "PNG",
+              "rgba_sha256": "0c0ce0abccc9536f020cbf648eb1c2983af4d466e51665e5535c7a33a45736cf"
+            },
+            "official_image": {
+              "sha256": "fe15440cafa795bf1f781182949a92d71f8aca87e8b9eca30333978e924e9a46",
+              "bytes": 55332,
+              "dimensions": [
+                805,
+                695
+              ],
+              "format": "PNG",
+              "rgba_sha256": "0c0ce0abccc9536f020cbf648eb1c2983af4d466e51665e5535c7a33a45736cf"
+            },
+            "uploaded_url_sha256": "ee6121fb2a5a634dde2221fbf90e689eef33a961df9cb7e66bd8b07505cf4030",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:40:00+00:00"
+          },
+          {
+            "ordinal": 3,
+            "source": {
+              "sha256": "f3a4942d8b01083ce07aec4ad8b4fb6fb76a25c4f16daf3a74f1fc00a85c5847",
+              "bytes": 610754,
+              "dimensions": [
+                884,
+                1236
+              ],
+              "format": "PNG",
+              "rgba_sha256": "5e31b9ac40ad7cc7a4ff149cc572c5db9858ecee23fcba4af8fd27753bc2945f"
+            },
+            "official_image": {
+              "sha256": "f3a4942d8b01083ce07aec4ad8b4fb6fb76a25c4f16daf3a74f1fc00a85c5847",
+              "bytes": 610754,
+              "dimensions": [
+                884,
+                1236
+              ],
+              "format": "PNG",
+              "rgba_sha256": "5e31b9ac40ad7cc7a4ff149cc572c5db9858ecee23fcba4af8fd27753bc2945f"
+            },
+            "uploaded_url_sha256": "b8ea93ee6e69c9b3dcfa5027ccc1b083d4475080373ade9749008cbb9b714e72",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:40:04+00:00"
+          },
+          {
+            "ordinal": 4,
+            "source": {
+              "sha256": "48d85d9888b1617821c79ab20002a02a23f3cb1bb15f09348761b5730a643896",
+              "bytes": 134973,
+              "dimensions": [
+                1050,
+                685
+              ],
+              "format": "PNG",
+              "rgba_sha256": "21c3335b8631835366ad0cbe80108c9acff630bc1e830cb08ac83be7ed6e7cd6"
+            },
+            "official_image": {
+              "sha256": "48d85d9888b1617821c79ab20002a02a23f3cb1bb15f09348761b5730a643896",
+              "bytes": 134973,
+              "dimensions": [
+                1050,
+                685
+              ],
+              "format": "PNG",
+              "rgba_sha256": "21c3335b8631835366ad0cbe80108c9acff630bc1e830cb08ac83be7ed6e7cd6"
+            },
+            "uploaded_url_sha256": "d6ba6bf0b12fc6824bf730c0b82302e337cc3d9fd9a3072e401c2d9e1c555aa4",
+            "exact_full_pixels": true,
+            "approved_original_uploaded_unchanged": true,
+            "official_jpeg_recompression_or_proportional_resizing": false,
+            "local_image_edit_performed": false,
+            "acknowledged_at": "2026-10-14T16:40:09+00:00"
+          }
+        ]
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "raw_api_responses_saved": false,
+      "resolved_by_read_only_after_registry_doi_selection_error": true,
+      "no_write_repeated": true
+    }
+  ],
+  "actual_totals": {
+    "covers_uploaded": 4,
+    "body_images_uploaded": 14,
+    "formula_svgs_verified": 41,
+    "drafts_created": 4,
+    "drafts_updated": 0
+  },
+  "restricted_material_download_called": false,
+  "quota_reset": false,
+  "first_and_second_batch_drafts_changed": false,
+  "published": false,
+  "mass_sent": false,
+  "phone_light_preview_performed": false,
+  "phone_dark_preview_performed": false,
+  "raw_api_responses_saved": false,
+  "official_body_image_processing": {
+    "approved_source_files_uploaded_without_local_changes": true,
+    "exact_full_pixel_displays": 12,
+    "official_jpeg_processed_displays": 2,
+    "pixel_identity_for_processed_jpeg_not_claimed": true
+  },
+  "resolved_pre_write_or_readback_issues": {
+    "initial_catalog_IncompleteRead_and_incomplete_page_scan_retained": true,
+    "complete_small_page_catalog_then_title_doi_dedup_verified": true,
+    "private_text_normalization_adapter_fixed_before_writes": true,
+    "gclx_registry_doi_field_missing_used_immutable_approved_markdown_doi_for_readback": true,
+    "gclx_created_draft_resolved_read_only_no_write_repeat": true
+  }
+}

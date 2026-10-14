@@ -8,7 +8,7 @@
 | 源文件获取、证据定位、原图抽取 | [paper-sources-and-evidence.md](../project/guides/paper-sources-and-evidence.md) |
 | 去 AI 味的逐句审校流程与示例 | [natural-scientific-writing.md](../.agents/skills/wechat-paper/references/natural-scientific-writing.md) |
 | 渲染、公式 SVG、草稿 API、状态回写 | [wechat/README.md](README.md) |
-| 封面 | [wechat-cover 技能](../.agents/skills/wechat-cover/SKILL.md) 与 [WOEAI-cover-v2](../.agents/skills/wechat-cover/references/cover-standards.md) |
+| 封面 | [wechat-cover 技能](../.agents/skills/wechat-cover/SKILL.md) 与 [封面规范](../.agents/skills/wechat-cover/references/cover-standards.md) |
 | RTD 全文精解 | [paper-deep-dive-rst.md](../project/guides/paper-deep-dive-rst.md) |
 
 正文模板：[templates/paper-explainer.md](templates/paper-explainer.md)。
@@ -64,9 +64,10 @@
 
 ## 3 标题
 
-格式：`<类别> | <中文标题>`。类别暂用 `数值风洞`、`结构抗风`、`漂浮风电`。
-这些是文章与封面的短分类标签，不是一级研究方向或公众号合集；一级方向统一为
-`工程结构抗风`、`海上漂浮风电`，论文信息中的二级方向按注册表填写。
+格式：`<二级方向> | <中文标题>`。前缀直接使用注册表中该论文的二级方向：
+`数值风洞`、`结构抗风`、`一体化分析`、`混凝土浮体`、`数值水池`。
+标题前缀、封面方向标签与论文信息中的二级方向保持一致，不另设“漂浮风电”等编辑类别。
+一级方向仍为 `工程结构抗风`、`海上漂浮风电`；以上标签不代表微信后台合集已创建或同步。
 
 - 后半句说出这篇论文帮助解决的问题或回答的取舍，通常 18–32 个字符。
 - 可用句式：`<工程决策>，为什么不能只看<常用指标>？`、
@@ -192,6 +193,9 @@
   > 应用需求的同行联系：lichaosz@qq.com
 
 - 站内链接优先用 `https://woeai.readthedocs.io/zh-cn/latest/`，不写 `winddee.cn`。
+- 每篇公众号导读在文章最末尾单独添加一次 AI 辅助声明，原句固定为：
+  `本文由 AI 辅助整理与撰写`。不改写、不重复，不追加“作者已审定”等未经确认的说法。
+  该声明不改变微信作者字段或正文的论文作者名单，也不向署名追加“& AI”。
 
 ## 10 事实与公开边界
 
@@ -203,6 +207,13 @@
 
 ## 11 研究方向标签
 
-- `工程结构抗风`：`数值风洞与湍动入流`、`工程结构抗风与优化`
-- `海上漂浮风电`：`浮式风机系统一体化分析与优化`、`浮式混凝土平台结构设计`、
-  `数值风浪流水池`
+- `工程结构抗风`：`数值风洞`、`结构抗风`
+- `海上漂浮风电`：`一体化分析`、`混凝土浮体`、`数值水池`
+
+论文信息中的方向字段使用精确格式 `- WOEAI 相关方向: <一级> / <二级>`，
+只填注册表名称，不附加括注或限定句。跨领域或关联基础研究的限定另起独立说明段。
+
+每篇论文只采用注册表中的一个主归属。分类依据和交叉边界见 `CONTEXT.md` 的
+Research Subdirection Scope；不能仅因使用 CFD、物理水池或通用系统模拟就归入
+“数值水池”，也不能为填满五类而调整论文归属。尚待确认的分类保留既有归属，
+在 review 记录疑点，不把暂定意见写成新增的科学结论。

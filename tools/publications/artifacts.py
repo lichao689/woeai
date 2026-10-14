@@ -28,10 +28,6 @@ LATEST_MARKER = "GENERATED LATEST PAPER NOTES"
 # prefixes are the only allowed openers; a title missing them reads like a stale
 # table-of-contents entry and was the root cause of the chen2022-JWEIA naming
 # regression.
-PAPER_NOTE_TITLE_PREFIXES: dict[str, tuple[str, ...]] = {
-    "工程结构抗风": ("数值风洞 |", "结构抗风 |"),
-    "海上漂浮风电": ("漂浮风电 |",),
-}
 PAPER_NOTE_TITLE_FORBIDDEN_SUFFIX = "论文精解"
 
 # Research taxonomy is a single source of truth in woeai.publications.
@@ -43,6 +39,29 @@ from woeai.publications import (  # noqa: E402
 )
 from woeai.publications.registry import load_registry, workflow_verified  # noqa: E402
 from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers  # noqa: E402,F401
+
+
+# Canonical prefix vocabulary comes only from the shared taxonomy. Matching a
+# family-wide prefix is insufficient: each label must match its own subdirection.
+PAPER_NOTE_TITLE_PREFIXES: dict[str, tuple[str, ...]] = {
+    family: tuple(f"{direction} |" for direction in directions)
+    for family, directions in RESEARCH_SUBDIRECTION_ORDER.items()
+}
+
+# Bounded compatibility for four already-audited RTD navigation labels. These
+# are exact (family, subdirection, full-title) snapshots keyed by stable ref,
+# not a generic legacy prefix and not permission for new papers or retitling.
+# Their scientific pages and existing navigation metadata remain untouched.
+LEGACY_RTD_PUBLIC_TITLES: dict[str, tuple[str, str, str]] = {
+    "ref-he2026-OE-structural": (
+        "海上漂浮风电", "混凝土浮体", "漂浮风电 | 用钢筋混凝土优化半潜式风机平台"),
+    "ref-li2022-SOS": (
+        "海上漂浮风电", "混凝土浮体", "漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变"),
+    "ref-zheng2025-OE": (
+        "海上漂浮风电", "一体化分析", "漂浮风电 | 为半潜式风机找到可信的等效静力波浪荷载"),
+    "ref-zhou2023-AE": (
+        "海上漂浮风电", "一体化分析", "漂浮风电 | 用长期动力优化选择浮式风机下部结构"),
+}
 
 
 @dataclass(frozen=True)
@@ -293,8 +312,12 @@ def artifact_integrity_problems(root: Path) -> list[dict[str, str]]:
                     "path": repo_relative(artifact.rtd_path, root),
                 }
             )
-        allowed_prefixes = PAPER_NOTE_TITLE_PREFIXES.get(artifact.research_family, ())
-        if allowed_prefixes and not title.startswith(allowed_prefixes):
+        own_prefix = f"{artifact.subdirection} |"
+        allowed_prefixes = ((own_prefix,) if own_prefix in
+                            PAPER_NOTE_TITLE_PREFIXES.get(artifact.research_family, ()) else ())
+        legacy_exact_match = LEGACY_RTD_PUBLIC_TITLES.get(artifact.publication_ref) == (
+            artifact.research_family, artifact.subdirection, title)
+        if allowed_prefixes and not (title.startswith(allowed_prefixes) or legacy_exact_match):
             problems.append(
                 {
                     "kind": "paper_note_title_missing_prefix",

@@ -45,6 +45,7 @@
    2018 KXJSYGC | 一套网格计算多风向风速比 <paper-notes/ref-xiao2018-KXJSYGC>
    2017 BS | 山地城市入流方法比较 <paper-notes/ref-li2017-BS>
    2012 JWEIA | 变尺度修正下击暴流风速模型 <paper-notes/ref-li2012-JWEIA>
+   2012 GCLX | 行人风环境超越阈值概率 <paper-notes/ref-li2012-GCLX>
 
 .. _ref-zhao2026-BE:
 
@@ -156,7 +157,7 @@
 
 .. _ref-li2012-GCLX:
 
-[4] **李朝**; 肖仪清\*; 滕军; 欧进萍; 陈宜言, 基于超越阈值概率的行人风环境数值评估[J]. **工程力学**, 2012, 29(12): 15～21.
+[4] :doc:`2012 GCLX | 行人风环境超越阈值概率 <paper-notes/ref-li2012-GCLX>` **李朝**; 肖仪清\*; 滕军; 欧进萍; 陈宜言, 基于超越阈值概率的行人风环境数值评估[J]. **工程力学**, 2012, 29(12): 15～21.
 
 .. _ref-xiao2009-HNLGDXXB:
 
@@ -274,6 +275,9 @@
 
    2025 OE | 为半潜式风机找到可信的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>
    2023 AE | 用长期动力优化选择浮式风机下部结构 <paper-notes/ref-zhou2023-AE>
+   2018 AE | H型垂直轴风机桨距优化 <paper-notes/ref-li2018-AE>
+   2017 AS | 半潜式风机被动振动控制 <paper-notes/ref-li2017-AS>
+   2013 RE | 高攻角垂直轴风机流动的2.5D模拟 <paper-notes/ref-li2013-RE>
 
 .. _ref-zhang2025-CSICM:
 
@@ -351,7 +355,7 @@
 
 .. _ref-li2018-AE:
 
-[12] **Li Chao**; Xiao Yiqing; Xu You-lin; Peng Yi-xin; Hu Gang; Zhu Songye\*, Optimization of blade pitch in H-rotor vertical axis wind turbines through computational fluid dynamics simulations[J]. **Applied Energy**, 2018, 212: 1107～1125. https://doi.org/10.1016/j.apenergy.2017.12.035. 影响因子: **11.0 (Q1)**. 中科院分区: **1**.
+[12] :doc:`2018 AE | H型垂直轴风机桨距优化 <paper-notes/ref-li2018-AE>` **Li Chao**; Xiao Yiqing; Xu You-lin; Peng Yi-xin; Hu Gang; Zhu Songye\*, Optimization of blade pitch in H-rotor vertical axis wind turbines through computational fluid dynamics simulations[J]. **Applied Energy**, 2018, 212: 1107～1125. https://doi.org/10.1016/j.apenergy.2017.12.035. 影响因子: **11.0 (Q1)**. 中科院分区: **1**.
 
 .. _ref-zhou2017-E:
 
@@ -359,11 +363,11 @@
 
 .. _ref-li2017-AS:
 
-[8] **Li Chao**; Zhuang Tongyi; Zhou Shengtao; Xiao Yiqing\*; Hu Gang, Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine[J]. **Applied Sciences**, Multidisciplinary Digital Publishing Institute, 2017, 7(6): 509. https://doi.org/10.3390/app7060509. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
+[8] :doc:`2017 AS | 半潜式风机被动振动控制 <paper-notes/ref-li2017-AS>` **Li Chao**; Zhuang Tongyi; Zhou Shengtao; Xiao Yiqing\*; Hu Gang, Passive Vibration Control of a Semi-Submersible Floating Offshore Wind Turbine[J]. **Applied Sciences**, Multidisciplinary Digital Publishing Institute, 2017, 7(6): 509. https://doi.org/10.3390/app7060509. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
 
 .. _ref-li2013-RE:
 
-[6] **Li Chao**; Zhu Songye\*; Xu You-lin; Xiao Yiqing, 2.5D large eddy simulation of vertical axis wind turbine in consideration of high angle of attack flow[J]. **Renewable Energy**, 2013, 51(8.7 (Q1)): 317～330. https://doi.org/10.1016/j.renene.2012.09.011. 影响因子: **9.1 (Q1)**. 中科院分区: **1**.
+[6] :doc:`2013 RE | 高攻角垂直轴风机流动的2.5D模拟 <paper-notes/ref-li2013-RE>` **Li Chao**; Zhu Songye\*; Xu You-lin; Xiao Yiqing, 2.5D large eddy simulation of vertical axis wind turbine in consideration of high angle of attack flow[J]. **Renewable Energy**, 2013, 51(8.7 (Q1)): 317～330. https://doi.org/10.1016/j.renene.2012.09.011. 影响因子: **9.1 (Q1)**. 中科院分区: **1**.
 
 混凝土浮体
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

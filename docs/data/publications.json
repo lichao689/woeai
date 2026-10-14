@@ -9986,7 +9986,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-AR.md",
         "review_path": "wechat/articles/review/ref-zhao2021-AR.review.md",
         "issues": [],
@@ -10006,10 +10006,244 @@
             },
             "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
             "fingerprint": "c3b41359a6dfd07c26446146102ba0c778b9a2638bf9dcf132177da0dc9fb48a"
+          },
+          "draft_created": {
+            "recorded_at": "2026-10-14T14:57:16+00:00",
+            "operation": "create",
+            "readback_at": "2026-10-14T14:57:19+00:00",
+            "receipt_path": "project/research/2026-10-14-wind3-official-draft-readback.json",
+            "receipt_file_sha256": "7343c9eae718afe4eb987dba401031cbb2f79548a99e4bd93760f81d06494638",
+            "receipt_entry_sha256": "dd7c70bdb0a23059d7397be5aea253ca5c1c35c9be1195ac6565cc09761f221f",
+            "submitted_input_fingerprint": "c3b41359a6dfd07c26446146102ba0c778b9a2638bf9dcf132177da0dc9fb48a",
+            "submitted_input_fingerprint_kind": "workflow_fingerprint",
+            "checks": {
+              "official_draft_create": true,
+              "individual_known_draft_readback": true,
+              "body_text_and_formula_metadata_match": true,
+              "body_source_images_uploaded_unchanged": true,
+              "approved_cover_material_full_pixels_match": true,
+              "author_preserved": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Actual create and official readback only; body-image official JPEG processing is recorded explicitly, not claimed pixel-identical. Existing scientific review and actual phone preview remain independent."
           }
         },
         "latest_published_url": "",
-        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。",
+        "confirmed_draft_creation_history": [
+          {
+            "event_at": "2026-10-14T14:57:16+00:00",
+            "readback_at": "2026-10-14T14:57:19+00:00",
+            "operation": "create",
+            "source": "Authorized official API create followed by individual readback; exact safe executor export retained.",
+            "canonical_content_commit": "d74af1777701e44a063bcce2cc3ab926fe1922dd",
+            "receipt_path": "project/research/2026-10-14-wind3-official-draft-readback.json",
+            "receipt_file_sha256": "7343c9eae718afe4eb987dba401031cbb2f79548a99e4bd93760f81d06494638",
+            "receipt_entry_sha256": "dd7c70bdb0a23059d7397be5aea253ca5c1c35c9be1195ac6565cc09761f221f",
+            "actual_times": {
+              "submitted_at": "2026-10-14T14:57:11+00:00",
+              "acknowledged_at": "2026-10-14T14:57:16+00:00",
+              "readback_completed_at": "2026-10-14T14:57:19+00:00"
+            },
+            "pre_submission_content_fingerprints": {
+              "workflow": "c3b41359a6dfd07c26446146102ba0c778b9a2638bf9dcf132177da0dc9fb48a",
+              "markdown_sha256": "56a30c3c0e16d2c9ac5168360131e52719271450e863c4151247596caaee5db9",
+              "review_sha256": "ad34e8f4623a2130735be6ef4fdd384fa60b063c5c00100bb14a026b4786a4b7",
+              "html_sha256": "a25a29d48be8e3957cdb76ff380d2cfec22cd5614db27e3c6d685107633fb25f",
+              "formula_geometry_sha256": "3a70eb3b50db1f617c671db612c4adb9db568bad56ab1f822a74a45a8d7a45d8",
+              "formula_metadata_sha256": "1da71e5271f3108721892531bef1c8ef6c6ddcc0abf0a1b2d06ebc27cc0b58b1"
+            },
+            "body_and_cover_hashes": {
+              "submitted_html_sha256": "baea3024dcaf860c831a93ddec72132f416f14fd12bf027fc6f2151b341452bd",
+              "readback_html_sha256": "6944bd285803f14a8d51191d17ca6efaf9cd17dd339788b690cda6cccd257179",
+              "source_cover": {
+                "sha256": "17507665d9e2db2f917a43a9e6007139039d4eb009908afc80c2267ce6ea246e",
+                "bytes": 355327,
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "format": "PNG",
+                "rgba_sha256": "5f880ca8da5fe3b38cf08085fd53e09cf05cb721b79adefde4522279e1f1a24e"
+              },
+              "official_returned_cover_image": {
+                "sha256": "17507665d9e2db2f917a43a9e6007139039d4eb009908afc80c2267ce6ea246e",
+                "bytes": 355327,
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "format": "PNG",
+                "rgba_sha256": "5f880ca8da5fe3b38cf08085fd53e09cf05cb721b79adefde4522279e1f1a24e"
+              },
+              "cover_display": {
+                "sha256": "fc13a9bb80c77884bf612f125ebc95dfb240d282bc0a21c82a6f3e7e6c40d59f",
+                "bytes": 55902,
+                "dimensions": [
+                  900,
+                  382
+                ],
+                "format": "JPEG",
+                "rgba_sha256": "eaef29858b6dfe87a3ab5ce8ef07b4d812b620cd9249e5d015b44d60f2e2b9f6"
+              },
+              "body_images": [
+                {
+                  "ordinal": 1,
+                  "source": {
+                    "sha256": "e5f3b46e7d54dc7cd59b78574cbb45d1665106ebbb2521072e5346efdc2d9878",
+                    "bytes": 885492,
+                    "dimensions": [
+                      1423,
+                      685
+                    ],
+                    "format": "JPEG",
+                    "rgba_sha256": "90a2bc40e055aa5e55b3987f21c78404aaf0b121f67bd1114f796b30dacc0a8f"
+                  },
+                  "official_image": {
+                    "sha256": "dc34747351b686e80f19688fc4d01c16e72f9d7f83722eaf057363dfbd4d9936",
+                    "bytes": 126175,
+                    "dimensions": [
+                      1280,
+                      616
+                    ],
+                    "format": "JPEG",
+                    "rgba_sha256": "1c87c7aa444f4716d7b24194e5f5235bacf17e10e7eb0ba1218224b2fbe05f82"
+                  },
+                  "uploaded_url_sha256": "e3ee630c2212d9bd4512509948b24a98a18f182b58b707dc424ac2fd9bcb9acf",
+                  "exact_full_pixels": false,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": true,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:53:16+00:00"
+                },
+                {
+                  "ordinal": 2,
+                  "source": {
+                    "sha256": "9f0e025075e07eaebfa780ece8468a7bc27e7d7b7bf17feb9721728b779c56b3",
+                    "bytes": 220603,
+                    "dimensions": [
+                      1034,
+                      784
+                    ],
+                    "format": "JPEG",
+                    "rgba_sha256": "99682d3a3261e0e65bbde64b2a7c8efaf31cf15295fd0d37997efffbcdeea268"
+                  },
+                  "official_image": {
+                    "sha256": "5bd27112d8e5ecd10acb59c94858a7ccceac33a17628b839d38757fd389a30cc",
+                    "bytes": 43324,
+                    "dimensions": [
+                      1034,
+                      784
+                    ],
+                    "format": "JPEG",
+                    "rgba_sha256": "7ae9afef45a80a374641bf9f34218021be4d0439d4f141868af1ddff8e9cdace"
+                  },
+                  "uploaded_url_sha256": "80ecb1a8489189eb8bda1f24c11a712d636816c1b8d11c69851604b76366c399",
+                  "exact_full_pixels": false,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": true,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:56:51+00:00"
+                },
+                {
+                  "ordinal": 3,
+                  "source": {
+                    "sha256": "d2d419de5d8373a31f562a572794311699cc42f5ac1be618be8f14a44d584439",
+                    "bytes": 789913,
+                    "dimensions": [
+                      2156,
+                      1077
+                    ],
+                    "format": "JPEG",
+                    "rgba_sha256": "981f228fff410bee8e29beeec626e107a9ba001dc654c89b3ffeec6c14cfed75"
+                  },
+                  "official_image": {
+                    "sha256": "bbe48b5a38de9350eb4de6b221fe6a167993023a733fe79ad6c94d4163f303a5",
+                    "bytes": 71705,
+                    "dimensions": [
+                      1280,
+                      639
+                    ],
+                    "format": "JPEG",
+                    "rgba_sha256": "4a38151a128a2916a3ff12bb5148166062785679d9566823777aa2c788301206"
+                  },
+                  "uploaded_url_sha256": "0fbd63cb78bc408cd4d63463c59818f1a604637c0c7b88284ea91e275a705868",
+                  "exact_full_pixels": false,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": true,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:56:57+00:00"
+                },
+                {
+                  "ordinal": 4,
+                  "source": {
+                    "sha256": "d6283db3feeb8ff2261ff82d903d1b759a845ce2c42fb6d6c52e0734ed974b22",
+                    "bytes": 470307,
+                    "dimensions": [
+                      1896,
+                      587
+                    ],
+                    "format": "JPEG",
+                    "rgba_sha256": "ad2b69515bec64a00b0095a178e8a2109c9cfa8e54fe3861b5b8c631788afce7"
+                  },
+                  "official_image": {
+                    "sha256": "ee7a44dce11d3d3d4656b940c34915c76d7277676d45c054e82d914250131c60",
+                    "bytes": 55612,
+                    "dimensions": [
+                      1280,
+                      396
+                    ],
+                    "format": "JPEG",
+                    "rgba_sha256": "297a181bcc00ff628b6cc574c96456d3535f29ca671404e56b5a92f0426743fa"
+                  },
+                  "uploaded_url_sha256": "dbe4a85e8affbdf7ee091faabf4e6564e4f699e6e4811cab04d2430dc15604cd",
+                  "exact_full_pixels": false,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": true,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:57:02+00:00"
+                }
+              ]
+            },
+            "verification_booleans": {
+              "title_matches": true,
+              "author_preserved_confirmed_value": true,
+              "digest_matches": true,
+              "original_link_matches": true,
+              "full_body_text_matches": true,
+              "body_image_count_and_canonical_urls_match": true,
+              "image_alts_match": true,
+              "formula_count_matches": true,
+              "formula_metadata_matches": true,
+              "formula_geometry_matches": true,
+              "currentColor_contract_preserved": true,
+              "ai_disclosure_once_at_end": true,
+              "actual_cover_reference_matches_uploaded_verified_image": true,
+              "actual_cover_display_present": true,
+              "comments_preserved_or_defaulted": true,
+              "fresh_pre_submit_complete_catalog_dedup": true,
+              "single_write_acknowledged": true,
+              "material_download_not_called": true,
+              "quota_not_reset": true,
+              "other_articles_preserved": true
+            },
+            "body_image_count": 4,
+            "formula_svg_count": 12,
+            "body_images_exact_full_pixels": 0,
+            "body_images_official_jpeg_processed": 4,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "scope": "Created once after complete pre-submit catalog deduplication. Source files uploaded unchanged; official JPEG recompression/resizing is distinguished from full-pixel identity. Readback is not actual phone preview or publication."
+          }
+        ],
+        "draft_created_at": "2026-10-14T14:57:16+00:00",
+        "draft_updated_at": "2026-10-14T14:57:16+00:00"
       },
       "content_production": "included",
       "source_audit": {
@@ -11772,7 +12006,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2017-BS.md",
         "review_path": "wechat/articles/review/ref-li2017-BS.review.md",
         "issues": [],
@@ -11792,10 +12026,244 @@
             },
             "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
             "fingerprint": "443950d88d4da540029f716b7fc5f73fe6f6363535578ae44fd8cb90a36779e2"
+          },
+          "draft_created": {
+            "recorded_at": "2026-10-14T14:59:49+00:00",
+            "operation": "create",
+            "readback_at": "2026-10-14T14:59:53+00:00",
+            "receipt_path": "project/research/2026-10-14-wind3-official-draft-readback.json",
+            "receipt_file_sha256": "7343c9eae718afe4eb987dba401031cbb2f79548a99e4bd93760f81d06494638",
+            "receipt_entry_sha256": "431067dc68be2a37aed7052f8ccf781bed9016dc0330dc40e0476ed21fbd6324",
+            "submitted_input_fingerprint": "443950d88d4da540029f716b7fc5f73fe6f6363535578ae44fd8cb90a36779e2",
+            "submitted_input_fingerprint_kind": "workflow_fingerprint",
+            "checks": {
+              "official_draft_create": true,
+              "individual_known_draft_readback": true,
+              "body_text_and_formula_metadata_match": true,
+              "body_source_images_uploaded_unchanged": true,
+              "approved_cover_material_full_pixels_match": true,
+              "author_preserved": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Actual create and official readback only; body-image official JPEG processing is recorded explicitly, not claimed pixel-identical. Existing scientific review and actual phone preview remain independent."
           }
         },
         "latest_published_url": "",
-        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。",
+        "confirmed_draft_creation_history": [
+          {
+            "event_at": "2026-10-14T14:59:49+00:00",
+            "readback_at": "2026-10-14T14:59:53+00:00",
+            "operation": "create",
+            "source": "Authorized official API create followed by individual readback; exact safe executor export retained.",
+            "canonical_content_commit": "d74af1777701e44a063bcce2cc3ab926fe1922dd",
+            "receipt_path": "project/research/2026-10-14-wind3-official-draft-readback.json",
+            "receipt_file_sha256": "7343c9eae718afe4eb987dba401031cbb2f79548a99e4bd93760f81d06494638",
+            "receipt_entry_sha256": "431067dc68be2a37aed7052f8ccf781bed9016dc0330dc40e0476ed21fbd6324",
+            "actual_times": {
+              "submitted_at": "2026-10-14T14:59:44+00:00",
+              "acknowledged_at": "2026-10-14T14:59:49+00:00",
+              "readback_completed_at": "2026-10-14T14:59:53+00:00"
+            },
+            "pre_submission_content_fingerprints": {
+              "workflow": "443950d88d4da540029f716b7fc5f73fe6f6363535578ae44fd8cb90a36779e2",
+              "markdown_sha256": "f095cbd76ab76f423e8b937402be5c3e4db59bce7f47f22aeec81da3d1635222",
+              "review_sha256": "4c24d4a1d6465964d99c64a3c9c77b0edb0ead5c968323a32b36cf9c0edf907f",
+              "html_sha256": "f356c06d3d682a04c0d85407acd3236b5f1c3fff35c65f76bedcd9f0667219f3",
+              "formula_geometry_sha256": "ed5ec613298febf7073ad151f20583695ace9735757363d49128ba755054b0f0",
+              "formula_metadata_sha256": "8bf42c5ee158b558c3e30904032e87316f130d4d7ca878c08c9f3c947b82824a"
+            },
+            "body_and_cover_hashes": {
+              "submitted_html_sha256": "ea26d7636258f1f2cfcb700f40121cc6f3a6611a9a3026a950c6ab45fc32738a",
+              "readback_html_sha256": "2ff9f5c32e1ca23dffb12f5fa25ec72112a14795bacd34b79cb089ff331a89d6",
+              "source_cover": {
+                "sha256": "d959d91b0a2c9961ae7898233e617d283a32e555b54ba5c6f0a95bf23052ffbd",
+                "bytes": 479583,
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "format": "PNG",
+                "rgba_sha256": "1577001c7046aeee590acdcc3a82f038b9d4ede3afdbcf740e742ac2b6da68aa"
+              },
+              "official_returned_cover_image": {
+                "sha256": "d959d91b0a2c9961ae7898233e617d283a32e555b54ba5c6f0a95bf23052ffbd",
+                "bytes": 479583,
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "format": "PNG",
+                "rgba_sha256": "1577001c7046aeee590acdcc3a82f038b9d4ede3afdbcf740e742ac2b6da68aa"
+              },
+              "cover_display": {
+                "sha256": "be35c7fa56602188c0d71eeb17462ff98d091632fa843f412df963511eac179c",
+                "bytes": 80483,
+                "dimensions": [
+                  900,
+                  382
+                ],
+                "format": "JPEG",
+                "rgba_sha256": "25d56ce97865d498d1a80280031872aeb214dcd0c7280dfd750a4d15b4d8fe61"
+              },
+              "body_images": [
+                {
+                  "ordinal": 1,
+                  "source": {
+                    "sha256": "ebb57df7550653babffe4c6edcc04cc8817ed85935a4695a304d9ccd02dd5c8c",
+                    "bytes": 534735,
+                    "dimensions": [
+                      992,
+                      599
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "3320fcc3ed75ac2e8244e8cccdbac713f1fa40f2aa0f60d17bb522d9937674fa"
+                  },
+                  "official_image": {
+                    "sha256": "ebb57df7550653babffe4c6edcc04cc8817ed85935a4695a304d9ccd02dd5c8c",
+                    "bytes": 534735,
+                    "dimensions": [
+                      992,
+                      599
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "3320fcc3ed75ac2e8244e8cccdbac713f1fa40f2aa0f60d17bb522d9937674fa"
+                  },
+                  "uploaded_url_sha256": "46901a0ad207d8a3419bb8d695063386344debdc517de01fd654a03f87eac4b5",
+                  "exact_full_pixels": true,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": false,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:58:17+00:00"
+                },
+                {
+                  "ordinal": 2,
+                  "source": {
+                    "sha256": "029fe683d2efb3df08d84b3f881cae550405465520b585e415353549da7d7ba1",
+                    "bytes": 2606872,
+                    "dimensions": [
+                      991,
+                      1494
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "a5f586bb2f08dc05e9502151213a13ba823c685f25cb904a07d06d60f9554d4f"
+                  },
+                  "official_image": {
+                    "sha256": "029fe683d2efb3df08d84b3f881cae550405465520b585e415353549da7d7ba1",
+                    "bytes": 2606872,
+                    "dimensions": [
+                      991,
+                      1494
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "a5f586bb2f08dc05e9502151213a13ba823c685f25cb904a07d06d60f9554d4f"
+                  },
+                  "uploaded_url_sha256": "a967ae65068019c6f1d7d0d86d1cfe2b3796a01cc88cffbd44d79d846f4e1d8c",
+                  "exact_full_pixels": true,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": false,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:58:24+00:00"
+                },
+                {
+                  "ordinal": 3,
+                  "source": {
+                    "sha256": "66841fff9c2444d333f6e8e4dcabf62e80ab17d1d21abfc886888903e414ff0c",
+                    "bytes": 203385,
+                    "dimensions": [
+                      986,
+                      1098
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "925d77679ff3a7dca2345d3ed283f5c52ed8c692f2a012071b1e5fc151d466d6"
+                  },
+                  "official_image": {
+                    "sha256": "66841fff9c2444d333f6e8e4dcabf62e80ab17d1d21abfc886888903e414ff0c",
+                    "bytes": 203385,
+                    "dimensions": [
+                      986,
+                      1098
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "925d77679ff3a7dca2345d3ed283f5c52ed8c692f2a012071b1e5fc151d466d6"
+                  },
+                  "uploaded_url_sha256": "4b88f37d6e37eaf5bb391b58c60def76e5d6a07895e15d84023a60b0e98eb17f",
+                  "exact_full_pixels": true,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": false,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:58:30+00:00"
+                },
+                {
+                  "ordinal": 4,
+                  "source": {
+                    "sha256": "fe4009e11d5843db2fa81309b4fd44f37a29dc4c3dac5386f43959ed967932b9",
+                    "bytes": 725998,
+                    "dimensions": [
+                      995,
+                      1217
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "a0bcbd246cd81104adb34a82b7472bcc164676d9239ab9a68cb5391850ad8645"
+                  },
+                  "official_image": {
+                    "sha256": "fe4009e11d5843db2fa81309b4fd44f37a29dc4c3dac5386f43959ed967932b9",
+                    "bytes": 725998,
+                    "dimensions": [
+                      995,
+                      1217
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "a0bcbd246cd81104adb34a82b7472bcc164676d9239ab9a68cb5391850ad8645"
+                  },
+                  "uploaded_url_sha256": "54750e4b23a0bcb21986016b4481b1dc974820ada62a0a0af5813b73c1b27599",
+                  "exact_full_pixels": true,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": false,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:58:36+00:00"
+                }
+              ]
+            },
+            "verification_booleans": {
+              "title_matches": true,
+              "author_preserved_confirmed_value": true,
+              "digest_matches": true,
+              "original_link_matches": true,
+              "full_body_text_matches": true,
+              "body_image_count_and_canonical_urls_match": true,
+              "image_alts_match": true,
+              "formula_count_matches": true,
+              "formula_metadata_matches": true,
+              "formula_geometry_matches": true,
+              "currentColor_contract_preserved": true,
+              "ai_disclosure_once_at_end": true,
+              "actual_cover_reference_matches_uploaded_verified_image": true,
+              "actual_cover_display_present": true,
+              "comments_preserved_or_defaulted": true,
+              "fresh_pre_submit_complete_catalog_dedup": true,
+              "single_write_acknowledged": true,
+              "material_download_not_called": true,
+              "quota_not_reset": true,
+              "other_articles_preserved": true
+            },
+            "body_image_count": 4,
+            "formula_svg_count": 30,
+            "body_images_exact_full_pixels": 4,
+            "body_images_official_jpeg_processed": 0,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "scope": "Created once after complete pre-submit catalog deduplication. Source files uploaded unchanged; official JPEG recompression/resizing is distinguished from full-pixel identity. Readback is not actual phone preview or publication."
+          }
+        ],
+        "draft_created_at": "2026-10-14T14:59:49+00:00",
+        "draft_updated_at": "2026-10-14T14:59:49+00:00"
       },
       "content_production": "included",
       "source_audit": {
@@ -12187,7 +12655,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2012-JWEIA.md",
         "review_path": "wechat/articles/review/ref-li2012-JWEIA.review.md",
         "issues": [],
@@ -12207,10 +12675,244 @@
             },
             "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
             "fingerprint": "6e7a81c2874f29ebd2f894505df99cea10c10f535574849fa4fd41131db41b28"
+          },
+          "draft_created": {
+            "recorded_at": "2026-10-14T14:58:03+00:00",
+            "operation": "create",
+            "readback_at": "2026-10-14T14:58:06+00:00",
+            "receipt_path": "project/research/2026-10-14-wind3-official-draft-readback.json",
+            "receipt_file_sha256": "7343c9eae718afe4eb987dba401031cbb2f79548a99e4bd93760f81d06494638",
+            "receipt_entry_sha256": "e7fe79cb5599af039b2e478144bbb6829bc45abde864c15b17e75cbc4ea9edb1",
+            "submitted_input_fingerprint": "6e7a81c2874f29ebd2f894505df99cea10c10f535574849fa4fd41131db41b28",
+            "submitted_input_fingerprint_kind": "workflow_fingerprint",
+            "checks": {
+              "official_draft_create": true,
+              "individual_known_draft_readback": true,
+              "body_text_and_formula_metadata_match": true,
+              "body_source_images_uploaded_unchanged": true,
+              "approved_cover_material_full_pixels_match": true,
+              "author_preserved": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Actual create and official readback only; body-image official JPEG processing is recorded explicitly, not claimed pixel-identical. Existing scientific review and actual phone preview remain independent."
           }
         },
         "latest_published_url": "",
-        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。",
+        "confirmed_draft_creation_history": [
+          {
+            "event_at": "2026-10-14T14:58:03+00:00",
+            "readback_at": "2026-10-14T14:58:06+00:00",
+            "operation": "create",
+            "source": "Authorized official API create followed by individual readback; exact safe executor export retained.",
+            "canonical_content_commit": "d74af1777701e44a063bcce2cc3ab926fe1922dd",
+            "receipt_path": "project/research/2026-10-14-wind3-official-draft-readback.json",
+            "receipt_file_sha256": "7343c9eae718afe4eb987dba401031cbb2f79548a99e4bd93760f81d06494638",
+            "receipt_entry_sha256": "e7fe79cb5599af039b2e478144bbb6829bc45abde864c15b17e75cbc4ea9edb1",
+            "actual_times": {
+              "submitted_at": "2026-10-14T14:57:58+00:00",
+              "acknowledged_at": "2026-10-14T14:58:03+00:00",
+              "readback_completed_at": "2026-10-14T14:58:06+00:00"
+            },
+            "pre_submission_content_fingerprints": {
+              "workflow": "6e7a81c2874f29ebd2f894505df99cea10c10f535574849fa4fd41131db41b28",
+              "markdown_sha256": "eb7b74d3be440a15c42e05d8400361b2c0565f267ec5b51a3afdfd7a63dc45ae",
+              "review_sha256": "e0ecea3575e09d5da10752d02a2e9a80614a623be5e738a26d52e82be10b2e6e",
+              "html_sha256": "382a275b20563b5e5ccd6546c9287cc3fb8b1266546281367cc3c60aee3f77de",
+              "formula_geometry_sha256": "310bda470ceeb9e1a2e857cc1f51bd25db45ef3850e9e4eb215f46bd7945b8b1",
+              "formula_metadata_sha256": "8ee8afdc574b90305d936fe527da32a881e5f3434edd3f99f669a79e00dc9926"
+            },
+            "body_and_cover_hashes": {
+              "submitted_html_sha256": "adf82e05c5978ba69f2bec56573869ccb9d8502ba2250dec3f57394076c603c9",
+              "readback_html_sha256": "1d1c66579f4ca7fab86b80a7b0b5a740ceca34f033c93b1c06bfd78d906e5319",
+              "source_cover": {
+                "sha256": "cd43df957edca242836f34c9af70247100896c5296d8a6f1e2266eeb24c688e3",
+                "bytes": 296099,
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "format": "PNG",
+                "rgba_sha256": "2206ebf82388aeb28c3929bf26be658a980ae6d9ae39e82469e2391ce16a6edd"
+              },
+              "official_returned_cover_image": {
+                "sha256": "cd43df957edca242836f34c9af70247100896c5296d8a6f1e2266eeb24c688e3",
+                "bytes": 296099,
+                "dimensions": [
+                  900,
+                  383
+                ],
+                "format": "PNG",
+                "rgba_sha256": "2206ebf82388aeb28c3929bf26be658a980ae6d9ae39e82469e2391ce16a6edd"
+              },
+              "cover_display": {
+                "sha256": "947726756de3c883de8a3cda9a1aadb65a0af12b1d169ace6a4b48562bb72360",
+                "bytes": 42672,
+                "dimensions": [
+                  900,
+                  382
+                ],
+                "format": "JPEG",
+                "rgba_sha256": "ce23286e359cd7e1d4879eceaf86e09c899d1fed223cccbc116f428498aca41c"
+              },
+              "body_images": [
+                {
+                  "ordinal": 1,
+                  "source": {
+                    "sha256": "882d38e0644f39e147ced6aa6c40d3d9a82c31f8ed2f0b9c3a16822334c6eff2",
+                    "bytes": 56235,
+                    "dimensions": [
+                      759,
+                      444
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "49d775ed38610c79bea6838f07553af3a985fc150642d3aed1ada1509bbb6949"
+                  },
+                  "official_image": {
+                    "sha256": "882d38e0644f39e147ced6aa6c40d3d9a82c31f8ed2f0b9c3a16822334c6eff2",
+                    "bytes": 56235,
+                    "dimensions": [
+                      759,
+                      444
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "49d775ed38610c79bea6838f07553af3a985fc150642d3aed1ada1509bbb6949"
+                  },
+                  "uploaded_url_sha256": "54ecc1849beaeba9a8d28defe4b688c2fbeb5ce06bcc52a5b90df9511757ddb1",
+                  "exact_full_pixels": true,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": false,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:57:35+00:00"
+                },
+                {
+                  "ordinal": 2,
+                  "source": {
+                    "sha256": "a8c94d6e266fb5bfc9c54248aa43ecdcafe8ed27da4abb76e133cf6fb8e013bd",
+                    "bytes": 170667,
+                    "dimensions": [
+                      1521,
+                      690
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "6036c7279172a44a929546f191c6976838cc7b983b390a1902b2f9188a5e476a"
+                  },
+                  "official_image": {
+                    "sha256": "a8c94d6e266fb5bfc9c54248aa43ecdcafe8ed27da4abb76e133cf6fb8e013bd",
+                    "bytes": 170667,
+                    "dimensions": [
+                      1521,
+                      690
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "6036c7279172a44a929546f191c6976838cc7b983b390a1902b2f9188a5e476a"
+                  },
+                  "uploaded_url_sha256": "3a025ae8bd3fc10a8ad706780a28a907487c77fa98f8625d62d1ca49e2fa316a",
+                  "exact_full_pixels": true,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": false,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:57:39+00:00"
+                },
+                {
+                  "ordinal": 3,
+                  "source": {
+                    "sha256": "0f422387c5c33a8fc52ea3460b6d47de996e6936ca16e545864d7c54fc37cab3",
+                    "bytes": 90876,
+                    "dimensions": [
+                      1023,
+                      591
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "7e3c5d916ed7a5e17d705c5f50b8c8a5a0110412dab6e583ba91f9008fd9941b"
+                  },
+                  "official_image": {
+                    "sha256": "0f422387c5c33a8fc52ea3460b6d47de996e6936ca16e545864d7c54fc37cab3",
+                    "bytes": 90876,
+                    "dimensions": [
+                      1023,
+                      591
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "7e3c5d916ed7a5e17d705c5f50b8c8a5a0110412dab6e583ba91f9008fd9941b"
+                  },
+                  "uploaded_url_sha256": "6881d145e27a630fd58d2a0f7daa571f3fd27c8bcf4352316064becf92293294",
+                  "exact_full_pixels": true,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": false,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:57:44+00:00"
+                },
+                {
+                  "ordinal": 4,
+                  "source": {
+                    "sha256": "733e56508c2b25a74ff7c0d4fa4c013a36356ff475c1147b478d9bdf3c777f4f",
+                    "bytes": 53751,
+                    "dimensions": [
+                      585,
+                      720
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "decf4326aa639e0f2b772953faea3d678d19bc521a0f60e2f43f7eda4fa2c91d"
+                  },
+                  "official_image": {
+                    "sha256": "733e56508c2b25a74ff7c0d4fa4c013a36356ff475c1147b478d9bdf3c777f4f",
+                    "bytes": 53751,
+                    "dimensions": [
+                      585,
+                      720
+                    ],
+                    "format": "PNG",
+                    "rgba_sha256": "decf4326aa639e0f2b772953faea3d678d19bc521a0f60e2f43f7eda4fa2c91d"
+                  },
+                  "uploaded_url_sha256": "df4d81d05a16c9aa808d56f6a78f320b8fb0b6828e260ca89f8e29708cbb21f4",
+                  "exact_full_pixels": true,
+                  "approved_original_uploaded_unchanged": true,
+                  "official_jpeg_recompression_or_proportional_resizing": false,
+                  "local_image_edit_performed": false,
+                  "acknowledged_at": "2026-10-14T14:57:48+00:00"
+                }
+              ]
+            },
+            "verification_booleans": {
+              "title_matches": true,
+              "author_preserved_confirmed_value": true,
+              "digest_matches": true,
+              "original_link_matches": true,
+              "full_body_text_matches": true,
+              "body_image_count_and_canonical_urls_match": true,
+              "image_alts_match": true,
+              "formula_count_matches": true,
+              "formula_metadata_matches": true,
+              "formula_geometry_matches": true,
+              "currentColor_contract_preserved": true,
+              "ai_disclosure_once_at_end": true,
+              "actual_cover_reference_matches_uploaded_verified_image": true,
+              "actual_cover_display_present": true,
+              "comments_preserved_or_defaulted": true,
+              "fresh_pre_submit_complete_catalog_dedup": true,
+              "single_write_acknowledged": true,
+              "material_download_not_called": true,
+              "quota_not_reset": true,
+              "other_articles_preserved": true
+            },
+            "body_image_count": 4,
+            "formula_svg_count": 13,
+            "body_images_exact_full_pixels": 4,
+            "body_images_official_jpeg_processed": 0,
+            "current_revision_uploaded": true,
+            "readback_verified": true,
+            "backend_preview_confirmed": false,
+            "phone_light_preview_performed": false,
+            "phone_dark_preview_performed": false,
+            "scope": "Created once after complete pre-submit catalog deduplication. Source files uploaded unchanged; official JPEG recompression/resizing is distinguished from full-pixel identity. Readback is not actual phone preview or publication."
+          }
+        ],
+        "draft_created_at": "2026-10-14T14:58:03+00:00",
+        "draft_updated_at": "2026-10-14T14:58:03+00:00"
       },
       "content_production": "included",
       "source_audit": {

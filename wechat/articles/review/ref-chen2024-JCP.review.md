@@ -14,7 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png
+wechat_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-20261014-badge.png
 rtd_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png
 ---
 

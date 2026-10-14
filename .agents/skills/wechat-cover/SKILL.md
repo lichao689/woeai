@@ -93,6 +93,29 @@ applicable user approval. Do not use a text-free or post-render overlay fallback
 unless the user explicitly authorizes that change; do not claim such a composite
 was generated entirely by the image tool.
 
+## Authorized exception for the 2026-10-14 migration batch
+
+This exception is limited to the user-authorized batch of 17 existing covers and
+27 new paper covers. It is not a standing exception for later projects or batches.
+For this batch only, the user explicitly authorized source-grounded editorial
+selection and independent review of the main hook and subtitle without repeating
+the five-option question. Scientifically ambiguous meaning still requires a
+specific question rather than an invented interpretation.
+
+Engineering illustrations must still use built-in image generation. The user
+also authorized deterministic typesetting of the text and direction badge for
+this batch. Record `cover_text_confirmation: batch-authorized-editorial-selection`
+and `confirmed_text_mode: authorized-deterministic-typesetting`, exact final
+wording, actual illustration and typesetting tools, source anchors, final asset
+hash, independent review and the unchanged badge measurement gates. Do not claim
+a composite was generated entirely by the image tool. Preserve already approved
+words and assets unless a correction is required and independently checked.
+
+This exception does not authorize publication, backend updates, changing other
+channels' selected covers, or any remote action beyond separately granted scope.
+Local image review does not constitute actual WeChat mobile preview acceptance.
+The default confirmation and rendering rules continue to apply outside this batch.
+
 ## Bounded repairs
 
 Before a repair, list the defect and all invariants that must survive. Keep the

@@ -57,6 +57,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BE.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BE.review.md"
           }
         ],
@@ -87,29 +91,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过",
           "存在时间记录冲突，待核对"
         ],
         "issues": [],
@@ -120,6 +124,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BE.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BE.review.md"
           }
         ],
@@ -183,6 +191,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE.review.md"
           }
         ],
@@ -213,29 +225,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过",
           "存在时间记录冲突，待核对"
         ],
         "issues": [],
@@ -246,6 +258,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE.review.md"
           }
         ],
@@ -309,6 +325,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BS.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BS.review.md"
           }
         ],
@@ -339,29 +359,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过",
           "存在时间记录冲突，待核对"
         ],
         "issues": [],
@@ -372,6 +392,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BS.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BS.review.md"
           }
         ],
@@ -546,6 +570,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE-structural.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE-structural.review.md"
           }
         ],
@@ -564,7 +592,7 @@
           {
             "key": "facts",
             "label": "事实核验",
-            "value": false,
+            "value": true,
             "stage": "awaiting_review"
           },
           {
@@ -576,29 +604,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
-          "事实核验：未通过",
+          "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
         "links": [
@@ -608,6 +636,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE-structural.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE-structural.review.md"
           }
         ],
@@ -671,6 +703,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2026-RE.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2026-RE.review.md"
           }
         ],
@@ -701,29 +737,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
         "links": [
@@ -733,6 +769,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2026-RE.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2026-RE.review.md"
           }
         ],
@@ -907,6 +947,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2025-POF.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2025-POF.review.md"
           }
         ],
@@ -937,29 +981,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过",
           "存在时间记录冲突，待核对"
         ],
         "issues": [],
@@ -970,6 +1014,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2025-POF.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2025-POF.review.md"
           }
         ],
@@ -1033,6 +1081,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-yang2025-JBE.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-yang2025-JBE.review.md"
           }
         ],
@@ -1063,29 +1115,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
         "links": [
@@ -1095,6 +1147,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-yang2025-JBE.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-yang2025-JBE.review.md"
           }
         ],
@@ -1269,6 +1325,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-OE.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-OE.review.md"
           }
         ],
@@ -1299,29 +1359,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过",
           "存在时间记录冲突，待核对"
         ],
         "issues": [],
@@ -1332,6 +1392,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-OE.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-OE.review.md"
           }
         ],
@@ -1506,6 +1570,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2025-JBE.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2025-JBE.review.md"
           }
         ],
@@ -1536,29 +1604,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
         "links": [
@@ -1568,6 +1636,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2025-JBE.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2025-JBE.review.md"
           }
         ],
@@ -1853,6 +1925,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2025-SCS.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2025-SCS.review.md"
           }
         ],
@@ -1883,29 +1959,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
         "links": [
@@ -1915,6 +1991,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2025-SCS.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2025-SCS.review.md"
           }
         ],
@@ -2089,6 +2169,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-POF.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-POF.review.md"
           }
         ],
@@ -2119,29 +2203,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
         "links": [
@@ -2151,6 +2235,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-POF.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-POF.review.md"
           }
         ],
@@ -2436,6 +2524,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-wang2024-ES.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-wang2024-ES.review.md"
           }
         ],
@@ -2466,29 +2558,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过",
           "存在时间记录冲突，待核对"
         ],
         "issues": [],
@@ -2499,6 +2591,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-wang2024-ES.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-wang2024-ES.review.md"
           }
         ],
@@ -2895,6 +2991,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2024-POF.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2024-POF.review.md"
           }
         ],
@@ -2925,29 +3025,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
         "links": [
@@ -2957,6 +3057,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2024-POF.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2024-POF.review.md"
           }
         ],
@@ -3020,6 +3124,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-JCP.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-JCP.review.md"
           }
         ],
@@ -3083,7 +3191,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-JCP.language.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-JCP.cover-equivalence.review.md"
           },
           {
             "label": "审核记录",
@@ -3261,6 +3369,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2023-AE.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2023-AE.review.md"
           }
         ],
@@ -3291,29 +3403,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过",
           "存在时间记录冲突，待核对"
         ],
         "issues": [],
@@ -3324,6 +3436,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2023-AE.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2023-AE.review.md"
           }
         ],
@@ -4822,6 +4938,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2022-JWEIA.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2022-JWEIA.review.md"
           }
         ],
@@ -4852,29 +4972,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
         "links": [
@@ -4884,6 +5004,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2022-JWEIA.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2022-JWEIA.review.md"
           }
         ],
@@ -4947,6 +5071,10 @@
           },
           {
             "label": "核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2022-SOS.cover-equivalence.review.md"
+          },
+          {
+            "label": "待核验阶段证据",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2022-SOS.review.md"
           }
         ],
@@ -4977,29 +5105,29 @@
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过",
           "存在时间记录冲突，待核对"
         ],
         "issues": [],
@@ -5010,6 +5138,10 @@
           },
           {
             "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2022-SOS.cover-equivalence.review.md"
+          },
+          {
+            "label": "审核记录",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2022-SOS.review.md"
           }
         ],

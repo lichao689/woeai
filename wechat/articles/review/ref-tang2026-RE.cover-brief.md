@@ -1,5 +1,27 @@
 # ref-tang2026-RE 封面简报
 
+## 当前有效封面（2026-10-14）
+
+本节为当前选图唯一入口。下方历史记录中的旧分类、旧选中路径、旧评分、旧后台更新说明均不代表本次封面状态。
+
+- cover_design_contract: `WOEAI-cover-v5`
+- current_secondary_direction: `数值风洞`
+- current_cover_text: `数值风洞 | 稀疏快照补全风场 / 看见湍流时间细节`
+- selected candidate: `20261014-reviewed`
+- final cover path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-20261014-v5.png`
+- current_final_sha256: `e93cc38f19121daf3a7ef57389194a6266ac3ceb700faeb262e4d0bb69f28fed`
+- final_dimensions: `900 × 383 px`
+- current_local_state: 本地全图、宽图诊断及独立视觉复核通过；徽标外框已实测 160×40 px，名义字体与实际墨迹分列。
+- rendering_route: 工程插画源自内置 imagegen；文字与徽标按本轮用户授权固定排版。Li2022-SOS 的单图局部修复批准单独保留。
+- source_scope: 工程概念插画，不是实际计算结果、原论文几何的尺寸复刻、实测照片或已建成项目；逐篇科学构型依据与局限见下方本日记录及事实审阅。
+- current_backend_state: 本次上传/回读以同篇正式投递记录为准；此处本地制作与视觉通过不证明已提交。
+- backend_preview_status: `pending`；实际微信手机端预览尚未核验。
+- rtd_cover_state: 本轮不改既有 RTD 封面引用。
+
+## 历史记录与本轮过程（不作为当前选图入口）
+
+### ref-tang2026-RE 封面简报
+
 - 文章标题: 数值风洞 | 如何高效重建城市风能中的高时间分辨率风场
 - 分类标签: 数值风洞
 - 封面短钩子: 风场超分辨
@@ -7,13 +29,13 @@
 - 目标读者: 关注 WOEAI 论文、城市风能、数值风洞、湍动入流和 AI 代理模型的公众号读者
 - 避免: 私密项目名称、未确认合作方、复杂小字、虚构 UI 标签、夸张宣传语
 
-## 候选方向
+#### 候选方向
 
 1. research scene: 城市建筑群上方的风场快照序列，从稀疏低时间分辨率帧过渡到连续高时间分辨率湍流演化，右侧可出现半透明城市街区、风机剪影和蓝青色速度等值面。
 2. method: WTT-SRST 的稀疏窗口注意力与时序超分辨映射，用分层窗口、stride 采样节点、低分辨率输入帧到高分辨率输出帧的流程感表达方法贡献，避免真实 UI 标签。
 3. engineering impact: 面向城市风能调度和风资源评估的加速数值风洞场景，用高时间分辨率风场、功率谱/相干性抽象曲线和节能计算意象表达“更快、守物理、可应用”。
 
-## 本轮提示词生成
+#### 本轮提示词生成
 
 - cover_execution_mode: `prompt-only`
 - cover_text_confirmation: user-confirmed
@@ -37,7 +59,7 @@
 
      Use exactly three Chinese text elements on the left panel, in this order: 1) a rounded strong-blue pill category tag: "数值风洞"; 2) an oversized bold deep-navy main hook: "稀疏快照补全风场"; 3) a smaller dark gray or blue-gray subtitle below: "看见湍流时间细节". Keep the Chinese characters crisp, complete, high-contrast, and unchanged. Use blue-cyan wind contours, clean urban geometry, wind-energy application cues, and restrained academic visual polish. Do not add any other text, English translations, fake chart labels, map labels, UI labels, logos, watermarks, or decorative small captions. Avoid hype, unconfirmed project claims, private partner names, generic smart-city poster styling, decorative technology wallpaper, distorted Chinese text, missing or rewritten cover text.
 
-## 选中方案
+#### 选中方案
 
 - cover_execution_mode: `image-gen`
 - cover_text_confirmation: user-confirmed
@@ -62,7 +84,7 @@
 - approval state: local visual text check and crop preview passed; WeChat backend mobile preview pending
 - draft state: v2 generated locally and not uploaded to the existing WeChat draft in this round; existing draft still has the prior cover until an explicit draft update is approved.
 
-## 出版信息徽章测试
+#### 出版信息徽章测试
 
 - cover_execution_mode: `image-gen`
 - publication metadata text: `Renewable Energy · 2026`
@@ -78,7 +100,7 @@
 - test outcome: D best preserves title hierarchy; E has the strongest metadata readability and livelier badge treatment; F is visually comfortable but reads slightly like a button.
 - draft state: v4 candidates are local tests only and were not uploaded to the existing WeChat draft.
 
-## 出版信息行默认化测试
+#### 出版信息行默认化测试
 
 - cover_execution_mode: `image-gen`
 - publication metadata line: `Renewable Energy · 2026`
@@ -92,7 +114,7 @@
 - selected draft-update cover: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png`
 - draft state: existing WeChat draft updated with `cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png` at 2026-06-11T16:41:36+08:00; WeChat backend mobile preview not yet checked.
 
-## 系列规范迁移（2026-10-05）
+#### 系列规范迁移（2026-10-05）
 
 - cover_design_contract: `WOEAI-cover-v2`
 - 规范: [统一网格、字号、配色与裁切](../../../.agents/skills/wechat-cover/references/cover-standards.md)
@@ -105,3 +127,25 @@
 - migration_status: specification-updated; existing-image-not-regenerated
 - design_contract_checked: pending; 尺寸一致不证明旧图符合新布局、字级或科学对象裁切
 - backend_preview_status: unchanged; 此次简报维护没有新增后台手机预览
+
+
+#### 2026-10-14 五方向系列修复候选
+
+- cover_design_contract: `WOEAI-cover-v5`
+- cover_execution_mode: `image-gen` + 本轮用户授权的确定性文字排版；不声称整张封面一次由生成工具直出。
+- cover_text_confirmation: `user-confirmed`；保留既有或本轮已确认文字，确定性排版路线获得批次授权。
+- confirmed_cover_text: `数值风洞 | 稀疏快照补全风场 / 看见湍流时间细节`
+- final_candidate_path: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-20261014-v5.png`
+- final_candidate_sha256: `e93cc38f19121daf3a7ef57389194a6266ac3ceb700faeb262e4d0bb69f28fed`
+- final_dimensions: `900 × 383 px`
+- actual_tools: 内置 imagegen 工程插画；Pillow 等比导出与文字层；最终像素测量及宽图/移动诊断。
+- typography: Noto Sans CJK SC Bold；徽标名义 24 px，主标题名义 48 px；副标题 24 px、来源行 18 px；全部水平正体，期刊在词边界换行。
+- badge_actual_outer_bounds: `[36, 32, 196, 72]`；实测 160×40 px。
+- badge_actual_ink_bounds: `[69, 40, 162, 64]`；墨迹高 24 px，与名义字号分列。
+- badge_geometry_gate: `pass`；圆角渲染参数 6 px，最终字形、内边距与圆角同时目视检查。
+- evidence_anchor: 已审核 Fig.6 时间超分辨率流程及 WTT-SRST 方法；两端快照之间插值重建。
+- composition_and_science_review: 保留快照序列与城市风能应用语境，删除无数据依据的频谱/响应曲线和密集卡片；城市风机仅为潜在应用示意，不声称真实部署或未来预报。
+- local_preview: 正式全图、360 px 宽图、120 px 宽图已检查；缩略图保留主对象和分类识别，不要求所有小字在 120 px 可读。
+- independent_review_state: pending；等待独立图像复核后才变更公众号使用路径。
+- backend_preview_status: pending；本候选未上传、未检查真实微信手机端。
+- rtd_cover_state: 原 RTD 封面与引用保持不变。

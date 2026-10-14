@@ -40,8 +40,11 @@
    2024 JCP | 让 LES 入流湍流更连贯也更守恒 <paper-notes/ref-chen2024-JCP>
    2023 HKXYGC | 核电厂高风速区域定位与验证 <paper-notes/ref-feng2023-HKXYGC>
    2022 JWEIA | 把相关性写进入流湍流 <paper-notes/ref-chen2022-JWEIA>
+   2021 AR | 中微尺度风场边界松弛衔接 <paper-notes/ref-zhao2021-AR>
    2021 TYNXB | 天气来风接入复杂山地 <paper-notes/ref-zhao2021-TYNXB>
    2018 KXJSYGC | 一套网格计算多风向风速比 <paper-notes/ref-xiao2018-KXJSYGC>
+   2017 BS | 山地城市入流方法比较 <paper-notes/ref-li2017-BS>
+   2012 JWEIA | 变尺度修正下击暴流风速模型 <paper-notes/ref-li2012-JWEIA>
 
 .. _ref-zhao2026-BE:
 
@@ -125,7 +128,7 @@
 
 .. _ref-zhao2021-AR:
 
-[24] :student-first-author:`Zhao Zihan`; Xiao Yiqing; **Li Chao**\*; Wang Jinghan; Hu Gang, New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain[J]. **Atmospheric Research**, 2021, 254: 105507. https://doi.org/10.1016/j.atmosres.2021.105507. 影响因子: **4.4 (Q2)**. 中科院分区: **2**.
+[24] :doc:`2021 AR | 中微尺度风场边界松弛衔接 <paper-notes/ref-zhao2021-AR>` :student-first-author:`Zhao Zihan`; Xiao Yiqing; **Li Chao**\*; Wang Jinghan; Hu Gang, New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain[J]. **Atmospheric Research**, 2021, 254: 105507. https://doi.org/10.1016/j.atmosres.2021.105507. 影响因子: **4.4 (Q2)**. 中科院分区: **2**.
 
 .. _ref-zhao2021-TYNXB:
 
@@ -145,11 +148,11 @@
 
 .. _ref-li2017-BS:
 
-[9] **Li Chao**; Zhou Shengtao; Xiao Yiqing\*; Huang Qin; Li Lixiao; Chan P W, Effects of inflow conditions on mountainous/urban wind environment simulation[J]. **Building Simulation**, 2017, 10(4): 573～588. https://doi.org/10.1007/s12273-017-0348-1. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
+[9] :doc:`2017 BS | 山地城市入流方法比较 <paper-notes/ref-li2017-BS>` **Li Chao**; Zhou Shengtao; Xiao Yiqing\*; Huang Qin; Li Lixiao; Chan P W, Effects of inflow conditions on mountainous/urban wind environment simulation[J]. **Building Simulation**, 2017, 10(4): 573～588. https://doi.org/10.1007/s12273-017-0348-1. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
 
 .. _ref-li2012-JWEIA:
 
-[5] **Li Chao**; Li Q S; Xiao Y Q; Ou J P, A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2012, 102: 48～60. https://doi.org/10.1016/j.jweia.2011.12.004. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
+[5] :doc:`2012 JWEIA | 变尺度修正下击暴流风速模型 <paper-notes/ref-li2012-JWEIA>` **Li Chao**; Li Q S; Xiao Y Q; Ou J P, A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2012, 102: 48～60. https://doi.org/10.1016/j.jweia.2011.12.004. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
 .. _ref-li2012-GCLX:
 

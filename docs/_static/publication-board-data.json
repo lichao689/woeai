@@ -1420,7 +1420,7 @@
       "family": "海上漂浮风电",
       "subdirection": "一体化分析",
       "source": {
-        "status": "unregistered"
+        "status": "verified"
       },
       "links": [
         {
@@ -1433,91 +1433,118 @@
         }
       ],
       "rtd": {
-        "status": "unregistered",
+        "status": "awaiting_audit",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "全文覆盖：未记录",
-          "公开安全：未记录"
+          "全文型页面仍需完整覆盖核验",
+          "原文身份：仅有待核验阶段记录",
+          "全文覆盖：仅有待核验阶段记录",
+          "公开安全：仅有待核验阶段记录"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "RTD 页面",
+            "url": "paper-notes/ref-zheng2025-QHDXXB.html"
+          },
+          {
+            "label": "RTD 源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-zheng2025-QHDXXB.rst"
+          },
+          {
+            "label": "待核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-QHDXXB.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-QHDXXB.review.md"
+          }
+        ],
         "verification_current": null,
-        "kind": "unregistered"
+        "kind": "full_paper"
       },
       "wechat": {
-        "status": "unregistered",
+        "status": "awaiting_review",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "facts",
             "label": "事实核验",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "事实核验：未记录",
-          "公开安全：未记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "原文身份：仅有待审核阶段记录",
+          "事实核验：仅有待审核阶段记录",
+          "公开安全：仅有待审核阶段记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "公众号草稿源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-zheng2025-QHDXXB.md"
+          },
+          {
+            "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-QHDXXB.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-QHDXXB.review.md"
+          }
+        ],
         "verification_current": null,
         "selected": true
       }
@@ -4493,7 +4520,7 @@
       "family": "工程结构抗风",
       "subdirection": "结构抗风",
       "source": {
-        "status": "unregistered"
+        "status": "verified"
       },
       "links": [
         {
@@ -4502,91 +4529,118 @@
         }
       ],
       "rtd": {
-        "status": "unregistered",
+        "status": "awaiting_audit",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "全文覆盖：未记录",
-          "公开安全：未记录"
+          "全文型页面仍需完整覆盖核验",
+          "原文身份：仅有待核验阶段记录",
+          "全文覆盖：仅有待核验阶段记录",
+          "公开安全：仅有待核验阶段记录"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "RTD 页面",
+            "url": "paper-notes/ref-zhao2023-GYJZ.html"
+          },
+          {
+            "label": "RTD 源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-zhao2023-GYJZ.rst"
+          },
+          {
+            "label": "待核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2023-GYJZ.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2023-GYJZ.review.md"
+          }
+        ],
         "verification_current": null,
-        "kind": "unregistered"
+        "kind": "full_paper"
       },
       "wechat": {
-        "status": "unregistered",
+        "status": "awaiting_review",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "facts",
             "label": "事实核验",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "事实核验：未记录",
-          "公开安全：未记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "原文身份：仅有待审核阶段记录",
+          "事实核验：仅有待审核阶段记录",
+          "公开安全：仅有待审核阶段记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "公众号草稿源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-zhao2023-GYJZ.md"
+          },
+          {
+            "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2023-GYJZ.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2023-GYJZ.review.md"
+          }
+        ],
         "verification_current": null,
         "selected": true
       }
@@ -5979,7 +6033,7 @@
       "family": "工程结构抗风",
       "subdirection": "数值风洞",
       "source": {
-        "status": "unregistered"
+        "status": "verified"
       },
       "links": [
         {
@@ -5992,91 +6046,118 @@
         }
       ],
       "rtd": {
-        "status": "unregistered",
+        "status": "awaiting_audit",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "全文覆盖：未记录",
-          "公开安全：未记录"
+          "全文型页面仍需完整覆盖核验",
+          "原文身份：仅有待核验阶段记录",
+          "全文覆盖：仅有待核验阶段记录",
+          "公开安全：仅有待核验阶段记录"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "RTD 页面",
+            "url": "paper-notes/ref-zhao2021-EFM.html"
+          },
+          {
+            "label": "RTD 源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-zhao2021-EFM.rst"
+          },
+          {
+            "label": "待核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2021-EFM.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2021-EFM.review.md"
+          }
+        ],
         "verification_current": null,
-        "kind": "unregistered"
+        "kind": "full_paper"
       },
       "wechat": {
-        "status": "unregistered",
+        "status": "awaiting_review",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "facts",
             "label": "事实核验",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "事实核验：未记录",
-          "公开安全：未记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "原文身份：仅有待审核阶段记录",
+          "事实核验：仅有待审核阶段记录",
+          "公开安全：仅有待审核阶段记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "公众号草稿源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-zhao2021-EFM.md"
+          },
+          {
+            "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2021-EFM.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2021-EFM.review.md"
+          }
+        ],
         "verification_current": null,
         "selected": true
       }
@@ -6588,7 +6669,7 @@
       "family": "工程结构抗风",
       "subdirection": "数值风洞",
       "source": {
-        "status": "unregistered"
+        "status": "verified"
       },
       "links": [
         {
@@ -6601,91 +6682,118 @@
         }
       ],
       "rtd": {
-        "status": "unregistered",
+        "status": "awaiting_audit",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "全文覆盖：未记录",
-          "公开安全：未记录"
+          "全文型页面仍需完整覆盖核验",
+          "原文身份：仅有待核验阶段记录",
+          "全文覆盖：仅有待核验阶段记录",
+          "公开安全：仅有待核验阶段记录"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "RTD 页面",
+            "url": "paper-notes/ref-li2020-JWEIA.html"
+          },
+          {
+            "label": "RTD 源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-li2020-JWEIA.rst"
+          },
+          {
+            "label": "待核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2020-JWEIA.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2020-JWEIA.review.md"
+          }
+        ],
         "verification_current": null,
-        "kind": "unregistered"
+        "kind": "full_paper"
       },
       "wechat": {
-        "status": "unregistered",
+        "status": "awaiting_review",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "facts",
             "label": "事实核验",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "事实核验：未记录",
-          "公开安全：未记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "原文身份：仅有待审核阶段记录",
+          "事实核验：仅有待审核阶段记录",
+          "公开安全：仅有待审核阶段记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "公众号草稿源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-li2020-JWEIA.md"
+          },
+          {
+            "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2020-JWEIA.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2020-JWEIA.review.md"
+          }
+        ],
         "verification_current": null,
         "selected": true
       }
@@ -6699,7 +6807,7 @@
       "family": "海上漂浮风电",
       "subdirection": "一体化分析",
       "source": {
-        "status": "unregistered"
+        "status": "verified"
       },
       "links": [
         {
@@ -6712,91 +6820,118 @@
         }
       ],
       "rtd": {
-        "status": "unregistered",
+        "status": "awaiting_audit",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "全文覆盖：未记录",
-          "公开安全：未记录"
+          "全文型页面仍需完整覆盖核验",
+          "原文身份：仅有待核验阶段记录",
+          "全文覆盖：仅有待核验阶段记录",
+          "公开安全：仅有待核验阶段记录"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "RTD 页面",
+            "url": "paper-notes/ref-zhou2020-RE.html"
+          },
+          {
+            "label": "RTD 源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-zhou2020-RE.rst"
+          },
+          {
+            "label": "待核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2020-RE.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2020-RE.review.md"
+          }
+        ],
         "verification_current": null,
-        "kind": "unregistered"
+        "kind": "full_paper"
       },
       "wechat": {
-        "status": "unregistered",
+        "status": "awaiting_review",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "facts",
             "label": "事实核验",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "事实核验：未记录",
-          "公开安全：未记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "原文身份：仅有待审核阶段记录",
+          "事实核验：仅有待审核阶段记录",
+          "公开安全：仅有待审核阶段记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "公众号草稿源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-zhou2020-RE.md"
+          },
+          {
+            "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2020-RE.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2020-RE.review.md"
+          }
+        ],
         "verification_current": null,
         "selected": true
       }
@@ -7744,7 +7879,7 @@
       "family": "海上漂浮风电",
       "subdirection": "一体化分析",
       "source": {
-        "status": "unregistered"
+        "status": "verified"
       },
       "links": [
         {
@@ -7757,91 +7892,118 @@
         }
       ],
       "rtd": {
-        "status": "unregistered",
+        "status": "awaiting_audit",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "full_paper_coverage",
             "label": "全文覆盖",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_audit"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "全文覆盖：未记录",
-          "公开安全：未记录"
+          "全文型页面仍需完整覆盖核验",
+          "原文身份：仅有待核验阶段记录",
+          "全文覆盖：仅有待核验阶段记录",
+          "公开安全：仅有待核验阶段记录"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "RTD 页面",
+            "url": "paper-notes/ref-zhou2017-E.html"
+          },
+          {
+            "label": "RTD 源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/docs/source/paper-notes/ref-zhou2017-E.rst"
+          },
+          {
+            "label": "待核验阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2017-E.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2017-E.review.md"
+          }
+        ],
         "verification_current": null,
-        "kind": "unregistered"
+        "kind": "full_paper"
       },
       "wechat": {
-        "status": "unregistered",
+        "status": "awaiting_review",
         "checks": [
           {
             "key": "source_identity",
             "label": "原文身份",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "facts",
             "label": "事实核验",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "public_safety",
             "label": "公开安全",
-            "value": null,
-            "stage": null
+            "value": true,
+            "stage": "awaiting_review"
           },
           {
             "key": "formula_preview",
             "label": "公式预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
-            "value": null,
-            "stage": null
+            "value": false,
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
-          "尚未登记结构化工作流，不代表尚未开始",
-          "原文来源尚未核验",
-          "原文身份：未记录",
-          "事实核验：未记录",
-          "公开安全：未记录",
-          "公式预览：未记录",
-          "插图预览：未记录",
-          "封面预览：未记录"
+          "原文身份：仅有待审核阶段记录",
+          "事实核验：仅有待审核阶段记录",
+          "公开安全：仅有待审核阶段记录",
+          "公式预览：未通过",
+          "插图预览：未通过",
+          "封面预览：未通过"
         ],
         "issues": [],
-        "links": [],
+        "links": [
+          {
+            "label": "公众号草稿源文件",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-zhou2017-E.md"
+          },
+          {
+            "label": "待审核阶段证据",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2017-E.integration.review.md"
+          },
+          {
+            "label": "审核记录",
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2017-E.review.md"
+          }
+        ],
         "verification_current": null,
         "selected": true
       }

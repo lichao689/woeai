@@ -3576,27 +3576,76 @@
         "metrics": ""
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "041bccca7526bf00f2a5ec0bf567853997108fae59109c5b0ef3d8e3d03ad234",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "041bccca7526bf00f2a5ec0bf567853997108fae59109c5b0ef3d8e3d03ad234",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 14,
+        "identity_checked_at": "2026-10-14T13:36:24+00:00",
+        "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zheng2025-QHDXXB.rst",
-        "public_title": "中心与偏心布置半潜风机动力特性的模型试验",
+        "public_title": "一体化分析 | 中心与偏心半潜风机的模型试验",
         "order": 11,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Independent scientific content review completed; frozen cover/markup-only equivalence retained. Final integrated browser/build acceptance is pending, so status is awaiting_audit rather than verified. No new full-PDF review is claimed by registry integration.",
+            "fingerprint": "7c9d4a58c2341d9e0a219b6616f5dc8398588f344fb9391025022d827b418381"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zheng2025-QHDXXB.md",
         "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
+            "fingerprint": "263096306ec10491655c93eab219508d6778b4c7f5d9f8f9834446da42d659d8"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-14T13:36:24+00:00",
+        "source_text_pages_read": 14,
+        "source_page_count": 14,
+        "audit_basis": "Prior independent full-source scientific review retained; final cover and explicitly recorded whitespace/heading-only normalization reviewed separately. The current integration does not repeat the full-PDF audit.",
+        "visual_scope": "Prior independent scientific visual scope is retained exactly as recorded in the main review; figure-board or native-byte checks are not relabelled as a separate full-pixel audit. Final browser, build and actual WeChat phone acceptance remain separate.",
+        "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.integration.review.md"
+      }
     },
     "DOI": "10.16511/j.cnki.qhdxxb.2025.27.037"
   },
@@ -7932,27 +7981,76 @@
         "metrics": ""
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "c86a1e52d74d58bddec7dc9b065552204c58703c0bc6968cf0c859811c9ae8d1",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "c86a1e52d74d58bddec7dc9b065552204c58703c0bc6968cf0c859811c9ae8d1",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 11,
+        "identity_checked_at": "2026-10-14T13:36:24+00:00",
+        "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhao2023-GYJZ.rst",
-        "public_title": "基于首次超越破坏的输电塔强风易损性分析",
+        "public_title": "结构抗风 | 输电塔强风首次超越易损性",
         "order": 37,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Independent scientific content review completed; frozen cover/markup-only equivalence retained. Final integrated browser/build acceptance is pending, so status is awaiting_audit rather than verified. No new full-PDF review is claimed by registry integration.",
+            "fingerprint": "04359cac1372033d48bee7bd5b407b5eb3176cc9667793f208eb8a2bec792009"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2023-GYJZ.md",
         "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
+            "fingerprint": "560031445275454e6ff58e392df28bb7cd6b0200d8516183da7a24deb74fd18c"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-14T13:36:24+00:00",
+        "source_text_pages_read": 11,
+        "source_page_count": 11,
+        "audit_basis": "Prior independent full-source scientific review retained; final cover and explicitly recorded whitespace/heading-only normalization reviewed separately. The current integration does not repeat the full-PDF audit.",
+        "visual_scope": "Prior independent scientific visual scope is retained exactly as recorded in the main review; figure-board or native-byte checks are not relabelled as a separate full-pixel audit. Final browser, build and actual WeChat phone acceptance remain separate.",
+        "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zhao2023-GYJZ.integration.review.md"
+      }
     },
     "DOI": "21213/dfdg234"
   },
@@ -9500,27 +9598,76 @@
         "metrics": "影响因子: 2.1 (Q2). 中科院分区: 3."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "74aa86b0d8ed012a168735914de8334b038ae40f540f2512d5a36ded0ef22143",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "74aa86b0d8ed012a168735914de8334b038ae40f540f2512d5a36ded0ef22143",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 32,
+        "identity_checked_at": "2026-10-14T13:36:24+00:00",
+        "review_path": "wechat/articles/review/ref-zhao2021-EFM.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhao2021-EFM.rst",
-        "public_title": "Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions",
+        "public_title": "数值风洞 | 近中性复杂地形风场的多尺度嵌套",
         "order": 50,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-EFM.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Independent scientific content review completed; frozen cover/markup-only equivalence retained. Final integrated browser/build acceptance is pending, so status is awaiting_audit rather than verified. No new full-PDF review is claimed by registry integration.",
+            "fingerprint": "0ad608d367a749a83f7885d3280bf701f01086fd7c50ac6e3cefed25b3dd7e70"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhao2021-EFM.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-EFM.md",
         "review_path": "wechat/articles/review/ref-zhao2021-EFM.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-EFM.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
+            "fingerprint": "6781bb95c935fc5a7e8e799b87cfccc77d5902e643d271895bce0dbb356f5103"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-14T13:36:24+00:00",
+        "source_text_pages_read": 32,
+        "source_page_count": 32,
+        "audit_basis": "Prior independent full-source scientific review retained; final cover and explicitly recorded whitespace/heading-only normalization reviewed separately. The current integration does not repeat the full-PDF audit.",
+        "visual_scope": "Prior independent scientific visual scope is retained exactly as recorded in the main review; figure-board or native-byte checks are not relabelled as a separate full-pixel audit. Final browser, build and actual WeChat phone acceptance remain separate.",
+        "review_path": "wechat/articles/review/ref-zhao2021-EFM.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zhao2021-EFM.integration.review.md"
+      }
     },
     "DOI": "10.1007/s10652-021-09796-4"
   },
@@ -9954,27 +10101,76 @@
         "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "e39cf82ba9251d1c8f32e927806ead0010ec89ead0fc5d4ff66f782a78762eed",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "e39cf82ba9251d1c8f32e927806ead0010ec89ead0fc5d4ff66f782a78762eed",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 22,
+        "identity_checked_at": "2026-10-14T13:36:24+00:00",
+        "review_path": "wechat/articles/review/ref-li2020-JWEIA.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-li2020-JWEIA.rst",
-        "public_title": "RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model",
+        "public_title": "数值风洞 | 用扩展冠层阻力维持水平齐次大气边界层",
         "order": 55,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-li2020-JWEIA.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Independent scientific content review completed; frozen cover/markup-only equivalence retained. Final integrated browser/build acceptance is pending, so status is awaiting_audit rather than verified. No new full-PDF review is claimed by registry integration.",
+            "fingerprint": "3046b18469af29717535292fc01ae74a0cdf11b70a4470e6c6098eaee41b183a"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-li2020-JWEIA.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2020-JWEIA.md",
         "review_path": "wechat/articles/review/ref-li2020-JWEIA.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-li2020-JWEIA.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
+            "fingerprint": "a90a9a1e5bbb72a60994b90b9c01b93f8a8da6be7a7f2a79ad052c956de46432"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-14T13:36:24+00:00",
+        "source_text_pages_read": 22,
+        "source_page_count": 22,
+        "audit_basis": "Prior independent full-source scientific review retained; final cover and explicitly recorded whitespace/heading-only normalization reviewed separately. The current integration does not repeat the full-PDF audit.",
+        "visual_scope": "Prior independent scientific visual scope is retained exactly as recorded in the main review; figure-board or native-byte checks are not relabelled as a separate full-pixel audit. Final browser, build and actual WeChat phone acceptance remain separate.",
+        "review_path": "wechat/articles/review/ref-li2020-JWEIA.review.md",
+        "integration_review_path": "wechat/articles/review/ref-li2020-JWEIA.integration.review.md"
+      }
     },
     "DOI": "10.1016/j.jweia.2020.104281"
   },
@@ -10021,27 +10217,76 @@
         "metrics": "影响因子: 9.1 (Q1). 中科院分区: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "9070ace837f68792572f19fcd4f525edcfa60107e987cc40b9c6460989062ae2",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "9070ace837f68792572f19fcd4f525edcfa60107e987cc40b9c6460989062ae2",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 19,
+        "identity_checked_at": "2026-10-14T13:36:24+00:00",
+        "review_path": "wechat/articles/review/ref-zhou2020-RE.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhou2020-RE.rst",
-        "public_title": "Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines: A case study by using surrogate models",
+        "public_title": "一体化分析 | Y形平台安装朝向与长期响应",
         "order": 56,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2020-RE.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Independent scientific content review completed; frozen cover/markup-only equivalence retained. Final integrated browser/build acceptance is pending, so status is awaiting_audit rather than verified. No new full-PDF review is claimed by registry integration.",
+            "fingerprint": "8841d7f6d0b7e7a1f587b76cc94fab0cc2c121fc4fde42fbbfaa3666da4441df"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhou2020-RE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhou2020-RE.md",
         "review_path": "wechat/articles/review/ref-zhou2020-RE.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2020-RE.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
+            "fingerprint": "695647bcb4c1b2ffc04f0c813f467a1d712c177b3fadde9c6230f964042bb0be"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-14T13:36:24+00:00",
+        "source_text_pages_read": 19,
+        "source_page_count": 19,
+        "audit_basis": "Prior independent full-source scientific review retained; final cover and explicitly recorded whitespace/heading-only normalization reviewed separately. The current integration does not repeat the full-PDF audit.",
+        "visual_scope": "Prior independent scientific visual scope is retained exactly as recorded in the main review; figure-board or native-byte checks are not relabelled as a separate full-pixel audit. Final browser, build and actual WeChat phone acceptance remain separate.",
+        "review_path": "wechat/articles/review/ref-zhou2020-RE.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zhou2020-RE.integration.review.md"
+      }
     },
     "DOI": "10.1016/j.renene.2020.04.014"
   },
@@ -10732,27 +10977,76 @@
         "metrics": "影响因子: 3.2 (Q3). 中科院分区: 3."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "280653c67a752c5781ce9f63e2c873ced215e65c06d974fe1dedc5a0d3125e79",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "ffaaa703a5fed84cec52a401bd9d1c1701b23a09f35082b95438a16315a3fcf0",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_claimed_different_hash",
+        "pages": 27,
+        "identity_checked_at": "2026-10-14T13:36:24+00:00",
+        "review_path": "wechat/articles/review/ref-zhou2017-E.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhou2017-E.rst",
-        "public_title": "Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions",
+        "public_title": "一体化分析 | 同向风浪下Y形平台的方向效应",
         "order": 65,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2017-E.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Independent scientific content review completed; frozen cover/markup-only equivalence retained. Final integrated browser/build acceptance is pending, so status is awaiting_audit rather than verified. No new full-PDF review is claimed by registry integration.",
+            "fingerprint": "61df90740d6d99498a297caf917247d69de9ed43a89e1f164712860bd110a7ca"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhou2017-E.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhou2017-E.md",
         "review_path": "wechat/articles/review/ref-zhou2017-E.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-14T13:36:24+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2017-E.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Independent scientific review retained; official offline preflight, dry-run and MathJax SVG rendering completed. Final integrated browser/build check remains separate. No backend draft creation, phone preview or publication asserted.",
+            "fingerprint": "002e90072097bcadfe6b6aae60695753253df24aa81f6268137810c9f5c56cb0"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学内容审核与官方离线生成已完成；完整网站接入门禁待核，后台草稿、实际手机预览与发布均未由本批执行。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-14T13:36:24+00:00",
+        "source_text_pages_read": 27,
+        "source_page_count": 27,
+        "audit_basis": "Prior independent full-source scientific review retained; final cover and explicitly recorded whitespace/heading-only normalization reviewed separately. The current integration does not repeat the full-PDF audit.",
+        "visual_scope": "Prior independent scientific visual scope is retained exactly as recorded in the main review; figure-board or native-byte checks are not relabelled as a separate full-pixel audit. Final browser, build and actual WeChat phone acceptance remain separate.",
+        "review_path": "wechat/articles/review/ref-zhou2017-E.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zhou2017-E.integration.review.md"
+      }
     },
     "DOI": "10.3390/en10122097"
   },

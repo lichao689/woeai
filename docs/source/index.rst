@@ -74,7 +74,7 @@ WOEAI 围绕工程结构抗风、海上漂浮风电，以及支撑两类问题�
 - 2025 | 工程结构抗风 / 结构抗风: :doc:`结构抗风 | 用图神经网络预测高层建筑结构响应 <paper-notes/ref-tang2025-JBE>`
 - 2025 | 工程结构抗风 / 结构抗风: :doc:`结构抗风 | 别只看单方向峰值：高层建筑二维矢量响应极值怎么算 <paper-notes/ref-yang2025-JBE>`
 - 2025 | 工程结构抗风 / 结构抗风: :doc:`结构抗风 | 让高层建筑 TLD 在非线性晃荡中更会耗能 <paper-notes/ref-he2025-POF>`
-- 2025 | 海上漂浮风电 / 一体化分析: :doc:`漂浮风电 | 为半潜式风机找到可信的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>`
+- 2025 | 海上漂浮风电 / 一体化分析: :doc:`一体化分析 | 中心与偏心半潜风机的模型试验 <paper-notes/ref-zheng2025-QHDXXB>`
 
 .. END GENERATED LATEST PAPER NOTES
 

@@ -40,8 +40,10 @@
    2024 JCP | 让 LES 入流湍流更连贯也更守恒 <paper-notes/ref-chen2024-JCP>
    2023 HKXYGC | 核电厂高风速区域定位与验证 <paper-notes/ref-feng2023-HKXYGC>
    2022 JWEIA | 把相关性写进入流湍流 <paper-notes/ref-chen2022-JWEIA>
+   2021 EFM | 近中性复杂地形风场的多尺度嵌套 <paper-notes/ref-zhao2021-EFM>
    2021 AR | 中微尺度风场边界松弛衔接 <paper-notes/ref-zhao2021-AR>
    2021 TYNXB | 天气来风接入复杂山地 <paper-notes/ref-zhao2021-TYNXB>
+   2020 JWEIA | 用扩展冠层阻力维持水平齐次大气边界层 <paper-notes/ref-li2020-JWEIA>
    2018 KXJSYGC | 一套网格计算多风向风速比 <paper-notes/ref-xiao2018-KXJSYGC>
    2017 BS | 山地城市入流方法比较 <paper-notes/ref-li2017-BS>
    2012 JWEIA | 变尺度修正下击暴流风速模型 <paper-notes/ref-li2012-JWEIA>
@@ -125,7 +127,7 @@
 
 .. _ref-zhao2021-EFM:
 
-[25] :student-first-author:`Zhao Zihan`; **Li Chao**\*; Xiao Yiqing; Wang Jinghan; Hu Gang; Xiao Kai, Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions[J]. **Environmental Fluid Mechanics**, 2021, 21(4): 759～790. https://doi.org/10.1007/s10652-021-09796-4. 影响因子: **2.1 (Q2)**. 中科院分区: **3**.
+[25] :doc:`2021 EFM | 近中性复杂地形风场的多尺度嵌套 <paper-notes/ref-zhao2021-EFM>` :student-first-author:`Zhao Zihan`; **Li Chao**\*; Xiao Yiqing; Wang Jinghan; Hu Gang; Xiao Kai, Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions[J]. **Environmental Fluid Mechanics**, 2021, 21(4): 759～790. https://doi.org/10.1007/s10652-021-09796-4. 影响因子: **2.1 (Q2)**. 中科院分区: **3**.
 
 .. _ref-zhao2021-AR:
 
@@ -137,7 +139,7 @@
 
 .. _ref-li2020-JWEIA:
 
-[20] **Li Chao**; Wang Jinghan; Hu Gang; Li Lixiao; Xiao Yiqing\*, RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2020, 206: 104281. https://doi.org/10.1016/j.jweia.2020.104281. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
+[20] :doc:`2020 JWEIA | 用扩展冠层阻力维持水平齐次大气边界层 <paper-notes/ref-li2020-JWEIA>` **Li Chao**; Wang Jinghan; Hu Gang; Li Lixiao; Xiao Yiqing\*, RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2020, 206: 104281. https://doi.org/10.1016/j.jweia.2020.104281. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
 .. _ref-li2019-JWEIA:
 
@@ -174,6 +176,7 @@
    2025 POF | 让高层建筑 TLD 在非线性晃荡中更会耗能 <paper-notes/ref-he2025-POF>
    2025 JBE | 别只看单方向峰值：高层建筑二维矢量响应极值怎么算 <paper-notes/ref-yang2025-JBE>
    2025 JBE | 用图神经网络预测高层建筑结构响应 <paper-notes/ref-tang2025-JBE>
+   2023 GYJZ | 输电塔强风首次超越易损性 <paper-notes/ref-zhao2023-GYJZ>
 
 .. _ref-he2026-OE:
 
@@ -217,7 +220,7 @@
 
 .. _ref-zhao2023-GYJZ:
 
-[38] :student-first-author:`赵子涵`; 肖凯; 肖仪清; **李朝**\*; 张文通, 基于首次超越破坏的输电塔强风易损性分析[J]. **工业建筑**, 2023: 1～10.
+[38] :doc:`2023 GYJZ | 输电塔强风首次超越易损性 <paper-notes/ref-zhao2023-GYJZ>` :student-first-author:`赵子涵`; 肖凯; 肖仪清; **李朝**\*; 张文通, 基于首次超越破坏的输电塔强风易损性分析[J]. **工业建筑**, 2023: 1～10.
 
 .. _ref-hu2022-SCHM:
 
@@ -274,8 +277,11 @@
    :maxdepth: 1
 
    2025 OE | 为半潜式风机找到可信的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>
+   2025 QHDXXB | 中心与偏心半潜风机的模型试验 <paper-notes/ref-zheng2025-QHDXXB>
    2023 AE | 用长期动力优化选择浮式风机下部结构 <paper-notes/ref-zhou2023-AE>
+   2020 RE | Y形平台安装朝向与长期响应 <paper-notes/ref-zhou2020-RE>
    2018 AE | H型垂直轴风机桨距优化 <paper-notes/ref-li2018-AE>
+   2017 E | 同向风浪下Y形平台的方向效应 <paper-notes/ref-zhou2017-E>
    2017 AS | 半潜式风机被动振动控制 <paper-notes/ref-li2017-AS>
    2013 RE | 高攻角垂直轴风机流动的2.5D模拟 <paper-notes/ref-li2013-RE>
 
@@ -289,7 +295,7 @@
 
 .. _ref-zheng2025-QHDXXB:
 
-[64] :student-first-author:`郑舜云`; 周盛涛; 石兵; **李朝**\*; 胡钢; 曾宇; 李利孝, 中心与偏心布置半潜风机动力特性的模型试验[J]. **清华大学学报（自然科学版）**, 2025: 1～14.
+[64] :doc:`2025 QHDXXB | 中心与偏心半潜风机的模型试验 <paper-notes/ref-zheng2025-QHDXXB>` :student-first-author:`郑舜云`; 周盛涛; 石兵; **李朝**\*; 胡钢; 曾宇; 李利孝, 中心与偏心布置半潜风机动力特性的模型试验[J]. **清华大学学报（自然科学版）**, 2025: 1～14.
 
 .. _ref-gong2025-POF:
 
@@ -339,7 +345,7 @@
 
 .. _ref-zhou2020-RE:
 
-[19] :student-first-author:`Zhou Shengtao`; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines: A case study by using surrogate models[J]. **Renewable Energy**, 2020, 156: 260～278. https://doi.org/10.1016/j.renene.2020.04.014. 影响因子: **9.1 (Q1)**. 中科院分区: **1**.
+[19] :doc:`2020 RE | Y形平台安装朝向与长期响应 <paper-notes/ref-zhou2020-RE>` :student-first-author:`Zhou Shengtao`; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines: A case study by using surrogate models[J]. **Renewable Energy**, 2020, 156: 260～278. https://doi.org/10.1016/j.renene.2020.04.014. 影响因子: **9.1 (Q1)**. 中科院分区: **1**.
 
 .. _ref-hu2019-JOFAS:
 
@@ -359,7 +365,7 @@
 
 .. _ref-zhou2017-E:
 
-[10] :student-first-author:`Zhou Shengtao`; Shan Baohua; Xiao Yiqing; **Li Chao**\*; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin, Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2017, 10(12): 2097. https://doi.org/10.3390/en10122097. 影响因子: **3.2 (Q3)**. 中科院分区: **3**.
+[10] :doc:`2017 E | 同向风浪下Y形平台的方向效应 <paper-notes/ref-zhou2017-E>` :student-first-author:`Zhou Shengtao`; Shan Baohua; Xiao Yiqing; **Li Chao**\*; Hu Gang; Song Xiaoping; Liu Yongqing; Hu Yimin, Directionality Effects of Aligned Wind and Wave Loads on a Y-Shape Semi-Submersible Floating Wind Turbine under Rated Operational Conditions[J]. **Energies**, Multidisciplinary Digital Publishing Institute, 2017, 10(12): 2097. https://doi.org/10.3390/en10122097. 影响因子: **3.2 (Q3)**. 中科院分区: **3**.
 
 .. _ref-li2017-AS:
 

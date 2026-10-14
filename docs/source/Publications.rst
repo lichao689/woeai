@@ -38,7 +38,10 @@
    2024 ES | 让 LES 入流按目标风场自动收敛 <paper-notes/ref-wang2024-ES>
    2024 POF | 用矢量势随机流生成无散湍流 <paper-notes/ref-li2024-POF>
    2024 JCP | 让 LES 入流湍流更连贯也更守恒 <paper-notes/ref-chen2024-JCP>
+   2023 HKXYGC | 核电厂高风速区域定位与验证 <paper-notes/ref-feng2023-HKXYGC>
    2022 JWEIA | 把相关性写进入流湍流 <paper-notes/ref-chen2022-JWEIA>
+   2021 TYNXB | 天气来风接入复杂山地 <paper-notes/ref-zhao2021-TYNXB>
+   2018 KXJSYGC | 一套网格计算多风向风速比 <paper-notes/ref-xiao2018-KXJSYGC>
 
 .. _ref-zhao2026-BE:
 
@@ -102,7 +105,7 @@
 
 .. _ref-feng2023-HKXYGC:
 
-[39] 冯丙辰; 肖扬; **李朝**\*; 肖仪清, 基于数值风洞试验的核电厂微地形风场分析与验证[J]. **核科学与工程**, 2023, 第43卷增刊.
+[39] :doc:`2023 HKXYGC | 核电厂高风速区域定位与验证 <paper-notes/ref-feng2023-HKXYGC>` 冯丙辰; 肖扬; **李朝**; 肖仪清, 基于数值风洞试验的核电厂微地形风场分析与验证[J]. **核科学与工程**, 2023, 第43卷增刊.
 
 .. _ref-gao2022-BE:
 
@@ -126,7 +129,7 @@
 
 .. _ref-zhao2021-TYNXB:
 
-[21] :student-first-author:`赵子涵`; **李朝**\*; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. **太阳能学报**, 2021, 42(2): 205～210.
+[21] :doc:`2021 TYNXB | 天气来风接入复杂山地 <paper-notes/ref-zhao2021-TYNXB>` :student-first-author:`赵子涵`; **李朝**\*; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. **太阳能学报**, 2021, 42(2): 205～210. https://doi.org/10.19912/j.0254-0096.tynxb.2018-1134.
 
 .. _ref-li2020-JWEIA:
 
@@ -138,7 +141,7 @@
 
 .. _ref-xiao2018-KXJSYGC:
 
-[11] 肖凯; 赵子涵; 罗啸宇; **李朝**\*; 钟继; 肖仪清, 复杂地形下基于计算流体动力学的风速比计算[J]. **科学技术与工程**, 2018, 18(33): 1～6.
+[11] :doc:`2018 KXJSYGC | 一套网格计算多风向风速比 <paper-notes/ref-xiao2018-KXJSYGC>` 肖凯; 赵子涵; 罗啸宇; **李朝**\*; 钟继; 肖仪清, 复杂地形下基于计算流体动力学的风速比计算[J]. **科学技术与工程**, 2018, 18(33): 1～6.
 
 .. _ref-li2017-BS:
 

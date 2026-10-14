@@ -96,7 +96,7 @@
 
 :ref:`[40] <ref-xiang2023-CBGC>` 向文元; 周盛涛\*; 孙清; **李朝**; 肖仪清, 半潜式浮式风机长期动力响应的全局敏感性分析[J]. **船舶工程**, 2023, 45(S1): 59～66.
 
-:ref:`[39] <ref-feng2023-HKXYGC>` 冯丙辰; 肖扬; **李朝**\*; 肖仪清, 基于数值风洞试验的核电厂微地形风场分析与验证[J]. **核科学与工程**, 2023, 第43卷增刊.
+:ref:`[39] <ref-feng2023-HKXYGC>` 冯丙辰; 肖扬; **李朝**; 肖仪清, 基于数值风洞试验的核电厂微地形风场分析与验证[J]. **核科学与工程**, 2023, 第43卷增刊.
 
 :ref:`[38] <ref-zhao2023-GYJZ>` :student-first-author:`赵子涵`; 肖凯; 肖仪清; **李朝**\*; 张文通, 基于首次超越破坏的输电塔强风易损性分析[J]. **工业建筑**, 2023: 1～10.
 
@@ -138,7 +138,7 @@
 
 :ref:`[22] <ref-zhou2021-OE>` :student-first-author:`Zhou Shengtao`; Müller Kolja; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics[J]. **Ocean Engineering**, 2021, 221: 108585. https://doi.org/10.1016/j.oceaneng.2021.108585. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
-:ref:`[21] <ref-zhao2021-TYNXB>` :student-first-author:`赵子涵`; **李朝**\*; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. **太阳能学报**, 2021, 42(2): 205～210.
+:ref:`[21] <ref-zhao2021-TYNXB>` :student-first-author:`赵子涵`; **李朝**\*; 肖仪清; 肖凯; 吴晓鹏; 宋晓萍, 基于NWP/CFD嵌套的复杂地形风场模拟研究[J]. **太阳能学报**, 2021, 42(2): 205～210. https://doi.org/10.19912/j.0254-0096.tynxb.2018-1134.
 
 2020
 ~~~~~~~~~~~~

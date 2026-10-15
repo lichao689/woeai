@@ -324,11 +324,11 @@ items:
     subdirection: "一体化分析"
     original_year: 2023
     repost_priority: ""
-    wechat_status: "unregistered"
+    wechat_status: "awaiting_review"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    revision_note: "科学源审及N1–N4差异复核通过，整体导管架封面获采用并完成本地绑定；正文图上传未批准，保留preflight门禁，未创建后台草稿或进行手机预览。"
     publication_history: []
     wechat_draft_created_at: ""
     wechat_draft_updated_at: ""

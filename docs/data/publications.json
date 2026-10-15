@@ -7441,27 +7441,76 @@
         "metrics": "影响因子: 5.1 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "40d28710af1b2b017e63a85d3e4ca506aeac611766d6df8675ef15573ddb0762",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "40d28710af1b2b017e63a85d3e4ca506aeac611766d6df8675ef15573ddb0762",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 21,
+        "identity_checked_at": "2026-10-15T03:16:13+00:00",
+        "review_path": "wechat/articles/review/ref-zheng2023-MS.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zheng2023-MS.rst",
-        "public_title": "Efficient optimization design method of jacket structures for offshore wind turbines",
+        "public_title": "一体化分析 | 海上风机导管架代理优化与疲劳复核",
         "order": 30,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-15T03:16:13+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-MS.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent science and differential audit retained. RTD adds the top cover and shortens display text for two reference URLs using exact source-PDF link targets; reversing both display replacements and cover insertion restores checkpoint02 bytes. V1 standard build passed but390px reference overflow failed; final v2 integrated standard build and browser review remain separate; not verified.",
+            "fingerprint": "8590707e0d8216f5fe3f9d2c70890c91ddcb92fb8662c9cc862ea7a1f14408f8"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zheng2023-MS.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zheng2023-MS.md",
         "review_path": "wechat/articles/review/ref-zheng2023-MS.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-15T03:16:13+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-MS.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": false,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Audited MD and original figures are unchanged. Official direct HTML/MathJax SVG rendering passed. Preflight/dry-run intentionally remain blocked because body-image upload approval is absent; cover adoption does not grant it. No backend draft, phone preview or publication.",
+            "fingerprint": "32baaddc730c6376fbd632929439e48b1ef9e34a89e0eb2382cdbc083201c0a2"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "科学源审及N1–N4差异复核通过，整体导管架封面获采用并完成本地绑定；正文图上传未批准，保留preflight门禁，未创建后台草稿或进行手机预览。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-15T03:16:13+00:00",
+        "source_text_pages_read": 21,
+        "source_page_count": 21,
+        "audit_basis": "Prior independent full-source scientific audit and N1–N4 differential review retained. This integration checks exact content/figure equivalence, the adopted cover binding and two reference URL display changes against original PDF hyperlink URIs, not a new full-PDF audit.",
+        "visual_scope": "Retains the 18 figures, 15 equations, 9 tables and 46 references independently checked in the main review. Local cover visual acceptance is not backend or phone acceptance.",
+        "review_path": "wechat/articles/review/ref-zheng2023-MS.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zheng2023-MS.integration.review.md"
+      }
     },
     "DOI": "10.1016/j.marstruc.2023.103372"
   },

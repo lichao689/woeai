@@ -280,6 +280,7 @@
    2025 OE | 为半潜式风机找到可信的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>
    2025 QHDXXB | 中心与偏心半潜风机的模型试验 <paper-notes/ref-zheng2025-QHDXXB>
    2023 AE | 用长期动力优化选择浮式风机下部结构 <paper-notes/ref-zhou2023-AE>
+   2023 MS | 海上风机导管架代理优化与疲劳复核 <paper-notes/ref-zheng2023-MS>
    2023 JRSE | 10 MW Y形半潜风机方向性缩尺试验 <paper-notes/ref-zheng2023-JRSE>
    2021 OE | 半潜浮体尺寸对成本与动力响应的敏感性 <paper-notes/ref-zhou2021-OE>
    2020 RE | Y形平台安装朝向与长期响应 <paper-notes/ref-zhou2020-RE>
@@ -318,7 +319,7 @@
 
 .. _ref-zheng2023-MS:
 
-[45] :student-first-author:`Zheng Shunyun`; **Li Chao**\*; Xiao Yiqing, Efficient optimization design method of jacket structures for offshore wind turbines[J]. **Marine Structures**, 2023, 89: 103372. https://doi.org/10.1016/j.marstruc.2023.103372. 影响因子: **5.1 (Q1)**. 中科院分区: **2**.
+[45] :doc:`2023 MS | 海上风机导管架代理优化与疲劳复核 <paper-notes/ref-zheng2023-MS>` :student-first-author:`Zheng Shunyun`; **Li Chao**\*; Xiao Yiqing, Efficient optimization design method of jacket structures for offshore wind turbines[J]. **Marine Structures**, 2023, 89: 103372. https://doi.org/10.1016/j.marstruc.2023.103372. 影响因子: **5.1 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zheng2023-JRSE:
 

@@ -1,0 +1,23 @@
+# ref-zheng2023-MS 封面简报
+
+- cover_design_contract: `WOEAI-cover-v5`
+- secondary_direction: `一体化分析`
+- cover_text_confirmation: `user-adopted-2026-10-15`；用户在完整导管架成品原生附件下明确回复“可以”。
+- confirmed_text_mode: `authorized-deterministic-typesetting`
+- confirmed_cover_text: `一体化分析 | 导管架如何高效减重 / 代理优化后再查局部疲劳`
+- verified_publication_line: `Marine Structures · 2023`
+- final_cover_path: `wechat/assets/public-safe/ref-zheng2023-MS/cover-wechat-900x383-20261015-v5.png`
+- final_cover_sha256: `6e1e59d1a354f7b090b321c9a2112de80dde09ff2c620dbf61b835b8416ee013`
+- final_dimensions: `900×383 px`
+- actual_tools: 内置imagegen生成全新无字整体风机导管架底图；仅以Pillow确定性缩放并叠印文字，没有代码重绘或改造工程主体。此前构型失败和被拒单节点图均不选用，不称本图来自旧图持续修补。
+- typography: Noto Sans CJK SC，徽标24 px/700、主标题48 px/700、副标题24 px/400、刊年18 px/400；刊年一行，全部水平正体。
+- badge_actual_outer_bounds: `[36, 32, 196, 72]`，160×40 px；原生圆角6 px掩膜比较0差异。
+- badge_actual_ink_bounds: `[57, 39, 175, 63]`，118×24 px；名义字号由已知字体及填充徽标像素复现核对，不从墨迹高度猜字号。
+- badge_geometry_gate: `pass`；右侧x=320–899所有像素与缩放底图一致，没有额外文字遮罩。
+- evidence_anchor: PDF file pages 4–6，图2和表1；50 m水深四格导管架是原文三个真实算例之一。
+- selection_and_scientific_limits: 完整三叶转子、塔筒、四角四腿四桩、四格X撑的底固定式海上风机导管架概念场景；不是漂浮平台，不是70 m五格算例，不作比例施工图。没有节点放大、热点或局部尺寸标注，不能把画面绑定到70 m顶部疲劳增厚结论。中间不添加环形横梁；顶部和底部横撑保留。
+- source_scope: 用于解释整体工程对象，不替代原文数据图、真实安装照片、结构设计校核或寿命认证。代理优化后仍须动力、屈曲和局部疲劳复核。
+- local_pixel_review: 作者及独立审查者实际查看900×383成品与360/120缩略；900主副标题、刊年和对象清楚；360主体与主标题可辨，120仅作识别诊断，不称所有文字可读。
+- independent_review: passed；2026-10-15本地构型与成品视觉验收通过，后获用户采用。
+- backend_upload_and_mobile_preview: not performed；封面采用不等于公众号正文图上传、后台草稿创建、手机浅色/深色预览或文章发布批准。
+- scope_boundary: 仅RTD顶部插入本封面，科学正文、摘要、作者、15式、9表、18原图和46引文保持已审checkpoint02内容。

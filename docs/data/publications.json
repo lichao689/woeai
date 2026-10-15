@@ -7721,27 +7721,76 @@
         "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "c8d74bdd486c566b8c376af89ff8fc2d54d85f2969f077bc01c135fbf4f04e58",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "c8d74bdd486c566b8c376af89ff8fc2d54d85f2969f077bc01c135fbf4f04e58",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "matched",
+        "pages": 17,
+        "identity_checked_at": "2026-10-15T09:32:12+00:00",
+        "review_path": "wechat/articles/review/ref-zhang2023-S.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhang2023-S.rst",
-        "public_title": "Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra",
+        "public_title": "结构抗风 | 从整塔测力谱估计分段风载",
         "order": 31,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-15T09:32:12+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-S.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent scientific manuscript review retained. Exact inverse restores all science text; only adopted top cover added. Integrated standard build and viewport review remain separate; not verified.",
+            "fingerprint": "d3a143247a6294ddf2be076cf4e7a255a9d6ff17e2c99057d7f4178175b4d5fd"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhang2023-S.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhang2023-S.md",
         "review_path": "wechat/articles/review/ref-zhang2023-S.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-15T09:32:12+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-S.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": false,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Audited Markdown byte-identical; original images unchanged. Official direct MathJax SVG rendering passed. Preflight/dry-run blocked by absent image-upload approval. No backend or mobile preview.",
+            "fingerprint": "90db4fb89df626cdec7a9d33dbac8230d0f0b51c82eda657f59a457c1f69de1a"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学源审通过，采用封面完成隔离绑定；正文图上传尚未批准，保留门禁，未创建本篇草稿或进行手机预览。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-15T09:32:12+00:00",
+        "source_text_pages_read": 17,
+        "source_page_count": 17,
+        "audit_basis": "Prior independent complete source review passed; Zhang2023-S six-angle C2 differential review also passed. Integration checks exact original assets and reversible cover-only changes, not another full PDF audit.",
+        "visual_scope": "17页、33编号式、表格60数据格、38参考文献、17完整图板（含A1–A3续页拼接）。C1完整独立科学审通过，C2仅六处角度补上标且独立差异审通过。",
+        "review_path": "wechat/articles/review/ref-zhang2023-S.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zhang2023-S.integration.review.md"
+      }
     },
     "DOI": "10.1016/j.istruc.2022.12.073"
   },
@@ -8024,27 +8073,76 @@
         "metrics": "影响因子: 6.4 (Q1). 中科院分区: 1. 引用次数: 9."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "7c390f5aa74edabf41bd9230f3dfbf0c4ee8815650fc8ee785dd83e5692a50aa",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "70540a1fe11d4e7cc70e2b72418b77c5545dd3a1b6e7d8c7562dbc4a66f15d97",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_established",
+        "pages": 19,
+        "identity_checked_at": "2026-10-15T09:32:12+00:00",
+        "review_path": "wechat/articles/review/ref-zhang2023-ES.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhang2023-ES.rst",
-        "public_title": "Reconstruction of dynamic wind forces on a transmission steel lattice tower using aeroelastic wind tunnel test data",
+        "public_title": "结构抗风 | 由四处位移反演塔身风力",
         "order": 34,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-15T09:32:12+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-ES.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent scientific manuscript review retained. Exact inverse restores all science text; only adopted top cover added. Integrated standard build and viewport review remain separate; not verified.",
+            "fingerprint": "d0a785cb69da7c8a6137c5a942d51f8cb943c95d7cd8939cef44462467604e71"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhang2023-ES.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhang2023-ES.md",
         "review_path": "wechat/articles/review/ref-zhang2023-ES.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-15T09:32:12+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-ES.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": false,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Audited Markdown byte-identical; original images unchanged. Official direct MathJax SVG rendering passed. Preflight/dry-run blocked by absent image-upload approval. No backend or mobile preview.",
+            "fingerprint": "cc6a0240971ecd979d060a7b4a01156daa155bc53d20f60da8940124aea35e00"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学源审通过，采用封面完成隔离绑定；正文图上传尚未批准，保留门禁，未创建本篇草稿或进行手机预览。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-15T09:32:12+00:00",
+        "source_text_pages_read": 19,
+        "source_page_count": 19,
+        "audit_basis": "Prior independent complete source review passed; Zhang2023-S six-angle C2 differential review also passed. Integration checks exact original assets and reversible cover-only changes, not another full PDF audit.",
+        "visual_scope": "19页、114覆盖单元、62编号式、5表138数据格、42参考文献、33完整图板。C1完整独立科学审通过，独立重取或渲染全部33图像素一致。",
+        "review_path": "wechat/articles/review/ref-zhang2023-ES.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zhang2023-ES.integration.review.md"
+      }
     },
     "DOI": "10.1016/j.engstruct.2022.115167"
   },
@@ -10006,27 +10104,79 @@
         "metrics": "影响因子: 2.5 (Q2). 中科院分区: 3."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "a2422755f3c577812f1773d8c72658c04096b1348da9ec9603367abe8f85ee8e",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "7c5f049ecea3fcf358bd341cf4ba4ab8ef57765bc4655a5d83bd3673f6bbc4e4",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_established",
+        "pages": 12,
+        "identity_checked_at": "2026-10-15T09:32:12+00:00",
+        "review_path": "wechat/articles/review/ref-yang2022-AS.review.md",
+        "previous_copy_sha256": "a504dcab9b2bef38f2e166ec3ed18f0ed8f8d797af476859576a2a7bef820b32",
+        "previous_copy_pages": 13,
+        "source_version_note": "User-supplied complete 12-page publisher version replaces incomplete 13-page copy for coverage. Eq19 typography and two reference DOI targets differ; review preserves provenance and source-version disclosure."
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-yang2022-AS.rst",
-        "public_title": "Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses",
+        "public_title": "结构抗风 | 按位置与响应确定等效风荷载",
         "order": 48,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-15T09:32:12+00:00",
+            "review_path": "wechat/articles/review/ref-yang2022-AS.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent scientific manuscript review retained. Exact inverse restores all science text; only adopted top cover added. Integrated standard build and viewport review remain separate; not verified.",
+            "fingerprint": "ce73321a0d7b2f47c2fa765017afed46843f32207ac1aab1a8671a8992e433ce"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-yang2022-AS.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-yang2022-AS.md",
         "review_path": "wechat/articles/review/ref-yang2022-AS.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-15T09:32:12+00:00",
+            "review_path": "wechat/articles/review/ref-yang2022-AS.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": false,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Audited Markdown byte-identical; original images unchanged. Official direct MathJax SVG rendering passed. Preflight/dry-run blocked by absent image-upload approval. No backend or mobile preview.",
+            "fingerprint": "3ec983b3e515dd6d1cf4b2b958751c3a425f2497bb2a1b0ae7217732435d914b"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学源审通过，采用封面完成隔离绑定；正文图上传尚未批准，保留门禁，未创建本篇草稿或进行手机预览。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-15T09:32:12+00:00",
+        "source_text_pages_read": 12,
+        "source_page_count": 12,
+        "audit_basis": "Prior independent complete source review passed; Zhang2023-S six-angle C2 differential review also passed. Integration checks exact original assets and reversible cover-only changes, not another full PDF audit.",
+        "visual_scope": "当前12页、42叙述与定义单元、30编号式、2表、38参考文献及3幅完整图。C1完整独立科学审通过，核对补齐图1(c)/图2原生像素、式10绝对值修复与式19版本排印差异披露；可疑源DOI按原著录保留，不等于外部文献真实性验证。",
+        "review_path": "wechat/articles/review/ref-yang2022-AS.review.md",
+        "integration_review_path": "wechat/articles/review/ref-yang2022-AS.integration.review.md"
+      }
     },
     "DOI": "10.3390/app12083729"
   },

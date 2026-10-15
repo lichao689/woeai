@@ -185,7 +185,10 @@
    2025 JBE | 别只看单方向峰值：高层建筑二维矢量响应极值怎么算 <paper-notes/ref-yang2025-JBE>
    2025 JBE | 用图神经网络预测高层建筑结构响应 <paper-notes/ref-tang2025-JBE>
    2024 JBE | 消防水箱的非线性晃荡与双向耦合减振 <paper-notes/ref-he2024-JBE>
+   2023 S | 从整塔测力谱估计分段风载 <paper-notes/ref-zhang2023-S>
+   2023 ES | 由四处位移反演塔身风力 <paper-notes/ref-zhang2023-ES>
    2023 GYJZ | 输电塔强风首次超越易损性 <paper-notes/ref-zhao2023-GYJZ>
+   2022 AS | 按位置与响应确定等效风荷载 <paper-notes/ref-yang2022-AS>
 
 .. _ref-he2026-OE:
 
@@ -221,11 +224,11 @@
 
 .. _ref-zhang2023-S:
 
-[44] :student-first-author:`Zhang Wentong`; **Li Chao**\*; Liu Gaixia; Xiao Yiqing\*, Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra[J]. **Structures**, 2023, 48: 1634～1650. https://doi.org/10.1016/j.istruc.2022.12.073. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
+[44] :doc:`2023 S | 从整塔测力谱估计分段风载 <paper-notes/ref-zhang2023-S>` :student-first-author:`Zhang Wentong`; **Li Chao**\*; Liu Gaixia; Xiao Yiqing\*, Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra[J]. **Structures**, 2023, 48: 1634～1650. https://doi.org/10.1016/j.istruc.2022.12.073. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zhang2023-ES:
 
-[41] :student-first-author:`Zhang Wentong`; **Li Chao**\*; Liu Gaixia; Xiao Yiqing\*, Reconstruction of dynamic wind forces on a transmission steel lattice tower using aeroelastic wind tunnel test data[J]. **Engineering Structures**, 2023, 275: 115167. https://doi.org/10.1016/j.engstruct.2022.115167. 影响因子: **6.4 (Q1)**. 中科院分区: **1**. 引用次数: **9**.
+[41] :doc:`2023 ES | 由四处位移反演塔身风力 <paper-notes/ref-zhang2023-ES>` :student-first-author:`Zhang Wentong`; **Li Chao**\*; Liu Gaixia; Xiao Yiqing\*, Reconstruction of dynamic wind forces on a transmission steel lattice tower using aeroelastic wind tunnel test data[J]. **Engineering Structures**, 2023, 275: 115167. https://doi.org/10.1016/j.engstruct.2022.115167. 影响因子: **6.4 (Q1)**. 中科院分区: **1**. 引用次数: **9**.
 
 .. _ref-zhao2023-GYJZ:
 
@@ -245,7 +248,7 @@
 
 .. _ref-yang2022-AS:
 
-[27] :student-first-author:`Yang Junhui`; Zhang Junfeng; **Li Chao**\*, Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses[J]. **Applied Sciences**, 2022, 12(8): 3729. https://doi.org/10.3390/app12083729. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
+[27] :doc:`2022 AS | 按位置与响应确定等效风荷载 <paper-notes/ref-yang2022-AS>` :student-first-author:`Yang Junhui`; Zhang Junfeng; **Li Chao**\*, Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses[J]. **Applied Sciences**, 2022, 12(8): 3729. https://doi.org/10.3390/app12083729. 影响因子: **2.5 (Q2)**. 中科院分区: **3**.
 
 .. _ref-wang2021-ABE:
 

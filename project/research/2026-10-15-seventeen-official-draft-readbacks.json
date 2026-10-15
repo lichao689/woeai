@@ -1,0 +1,3328 @@
+{
+  "schema": "woeai-official-draft-readback-public-safe-v1",
+  "scope": "Public-safe projection of four official executor receipts. Seventeen drafts were created once and individually read back. Importing these facts does not perform another API operation, phone preview, publication or mass send.",
+  "source_receipts": [
+    {
+      "batch": "fourth6",
+      "sha256": "c2ee33a29aadc7c717b65dc985d2e8bd01953ebd01b418f192cf55d46225ba8e",
+      "bytes": 52758,
+      "records": 6,
+      "source_commit": "27f65bb8d4b909e68dbb6c3f26a268dbbe914a7a",
+      "source_tree": "afb36d909f03896abd554c202ecb2026b3790fd3"
+    },
+    {
+      "batch": "next3",
+      "sha256": "61242a0c1c48a2743f7482fb2b1dcc44439c58d37fd212fb1377fb4442b69a08",
+      "bytes": 40923,
+      "records": 3,
+      "source_commit": "10aafc0737325c81a350ae68911a19d00328b48b",
+      "source_tree": "315eee3ff6e7e27b4bc3e370a8b628ab15b38391"
+    },
+    {
+      "batch": "new5",
+      "sha256": "1f2b5a2e164249393390da8ece6e170aadd3553f465e675c43978bd352055a88",
+      "bytes": 78710,
+      "records": 5,
+      "source_commit": "31a8b1b58010e7daefeeadd4fff59379ae9cbfa9",
+      "source_tree": "8736e11d5d446d575ba2a4adc116053ae5dd4d91"
+    },
+    {
+      "batch": "final3",
+      "sha256": "31d8c6ac0075a1e8c42bd31147a80ebc3b7d71909f27fab72a5ebaf5cb0d8bca",
+      "bytes": 45911,
+      "records": 3,
+      "source_commit": "f1258a9ad8d764a21c6382456d8be765c2ebd255",
+      "source_tree": "34d9aa65136b29d5ac65dbe3d65f51ca30207850"
+    }
+  ],
+  "results": [
+    {
+      "publication_ref": "ref-li2020-JWEIA",
+      "ok": true,
+      "operation": "create",
+      "title": "数值风洞 | 入流剖面给对了，为什么下游还会走样？",
+      "author": "Li Chao",
+      "body_image_count": 4,
+      "formula_svg_count": 12,
+      "actual_times": {
+        "submitted_at": "2026-10-15T01:11:01+00:00",
+        "acknowledged_at": "2026-10-15T01:11:06+00:00",
+        "readback_completed_at": "2026-10-15T01:11:09+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "a90a9a1e5bbb72a60994b90b9c01b93f8a8da6be7a7f2a79ad052c956de46432",
+        "markdown_sha256": "14c255f68ca1ad6479cafa3b831993c7508600fafb1cefd065499eb5baedc98f",
+        "review_sha256": "f2dac56a132880203654cdb93a6d90b9fd6ccaa9874e613e0e5141afc2d2df18",
+        "html_sha256": "8f2aac5b3fda2304cb3ba446f3b65d1cf162e3d3fc7b12e922d2be484405742a",
+        "formula_geometry_sha256": "c6866bb0a8c4c2c997009a8bf62fa7cd31f0fb73f193898398b85cbfe946355d",
+        "formula_metadata_sha256": "33dc0c46ea260f0f7fbac71ca3f81e38f3dd7bf260985466ad7275a610bec8d1",
+        "source_commit": "27f65bb8d4b909e68dbb6c3f26a268dbbe914a7a",
+        "source_tree": "afb36d909f03896abd554c202ecb2026b3790fd3"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Li Chao",
+        "review_has_author_override": true,
+        "review_author_override": "Li Chao",
+        "prepared_explicit_author": "Li Chao",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "submitted_explicit_author_parameter": "Li Chao",
+        "submitted_author_confirmed_by_official_readback": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "c2ee33a29aadc7c717b65dc985d2e8bd01953ebd01b418f192cf55d46225ba8e",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-li2020-JWEIA/cover-wechat-900x383-20261014-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "058895e54fa17653378f636f48b1549f37acebab3d81d4d03f086006c2d8c09c",
+        "readback_html_sha256": "71fa28f92ca425ede175d876d44fd0e84ac97d9ceea888d4f5f70d3df89240fb",
+        "source_cover": {
+          "sha256": "a5868685847f8dddef221a93061c738956649a2ed39910173b034984b86c0da9",
+          "bytes": 239690,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "008902b009f37f7efcbf499900d49be71dbbaaa02ac994638b424b217692dc9f"
+        },
+        "official_returned_cover_image": {
+          "sha256": "a5868685847f8dddef221a93061c738956649a2ed39910173b034984b86c0da9",
+          "bytes": 239690,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "008902b009f37f7efcbf499900d49be71dbbaaa02ac994638b424b217692dc9f"
+        },
+        "cover_display": {
+          "sha256": "fa6e2d78c814338e131a08317150f12da20969fd60260d46c243d4096ac73357",
+          "bytes": 38840,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "cb36e84ad1d2d5185b6591fce058d42fd5a049717b8e550b1024ed7777dd860c"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-li2020-JWEIA/fig01-original.jpeg",
+          "source": {
+            "sha256": "8a59ba765fd907d1295c79bd8d6f5578cfc6234eafe82ac877a3c3524f4d940e",
+            "bytes": 243617,
+            "dimensions": [
+              2162,
+              1142
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "5af5c8b6ff8fed0dd271e8049d8a641bfd840c57ed127ec35f72b101649c42c5"
+          },
+          "official_image": {
+            "sha256": "391039f8ea1775454a07f5be203de8bae563102ff44111c43b48e860658ce824",
+            "bytes": 56898,
+            "dimensions": [
+              1280,
+              676
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "6c4b66cd3a1198cc09a50b2919234b941fb29852fb0246d6c527ab078d739e3b"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-li2020-JWEIA/fig08-original.jpeg",
+          "source": {
+            "sha256": "4cd9b1d78496798f1d9b1e80c42c0822627e3b119e17bb8542539c3b92058673",
+            "bytes": 231099,
+            "dimensions": [
+              1040,
+              1323
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "70c39ee2dd45cdeddf6b67909bf2daf44f0788d1ca12a11d86702f4c663ea17f"
+          },
+          "official_image": {
+            "sha256": "dfd2ebb99056a1787e09ced6831563fdd8a9b75cbd184efc64852aad729fd469",
+            "bytes": 112434,
+            "dimensions": [
+              1040,
+              1323
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "914eaf68eec5daef82fdee8d3b51f1fbacad38503cbb6df1577d8aa47116bcdb"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-li2020-JWEIA/fig09-original.jpeg",
+          "source": {
+            "sha256": "5011a893684025fbd16e7d5c23e66368eeef49b7743de645c05ea6fb262d0fb3",
+            "bytes": 327185,
+            "dimensions": [
+              2162,
+              912
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "8c76f68c38d9d7d2609143504dd82ef4043e45ec9a8985b9d63e5e3a743550e8"
+          },
+          "official_image": {
+            "sha256": "94ef26de459703291b634567812b3d639608ac11ff2183d262b823f7a5f661d0",
+            "bytes": 88603,
+            "dimensions": [
+              1280,
+              539
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "02bb583ff225afb67f82c5cc22fab832d446dd61254c9852394466760730722d"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-li2020-JWEIA/fig28-original.jpeg",
+          "source": {
+            "sha256": "42367db2a73e51946b652175be828667631419c8b1534cc5b4f734f34aa2a640",
+            "bytes": 328046,
+            "dimensions": [
+              2162,
+              911
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "8a446083204cbea1961604ac44679d13012344aa00a4e4ecfd178b92e325ddaa"
+          },
+          "official_image": {
+            "sha256": "2b0e20a128706dffd969d9d320f03380da6a753dc52f369ecc37f3f7d0c728b1",
+            "bytes": 91210,
+            "dimensions": [
+              1280,
+              539
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "894f39d8c52da3eca62cd3031ec5df7553a47bafbedbc31f16dbffba81d41fae"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zhao2023-GYJZ",
+      "ok": true,
+      "operation": "create",
+      "title": "结构抗风 | 输电塔的抗风能力，为什么不是一个固定风速？",
+      "author": "Zhao Zihan",
+      "body_image_count": 3,
+      "formula_svg_count": 0,
+      "actual_times": {
+        "submitted_at": "2026-10-15T01:11:41+00:00",
+        "acknowledged_at": "2026-10-15T01:11:46+00:00",
+        "readback_completed_at": "2026-10-15T01:14:56+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "560031445275454e6ff58e392df28bb7cd6b0200d8516183da7a24deb74fd18c",
+        "markdown_sha256": "f1edde722c6662609180d0c4c7e87c3ad5ddea0c2dd281e5338e8f3a1bd1ce60",
+        "review_sha256": "5222b5e6bab52c4505f43ed9b03203ea6f625d3824b5c4fda810e73c965fba81",
+        "html_sha256": "fb984ddf553021333d18345a68501d37706336c8d9fdb528c42dce3c09f5bced",
+        "formula_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "formula_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_commit": "27f65bb8d4b909e68dbb6c3f26a268dbbe914a7a",
+        "source_tree": "afb36d909f03896abd554c202ecb2026b3790fd3"
+      },
+      "formula_render_applicability": "not_applicable_no_mathjax_formula_in_approved_intro",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "赵子涵",
+        "review_has_author_override": true,
+        "review_author_override": "Zhao Zihan",
+        "prepared_explicit_author": "Zhao Zihan",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "submitted_explicit_author_parameter": "Zhao Zihan",
+        "submitted_author_confirmed_by_official_readback": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "c2ee33a29aadc7c717b65dc985d2e8bd01953ebd01b418f192cf55d46225ba8e",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zhao2023-GYJZ/cover-wechat-900x383-20261014-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "9cf3f7fed457b77f498a73f2c9a654708febf29e0036ac16dfd7816384d97339",
+        "readback_html_sha256": "089a1b116d907d9fa77680fcd0bc49182ecf7c2a42a28c8b8fcfe1bfeade411a",
+        "source_cover": {
+          "sha256": "a527c5659b870596ceea8defab5b54a7482b8ac6de9c3763940837ee581cfcab",
+          "bytes": 370618,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "f9d7d2f85a06702d46ca023a49aa40f406c655ea98d9a197460a96b046cca4ad"
+        },
+        "official_returned_cover_image": {
+          "sha256": "a527c5659b870596ceea8defab5b54a7482b8ac6de9c3763940837ee581cfcab",
+          "bytes": 370618,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "f9d7d2f85a06702d46ca023a49aa40f406c655ea98d9a197460a96b046cca4ad"
+        },
+        "cover_display": {
+          "sha256": "e31fef83229672f5ca42dacf6094ba92824251102465d821058a070867180255",
+          "bytes": 54344,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "0ce5f38d7710e6945b08ccceca85d8372822b978da3e4f56d9386b7f8de40735"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2023-GYJZ/fig03.png",
+          "source": {
+            "sha256": "97078c428f9bc66cfb0f2a04e0ae702e3413a1ee15c49a907e8681e603f3d795",
+            "bytes": 45479,
+            "dimensions": [
+              720,
+              560
+            ],
+            "format": "PNG",
+            "rgba_sha256": "3620b268c65a44d18781b97878ba2e422e0b156a447431a3d19d26c6841f334b"
+          },
+          "official_image": {
+            "sha256": "97078c428f9bc66cfb0f2a04e0ae702e3413a1ee15c49a907e8681e603f3d795",
+            "bytes": 45479,
+            "dimensions": [
+              720,
+              560
+            ],
+            "format": "PNG",
+            "rgba_sha256": "3620b268c65a44d18781b97878ba2e422e0b156a447431a3d19d26c6841f334b"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2023-GYJZ/fig06.png",
+          "source": {
+            "sha256": "04c596b8505195ae9d3b687b66a2bcee3229a2d91e98597f62f5e3ae073d7ebd",
+            "bytes": 36855,
+            "dimensions": [
+              628,
+              504
+            ],
+            "format": "PNG",
+            "rgba_sha256": "2a7520af85aa1f61635fb03ed377c5a13a5affab22015ca63bfcca29f0ac2044"
+          },
+          "official_image": {
+            "sha256": "04c596b8505195ae9d3b687b66a2bcee3229a2d91e98597f62f5e3ae073d7ebd",
+            "bytes": 36855,
+            "dimensions": [
+              628,
+              504
+            ],
+            "format": "PNG",
+            "rgba_sha256": "2a7520af85aa1f61635fb03ed377c5a13a5affab22015ca63bfcca29f0ac2044"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2023-GYJZ/fig07.png",
+          "source": {
+            "sha256": "26d54b7f3c70b7f3751689356e8689a3cc8bbc59d4e6f4d35bc9ad4c5350b94d",
+            "bytes": 80342,
+            "dimensions": [
+              1736,
+              476
+            ],
+            "format": "PNG",
+            "rgba_sha256": "00b14ac520d1347bc6c742818da8db4363e04474e04424638d47181d916b31a4"
+          },
+          "official_image": {
+            "sha256": "26d54b7f3c70b7f3751689356e8689a3cc8bbc59d4e6f4d35bc9ad4c5350b94d",
+            "bytes": 80342,
+            "dimensions": [
+              1736,
+              476
+            ],
+            "format": "PNG",
+            "rgba_sha256": "00b14ac520d1347bc6c742818da8db4363e04474e04424638d47181d916b31a4"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ],
+      "official_body_link_limitation": {
+        "publication_ref": "ref-zhao2023-GYJZ",
+        "kind": "official_returned_body_removed_external_cnki_hyperlink",
+        "submitted_link_bound_to_approved_source_and_pre_submit_html_sha256": true,
+        "official_full_body_text_title_and_first_publication_version_match": true,
+        "bottom_original_rtd_link_matches": true,
+        "returned_cnki_href_match_not_claimed": true,
+        "no_body_modification_or_repeated_write": true
+      }
+    },
+    {
+      "publication_ref": "ref-zhou2017-E",
+      "ok": true,
+      "operation": "create",
+      "title": "一体化分析 | 风浪同向，平台换个朝向就一样吗？",
+      "author": "Zhou Shengtao",
+      "body_image_count": 3,
+      "formula_svg_count": 0,
+      "actual_times": {
+        "submitted_at": "2026-10-15T01:16:25+00:00",
+        "acknowledged_at": "2026-10-15T01:16:29+00:00",
+        "readback_completed_at": "2026-10-15T01:16:32+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "002e90072097bcadfe6b6aae60695753253df24aa81f6268137810c9f5c56cb0",
+        "markdown_sha256": "64394152fa7c7f2d3a9f8567753429cb36dc0979fbe7bca3f928ae16d36591a0",
+        "review_sha256": "91bd46ae372a0913fcf023aced3028fc563086d2f8fac6be3c7d15a180cf0210",
+        "html_sha256": "9a8938041b7024334984ee9aeb3cefe24ae0696c291588cd643c6d21642514a1",
+        "formula_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "formula_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_commit": "27f65bb8d4b909e68dbb6c3f26a268dbbe914a7a",
+        "source_tree": "afb36d909f03896abd554c202ecb2026b3790fd3"
+      },
+      "formula_render_applicability": "not_applicable_no_mathjax_formula_in_approved_intro",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Zhou Shengtao",
+        "review_has_author_override": false,
+        "review_author_override": null,
+        "prepared_explicit_author": "Zhou Shengtao",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "audited_markdown_first_author_with_chinese_punctuation_parser",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "submitted_explicit_author_parameter": "Zhou Shengtao",
+        "submitted_author_confirmed_by_official_readback": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "c2ee33a29aadc7c717b65dc985d2e8bd01953ebd01b418f192cf55d46225ba8e",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zhou2017-E/cover-wechat-900x383-20261014-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "40d5353e438d301589cff206b91eb8195059bda56e9362400dbb89771b187fcf",
+        "readback_html_sha256": "e3b2a0fc0941281c17b09db01589a88649f63724b5a593b470fabc1ca4c8a1d1",
+        "source_cover": {
+          "sha256": "00c38c7c15f621c28a99b6f6ca7147b24464e461239c10e7e6972ba99a4d9be0",
+          "bytes": 395699,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "d3ba6a21c653db0df9803fa4b463985024cdec99f73f855bcc1db4f8b53dbd5b"
+        },
+        "official_returned_cover_image": {
+          "sha256": "00c38c7c15f621c28a99b6f6ca7147b24464e461239c10e7e6972ba99a4d9be0",
+          "bytes": 395699,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "d3ba6a21c653db0df9803fa4b463985024cdec99f73f855bcc1db4f8b53dbd5b"
+        },
+        "cover_display": {
+          "sha256": "980f7ecd9290adf98f2cca229618784c06335adae3c236f85e4a9656bf873bef",
+          "bytes": 56942,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "5f70b0ad029c9522d327cbe6ec780edef4fe93c018ede2dbbd26632655f8dfa9"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhou2017-E/fig01.png",
+          "source": {
+            "sha256": "50087c351cd3fc1a6afde3805ac3d71b4f227073f1d1589b4df339038e7b0a11",
+            "bytes": 287968,
+            "dimensions": [
+              1440,
+              1263
+            ],
+            "format": "PNG",
+            "rgba_sha256": "c298d16c3f113a90f32fafa8edbbcdbe5fb8543aa39fd7e19a101d478a8bdaf4"
+          },
+          "official_image": {
+            "sha256": "50087c351cd3fc1a6afde3805ac3d71b4f227073f1d1589b4df339038e7b0a11",
+            "bytes": 287968,
+            "dimensions": [
+              1440,
+              1263
+            ],
+            "format": "PNG",
+            "rgba_sha256": "c298d16c3f113a90f32fafa8edbbcdbe5fb8543aa39fd7e19a101d478a8bdaf4"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhou2017-E/fig17.png",
+          "source": {
+            "sha256": "b928f035d3315de8178bb044c3b8cc7d6a5b576fb4b71cf7868d5f29af8bdfd5",
+            "bytes": 49831,
+            "dimensions": [
+              1440,
+              387
+            ],
+            "format": "PNG",
+            "rgba_sha256": "15fa04f6fe3c153f533a0f876a48f100c7432c2b4929a2a948e36ad70e8ceb07"
+          },
+          "official_image": {
+            "sha256": "b928f035d3315de8178bb044c3b8cc7d6a5b576fb4b71cf7868d5f29af8bdfd5",
+            "bytes": 49831,
+            "dimensions": [
+              1440,
+              387
+            ],
+            "format": "PNG",
+            "rgba_sha256": "15fa04f6fe3c153f533a0f876a48f100c7432c2b4929a2a948e36ad70e8ceb07"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhou2017-E/fig28.png",
+          "source": {
+            "sha256": "83f72ed5a91080a38ca8fec5b280050cbe06917614bc6cc1c22a0b684f1e7902",
+            "bytes": 168247,
+            "dimensions": [
+              1440,
+              1005
+            ],
+            "format": "PNG",
+            "rgba_sha256": "25256ef20db56706fcfff1669d07b57e5fbad85a60dfd5a68ee4bdc8f7289979"
+          },
+          "official_image": {
+            "sha256": "83f72ed5a91080a38ca8fec5b280050cbe06917614bc6cc1c22a0b684f1e7902",
+            "bytes": 168247,
+            "dimensions": [
+              1440,
+              1005
+            ],
+            "format": "PNG",
+            "rgba_sha256": "25256ef20db56706fcfff1669d07b57e5fbad85a60dfd5a68ee4bdc8f7289979"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zhou2020-RE",
+      "ok": true,
+      "operation": "create",
+      "title": "一体化分析 | 浮式平台朝哪边装，不能只看塔筒疲劳",
+      "author": "Zhou Shengtao",
+      "body_image_count": 3,
+      "formula_svg_count": 0,
+      "actual_times": {
+        "submitted_at": "2026-10-15T01:17:08+00:00",
+        "acknowledged_at": "2026-10-15T01:17:12+00:00",
+        "readback_completed_at": "2026-10-15T01:17:15+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "695647bcb4c1b2ffc04f0c813f467a1d712c177b3fadde9c6230f964042bb0be",
+        "markdown_sha256": "2e0b781d31317e249110adee6aa9d4a4ddc64877e6a2411069f0fab8cf7bc5d4",
+        "review_sha256": "6552adc0e9e29c4116edd84dbf12d2bf59016a15758cb43573aefba7ed508cd7",
+        "html_sha256": "e4cb8dc214b0b07d3edda01a33ae14bad4853991ed0551358ac2746a7c57e30c",
+        "formula_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "formula_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_commit": "27f65bb8d4b909e68dbb6c3f26a268dbbe914a7a",
+        "source_tree": "afb36d909f03896abd554c202ecb2026b3790fd3"
+      },
+      "formula_render_applicability": "not_applicable_no_mathjax_formula_in_approved_intro",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Zhou Shengtao",
+        "review_has_author_override": false,
+        "review_author_override": null,
+        "prepared_explicit_author": "Zhou Shengtao",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "audited_markdown_first_author_with_chinese_punctuation_parser",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "submitted_explicit_author_parameter": "Zhou Shengtao",
+        "submitted_author_confirmed_by_official_readback": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "c2ee33a29aadc7c717b65dc985d2e8bd01953ebd01b418f192cf55d46225ba8e",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zhou2020-RE/cover-wechat-900x383-20261014-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "98c37acff618dfeb4fb3fc94780839b957e9ebd5821366381b6c4f0898bce985",
+        "readback_html_sha256": "fcbb5be54d1c7e272eae017b084b3d3a8c2b42d002ab8894be57b086561a4292",
+        "source_cover": {
+          "sha256": "01d345c3d7ef8d224d4d268c591751ea76bcde0e9203c0d5e0831028d28c4cf0",
+          "bytes": 460803,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "a21a156e9ef3145390d507e39d3dacab53ab5b64395ac196503e93ea2574c0eb"
+        },
+        "official_returned_cover_image": {
+          "sha256": "01d345c3d7ef8d224d4d268c591751ea76bcde0e9203c0d5e0831028d28c4cf0",
+          "bytes": 460803,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "a21a156e9ef3145390d507e39d3dacab53ab5b64395ac196503e93ea2574c0eb"
+        },
+        "cover_display": {
+          "sha256": "7792ef88e6f96d49b4103b84123b27623ddee592b569ff480313bdb9e16a5ba6",
+          "bytes": 73134,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "8418a7f067805f7f5807de2e61c112ffc5d42ba91e8668e41aa148e83a9afa15"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhou2020-RE/fig03.jpg",
+          "source": {
+            "sha256": "1b89aa66232f6c970223c7e5e542813aa4d890935cdb0075975f43e0594a5858",
+            "bytes": 70625,
+            "dimensions": [
+              1422,
+              312
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "03b5161d593c9caaa274fcc7bc9f8fb93e544abc96df9f089a3cb898eb73cdcd"
+          },
+          "official_image": {
+            "sha256": "6488d16ca7b5fda81956c3a01a9901c9093da5a2ad2b27f00822e428ffee666a",
+            "bytes": 31193,
+            "dimensions": [
+              1280,
+              280
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "3d35acaf11b3d8d325edcd14e6fc10e9dda2684328d93033c90b5662627eef7d"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhou2020-RE/fig19.jpg",
+          "source": {
+            "sha256": "4965083ac6018b16bdcf7b580b13bd19bf18769fb8d89155561c468bd2d38aeb",
+            "bytes": 130956,
+            "dimensions": [
+              1034,
+              794
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "f3e86eea46b377a5fad85e7a01c7d10bad486759b015bb2e460c17e8e3457ea5"
+          },
+          "official_image": {
+            "sha256": "9ca3a3c9b7b35287dc7285dccdc2f78bf17cd5d1507c42bf665e3fcf72e1c673",
+            "bytes": 58996,
+            "dimensions": [
+              1034,
+              794
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "4ad67f5d40a36b2229f73066b75bf984cad0389f60b6273821e04054a4d99583"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhou2020-RE/fig23.jpg",
+          "source": {
+            "sha256": "f4ceaa98f70b65354ce5e365b2d9a13fd6368f271e6b5fcd75a568f94d7f3b82",
+            "bytes": 159619,
+            "dimensions": [
+              1034,
+              904
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "6fa1635cd2ac93ffac7d494ee63a3d31ed52b4b5e16ec3eb5f2cfc6a688558e4"
+          },
+          "official_image": {
+            "sha256": "74739b8640f2db07f81feacf44607a5e3140d27358e140a98920b2733de61e9d",
+            "bytes": 76149,
+            "dimensions": [
+              1034,
+              904
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "4ee7cdbc35442d6aa25d059f8cbce02b587fd2acf07d32bb083e6c39be8814ba"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zheng2025-QHDXXB",
+      "ok": true,
+      "operation": "create",
+      "title": "风机放中央还是一侧：两种半潜平台怎样比较？",
+      "author": "Zheng Shunyun",
+      "body_image_count": 3,
+      "formula_svg_count": 0,
+      "actual_times": {
+        "submitted_at": "2026-10-15T01:17:55+00:00",
+        "acknowledged_at": "2026-10-15T01:17:59+00:00",
+        "readback_completed_at": "2026-10-15T01:18:02+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "263096306ec10491655c93eab219508d6778b4c7f5d9f8f9834446da42d659d8",
+        "markdown_sha256": "c3932adfebf49a31c1e881ac74d575b981078f003fd7b262886534589d836d7e",
+        "review_sha256": "d1028ac35c98d0884bee398e0cf3019856c1ae91e027d8ccebb7f19a178c2871",
+        "html_sha256": "27ca89ca001db65b03bb969a05fac6ab4e04728df3294a0b305e3890558d52bb",
+        "formula_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "formula_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_commit": "27f65bb8d4b909e68dbb6c3f26a268dbbe914a7a",
+        "source_tree": "afb36d909f03896abd554c202ecb2026b3790fd3"
+      },
+      "formula_render_applicability": "not_applicable_no_mathjax_formula_in_approved_intro",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "郑舜云",
+        "review_has_author_override": true,
+        "review_author_override": "Zheng Shunyun",
+        "prepared_explicit_author": "Zheng Shunyun",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "submitted_explicit_author_parameter": "Zheng Shunyun",
+        "submitted_author_confirmed_by_official_readback": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "c2ee33a29aadc7c717b65dc985d2e8bd01953ebd01b418f192cf55d46225ba8e",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zheng2025-QHDXXB/cover-wechat-900x383-20261014-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "205497a3c593cf4a942ae02931292eae354f3c639ff696905a9dbb976479f060",
+        "readback_html_sha256": "10e896be64a84ce6306ccfbde92d7eab6923ec1d367f3a84e449545e185d2372",
+        "source_cover": {
+          "sha256": "8430c4147aa487a281f8744473eb5f4a1b8744cf756c8157ae341c46f31f7664",
+          "bytes": 400180,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "432aab9d6be6adb8179365cb07f1609f036bbe4601e521e55e9c7589f7a6fe67"
+        },
+        "official_returned_cover_image": {
+          "sha256": "8430c4147aa487a281f8744473eb5f4a1b8744cf756c8157ae341c46f31f7664",
+          "bytes": 400180,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "432aab9d6be6adb8179365cb07f1609f036bbe4601e521e55e9c7589f7a6fe67"
+        },
+        "cover_display": {
+          "sha256": "391682956546efe5e30702d967c971c721a7b3939389cdb3904e849f4f9d6a89",
+          "bytes": 54902,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "28da8f0823dd69f164f6c215ecd97c7297850f9d1b3f04abe2645b1419f0c3ae"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2025-QHDXXB/fig04.png",
+          "source": {
+            "sha256": "bac947ba10f07754c091daeac374037bd0fbb4060125a1c8c83af792a2bb3262",
+            "bytes": 913476,
+            "dimensions": [
+              780,
+              1355
+            ],
+            "format": "PNG",
+            "rgba_sha256": "06acc6570d108eae75994dbf491da7de9392aada4ec6a78b1343f6fb0deea104"
+          },
+          "official_image": {
+            "sha256": "bac947ba10f07754c091daeac374037bd0fbb4060125a1c8c83af792a2bb3262",
+            "bytes": 913476,
+            "dimensions": [
+              780,
+              1355
+            ],
+            "format": "PNG",
+            "rgba_sha256": "06acc6570d108eae75994dbf491da7de9392aada4ec6a78b1343f6fb0deea104"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2025-QHDXXB/fig17.png",
+          "source": {
+            "sha256": "6f32deb46ad5bd3fe2acdbaedd71917a0f0a830cd1895b11de2f9b945afc3439",
+            "bytes": 454776,
+            "dimensions": [
+              1536,
+              572
+            ],
+            "format": "PNG",
+            "rgba_sha256": "858406bfd4c4ca34876fea4ffbb76277a7c25bc4f25ee25415e7f6fa398210be"
+          },
+          "official_image": {
+            "sha256": "6f32deb46ad5bd3fe2acdbaedd71917a0f0a830cd1895b11de2f9b945afc3439",
+            "bytes": 454776,
+            "dimensions": [
+              1536,
+              572
+            ],
+            "format": "PNG",
+            "rgba_sha256": "858406bfd4c4ca34876fea4ffbb76277a7c25bc4f25ee25415e7f6fa398210be"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2025-QHDXXB/fig21.png",
+          "source": {
+            "sha256": "be3e7db69af95e6d005aac08dd38224f2eae56d6c85ea3cf401a743371f4d34e",
+            "bytes": 1264818,
+            "dimensions": [
+              1848,
+              1104
+            ],
+            "format": "PNG",
+            "rgba_sha256": "89fb48e9c7d871c3a2568c8a5a7e0e0e72e0d4ef157dd4a904c975e165d1c75d"
+          },
+          "official_image": {
+            "sha256": "be3e7db69af95e6d005aac08dd38224f2eae56d6c85ea3cf401a743371f4d34e",
+            "bytes": 1264818,
+            "dimensions": [
+              1848,
+              1104
+            ],
+            "format": "PNG",
+            "rgba_sha256": "89fb48e9c7d871c3a2568c8a5a7e0e0e72e0d4ef157dd4a904c975e165d1c75d"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zhao2021-EFM",
+      "ok": true,
+      "operation": "create",
+      "title": "数值风洞 | 天气模型的来风，怎样接入复杂山地？",
+      "author": "Zhao Zihan",
+      "body_image_count": 4,
+      "formula_svg_count": 4,
+      "actual_times": {
+        "submitted_at": "2026-10-15T01:18:43+00:00",
+        "acknowledged_at": "2026-10-15T01:18:48+00:00",
+        "readback_completed_at": "2026-10-15T01:18:51+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "6781bb95c935fc5a7e8e799b87cfccc77d5902e643d271895bce0dbb356f5103",
+        "markdown_sha256": "86859226c680689f6558f69ca7fa6d8e47d29e0d8cbc25b026b43f72f833a577",
+        "review_sha256": "f84a4edde692b89a5fddd850f7ef987e6383bd196e06c0cb03e0e7278b2d8096",
+        "html_sha256": "923e27269a0b894d9e2359b1952da658e61dd9353a45e34b1a9aa93d8e9ac22b",
+        "formula_geometry_sha256": "9d8a75bbab04507f5fce171e3beb835b911563c9d726b38bc24940900ba4ba3c",
+        "formula_metadata_sha256": "741e073a5f917b6217521f9cb245ddc610577a620bb600bb3ef4c3257ce685ad",
+        "source_commit": "27f65bb8d4b909e68dbb6c3f26a268dbbe914a7a",
+        "source_tree": "afb36d909f03896abd554c202ecb2026b3790fd3"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Zhao Zihan",
+        "review_has_author_override": true,
+        "review_author_override": "Zhao Zihan",
+        "prepared_explicit_author": "Zhao Zihan",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "submitted_explicit_author_parameter": "Zhao Zihan",
+        "submitted_author_confirmed_by_official_readback": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "c2ee33a29aadc7c717b65dc985d2e8bd01953ebd01b418f192cf55d46225ba8e",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zhao2021-EFM/cover-wechat-900x383-20261014-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "5a8501bbc518343c4d57cf152650fc99c40e01b6b70b4b16960e7aadc34368de",
+        "readback_html_sha256": "c0568069d07cb3150ab718fe82e0ca692bd86d0ef9ef5c995e23c0943f7cd31b",
+        "source_cover": {
+          "sha256": "66698a86e81131ada4ff887708225219596e0c930bc8e898256577cbea7be617",
+          "bytes": 387661,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "71dd98d6612040561dcb9d9a1165bec5806ca9da97a84bfe7cb9d0b701c58e65"
+        },
+        "official_returned_cover_image": {
+          "sha256": "66698a86e81131ada4ff887708225219596e0c930bc8e898256577cbea7be617",
+          "bytes": 387661,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "71dd98d6612040561dcb9d9a1165bec5806ca9da97a84bfe7cb9d0b701c58e65"
+        },
+        "cover_display": {
+          "sha256": "b190e208f8d235ca54fdaeac79ad0f139152b7da01e6800ca4331449d82b3661",
+          "bytes": 62166,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "7da3ea22d21b6811f091e91ea99c92ae94fe597a26e8aa358c6823a69b0755e9"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2021-EFM/fig01-original.png",
+          "source": {
+            "sha256": "5bb6bc6b1fb926f623c57fe0e5ed766d344b822322a37e8d27ef0596fad8ff31",
+            "bytes": 167139,
+            "dimensions": [
+              1396,
+              488
+            ],
+            "format": "PNG",
+            "rgba_sha256": "3ff795184917589c8dbb98fb1b24a2e083919868f11a0f4039d1ea5bfdf00d5b"
+          },
+          "official_image": {
+            "sha256": "5bb6bc6b1fb926f623c57fe0e5ed766d344b822322a37e8d27ef0596fad8ff31",
+            "bytes": 167139,
+            "dimensions": [
+              1396,
+              488
+            ],
+            "format": "PNG",
+            "rgba_sha256": "3ff795184917589c8dbb98fb1b24a2e083919868f11a0f4039d1ea5bfdf00d5b"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2021-EFM/fig12-original.png",
+          "source": {
+            "sha256": "f8837c6e3abba734a1e1c50329f84d9073ed934a3bd1290611c823d9e6043217",
+            "bytes": 79460,
+            "dimensions": [
+              1396,
+              440
+            ],
+            "format": "PNG",
+            "rgba_sha256": "16f8d472e24a2fc8f3e8acb1524e38fd9ef5c2ab5ff90e91a4171d34419d6c91"
+          },
+          "official_image": {
+            "sha256": "f8837c6e3abba734a1e1c50329f84d9073ed934a3bd1290611c823d9e6043217",
+            "bytes": 79460,
+            "dimensions": [
+              1396,
+              440
+            ],
+            "format": "PNG",
+            "rgba_sha256": "16f8d472e24a2fc8f3e8acb1524e38fd9ef5c2ab5ff90e91a4171d34419d6c91"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2021-EFM/fig15-original.png",
+          "source": {
+            "sha256": "a23a8b934f6e8ed52488af3c3bf7d2eab250a6e912f0b2497c9333bf8b295344",
+            "bytes": 82925,
+            "dimensions": [
+              1396,
+              568
+            ],
+            "format": "PNG",
+            "rgba_sha256": "abe92cea8b24af7ed421e0224a3b30161c971331d988ce5853d43236ad5a532c"
+          },
+          "official_image": {
+            "sha256": "a23a8b934f6e8ed52488af3c3bf7d2eab250a6e912f0b2497c9333bf8b295344",
+            "bytes": 82925,
+            "dimensions": [
+              1396,
+              568
+            ],
+            "format": "PNG",
+            "rgba_sha256": "abe92cea8b24af7ed421e0224a3b30161c971331d988ce5853d43236ad5a532c"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2021-EFM/fig17-original.png",
+          "source": {
+            "sha256": "41bba4ca7611ac6ef7d32cbf3007e28c5da8a18f67c3ac587506dd4dec7fdb3a",
+            "bytes": 203603,
+            "dimensions": [
+              1396,
+              1104
+            ],
+            "format": "PNG",
+            "rgba_sha256": "195a046da04efceeeb02ad4d1d55cca4968f8114d00430f91ee3259fb5811305"
+          },
+          "official_image": {
+            "sha256": "41bba4ca7611ac6ef7d32cbf3007e28c5da8a18f67c3ac587506dd4dec7fdb3a",
+            "bytes": 203603,
+            "dimensions": [
+              1396,
+              1104
+            ],
+            "format": "PNG",
+            "rgba_sha256": "195a046da04efceeeb02ad4d1d55cca4968f8114d00430f91ee3259fb5811305"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zhou2021-OE",
+      "ok": true,
+      "operation": "create",
+      "title": "一体化分析 | 浮体不能一味做大：哪些尺寸真正影响成本和运动？",
+      "author": "Zhou Shengtao",
+      "body_image_count": 3,
+      "formula_svg_count": 0,
+      "actual_times": {
+        "submitted_at": "2026-10-15T01:28:24+00:00",
+        "acknowledged_at": "2026-10-15T01:28:29+00:00",
+        "readback_completed_at": "2026-10-15T01:28:32+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "1065e335ce850dee03dc56920c8a09d86049d1ef2c7de2fd03c2f543813fa9d0",
+        "markdown_sha256": "35c9c74089b9f4966ed0c8482e46720f84db171864b059d7cf342fd842edeb1f",
+        "review_sha256": "953586bb8e2ec1870b475d5cb26ea917bdef55b83a1ede33511ed15152816112",
+        "html_sha256": "b6b3ac528389e01e61b563e5af981eb31937f898e9374200776b1bee3ff6309d",
+        "formula_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "formula_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_commit": "10aafc0737325c81a350ae68911a19d00328b48b",
+        "source_tree": "315eee3ff6e7e27b4bc3e370a8b628ab15b38391"
+      },
+      "formula_render_applicability": "not_applicable_no_mathjax_formula_in_approved_intro",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Zhou Shengtao",
+        "review_has_author_override": true,
+        "review_author_override": "Zhou Shengtao",
+        "prepared_explicit_author": "Zhou Shengtao",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Zhou Shengtao",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "61242a0c1c48a2743f7482fb2b1dcc44439c58d37fd212fb1377fb4442b69a08",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zhou2021-OE/cover-wechat-900x383-20261014-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "0d55fed8bc607f099ed0a695c23ba2b8170a50fd0156c53931f90cdcfd33983a",
+        "readback_html_sha256": "07457e3ea8113373031187289ba376569b1d81f5a402cffc2342828f154cc3a9",
+        "source_cover": {
+          "sha256": "cd8fb7ebb69213949d588e9f9b641feae99ad68b23dc694e1a280b16df17a33c",
+          "bytes": 451915,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "97e9a59a230142a3e945efd7404190b55a6b8ba9d11e82e7b2080974926b7838"
+        },
+        "official_returned_cover_image": {
+          "sha256": "cd8fb7ebb69213949d588e9f9b641feae99ad68b23dc694e1a280b16df17a33c",
+          "bytes": 451915,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "97e9a59a230142a3e945efd7404190b55a6b8ba9d11e82e7b2080974926b7838"
+        },
+        "cover_display": {
+          "sha256": "27fe200a68f24dd59be9a47a8151168ebef171040a976bdac5386b6cf3ca5dcf",
+          "bytes": 57148,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "567b715af68b045217ce85bee6bc2b205d1f369b28006dec616c6cca4a18b1cb"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhou2021-OE/fig02.jpg",
+          "source": {
+            "sha256": "49ea612e715d7f520ff36ecfcc65931142e412b11572ffcdbc6f08eb1c98f829",
+            "bytes": 412942,
+            "dimensions": [
+              1777,
+              485
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "cbf99e7ed4a26d3c7d246d2aeb3f06323a77a558e31516280ae1bf35e95f9be2"
+          },
+          "official_image": {
+            "sha256": "a7a0966d12b3d85e253e2a3a0844be23e57f6613e77f73e5ae603c3321a11ce7",
+            "bytes": 52856,
+            "dimensions": [
+              1280,
+              349
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "e1870b2a554059709a9b5f4fce3beb6e52fb466ae0ed7dfe3c254fbaccaaf26c"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhou2021-OE/fig18.jpg",
+          "source": {
+            "sha256": "f43068a1e45efa52b01e893515bda6c9b290a6491073a01f7283902ef61a629d",
+            "bytes": 1201039,
+            "dimensions": [
+              1777,
+              975
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "0261477e121a0d47e6c6e04b28205e76ba715583fd298ebbe3e8a6b0df491abe"
+          },
+          "official_image": {
+            "sha256": "e42b333365d5a4f899b478e63344e5a215019882173748ea5b4a892a3bed4446",
+            "bytes": 158983,
+            "dimensions": [
+              1280,
+              702
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "58e21695ba827cf10b135985c998c9f748e25d34f734c2d08a468de8a62bbd46"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhou2021-OE/fig21.jpg",
+          "source": {
+            "sha256": "5e0d99cdbf3b6583283e72bba00232324e8f1e00229f20c248eb6882c62eefed",
+            "bytes": 633545,
+            "dimensions": [
+              1428,
+              1087
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "afec9cb55c9606ecf007521c8e4456ded7420363d72e848b0a2ec91a9e807ebf"
+          },
+          "official_image": {
+            "sha256": "3908bf88a251f6c1689e59191213e691dccba27d5303f04176d1ddca525820cc",
+            "bytes": 109854,
+            "dimensions": [
+              1280,
+              974
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "492a4e9b969537abcf1cb54a8478c091bd1439acc23293a1e369df668755079d"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zheng2023-JRSE",
+      "ok": true,
+      "operation": "create",
+      "title": "一体化分析 | 风浪方向换了，塔底荷载为何也会变？",
+      "author": "Zheng Shunyun",
+      "body_image_count": 3,
+      "formula_svg_count": 0,
+      "actual_times": {
+        "submitted_at": "2026-10-15T01:29:11+00:00",
+        "acknowledged_at": "2026-10-15T01:29:15+00:00",
+        "readback_completed_at": "2026-10-15T01:29:19+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "ec1da2465df8bd08ef66473073e751a4ecc626aa25405cd19d6d8d8f92a93b00",
+        "markdown_sha256": "4e9f7282d7bcf472f9811c6dd1193c538c85a4f95a4f38b9884f521f8eae0e35",
+        "review_sha256": "8fde89ef757d48123d9c6168c32f80f3c09906a23c1cd3ef1e25b51e71557e5c",
+        "html_sha256": "fccbb5049281b16e04b0153b8edcbb97f9b62e13886c50c92924d3f04ad485c5",
+        "formula_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "formula_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_commit": "10aafc0737325c81a350ae68911a19d00328b48b",
+        "source_tree": "315eee3ff6e7e27b4bc3e370a8b628ab15b38391"
+      },
+      "formula_render_applicability": "not_applicable_no_mathjax_formula_in_approved_intro",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Zheng Shunyun",
+        "review_has_author_override": true,
+        "review_author_override": "Zheng Shunyun",
+        "prepared_explicit_author": "Zheng Shunyun",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Zheng Shunyun",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "61242a0c1c48a2743f7482fb2b1dcc44439c58d37fd212fb1377fb4442b69a08",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zheng2023-JRSE/cover-wechat-900x383-20261014-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "00185fab6e47cbc90bdd79a070171152c737c9f4e1860784c5e9f18c0b0d0c4e",
+        "readback_html_sha256": "364dcfecb20291b1181021b83fe3bfa3df7b4b36bb7226c3a26e85813e617b47",
+        "source_cover": {
+          "sha256": "4433d73af4c25a2727ca91aa3112c2e305a4ad5f1e6447909b5df1019d9e08a7",
+          "bytes": 538557,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "bca46887f5f8c2666ae7dc26d5eb7d5375385c3994a68bbf026d7b4e0e65a371"
+        },
+        "official_returned_cover_image": {
+          "sha256": "4433d73af4c25a2727ca91aa3112c2e305a4ad5f1e6447909b5df1019d9e08a7",
+          "bytes": 538557,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "bca46887f5f8c2666ae7dc26d5eb7d5375385c3994a68bbf026d7b4e0e65a371"
+        },
+        "cover_display": {
+          "sha256": "ece75c52233db2de5d4fb2b35f7b8d9952130bf7539bab4779c253a7a947140c",
+          "bytes": 75541,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "530b3d6e045487f1caa24c4451cf2f3158c549822310abde5a809f32fa6c2d7d"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2023-JRSE/fig06.jpg",
+          "source": {
+            "sha256": "e726683790434b42f3ee23d28cbf820270ef4541327f2a4808ea69ebb842f5ea",
+            "bytes": 236370,
+            "dimensions": [
+              1694,
+              1332
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "c34d8f84b93ca347ba3451b31683612ffff278151d78f598f81bb7029422b4b9"
+          },
+          "official_image": {
+            "sha256": "5c2798e3f587c272466f29f744ac8262153323e6ba4df400ebe7f5e4cdc8c690",
+            "bytes": 83663,
+            "dimensions": [
+              1280,
+              1006
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "0619d36cfafb520a8c96f0b29f4627c6f1342fdf3dfb9b05e8573370f4914f73"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2023-JRSE/fig15.png",
+          "source": {
+            "sha256": "07e56462e4a03c6a34f4ae0747d7bb657cf17e75923094653e9fe55885944b27",
+            "bytes": 48347,
+            "dimensions": [
+              735,
+              516
+            ],
+            "format": "PNG",
+            "rgba_sha256": "a4d2f9553618a5c678906efc328bb20d83128d89eeb4eb02ad431d454fa982e3"
+          },
+          "official_image": {
+            "sha256": "07e56462e4a03c6a34f4ae0747d7bb657cf17e75923094653e9fe55885944b27",
+            "bytes": 48347,
+            "dimensions": [
+              735,
+              516
+            ],
+            "format": "PNG",
+            "rgba_sha256": "a4d2f9553618a5c678906efc328bb20d83128d89eeb4eb02ad431d454fa982e3"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2023-JRSE/fig20.png",
+          "source": {
+            "sha256": "847a59ffb035ca33b75c12a010d70612f7cce7404d106ccfd21cd95b4625c4d0",
+            "bytes": 400566,
+            "dimensions": [
+              1272,
+              1380
+            ],
+            "format": "PNG",
+            "rgba_sha256": "5e6d3f9023d38d39b9c6f7b3b469d0a3fdb4e05cb4f7547e39ef9e16c107d7aa"
+          },
+          "official_image": {
+            "sha256": "847a59ffb035ca33b75c12a010d70612f7cce7404d106ccfd21cd95b4625c4d0",
+            "bytes": 400566,
+            "dimensions": [
+              1272,
+              1380
+            ],
+            "format": "PNG",
+            "rgba_sha256": "5e6d3f9023d38d39b9c6f7b3b469d0a3fdb4e05cb4f7547e39ef9e16c107d7aa"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-wang2023-JWEIA",
+      "ok": true,
+      "operation": "create",
+      "title": "数值风洞 | 湍流不只从入口来：把扰动加进动量方程",
+      "author": "Wang Jinghan",
+      "body_image_count": 4,
+      "formula_svg_count": 0,
+      "actual_times": {
+        "submitted_at": "2026-10-15T01:33:00+00:00",
+        "acknowledged_at": "2026-10-15T01:33:04+00:00",
+        "readback_completed_at": "2026-10-15T01:33:07+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "57360d0049872f158985681ca0a3e0c2e618978dc4fef9318a751a4340e996e6",
+        "markdown_sha256": "1eefe5ebb4fe1b66f84ae3fc24a84950267ff126117a2b4ede2dde8704188d57",
+        "review_sha256": "2c2a8a1d36140e26d26192c8e68725aa04ea22bcb25dd4f9e806e3cc78862f66",
+        "html_sha256": "5942e7ad19c1905c63099df2e514cd03412184254218a067b393e0489ff2c30b",
+        "formula_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "formula_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_commit": "10aafc0737325c81a350ae68911a19d00328b48b",
+        "source_tree": "315eee3ff6e7e27b4bc3e370a8b628ab15b38391"
+      },
+      "formula_render_applicability": "not_applicable_no_mathjax_formula_in_approved_intro",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Wang Jinghan",
+        "review_has_author_override": true,
+        "review_author_override": "Wang Jinghan",
+        "prepared_explicit_author": "Wang Jinghan",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Wang Jinghan",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "61242a0c1c48a2743f7482fb2b1dcc44439c58d37fd212fb1377fb4442b69a08",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-wang2023-JWEIA/cover-wechat-900x383-20261014-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "4c666000fec3349e035ebc35f135b93875f8d0bca5380f02874b0db80c750cad",
+        "readback_html_sha256": "af2ac1b20cd371b2d311e0a60b4a28e928a56c7a2dae9bb5cfa7169afe2628ea",
+        "source_cover": {
+          "sha256": "ef270ea497bcc5948526e643092ac7bd03c3616a74805f44ca209d33d97e2968",
+          "bytes": 374149,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "27634634c95837a24f4536d0e408b4b26344c3de001369d83831ab52bb10b77a"
+        },
+        "official_returned_cover_image": {
+          "sha256": "ef270ea497bcc5948526e643092ac7bd03c3616a74805f44ca209d33d97e2968",
+          "bytes": 374149,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "27634634c95837a24f4536d0e408b4b26344c3de001369d83831ab52bb10b77a"
+        },
+        "cover_display": {
+          "sha256": "5c353fb186239a5e4216b1beac7119b0f6ba6b51d9c962404cee7a3180af122a",
+          "bytes": 50052,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "7584cae73cfe892b2e1e580b9f6ea449fe32475acef4f6a25ddbbcd8d4e130d3"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-wang2023-JWEIA/fig02-original.png",
+          "source": {
+            "sha256": "de0166e6b089d3cc8e00f9281df18eb03741cbac6aa2c05731b8f107d783f4d9",
+            "bytes": 179553,
+            "dimensions": [
+              504,
+              288
+            ],
+            "format": "PNG",
+            "rgba_sha256": "51352c4c46833591a5ed0758af38e239fcb8abc2500b2c83cbe6964525423b8a"
+          },
+          "official_image": {
+            "sha256": "de0166e6b089d3cc8e00f9281df18eb03741cbac6aa2c05731b8f107d783f4d9",
+            "bytes": 179553,
+            "dimensions": [
+              504,
+              288
+            ],
+            "format": "PNG",
+            "rgba_sha256": "51352c4c46833591a5ed0758af38e239fcb8abc2500b2c83cbe6964525423b8a"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-wang2023-JWEIA/fig18-original.png",
+          "source": {
+            "sha256": "a7fcd97ca785b7183473893a34c6038ed3d220ab0a5b4c73c0716096c31ec345",
+            "bytes": 914580,
+            "dimensions": [
+              1060,
+              923
+            ],
+            "format": "PNG",
+            "rgba_sha256": "49532f53198c14b26533d1bd77e336472e4436f281846be7e858abb0e4b59d8c"
+          },
+          "official_image": {
+            "sha256": "a7fcd97ca785b7183473893a34c6038ed3d220ab0a5b4c73c0716096c31ec345",
+            "bytes": 914580,
+            "dimensions": [
+              1060,
+              923
+            ],
+            "format": "PNG",
+            "rgba_sha256": "49532f53198c14b26533d1bd77e336472e4436f281846be7e858abb0e4b59d8c"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-wang2023-JWEIA/fig17-original.png",
+          "source": {
+            "sha256": "d27ad253f9e9a4307c56c1cd9163521f3d94c74af5084efdefde0157ce7ad0ba",
+            "bytes": 379066,
+            "dimensions": [
+              829,
+              492
+            ],
+            "format": "PNG",
+            "rgba_sha256": "a7ca79f0bc69c0296dcbae02207e8fc9039ca231a79abf753586d19a42f78f89"
+          },
+          "official_image": {
+            "sha256": "d27ad253f9e9a4307c56c1cd9163521f3d94c74af5084efdefde0157ce7ad0ba",
+            "bytes": 379066,
+            "dimensions": [
+              829,
+              492
+            ],
+            "format": "PNG",
+            "rgba_sha256": "a7ca79f0bc69c0296dcbae02207e8fc9039ca231a79abf753586d19a42f78f89"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-wang2023-JWEIA/fig27-original.png",
+          "source": {
+            "sha256": "580f05c710810fbf19b0ce0d3187c47776e0b05d6a3d8804f1e632ec2f498389",
+            "bytes": 761726,
+            "dimensions": [
+              889,
+              894
+            ],
+            "format": "PNG",
+            "rgba_sha256": "1962156530d899a390fa71bbbc2e67586fb0e1b924694518d58a4714d4ffd349"
+          },
+          "official_image": {
+            "sha256": "580f05c710810fbf19b0ce0d3187c47776e0b05d6a3d8804f1e632ec2f498389",
+            "bytes": 761726,
+            "dimensions": [
+              889,
+              894
+            ],
+            "format": "PNG",
+            "rgba_sha256": "1962156530d899a390fa71bbbc2e67586fb0e1b924694518d58a4714d4ffd349"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zheng2023-MS",
+      "ok": true,
+      "operation": "create",
+      "title": "一体化分析 | 导管架轻量化，怎样减少计算又不漏掉疲劳检查？",
+      "author": "Zheng Shunyun",
+      "body_image_count": 4,
+      "formula_svg_count": 13,
+      "actual_times": {
+        "submitted_at": "2026-10-15T09:36:20+00:00",
+        "acknowledged_at": "2026-10-15T09:36:25+00:00",
+        "readback_completed_at": "2026-10-15T09:36:28+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "32baaddc730c6376fbd632929439e48b1ef9e34a89e0eb2382cdbc083201c0a2",
+        "markdown_sha256": "a11ac4465fd30c402b6946f23e670316206a439cf38bd05392ae3e6c06dfebe7",
+        "review_sha256": "85c86c72b32c8b2d59f28510d0f68babcc31ec6e3d5093a0e7fce8fc84000191",
+        "html_sha256": "a398c3ffb0b525825754bba83f3a074648bd98c8b6e66b2aac04ab179aa0ad6b",
+        "formula_geometry_sha256": "763703de2ba7264d0f3e72cb3230c3d24636890878e7eac1cbc4a0cffe21fa31",
+        "formula_metadata_sha256": "38df260582669951f818c408d231efa4b75161601cd37e2fb18d65585282d8ac",
+        "source_commit": "31a8b1b58010e7daefeeadd4fff59379ae9cbfa9",
+        "source_tree": "8736e11d5d446d575ba2a4adc116053ae5dd4d91"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Zheng Shunyun",
+        "review_has_author_override": true,
+        "review_author_override": "Zheng Shunyun",
+        "prepared_explicit_author": "Zheng Shunyun",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Zheng Shunyun",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "1f2b5a2e164249393390da8ece6e170aadd3553f465e675c43978bd352055a88",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zheng2023-MS/cover-wechat-900x383-20261015-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "d0affc563e00309dae78877f0ddda9d40236c98bdb6e9964ce87046dc5d5b55b",
+        "readback_html_sha256": "f3531e089f99eab040b36fd155d9115deed5725805e44c3cf93cc0828a53fd4f",
+        "source_cover": {
+          "sha256": "6e1e59d1a354f7b090b321c9a2112de80dde09ff2c620dbf61b835b8416ee013",
+          "bytes": 407031,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "07b6e4a7bd5bae1b520cd78d1f49c4cabcde12526d1ed53bd7b4aabd83f9edba"
+        },
+        "official_returned_cover_image": {
+          "sha256": "6e1e59d1a354f7b090b321c9a2112de80dde09ff2c620dbf61b835b8416ee013",
+          "bytes": 407031,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "07b6e4a7bd5bae1b520cd78d1f49c4cabcde12526d1ed53bd7b4aabd83f9edba"
+        },
+        "cover_display": {
+          "sha256": "5fa8878e377ab093b61ea7ca2e447e6a65481f7f149f1a8d8bfc34f8238d45cf",
+          "bytes": 49757,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "1a811a826157bdcfbe0eca1b23702cf6158fecf685b1b3c7115ebbf5d50c8a16"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2023-MS/fig02.jpg",
+          "source": {
+            "sha256": "5aa521813408b494e82e533e2c39fda322b182d0d70b232f5367627635c259c2",
+            "bytes": 485016,
+            "dimensions": [
+              1600,
+              1110
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "5349029ea262783c1de4b8103b1f1f8fdd4166b50229f35e84e8cf39f89025a9"
+          },
+          "official_image": {
+            "sha256": "0d81f0afd23fa0afac46b7be61d353ce71a8d7d861a9a6a67dd1080b97c6b0f1",
+            "bytes": 88858,
+            "dimensions": [
+              1280,
+              888
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "4fc615e903f0486753242ed8577c578861fa446c5714635e95b37555accca904"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2023-MS/fig01.jpg",
+          "source": {
+            "sha256": "8362eb717b05ddb643195ca2939eba6e9dc9cfb93dc43257cbf2e0889a175038",
+            "bytes": 752495,
+            "dimensions": [
+              1777,
+              821
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "fe9ec69689538a0bcb4d69365854ba400121c2e41b9e58150398b32da624699b"
+          },
+          "official_image": {
+            "sha256": "da6e8373e8691698a7bab8c6a98056d8b8912eb5116c9187bd3c0fe8ea6de1d4",
+            "bytes": 92801,
+            "dimensions": [
+              1280,
+              591
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "15ccbf50b5522364a5e19c56d124c5bf131763351017d7ad249adcfebe1999f3"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2023-MS/fig09.jpg",
+          "source": {
+            "sha256": "6cccc4a30ea89f5c06ddd6fc4d0ac6c701d1c31bbb493757272059c8686d05e0",
+            "bytes": 365142,
+            "dimensions": [
+              914,
+              653
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "66ac816f030234968b3a9932a65bd0751dfc7086947a78822d1135504b102872"
+          },
+          "official_image": {
+            "sha256": "edc4ff08713c6c072ef6e1166ad18b59e32363a323ed0a0204296659be0e0e5f",
+            "bytes": 74234,
+            "dimensions": [
+              914,
+              653
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "13c8786d0580241e6ee73401c6381c7a4bd563b1e2a1b4cef1ee14f874147f93"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zheng2023-MS/fig17.png",
+          "source": {
+            "sha256": "a2a7d629e1fcf39b3efc617a029331344e10411d079335035a84191129f116be",
+            "bytes": 103101,
+            "dimensions": [
+              1407,
+              471
+            ],
+            "format": "PNG",
+            "rgba_sha256": "819bcfcab29389378f80c8fb7ef28b35746e459020554f4016717e874e829a90"
+          },
+          "official_image": {
+            "sha256": "a2a7d629e1fcf39b3efc617a029331344e10411d079335035a84191129f116be",
+            "bytes": 103101,
+            "dimensions": [
+              1407,
+              471
+            ],
+            "format": "PNG",
+            "rgba_sha256": "819bcfcab29389378f80c8fb7ef28b35746e459020554f4016717e874e829a90"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-li2010-WAS",
+      "ok": true,
+      "operation": "create",
+      "title": "数值风洞 | 大涡模拟的风压预测，怎样用物理风洞检验？",
+      "author": "Li Chao",
+      "body_image_count": 4,
+      "formula_svg_count": 11,
+      "actual_times": {
+        "submitted_at": "2026-10-15T09:37:50+00:00",
+        "acknowledged_at": "2026-10-15T09:37:54+00:00",
+        "readback_completed_at": "2026-10-15T09:37:59+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "c5f86ad26f1f8b4769b0a221fec2de93cbfed530a7c9727f13f0d6db451b73b8",
+        "markdown_sha256": "9254c9c8caeb7292401f248da80e0a0be4621b97fa5b9742a264060e7bac04e5",
+        "review_sha256": "177ee462837c5d89fde20e6f9e80210ead55378f9f6866120262be0ed775fdab",
+        "html_sha256": "3309c21902f1ad8ffbaaeacfc043d743f834676123546a0adba5e5a25c427c16",
+        "formula_geometry_sha256": "1d86969ede2baffacdece8065dd04bd30e10fe96ce719643c121cf35dbc452b2",
+        "formula_metadata_sha256": "3f7eb708251ffcffa59b3ce58137486d57dfb6dd14063e24336a5e05ec54e49e",
+        "source_commit": "31a8b1b58010e7daefeeadd4fff59379ae9cbfa9",
+        "source_tree": "8736e11d5d446d575ba2a4adc116053ae5dd4d91"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Li Chao",
+        "review_has_author_override": true,
+        "review_author_override": "Li Chao",
+        "prepared_explicit_author": "Li Chao",
+        "legacy_first_author_parser_result": "Li Chao",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Li Chao",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "1f2b5a2e164249393390da8ece6e170aadd3553f465e675c43978bd352055a88",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-li2010-WAS/cover-wechat-900x383-20261015-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "57e5df9a9cdefbce1a0d8cce55273bec93fe06512c933401cbcdaf987c6594ed",
+        "readback_html_sha256": "abcc23a65202d5253488ff0d3d65ec5d2e4893c5441d608cb8f9de17605dc759",
+        "source_cover": {
+          "sha256": "e3ec1e1893a7fd44d41ea7bd33027d771079f64ac148f38272d1a0f3bf072349",
+          "bytes": 445049,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "1b5db856e3af0052445766e510f09c84d5f1283904bbd4916c01577787c57854"
+        },
+        "official_returned_cover_image": {
+          "sha256": "e3ec1e1893a7fd44d41ea7bd33027d771079f64ac148f38272d1a0f3bf072349",
+          "bytes": 445049,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "1b5db856e3af0052445766e510f09c84d5f1283904bbd4916c01577787c57854"
+        },
+        "cover_display": {
+          "sha256": "0a622da3c9c7f8111e8a9e45f0151600287c6a4be52b7d2f6513636f0ab124d6",
+          "bytes": 60799,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "3df8802fa481def39a4559a3af163dc6e55fe5665fc4b46d264befc872db9aa3"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-li2010-WAS/fig01.png",
+          "source": {
+            "sha256": "3a8c8d3e4d0f2871390f607eb9aef8a08f4adc157d7e447db77054a172a46736",
+            "bytes": 183471,
+            "dimensions": [
+              593,
+              343
+            ],
+            "format": "PNG",
+            "rgba_sha256": "5a90a81fe3649b8dcd76b939817712fcf1fe9e7108099687f295bdbfa5bb3cf9"
+          },
+          "official_image": {
+            "sha256": "3a8c8d3e4d0f2871390f607eb9aef8a08f4adc157d7e447db77054a172a46736",
+            "bytes": 183471,
+            "dimensions": [
+              593,
+              343
+            ],
+            "format": "PNG",
+            "rgba_sha256": "5a90a81fe3649b8dcd76b939817712fcf1fe9e7108099687f295bdbfa5bb3cf9"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-li2010-WAS/fig08.png",
+          "source": {
+            "sha256": "8fa11a12a2217aa77d6978c11e40e0a2071d9ed7fb8cfdcddb4bd186e852673d",
+            "bytes": 171412,
+            "dimensions": [
+              593,
+              635
+            ],
+            "format": "PNG",
+            "rgba_sha256": "937edcbd125a41c22a6c11d4f26fa67e83917cb6875ab1e47bd1a74076243e8c"
+          },
+          "official_image": {
+            "sha256": "8fa11a12a2217aa77d6978c11e40e0a2071d9ed7fb8cfdcddb4bd186e852673d",
+            "bytes": 171412,
+            "dimensions": [
+              593,
+              635
+            ],
+            "format": "PNG",
+            "rgba_sha256": "937edcbd125a41c22a6c11d4f26fa67e83917cb6875ab1e47bd1a74076243e8c"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-li2010-WAS/fig10.png",
+          "source": {
+            "sha256": "4211421a132fc16eb6fa2b8361d4ec2a1f4aaf21a28a7907667b42f2f9171f7c",
+            "bytes": 185225,
+            "dimensions": [
+              860,
+              1158
+            ],
+            "format": "PNG",
+            "rgba_sha256": "22537ddef831f9be97fe7584106838e29792673e762b8ba7c2cac448511c3785"
+          },
+          "official_image": {
+            "sha256": "4211421a132fc16eb6fa2b8361d4ec2a1f4aaf21a28a7907667b42f2f9171f7c",
+            "bytes": 185225,
+            "dimensions": [
+              860,
+              1158
+            ],
+            "format": "PNG",
+            "rgba_sha256": "22537ddef831f9be97fe7584106838e29792673e762b8ba7c2cac448511c3785"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-li2010-WAS/fig13.png",
+          "source": {
+            "sha256": "9504f0db13e31989520741bf688b3474bcd4f1bea09900e2aba271ade5824969",
+            "bytes": 109614,
+            "dimensions": [
+              593,
+              925
+            ],
+            "format": "PNG",
+            "rgba_sha256": "15891e17ce7119a9fc32b997e404e0483c07c1a6bceb5f6f62f3d49b4b5fb642"
+          },
+          "official_image": {
+            "sha256": "9504f0db13e31989520741bf688b3474bcd4f1bea09900e2aba271ade5824969",
+            "bytes": 109614,
+            "dimensions": [
+              593,
+              925
+            ],
+            "format": "PNG",
+            "rgba_sha256": "15891e17ce7119a9fc32b997e404e0483c07c1a6bceb5f6f62f3d49b4b5fb642"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-tang2024-POF",
+      "ok": true,
+      "operation": "create",
+      "title": "数值风洞 | 风场网格变细了，怎样判断细节真的恢复了？",
+      "author": "Tang Lingxiao",
+      "body_image_count": 4,
+      "formula_svg_count": 10,
+      "actual_times": {
+        "submitted_at": "2026-10-15T09:39:03+00:00",
+        "acknowledged_at": "2026-10-15T09:39:08+00:00",
+        "readback_completed_at": "2026-10-15T09:39:11+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "acadf27e500ed92ba95c36bb61b9f52340cd97e1fddc81568ff8434dc7fcb882",
+        "markdown_sha256": "14d43d3a32c94a49e9cbfd1d50f9172bf054c29e13a9d59efc37d2ea17608534",
+        "review_sha256": "7fa0e13ce301a762475b617b4e0061e8a0a993a118f82e347b8e6d01830c84ea",
+        "html_sha256": "f0822c07d83fb0cdb3710cbe2b3826631840f22ad852643e399bbf7e73a35393",
+        "formula_geometry_sha256": "801e68d2beeb4b5f44cde2e44ef2081626f1725701f8d1c06059c2d816105f3a",
+        "formula_metadata_sha256": "22cbbe2258d3121050d451ef30817b815fe713964d50f9f3f5b68a49a4e925e3",
+        "source_commit": "31a8b1b58010e7daefeeadd4fff59379ae9cbfa9",
+        "source_tree": "8736e11d5d446d575ba2a4adc116053ae5dd4d91"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Tang Lingxiao",
+        "review_has_author_override": true,
+        "review_author_override": "Tang Lingxiao",
+        "prepared_explicit_author": "Tang Lingxiao",
+        "legacy_first_author_parser_result": "Tang Lingxiao",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Tang Lingxiao",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "1f2b5a2e164249393390da8ece6e170aadd3553f465e675c43978bd352055a88",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-tang2024-POF/cover-wechat-900x383-20261015-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "42360c592d5d9ed6fdd8f0597fa65fe4a5403801fee5f5adc2ecb5d3652514e5",
+        "readback_html_sha256": "16bcf0e2733cb7ed071b9ce0ceebe628425481e04d291b4ec6304973532a195d",
+        "source_cover": {
+          "sha256": "89d88d59c4e2b84f22aad699f2957068dee1e57d8cd5947ca5b4ce06d273711a",
+          "bytes": 498804,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "3ae7bcf3d085a6d407d565f69e082997ccf3a8694c29c6fcda1a1ffa741cbf92"
+        },
+        "official_returned_cover_image": {
+          "sha256": "89d88d59c4e2b84f22aad699f2957068dee1e57d8cd5947ca5b4ce06d273711a",
+          "bytes": 498804,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "3ae7bcf3d085a6d407d565f69e082997ccf3a8694c29c6fcda1a1ffa741cbf92"
+        },
+        "cover_display": {
+          "sha256": "de8b0e31cd4f86dcfc7feef0c93b7866a337368c359383b4af113cd7f3c4446f",
+          "bytes": 67005,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "76b8b00eecea6bb7fe596060eb1ea3b12c7db0cc66dbd85f00eec609ad57b14e"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-tang2024-POF/fig01.jpg",
+          "source": {
+            "sha256": "74ceceddccf3143f5e9e533fa11567f70628defcb897a9d505b37b64783ed8dc",
+            "bytes": 279278,
+            "dimensions": [
+              1747,
+              708
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "4c78c31415bf099cac50af0d33248ccef4bdc16a83cf65ee36ede9f21eefe688"
+          },
+          "official_image": {
+            "sha256": "6f8cad379ff8d770647f1a37bcc0d11bbef6ea258672d57489219fbc0a11ae3b",
+            "bytes": 89689,
+            "dimensions": [
+              1280,
+              518
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "f17dd9305e1c6779512c084849476f174d83742b0517dedb848baa92114a5d10"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-tang2024-POF/fig05.jpg",
+          "source": {
+            "sha256": "63d1ad713e84817363db538646377e3442ae46f1a7d6cb2bcdba2e0887ad574d",
+            "bytes": 165431,
+            "dimensions": [
+              1447,
+              712
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "e9558c3bb6337f4b4d020e7a69df013f21fb1cd7f3cbd2073418d6a8c9d870f5"
+          },
+          "official_image": {
+            "sha256": "60da13b00e85daa837190847141a694155cd0bd5881e11d83314d08243b4ebff",
+            "bytes": 76786,
+            "dimensions": [
+              1280,
+              629
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "2542a927ff2f79c3c8783c33ab1e27c10c0e8fd36cbf4fdef77b2901b994804c"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-tang2024-POF/fig21.jpg",
+          "source": {
+            "sha256": "112ab46f41e590ec4aaebd8d9dbeab003bc222e42fb97940b0c0d69fae42e74f",
+            "bytes": 478386,
+            "dimensions": [
+              1996,
+              818
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "c2c5f8f9cd35a9f2da5a6c086a5a57256b97c7b9dcacb37a5f7388a7078ed41f"
+          },
+          "official_image": {
+            "sha256": "95b7d27c8f1103002eb8cd610d885a7d1e3c671c62b0b97d3e0b75639f8d2824",
+            "bytes": 109229,
+            "dimensions": [
+              1280,
+              524
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "6697bc3a5f1be1349bfcc9b39a297675ad1cb25d93ffd5d3115a699cf633c2b9"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-tang2024-POF/fig25.jpg",
+          "source": {
+            "sha256": "6608f2d15674176766a4e01f657d4fe27957ae6a1054482083aa928bddb523d3",
+            "bytes": 139205,
+            "dimensions": [
+              1797,
+              697
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "421c35ad1ef9ca926a01614b64ac7baf464554ad304ad4d09253f45f63d548eb"
+          },
+          "official_image": {
+            "sha256": "918ac379c9e20038f46cfc9cc2bbdd3ade24d9b9c7353b26ca42fe215b0fb5ce",
+            "bytes": 46226,
+            "dimensions": [
+              1280,
+              496
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "86fa4fedecfc22b2d738316b809e8eb9feb8718f17651dffd80f4762ab4f0267"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-he2024-JBE",
+      "ok": true,
+      "operation": "create",
+      "title": "结构抗风 | 消防水箱怎样减轻风振，为什么不能只加水？",
+      "author": "He Xin",
+      "body_image_count": 4,
+      "formula_svg_count": 13,
+      "actual_times": {
+        "submitted_at": "2026-10-15T09:40:19+00:00",
+        "acknowledged_at": "2026-10-15T09:40:24+00:00",
+        "readback_completed_at": "2026-10-15T09:40:27+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "87f02611c3a8a13921a79b436bad6b1bd0a8d4b7e49615f234832469f9675a45",
+        "markdown_sha256": "c8e1f34c8a4b73c4efdbc65197923ef97147585409fc97bec73a18f6be02f5cd",
+        "review_sha256": "8dc1ffcdc5c98dc0e7b1786137412de0084fce1df605ad200823a5509b369176",
+        "html_sha256": "7e40e62bd8ee96413469edc2f17af168e4ab761b816ee9fa376e120555cb3540",
+        "formula_geometry_sha256": "9221eee0ebd1595a37dba70fcab8160dd5627177ed10e0aaf8138469507660b9",
+        "formula_metadata_sha256": "64aebef8c9b043b479a36a614a8285fa06e198638ce74e89679cb83312a3347b",
+        "source_commit": "31a8b1b58010e7daefeeadd4fff59379ae9cbfa9",
+        "source_tree": "8736e11d5d446d575ba2a4adc116053ae5dd4d91"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "He Xin",
+        "review_has_author_override": true,
+        "review_author_override": "He Xin",
+        "prepared_explicit_author": "He Xin",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "He Xin",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "1f2b5a2e164249393390da8ece6e170aadd3553f465e675c43978bd352055a88",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-he2024-JBE/cover-wechat-900x383-20261015-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "600c1c44133ba75cc08f6b6f8b74cbf45953484d9b8d8350ebebc2219d147de7",
+        "readback_html_sha256": "6bb4c2cc82dace80e294402c1b679930a99746790fe136df686bf84fe133bd5a",
+        "source_cover": {
+          "sha256": "3a9aefa1ca618a2f77acc9b1bf7114cb287bcfec771f28551bdf4264539b3ccc",
+          "bytes": 517420,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "22357982dabd499b7a75a3688068a55b584c7ae7f0ba8a78d3c798cfbced26ff"
+        },
+        "official_returned_cover_image": {
+          "sha256": "3a9aefa1ca618a2f77acc9b1bf7114cb287bcfec771f28551bdf4264539b3ccc",
+          "bytes": 517420,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "22357982dabd499b7a75a3688068a55b584c7ae7f0ba8a78d3c798cfbced26ff"
+        },
+        "cover_display": {
+          "sha256": "21a3f1c582624e9f25dcc408e58dd18e5e731cd6c9a6cad7e2928780c96741ff",
+          "bytes": 73371,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "65251a48e41db15ba268214800b2fdebbea3de2223398bb89a3254f86dc6047b"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-he2024-JBE/fig14-scaled-sloshing-time-history.png",
+          "source": {
+            "sha256": "7762ee98bde91af288aaec6fdbfb73b424105ff36ed926f24cdaff7fb0a1ed9f",
+            "bytes": 408239,
+            "dimensions": [
+              2239,
+              1854
+            ],
+            "format": "PNG",
+            "rgba_sha256": "1a4a0a83fab511951118a46f09a75a4fec9dce167518a92c930f665f21b7e74f"
+          },
+          "official_image": {
+            "sha256": "7762ee98bde91af288aaec6fdbfb73b424105ff36ed926f24cdaff7fb0a1ed9f",
+            "bytes": 408239,
+            "dimensions": [
+              2239,
+              1854
+            ],
+            "format": "PNG",
+            "rgba_sha256": "1a4a0a83fab511951118a46f09a75a4fec9dce167518a92c930f665f21b7e74f"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-he2024-JBE/fig15-two-way-coupling-model.png",
+          "source": {
+            "sha256": "c4aaa4ac95edc15eb4531389dd7ec873a9af74e709b97d29cdc2e7e8426c0297",
+            "bytes": 96346,
+            "dimensions": [
+              1691,
+              2030
+            ],
+            "format": "PNG",
+            "rgba_sha256": "5e3cac9d72938e4dcf48819e7e2fb76c49a0a6ba3710f11a455e7b4cbe59a9aa"
+          },
+          "official_image": {
+            "sha256": "c4aaa4ac95edc15eb4531389dd7ec873a9af74e709b97d29cdc2e7e8426c0297",
+            "bytes": 96346,
+            "dimensions": [
+              1691,
+              2030
+            ],
+            "format": "PNG",
+            "rgba_sha256": "5e3cac9d72938e4dcf48819e7e2fb76c49a0a6ba3710f11a455e7b4cbe59a9aa"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-he2024-JBE/fig18-top-displacement-comparison.png",
+          "source": {
+            "sha256": "82264e744315e9781e26b491d6d84caff9bd988db1395929970e101234a88aeb",
+            "bytes": 237839,
+            "dimensions": [
+              2624,
+              953
+            ],
+            "format": "PNG",
+            "rgba_sha256": "110b118d43e7a34b15aa06a10cbaa82e6cdccc3b4cc0af5b8b674bb339042b78"
+          },
+          "official_image": {
+            "sha256": "82264e744315e9781e26b491d6d84caff9bd988db1395929970e101234a88aeb",
+            "bytes": 237839,
+            "dimensions": [
+              2624,
+              953
+            ],
+            "format": "PNG",
+            "rgba_sha256": "110b118d43e7a34b15aa06a10cbaa82e6cdccc3b4cc0af5b8b674bb339042b78"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-he2024-JBE/fig26-mitigation-tuning-ratio.png",
+          "source": {
+            "sha256": "7b7131bf1dc58546cba7ffe7856327283449e459855deea8543ad883223c8a2b",
+            "bytes": 276048,
+            "dimensions": [
+              2507,
+              2327
+            ],
+            "format": "PNG",
+            "rgba_sha256": "b94a7fff56d49bc4c38ce481fc9da9075d0806dbe21f380bf20ad44faac6dc6a"
+          },
+          "official_image": {
+            "sha256": "7b7131bf1dc58546cba7ffe7856327283449e459855deea8543ad883223c8a2b",
+            "bytes": 276048,
+            "dimensions": [
+              2507,
+              2327
+            ],
+            "format": "PNG",
+            "rgba_sha256": "b94a7fff56d49bc4c38ce481fc9da9075d0806dbe21f380bf20ad44faac6dc6a"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zhao2023-BS",
+      "ok": true,
+      "operation": "create",
+      "title": "数值风洞 | 台风路径算对了，为什么街道风速仍可能算错？",
+      "author": "Zhao Zihan",
+      "body_image_count": 4,
+      "formula_svg_count": 9,
+      "actual_times": {
+        "submitted_at": "2026-10-15T09:43:06+00:00",
+        "acknowledged_at": "2026-10-15T09:43:11+00:00",
+        "readback_completed_at": "2026-10-15T09:43:14+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "52d7a3eb855ad05469535349918e16ab7eb0f453c97b27d2276acd936d8be2ad",
+        "markdown_sha256": "2f24969499f2f82be9d41a7363a3795765062467c3fe3d30433371441b06ba87",
+        "review_sha256": "aa614eee851574f4022fda245dfb4cd23e333c00b2f1946e0fc4a2a985fcb21f",
+        "html_sha256": "b644d2d9325f959db9964e5ae8c886aa14e26884a805d928cbe24e679846160d",
+        "formula_geometry_sha256": "6fd0a7b5b55d4b42623e52c923b032a698bd6e0b0c911624b55663744564d2ff",
+        "formula_metadata_sha256": "dbe4821192fc839225cff16a2ebb6ce05e673244522f15e4e61931f301d68e56",
+        "source_commit": "31a8b1b58010e7daefeeadd4fff59379ae9cbfa9",
+        "source_tree": "8736e11d5d446d575ba2a4adc116053ae5dd4d91"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Zhao Zihan",
+        "review_has_author_override": true,
+        "review_author_override": "Zhao Zihan",
+        "prepared_explicit_author": "Zhao Zihan",
+        "legacy_first_author_parser_result": "",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Zhao Zihan",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "1f2b5a2e164249393390da8ece6e170aadd3553f465e675c43978bd352055a88",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zhao2023-BS/cover-wechat-900x383-20261015-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "8977adbcbbfb66c74ad3abb8cb8efb37695bb98cd9a067637ffed466ac958ba6",
+        "readback_html_sha256": "9a8a5a6c9c08c45590a92f712404933b2ab35e543246f06cc9191b8c91977369",
+        "source_cover": {
+          "sha256": "3fe6abed84d7fb86c46ba1f84629bfd429fc6f23c3a76c4252df6eeed5a8cf89",
+          "bytes": 600808,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "8da803890560a91ec16aca5cafe9a961a3dde42146036b3fb320c2211c2a8f66"
+        },
+        "official_returned_cover_image": {
+          "sha256": "3fe6abed84d7fb86c46ba1f84629bfd429fc6f23c3a76c4252df6eeed5a8cf89",
+          "bytes": 600808,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "8da803890560a91ec16aca5cafe9a961a3dde42146036b3fb320c2211c2a8f66"
+        },
+        "cover_display": {
+          "sha256": "81434d8775edbfad0d7e31f893fb3c0e9660c8baaba514ab136c4e6444f9a72f",
+          "bytes": 89995,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "8617222a15a33eafa597f40d0e85e8cdcd711d36a8278f9fb0d5c44da0d9c0ef"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2023-BS/fig05-nested-framework.jpg",
+          "source": {
+            "sha256": "893faae032ff82633598e374db7e8c3820b569173e353734c2843f5e3d67473c",
+            "bytes": 366237,
+            "dimensions": [
+              1356,
+              1297
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "0b8b1be44aaf322edffb0acfc4c7c8a3e958d5590728258beb8823a59a8a1599"
+          },
+          "official_image": {
+            "sha256": "215700b02c06317fc28a0d3c1d4f027a34cacad0e297aba7916590d03f147191",
+            "bytes": 260757,
+            "dimensions": [
+              1280,
+              1224
+            ],
+            "format": "JPEG",
+            "rgba_sha256": "8bc4b2630a61fea7aca68cf3e32a6b4bf3aa86037df00ba30f0a9f445648b4e6"
+          },
+          "exact_full_pixels": false,
+          "official_jpeg_processing": true
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2023-BS/fig12-cfd-observation-validation.png",
+          "source": {
+            "sha256": "94c806cbac9f99f521031583f5477f451bbbacca7156914b9ea89c0d2be02687",
+            "bytes": 625835,
+            "dimensions": [
+              2751,
+              2718
+            ],
+            "format": "PNG",
+            "rgba_sha256": "6e61f42d3b25798f495f88810ff3c1f84b188fae3f3b3c4b3dc223c37830a1e6"
+          },
+          "official_image": {
+            "sha256": "94c806cbac9f99f521031583f5477f451bbbacca7156914b9ea89c0d2be02687",
+            "bytes": 625835,
+            "dimensions": [
+              2751,
+              2718
+            ],
+            "format": "PNG",
+            "rgba_sha256": "6e61f42d3b25798f495f88810ff3c1f84b188fae3f3b3c4b3dc223c37830a1e6"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2023-BS/fig14-pedestrian-wind-nc1-nc2.png",
+          "source": {
+            "sha256": "4b341ca55127c93021d063037ab25bc08edaa2efc31cb1fa03abe2fc41187022",
+            "bytes": 1904240,
+            "dimensions": [
+              1223,
+              1331
+            ],
+            "format": "PNG",
+            "rgba_sha256": "73477f02def135f3e8e61dcb3987f6ecf1790f603a85126c5216bf674b464a74"
+          },
+          "official_image": {
+            "sha256": "4b341ca55127c93021d063037ab25bc08edaa2efc31cb1fa03abe2fc41187022",
+            "bytes": 1904240,
+            "dimensions": [
+              1223,
+              1331
+            ],
+            "format": "PNG",
+            "rgba_sha256": "73477f02def135f3e8e61dcb3987f6ecf1790f603a85126c5216bf674b464a74"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhao2023-BS/fig17-observation-representativeness.png",
+          "source": {
+            "sha256": "7feaf6316a447d326d3167d5af58d6bb33a841918420d40c8cc5d5d010f66691",
+            "bytes": 149299,
+            "dimensions": [
+              2959,
+              1150
+            ],
+            "format": "PNG",
+            "rgba_sha256": "3354346aa8efa87e9b35a897f207cf22b37c24dc83cc1848e11e453a17c17474"
+          },
+          "official_image": {
+            "sha256": "7feaf6316a447d326d3167d5af58d6bb33a841918420d40c8cc5d5d010f66691",
+            "bytes": 149299,
+            "dimensions": [
+              2959,
+              1150
+            ],
+            "format": "PNG",
+            "rgba_sha256": "3354346aa8efa87e9b35a897f207cf22b37c24dc83cc1848e11e453a17c17474"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zhang2023-S",
+      "ok": true,
+      "operation": "create",
+      "title": "结构抗风 | 只测塔底反力，怎样估计整座输电塔的风荷载？",
+      "author": "Zhang Wentong",
+      "body_image_count": 4,
+      "formula_svg_count": 9,
+      "actual_times": {
+        "submitted_at": "2026-10-15T10:15:44+00:00",
+        "acknowledged_at": "2026-10-15T10:15:49+00:00",
+        "readback_completed_at": "2026-10-15T10:15:53+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "90db4fb89df626cdec7a9d33dbac8230d0f0b51c82eda657f59a457c1f69de1a",
+        "markdown_sha256": "35c1707b08b1e0b9c6a7ff58051f1163bfc9c352d90febb997adce69617dda48",
+        "review_sha256": "30ef6b5587e364aecef4fe185a597720e347eb2ec17259db383476b9529dfb93",
+        "html_sha256": "ba1611ca52ad069793c8d2011db90c5232d50f43e2cc4076b688e09ed04615e9",
+        "formula_geometry_sha256": "1bfe1078a0a827f004b252b6d25cb651092385276af40fe57dca39b881951408",
+        "formula_metadata_sha256": "101d44a369d365b3e604bf27f2587b1b20eef2d8513f46008bf896b2fc7bdb55",
+        "source_commit": "f1258a9ad8d764a21c6382456d8be765c2ebd255",
+        "source_tree": "34d9aa65136b29d5ac65dbe3d65f51ca30207850"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Zhang Wentong",
+        "review_has_author_override": true,
+        "review_author_override": "Zhang Wentong",
+        "prepared_explicit_author": "Zhang Wentong",
+        "legacy_first_author_parser_result": "Zhang Wentong；Li Chao；Liu Gaixia；Xiao Yiqing",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Zhang Wentong",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "31d8c6ac0075a1e8c42bd31147a80ebc3b7d71909f27fab72a5ebaf5cb0d8bca",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zhang2023-S/cover-wechat-900x383-20261015-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "3c47c1d48920281934e7b8257296cd208f2926ca01dcb8a55744a427e5fd4621",
+        "readback_html_sha256": "4e6a764d40194e66eb72ac803de1eebf29d49a544225010118720da326db6fd3",
+        "source_cover": {
+          "sha256": "685c179a25234b66a34b1c1381d6204195a2e523b7b451524c0a8b18f0717a8d",
+          "bytes": 400854,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "90882af673ecfd7c8b51c0215a7e5d53577ca7a50fb6065831fd1cca0db23330"
+        },
+        "official_returned_cover_image": {
+          "sha256": "685c179a25234b66a34b1c1381d6204195a2e523b7b451524c0a8b18f0717a8d",
+          "bytes": 400854,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "90882af673ecfd7c8b51c0215a7e5d53577ca7a50fb6065831fd1cca0db23330"
+        },
+        "cover_display": {
+          "sha256": "0a6b4503ea344f960a406e2045c3eabb1da9692b5c617da3b153aa5a024bc9e3",
+          "bytes": 52127,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "c13067c43df15eb02f3b78fbbe1be0fe8eb86a3f0fd53be3a270853c1a2dcadb"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhang2023-S/fig-1.png",
+          "source": {
+            "sha256": "b575700de35ad5d04b433013ae510ece9790f9c56043be8b96cdf07ec3ddd041",
+            "bytes": 338837,
+            "dimensions": [
+              1004,
+              952
+            ],
+            "format": "PNG",
+            "rgba_sha256": "45989754e95b340c6cfd1d156d7420d726e52e6adf9bf864a25fd2fbbd653ce4"
+          },
+          "official_image": {
+            "sha256": "b575700de35ad5d04b433013ae510ece9790f9c56043be8b96cdf07ec3ddd041",
+            "bytes": 338837,
+            "dimensions": [
+              1004,
+              952
+            ],
+            "format": "PNG",
+            "rgba_sha256": "45989754e95b340c6cfd1d156d7420d726e52e6adf9bf864a25fd2fbbd653ce4"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhang2023-S/fig-5.png",
+          "source": {
+            "sha256": "f67ad519d47289f676cacf7226b156cd88b3c1c50a4223c3c40c6c32c6927e82",
+            "bytes": 204606,
+            "dimensions": [
+              1980,
+              1522
+            ],
+            "format": "PNG",
+            "rgba_sha256": "b7e13f429c290f539e918202a1b2419250ea71e8c8f59d6c4c614cf91ce19a86"
+          },
+          "official_image": {
+            "sha256": "f67ad519d47289f676cacf7226b156cd88b3c1c50a4223c3c40c6c32c6927e82",
+            "bytes": 204606,
+            "dimensions": [
+              1980,
+              1522
+            ],
+            "format": "PNG",
+            "rgba_sha256": "b7e13f429c290f539e918202a1b2419250ea71e8c8f59d6c4c614cf91ce19a86"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhang2023-S/fig-4.png",
+          "source": {
+            "sha256": "af82213add7ae6f276ae5d631d4719f8ab5eb8bf12d3f4f6491e4fcabc77ab2c",
+            "bytes": 918342,
+            "dimensions": [
+              1004,
+              701
+            ],
+            "format": "PNG",
+            "rgba_sha256": "c0084b4e8f9ebea7b0c0d293f28c8f88b248f4ff2df7fa1664bcfb7c5a51c48c"
+          },
+          "official_image": {
+            "sha256": "af82213add7ae6f276ae5d631d4719f8ab5eb8bf12d3f4f6491e4fcabc77ab2c",
+            "bytes": 918342,
+            "dimensions": [
+              1004,
+              701
+            ],
+            "format": "PNG",
+            "rgba_sha256": "c0084b4e8f9ebea7b0c0d293f28c8f88b248f4ff2df7fa1664bcfb7c5a51c48c"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhang2023-S/fig-14.png",
+          "source": {
+            "sha256": "ab613fd068442d99ba854e41b3b1641497e7f89065ba1a7eaa8f0e20a14df38b",
+            "bytes": 508906,
+            "dimensions": [
+              1699,
+              1147
+            ],
+            "format": "PNG",
+            "rgba_sha256": "58d62a9cc32a8825c8d58a7cadb551c6881116ad45e423e67f95c2a2863b6625"
+          },
+          "official_image": {
+            "sha256": "ab613fd068442d99ba854e41b3b1641497e7f89065ba1a7eaa8f0e20a14df38b",
+            "bytes": 508906,
+            "dimensions": [
+              1699,
+              1147
+            ],
+            "format": "PNG",
+            "rgba_sha256": "58d62a9cc32a8825c8d58a7cadb551c6881116ad45e423e67f95c2a2863b6625"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-zhang2023-ES",
+      "ok": true,
+      "operation": "create",
+      "title": "结构抗风 | 只测四处位移，能反推出输电塔怎样受风吗？",
+      "author": "Zhang Wentong",
+      "body_image_count": 4,
+      "formula_svg_count": 4,
+      "actual_times": {
+        "submitted_at": "2026-10-15T10:17:00+00:00",
+        "acknowledged_at": "2026-10-15T10:17:05+00:00",
+        "readback_completed_at": "2026-10-15T10:17:08+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "cc6a0240971ecd979d060a7b4a01156daa155bc53d20f60da8940124aea35e00",
+        "markdown_sha256": "0d5f4ab8f6430528c0fffb488f36274b493c7e6532d81df06e5a4cc71bbecdef",
+        "review_sha256": "b2a8a4fd5834951018bb3b4cb6295f4fd2c34f38c1e97a6a223ad4e859e2cc7c",
+        "html_sha256": "b51f75497b051365037dedde09f49ff2ae19b95673c44c9b2d77dafec04c74be",
+        "formula_geometry_sha256": "bbc3b58487139f177721e4b054a92842de4ee0103b9e16a6183b9c44a283cbdd",
+        "formula_metadata_sha256": "d845c994ab6447858d869d4a36683d2a0869a9d05dea45db84abb43284672e95",
+        "source_commit": "f1258a9ad8d764a21c6382456d8be765c2ebd255",
+        "source_tree": "34d9aa65136b29d5ac65dbe3d65f51ca30207850"
+      },
+      "formula_render_applicability": "actual_mathjax_svg_present",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Zhang Wentong",
+        "review_has_author_override": true,
+        "review_author_override": "Zhang Wentong",
+        "prepared_explicit_author": "Zhang Wentong",
+        "legacy_first_author_parser_result": "Zhang Wentong；Li Chao；Liu Gaixia；Xiao Yiqing",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Zhang Wentong",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "31d8c6ac0075a1e8c42bd31147a80ebc3b7d71909f27fab72a5ebaf5cb0d8bca",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-zhang2023-ES/cover-wechat-900x383-20261015-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "591043b4cea8b7798e673f3c27e6f76586c604d73c2af988d9143ca80b821edb",
+        "readback_html_sha256": "68f829d1f2e5becf623142140937fad9fe78c9519f1fb293fe3317cba7130b20",
+        "source_cover": {
+          "sha256": "1723245f3f710ff82e0f0ddfb3fc3f2214d1f69be0218dc3b97de06bf6a13c08",
+          "bytes": 444662,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "6b44aa4f18f37711e353630bfc39271b5ffde3cde568d6515b7b4216d9d502f4"
+        },
+        "official_returned_cover_image": {
+          "sha256": "1723245f3f710ff82e0f0ddfb3fc3f2214d1f69be0218dc3b97de06bf6a13c08",
+          "bytes": 444662,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "6b44aa4f18f37711e353630bfc39271b5ffde3cde568d6515b7b4216d9d502f4"
+        },
+        "cover_display": {
+          "sha256": "26c71e407f70e7c1435f0657b53a7d873cfdf647709748860fcc18a375a2a3f5",
+          "bytes": 61577,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "0d29d5ad7ed8cd4da9a774aab98bf25a232048645d35ee34c6e83cc9c4cee517"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhang2023-ES/fig-1.png",
+          "source": {
+            "sha256": "33cf2d33d15dc8d62183bfb7d9ba6893f246d7f677b1bdc3915b70b16b279150",
+            "bytes": 309717,
+            "dimensions": [
+              970,
+              920
+            ],
+            "format": "PNG",
+            "rgba_sha256": "85d98b7591e89765c0ea92e3461e89fa9d5a6edb697b3cf12e287e71fd36f2ae"
+          },
+          "official_image": {
+            "sha256": "33cf2d33d15dc8d62183bfb7d9ba6893f246d7f677b1bdc3915b70b16b279150",
+            "bytes": 309717,
+            "dimensions": [
+              970,
+              920
+            ],
+            "format": "PNG",
+            "rgba_sha256": "85d98b7591e89765c0ea92e3461e89fa9d5a6edb697b3cf12e287e71fd36f2ae"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhang2023-ES/fig-14.png",
+          "source": {
+            "sha256": "411eaf273ffdb00a9725d24436087896b383911ff639dd9f582fbf65f15f24e1",
+            "bytes": 214241,
+            "dimensions": [
+              1688,
+              1310
+            ],
+            "format": "PNG",
+            "rgba_sha256": "83b3acf8cb5dd25e869b31c7b0d58ad4f16192259254a38fd74be8b53c6243a7"
+          },
+          "official_image": {
+            "sha256": "411eaf273ffdb00a9725d24436087896b383911ff639dd9f582fbf65f15f24e1",
+            "bytes": 214241,
+            "dimensions": [
+              1688,
+              1310
+            ],
+            "format": "PNG",
+            "rgba_sha256": "83b3acf8cb5dd25e869b31c7b0d58ad4f16192259254a38fd74be8b53c6243a7"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhang2023-ES/fig-19.png",
+          "source": {
+            "sha256": "804ea3326e799ea514be94daabb53ccda10492543d6ab0ee12f0fc007d03aea2",
+            "bytes": 855112,
+            "dimensions": [
+              968,
+              643
+            ],
+            "format": "PNG",
+            "rgba_sha256": "e75c0ad8d6c9a8e0479700ff2287509b35efc7145e217ec4c4ae36da2e28cb43"
+          },
+          "official_image": {
+            "sha256": "804ea3326e799ea514be94daabb53ccda10492543d6ab0ee12f0fc007d03aea2",
+            "bytes": 855112,
+            "dimensions": [
+              968,
+              643
+            ],
+            "format": "PNG",
+            "rgba_sha256": "e75c0ad8d6c9a8e0479700ff2287509b35efc7145e217ec4c4ae36da2e28cb43"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-zhang2023-ES/fig-27.png",
+          "source": {
+            "sha256": "99e5abd6a98d9f19566c700e84d0dca4799c045badc32f0c8e2e287a7a463123",
+            "bytes": 199274,
+            "dimensions": [
+              3034,
+              1134
+            ],
+            "format": "PNG",
+            "rgba_sha256": "ad33ef0b8ae995160b62a3abd70d397ec408d9436bf3e13dd63b1c929bb5892f"
+          },
+          "official_image": {
+            "sha256": "99e5abd6a98d9f19566c700e84d0dca4799c045badc32f0c8e2e287a7a463123",
+            "bytes": 199274,
+            "dimensions": [
+              3034,
+              1134
+            ],
+            "format": "PNG",
+            "rgba_sha256": "ad33ef0b8ae995160b62a3abd70d397ec408d9436bf3e13dd63b1c929bb5892f"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    },
+    {
+      "publication_ref": "ref-yang2022-AS",
+      "ok": true,
+      "operation": "create",
+      "title": "结构抗风 | 顶部位移算准了，沿高度的风荷载就够了吗？",
+      "author": "Junhui Yang",
+      "body_image_count": 3,
+      "formula_svg_count": 0,
+      "actual_times": {
+        "submitted_at": "2026-10-15T10:18:11+00:00",
+        "acknowledged_at": "2026-10-15T10:18:16+00:00",
+        "readback_completed_at": "2026-10-15T10:18:18+00:00"
+      },
+      "pre_submission_content_fingerprints": {
+        "workflow": "3ec983b3e515dd6d1cf4b2b958751c3a425f2497bb2a1b0ae7217732435d914b",
+        "markdown_sha256": "307f505b5d50dfffed5e4896339beb433f9dc0fa9c8a11e4309645d2849ac74e",
+        "review_sha256": "b7aea8e49fc7d6f09101ff150bc0a944b62cc4b8ab7e791be73340f23079a375",
+        "html_sha256": "36f8c05084400be15fd87c4be73dde88941271a76f4dadad90e9e62b484656c1",
+        "formula_geometry_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "formula_metadata_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "source_commit": "f1258a9ad8d764a21c6382456d8be765c2ebd255",
+        "source_tree": "34d9aa65136b29d5ac65dbe3d65f51ca30207850"
+      },
+      "formula_render_applicability": "not_applicable_no_mathjax_formula_in_approved_intro",
+      "author_parameter_mapping": {
+        "approved_markdown_first_author": "Junhui Yang",
+        "review_has_author_override": true,
+        "review_author_override": "Junhui Yang",
+        "prepared_explicit_author": "Junhui Yang",
+        "legacy_first_author_parser_result": "Junhui Yang；Junfeng Zhang；Chao Li",
+        "source_and_override_identity_verified_from_project_aliases": true,
+        "basis": "explicit_review_override_cross_checked_with_first_author",
+        "WOEAI_fallback_used": false,
+        "actually_submitted": true,
+        "explicit_recorded_author_parameter": "Junhui Yang",
+        "official_readback_author_matches": true
+      },
+      "verification_booleans": {
+        "title_matches": true,
+        "author_preserved_confirmed_value": true,
+        "digest_matches": true,
+        "original_link_matches": true,
+        "full_body_text_matches": true,
+        "body_image_count_and_canonical_urls_match": true,
+        "image_alts_match": true,
+        "formula_count_matches": true,
+        "formula_metadata_matches": true,
+        "formula_geometry_matches": true,
+        "currentColor_contract_preserved": true,
+        "ai_disclosure_once_at_end": true,
+        "actual_cover_reference_matches_uploaded_verified_image": true,
+        "actual_cover_display_present": true,
+        "comments_preserved_or_defaulted": true,
+        "fresh_pre_submit_complete_catalog_dedup": true,
+        "single_write_acknowledged": true,
+        "material_download_not_called": true,
+        "quota_not_reset": true,
+        "other_articles_preserved": true
+      },
+      "phone_light_preview_performed": false,
+      "phone_dark_preview_performed": false,
+      "published": false,
+      "mass_sent": false,
+      "receipt_source_sha256": "31d8c6ac0075a1e8c42bd31147a80ebc3b7d71909f27fab72a5ebaf5cb0d8bca",
+      "source_cover_public_path": "wechat/assets/public-safe/ref-yang2022-AS/cover-wechat-900x383-20261015-v5.png",
+      "body_and_cover_hashes": {
+        "submitted_html_sha256": "6a8904c93992e0e3bd8e2264c3c8ec59adea3b283b56d7229b543f97e1f113ea",
+        "readback_html_sha256": "ff2e8cd85f07dee45cd5bc0e9be1aaa1f10de9fd9addc0f7fa800b5d7168494e",
+        "source_cover": {
+          "sha256": "e2a1cbd8541b8decc69866d8ed192eb69a35e5bc842666a1eda00137c0130785",
+          "bytes": 442336,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "5dd50bfcfaea7b7749311d35f0bd505a06a0d42c09aebaf69fc2b19191987f0e"
+        },
+        "official_returned_cover_image": {
+          "sha256": "e2a1cbd8541b8decc69866d8ed192eb69a35e5bc842666a1eda00137c0130785",
+          "bytes": 442336,
+          "dimensions": [
+            900,
+            383
+          ],
+          "format": "PNG",
+          "rgba_sha256": "5dd50bfcfaea7b7749311d35f0bd505a06a0d42c09aebaf69fc2b19191987f0e"
+        },
+        "cover_display": {
+          "sha256": "4bd23478c1e3f2d4492930cbf9f076fcd95639cd7a698d711f17bef1feb8c384",
+          "bytes": 56698,
+          "dimensions": [
+            900,
+            382
+          ],
+          "format": "JPEG",
+          "rgba_sha256": "905101966ed09e351ac140246725de1cf47b84993c708ce9f3a0d8419c2c79cf"
+        }
+      },
+      "body_images": [
+        {
+          "public_path": "wechat/assets/public-safe/ref-yang2022-AS/fig01.png",
+          "source": {
+            "sha256": "c9c97f9e2cc6080e3ed1b0dedf84b560aea60a1e44111e9688d73256823be6b2",
+            "bytes": 245120,
+            "dimensions": [
+              1113,
+              417
+            ],
+            "format": "PNG",
+            "rgba_sha256": "88ed83c07c4bc7c8d8049d2a4b8e090013ef9ebbdaed74c33f6d113d299db702"
+          },
+          "official_image": {
+            "sha256": "c9c97f9e2cc6080e3ed1b0dedf84b560aea60a1e44111e9688d73256823be6b2",
+            "bytes": 245120,
+            "dimensions": [
+              1113,
+              417
+            ],
+            "format": "PNG",
+            "rgba_sha256": "88ed83c07c4bc7c8d8049d2a4b8e090013ef9ebbdaed74c33f6d113d299db702"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-yang2022-AS/fig02.png",
+          "source": {
+            "sha256": "04047cce8b9038e196fde40844db7fe4b718462ab57a889b719999ecf2b6775e",
+            "bytes": 1615159,
+            "dimensions": [
+              3606,
+              2426
+            ],
+            "format": "PNG",
+            "rgba_sha256": "8352061d9fb52b31a10f20f19734b3598f5da72611f5e0130d3fc5692492c9b8"
+          },
+          "official_image": {
+            "sha256": "04047cce8b9038e196fde40844db7fe4b718462ab57a889b719999ecf2b6775e",
+            "bytes": 1615159,
+            "dimensions": [
+              3606,
+              2426
+            ],
+            "format": "PNG",
+            "rgba_sha256": "8352061d9fb52b31a10f20f19734b3598f5da72611f5e0130d3fc5692492c9b8"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        },
+        {
+          "public_path": "wechat/assets/public-safe/ref-yang2022-AS/fig03.png",
+          "source": {
+            "sha256": "87377dfe62827fecf1154cfd4518a56bacc2d0dfe4a1df63a32c9cb2158d70b4",
+            "bytes": 137017,
+            "dimensions": [
+              1824,
+              584
+            ],
+            "format": "PNG",
+            "rgba_sha256": "9ea049f31405be6beecb408129f78016ba4554a4717f9d9cc82e6ae60f2ed815"
+          },
+          "official_image": {
+            "sha256": "87377dfe62827fecf1154cfd4518a56bacc2d0dfe4a1df63a32c9cb2158d70b4",
+            "bytes": 137017,
+            "dimensions": [
+              1824,
+              584
+            ],
+            "format": "PNG",
+            "rgba_sha256": "9ea049f31405be6beecb408129f78016ba4554a4717f9d9cc82e6ae60f2ed815"
+          },
+          "exact_full_pixels": true,
+          "official_jpeg_processing": false
+        }
+      ]
+    }
+  ],
+  "phone_light_preview_performed": false,
+  "phone_dark_preview_performed": false,
+  "published": false,
+  "mass_sent": false,
+  "projection_notes": [
+    "Only public-safe fields are retained; original executor receipt hashes and byte lengths bind the exports without private identifiers or locations.",
+    "Official JPEG processing and platform display thumbnails are distinguished from exact source pixels.",
+    "Author values are supported by execution evidence, immutable source/override mapping and official readback; no separate author-request log is invented.",
+    "Zhao2023-GYJZ returned body omits an external CNKI hyperlink. Submitted link evidence, full text and first-publication version match, and footer RTD link match are retained; returned CNKI href preservation is not claimed.",
+    "Eight approved introductions have zero formula SVGs; non-applicability is not interpreted as actual formula rendering or phone preview."
+  ],
+  "totals": {
+    "drafts_created": 17,
+    "drafts_updated": 0,
+    "covers": 17,
+    "body_images": 61,
+    "body_images_full_pixels_identical": 42,
+    "body_images_official_jpeg_processed": 19,
+    "formula_svgs": 85
+  }
+}

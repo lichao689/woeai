@@ -1483,7 +1483,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -1507,22 +1507,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -2356,7 +2357,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -2380,22 +2381,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -2740,7 +2742,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -2764,22 +2766,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -3615,7 +3618,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -3639,22 +3642,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -3864,7 +3868,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -3888,22 +3892,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -4002,7 +4007,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -4026,22 +4031,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -4140,7 +4146,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -4164,22 +4170,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -4278,7 +4285,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -4302,22 +4309,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -4416,7 +4424,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -4440,22 +4448,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -4796,7 +4805,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -4820,22 +4829,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -6091,7 +6101,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -6115,22 +6125,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -6340,7 +6351,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -6364,22 +6375,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -6728,7 +6740,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -6752,22 +6764,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -7005,7 +7018,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -7029,22 +7042,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -7143,7 +7157,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -7167,22 +7181,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -8217,7 +8232,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -8241,22 +8256,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",
@@ -9153,7 +9169,7 @@
         "kind": "full_paper"
       },
       "wechat": {
-        "status": "awaiting_review",
+        "status": "draft_created",
         "checks": [
           {
             "key": "source_identity",
@@ -9177,22 +9193,23 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "awaiting_review"
+            "stage": "draft_created"
           }
         ],
         "gaps": [
+          "草稿创建不代表已完成手机预览或已发布",
           "原文身份：仅有待审核阶段记录",
           "事实核验：仅有待审核阶段记录",
           "公开安全：仅有待审核阶段记录",

@@ -35,9 +35,11 @@
    2026 RE | 如何高效重建城市风能中的高时间分辨率风场 <paper-notes/ref-tang2026-RE>
    2025 SCS | 用 3D Gaussian Splatting 重建城市建筑几何 <paper-notes/ref-zhao2025-SCS>
    2024 POF | LES 高层建筑风荷载评估中人工压力脉动抑制方法对比 <paper-notes/ref-chen2024-POF>
+   2024 POF | 用 Swin-Transformer 重建气象风场细节 <paper-notes/ref-tang2024-POF>
    2024 ES | 让 LES 入流按目标风场自动收敛 <paper-notes/ref-wang2024-ES>
    2024 POF | 用矢量势随机流生成无散湍流 <paper-notes/ref-li2024-POF>
    2024 JCP | 让 LES 入流湍流更连贯也更守恒 <paper-notes/ref-chen2024-JCP>
+   2023 BS | 台风城市风场的单向嵌套与趋势同化 <paper-notes/ref-zhao2023-BS>
    2023 JWEIA | 合成体力维持大气边界层湍流 <paper-notes/ref-wang2023-JWEIA>
    2023 HKXYGC | 核电厂高风速区域定位与验证 <paper-notes/ref-feng2023-HKXYGC>
    2022 JWEIA | 把相关性写进入流湍流 <paper-notes/ref-chen2022-JWEIA>
@@ -49,6 +51,7 @@
    2017 BS | 山地城市入流方法比较 <paper-notes/ref-li2017-BS>
    2012 JWEIA | 变尺度修正下击暴流风速模型 <paper-notes/ref-li2012-JWEIA>
    2012 GCLX | 行人风环境超越阈值概率 <paper-notes/ref-li2012-GCLX>
+   2010 WAS | 入口湍流与大涡模拟的风洞对照 <paper-notes/ref-li2010-WAS>
 
 .. _ref-zhao2026-BE:
 
@@ -80,7 +83,7 @@
 
 .. _ref-tang2024-POF:
 
-[57] Tang Lingxiao; **Li Chao**; Zhao Zihan\*; Xiao Yiqing; Chen Shenpeng, Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework[J]. **Physics of Fluids**, 2024, 36(12): 125110. https://doi.org/10.1063/5.0237112. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
+[57] :doc:`2024 POF | 用 Swin-Transformer 重建气象风场细节 <paper-notes/ref-tang2024-POF>` Tang Lingxiao; **Li Chao**; Zhao Zihan\*; Xiao Yiqing; Chen Shenpeng, Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework[J]. **Physics of Fluids**, 2024, 36(12): 125110. https://doi.org/10.1063/5.0237112. 影响因子: **4.3 (Q1)**. 中科院分区: **2**.
 
 .. _ref-wang2024-ES:
 
@@ -100,7 +103,7 @@
 
 .. _ref-zhao2023-BS:
 
-[47] :student-first-author:`Zhao Zihan`; Xiao Yiqing\*; **Li Chao**\*; Chan P W; Hu Gang; Zhou Qingfeng, Multiscale simulation of the urban wind environment under typhoon weather conditions[J]. **Building Simulation**, 2023, 16(9): 1713～1734. https://doi.org/10.1007/s12273-023-0991-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
+[47] :doc:`2023 BS | 台风城市风场的单向嵌套与趋势同化 <paper-notes/ref-zhao2023-BS>` :student-first-author:`Zhao Zihan`; Xiao Yiqing; **Li Chao**\*; Chan P W; Hu Gang; Zhou Qingfeng, Multiscale simulation of the urban wind environment under typhoon weather conditions[J]. **Building Simulation**, 2023, 16(9): 1713～1734. https://doi.org/10.1007/s12273-023-0991-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
 
 .. _ref-zhang2023-JWEIA:
 
@@ -162,6 +165,10 @@
 
 [4] :doc:`2012 GCLX | 行人风环境超越阈值概率 <paper-notes/ref-li2012-GCLX>` **李朝**; 肖仪清\*; 滕军; 欧进萍; 陈宜言, 基于超越阈值概率的行人风环境数值评估[J]. **工程力学**, 2012, 29(12): 15～21.
 
+.. _ref-li2010-WAS:
+
+[3] :doc:`2010 WAS | 入口湍流与大涡模拟的风洞对照 <paper-notes/ref-li2010-WAS>` **Li Chao**\*; Li Q S\*; Huang S H; Fu J Y; Xiao Y Q, Large eddy simulation of wind loads on a long-span spatial lattice roof[J]. **Wind and Structures An International Journal**, Techno-Press, 2010, 13(1): 57～82. https://doi.org/10.12989/was.2010.13.1.057. 影响因子: **1.9 (Q3)**. 中科院分区: **3**.
+
 .. _ref-xiao2009-HNLGDXXB:
 
 [1] 肖仪清; **李朝**; 欧进萍; 宋丽莉; 李秋胜, 复杂地形风能评估的CFD方法[J]. **华南理工大学学报(自然科学版)**, 2009, 37(9): 30～35.
@@ -177,6 +184,7 @@
    2025 POF | 让高层建筑 TLD 在非线性晃荡中更会耗能 <paper-notes/ref-he2025-POF>
    2025 JBE | 别只看单方向峰值：高层建筑二维矢量响应极值怎么算 <paper-notes/ref-yang2025-JBE>
    2025 JBE | 用图神经网络预测高层建筑结构响应 <paper-notes/ref-tang2025-JBE>
+   2024 JBE | 消防水箱的非线性晃荡与双向耦合减振 <paper-notes/ref-he2024-JBE>
    2023 GYJZ | 输电塔强风首次超越易损性 <paper-notes/ref-zhao2023-GYJZ>
 
 .. _ref-he2026-OE:
@@ -205,7 +213,7 @@
 
 .. _ref-he2024-JBE:
 
-[54] :student-first-author:`He Xin`; **Li Chao**\*; Chen Lingwei; Yang Junhui; Hu Gang; Ou Jinping, Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper[J]. **Journal of Building Engineering**, 2024, 96: 110660. https://doi.org/10.1016/j.jobe.2024.110660. 影响因子: **7.4 (Q1)**. 中科院分区: **1**.
+[54] :doc:`2024 JBE | 消防水箱的非线性晃荡与双向耦合减振 <paper-notes/ref-he2024-JBE>` :student-first-author:`He Xin`; **Li Chao**\*; Chen Lingwei; Yang Junhui; Hu Gang; Ou Jinping, Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper[J]. **Journal of Building Engineering**, 2024, 96: 110660. https://doi.org/10.1016/j.jobe.2024.110660. 影响因子: **7.4 (Q1)**. 中科院分区: **1**.
 
 .. _ref-liu2024-E:
 
@@ -258,10 +266,6 @@
 .. _ref-pei2013-MPE:
 
 [7] Pei Hua-Fu; **Li Chao**\*; Zhu Hong-Hu; Wang Yu-Jie, Slope stability analysis based on measured strains along soil nails using FBG sensing technology[J]. **Mathematical Problems in Engineering**, Hindawi, 2013, 2013: e561360. https://doi.org/10.1155/2013/561360. 影响因子: **0**. 中科院分区: **0**.
-
-.. _ref-li2010-WAS:
-
-[3] **Li Chao**; Li Q S; Huang S H; Fu J Y; Xiao Y Q, Large eddy simulation of wind loads on a long-span spatial lattice roof[J]. **Wind and Structures An International Journal**, Techno-Press, 2010, 13(1): 57～82. https://doi.org/10.12989/was.2010.13.1.057. 影响因子: **1.9 (Q3)**. 中科院分区: **3**.
 
 .. _ref-teng2010-GCKZYGJGZ:
 

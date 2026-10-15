@@ -5110,27 +5110,76 @@
         "metrics": "影响因子: 4.3 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "4a884472a325381ec77b9aca917f03de943d73ae579f4d26b196bee307e97687",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "ed00928f1acbf08e4b8aed55279ec70385b192a7e3682d776ef332e7c3eaadd5",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_established",
+        "pages": 23,
+        "identity_checked_at": "2026-10-15T08:40:47+00:00",
+        "review_path": "wechat/articles/review/ref-tang2024-POF.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-tang2024-POF.rst",
-        "public_title": "Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework",
+        "public_title": "数值风洞 | 用 Swin-Transformer 重建气象风场细节",
         "order": 18,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-15T08:40:47+00:00",
+            "review_path": "wechat/articles/review/ref-tang2024-POF.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent C2 science retained. Exact inverse restores scientific manuscript; only adopted top cover and stated editorial metadata/status cleanup changed. Integrated standard build and actual viewport review remain separate; not verified.",
+            "fingerprint": "ff64ce291d47a575752c5feabe8c0580e68c6f44ce6a34793c1199379d407cc4"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-tang2024-POF.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-tang2024-POF.md",
         "review_path": "wechat/articles/review/ref-tang2024-POF.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-15T08:40:47+00:00",
+            "review_path": "wechat/articles/review/ref-tang2024-POF.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": false,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "C2 scientific body and original images preserved. Li title/direction and He/Zhao direction punctuation changes have exact inverse. Official direct MathJax SVG rendering passed; preflight and dry-run remain blocked by absent image-upload approval. No backend or mobile preview.",
+            "fingerprint": "acadf27e500ed92ba95c36bb61b9f52340cd97e1fddc81568ff8434dc7fcb882"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学源审及C2差异复核通过，已采用封面完成隔离绑定；正文图上传未批准，保留门禁，未创建本篇草稿或进行手机预览。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-15T08:40:47+00:00",
+        "source_text_pages_read": 23,
+        "source_page_count": 23,
+        "audit_basis": "Prior independent complete source review and checkpoint02 differential review passed. Integration checks reversible editorial/cover changes and exact original assets, not another full PDF audit.",
+        "visual_scope": "23个物理页（含封页）、13编号式、26图、5表、57参考文献；F1强迫方向复现疑点、F2指标口径和F3颜色表述注释已经独立复核，不擅改原式、图或表。",
+        "review_path": "wechat/articles/review/ref-tang2024-POF.review.md",
+        "integration_review_path": "wechat/articles/review/ref-tang2024-POF.integration.review.md"
+      }
     },
     "DOI": "10.1063/5.0237112"
   },
@@ -5674,27 +5723,76 @@
         "metrics": "影响因子: 7.4 (Q1). 中科院分区: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "b50b28bdec9c77a11e9773063caad9edef4395afc8afa98896a74ec51ce7ff8c",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "b50b28bdec9c77a11e9773063caad9edef4395afc8afa98896a74ec51ce7ff8c",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 21,
+        "identity_checked_at": "2026-10-15T08:40:47+00:00",
+        "review_path": "wechat/articles/review/ref-he2024-JBE.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-he2024-JBE.rst",
-        "public_title": "Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper",
+        "public_title": "结构抗风 | 消防水箱的非线性晃荡与双向耦合减振",
         "order": 21,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-15T08:40:47+00:00",
+            "review_path": "wechat/articles/review/ref-he2024-JBE.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent C2 science retained. Exact inverse restores scientific manuscript; only adopted top cover and stated editorial metadata/status cleanup changed. Integrated standard build and actual viewport review remain separate; not verified.",
+            "fingerprint": "9f8d2581fe596a898cb5956346c7a20231ed4b28261aff8be2ec3a1fa0df2996"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-he2024-JBE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2024-JBE.md",
         "review_path": "wechat/articles/review/ref-he2024-JBE.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-15T08:40:47+00:00",
+            "review_path": "wechat/articles/review/ref-he2024-JBE.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": false,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "C2 scientific body and original images preserved. Li title/direction and He/Zhao direction punctuation changes have exact inverse. Official direct MathJax SVG rendering passed; preflight and dry-run remain blocked by absent image-upload approval. No backend or mobile preview.",
+            "fingerprint": "87f02611c3a8a13921a79b436bad6b1bd0a8d4b7e49615f234832469f9675a45"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学源审及C2差异复核通过，已采用封面完成隔离绑定；正文图上传未批准，保留门禁，未创建本篇草稿或进行手机预览。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-15T08:40:47+00:00",
+        "source_text_pages_read": 21,
+        "source_page_count": 21,
+        "audit_basis": "Prior independent complete source review and checkpoint02 differential review passed. Integration checks reversible editorial/cover changes and exact original assets, not another full PDF audit.",
+        "visual_scope": "21页、13编号式、28图、3表、49参考文献；双峰预测能力只限定本文所讨论的理论模型，P2澄清已经独立复核，不泛化否定全部非线性理论。",
+        "review_path": "wechat/articles/review/ref-he2024-JBE.review.md",
+        "integration_review_path": "wechat/articles/review/ref-he2024-JBE.integration.review.md"
+      }
     },
     "DOI": "10.1016/j.jobe.2024.110660"
   },
@@ -7304,27 +7402,92 @@
         "metrics": "影响因子: 5.9 (Q1). 中科院分区: 1."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "bb17891f579a0ccb003d3a101986e7423b971f4c5b89c38a431bebfacb4cdbcd",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "bb17891f579a0ccb003d3a101986e7423b971f4c5b89c38a431bebfacb4cdbcd",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 22,
+        "identity_checked_at": "2026-10-15T08:40:47+00:00",
+        "review_path": "wechat/articles/review/ref-zhao2023-BS.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhao2023-BS.rst",
-        "public_title": "Multiscale simulation of the urban wind environment under typhoon weather conditions",
+        "public_title": "数值风洞 | 台风城市风场的单向嵌套与趋势同化",
         "order": 28,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-15T08:40:47+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-BS.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent C2 science retained. Exact inverse restores scientific manuscript; only adopted top cover and stated editorial metadata/status cleanup changed. Integrated standard build and actual viewport review remain separate; not verified.",
+            "fingerprint": "31608512833aebf1d20719cbed67410539554cfe9cc40570c1e84ce5114eb101"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhao2023-BS.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2023-BS.md",
         "review_path": "wechat/articles/review/ref-zhao2023-BS.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-15T08:40:47+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-BS.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": false,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "C2 scientific body and original images preserved. Li title/direction and He/Zhao direction punctuation changes have exact inverse. Official direct MathJax SVG rendering passed; preflight and dry-run remain blocked by absent image-upload approval. No backend or mobile preview.",
+            "fingerprint": "52d7a3eb855ad05469535349918e16ab7eb0f453c97b27d2276acd936d8be2ad"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学源审及C2差异复核通过，已采用封面完成隔离绑定；正文图上传未批准，保留门禁，未创建本篇草稿或进行手机预览。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-15T08:40:47+00:00",
+        "source_text_pages_read": 22,
+        "source_page_count": 22,
+        "audit_basis": "Prior independent complete source review and checkpoint02 differential review passed. Integration checks reversible editorial/cover changes and exact original assets, not another full PDF audit.",
+        "visual_scope": "22页、14编号式、17图、3数值表及2符号缩写表、80参考文献；EMD均值横线、图12/16角度约定和IOA定义省略提示已经独立复核，源式与数值不变。",
+        "review_path": "wechat/articles/review/ref-zhao2023-BS.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zhao2023-BS.integration.review.md"
+      },
+      "bibliography_audit": {
+        "recorded_at": "2026-10-15T08:40:47+00:00",
+        "field": "corresponding_authors",
+        "historical_value": [
+          "Li Chao",
+          "Xiao Yiqing"
+        ],
+        "source_supported_value": [
+          "Li Chao"
+        ],
+        "evidence_locator": "PDF file page 1, only Chao Li marked with correspondence envelope/footnote",
+        "review_path": "wechat/articles/review/ref-zhao2023-BS.review.md",
+        "public_citations_corrected": true,
+        "upstream_zotero_modified": false,
+        "upstream_followup_required": true
+      }
     },
     "DOI": "10.1007/s12273-023-0991-7"
   },
@@ -14161,7 +14324,7 @@
       "publication_ref": "ref-li2010-WAS",
       "order": 72,
       "research_family": "工程结构抗风",
-      "subdirection": "结构抗风",
+      "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "9N6EYMBU",
         "publication_number": 3,
@@ -14189,27 +14352,92 @@
         "metrics": "影响因子: 1.9 (Q3). 中科院分区: 3."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "9da38ead468490260892990a9229ebc2bfe163707717607d27e67cdb27fbc20b",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "aaf661a1c7296d9c8a935a1b69f7506002635b942e8378660ac72e53c3a62f85",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_established",
+        "pages": 26,
+        "identity_checked_at": "2026-10-15T08:40:47+00:00",
+        "review_path": "wechat/articles/review/ref-li2010-WAS.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-li2010-WAS.rst",
-        "public_title": "Large eddy simulation of wind loads on a long-span spatial lattice roof",
+        "public_title": "数值风洞 | 入口湍流与大涡模拟的风洞对照",
         "order": 72,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-15T08:40:47+00:00",
+            "review_path": "wechat/articles/review/ref-li2010-WAS.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent C2 science retained. Exact inverse restores scientific manuscript; only adopted top cover and stated editorial metadata/status cleanup changed. Integrated standard build and actual viewport review remain separate; not verified.",
+            "fingerprint": "5c62b698ffa9a6cfb7aaac9169a38db75d032a04534e01136708b4ee52d5b3a6"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-li2010-WAS.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2010-WAS.md",
         "review_path": "wechat/articles/review/ref-li2010-WAS.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-15T08:40:47+00:00",
+            "review_path": "wechat/articles/review/ref-li2010-WAS.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": false,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "C2 scientific body and original images preserved. Li title/direction and He/Zhao direction punctuation changes have exact inverse. Official direct MathJax SVG rendering passed; preflight and dry-run remain blocked by absent image-upload approval. No backend or mobile preview.",
+            "fingerprint": "c5f86ad26f1f8b4769b0a221fec2de93cbfed530a7c9727f13f0d6db451b73b8"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "独立科学源审及C2差异复核通过，已采用封面完成隔离绑定；正文图上传未批准，保留门禁，未创建本篇草稿或进行手机预览。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-15T08:40:47+00:00",
+        "source_text_pages_read": 26,
+        "source_page_count": 26,
+        "audit_basis": "Prior independent complete source review and checkpoint02 differential review passed. Integration checks reversible editorial/cover changes and exact original assets, not another full PDF audit.",
+        "visual_scope": "26页、16编号式及2个无编号定义块、13完整图板（含图6双页拼接）、1表、40参考文献；L1–L3澄清已经独立复核。DSRFG相关湍流入口与LES、RNG及物理风洞对照是主题，源内峰值统计边界保留。",
+        "review_path": "wechat/articles/review/ref-li2010-WAS.review.md",
+        "integration_review_path": "wechat/articles/review/ref-li2010-WAS.integration.review.md"
+      },
+      "bibliography_audit": {
+        "recorded_at": "2026-10-15T08:40:47+00:00",
+        "field": "corresponding_authors",
+        "historical_value": [
+          "Li Q.S."
+        ],
+        "source_supported_value": [
+          "Li Chao",
+          "Li Q.S."
+        ],
+        "evidence_locator": "PDF file page 1, author correspondence stars and footnotes",
+        "review_path": "wechat/articles/review/ref-li2010-WAS.review.md",
+        "public_citations_corrected": true,
+        "upstream_zotero_modified": false,
+        "upstream_followup_required": true
+      }
     },
     "DOI": "10.12989/was.2010.13.1.057"
   },

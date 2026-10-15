@@ -279,11 +279,11 @@ items:
     subdirection: "数值风洞"
     original_year: 2024
     repost_priority: ""
-    wechat_status: "unregistered"
+    wechat_status: "awaiting_review"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    revision_note: "独立科学源审及C2差异复核通过，已采用封面完成隔离绑定；正文图上传未批准，保留门禁，未创建本篇草稿或进行手机预览。"
     publication_history: []
     wechat_draft_created_at: ""
     wechat_draft_updated_at: ""
@@ -294,11 +294,11 @@ items:
     subdirection: "结构抗风"
     original_year: 2024
     repost_priority: ""
-    wechat_status: "unregistered"
+    wechat_status: "awaiting_review"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    revision_note: "独立科学源审及C2差异复核通过，已采用封面完成隔离绑定；正文图上传未批准，保留门禁，未创建本篇草稿或进行手机预览。"
     publication_history: []
     wechat_draft_created_at: ""
     wechat_draft_updated_at: ""
@@ -309,11 +309,11 @@ items:
     subdirection: "数值风洞"
     original_year: 2023
     repost_priority: ""
-    wechat_status: "unregistered"
+    wechat_status: "awaiting_review"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    revision_note: "独立科学源审及C2差异复核通过，已采用封面完成隔离绑定；正文图上传未批准，保留门禁，未创建本篇草稿或进行手机预览。"
     publication_history: []
     wechat_draft_created_at: ""
     wechat_draft_updated_at: ""
@@ -651,14 +651,14 @@ items:
     zotero_key: "9N6EYMBU"
     title: "Large eddy simulation of wind loads on a long-span spatial lattice roof"
     research_family: "工程结构抗风"
-    subdirection: "结构抗风"
+    subdirection: "数值风洞"
     original_year: 2010
     repost_priority: ""
-    wechat_status: "unregistered"
+    wechat_status: "awaiting_review"
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "Selected for content production; no current draft upload or publication confirmed."
+    revision_note: "独立科学源审及C2差异复核通过，已采用封面完成隔离绑定；正文图上传未批准，保留门禁，未创建本篇草稿或进行手机预览。"
     publication_history: []
     wechat_draft_created_at: ""
     wechat_draft_updated_at: ""

@@ -80,7 +80,7 @@
 
 :ref:`[48] <ref-zhou2023-AE>` :student-first-author:`Zhou Shengtao`; **Li Chao**\*; Xiao Yiqing; Wang Xiaolu; Xiang Wenyuan; Sun Qing, Evaluation of floating wind turbine substructure designs by using long-term dynamic optimization[J]. **Applied Energy**, 2023, 352: 121941. https://doi.org/10.1016/j.apenergy.2023.121941. 影响因子: **11.0 (Q1)**. 中科院分区: **1**.
 
-:ref:`[47] <ref-zhao2023-BS>` :student-first-author:`Zhao Zihan`; Xiao Yiqing\*; **Li Chao**\*; Chan P W; Hu Gang; Zhou Qingfeng, Multiscale simulation of the urban wind environment under typhoon weather conditions[J]. **Building Simulation**, 2023, 16(9): 1713～1734. https://doi.org/10.1007/s12273-023-0991-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
+:ref:`[47] <ref-zhao2023-BS>` :student-first-author:`Zhao Zihan`; Xiao Yiqing; **Li Chao**\*; Chan P W; Hu Gang; Zhou Qingfeng, Multiscale simulation of the urban wind environment under typhoon weather conditions[J]. **Building Simulation**, 2023, 16(9): 1713～1734. https://doi.org/10.1007/s12273-023-0991-7. 影响因子: **5.9 (Q1)**. 中科院分区: **1**.
 
 :ref:`[46] <ref-zhang2023-JWEIA>` Zhang Dongqin; Liu Zhenqing; Jiang Xinye; Jiang Wenjun; Gao Huanxiang; **Li Chao**; Xiao Yiqing; Hu Gang\*, Numerical study of flow characteristics of tornado-like vortices considering both swirl ratio and aspect ratio[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2023, 240: 105468. https://doi.org/10.1016/j.jweia.2023.105468. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
@@ -183,7 +183,7 @@
 
 :ref:`[4] <ref-li2012-GCLX>` **李朝**; 肖仪清\*; 滕军; 欧进萍; 陈宜言, 基于超越阈值概率的行人风环境数值评估[J]. **工程力学**, 2012, 29(12): 15～21.
 
-:ref:`[3] <ref-li2010-WAS>` **Li Chao**; Li Q S; Huang S H; Fu J Y; Xiao Y Q, Large eddy simulation of wind loads on a long-span spatial lattice roof[J]. **Wind and Structures An International Journal**, Techno-Press, 2010, 13(1): 57～82. https://doi.org/10.12989/was.2010.13.1.057. 影响因子: **1.9 (Q3)**. 中科院分区: **3**.
+:ref:`[3] <ref-li2010-WAS>` **Li Chao**\*; Li Q S\*; Huang S H; Fu J Y; Xiao Y Q, Large eddy simulation of wind loads on a long-span spatial lattice roof[J]. **Wind and Structures An International Journal**, Techno-Press, 2010, 13(1): 57～82. https://doi.org/10.12989/was.2010.13.1.057. 影响因子: **1.9 (Q3)**. 中科院分区: **3**.
 
 :ref:`[2] <ref-teng2010-GCKZYGJGZ>` 滕军\*; 李秀英; **李朝**, 开口空间结构表面风压分布规律研究[J]. **工程抗震与加固改造**, 2010, 32(6): 18～24.
 

@@ -1,0 +1,25 @@
+# ref-zheng2023-JRSE 封面简报
+
+- cover_design_contract: `WOEAI-cover-v5`
+- secondary_direction: `一体化分析`
+- cover_text_confirmation: `user-adopted-2026-10-14`；当日18:09 UTC用户明确采用本轮已展示的三张封面。
+- confirmed_text_mode: `authorized-deterministic-typesetting`
+- confirmed_cover_text: `一体化分析 | 风浪换向响应会变 / 十兆瓦浮式风机缩尺试验`
+- verified_publication_line: `Journal of Renewable and Sustainable Energy · 2023`
+- final_cover_path: `wechat/assets/public-safe/ref-zheng2023-JRSE/cover-wechat-900x383-20261014-v5.png`
+- final_cover_sha256: `4433d73af4c25a2727ca91aa3112c2e305a4ad5f1e6447909b5df1019d9e08a7`
+- final_dimensions: `900×383 px`
+- actual_tools: 一次内置imagegen生成加一次imagegen几何定向编辑；初稿水面圆管Y连接不选用，采用柱底水下扁矩形Y浮箱修正版。之后只做确定性等比导出与固定文字层，没有用代码重绘工程几何。 使用Pillow等比例Lanczos导出和文字排版；无额外文字区遮罩或工程主体改绘，不宣称整张一次生成直出。
+- typography: Noto Sans CJK SC；徽标24 px/700、主标题48 px/700、副标题24 px/400、期刊年18 px/400，水平正体。字体实际OS/2字重为700和400，未冒称800或500；最终观感由独立逐图审查接受。
+- publication_line_layout: 2行，按单词换行，18 px。
+- badge_actual_outer_bounds: `[36, 32, 196, 72]`，160×40 px；原生圆角6 px逐像素掩膜比较无差异。
+- badge_actual_ink_bounds: `[57, 39, 175, 63]`；墨迹尺寸不替代名义字号。
+- badge_geometry_gate: `pass`；独立测得完整徽标尺寸、字形包围框、圆角，对照实际字体与排版参数。
+- evidence_anchor: PDF file page 8, Fig.6；水槽及方向试验见PDF file pages 4、9–10, Figs.1、7、9。
+- selection_and_scientific_limits: 实验室风洞—波浪水槽、中央柱加三外柱、柱底水下扁矩形Y形浮箱、三根概念系泊。不是水面圆管连接，不是实海10MW照片或原设备精确复刻；1:70缩尺、同向低湍流风浪和方向排序随周期变化的边界保留。
+- source_scope: 科学概念解释图，不是原文数据图、测量照片或精确装置复刻。
+- local_pixel_review: 独立实际查看900×383及360 px宽图，标题与对象清楚；120 px只作缩略识别诊断，不宣称全部小字可读。文本改动范围右侧工程图像素与等比例底图完全一致。
+- crop_diagnostics: 中央方形和5:4裁切会损失左侧文字或部分主体，只作诊断，不声称平台实际采用这些裁切或通过相应验收。
+- independent_review: passed；独立审查者逐张实际查看三幅900 px成品与360/120诊断，2026-10-14本地视觉和概念边界通过。
+- backend_upload_and_mobile_preview: pending；未上传、未建后台草稿、未做实际微信手机浅色或深色预览，不继承其他文章状态。
+- scope_boundary: 本轮只绑定真实封面与路径、补既有审查记录，不改已审科学正文、作者名单、公式、表格或70幅原图。

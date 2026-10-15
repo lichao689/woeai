@@ -1,0 +1,25 @@
+# ref-wang2023-JWEIA 封面简报
+
+- cover_design_contract: `WOEAI-cover-v5`
+- secondary_direction: `数值风洞`
+- cover_text_confirmation: `user-adopted-2026-10-14`；当日18:09 UTC用户明确采用本轮已展示的三张封面。
+- confirmed_text_mode: `authorized-deterministic-typesetting`
+- confirmed_cover_text: `数值风洞 | 湍流不只从入口来 / 合成体力维持边界层`
+- verified_publication_line: `Journal of Wind Engineering and Industrial Aerodynamics · 2023`
+- final_cover_path: `wechat/assets/public-safe/ref-wang2023-JWEIA/cover-wechat-900x383-20261014-v5.png`
+- final_cover_sha256: `ef270ea497bcc5948526e643092ac7bd03c3616a74805f44ca209d33d97e2968`
+- final_dimensions: `900×383 px`
+- actual_tools: 一次内置imagegen生成无字底图，随后仅确定性等比导出与固定文字层。 使用Pillow等比例Lanczos导出和文字排版；无额外文字区遮罩或工程主体改绘，不宣称整张一次生成直出。
+- typography: Noto Sans CJK SC；徽标24 px/700、主标题48 px/700、副标题24 px/400、期刊年18 px/400，水平正体。字体实际OS/2字重为700和400，未冒称800或500；最终观感由独立逐图审查接受。
+- publication_line_layout: 2行，按单词换行，18 px。
+- badge_actual_outer_bounds: `[36, 32, 196, 72]`，160×40 px；原生圆角6 px逐像素掩膜比较无差异。
+- badge_actual_ink_bounds: `[69, 40, 162, 64]`；墨迹尺寸不替代名义字号。
+- badge_geometry_gate: `pass`；独立测得完整徽标尺寸、字形包围框、圆角，对照实际字体与排版参数。
+- evidence_anchor: PDF file pages 2、4, Figs.2、6；压力与涡结构见PDF file pages 13–14, Figs.18–19。
+- selection_and_scientific_limits: 平顺均值入口、有限全高全宽合成体力作用区、下游涡结构以及独立薄层近地粗糙带；不是风扇、物理挡板或建筑物。仅为LES方法概念图，不替代原定量结果；1.3δ仅属本文比较，未验证建筑荷载。
+- source_scope: 科学概念解释图，不是原文数据图、测量照片或精确装置复刻。
+- local_pixel_review: 独立实际查看900×383及360 px宽图，标题与对象清楚；120 px只作缩略识别诊断，不宣称全部小字可读。文本改动范围右侧工程图像素与等比例底图完全一致。
+- crop_diagnostics: 中央方形和5:4裁切会损失左侧文字或部分主体，只作诊断，不声称平台实际采用这些裁切或通过相应验收。
+- independent_review: passed；独立审查者逐张实际查看三幅900 px成品与360/120诊断，2026-10-14本地视觉和概念边界通过。
+- backend_upload_and_mobile_preview: pending；未上传、未建后台草稿、未做实际微信手机浅色或深色预览，不继承其他文章状态。
+- scope_boundary: 本轮只绑定真实封面与路径、补既有审查记录，不改已审科学正文、作者名单、公式、表格或70幅原图。

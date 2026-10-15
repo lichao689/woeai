@@ -38,6 +38,7 @@
    2024 ES | 让 LES 入流按目标风场自动收敛 <paper-notes/ref-wang2024-ES>
    2024 POF | 用矢量势随机流生成无散湍流 <paper-notes/ref-li2024-POF>
    2024 JCP | 让 LES 入流湍流更连贯也更守恒 <paper-notes/ref-chen2024-JCP>
+   2023 JWEIA | 合成体力维持大气边界层湍流 <paper-notes/ref-wang2023-JWEIA>
    2023 HKXYGC | 核电厂高风速区域定位与验证 <paper-notes/ref-feng2023-HKXYGC>
    2022 JWEIA | 把相关性写进入流湍流 <paper-notes/ref-chen2022-JWEIA>
    2021 EFM | 近中性复杂地形风场的多尺度嵌套 <paper-notes/ref-zhao2021-EFM>
@@ -107,7 +108,7 @@
 
 .. _ref-wang2023-JWEIA:
 
-[43] :student-first-author:`Wang Jinghan`; **Li Chao**\*; Huang Shenghong; Zheng Qingxing; Xiao Yiqing; Ou Jinping, Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2023, 233: 105326. https://doi.org/10.1016/j.jweia.2023.105326. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
+[43] :doc:`2023 JWEIA | 合成体力维持大气边界层湍流 <paper-notes/ref-wang2023-JWEIA>` :student-first-author:`Wang Jinghan`; **Li Chao**\*; Huang Shenghong; Zheng Qingxing; Xiao Yiqing; Ou Jinping, Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method[J]. **Journal of Wind Engineering and Industrial Aerodynamics**, 2023, 233: 105326. https://doi.org/10.1016/j.jweia.2023.105326. 影响因子: **4.9 (Q1)**. 中科院分区: **2**.
 
 .. _ref-feng2023-HKXYGC:
 
@@ -279,6 +280,8 @@
    2025 OE | 为半潜式风机找到可信的等效静力波浪荷载 <paper-notes/ref-zheng2025-OE>
    2025 QHDXXB | 中心与偏心半潜风机的模型试验 <paper-notes/ref-zheng2025-QHDXXB>
    2023 AE | 用长期动力优化选择浮式风机下部结构 <paper-notes/ref-zhou2023-AE>
+   2023 JRSE | 10 MW Y形半潜风机方向性缩尺试验 <paper-notes/ref-zheng2023-JRSE>
+   2021 OE | 半潜浮体尺寸对成本与动力响应的敏感性 <paper-notes/ref-zhou2021-OE>
    2020 RE | Y形平台安装朝向与长期响应 <paper-notes/ref-zhou2020-RE>
    2018 AE | H型垂直轴风机桨距优化 <paper-notes/ref-li2018-AE>
    2017 E | 同向风浪下Y形平台的方向效应 <paper-notes/ref-zhou2017-E>
@@ -319,7 +322,7 @@
 
 .. _ref-zheng2023-JRSE:
 
-[42] :student-first-author:`Zheng Shunyun`; **Li Chao**\*; Wang Peicen; Zhou Shengtao; Xiao Yiqing, Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine[J]. **Journal of Renewable and Sustainable Energy**, 2023, 15(1): 013305. https://doi.org/10.1063/5.0131279. 影响因子: **1.9 (Q4)**. 中科院分区: **4**.
+[42] :doc:`2023 JRSE | 10 MW Y形半潜风机方向性缩尺试验 <paper-notes/ref-zheng2023-JRSE>` :student-first-author:`Zheng Shunyun`; **Li Chao**\*; Wang Peicen; Zhou Shengtao; Xiao Yiqing, Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine[J]. **Journal of Renewable and Sustainable Energy**, 2023, 15(1): 013305. https://doi.org/10.1063/5.0131279. 影响因子: **1.9 (Q4)**. 中科院分区: **4**.
 
 .. _ref-xiang2023-CBGC:
 
@@ -341,7 +344,7 @@
 
 .. _ref-zhou2021-OE:
 
-[22] :student-first-author:`Zhou Shengtao`; Müller Kolja; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics[J]. **Ocean Engineering**, 2021, 221: 108585. https://doi.org/10.1016/j.oceaneng.2021.108585. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
+[22] :doc:`2021 OE | 半潜浮体尺寸对成本与动力响应的敏感性 <paper-notes/ref-zhou2021-OE>` :student-first-author:`Zhou Shengtao`; Müller Kolja; **Li Chao**\*; Xiao Yiqing; Cheng Po Wen, Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics[J]. **Ocean Engineering**, 2021, 221: 108585. https://doi.org/10.1016/j.oceaneng.2021.108585. 影响因子: **5.5 (Q1)**. 中科院分区: **2**.
 
 .. _ref-zhou2020-RE:
 

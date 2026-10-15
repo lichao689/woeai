@@ -7578,27 +7578,76 @@
         "metrics": "影响因子: 4.9 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "59df0a04b92afba6f22c633bad77a4d088493a7ec56e872d3596c21aabee6792",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "131c6ccdf0da3c145aa5d7e002c62726785774c0ddfcb74068e7f757239cbc92",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_claimed_different_hash",
+        "pages": 25,
+        "identity_checked_at": "2026-10-14T18:32:09+00:00",
+        "review_path": "wechat/articles/review/ref-wang2023-JWEIA.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-wang2023-JWEIA.rst",
-        "public_title": "Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method",
+        "public_title": "数值风洞 | 合成体力维持大气边界层湍流",
         "order": 32,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-14T18:32:09+00:00",
+            "review_path": "wechat/articles/review/ref-wang2023-JWEIA.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent scientific review retained. Cover-only RST insertion reverses byte-exactly to the audited manuscript. Final standard integrated build and browser acceptance remain pending, not verified.",
+            "fingerprint": "162e2aa82592509df2ccf69f78add97ea153e24fa0bc3e0776693f4f6ac2b31f"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-wang2023-JWEIA.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-wang2023-JWEIA.md",
         "review_path": "wechat/articles/review/ref-wang2023-JWEIA.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-14T18:32:09+00:00",
+            "review_path": "wechat/articles/review/ref-wang2023-JWEIA.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Original audited Markdown and scientific figures unchanged. Official no-submit preflight/dry-run/HTML rendering passed; this introduction has zero formula SVGs. Actual backend draft, phone preview and publication not performed.",
+            "fingerprint": "57360d0049872f158985681ca0a3e0c2e618978dc4fef9318a751a4340e996e6"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "已独立科学审核，三张封面获用户采用并完成本地绑定及官方离线渲染；本批待完整网站门禁与后台具体授权，不把本地验收登记成手机预览或已创建草稿。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-14T18:32:09+00:00",
+        "source_text_pages_read": 25,
+        "source_page_count": 25,
+        "audit_basis": "Prior independent full-source scientific review retained. This integration checks exact manuscript/figure equivalence and adopted cover binding, not a new full-PDF audit.",
+        "visual_scope": "Retain the exact figure/equation visual and byte/pixel comparison scope recorded in the main review. Local cover acceptance is not backend phone acceptance.",
+        "review_path": "wechat/articles/review/ref-wang2023-JWEIA.review.md",
+        "integration_review_path": "wechat/articles/review/ref-wang2023-JWEIA.integration.review.md"
+      }
     },
     "DOI": "10.1016/j.jweia.2023.105326"
   },
@@ -7646,27 +7695,76 @@
         "metrics": "影响因子: 1.9 (Q4). 中科院分区: 4."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "6df7a94764c54eaf0637f88f01a5e1a19de525e3b0a959812bf30df09d82509f",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "57c9ef26ce6c73179f3b9b61c7d866869ce3df92db3c10d158b29f826901c5fd",
+        "historical_original_hash_match": false,
+        "historical_original_byte_equivalence": "not_claimed_different_hash",
+        "pages": 20,
+        "identity_checked_at": "2026-10-14T18:32:09+00:00",
+        "review_path": "wechat/articles/review/ref-zheng2023-JRSE.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zheng2023-JRSE.rst",
-        "public_title": "Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine",
+        "public_title": "一体化分析 | 10 MW Y形半潜风机方向性缩尺试验",
         "order": 33,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-14T18:32:09+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-JRSE.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent scientific review retained. Cover-only RST insertion reverses byte-exactly to the audited manuscript. Final standard integrated build and browser acceptance remain pending, not verified.",
+            "fingerprint": "2e71e4933eead06df25dcde8861af60c1026c09cd0bee950f573cda2b850cfb3"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zheng2023-JRSE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zheng2023-JRSE.md",
         "review_path": "wechat/articles/review/ref-zheng2023-JRSE.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-14T18:32:09+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-JRSE.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Original audited Markdown and scientific figures unchanged. Official no-submit preflight/dry-run/HTML rendering passed; this introduction has zero formula SVGs. Actual backend draft, phone preview and publication not performed.",
+            "fingerprint": "ec1da2465df8bd08ef66473073e751a4ecc626aa25405cd19d6d8d8f92a93b00"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "已独立科学审核，三张封面获用户采用并完成本地绑定及官方离线渲染；本批待完整网站门禁与后台具体授权，不把本地验收登记成手机预览或已创建草稿。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-14T18:32:09+00:00",
+        "source_text_pages_read": 20,
+        "source_page_count": 20,
+        "audit_basis": "Prior independent full-source scientific review retained. This integration checks exact manuscript/figure equivalence and adopted cover binding, not a new full-PDF audit.",
+        "visual_scope": "Retain the exact figure/equation visual and byte/pixel comparison scope recorded in the main review. Local cover acceptance is not backend phone acceptance.",
+        "review_path": "wechat/articles/review/ref-zheng2023-JRSE.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zheng2023-JRSE.integration.review.md"
+      }
     },
     "DOI": "10.1063/5.0131279"
   },
@@ -10373,27 +10471,76 @@
         "metrics": "影响因子: 5.5 (Q1). 中科院分区: 2."
       },
       "source": {
-        "status": "unregistered"
+        "status": "verified",
+        "kind": "authorized_publisher_pdf_copy",
+        "sha256": "c1b8b41b4b4153a74cf74df9003f322638a5ddc42bf5f63b483df018e5735bff",
+        "sha256_scope": "current_audited_copy",
+        "historical_original_sha256": "c1b8b41b4b4153a74cf74df9003f322638a5ddc42bf5f63b483df018e5735bff",
+        "historical_original_hash_match": true,
+        "historical_original_byte_equivalence": "hash_matches",
+        "pages": 19,
+        "identity_checked_at": "2026-10-14T18:32:09+00:00",
+        "review_path": "wechat/articles/review/ref-zhou2021-OE.review.md"
       },
       "rtd": {
-        "status": "unregistered",
-        "kind": "unregistered",
+        "status": "awaiting_audit",
+        "kind": "full_paper",
         "path": "docs/source/paper-notes/ref-zhou2021-OE.rst",
-        "public_title": "Global sensitivity study on the semisubmersible substructure of a floating wind turbine: Manufacturing cost, structural properties and hydrodynamics",
+        "public_title": "一体化分析 | 半潜浮体尺寸对成本与动力响应的敏感性",
         "order": 53,
         "issues": [],
-        "evidence": {}
+        "evidence": {
+          "awaiting_audit": {
+            "recorded_at": "2026-10-14T18:32:09+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2021-OE.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Prior independent scientific review retained. Remove the top cover block and restore the one removed trailing newline byte to reproduce the audited manuscript exactly. Final standard integrated build and browser acceptance remain pending, not verified.",
+            "fingerprint": "aac232e111b76b3af079aa03555a7d68dfd5e166b11123376865c3328fbe81ec"
+          }
+        },
+        "review_path": "wechat/articles/review/ref-zhou2021-OE.review.md"
       },
       "wechat": {
         "selected": true,
-        "status": "unregistered",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhou2021-OE.md",
         "review_path": "wechat/articles/review/ref-zhou2021-OE.review.md",
         "issues": [],
-        "evidence": {},
-        "latest_published_url": ""
+        "evidence": {
+          "awaiting_review": {
+            "recorded_at": "2026-10-14T18:32:09+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2021-OE.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Original audited Markdown and scientific figures unchanged. Official no-submit preflight/dry-run/HTML rendering passed; this introduction has zero formula SVGs. Actual backend draft, phone preview and publication not performed.",
+            "fingerprint": "1065e335ce850dee03dc56920c8a09d86049d1ef2c7de2fd03c2f543813fa9d0"
+          }
+        },
+        "latest_published_url": "",
+        "revision_note": "已独立科学审核，三张封面获用户采用并完成本地绑定及官方离线渲染；本批待完整网站门禁与后台具体授权，不把本地验收登记成手机预览或已创建草稿。"
       },
-      "content_production": "included"
+      "content_production": "included",
+      "source_audit": {
+        "recorded_at": "2026-10-14T18:32:09+00:00",
+        "source_text_pages_read": 19,
+        "source_page_count": 19,
+        "audit_basis": "Prior independent full-source scientific review retained. This integration checks exact manuscript/figure equivalence, adopted cover binding and the separately reversible removal of one extra trailing newline, not a new full-PDF audit.",
+        "visual_scope": "Retain the exact figure/equation visual and byte/pixel comparison scope recorded in the main review. Local cover acceptance is not backend phone acceptance.",
+        "review_path": "wechat/articles/review/ref-zhou2021-OE.review.md",
+        "integration_review_path": "wechat/articles/review/ref-zhou2021-OE.integration.review.md"
+      }
     },
     "DOI": "10.1016/j.oceaneng.2021.108585"
   },

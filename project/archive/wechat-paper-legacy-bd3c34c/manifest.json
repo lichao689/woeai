@@ -1,0 +1,34 @@
+{
+  "inactive": true,
+  "source_commit": "bd3c34cae6a308ecc7cf46ec2d55f3b0972a76e3",
+  "files": [
+    {
+      "source_path": "wechat/STYLE.md",
+      "canonical_path": ".agents/skills/wechat-paper/references/writing-standards.md",
+      "archive_path": "project/archive/wechat-paper-legacy-bd3c34c/STYLE.md",
+      "sha256": "a15df5290edd5bfc1fbe4c166608d206e95490fbdc628b4aed5742fa6c7e2d64",
+      "bytes": 14191
+    },
+    {
+      "source_path": "wechat/templates/paper-explainer.md",
+      "canonical_path": ".agents/skills/wechat-paper/templates/paper-explainer.md",
+      "archive_path": "project/archive/wechat-paper-legacy-bd3c34c/paper-explainer.md",
+      "sha256": "d00d725252d98b311567b33ff073a9fc6d938a8df040179fe0a5bb1bee883b6e",
+      "bytes": 2818
+    },
+    {
+      "source_path": "wechat/templates/paper-review.md",
+      "canonical_path": ".agents/skills/wechat-paper/templates/paper-review.md",
+      "archive_path": "project/archive/wechat-paper-legacy-bd3c34c/paper-review.md",
+      "sha256": "0ef107502926f97cdd8d7dd3fb09213519ca15fb526df2403311287ceca778ad",
+      "bytes": 4600
+    },
+    {
+      "source_path": "wechat/templates/review-checklist.md",
+      "canonical_path": ".agents/skills/wechat-paper/templates/review-checklist.md",
+      "archive_path": "project/archive/wechat-paper-legacy-bd3c34c/review-checklist.md",
+      "sha256": "d9da9219bddf88dbb5f41a6d79048814c796494848fa3eb7176deb02465b0ffe",
+      "bytes": 4522
+    }
+  ]
+}

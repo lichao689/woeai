@@ -34,7 +34,9 @@ class PaperInlineRoleTests(unittest.TestCase):
                   if row['custom'].get('rtd', {}).get('kind') == 'full_paper']
         self.assertTrue(papers)
         with tempfile.TemporaryDirectory(prefix='woeai-inline-roles-') as tmp:
-            source = Path(tmp) / 'source'
+            # Sphinx resolves macOS /var and /tmp symlinks before reading images.
+            # Compute relative image paths from that same physical source root.
+            source = Path(tmp).resolve() / 'source'
             source.mkdir()
             (source / 'conf.py').write_text(
                 "extensions = ['sphinx.ext.mathjax']\n"

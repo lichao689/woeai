@@ -74,6 +74,12 @@ RTD 必须有 `source_identity`、`full_paper_coverage`、`public_safety` 全为
 不包含状态、issue、时间和指纹本身，避免 commit 自引用。正文、来源、资产或 review 改动后，
 旧证据保留但不再生效，检查失败且进度页标出失效；重核验，或把当前状态退回待核验/待审核。
 Zotero 更新可保留旧核验记录，不能把旧证据自动刷新为当前。
+微信规范依赖只允许 `.agents/skills/wechat-paper/references/writing-standards.md` 与
+`natural-scientific-writing.md`，各自完整路径和内容进入指纹。专用读取入口拒绝符号链接
+重定向，不扩大正文、素材或review的公共路径权限；缺失规范不能通过微信核验。
+模板只提供骨架；旧入口已删除，迁移前原件仅存于非活跃历史归档，不参与技能加载、模板选择或指纹。
+规范迁移后保留旧凭证，按新规范重审；
+不得把旧凭证重算为通过。RTD继续使用原精解规范，其正文和渠道审核不受微信规范变更影响。
 `published` 还须有 `https://mp.weixin.qq.com/s...` 公开链接；草稿上传成功不是发布。
 
 源文通讯作者纠正保存在`custom.bibliography_audit`，包含旧值、支持值和页码证据。

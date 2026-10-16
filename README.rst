@@ -24,7 +24,7 @@ Three Workstreams
   `the translation style guide <project/guides/rtd-translation-style.md>`_.
 - **WeChat introductions**: short reader-facing articles, covers, and Official
   Account draft delivery under ``wechat/``. See `the WeChat style guide
-  <wechat/STYLE.md>`_ and `the WeChat delivery guide <wechat/README.md>`_.
+  <.agents/skills/wechat-paper/references/writing-standards.md>`_ and `the WeChat delivery guide <wechat/README.md>`_.
 
 All three share ``docs/data/publications.json`` and the source and evidence
 rules in `paper-sources-and-evidence.md

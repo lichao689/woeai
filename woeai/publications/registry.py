@@ -88,6 +88,13 @@ WECHAT_STATES = {'unregistered','planned','drafting','awaiting_review','draft_cr
 ISSUE_URL = re.compile(r'https://github\.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/issues/[1-9][0-9]*\Z')
 SHA256 = re.compile(r'[a-f0-9]{64}\Z')
 
+# Editorial specifications are repository-owned hidden files, never article,
+# asset or evidence paths supplied by registry data. Keep this allowlist exact.
+WECHAT_SPECIFICATIONS = (
+    '.agents/skills/wechat-paper/references/writing-standards.md',
+    '.agents/skills/wechat-paper/references/natural-scientific-writing.md',
+)
+
 
 def _public_path(root: Path, value: str) -> Path:
     path = Path(value)
@@ -96,6 +103,20 @@ def _public_path(root: Path, value: str) -> Path:
     resolved=(root/path).resolve()
     if not resolved.is_relative_to(root.resolve()):
         raise ValueError(f'Path escapes repository: {value}')
+    parts = resolved.relative_to(root.resolve()).parts
+    if any(p.startswith('.') or p in {'private', 'secrets'} for p in parts):
+        raise ValueError(f'Public path resolves to private content: {value}')
+    return resolved
+
+
+def _wechat_specification_path(root: Path, value: str) -> Path:
+    if value not in WECHAT_SPECIFICATIONS:
+        raise ValueError('Not an approved WeChat specification')
+    base = root.resolve()
+    resolved = (base / value).resolve()
+    # Reject symlink redirects even to another path inside the repository.
+    if resolved != base / value:
+        raise ValueError('WeChat specification path was redirected')
     return resolved
 
 
@@ -155,8 +176,8 @@ def workflow_fingerprint(record: dict[str, Any], channel: str, root: Path) -> st
     # Guides are specifications, not body documents; their illustrative image
     # directives are hashed as text but are not actual content dependencies.
     paths.update(_referenced_files(root, paths))
-    guide='project/guides/paper-deep-dive-rst.md' if channel=='rtd' else 'wechat/STYLE.md'
-    paths.add(guide)
+    if channel == 'rtd':
+        paths.add('project/guides/paper-deep-dive-rst.md')
     assets=root/'wechat/assets/public-safe'/ref
     if assets.exists():
         paths.update(p.relative_to(root).as_posix() for p in assets.rglob('*') if p.is_file())
@@ -164,6 +185,10 @@ def workflow_fingerprint(record: dict[str, Any], channel: str, root: Path) -> st
     for value in sorted(paths):
         path=_public_path(root,value)
         files[value]=hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
+    if channel == 'wechat':
+        for value in WECHAT_SPECIFICATIONS:
+            path = _wechat_specification_path(root, value)
+            files[value] = hashlib.sha256(path.read_bytes()).hexdigest() if path.is_file() else None
     payload={'bibliography':{k:v for k,v in record.items() if k!='custom'},
              'source':custom.get('source',{}),'files':files,'kind':workflow.get('kind')}
     return hashlib.sha256(json.dumps(payload,ensure_ascii=False,sort_keys=True,separators=(',',':')).encode()).hexdigest()
@@ -202,6 +227,9 @@ def workflow_verified(record: dict[str,Any], channel: str, root: Path) -> bool:
     if not evidence.get('recorded_at') or not evidence.get('review_path'): return False
     if not all(evidence.get('checks',{}).get(k) is True for k in required): return False
     try:
+        if channel == 'wechat' and any(
+            not _wechat_specification_path(root, value).is_file() for value in WECHAT_SPECIFICATIONS
+        ): return False
         if not _public_path(root,workflow['path']).is_file() or not _public_path(root,evidence['review_path']).is_file(): return False
         dependencies = _referenced_files(root, {workflow['path'], evidence['review_path']})
         if any(not _public_path(root, path).is_file() for path in dependencies): return False

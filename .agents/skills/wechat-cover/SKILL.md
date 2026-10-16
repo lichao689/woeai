@@ -19,8 +19,9 @@ use `wechat-paper` for article production and backend delivery permissions.
 A skill/specification/template maintenance request does not authorize image
 regeneration, article changes, a WeChat update or publication. Preserve existing
 assets and historical approvals; record migration pending rather than marking
-old images compliant. Old three-category article prefixes in `wechat/STYLE.md`
-and historical briefs need separate migration; do not copy them into new covers.
+old images compliant. Earlier three-category labels in historical guidance and
+briefs need separate migration; do not copy them into new covers. Current article
+prefix rules belong to [writing standards](../wechat-paper/references/writing-standards.md).
 
 ## Workflow and gates
 

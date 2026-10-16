@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCAN_ROOTS = [ROOT / "wechat", ROOT / "docs/source/paper-notes", ROOT / "docs/data", ROOT / "project/research", ROOT / "project/plans"]
+SCAN_ROOTS.append(ROOT / '.agents/skills/wechat-paper')
 # Explicit user approval covers exactly this 17-record, two-field snapshot.
 # Future mapping changes require fresh approval and a reviewed digest update.
 APPROVED_DRAFT_MAP_SHA256 = "8605522556f090dd0d49acc34ca800af802e827b91aa266dc35fdb26e928a7a2"

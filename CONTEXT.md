@@ -148,7 +148,7 @@ Each paper has one primary family and one secondary direction, assigned by its m
 research question rather than the software used or an incidental application.
 
 **One-Paper WeChat Article**:
-A WeChat Official Account article whose core unit is one selected paper. Its default order is a short opening (whose first paragraph doubles as the WeChat digest), paper metadata, the faithful Chinese abstract, then a body that explains the problem, the specific change against the baseline, the evidence with its conditions, and the limits and potential uses. The abstract gives the overview; the body covers what the abstract cannot, rather than restating it. `wechat/STYLE.md` owns the detailed rules. It should avoid repeating a WOEAI publication-page anchor when that linked page does not add reader value beyond the article itself.
+A WeChat Official Account article whose core unit is one selected paper. Its default order is a short opening (whose first paragraph doubles as the WeChat digest), paper metadata, the faithful Chinese abstract, then a body that explains the problem, the specific change against the baseline, the evidence with its conditions, and the limits and potential uses. The abstract gives the overview; the body covers what the abstract cannot, rather than restating it. `.agents/skills/wechat-paper/references/writing-standards.md` owns the detailed rules. It should avoid repeating a WOEAI publication-page anchor when that linked page does not add reader value beyond the article itself.
 _Avoid_: forcing every article into a multi-paper theme essay, three-sentence guides, numeric cards, numbered research-question callbacks, body sections that paraphrase the abstract
 
 **Publication Artifact**:

@@ -16,7 +16,7 @@ sources and assets remain under `wechat/`.
 - [Paper sources and evidence](guides/paper-sources-and-evidence.md): source acquisition, evidence records, figure extraction
 - [Paper deep-dive guide](guides/paper-deep-dive-rst.md): independent RTD articles
 - [RTD translation style](guides/rtd-translation-style.md): terminology, sentence and citation quality for deep dives
-- [WeChat style guide](../wechat/STYLE.md) and [delivery guide](../wechat/README.md): article writing and draft delivery
+- [WeChat style guide](../.agents/skills/wechat-paper/references/writing-standards.md) and [delivery guide](../wechat/README.md): article writing and draft delivery
 - [Issue tracker](guides/issue-tracker.md) and [triage labels](guides/triage-labels.md)
 
 ## Directory map

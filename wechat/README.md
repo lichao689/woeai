@@ -6,7 +6,7 @@ This README owns WeChat **delivery**: rendering, formula SVG and dark-mode
 acceptance, the official draft API, credentials, and backlog state. Other rules
 live in one place each:
 
-- writing rules and article structure: [STYLE.md](STYLE.md)
+- writing rules and article structure: [writing-standards.md](../.agents/skills/wechat-paper/references/writing-standards.md)
 - de-AI editing workflow: [natural-scientific-writing.md](../.agents/skills/wechat-paper/references/natural-scientific-writing.md)
 - source acquisition, evidence records, figure extraction:
   [paper-sources-and-evidence.md](../project/guides/paper-sources-and-evidence.md)
@@ -63,7 +63,7 @@ should use already-published WeChat article links only; RTD deep-dive pages use
 internal paper-note links. This does not automatically change the public
 website's own canonical SEO URL or homepage contact display.
 
-Figure-caption wording follows STYLE.md section 7. The WeChat renderer makes
+Figure-caption wording follows the bundled writing standards section 7. The WeChat renderer makes
 the figure-title line centered, one font size smaller than body text, and italic.
 
 Formula source should keep Markdown LaTeX semantics. For the official API path,
@@ -87,7 +87,7 @@ Historical formula evidence (not current-run acceptance):
 
 ## Formula SVG And Dark-Mode Acceptance
 
-Formula writing rules are in STYLE.md section 8; this section covers rendering.
+Formula writing rules are in the bundled writing standards section 8; this section covers rendering.
 
 - Use transparent SVG formulas that inherit the adjacent text color through
   `currentColor`. Use standard `span` (inline) / `section` (display)
@@ -460,9 +460,10 @@ The step-by-step execution order lives in the
    publication record.
 2. Obtain and verify sources under
    [paper-sources-and-evidence.md](../project/guides/paper-sources-and-evidence.md).
-3. Draft from `templates/paper-explainer.md` under [STYLE.md](STYLE.md), edit
+3. Draft from `../.agents/skills/wechat-paper/templates/paper-explainer.md` under [writing-standards.md](../.agents/skills/wechat-paper/references/writing-standards.md), edit
    with the natural-writing guide, and record evidence in the review note.
-4. Render offline and run `preflight` / `dry-run`. Pure WeChat article/review
+4. Run `python3 scripts/check-wechat-content.py <article.md>` for the selected
+   revised article; semantic review follows the bundled checklist. Render offline and run `preflight` / `dry-run`. Pure WeChat article/review
    work does not require a Sphinx build.
 5. Backend delivery only after the explicit authorization described above;
    only a successful live operation advances state.

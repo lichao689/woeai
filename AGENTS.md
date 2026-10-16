@@ -15,7 +15,7 @@ partners. It has three workstreams that share one publication registry:
    translations of the team's papers. Guides: [paper-deep-dive-rst.md](project/guides/paper-deep-dive-rst.md)
    and [rtd-translation-style.md](project/guides/rtd-translation-style.md).
 3. **WeChat introductions**: short, clear reader-facing articles with covers,
-   delivered to the Official Account draft box. Rules: [wechat/STYLE.md](wechat/STYLE.md).
+   delivered to the Official Account draft box. Rules: [.agents/skills/wechat-paper/references/writing-standards.md](.agents/skills/wechat-paper/references/writing-standards.md).
 
 Readers are prospective students, engineering partners and academic peers.
 Persuasion comes from clearly stated problems, evidence and limits, not
@@ -29,7 +29,7 @@ Each rule has one authoritative file; others link to it instead of restating it.
 | --- | --- |
 | Vocabulary and semantic constraints | `CONTEXT.md` |
 | Paper sources, evidence records, figure extraction | `project/guides/paper-sources-and-evidence.md` |
-| WeChat writing rules and article structure | `wechat/STYLE.md` |
+| WeChat writing rules and article structure | `.agents/skills/wechat-paper/references/writing-standards.md` |
 | WeChat de-AI editing workflow | `.agents/skills/wechat-paper/references/natural-scientific-writing.md` |
 | WeChat rendering, formula SVG, draft API, credentials, state | `wechat/README.md` |
 | WeChat execution order | `.agents/skills/wechat-paper/SKILL.md` |
@@ -39,10 +39,13 @@ Each rule has one authoritative file; others link to it instead of restating it.
 | Website pages | `project/guides/homepage-content.md` |
 | Registry states | `project/guides/publication-registry.md` |
 
-`wechat/STYLE.md` and `project/guides/paper-deep-dive-rst.md` are hashed into
-registry verification fingerprints. Editing them invalidates existing verified
-WeChat/RTD evidence by design; confirm with the user before changing them, and
-prefer the companion guides above for additive guidance.
+The exact WeChat fingerprint dependencies are the bundled `writing-standards.md`
+and `natural-scientific-writing.md` under `.agents/skills/wechat-paper/references/`.
+Their paths and bytes are hashed through a dedicated allowlist; ordinary public
+content/evidence paths may not use hidden or private directories. Changing these
+specifications invalidates old WeChat evidence and requires re-review, never an
+automatic rehash of old approval. RTD still hashes only its existing deep-dive
+guide and channel inputs. Confirm scope before changing either channel standard.
 
 ## Start here
 
@@ -74,10 +77,10 @@ prefer the companion guides above for additive guidance.
   and the affected `docs/source/` pages. Use the site boundaries below.
 - **WeChat article, evidence review, or backlog:** read
   [.agents/skills/wechat-paper/SKILL.md](.agents/skills/wechat-paper/SKILL.md)
-  and follow its table of authorities ([wechat/STYLE.md](wechat/STYLE.md),
+  and follow its table of authorities ([.agents/skills/wechat-paper/references/writing-standards.md](.agents/skills/wechat-paper/references/writing-standards.md),
   the natural-writing guide, [wechat/README.md](wechat/README.md),
   [paper-sources-and-evidence.md](project/guides/paper-sources-and-evidence.md),
-  and `wechat/templates/`).
+  and `.agents/skills/wechat-paper/templates/`).
 - **Cover generation, prompts, or crop review:** read
   [.agents/skills/wechat-cover/SKILL.md](.agents/skills/wechat-cover/SKILL.md)
   and its linked standards; follow its cover-text confirmation and preview gates.
@@ -198,7 +201,7 @@ assets live in the matching `wechat/articles/review/` and
 `wechat/assets/public-safe/` paths. Use the author's confirmed papers, original
 figures with approved reuse, a faithful Chinese abstract near the top, a body
 organized as problem / method / evidence / limits, numbers that keep their
-conditions, and visible limitations. Follow STYLE for structure, author
+conditions, and visible limitations. Follow the bundled writing standards for structure, author
 markers, captions, and links.
 Apply backend wording corrections back to this Markdown before regenerating.
 
@@ -219,8 +222,11 @@ numbers, not `\tag{N}`. Complete the guide's source-to-output coverage audit.
 
 ## WeChat writing rule ownership
 
-`wechat/STYLE.md` is the writing-rule authority. The wechat-paper skill supplies
-execution steps and the local natural-writing adapter; templates are optional
+`.agents/skills/wechat-paper/references/writing-standards.md` is the writing-rule authority. The wechat-paper skill supplies
+execution steps, references and bundled templates. The old rule/template paths
+are removed; pre-migration originals live only in the inactive historical archive
+under `project/archive/wechat-paper-legacy-bd3c34c/`. That archive is not loaded
+as skills, templates or fingerprint dependencies. Current templates are optional
 scaffolding and checklists, not duplicate mandatory article structures. The
 pinned Humanizer-zh reference retains its license and has no tool authority.
 Every revision preserves evidence and needs separate actual light/dark phone
@@ -263,7 +269,9 @@ Run from the repository root; inspect script help/source before adding flags.
 - **WeChat-only text/review/assets:** check Markdown image/link paths and evidence
   records. When preparing rendered content, run
   `python3 wechat/tools/wechat_draft.py dry-run --publication-ref <publication_ref>`
-  or the no-submit `preflight` equivalent. Sphinx is not required for this branch.
+  or the no-submit `preflight` equivalent. Check newly written/revised endings with
+  `python3 scripts/check-wechat-content.py <article.md>`; this opt-in check does not
+  bulk-migrate legacy articles. Sphinx is not required for this branch.
 - **RTD/site/config/generator changes:** run `./scripts/check-docs.sh`.
   It requires Python 3.12+, checks public safety and publication artifacts,
   runs `unittest`, installs `docs/requirements.txt` in its configured temporary

@@ -178,12 +178,83 @@ class RegistryTests(unittest.TestCase):
         rows=copy.deepcopy(load_registry(ROOT)); rows[0]['custom']['rtd']['path']='../outside.rst'
         self.assertTrue(validate_registry(rows,ROOT))
 
+    def test_skill_writing_rules_invalidate_wechat_but_leave_rtd_independent(self):
+        import tempfile
+        from woeai.publications.registry import workflow_fingerprint
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            standards = '.agents/skills/wechat-paper/references/writing-standards.md'
+            adapter = '.agents/skills/wechat-paper/references/natural-scientific-writing.md'
+            archived = tuple('project/archive/wechat-paper-legacy-bd3c34c/' + name for name in ('STYLE.md', 'paper-explainer.md', 'paper-review.md', 'review-checklist.md'))
+            for name in (standards, adapter, *archived):
+                path = root / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text('Original guidance')
+            before = {c: workflow_fingerprint(self.row, c, root) for c in ('wechat', 'rtd')}
+            for name in (standards, adapter):
+                with self.subTest(specification=name):
+                    (root / name).write_text('Changed engineering-value guidance')
+                    self.assertNotEqual(workflow_fingerprint(self.row, 'wechat', root), before['wechat'])
+                    self.assertEqual(workflow_fingerprint(self.row, 'rtd', root), before['rtd'])
+                    (root / name).write_text('Original guidance')
+            for name in archived:
+                (root / name).write_text('Changed inactive historical guidance')
+                for channel in ('wechat', 'rtd'):
+                    self.assertEqual(workflow_fingerprint(self.row, channel, root), before[channel])
+
     def test_registry_is_standard_csl_json(self):
         import json
         from jsonschema import Draft7Validator
         from woeai.publications.registry import load_registry
         schema=json.loads((ROOT/'docs/data/schemas/csl-data.json').read_text())
         self.assertEqual(list(Draft7Validator(schema).iter_errors(load_registry(ROOT))),[])
+
+    def test_hidden_specifications_cannot_be_used_as_public_article_or_evidence(self):
+        import copy
+        import tempfile
+        from woeai.publications.registry import validate_registry, workflow_fingerprint
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            forbidden = ['.agents/skills/wechat-paper/references/writing-standards.md',
+                         '.agents/other.md', 'private/evidence.md', 'secrets/config.md',
+                         '../outside.md', '/outside.md']
+            for value in forbidden:
+                for key in ('path', 'review_path'):
+                    with self.subTest(value=value, field=key):
+                        row = copy.deepcopy(self.row)
+                        row['custom']['wechat'][key] = value
+                        self.assertTrue(validate_registry([row], root))
+                        with self.assertRaises(ValueError):
+                            workflow_fingerprint(row, 'wechat', root)
+
+    def test_specification_symlinks_cannot_redirect_to_other_repository_or_private_files(self):
+        import tempfile
+        from woeai.publications.registry import workflow_fingerprint
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory)
+            root = base / 'repo'; root.mkdir()
+            spec = root / '.agents/skills/wechat-paper/references/writing-standards.md'
+            spec.parent.mkdir(parents=True)
+            for name in ('private/other.md', '.agents/other.md', '../outside.md'):
+                with self.subTest(target=name):
+                    target = root / name; target.parent.mkdir(parents=True, exist_ok=True)
+                    target.write_text('Unapproved file')
+                    spec.symlink_to(target)
+                    with self.assertRaises(ValueError):
+                        workflow_fingerprint(self.row, 'wechat', root)
+                    spec.unlink()
+
+    def test_public_symlink_cannot_read_private_evidence(self):
+        import tempfile
+        from woeai.publications.registry import workflow_fingerprint
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            target = root / 'private/other.md'; target.parent.mkdir()
+            target.write_text('Unapproved file')
+            public = root / 'review.md'; public.symlink_to(target)
+            self.row['custom']['wechat']['review_path'] = 'review.md'
+            with self.assertRaises(ValueError):
+                workflow_fingerprint(self.row, 'wechat', root)
 
     def test_referenced_shared_images_invalidate_approval(self):
         import copy
@@ -212,6 +283,10 @@ class RegistryTests(unittest.TestCase):
         row = self.row
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
+            for name in ('writing-standards.md', 'natural-scientific-writing.md'):
+                path = root / '.agents/skills/wechat-paper/references' / name
+                path.parent.mkdir(parents=True, exist_ok=True)
+                path.write_text('Test editorial specification')
             row['custom']['source'] = {'status': 'verified', 'sha256': 'a' * 64}
             workflow = row['custom']['wechat']; workflow['status'] = 'ready_to_publish'
             for key in ('path', 'review_path'):
@@ -220,6 +295,12 @@ class RegistryTests(unittest.TestCase):
             workflow['evidence'] = {'verified': {'recorded_at': '2026-10-05T00:00:00Z', 'review_path': workflow['review_path'], 'checks': checks}}
             workflow['evidence']['verified']['fingerprint'] = workflow_fingerprint(row, 'wechat', root)
             self.assertTrue(workflow_verified(row, 'wechat', root))
+            path = root / '.agents/skills/wechat-paper/references/writing-standards.md'
+            path.unlink()
+            workflow['evidence']['verified']['fingerprint'] = workflow_fingerprint(row, 'wechat', root)
+            self.assertFalse(workflow_verified(row, 'wechat', root))
+            path.write_text('Test editorial specification')
+            workflow['evidence']['verified']['fingerprint'] = workflow_fingerprint(row, 'wechat', root)
             for key in ('formula_preview', 'figure_preview', 'cover_preview'):
                 for value in (None, False, 'true', 1):
                     with self.subTest(key=key, value=value):

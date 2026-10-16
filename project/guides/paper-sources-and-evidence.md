@@ -1,7 +1,7 @@
 # 论文源文件与证据记录
 
 本指南是论文源文件获取、PDF 选择、证据定位与原图抽取的唯一规则来源。
-公众号导读（`wechat/STYLE.md`）、RTD 论文精解
+公众号导读（`.agents/skills/wechat-paper/references/writing-standards.md`）、RTD 论文精解
 （[paper-deep-dive-rst.md](paper-deep-dive-rst.md)）和两个技能文件只引用这里，
 不再各自复述。凭据、API 与草稿操作见 [wechat/README.md](../../wechat/README.md)。
 

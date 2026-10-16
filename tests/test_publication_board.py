@@ -32,6 +32,12 @@ class PublicationBoardTests(unittest.TestCase):
     def board(self, root=ROOT):
         return registry.publication_board(root, [self.row])['papers'][0]
 
+    def write_wechat_specifications(self, root):
+        for name in registry.WECHAT_SPECIFICATIONS:
+            path = root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text('Test editorial specification')
+
     def test_inventory_projects_current_registry_without_false_completion(self):
         rows = registry.load_registry(ROOT); board = registry.publication_board(ROOT, rows)
         self.assertEqual(board['schema_version'], 1)
@@ -304,6 +310,7 @@ class PublicationBoardTests(unittest.TestCase):
     def test_wechat_readiness_publication_and_rtd_are_independent(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
+            self.write_wechat_specifications(root)
             workflow = self.row['custom']['wechat']
             for field in ('path', 'review_path'):
                 path = root / workflow[field]
@@ -331,6 +338,7 @@ class PublicationBoardTests(unittest.TestCase):
     def test_downgraded_states_preserve_evidence_freshness_without_upgrading_status(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
+            self.write_wechat_specifications(root)
             self.row['custom']['source'] = {'sha256': 'a' * 64, 'status': 'verified'}
             review_path = 'wechat/articles/review/ref-example.review.md'
             review = root / review_path

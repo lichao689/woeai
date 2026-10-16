@@ -49,8 +49,9 @@ the paper, not a compulsory three-node decoration.
 
 Use exactly these five approved secondary directions, matching the paper's
 registry classification and `CONTEXT.md`. For cover scope only, this five-direction rule supersedes the old three-label
-wording in `wechat/STYLE.md` and historical briefs; it does not change article
-prefixes, registry verification fingerprints or existing approval states. Those
+wording in historical guidance and briefs; it does not change article
+prefixes, registry verification fingerprints or existing approval states. Current
+article rules remain in [writing standards](../../wechat-paper/references/writing-standards.md). Those
 migrations require their own authorized edits and rechecks. No arbitrary topic
 tag, extra badge or legacy `漂浮风电` editorial badge. The primary research families remain
 工程结构抗风 / 海上漂浮风电; they are not additional cover labels.

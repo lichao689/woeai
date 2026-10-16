@@ -6,6 +6,16 @@ AI_STATEMENT = '本文由 AI 辅助整理与撰写'
 READING_REMINDER = re.compile(r'^点击[“\"]?阅读原文', re.M)
 
 
+def article_title_findings(text: str, subdirection: str) -> list[str]:
+    """Match the article H1 to this paper's registered subdirection."""
+    titles = re.findall(r'^# ([^\r\n]+)', text, re.M)
+    prefix = f'{subdirection} | '
+    if (not subdirection or len(titles) != 1 or
+            not titles[0].startswith(prefix) or not titles[0][len(prefix):].strip()):
+        return [f'H1 must use custom.subdirection: {prefix}<中文标题>']
+    return []
+
+
 def article_structure_findings(text: str) -> list[str]:
     """Validate an explicitly selected article against the current ending contract.
 

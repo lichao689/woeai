@@ -54,6 +54,68 @@ class EngineeringEndingTests(unittest.TestCase):
             self.assertEqual(path.read_bytes(), before)
 
 
+class RegistryTitleTests(unittest.TestCase):
+    def test_title_matches_its_own_subdirection_not_just_a_valid_label(self):
+        from woeai.wechat.editorial import article_title_findings
+        expected = '一体化分析'
+        self.assertEqual(article_title_findings('# 一体化分析 | 平台怎样比较？\n', expected), [])
+        for title in ('# 平台怎样比较？', '# 漂浮风电 | 平台怎样比较？',
+                      '# 混凝土浮体 | 平台怎样比较？'):
+            with self.subTest(title=title):
+                self.assertTrue(article_title_findings(title + '\n', expected))
+
+    def test_every_existing_article_h1_matches_its_registry_subdirection(self):
+        from woeai.publications.registry import load_registry
+        from woeai.wechat.editorial import article_title_findings
+        checked = 0
+        for row in load_registry(ROOT):
+            custom = row['custom']
+            path = ROOT / custom['wechat']['path']
+            if not path.is_file():
+                continue
+            with self.subTest(publication_ref=custom['publication_ref']):
+                self.assertEqual(article_title_findings(path.read_text(), custom['subdirection']), [])
+            checked += 1
+        self.assertGreater(checked, 0)
+
+    def test_cli_rejects_registry_title_mismatches_without_changing_article(self):
+        from contextlib import redirect_stderr, redirect_stdout
+        import importlib.util
+        import io
+        import sys
+        import tempfile
+        from unittest.mock import patch
+        spec = importlib.util.spec_from_file_location('wechat_content_check', ROOT / 'scripts/check-wechat-content.py')
+        checker = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(checker)
+        source = (ROOT / 'wechat/articles/draft-public-safe/ref-zheng2025-QHDXXB.md').read_text()
+        body = source.partition('\n')[2]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            article = root / 'wechat/articles/draft-public-safe/example.md'
+            article.parent.mkdir(parents=True)
+            registry = root / 'docs/data/publications.json'
+            registry.parent.mkdir(parents=True)
+            registry.write_text(json.dumps([{'custom': {
+                'publication_ref': 'example', 'subdirection': '一体化分析',
+                'wechat': {'path': 'wechat/articles/draft-public-safe/example.md'},
+            }}]))
+            cases = [('# 一体化分析 | 平台怎样比较？', 0),
+                     ('# 平台怎样比较？', 1),
+                     ('# 漂浮风电 | 平台怎样比较？', 1),
+                     ('# 混凝土浮体 | 平台怎样比较？', 1)]
+            for title, expected_exit in cases:
+                with self.subTest(title=title):
+                    article.write_text(title + '\n' + body)
+                    before = article.read_bytes()
+                    stderr = io.StringIO()
+                    with patch.object(checker, 'ROOT', root), patch.object(sys, 'argv', ['check-wechat-content.py', str(article)]), redirect_stderr(stderr), redirect_stdout(io.StringIO()):
+                        self.assertEqual(checker.main(), expected_exit)
+                    if expected_exit:
+                        self.assertIn('custom.subdirection', stderr.getvalue())
+                    self.assertEqual(article.read_bytes(), before)
+
+
 class SkillPackageTests(unittest.TestCase):
     def test_canonical_rules_and_templates_have_one_entry_and_valid_links(self):
         import re

@@ -115,7 +115,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2026-BE.md",
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
         "issues": [],
@@ -272,7 +272,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-13T03:24:37+00:00",
@@ -436,12 +436,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhao2026-BE.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -572,7 +577,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-he2026-OE.md",
         "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
         "issues": [],
@@ -730,7 +735,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T12:48:23+00:00",
@@ -885,12 +890,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-he2026-OE.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -1035,7 +1045,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2026-BS.md",
         "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
         "issues": [],
@@ -1205,7 +1215,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T12:47:58+00:00",
@@ -1358,12 +1368,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhao2026-BS.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -1580,7 +1595,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-he2026-OE-structural.md",
         "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
         "issues": [],
@@ -1711,6 +1726,40 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "d9380ebf2f35a0cb0d155e8cb625f92d49a9238230fefcb31e57a1623154e8d6"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:35:53+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "174005fcda8b799ba66ca5e42c226082c6b42750f0bad21cc7144d2e8b2b59e6",
+            "source_sha256": "8f4860368e8c1363923599a4f8249ffc33e28dbca01e4a8ba2073625fe0425b5",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 5,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
@@ -1739,7 +1788,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T13:01:26+00:00",
@@ -1892,12 +1941,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-he2026-OE-structural.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -2029,7 +2083,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-tang2026-RE.md",
         "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
         "issues": [],
@@ -2177,7 +2231,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T12:48:56+00:00",
@@ -2330,12 +2384,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-tang2026-RE.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -2536,7 +2595,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-he2025-POF.md",
         "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
         "issues": [],
@@ -2693,7 +2752,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:24:45+00:00",
@@ -2846,12 +2905,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-he2025-POF.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -2984,7 +3048,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-yang2025-JBE.md",
         "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
         "issues": [],
@@ -3132,7 +3196,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-13T03:25:01+00:00",
@@ -3296,12 +3360,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-yang2025-JBE.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -3503,7 +3572,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zheng2025-OE.md",
         "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
         "issues": [],
@@ -3623,6 +3692,40 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "ad7448d7be1d7efba8a1ae6fcfcee0b16331374391549805c4ffc49469309b75"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:36:04+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "bed8ab125ee827e05ba3949e4caee3c4f1b8d4b41c0ea4668fc826a4bb773576",
+            "source_sha256": "86f3665e92459a29a644cb280ce5691b1e934322cc07795c15a7f9d877601cd5",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 5,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
@@ -3660,7 +3763,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T13:01:54+00:00",
@@ -3813,12 +3916,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-zheng2025-OE.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -3915,7 +4023,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zheng2025-QHDXXB.md",
         "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.review.md",
         "issues": [],
@@ -3988,10 +4096,44 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "cd5eb0a68a826a3bd49dd389a8d239102213f42091f203bdaf0bbf1a438fb2bb"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:36:14+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "9d83c4cb8d1f25f377b5c800eed38c87a48af3252960824db9f02a397068b5d6",
+            "source_sha256": "153fb406db4f3fd09a85907acc8045e72e3862c11d68c4101195e9658df3e636",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 3,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:17:59+00:00",
@@ -4107,12 +4249,17 @@
         "draft_created_at": "2026-10-15T01:17:59+00:00",
         "draft_updated_at": "2026-10-15T01:17:59+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -4244,7 +4391,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-tang2025-JBE.md",
         "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
         "issues": [],
@@ -4392,7 +4539,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:11:37+00:00",
@@ -4545,12 +4692,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-tang2025-JBE.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -4820,7 +4972,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2025-SCS.md",
         "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
         "issues": [],
@@ -4968,7 +5120,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:12:08+00:00",
@@ -5121,12 +5273,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhao2025-SCS.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -5330,7 +5487,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-chen2024-POF.md",
         "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
         "issues": [],
@@ -5474,7 +5631,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-13T03:25:21+00:00",
@@ -5638,12 +5795,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-chen2024-POF.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -5738,7 +5900,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-tang2024-POF.md",
         "review_path": "wechat/articles/review/ref-tang2024-POF.review.md",
         "issues": [],
@@ -5816,7 +5978,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:39:08+00:00",
@@ -5932,12 +6094,18 @@
         "draft_created_at": "2026-10-15T09:39:08+00:00",
         "draft_updated_at": "2026-10-15T09:39:08+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-tang2024-POF.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "blocked_existing_upload_permission",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null,
+          "retained_preflight_gap_scope": "Historical permission for new body-image upload remains unchanged; completed classification-only operation reused existing uploaded images and required no upload."
         }
       },
       "content_production": "included",
@@ -6139,7 +6307,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-wang2024-ES.md",
         "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
         "issues": [],
@@ -6296,7 +6464,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:17:30+00:00",
@@ -6449,12 +6617,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-wang2024-ES.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -6566,7 +6739,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-he2024-JBE.md",
         "review_path": "wechat/articles/review/ref-he2024-JBE.review.md",
         "issues": [],
@@ -6644,7 +6817,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:40:24+00:00",
@@ -6760,12 +6933,18 @@
         "draft_created_at": "2026-10-15T09:40:24+00:00",
         "draft_updated_at": "2026-10-15T09:40:24+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-he2024-JBE.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "blocked_existing_upload_permission",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null,
+          "retained_preflight_gap_scope": "Historical permission for new body-image upload remains unchanged; completed classification-only operation reused existing uploaded images and required no upload."
         }
       },
       "content_production": "included",
@@ -7037,7 +7216,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2024-POF.md",
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
         "issues": [],
@@ -7185,7 +7364,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:18:00+00:00",
@@ -7332,12 +7511,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-li2024-POF.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -7500,7 +7684,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-chen2024-JCP.md",
         "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
         "issues": [],
@@ -7709,7 +7893,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "previous_confirmed_draft_update": {
           "event_at": "2026-10-06T17:51:36+00:00",
           "reported_at": "2026-10-06T17:52:00+00:00",
@@ -7912,12 +8096,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-chen2024-JCP.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -8124,7 +8313,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhou2023-AE.md",
         "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
         "issues": [],
@@ -8244,6 +8433,40 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "98f23de001cf19f11d00b3a1fdb3877b17ac066de5522f5ff9b82f32a97eabaf"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:36:24+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "8be17d0b8644c2b8cb57b14a7103a0ace65969c6533c93e7809b62b153ce21a2",
+            "source_sha256": "33325cb913b2a8a607037f6560d2ba37a983fffd6e74f110adba358ae0427142",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 5,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
@@ -8281,7 +8504,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T13:02:39+00:00",
@@ -8434,12 +8657,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-zhou2023-AE.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -8536,7 +8764,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2023-BS.md",
         "review_path": "wechat/articles/review/ref-zhao2023-BS.review.md",
         "issues": [],
@@ -8614,7 +8842,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:43:11+00:00",
@@ -8730,12 +8958,18 @@
         "draft_created_at": "2026-10-15T09:43:11+00:00",
         "draft_updated_at": "2026-10-15T09:43:11+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhao2023-BS.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "blocked_existing_upload_permission",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null,
+          "retained_preflight_gap_scope": "Historical permission for new body-image upload remains unchanged; completed classification-only operation reused existing uploaded images and required no upload."
         }
       },
       "content_production": "included",
@@ -8915,7 +9149,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zheng2023-MS.md",
         "review_path": "wechat/articles/review/ref-zheng2023-MS.review.md",
         "issues": [],
@@ -8990,10 +9224,44 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "913b11199a0a764708a92c0f4e338506ed3ff24c3ac407806bfe072a96ab75e3"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:36:31+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "7012bcebb757c251668fae685fab1ca23e3d8027957af1281adb56e08fa6888c",
+            "source_sha256": "2275f09c7fdb0b0694ad8e838b4507299c9b92ae7df4f2d4e3110138fd2cd546",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 4,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。既有正文图上传许可缺口仍保留。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。既有正文图上传许可缺口仍保留。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:36:25+00:00",
@@ -9109,12 +9377,18 @@
         "draft_created_at": "2026-10-15T09:36:25+00:00",
         "draft_updated_at": "2026-10-15T09:36:25+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-zheng2023-MS.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "blocked_existing_upload_permission",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null,
+          "retained_preflight_gap_scope": "Historical permission for new body-image upload remains unchanged; completed classification-only operation reused existing uploaded images and required no upload."
         }
       },
       "content_production": "included",
@@ -9209,7 +9483,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhang2023-S.md",
         "review_path": "wechat/articles/review/ref-zhang2023-S.review.md",
         "issues": [],
@@ -9287,7 +9561,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T10:15:49+00:00",
@@ -9403,12 +9677,18 @@
         "draft_created_at": "2026-10-15T10:15:49+00:00",
         "draft_updated_at": "2026-10-15T10:15:49+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhang2023-S.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "blocked_existing_upload_permission",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null,
+          "retained_preflight_gap_scope": "Historical permission for new body-image upload remains unchanged; completed classification-only operation reused existing uploaded images and required no upload."
         }
       },
       "content_production": "included",
@@ -9504,7 +9784,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-wang2023-JWEIA.md",
         "review_path": "wechat/articles/review/ref-wang2023-JWEIA.review.md",
         "issues": [],
@@ -9580,7 +9860,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:33:04+00:00",
@@ -9696,12 +9976,17 @@
         "draft_created_at": "2026-10-15T01:33:04+00:00",
         "draft_updated_at": "2026-10-15T01:33:04+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-wang2023-JWEIA.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -9796,7 +10081,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zheng2023-JRSE.md",
         "review_path": "wechat/articles/review/ref-zheng2023-JRSE.review.md",
         "issues": [],
@@ -9869,10 +10154,44 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "390c3beb5f4af396dc047ce3fbab118957e6c41e3d85b014905f559b72160dd1"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:36:41+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "4c546386245ec19a41a88b601d74a1611b3b722d67c76c7cd80cb59a1fb92d2a",
+            "source_sha256": "1101b5968aad8f14e6aa6cc5f42a78e2afff0ea575fc843a9ba105b316253d62",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 3,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:29:15+00:00",
@@ -9988,12 +10307,17 @@
         "draft_created_at": "2026-10-15T01:29:15+00:00",
         "draft_updated_at": "2026-10-15T01:29:15+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-zheng2023-JRSE.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -10088,7 +10412,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhang2023-ES.md",
         "review_path": "wechat/articles/review/ref-zhang2023-ES.review.md",
         "issues": [],
@@ -10166,7 +10490,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T10:17:05+00:00",
@@ -10282,12 +10606,18 @@
         "draft_created_at": "2026-10-15T10:17:05+00:00",
         "draft_updated_at": "2026-10-15T10:17:05+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhang2023-ES.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "blocked_existing_upload_permission",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null,
+          "retained_preflight_gap_scope": "Historical permission for new body-image upload remains unchanged; completed classification-only operation reused existing uploaded images and required no upload."
         }
       },
       "content_production": "included",
@@ -10449,7 +10779,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-feng2023-HKXYGC.md",
         "review_path": "wechat/articles/review/ref-feng2023-HKXYGC.review.md",
         "issues": [],
@@ -10524,7 +10854,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T13:55:28+00:00",
@@ -10740,12 +11070,17 @@
         "draft_created_at": "2026-10-14T13:55:28+00:00",
         "draft_updated_at": "2026-10-14T13:55:28+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-feng2023-HKXYGC.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -10855,7 +11190,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2023-GYJZ.md",
         "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.review.md",
         "issues": [],
@@ -10931,7 +11266,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。平台移除正文知网超链接，提交版本有证据，正文和首发版本匹配，底部RTD原文链接正常；不宣称返回的知网href保留。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。平台移除正文知网超链接，提交版本有证据，正文和首发版本匹配，底部RTD原文链接正常；不宣称返回的知网href保留。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:11:46+00:00",
@@ -11056,12 +11391,17 @@
         "draft_created_at": "2026-10-15T01:11:46+00:00",
         "draft_updated_at": "2026-10-15T01:11:46+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -11401,7 +11741,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-chen2022-JWEIA.md",
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
         "issues": [],
@@ -11549,7 +11889,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:25:12+00:00",
@@ -11702,12 +12042,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-chen2022-JWEIA.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -11841,7 +12186,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2022-SOS.md",
         "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
         "issues": [],
@@ -11961,6 +12306,40 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "ce7b083efe60957485cc5606b89e376669d63b9afd2d197976dddb9a0e253362"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:36:50+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "ec412bf2046871ec95d62c8eae1840418c2eed3f8635d9d0f5416b1fe112fe24",
+            "source_sha256": "aeee2e1f516fa29b907bf5656d18c1042a5036f62dc37cdc8caa45fd0b3bcd67",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 4,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
@@ -11998,7 +12377,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T13:02:17+00:00",
@@ -12151,12 +12530,17 @@
           }
         ],
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-li2022-SOS.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "source_audit": {
@@ -12597,7 +12981,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-yang2022-AS.md",
         "review_path": "wechat/articles/review/ref-yang2022-AS.review.md",
         "issues": [],
@@ -12675,7 +13059,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T10:18:16+00:00",
@@ -12791,12 +13175,18 @@
         "draft_created_at": "2026-10-15T10:18:16+00:00",
         "draft_updated_at": "2026-10-15T10:18:16+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-yang2022-AS.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "blocked_existing_upload_permission",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null,
+          "retained_preflight_gap_scope": "Historical permission for new body-image upload remains unchanged; completed classification-only operation reused existing uploaded images and required no upload."
         }
       },
       "content_production": "included",
@@ -12961,7 +13351,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-EFM.md",
         "review_path": "wechat/articles/review/ref-zhao2021-EFM.review.md",
         "issues": [],
@@ -13037,7 +13427,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:18:48+00:00",
@@ -13153,12 +13543,17 @@
         "draft_created_at": "2026-10-15T01:18:48+00:00",
         "draft_updated_at": "2026-10-15T01:18:48+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhao2021-EFM.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -13253,7 +13648,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-AR.md",
         "review_path": "wechat/articles/review/ref-zhao2021-AR.review.md",
         "issues": [],
@@ -13329,7 +13724,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T14:57:16+00:00",
@@ -13542,12 +13937,17 @@
         "draft_created_at": "2026-10-14T14:57:16+00:00",
         "draft_updated_at": "2026-10-14T14:57:16+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhao2021-AR.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -13713,7 +14113,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhou2021-OE.md",
         "review_path": "wechat/articles/review/ref-zhou2021-OE.review.md",
         "issues": [],
@@ -13786,10 +14186,44 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "313c7d8c1d46f5888c5ae27fd73d33f0514c9e18e6f41c2daab4c70b299823d1"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:36:56+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "414b9bb9122c15baae97b8a20e79397d70af92144049fc337d25d5269012f532",
+            "source_sha256": "0ef2289ae91dc7300f9f8cd7290fff0ebcabdae465fb5a8786c13bd8cd653d56",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 3,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:28:29+00:00",
@@ -13905,12 +14339,17 @@
         "draft_created_at": "2026-10-15T01:28:29+00:00",
         "draft_updated_at": "2026-10-15T01:28:29+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-zhou2021-OE.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -14006,7 +14445,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-TYNXB.md",
         "review_path": "wechat/articles/review/ref-zhao2021-TYNXB.review.md",
         "issues": [],
@@ -14081,7 +14520,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T13:58:37+00:00",
@@ -14257,12 +14696,17 @@
         "draft_created_at": "2026-10-14T13:58:37+00:00",
         "draft_updated_at": "2026-10-14T13:58:37+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-zhao2021-TYNXB.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -14369,7 +14813,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2020-JWEIA.md",
         "review_path": "wechat/articles/review/ref-li2020-JWEIA.review.md",
         "issues": [],
@@ -14445,7 +14889,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:11:06+00:00",
@@ -14561,12 +15005,17 @@
         "draft_created_at": "2026-10-15T01:11:06+00:00",
         "draft_updated_at": "2026-10-15T01:11:06+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-li2020-JWEIA.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -14660,7 +15109,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhou2020-RE.md",
         "review_path": "wechat/articles/review/ref-zhou2020-RE.review.md",
         "issues": [],
@@ -14733,10 +15182,44 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "e6bc886dc59bd62d49a0be449e151ee68cc563a39b5aacdfcd2f30b700ac8f9e"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:37:01+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "c3b3751f043624a180dffb640722c88093d1342e1b35d1d6c9429d2da87d3cd0",
+            "source_sha256": "335ea64f47c18634a44d62b7bde520f79959fdc2043fbc53e04994735a1acb84",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 3,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:17:12+00:00",
@@ -14852,12 +15335,17 @@
         "draft_created_at": "2026-10-15T01:17:12+00:00",
         "draft_updated_at": "2026-10-15T01:17:12+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-zhou2020-RE.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -15358,7 +15846,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2018-AE.md",
         "review_path": "wechat/articles/review/ref-li2018-AE.review.md",
         "issues": [],
@@ -15431,10 +15919,44 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "56e48a5614e7e803c9b28c751ee905f3c456d6571669554a1402ea24056d80fd"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:37:07+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "55fd83e0ba99e1fc31d4970bb7e104b4b43ed423279f45d9beebd3062b2e5ff8",
+            "source_sha256": "49280b4a3bb84220ff43287bcac6257a360771e65df1d882df3c0cfbf6b0f2d3",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 3,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T16:39:03+00:00",
@@ -15629,12 +16151,17 @@
         "draft_created_at": "2026-10-14T16:39:03+00:00",
         "draft_updated_at": "2026-10-14T16:39:03+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-li2018-AE.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -15730,7 +16257,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-xiao2018-KXJSYGC.md",
         "review_path": "wechat/articles/review/ref-xiao2018-KXJSYGC.review.md",
         "issues": [],
@@ -15805,7 +16332,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T14:11:54+00:00",
@@ -15995,12 +16522,17 @@
         "draft_created_at": "2026-10-14T14:11:54+00:00",
         "draft_updated_at": "2026-10-14T14:11:54+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-xiao2018-KXJSYGC.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -16097,7 +16629,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-zhou2017-E.md",
         "review_path": "wechat/articles/review/ref-zhou2017-E.review.md",
         "issues": [],
@@ -16170,10 +16702,44 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "1d2d7bafe6687af50ca3681c8fdcc3871bf3ea4dbd8cca461557beb392fd1084"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:37:14+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "ebe06c65a163dc199e1a5bd641d7fc549c0f32a05adb132cf169e09e55c4ee2e",
+            "source_sha256": "cd1181ab0e098b56c1ddf921e16e6de603e415324b7daf2188eb31617689f6d4",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 3,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:16:29+00:00",
@@ -16289,12 +16855,17 @@
         "draft_created_at": "2026-10-15T01:16:29+00:00",
         "draft_updated_at": "2026-10-15T01:16:29+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-zhou2017-E.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -16390,7 +16961,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2017-BS.md",
         "review_path": "wechat/articles/review/ref-li2017-BS.review.md",
         "issues": [],
@@ -16466,7 +17037,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T14:59:49+00:00",
@@ -16679,12 +17250,17 @@
         "draft_created_at": "2026-10-14T14:59:49+00:00",
         "draft_updated_at": "2026-10-14T14:59:49+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-li2017-BS.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -16779,7 +17355,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2017-AS.md",
         "review_path": "wechat/articles/review/ref-li2017-AS.review.md",
         "issues": [],
@@ -16852,10 +17428,44 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "92a3cf89f77b50e17b461ef524ca8f6988d8f66bc4f634aff796252e3f48c874"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:37:21+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "53ba656c03072b742241fa38933a840db74791034d0d56955103df040425bedf",
+            "source_sha256": "627bcf5edae77e4bdd957d9e978ae1839c1d6214c2757c9cc1d5d65cea370781",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 3,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T16:39:44+00:00",
@@ -17044,12 +17654,17 @@
         "draft_created_at": "2026-10-14T16:39:44+00:00",
         "draft_updated_at": "2026-10-14T16:39:44+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-li2017-AS.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -17209,7 +17824,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2013-RE.md",
         "review_path": "wechat/articles/review/ref-li2013-RE.review.md",
         "issues": [],
@@ -17282,10 +17897,44 @@
             "pending_backend_update": true,
             "backend_updated": false,
             "fingerprint": "571bc28ee2caa5e79c67facc0358928decbd1e3f1f18c0f630fd6ea3c2fc936c"
+          },
+          "classification_sync_20261017": {
+            "recorded_at": "2026-10-17T10:37:26+00:00",
+            "operation": "update_existing_classification_only",
+            "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+            "receipt_file_sha256": "18937b679fe2f21555195cbe8373532c2527fc089ab5d895cd13bf2658a2dfe6",
+            "receipt_entry_sha256": "0947c4bf22f5542b4c47f030cbda6a625e46fc4d1602e40a9eba073738b04e57",
+            "source_sha256": "f3714b40580702cb45ef4178452cdadd474f41162c1ade5c65167de024dfda6a",
+            "checks": {
+              "exact_original_draft_identity_and_actual_index_preserved": true,
+              "accepted_title_preserved": true,
+              "classification_new_label_once_and_old_label_absent": true,
+              "full_body_matches_only_authorized_classification_replacement": true,
+              "all_html_structure_attributes_and_text_match_expected": true,
+              "all_nonclassification_text_and_scientific_content_preserved": true,
+              "all_body_image_urls_and_attributes_preserved": true,
+              "all_formula_svg_blocks_preserved": true,
+              "body_image_and_formula_counts_preserved": true,
+              "cover_reference_and_metadata_preserved": true,
+              "author_preserved": true,
+              "digest_preserved": true,
+              "original_link_preserved": true,
+              "all_other_business_metadata_preserved": true,
+              "preview_url_identity_preserved_except_server_tempkey_and_checksum": true,
+              "complete_article_equals_only_label_change_except_documented_serialization_and_preview_parameters": true,
+              "sibling_articles_preserved": true,
+              "existing_uploaded_media_reused_without_upload": true,
+              "single_existing_target_write_intent_only": true
+            },
+            "body_images_reused": 4,
+            "uploads": 0,
+            "created_drafts": 0,
+            "published": false,
+            "scope": "Only first-level classification update to the exact existing draft and official readback. All 19 scoped checks passed; source, formulas, image/cover references, authors, title and other metadata retained. Does not resolve unrelated prior audit or permission records."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T16:38:22+00:00",
@@ -17503,12 +18152,17 @@
         "draft_created_at": "2026-10-14T16:38:22+00:00",
         "draft_updated_at": "2026-10-14T16:38:22+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "backend_synced",
           "review_path": "wechat/articles/review/ref-li2013-RE.terminology-20261017.review.md",
-          "backend_update_needed": true,
-          "backend_synced": false,
+          "backend_update_needed": false,
+          "backend_synced": true,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "classification_updated",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -17602,7 +18256,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2012-JWEIA.md",
         "review_path": "wechat/articles/review/ref-li2012-JWEIA.review.md",
         "issues": [],
@@ -17678,7 +18332,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T14:58:03+00:00",
@@ -17891,12 +18545,17 @@
         "draft_created_at": "2026-10-14T14:58:03+00:00",
         "draft_updated_at": "2026-10-14T14:58:03+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-li2012-JWEIA.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -17991,7 +18650,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2012-GCLX.md",
         "review_path": "wechat/articles/review/ref-li2012-GCLX.review.md",
         "issues": [],
@@ -18067,7 +18726,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T16:40:32+00:00",
@@ -18287,12 +18946,17 @@
         "draft_created_at": "2026-10-14T16:40:32+00:00",
         "draft_updated_at": "2026-10-14T16:40:32+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-li2012-GCLX.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "passed",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null
         }
       },
       "content_production": "included",
@@ -18386,7 +19050,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "awaiting_review",
+        "status": "draft_created",
         "path": "wechat/articles/draft-public-safe/ref-li2010-WAS.md",
         "review_path": "wechat/articles/review/ref-li2010-WAS.review.md",
         "issues": [],
@@ -18464,7 +19128,7 @@
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:37:54+00:00",
@@ -18580,12 +19244,18 @@
         "draft_created_at": "2026-10-15T09:37:54+00:00",
         "draft_updated_at": "2026-10-15T09:37:54+00:00",
         "terminology_migration": {
-          "status": "local_review_complete",
+          "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-li2010-WAS.terminology-20261017.review.md",
           "backend_update_needed": false,
           "backend_synced": null,
           "preflight": "blocked_existing_upload_permission",
-          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat",
+          "local_review_status": "complete",
+          "backend_verification": "unchanged_verified",
+          "receipt_path": "project/research/2026-10-17-family13-classification-sync.safe.json",
+          "backend_checked_at": "2026-10-17T10:38:01+00:00",
+          "remaining_backend_blocker": null,
+          "retained_preflight_gap_scope": "Historical permission for new body-image upload remains unchanged; completed classification-only operation reused existing uploaded images and required no upload."
         }
       },
       "content_production": "included",

@@ -9,6 +9,7 @@ import copy
 import hashlib
 import json
 import re
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 from urllib.parse import parse_qs, quote, urlencode, urlsplit
@@ -241,6 +242,7 @@ def workflow_verified(record: dict[str,Any], channel: str, root: Path) -> bool:
 def validate_registry(records: list[dict[str, Any]], root: Path, *, check_evidence: bool = True) -> list[str]:
     from woeai.publications import RESEARCH_SUBDIRECTION_ORDER
     problems=[]; ids=set(); refs=set()
+    known_refs = {row.get('custom', {}).get('publication_ref') for row in records}
     # Deliberately small CSL subset used by our Zotero adapter; custom carries
     # all non-CSL fields. No display-name splitting or rendered-citation parsing.
     allowed={'id','type','title','container-title','issued','DOI','URL','author','volume','issue','page','abstract','language','custom'}
@@ -281,6 +283,22 @@ def validate_registry(records: list[dict[str, Any]], root: Path, *, check_eviden
                 from urllib.parse import urlparse
                 url=urlparse(workflow.get('latest_published_url',''))
                 if url.scheme!='https' or url.netloc!='mp.weixin.qq.com' or not url.path.startswith('/s'): problems.append(f'{prefix}: publication URL required')
+            if channel == 'wechat':
+                if ('publication_record' in workflow or workflow.get('status') == 'published') and not verified_wechat_publication(row, root):
+                    problems.append(f'{prefix}: valid same-account publication record and evidence required')
+                related = workflow.get('related_articles', [])
+                if not isinstance(related, list):
+                    problems.append(f'{prefix}: related_articles must be a manual list with reasons')
+                else:
+                    related_seen = set()
+                    for entry in related:
+                        target = entry.get('publication_ref') if isinstance(entry, dict) else None
+                        reason = entry.get('reason') if isinstance(entry, dict) else None
+                        if (not isinstance(target, str) or target not in known_refs or target == ref
+                                or target in related_seen or not isinstance(reason, str) or not reason.strip()):
+                            problems.append(f'{prefix}: invalid related_articles target or relevance reason')
+                        if isinstance(target, str):
+                            related_seen.add(target)
         public=json.dumps(custom,ensure_ascii=False)
         if re.search(r'wechat_draft_media_id|"media_id"|/Users/|/home/|/tmp/|access_token|appsecret|source\.pdf',public,re.I): problems.append(f'{prefix}: private operational material in public registry')
     return problems
@@ -426,6 +444,52 @@ def public_wechat_article_url(value: Any) -> str | None:
             return None
         safe[key] = values[0]
     return 'https://mp.weixin.qq.com/s?' + urlencode(safe)
+
+
+def verified_wechat_publication(record: dict[str, Any], root: Path) -> dict[str, Any] | None:
+    """Read a documented publication event, independent of current draft review.
+
+    A permalink alone is not proof of release or ownership. The public evidence
+    is a reviewed, redacted note, never the private API response/account binding.
+    """
+    workflow = record.get('custom', {}).get('wechat', {})
+    publication = workflow.get('publication_record')
+    if not isinstance(publication, dict) or publication.get('status') != 'published':
+        return None
+    url = public_wechat_article_url(publication.get('url'))
+    title = publication.get('title')
+    source = publication.get('source')
+    if (not url or url != public_wechat_article_url(workflow.get('latest_published_url'))
+            or not isinstance(title, str) or not title.strip()
+            or re.search(r'[\x00-\x1f\x7f]', title)
+            or publication.get('same_account') is not True
+            or not isinstance(source, str)
+            or source not in {'official_published_list', 'official_publication_receipt', 'public_article'}):
+        return None
+    try:
+        datetime.fromisoformat(publication['verified_at'])
+        if publication.get('published_at'):
+            datetime.fromisoformat(publication['published_at'])
+        evidence = _public_path(root, publication['evidence_path'])
+        if evidence.suffix != '.md' or not evidence.is_file():
+            return None
+        raw = evidence.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != publication.get('evidence_sha256'):
+            return None
+        text = raw.decode('utf-8')
+        fields = {
+            'publication_ref': record['custom']['publication_ref'], 'status': 'published',
+            'title': title, 'url': url, 'source': source, 'same_account': 'true',
+            'verified_at': publication['verified_at'],
+        }
+        if publication.get('published_at'):
+            fields['published_at'] = publication['published_at']
+        if any(re.findall(r'^' + key + r':[ \t]*(.*?)\r?$', text, re.M) != [value]
+               for key, value in fields.items()):
+            return None
+    except (KeyError, TypeError, ValueError, OSError):
+        return None
+    return {**publication, 'url': url}
 
 
 def _engineering_conflict_has_current_coverage(root: Path, record: dict[str, Any]) -> bool:

@@ -41,6 +41,9 @@ description: Create or revise a source-backed WOEAI WeChat paper introduction, r
    git diff --check
    ```
 
+   For related reading, verify same-account publication records before selecting links; inspect
+   the assembled navigation as well as the source, with the AI statement still last. Missing
+   publication evidence means omit the optional section, never invent a URL or publication state.
    Structure checks do not assess the semantic value/condition balance. Preflight needs existing
    upload approvals; report missing approvals without inventing fields. It does not read credentials,
    contact WeChat or update drafts. Setup, full-site builds and live diagnostics are separate scopes.

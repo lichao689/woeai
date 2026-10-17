@@ -623,6 +623,31 @@ def related_backlog_papers(
     if target is None:
         return []
 
+    if require_wechat_url:
+        from woeai.publications.registry import public_wechat_article_url
+
+        own_url = public_wechat_article_url(target.latest_published_url)
+        related_order = {ref: index for index, ref in enumerate(target.related_refs)}
+
+        def same_subdirection(paper: BacklogPaper) -> bool:
+            return (paper.research_family, paper.subdirection) == (target.research_family, target.subdirection)
+
+        def relevance(paper: BacklogPaper) -> tuple[int, int, int, int]:
+            return (0 if same_subdirection(paper) else 1, related_order.get(paper.publication_ref, len(related_order)), -paper.original_year, paper.order)
+
+        unique: dict[str, BacklogPaper] = {}
+        for paper in papers:
+            if paper.publication_ref == publication_ref or not paper.publication_verified:
+                continue
+            if not same_subdirection(paper) and paper.publication_ref not in related_order:
+                continue
+            url = public_wechat_article_url(paper.latest_published_url)
+            if not url or url == own_url or not paper.published_title:
+                continue
+            if url not in unique or relevance(paper) < relevance(unique[url]):
+                unique[url] = paper
+        return sorted(unique.values(), key=relevance)[:limit]
+
     candidates: list[BacklogPaper] = []
     for paper in papers:
         if paper.publication_ref == publication_ref:
@@ -643,7 +668,7 @@ def related_wechat_links(publication_ref: str, *, limit: int = 3) -> list[dict[s
         links.append(
             {
                 "publication_ref": paper.publication_ref,
-                "title": article_title_for_ref(paper.publication_ref, paper.title),
+                "title": paper.published_title,
                 "url": paper.latest_published_url,
             }
         )
@@ -657,6 +682,7 @@ def escape_markdown_link_label(value: str) -> str:
 def append_wechat_related_navigation(markdown_text: str, links: list[dict[str, str]]) -> str:
     """Rebuild this optional section only from registered public article links."""
     from woeai.publications.registry import public_wechat_article_url
+    from woeai.wechat.editorial import AI_STATEMENT
 
     # Markdown headings inside fenced code are examples, not navigation.
     kept = []
@@ -673,6 +699,9 @@ def append_wechat_related_navigation(markdown_text: str, links: list[dict[str, s
             heading = re.match(r"^ {0,3}(#{1,2})[ \t]+(.+?)[ \t]*#*[ \t]*$", line.rstrip("\r\n"))
             if heading:
                 skipping = len(heading[1]) == 2 and heading[2] in {"延伸阅读", "相关论文导航"}
+            elif line.strip() == AI_STATEMENT:
+                # The disclosure belongs to the article, not the optional section.
+                skipping = False
         if not skipping:
             kept.append(line)
     text = "".join(kept).rstrip()
@@ -688,7 +717,11 @@ def append_wechat_related_navigation(markdown_text: str, links: list[dict[str, s
         lines.append(f"- [{escape_markdown_link_label(link['title'])}]({url})")
     if not lines:
         return text + "\n"
-    return text + "\n\n## 延伸阅读\n\n" + "\n".join(lines) + "\n"
+    navigation = "## 延伸阅读\n\n" + "\n".join(lines)
+    if text == AI_STATEMENT or text.endswith("\n" + AI_STATEMENT):
+        body = text[:-len(AI_STATEMENT)].rstrip()
+        return (body + "\n\n" if body else "") + navigation + "\n\n" + AI_STATEMENT + "\n"
+    return text + "\n\n" + navigation + "\n"
 
 
 def planned_content_source_items(publication_refs: list[str]) -> list[dict[str, Any]]:

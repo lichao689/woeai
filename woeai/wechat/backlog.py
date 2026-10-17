@@ -29,6 +29,9 @@ class BacklogPaper:
     latest_published_url: str
     order: int
     wechat_status: str = ""
+    published_title: str = ""
+    publication_verified: bool = False
+    related_refs: tuple[str, ...] = ()
 
 
 _ITEM_RE = re.compile(r"\s*-\s+publication_ref:\s+(\S+)\s*$")
@@ -55,7 +58,7 @@ def _registry_backlog_items(backlog_path: Path) -> list[dict[str, str]] | None:
     root = find_registry_root(backlog_path)
     if root is None:
         return None
-    from woeai.publications.registry import backlog_row, load_registry, content_is_selected
+    from woeai.publications.registry import backlog_row, load_registry, content_is_selected, verified_wechat_publication
 
     selected = []
     for index, record in enumerate(load_registry(root)):
@@ -71,6 +74,15 @@ def _registry_backlog_items(backlog_path: Path) -> list[dict[str, str]] | None:
             if "media_id" not in key.lower() and "mediaid" not in key.lower()
         }
         item.update({key: _string_value(value) for key, value in backlog_row(record).items()})
+        publication = verified_wechat_publication(record, root)
+        item['publication_verified'] = 'true' if publication else 'false'
+        item['published_title'] = publication['title'] if publication else ''
+        related = wechat.get('related_articles', [])
+        item['related_refs'] = json.dumps([
+            entry['publication_ref'] for entry in related
+            if isinstance(entry, dict) and isinstance(entry.get('publication_ref'), str)
+            and isinstance(entry.get('reason'), str) and entry['reason'].strip()
+        ]) if isinstance(related, list) else '[]'
         order = wechat.get("selection_order", custom.get("order", 0))
         selected.append((order, index, item))
     return [item for _, _, item in sorted(selected, key=lambda row: row[:2])]
@@ -87,7 +99,7 @@ def _parse_original_year(value: str) -> int:
         return 0
 
 
-def _build_backlog_paper(current: dict[str, str] | None, order: int) -> BacklogPaper | None:
+def _build_backlog_paper(current: dict[str, str] | None, order: int, *, registry_evidence: bool = False) -> BacklogPaper | None:
     if not current or not current.get("publication_ref"):
         return None
     return BacklogPaper(
@@ -99,6 +111,9 @@ def _build_backlog_paper(current: dict[str, str] | None, order: int) -> BacklogP
         latest_published_url=current.get("latest_published_url", ""),
         order=order,
         wechat_status=current.get("wechat_status", ""),
+        published_title=current.get('published_title', '') if registry_evidence else '',
+        publication_verified=registry_evidence and current.get('publication_verified') == 'true',
+        related_refs=tuple(json.loads(current.get('related_refs', '[]'))) if registry_evidence else (),
     )
 
 
@@ -111,7 +126,7 @@ def parse_backlog_papers(backlog_path: Path) -> list[BacklogPaper]:
     if items is not None:
         return [
             paper for order, item in enumerate(items)
-            if (paper := _build_backlog_paper(item, order)) is not None
+            if (paper := _build_backlog_paper(item, order, registry_evidence=True)) is not None
         ]
     if not backlog_path.exists():
         return []

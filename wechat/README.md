@@ -203,9 +203,63 @@ article's review front matter; the API payload will use that value as
 `content_source_url`. An explicitly blank `wechat_content_source_url` means
 that article should have no bottom `阅读原文` link.
 
-The API renderer appends WeChat-body related-paper navigation only when related
-items already have public WeChat URLs in `latest_published_url`; unpublished
-related papers are omitted.
+The API renderer builds optional WeChat-body related reading from verified
+same-account publication records. Selection and placement follow the bundled
+[writing standards](../.agents/skills/wechat-paper/references/writing-standards.md).
+It emits title-text hyperlinks, not native WeChat article cards. The existing
+Python `limit` parameter defaults to three and remains caller-adjustable; there
+is no new hard cap, CLI flag or per-article count setting. This count applies
+only to automatic end-of-article recommendations, not necessary in-text
+citations/hyperlinks, and is not a WeChat platform limit. Standalone
+source rendering does not inject navigation; inspect the assembled output too.
+
+### Publication records and explicit relevance
+
+The registry `custom.wechat.latest_published_url` stores the canonical public
+permalink. A nonempty URL, a successful draft receipt, or a draft-box `url` is
+not publication evidence. Register `custom.wechat.publication_record` only after
+an actual publication has been checked. Its fields are:
+
+| Field | Meaning |
+| --- | --- |
+| `status` | Exactly `published`, describing the actual public release |
+| `url`, `title` | Verified permanent URL and the title at publication time |
+| `published_at` | Actual publication date/time if known; omit when unknown, never substitute the paper year |
+| `verified_at` | ISO date/time of the publication check |
+| `source` | `official_published_list`, `official_publication_receipt`, or `public_article` |
+| `same_account` | `true` only after ownership by this Official Account was checked |
+| `evidence_path`, `evidence_sha256` | Public repository Markdown note and its SHA-256 |
+
+The redacted evidence note contains exactly one unquoted `key: value` line for
+each of `publication_ref`, `status`, `title`, `url`, `source`, `same_account`,
+and `verified_at`, matching the record exactly. Include `published_at` too if
+recorded. Use `status: published` and `same_account: true`; a draft receipt is
+not a publication note. Other explanatory Markdown is allowed. Keep raw API responses,
+account bindings and private IDs in local private operational storage. The
+reader verifies the note's hash and article locators. URL syntax alone cannot
+prove ownership, liveness or publication. Invalid/missing evidence is excluded
+before the configured recommendation count; registry validation rejects invalid declared
+publication records. An older verified release can remain linkable while its
+new draft is `awaiting_review`; do not relabel draft readiness or old reviews.
+
+For explicit relevance, `custom.wechat.related_articles` is a manually reviewed
+list of objects with `publication_ref` and a nonempty `reason`. The referenced
+record must exist, differ from the current article, and appear only once.
+Only this list enables cross-direction recommendations, including another
+subdirection in the same family. Within the same subdirection, the list's
+order takes precedence over paper year; generic same-direction candidates come
+next. Self-references and canonical URL duplicates are excluded before sorting
+and limiting. Use one canonical permalink per actual article, including when
+short and long share URLs refer to the same release.
+
+A missing publication mapping leaves related reading empty. If the official
+publication-list API rejects access, stop that check; do not broaden credentials
+or substitute material/draft/preview URLs. Collect an existing publication
+receipt or a confirmed public article record instead. Updating a draft does
+not edit an already published page; old-article backlink changes require a
+separately verified platform capability and authorization. New articles may
+link to older verified releases without promising automatic reciprocal edits.
+No link-data maintenance authorizes uploading, drafting, publishing or mass-send.
 
 Use the repository renderer and official draft API only. Do not fall back to
 third-party Markdown editors, doocs/md, Wechatsync, or browser-plugin submission

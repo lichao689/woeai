@@ -274,6 +274,7 @@ class WeChatToolTests(unittest.TestCase):
                 2025,
                 "https://mp.weixin.qq.com/s/published",
                 1,
+                published_title="公众号已发布文章", publication_verified=True,
             ),
             draft.BacklogPaper("ref-unpublished", "Unpublished", "工程结构抗风", "数值风洞", 2024, "", 2),
         ]
@@ -298,6 +299,18 @@ class WeChatToolTests(unittest.TestCase):
             ctx = draft.build_context("ref-zhao2026-BS", "academic-clean", "lightweight")
 
         self.assertEqual(ctx.author, "Zhao Peisheng")
+
+    def test_related_navigation_stays_before_final_ai_statement_on_repeated_generation(self):
+        draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_related_ai_tail")
+        statement = "本文由 AI 辅助整理与撰写"
+        source = "正文\n\n" + statement + "\n"
+        links = [{"title": "已发表标题", "url": "https://mp.weixin.qq.com/s/published-fixture"}]
+        output = draft.append_wechat_related_navigation(source, links)
+        self.assertTrue(output.rstrip().endswith(statement))
+        self.assertEqual(output.count(statement), 1)
+        self.assertEqual(output.count("## 延伸阅读"), 1)
+        self.assertEqual(draft.append_wechat_related_navigation(output, links), output)
+        self.assertEqual(draft.append_wechat_related_navigation(output, []), source)
 
     def test_related_navigation_omits_stale_links_when_nothing_is_published(self):
         draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_related_empty")

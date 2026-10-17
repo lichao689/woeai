@@ -199,6 +199,9 @@
     overflow-wrap: break-word;
 }
 .woeai-home-page *, .woeai-home-page *::before, .woeai-home-page *::after { box-sizing: border-box; }
+/* RTD injects this fixed flyout only when hosted; keep homepage copy unobscured.
+   Documentation pages retain their version and reader controls. */
+.woeai-home-page readthedocs-flyout { display: none; }
 .woeai-home-page a { color: var(--home-blue); text-decoration: none; transition: color 160ms, background-color 160ms; }
 .woeai-home-page a:hover { color: #093a4d; text-decoration: underline; text-underline-offset: 5px; }
 .woeai-home-page a:focus-visible { outline: 3px solid #167e9f; outline-offset: 5px; border-radius: 2px; }

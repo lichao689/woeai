@@ -1,0 +1,32 @@
+{# Extend the RTD shell: leave document rendering and its nested toctree intact. #}
+{% extends '!layout.html' %}
+{% block extrabody %}
+  <a class="site-skip" href="#reader-main">{{ 'Skip to content' if is_english else '跳到主要内容' }}</a>
+  {% include 'brand-header.html' %}
+  <button class="reader-backdrop" type="button" aria-label="{{ 'Close contents' if is_english else '关闭阅读目录' }}" hidden></button>
+{% endblock %}
+{% block sidebartitle %}
+  <a class="reader-home-link" href="{{ pathto(site_home) }}">← {{ 'Home' if is_english else '返回首页' }}</a>
+  <p class="reader-nav-label">{{ 'Explore & search' if is_english else '浏览与检索' }}</p>
+  {% if READTHEDOCS or DEBUG %}
+    {% if theme_version_selector or theme_language_selector %}
+    <div class="switch-menus"><div class="version-switch"></div><div class="language-switch"></div></div>
+    {% endif %}
+  {% endif %}
+  {% include 'site-searchbox.html' %}
+{% endblock %}
+{% block mobile_nav %}
+  <div class="reader-tools">
+    <button type="button" class="reader-toggle" data-toggle="wy-nav-top" aria-expanded="false">{{ 'Contents & search' if is_english else '阅读目录与搜索' }}</button>
+    <a href="{{ pathto(site_home) }}">{{ 'Home' if is_english else '返回首页' }} ↗</a>
+  </div>
+{% endblock %}
+{% block content %}<div id="reader-main" tabindex="-1">{{ super() }}</div>{% endblock %}
+
+{% block menu %}
+{% if is_english %}
+<ul>{% for page,label in [('en/Research','Research'),('en/Publications','Publications'),('en/JoinUs','Join Us'),('en/Search','Search')] %}<li class="toctree-l1{% if pagename == page %} current{% endif %}"><a class="reference internal" href="{{ pathto(page) }}">{{ label }}</a></li>{% endfor %}</ul>
+<p class="caption"><span class="caption-text">Research highlights</span></p>
+<ul>{% for item in english_highlights %}<li class="toctree-l1"><a class="reference internal" href="{{ pathto('en/highlights/' ~ item.ref) }}">{{ item.heading }}</a></li>{% endfor %}</ul>
+{% else %}{{ super() }}{% endif %}
+{% endblock %}

@@ -11,7 +11,7 @@ test('independent tracks preserve unknown, audit and publication boundaries', ()
   assert.equal(board.columnFor({status:'future_unknown'},'rtd'),'unknown');
 });
 test('search, year, direction, exact state, track and unfinished combine without mutation', () => {
-  const papers = [paper('a','verified','draft_created'),paper('b','unregistered','published',{year:2025}),paper('c','awaiting_audit','unregistered',{title:'Ocean platform',doi:'10.1000/ocean',family:'海上漂浮风电',subdirection:'混凝土浮体'})];
+  const papers = [paper('a','verified','draft_created'),paper('b','unregistered','published',{year:2025}),paper('c','awaiting_audit','unregistered',{title:'Ocean platform',doi:'10.1000/ocean',family:'海洋能源结构',subdirection:'混凝土浮体'})];
   const original = JSON.stringify(papers);
   assert.deepEqual(board.filterPapers(papers,{track:'rtd',unfinished:true}).map(p=>p.ref),['b','c']);
   assert.deepEqual(board.filterPapers(papers,{track:'wechat',unfinished:true}).map(p=>p.ref),['a','c']);

@@ -140,7 +140,7 @@ gate for independent RTD pages. Do not run the converter over a full-paper page.
 ## Research Families
 
 - `工程结构抗风`
-- `海上漂浮风电`
+- `海洋能源结构`
 
 ## Public Boundary
 

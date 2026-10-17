@@ -59,14 +59,14 @@ class PublicationTitleContractTests(unittest.TestCase):
                 self.assertTrue(self.problems(ref, family, direction, "数值水池 | Wrong direction"))
 
     def test_new_marine_refs_cannot_use_generic_legacy_prefix(self):
-        for direction in RESEARCH_SUBDIRECTION_ORDER["海上漂浮风电"]:
+        for direction in RESEARCH_SUBDIRECTION_ORDER["海洋能源结构"]:
             with self.subTest(direction=direction):
-                self.assertTrue(self.problems("ref-new", "海上漂浮风电", direction, "漂浮风电 | New hook"))
+                self.assertTrue(self.problems("ref-new", "海洋能源结构", direction, "漂浮风电 | New hook"))
 
     def test_redundant_suffix_and_unknown_mapping_still_fail(self):
-        problems = self.problems("ref-new", "海上漂浮风电", "一体化分析", "一体化分析 | Hook论文精解")
+        problems = self.problems("ref-new", "海洋能源结构", "一体化分析", "一体化分析 | Hook论文精解")
         self.assertIn("paper_note_title_redundant_suffix", {p["kind"] for p in problems})
-        self.assertTrue(self.problems("ref-new", "海上漂浮风电", "未知方向", "未知方向 | Hook"))
+        self.assertTrue(self.problems("ref-new", "海洋能源结构", "未知方向", "未知方向 | Hook"))
         self.assertTrue(self.problems("ref-new", "未知一级", "一体化分析", "一体化分析 | Hook"))
 
 

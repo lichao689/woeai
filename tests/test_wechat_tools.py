@@ -139,7 +139,7 @@ class WeChatToolTests(unittest.TestCase):
             article.write_text(
                 "# 结构抗风 | 示例标题\n\n"
                 "正文段落。\n\n"
-                "如果你对工程结构抗风 / 海上漂浮风电方向的研究生学习或工程合作感兴趣，"
+                "如果你对工程结构抗风 / 海洋能源结构方向的研究生学习或工程合作感兴趣，"
                 "点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。\n\n"
                 "## 延伸阅读\n\n"
                 "- [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)\n",

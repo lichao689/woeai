@@ -25,18 +25,39 @@ def public_source_texts() -> dict[str, str]:
 
 
 class RTDHomepageProjectsRedesignTests(unittest.TestCase):
-    def test_homepage_uses_recruitment_first_story_without_duplicate_logo(self) -> None:
+    def test_homepage_uses_confirmed_identity_and_research_with_recruitment_path(self) -> None:
         index = read(INDEX)
         conf = read(CONF)
 
         self.assertNotIn(".. image:: ../_static/logoGroup.png", index)
         self.assertIn('html_logo = "../_static/logoGroup.png"', conf)
-        self.assertIn("把风与海洋工程研究转化为可验证的工程能力", index)
-        self.assertLess(index.index("欢迎加入 WOEAI Recruitment"), index.index("研究方向 Research Directions"))
-        self.assertLess(index.index("研究方向 Research Directions"), index.index("工程应用 Engineering Applications"))
-        self.assertLess(index.index("工程应用 Engineering Applications"), index.index("最新学术进展 Latest Academic Progress"))
-        self.assertNotIn("联系建议 Contact Notes", index)
-        self.assertIn("完整研究脉络见 :doc:`Research`，完整论文记录见 :doc:`Publications`。", index)
+        self.assertIn('id="profile-name">AI 赋能<span class="hero-title-subject">风与海洋工程</span>', index)
+        self.assertNotIn('融合物理机理与人工智能，探索建筑与能源结构的分析与设计。', index)
+        self.assertIn('<h2 class="hero-position">融合物理规律与人工智能<br>揭示风与海洋作用机理<br>探索建筑与能源结构设计</h2>', index)
+        self.assertIn('课题组负责人</strong> 李朝 · 教授 · 博士生导师', index)
+        self.assertNotIn('id="profile-name">李朝', index)
+        self.assertEqual(index.count('class="paper-record-slot"'), 6)
+        self.assertIn('Kriging 代理模型', index)
+        self.assertIn('图神经网络结合结构连接关系', index)
+        self.assertIn('李朝参与的六项合著论文', index)
+        self.assertIn("教授 · 博士生导师", index)
+        self.assertIn("揭示风与海洋作用机理<br>探索建筑与能源结构设计</h2>", index)
+        self.assertIn('href="https://homepage.hit.edu.cn/lichao"', index)
+        self.assertNotIn("哈尔滨工业大学", index)
+        self.assertNotIn("年度招生规划", index)
+        self.assertLess(index.index('href="#join-contact"'), index.index('id="research-lines"'))
+        sections = ('research-lines', 'selected-work', 'applications', 'latest-progress', 'join-contact')
+        positions = [index.index(f'id="{section}"') for section in sections]
+        self.assertEqual(positions, sorted(positions))
+        self.assertEqual(index.count('class="work-card"'), 6)
+        progress = index.split('.. BEGIN GENERATED LATEST PAPER NOTES')[1].split('.. END GENERATED LATEST PAPER NOTES')[0]
+        self.assertEqual(progress.count(':doc:'), 3)
+        self.assertIn('href="Recruitment.html"', index)
+        self.assertIn('id="contact-heading">交流与合作</h2>', index)
+        self.assertIn('href="Recruitment.html">加入团队', index)
+        self.assertIn('href="EngineeringApplications.html#discuss-an-engineering-problem">工程合作', index)
+        self.assertNotIn('招生与联系', index)
+        self.assertTrue((SOURCE / 'Recruitment.rst').is_file())
 
     def test_projects_page_is_removed_from_navigation_and_source_tree(self) -> None:
         index = read(INDEX)

@@ -1,0 +1,2 @@
+{% extends 'search.html' %}
+{% block body %}<h1>Search this site</h1><p>Search the shared publication collection. Results may include English pages and Chinese reading notes.</p><form action="{{ pathto('en/Search') }}" method="get"><label for="english-query">Search terms</label><input id="english-query" type="search" name="q"><button type="submit">Search</button></form>{{ super() }}{% endblock %}

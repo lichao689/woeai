@@ -54,13 +54,13 @@ PAPER_NOTE_TITLE_PREFIXES: dict[str, tuple[str, ...]] = {
 # Their scientific pages and existing navigation metadata remain untouched.
 LEGACY_RTD_PUBLIC_TITLES: dict[str, tuple[str, str, str]] = {
     "ref-he2026-OE-structural": (
-        "海上漂浮风电", "混凝土浮体", "漂浮风电 | 用钢筋混凝土优化半潜式风机平台"),
+        "海洋能源结构", "混凝土浮体", "漂浮风电 | 用钢筋混凝土优化半潜式风机平台"),
     "ref-li2022-SOS": (
-        "海上漂浮风电", "混凝土浮体", "漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变"),
+        "海洋能源结构", "混凝土浮体", "漂浮风电 | 同一座 Y 型半潜平台换材料后，动力响应会怎样改变"),
     "ref-zheng2025-OE": (
-        "海上漂浮风电", "一体化分析", "漂浮风电 | 为半潜式风机找到可信的等效静力波浪荷载"),
+        "海洋能源结构", "一体化分析", "漂浮风电 | 为半潜式风机找到可信的等效静力波浪荷载"),
     "ref-zhou2023-AE": (
-        "海上漂浮风电", "一体化分析", "漂浮风电 | 用长期动力优化选择浮式风机下部结构"),
+        "海洋能源结构", "一体化分析", "漂浮风电 | 用长期动力优化选择浮式风机下部结构"),
 }
 
 
@@ -333,7 +333,7 @@ def artifact_integrity_problems(root: Path) -> list[dict[str, str]]:
 
 def generated_blocks(root: Path) -> dict[str, str]:
     return {
-        LATEST_MARKER: render_latest_paper_notes(root),
+        LATEST_MARKER: render_latest_paper_notes(root, limit=3),
     }
 
 

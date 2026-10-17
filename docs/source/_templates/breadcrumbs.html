@@ -1,0 +1,3 @@
+{% if is_english %}
+<ul class="wy-breadcrumbs"><li><a href="{{ pathto('en/index') }}">Home</a> »</li>{% if pagename.startswith('en/highlights/') %}<li><a href="{{ pathto('en/Research') }}">Research</a> »</li>{% endif %}<li>{{ title|striptags }}</li></ul><hr>
+{% else %}{% include '!breadcrumbs.html' %}{% endif %}

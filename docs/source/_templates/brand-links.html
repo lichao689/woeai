@@ -1,0 +1,11 @@
+{% if is_english %}
+{% for page,label in [('en/Research','Research'),('en/Publications','Publications'),('en/JoinUs','Join Us'),('en/Search','Search')] %}
+<a href="{{ pathto(page) }}"{% if pagename == page %} aria-current="page"{% endif %}>{{ label }}</a>
+{% endfor %}
+{% else %}
+{# One destination list shared by desktop and narrow-screen navigation. #}
+{% set section = 'Publications' if pagename.startswith('paper-notes/') or pagename == 'PublicationsByYear' else pagename %}
+{% for page, label, anchor in [('Research', '研究方向', ''), ('Publications', '学术成果', ''), ('EngineeringApplications', '工程应用', ''), ('Teaching', '教育教学', ''), ('index', '交流与合作', 'join-contact'), ('search', '站内搜索', '')] %}
+<a href="{{ '#' ~ anchor if anchor and pagename == page else pathto(page) ~ ('#' ~ anchor if anchor else '') }}"{% if section == page and not anchor %} aria-current="page"{% endif %}>{{ label }}</a>
+{% endfor %}
+{% endif %}

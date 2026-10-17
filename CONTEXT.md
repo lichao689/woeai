@@ -8,6 +8,10 @@ This context defines the public-facing language for the WOEAI research group web
 The canonical expanded English name is `Wind and Ocean Engineering with AI (WOEAI)`. Use it on first mention in public identity surfaces, then use `WOEAI` in short navigation, buttons, and repeated prose. In body copy, `AI-enabled wind and ocean engineering` can describe the research approach when a sentence needs a natural descriptive phrase rather than the brand name.
 _Avoid_: ampersand-form expansions, empowered-by-AI phrasing as the canonical name
 
+**Group-led Website Narrative**:
+The homepage presents the research group's questions, related research, collaboration and joining routes. Display Chao Li (李朝), Professor and PhD Supervisor (教授 · 博士生导师), as group leader rather than the homepage's main subject. WOEAI remains the existing website brand; do not invent a formal group name, membership or size. A curated publication record is not proof that every paper was produced by the current group. Preserve original authorship and sources, and distinguish published research from the site's scholarly explanations of it.
+_Avoid_: invented group roster, relabelling all curated papers as group-owned research, presenting reading notes as original findings
+
 **Public Journal Paper**:
 A journal article that belongs to the group leader's curated public research publication record and is suitable for the website's journal-paper list. It is narrower than the broader research library and broader than only first-author or corresponding-author papers. Teaching-reform and ideological-and-political-course-construction papers are not Public Journal Papers; place them under the Teaching Reform Publication section instead.
 _Avoid_: reference-library item, collected paper, first-author-only paper, teaching-reform paper, course ideological-and-political construction paper
@@ -21,7 +25,7 @@ A teaching-reform, course-construction, or ideological-and-political-course-cons
 _Avoid_: research-family mapping, Academic Outputs listing, publication-number assignment
 
 **Official Profile Link**:
-The canonical way to reference the group leader's official external profile. Link to `https://homepage.hit.edu.cn/lichao` instead of reproducing local institution, college, address, title, or employment-history claims on the public site.
+The canonical way to reference the group leader's official external profile. Link to `https://homepage.hit.edu.cn/lichao` instead of reproducing local institution, college, address, or employment-history claims on the public site. The owner has explicitly approved the display name `李朝` and academic titles `教授 · 博士生导师` for the homepage and recruitment page. This does not authorize a personal photo, an institution name, or an administrative role.
 _Avoid_: local institution identity copy, college-address claims, school-official wording on the personal/group website
 
 **Public Contact Channels**:
@@ -77,8 +81,8 @@ A Public Journal Paper selected for highlights or direction pages because it str
 _Avoid_: every recent paper, exhaustive topic list
 
 **Homepage Latest Academic Progress**:
-The homepage research section should surface the latest academic progress so recurring journal-paper updates remain visible. Show up to 10 newest Paper Deep-Dive pages under `最新学术进展 Latest Academic Progress`, while keeping the complete archive and longer research narrative on `docs/source/Research.rst`.
-_Avoid_: hiding new paper deep-dives only in deep pages, duplicating the full Research archive on the homepage, listing more than 10 homepage progress items
+The homepage research section should surface three Paper Deep-Dive pages under `近期学术进展 Latest Academic Progress`, ordered by publication year descending and existing registry order within a year. These are recent publication highlights, not dated news or a claim about when each page was updated. Keep the complete record under Academic Outputs and the longer research narrative on `docs/source/Research.rst`. The artifact generator owns this homepage list.
+_Avoid_: invented news dates, duplicating the full archive on the homepage, listing more than three homepage progress items
 
 **Chronological Publication View**:
 The alternate by-year Academic Outputs view in `docs/source/PublicationsByYear.rst`, published as `PublicationsByYear.html`. It lists Public Journal Papers by publication year in descending order, groups Public Journal Papers before 2019 under `更早 Earlier`, and uses stable `:ref:` links back to anchors owned by the default Academic Outputs page. The URL and source filename must use `ByYear`, not the older by-research wording.
@@ -118,16 +122,16 @@ The Chronological Publication View section titled `更早 Earlier`, grouping Pub
 _Avoid_: standalone pre-2019 year sections, `Early` without the Chinese label
 
 **Research Family**:
-The canonical public first-level research taxonomy for WOEAI. Use exactly two public research families: `工程结构抗风` and `海上漂浮风电`. Method names such as `数值风洞` are subdirections, not first-level public families.
+The canonical public first-level research taxonomy for WOEAI. Use exactly two public research families: `工程结构抗风` and `海洋能源结构`. Method names such as `数值风洞` are subdirections, not first-level public families.
 _Avoid_: treating `数值风洞`, `结构抗风`, or `海上风电` as peer first-level directions after this taxonomy change
 
 **工程结构抗风**:
 The first canonical public research family. It covers building and structural wind-resistance research, including `数值风洞` and `结构抗风` as subdirections. Urban wind environment and complex terrain wind fields belong under `数值风洞`. Wind-induced vibration control, flow control, and historical tower-line wind-resistance proof belong under `结构抗风` when they are needed as supporting evidence.
 _Avoid_: implying all engineering structures or loading types have been studied; include only source-backed wind-engineering research.
 
-**海上漂浮风电**:
-The second canonical public research family. It covers floating offshore wind research, including `一体化分析`, `混凝土浮体`, and `数值水池` as subdirections.
-_Avoid_: generic `海上风电` when the public page is specifically about floating offshore wind
+**海洋能源结构**:
+The second canonical public research family (English: Marine Energy Structures). Current public evidence focuses on floating offshore wind and associated structural/aerodynamic foundations; the broader label does not claim results in other ocean-energy technologies. It retains `一体化分析`, `混凝土浮体`, and `数值水池` as subdirections.
+_Avoid_: broadening verified research objects, claiming wave/tidal-energy results without evidence, or renaming original paper titles and technical descriptions to match the category.
 
 **Research Subdirection Scope**:
 The five short labels are canonical display names, not shortened technical claims.
@@ -278,7 +282,7 @@ Domain Expert: No. Keep stable publication anchors in the default Academic Outpu
 
 Dev: Can the thematic publication page use subdirections as first-level headings?
 
-Domain Expert: No. The first level must be Research Family: `工程结构抗风` and `海上漂浮风电`. Subdirections are second-level headings inside those sections, and papers under each subdirection are listed directly in descending publication-year order.
+Domain Expert: No. The first level must be Research Family: `工程结构抗风` and `海洋能源结构`. Subdirections are second-level headings inside those sections, and papers under each subdirection are listed directly in descending publication-year order.
 
 Dev: Should student authorship marking include only doctoral students?
 

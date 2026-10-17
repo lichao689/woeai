@@ -9,7 +9,7 @@
 - 期刊: Ships and Offshore Structures
 - 年份: 2022
 - DOI: https://doi.org/10.1080/17445302.2021.1937801
-- WOEAI 相关方向: 海上漂浮风电 / 混凝土浮体
+- WOEAI 相关方向: 海洋能源结构 / 混凝土浮体
 
 ## 摘要
 

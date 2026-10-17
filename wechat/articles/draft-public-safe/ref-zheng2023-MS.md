@@ -9,7 +9,7 @@
 - 期刊：Marine Structures
 - 年份：2023
 - DOI：[10.1016/j.marstruc.2023.103372](https://doi.org/10.1016/j.marstruc.2023.103372)
-- WOEAI 相关方向: 海上漂浮风电 / 一体化分析
+- WOEAI 相关方向: 海洋能源结构 / 一体化分析
 
 ## 摘要
 

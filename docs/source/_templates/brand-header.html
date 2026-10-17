@@ -1,0 +1,9 @@
+<header class="site-header">
+  <a class="site-brand" href="{{ pathto(site_home) }}" aria-label="{{ 'WOEAI home' if is_english else 'WOEAI 首页' }}">WOEAI<span>{{ 'AI-Enabled Wind and Ocean Engineering' if is_english else 'AI 赋能风与海洋工程' }}</span></a>
+  <nav class="site-nav" aria-label="{{ 'Main navigation' if is_english else '主导航' }}">{% include 'brand-links.html' %}</nav>
+  <a class="site-language" href="{{ pathto(language_target) }}" lang="{{ 'zh-CN' if is_english else 'en' }}">{{ language_label }}</a>
+  <details class="site-mobile-navigation">
+    <summary>{{ 'Menu' if is_english else '网站导航' }}<span aria-hidden="true"></span></summary>
+    <nav aria-label="{{ 'Mobile navigation' if is_english else '窄屏主导航' }}">{% include 'brand-links.html' %}</nav>
+  </details>
+</header>

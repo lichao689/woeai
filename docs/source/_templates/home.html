@@ -1,0 +1,24 @@
+{# Page-local presentation; all reading pages retain the RTD layout. #}
+<!DOCTYPE html>
+<html lang="{{ language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title|striptags|e }}</title>
+  {{ metatags }}
+  {% if pageurl %}<link rel="canonical" href="{{ pageurl|e }}">{% endif %}
+  <link rel="icon" href="{{ pathto('_static/favicon.png', 1) }}">
+  {% for css_file in css_files %}{{ css_tag(css_file) }}{% endfor %}
+  {% for scriptfile in script_files if scriptfile.filename == '_static/site-navigation.js' %}{{ js_tag(scriptfile) }}{% endfor %}
+</head>
+<body class="woeai-home-page">
+  <a class="site-skip" href="#main-content">{{ 'Skip to content' if is_english else '跳到主要内容' }}</a>
+  {% include 'brand-header.html' %}
+  <main id="main-content" class="home-main" tabindex="-1">{% block home_body %}{{ body }}{% endblock %}</main>
+  <footer class="home-footer">
+    <div><a class="footer-brand" href="{{ pathto(site_home) }}">WOEAI</a><p>Wind and Ocean Engineering with AI</p></div>
+    <p>{{ 'Research group website for academic and engineering exchange. It does not represent an institution.' if is_english else '本站用于学术成果展示与工程应用交流，<br>不代表任何组织或机构的官方立场。'|safe }}</p>
+    <div><a href="{{ pathto('About') }}">{{ 'About & privacy (Chinese)' if is_english else '本站说明与隐私' }}</a><p>© {{ copyright|e }} · Sphinx / Read the Docs</p></div>
+  </footer>
+</body>
+</html>

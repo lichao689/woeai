@@ -1,6 +1,6 @@
 id: floating-offshore-wind-energy
-label_cn: 海上漂浮风电
-label_en: Floating Offshore Wind Energy
+label_cn: 海洋能源结构
+label_en: Marine Energy Structures
 subdirections:
   - id: integrated-floating-wind-turbine-analysis-and-optimization
     label_cn: 一体化分析

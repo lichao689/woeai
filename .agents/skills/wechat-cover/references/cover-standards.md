@@ -54,7 +54,7 @@ prefixes, registry verification fingerprints or existing approval states. Curren
 article rules remain in [writing standards](../../wechat-paper/references/writing-standards.md). Those
 migrations require their own authorized edits and rechecks. No arbitrary topic
 tag, extra badge or legacy `漂浮风电` editorial badge. The primary research families remain
-工程结构抗风 / 海上漂浮风电; they are not additional cover labels.
+工程结构抗风 / 海洋能源结构; they are not additional cover labels.
 
 | Direction | Text-zone base | Badge / badge text | Hook | Subtitle / publication |
 |---|---|---|---|---|

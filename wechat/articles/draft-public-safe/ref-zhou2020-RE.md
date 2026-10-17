@@ -9,7 +9,7 @@
 - 期刊：Renewable Energy
 - 年份：2020
 - DOI：[10.1016/j.renene.2020.04.014](https://doi.org/10.1016/j.renene.2020.04.014)
-- WOEAI 相关方向: 海上漂浮风电 / 一体化分析
+- WOEAI 相关方向: 海洋能源结构 / 一体化分析
 
 ## 摘要
 

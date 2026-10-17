@@ -6,13 +6,13 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.14-1148'
-version = '2026.10.14'
+release = '2026.10.17-1834'
+version = '2026.10.17'
 
 # -- SEO Meta Tags
 html_meta = {
-    'description': 'WOEAI - Wind and Ocean Engineering with AI。面向招生、工程应用，以及由数值风洞、湍动入流和 AI 赋能工程方法支撑的工程结构抗风、海上漂浮风电研究。',
-    'keywords': 'WOEAI, 招生, 工程应用, 技术合作, 工程结构抗风, 海上漂浮风电, 数值风洞, 湍动入流, 高层建筑抗风, 浮式风机, 浮式混凝土平台, 风浪流水池, 李朝',
+    'description': 'WOEAI - Wind and Ocean Engineering with AI。面向招生、工程应用，以及由数值风洞、湍动入流和 AI 赋能工程方法支撑的工程结构抗风、海洋能源结构研究。',
+    'keywords': 'WOEAI, 招生, 工程应用, 技术合作, 工程结构抗风, 海洋能源结构, 数值风洞, 湍动入流, 高层建筑抗风, 浮式风机, 浮式混凝土平台, 风浪流水池, 李朝',
     'author': 'Chao Li',
     'viewport': 'width=device-width, initial-scale=1.0',
     'og:title': 'WOEAI - Wind and Ocean Engineering with AI',
@@ -40,7 +40,7 @@ html_theme = 'sphinx_rtd_theme'
 # Add custom CSS file
 html_static_path = ['../_static']
 html_css_files = ['custom.css']
-html_js_files = ['doi-new-tab.js']
+html_js_files = ['doi-new-tab.js', 'site-navigation.js']
 
 html_logo = "../_static/logoGroup.png"  # Logo 文件需放置于 _static 目录
 html_title = "Wind and Ocean Engineering with AI"
@@ -49,7 +49,7 @@ html_theme_options = {
     'logo_only': False,
     'prev_next_buttons_location': 'bottom',
     'style_external_links': True,
-    'style_nav_header_background': '#343131',
+    'style_nav_header_background': '#f6f7f4',
     # Toc options
     'collapse_navigation': True,
     'sticky_navigation': True,
@@ -97,5 +97,27 @@ def _add_publication_board_assets(app, pagename, templatename, context, doctree)
         source, f'data-source="_static/publication-board-data.json?v={version}"')
 
 
+def _select_home_template(app, pagename, templatename, context, doctree):
+    if pagename == 'index':
+        return 'home.html'
+
+
 def setup(app):
+    # Sphinx 9.0.4's Chinese search uses english-stemmer.js but emits the
+    # nonexistent ChineseStemmer constructor. Register a matching constructor
+    # name while retaining Chinese tokenization and the existing zh index.
+    from sphinx.search.zh import SearchChinese
+
+    class ChineseSearchWithEnglishStemmer(SearchChinese):
+        language_name = 'English'
+
+    app.add_search_language(ChineseSearchWithEnglishStemmer)
     app.connect('html-page-context', _add_publication_board_assets)
+    app.connect('html-page-context', _select_home_template)
+
+# Local bilingual presentation, sharing the publication registry and site shell.
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+extensions.append('english_site')

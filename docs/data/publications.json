@@ -115,7 +115,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2026-BE.md",
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
         "issues": [],
@@ -205,6 +205,36 @@
             "fingerprint": "f23a8233608213ed474865dc4e8a05585c811e972702a383a55f2867c4c70f42",
             "recorded_at": "2026-10-13T03:24:37+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "d15770b4d943e39753bc69abab5b891ae3d0427a70b846b30722c10d9bea1d98",
+              "current_article_sha256": "d15770b4d943e39753bc69abab5b891ae3d0427a70b846b30722c10d9bea1d98",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "e83870c3bcf6bf18482cf7a5c956d88edbfe2ae2b14d96cc4a9565ef2b2a3bfd"
           }
         },
         "latest_published_url": "",
@@ -242,7 +272,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-13T03:24:37+00:00",
@@ -404,7 +434,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhao2026-BE.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -534,7 +572,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2026-OE.md",
         "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
         "issues": [],
@@ -625,6 +663,36 @@
             "fingerprint": "95e1017ad09baa8ac5fc7001a6161b1529d3e88887a1d2785a00f651425964a3",
             "recorded_at": "2026-10-12T12:48:23+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "0051e2992db91b304c60cfd3ed6bfd3b82f8b9eb095d846f6f92107ace2298fc",
+              "current_article_sha256": "0051e2992db91b304c60cfd3ed6bfd3b82f8b9eb095d846f6f92107ace2298fc",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "ae8523982b18aadebc3aa456a77e14a1f14662c887e170971bb36472d59afcd5"
           }
         },
         "latest_published_url": "",
@@ -662,7 +730,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T12:48:23+00:00",
@@ -815,7 +883,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-he2026-OE.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -959,7 +1035,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2026-BS.md",
         "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
         "issues": [],
@@ -1062,6 +1138,36 @@
             "fingerprint": "05d95abe33eed526180dcec005aed6452d1b7d4c4bcf5450e3776707d44d547a",
             "recorded_at": "2026-10-12T12:47:58+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "a94fd170926b0e3b4bb9a91d69a29d1c32a6c498b5c2270c9195aed91206c518",
+              "current_article_sha256": "a94fd170926b0e3b4bb9a91d69a29d1c32a6c498b5c2270c9195aed91206c518",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "51fbaf4abfafa0d37e3247203384f418cdbf18f131cc251a0fb5c887666cbd4b"
           }
         },
         "latest_published_url": "",
@@ -1099,7 +1205,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T12:47:58+00:00",
@@ -1250,7 +1356,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhao2026-BS.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -1350,7 +1464,7 @@
     "custom": {
       "publication_ref": "ref-he2026-OE-structural",
       "order": 4,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "混凝土浮体",
       "legacy_bibliography": {
         "zotero_key": "EMID6LAJ",
@@ -1466,7 +1580,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2026-OE-structural.md",
         "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
         "issues": [],
@@ -1567,6 +1681,36 @@
             "fingerprint": "ec47a09cbf5bcc0b0cb754a374abc54bcd59dd73ad46cea141a379e004a8e921",
             "recorded_at": "2026-10-12T13:01:26+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "3a56a6c93240bac7a3518d1cff9beb70bb7f761a0d467a45759ae041853c7bc6",
+              "current_article_sha256": "8f4860368e8c1363923599a4f8249ffc33e28dbca01e4a8ba2073625fe0425b5",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "d9380ebf2f35a0cb0d155e8cb625f92d49a9238230fefcb31e57a1623154e8d6"
           }
         },
         "latest_published_url": "",
@@ -1595,7 +1739,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T13:01:26+00:00",
@@ -1746,7 +1890,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-he2026-OE-structural.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -1877,7 +2029,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-tang2026-RE.md",
         "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
         "issues": [],
@@ -1967,6 +2119,36 @@
             "fingerprint": "84edc35b7386e59f786e13763f7751258d10b1c8978e58aff7e0a2dca0ee95f2",
             "recorded_at": "2026-10-12T12:48:56+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-tang2026-RE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "a2af99162e8d2d5811611e9a9fdedcd09d39be74a5bb161c5563f9669c3ce9f7",
+              "current_article_sha256": "a2af99162e8d2d5811611e9a9fdedcd09d39be74a5bb161c5563f9669c3ce9f7",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "bcd4c1df305add817d5eb939b18c1318d63db41a686a8364e66353eaee76f6b5"
           }
         },
         "latest_published_url": "",
@@ -1995,7 +2177,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T12:48:56+00:00",
@@ -2146,7 +2328,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-tang2026-RE.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -2176,7 +2366,7 @@
     "custom": {
       "publication_ref": "ref-zhang2025-CSICM",
       "order": 6,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "5ALWDPSB",
@@ -2346,7 +2536,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2025-POF.md",
         "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
         "issues": [],
@@ -2436,6 +2626,36 @@
             "fingerprint": "9168302281ed006b37c025bbbe1812263a7e8150dad34c93c6d4f8d522deaa09",
             "recorded_at": "2026-10-12T14:24:45+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-he2025-POF.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "ba61f374d92229852b9a72df2c43624cdde9051c8349082debb184b41792f41e",
+              "current_article_sha256": "ba61f374d92229852b9a72df2c43624cdde9051c8349082debb184b41792f41e",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "c7c35a75ee9153343bacc1ca0ca89ed31a7813f7ea8811db2866bab0d034e154"
           }
         },
         "latest_published_url": "",
@@ -2473,7 +2693,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:24:45+00:00",
@@ -2624,7 +2844,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-he2025-POF.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -2756,7 +2984,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-yang2025-JBE.md",
         "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
         "issues": [],
@@ -2846,6 +3074,36 @@
             "fingerprint": "f10d23e8595ae1085682690bc3f9730ed80ccaa886fc7c01e9f9ab7b3354bd48",
             "recorded_at": "2026-10-13T03:25:01+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-yang2025-JBE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "665fa5cd1708470e4b044cd16e9c45da45f8518cd872655dc913db59a0140b8a",
+              "current_article_sha256": "665fa5cd1708470e4b044cd16e9c45da45f8518cd872655dc913db59a0140b8a",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "346de44fb2bb61350f3056dfb089eafd7ffbace142a2935f7df793cc780d66f4"
           }
         },
         "latest_published_url": "",
@@ -2874,7 +3132,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-13T03:25:01+00:00",
@@ -3036,7 +3294,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-yang2025-JBE.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -3137,7 +3403,7 @@
     "custom": {
       "publication_ref": "ref-zheng2025-OE",
       "order": 10,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "5W2SZJUT",
@@ -3237,7 +3503,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zheng2025-OE.md",
         "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
         "issues": [],
@@ -3327,6 +3593,36 @@
             "fingerprint": "dcdd201a62a8d9f90826f1bb3393d763d7626ce66c8e8ea5fcd2ef8c92c9489d",
             "recorded_at": "2026-10-12T13:01:54+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-OE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "38eafff365228f693b7fcc601b1dbb32d216c73b6f637c1d1d91aad454560e28",
+              "current_article_sha256": "86f3665e92459a29a644cb280ce5691b1e934322cc07795c15a7f9d877601cd5",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "ad7448d7be1d7efba8a1ae6fcfcee0b16331374391549805c4ffc49469309b75"
           }
         },
         "latest_published_url": "",
@@ -3364,7 +3660,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T13:01:54+00:00",
@@ -3515,7 +3811,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zheng2025-OE.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -3545,7 +3849,7 @@
     "custom": {
       "publication_ref": "ref-zheng2025-QHDXXB",
       "order": 11,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "H4RZBAIG",
@@ -3611,7 +3915,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zheng2025-QHDXXB.md",
         "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.review.md",
         "issues": [],
@@ -3654,10 +3958,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "3dfc3d8ea2ee97db03413b9995710309a6d030c3ee06167a25f4cefe387e43e0",
+              "current_article_sha256": "153fb406db4f3fd09a85907acc8045e72e3862c11d68c4101195e9658df3e636",
+              "main_title_compatibility_commit": "f88f3faea879b81ee68b9d3539ecd6dbac44ec21"
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "cd5eb0a68a826a3bd49dd389a8d239102213f42091f203bdaf0bbf1a438fb2bb"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:17:59+00:00",
@@ -3771,7 +4105,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T01:17:59+00:00",
-        "draft_updated_at": "2026-10-15T01:17:59+00:00"
+        "draft_updated_at": "2026-10-15T01:17:59+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -3902,7 +4244,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-tang2025-JBE.md",
         "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
         "issues": [],
@@ -3992,6 +4334,36 @@
             "fingerprint": "ccf08fca61e975743b29fff2df3732b721c5762ee10b0e2cb9a9e001168885cb",
             "recorded_at": "2026-10-12T14:11:37+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-tang2025-JBE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "e9efd7468269905bf32a6ad801e7adc44072b256ad22d903f58ec7871698d728",
+              "current_article_sha256": "e9efd7468269905bf32a6ad801e7adc44072b256ad22d903f58ec7871698d728",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "f7a7dde45a931131dbc49a405a8ba70db4b8c486b2aa2c37e0cd3cb1599926d6"
           }
         },
         "latest_published_url": "",
@@ -4020,7 +4392,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:11:37+00:00",
@@ -4171,7 +4543,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-tang2025-JBE.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -4201,7 +4581,7 @@
     "custom": {
       "publication_ref": "ref-gong2025-POF",
       "order": 13,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "39Z372P2",
@@ -4440,7 +4820,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2025-SCS.md",
         "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
         "issues": [],
@@ -4530,6 +4910,36 @@
             "fingerprint": "ecd0c5fc4dab6884ac68541766d54341954dc6f53faa65e692e1b31f2bb67720",
             "recorded_at": "2026-10-12T14:12:08+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2025-SCS.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "ab5aea9da414423512ede98d85a3057d7303680f715e919ea542f32a406618e2",
+              "current_article_sha256": "ab5aea9da414423512ede98d85a3057d7303680f715e919ea542f32a406618e2",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "15450a54393fe1b90fc620a31f739a0a179650801f4578df053c8ff6327cc741"
           }
         },
         "latest_published_url": "",
@@ -4558,7 +4968,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:12:08+00:00",
@@ -4709,7 +5119,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhao2025-SCS.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -4754,7 +5172,7 @@
     "custom": {
       "publication_ref": "ref-liang2025-OE",
       "order": 16,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "PTQVD6AJ",
@@ -4912,7 +5330,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2024-POF.md",
         "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
         "issues": [],
@@ -5002,6 +5420,36 @@
             "fingerprint": "fba2722af6a7657a8e68e4cc663e2d59467840d81c84e37884f6c2f04cb70f77",
             "recorded_at": "2026-10-13T03:25:21+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-POF.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "80ebe9da38e533f9234c43f6b218fb9831f8f50d58881dfaad3f3e1d7e4c1b35",
+              "current_article_sha256": "80ebe9da38e533f9234c43f6b218fb9831f8f50d58881dfaad3f3e1d7e4c1b35",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "a064847c9d34362fc55900a963b2a35a82303335056e25113ab5b72e13820f77"
           }
         },
         "latest_published_url": "",
@@ -5026,7 +5474,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-13T03:25:21+00:00",
@@ -5188,7 +5636,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-chen2024-POF.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -5282,7 +5738,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-tang2024-POF.md",
         "review_path": "wechat/articles/review/ref-tang2024-POF.review.md",
         "issues": [],
@@ -5325,10 +5781,42 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-tang2024-POF.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": false
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "6486474800c9708b14f4cb073f80b0ba34a397d77d602c9ca01f88c1d4f0d1eb",
+              "current_article_sha256": "6486474800c9708b14f4cb073f80b0ba34a397d77d602c9ca01f88c1d4f0d1eb",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [
+              "Historical review does not approve body-image upload"
+            ],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "9d2ccc51b57499237482c251aeb52dd497f89ddded23a78bc0e89c863f9b6180"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:39:08+00:00",
@@ -5442,7 +5930,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T09:39:08+00:00",
-        "draft_updated_at": "2026-10-15T09:39:08+00:00"
+        "draft_updated_at": "2026-10-15T09:39:08+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-tang2024-POF.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "blocked_existing_upload_permission",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -5643,7 +6139,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-wang2024-ES.md",
         "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
         "issues": [],
@@ -5733,6 +6229,36 @@
             "fingerprint": "d576203c12bd2323cb64c3451b9252a7e29d4ba98b69b281191b8db3da433a88",
             "recorded_at": "2026-10-12T14:17:30+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-wang2024-ES.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "73050162fe07fb9601fc3a511adb1b4105a6e1c14e947c1c8584b1e67f0c077b",
+              "current_article_sha256": "73050162fe07fb9601fc3a511adb1b4105a6e1c14e947c1c8584b1e67f0c077b",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "ba9a33d92a810665035f380bdba6ee8b0ec546657e3e2c37755e8aabfa53e968"
           }
         },
         "latest_published_url": "",
@@ -5770,7 +6296,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:17:30+00:00",
@@ -5921,7 +6447,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-wang2024-ES.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -6032,7 +6566,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-he2024-JBE.md",
         "review_path": "wechat/articles/review/ref-he2024-JBE.review.md",
         "issues": [],
@@ -6075,10 +6609,42 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-he2024-JBE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": false
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "2bbc73ff24b439e875278d27adf99472acd80da421f07d620d53f16308bd0bcd",
+              "current_article_sha256": "2bbc73ff24b439e875278d27adf99472acd80da421f07d620d53f16308bd0bcd",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [
+              "Historical review does not approve body-image upload"
+            ],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "4874fd0aba94df7cfc3f5a23a56ebc10a2ddb2b24b6757a16cbf6a7e4d96d447"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:40:24+00:00",
@@ -6192,7 +6758,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T09:40:24+00:00",
-        "draft_updated_at": "2026-10-15T09:40:24+00:00"
+        "draft_updated_at": "2026-10-15T09:40:24+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-he2024-JBE.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "blocked_existing_upload_permission",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -6292,7 +6866,7 @@
     "custom": {
       "publication_ref": "ref-zhang2024-OE",
       "order": 23,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "B7KQW96B",
@@ -6463,7 +7037,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2024-POF.md",
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
         "issues": [],
@@ -6553,6 +7127,36 @@
             "fingerprint": "b58f2df1ee6baaa23a611affd9c871569bed31c3980be87d41701900f6ed4757",
             "recorded_at": "2026-10-12T14:18:00+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2024-POF.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "a0dd738b4675520e7a4061036d7bbf21a5d2b1cca3bc3a81481f4441900211ff",
+              "current_article_sha256": "a0dd738b4675520e7a4061036d7bbf21a5d2b1cca3bc3a81481f4441900211ff",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "4ceb8e27dbc45a4ef6df0e7bba15f7d6a0695441d757ca09d6d86820e01a53c3"
           }
         },
         "latest_published_url": "",
@@ -6581,7 +7185,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:18:00+00:00",
@@ -6726,7 +7330,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2024-POF.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -6888,7 +7500,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2024-JCP.md",
         "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
         "issues": [],
@@ -7030,6 +7642,36 @@
             "fingerprint": "54d0fb1afdde96fcf4db92b9e18a68d0e02cee2c39303e07fae48019aca40e64",
             "recorded_at": "2026-10-12T12:41:00+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "6d1f2c146af2562bee97a11bc97347cd9a32d6088006baa2ce843b14c31362bf",
+              "current_article_sha256": "6d1f2c146af2562bee97a11bc97347cd9a32d6088006baa2ce843b14c31362bf",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "9ee30f198cf0ddeca67a9f3d653c92d364083f03ca8a5cfa32b55a9b5c19e263"
           }
         },
         "latest_published_url": "",
@@ -7067,7 +7709,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "previous_confirmed_draft_update": {
           "event_at": "2026-10-06T17:51:36+00:00",
           "reported_at": "2026-10-06T17:52:00+00:00",
@@ -7268,7 +7910,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-chen2024-JCP.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-06T09:01:19+00:00",
@@ -7373,7 +8023,7 @@
     "custom": {
       "publication_ref": "ref-zhou2023-AE",
       "order": 27,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "3LWVP7B7",
@@ -7474,7 +8124,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhou2023-AE.md",
         "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
         "issues": [],
@@ -7564,6 +8214,36 @@
             "fingerprint": "55e46117a69ae8c43e22e13184d0e0705878db12cd92891c83ff192270957bf5",
             "recorded_at": "2026-10-12T13:02:39+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2023-AE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "11e9ffc770ab02e30ea2313cbb2c626f8a4e64f17471b5826254ade7df467518",
+              "current_article_sha256": "33325cb913b2a8a607037f6560d2ba37a983fffd6e74f110adba358ae0427142",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "98f23de001cf19f11d00b3a1fdb3877b17ac066de5522f5ff9b82f32a97eabaf"
           }
         },
         "latest_published_url": "",
@@ -7601,7 +8281,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T13:02:39+00:00",
@@ -7752,7 +8432,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhou2023-AE.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -7848,7 +8536,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2023-BS.md",
         "review_path": "wechat/articles/review/ref-zhao2023-BS.review.md",
         "issues": [],
@@ -7891,10 +8579,42 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-BS.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": false
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "e028d76b1ee2a0808aac7b47d5b2d4a51a428a82317ea3f4db76b9636338f49d",
+              "current_article_sha256": "e028d76b1ee2a0808aac7b47d5b2d4a51a428a82317ea3f4db76b9636338f49d",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [
+              "Historical review does not approve body-image upload"
+            ],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "f02b85aedec134cafc72379674807ceb4a603c8a55d4e71a54974637098a08af"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:43:11+00:00",
@@ -8008,7 +8728,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T09:43:11+00:00",
-        "draft_updated_at": "2026-10-15T09:43:11+00:00"
+        "draft_updated_at": "2026-10-15T09:43:11+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhao2023-BS.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "blocked_existing_upload_permission",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -8125,7 +8853,7 @@
     "custom": {
       "publication_ref": "ref-zheng2023-MS",
       "order": 30,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "5GPZ54VV",
@@ -8187,7 +8915,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zheng2023-MS.md",
         "review_path": "wechat/articles/review/ref-zheng2023-MS.review.md",
         "issues": [],
@@ -8230,10 +8958,42 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-MS.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": false
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "098a9b4d32282cdc65302fee0d4bb8a72b17c586d7d1f1bf6673bd73d58e7eb2",
+              "current_article_sha256": "2275f09c7fdb0b0694ad8e838b4507299c9b92ae7df4f2d4e3110138fd2cd546",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [
+              "Historical review does not approve body-image upload"
+            ],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "913b11199a0a764708a92c0f4e338506ed3ff24c3ac407806bfe072a96ab75e3"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。既有正文图上传许可缺口仍保留。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:36:25+00:00",
@@ -8347,7 +9107,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T09:36:25+00:00",
-        "draft_updated_at": "2026-10-15T09:36:25+00:00"
+        "draft_updated_at": "2026-10-15T09:36:25+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zheng2023-MS.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "blocked_existing_upload_permission",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -8441,7 +9209,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhang2023-S.md",
         "review_path": "wechat/articles/review/ref-zhang2023-S.review.md",
         "issues": [],
@@ -8484,10 +9252,42 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-S.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": false
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "60d5a5a8a7d181daefe41b7212707f1c18112a78eb699e6e9f0918fbf6b42b19",
+              "current_article_sha256": "60d5a5a8a7d181daefe41b7212707f1c18112a78eb699e6e9f0918fbf6b42b19",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [
+              "Historical review does not approve body-image upload"
+            ],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "baf8e58c1d3b22c2bb2e18cbc5f3b3a6de7ea3c0642aed5cb0447a9e23f198ba"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T10:15:49+00:00",
@@ -8601,7 +9401,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T10:15:49+00:00",
-        "draft_updated_at": "2026-10-15T10:15:49+00:00"
+        "draft_updated_at": "2026-10-15T10:15:49+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhang2023-S.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "blocked_existing_upload_permission",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -8696,7 +9504,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-wang2023-JWEIA.md",
         "review_path": "wechat/articles/review/ref-wang2023-JWEIA.review.md",
         "issues": [],
@@ -8739,10 +9547,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-wang2023-JWEIA.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "8aff8ba6cb1815a95fbc2b8b392439585b33b3c761d10847d52a736a491fdbe5",
+              "current_article_sha256": "8aff8ba6cb1815a95fbc2b8b392439585b33b3c761d10847d52a736a491fdbe5",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "cae6b5a6222177c738b95c0d92711740aa2af6c5ea5cf3ef2d07535e0ed05a9f"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:33:04+00:00",
@@ -8856,7 +9694,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T01:33:04+00:00",
-        "draft_updated_at": "2026-10-15T01:33:04+00:00"
+        "draft_updated_at": "2026-10-15T01:33:04+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-wang2023-JWEIA.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -8886,7 +9732,7 @@
     "custom": {
       "publication_ref": "ref-zheng2023-JRSE",
       "order": 33,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "TQ9RNRCC",
@@ -8950,7 +9796,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zheng2023-JRSE.md",
         "review_path": "wechat/articles/review/ref-zheng2023-JRSE.review.md",
         "issues": [],
@@ -8993,10 +9839,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-JRSE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "b75bf932f1d1b7a597ec67e3ce08bd8dce02168485594731d75dbe191d2ff64d",
+              "current_article_sha256": "1101b5968aad8f14e6aa6cc5f42a78e2afff0ea575fc843a9ba105b316253d62",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "390c3beb5f4af396dc047ce3fbab118957e6c41e3d85b014905f559b72160dd1"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:29:15+00:00",
@@ -9110,7 +9986,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T01:29:15+00:00",
-        "draft_updated_at": "2026-10-15T01:29:15+00:00"
+        "draft_updated_at": "2026-10-15T01:29:15+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zheng2023-JRSE.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -9204,7 +10088,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhang2023-ES.md",
         "review_path": "wechat/articles/review/ref-zhang2023-ES.review.md",
         "issues": [],
@@ -9247,10 +10131,42 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-ES.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": false
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "f50d542806b2eebc4758acade66439758aab9135fcaa9979111fa78a896aa951",
+              "current_article_sha256": "f50d542806b2eebc4758acade66439758aab9135fcaa9979111fa78a896aa951",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [
+              "Historical review does not approve body-image upload"
+            ],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "e5d20ccd4a84d938f76dbe0702aa363e160d63295aef1a1cd60ad46ad99e02ee"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T10:17:05+00:00",
@@ -9364,7 +10280,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T10:17:05+00:00",
-        "draft_updated_at": "2026-10-15T10:17:05+00:00"
+        "draft_updated_at": "2026-10-15T10:17:05+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhang2023-ES.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "blocked_existing_upload_permission",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -9394,7 +10318,7 @@
     "custom": {
       "publication_ref": "ref-xiang2023-CBGC",
       "order": 35,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "52JRBI8E",
@@ -9525,7 +10449,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-feng2023-HKXYGC.md",
         "review_path": "wechat/articles/review/ref-feng2023-HKXYGC.review.md",
         "issues": [],
@@ -9567,10 +10491,40 @@
               "cover_preview": false
             },
             "scope": "Actual official draft creation and individual readback only. Existing independent scientific evidence remains untouched; actual mobile preview and publication are not performed."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-feng2023-HKXYGC.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "c64e94a42699edfcc1b2bd6d05e0356d95c2d4b687f7a99304f80eb64b7c071a",
+              "current_article_sha256": "c64e94a42699edfcc1b2bd6d05e0356d95c2d4b687f7a99304f80eb64b7c071a",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "16e487d05aa126ab3d0f47a2dd4414e1519b6882e9c91bb2cb2bf805a9e3f331"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T13:55:28+00:00",
@@ -9784,7 +10738,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T13:55:28+00:00",
-        "draft_updated_at": "2026-10-14T13:55:28+00:00"
+        "draft_updated_at": "2026-10-14T13:55:28+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-feng2023-HKXYGC.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -9893,7 +10855,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2023-GYJZ.md",
         "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.review.md",
         "issues": [],
@@ -9936,10 +10898,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "e8e966db7c0d7c6e4b61698ec2af0879f4ac95ba7577f37b53e5c680687932de",
+              "current_article_sha256": "e8e966db7c0d7c6e4b61698ec2af0879f4ac95ba7577f37b53e5c680687932de",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "1c163381e71228596d3c4a9342572c5a9a204531010057e31c8a868afb0b573a"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。平台移除正文知网超链接，提交版本有证据，正文和首发版本匹配，底部RTD原文链接正常；不宣称返回的知网href保留。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。平台移除正文知网超链接，提交版本有证据，正文和首发版本匹配，底部RTD原文链接正常；不宣称返回的知网href保留。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:11:46+00:00",
@@ -10062,7 +11054,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T01:11:46+00:00",
-        "draft_updated_at": "2026-10-15T01:11:46+00:00"
+        "draft_updated_at": "2026-10-15T01:11:46+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -10092,7 +11092,7 @@
     "custom": {
       "publication_ref": "ref-zhou2023-CBGC",
       "order": 38,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "NLWWLBHY",
@@ -10401,7 +11401,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-chen2022-JWEIA.md",
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
         "issues": [],
@@ -10491,6 +11491,36 @@
             "fingerprint": "dae40554a28411dd514edda83e84d01f3fc2d2b8e7f92feb2604d0d1a7b370e8",
             "recorded_at": "2026-10-12T14:25:12+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-chen2022-JWEIA.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "1adabc6b5a4c9dba0f282faee98bb26ca899101e8cdb6a82a2292211c0dc6314",
+              "current_article_sha256": "1adabc6b5a4c9dba0f282faee98bb26ca899101e8cdb6a82a2292211c0dc6314",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "8d1911f2cd3682146032ee5c108842927381984d8fbecc5b2c6e23b4001db0b8"
           }
         },
         "latest_published_url": "",
@@ -10519,7 +11549,7 @@
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:25:12+00:00",
@@ -10670,7 +11700,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-chen2022-JWEIA.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -10700,7 +11738,7 @@
     "custom": {
       "publication_ref": "ref-li2022-SOS",
       "order": 42,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "混凝土浮体",
       "legacy_bibliography": {
         "zotero_key": "5AT7UEWV",
@@ -10803,7 +11841,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2022-SOS.md",
         "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
         "issues": [],
@@ -10893,6 +11931,36 @@
             "fingerprint": "77ca0614a779f888d26f3ca3af441afca508ad27f7d268c7655fa704234ee008",
             "recorded_at": "2026-10-12T13:02:17+00:00",
             "operation": "update"
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2022-SOS.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "8536c47786244b5fda180738d3344f14cf8f00a126ae88fe97c22f474ed54264",
+              "current_article_sha256": "aeee2e1f516fa29b907bf5656d18c1042a5036f62dc37cdc8caa45fd0b3bcd67",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "ce7b083efe60957485cc5606b89e376669d63b9afd2d197976dddb9a0e253362"
           }
         },
         "latest_published_url": "",
@@ -10930,7 +11998,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T13:02:17+00:00",
@@ -11081,7 +12149,15 @@
             },
             "scope": "Existing original draft updated, not newly created. Readback and source/derived-cover review are not actual phone light/dark preview or publication. Exact body and cover successes may have different times; event_at is the latest acknowledged write, not the final read-only check."
           }
-        ]
+        ],
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2022-SOS.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "source_audit": {
         "recorded_at": "2026-10-05T15:57:17+00:00",
@@ -11182,7 +12258,7 @@
     "custom": {
       "publication_ref": "ref-zhang2022-E",
       "order": 44,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "88ZT9SGP",
@@ -11248,7 +12324,7 @@
     "custom": {
       "publication_ref": "ref-abdullahi2022-OE",
       "order": 45,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "H9YSVNMM",
@@ -11521,7 +12597,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-yang2022-AS.md",
         "review_path": "wechat/articles/review/ref-yang2022-AS.review.md",
         "issues": [],
@@ -11564,10 +12640,42 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-yang2022-AS.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": false
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "37e581ff377005b5e2615637f29778f04eb6d25fcba7955d7a87a69da996eff2",
+              "current_article_sha256": "37e581ff377005b5e2615637f29778f04eb6d25fcba7955d7a87a69da996eff2",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [
+              "Historical review does not approve body-image upload"
+            ],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "8e2abe322bcb3b005ade4c4af0bd5b49f4521c68f0f1c14a4da61799193221d8"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T10:18:16+00:00",
@@ -11681,7 +12789,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T10:18:16+00:00",
-        "draft_updated_at": "2026-10-15T10:18:16+00:00"
+        "draft_updated_at": "2026-10-15T10:18:16+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-yang2022-AS.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "blocked_existing_upload_permission",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -11845,7 +12961,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-EFM.md",
         "review_path": "wechat/articles/review/ref-zhao2021-EFM.review.md",
         "issues": [],
@@ -11888,10 +13004,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-EFM.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "5e86e09b19dc545b562279a25a7609bd1a03a88859c404663b8dcb0ab637e348",
+              "current_article_sha256": "5e86e09b19dc545b562279a25a7609bd1a03a88859c404663b8dcb0ab637e348",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "f1d8bb786ef13622ef374f4f862736067ac06bc4cf140600970366e0115f0733"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:18:48+00:00",
@@ -12005,7 +13151,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T01:18:48+00:00",
-        "draft_updated_at": "2026-10-15T01:18:48+00:00"
+        "draft_updated_at": "2026-10-15T01:18:48+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhao2021-EFM.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -12099,7 +13253,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-AR.md",
         "review_path": "wechat/articles/review/ref-zhao2021-AR.review.md",
         "issues": [],
@@ -12142,10 +13296,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and official readback only; body-image official JPEG processing is recorded explicitly, not claimed pixel-identical. Existing scientific review and actual phone preview remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-AR.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "0bf6c57d9f7e9b29a152038fbad4439a7bf6ddd3a19e2d1588ffaf0d1b4846fc",
+              "current_article_sha256": "0bf6c57d9f7e9b29a152038fbad4439a7bf6ddd3a19e2d1588ffaf0d1b4846fc",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "a4720206746cd993b4db151865fa834517861e436d1d9dda6730b9216146a8fe"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T14:57:16+00:00",
@@ -12356,7 +13540,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T14:57:16+00:00",
-        "draft_updated_at": "2026-10-14T14:57:16+00:00"
+        "draft_updated_at": "2026-10-14T14:57:16+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhao2021-AR.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -12457,7 +13649,7 @@
     "custom": {
       "publication_ref": "ref-zhou2021-OE",
       "order": 53,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "H8SGIEYU",
@@ -12521,7 +13713,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhou2021-OE.md",
         "review_path": "wechat/articles/review/ref-zhou2021-OE.review.md",
         "issues": [],
@@ -12564,10 +13756,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2021-OE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "9ab7af8c7331b3dcd3055e5bd90afbe72a6ed8647a2b665848ac1fc0f508526c",
+              "current_article_sha256": "0ef2289ae91dc7300f9f8cd7290fff0ebcabdae465fb5a8786c13bd8cd653d56",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "313c7d8c1d46f5888c5ae27fd73d33f0514c9e18e6f41c2daab4c70b299823d1"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:28:29+00:00",
@@ -12681,7 +13903,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T01:28:29+00:00",
-        "draft_updated_at": "2026-10-15T01:28:29+00:00"
+        "draft_updated_at": "2026-10-15T01:28:29+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhou2021-OE.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -12776,7 +14006,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhao2021-TYNXB.md",
         "review_path": "wechat/articles/review/ref-zhao2021-TYNXB.review.md",
         "issues": [],
@@ -12818,10 +14048,40 @@
               "cover_preview": false
             },
             "scope": "Actual official draft creation and individual readback only. Existing independent scientific evidence remains untouched; actual mobile preview and publication are not performed."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-TYNXB.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "cc623e233880e19ab4a3acb983e791c62e37c8af118294fa597a940bd2b79566",
+              "current_article_sha256": "cc623e233880e19ab4a3acb983e791c62e37c8af118294fa597a940bd2b79566",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "415b588ce9e8f764b3f9dbc612bdfa9f8f6bb3606d38b1e6efb404f84d5aa4cc"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T13:58:37+00:00",
@@ -12995,7 +14255,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T13:58:37+00:00",
-        "draft_updated_at": "2026-10-14T13:58:37+00:00"
+        "draft_updated_at": "2026-10-14T13:58:37+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhao2021-TYNXB.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -13101,7 +14369,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2020-JWEIA.md",
         "review_path": "wechat/articles/review/ref-li2020-JWEIA.review.md",
         "issues": [],
@@ -13144,10 +14412,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2020-JWEIA.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "5a7f465bb12ca6343808277e2c3064f2ca81b538442e19bbf2f2da1a9305d555",
+              "current_article_sha256": "5a7f465bb12ca6343808277e2c3064f2ca81b538442e19bbf2f2da1a9305d555",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "7c267712ef869a13ed8904a6319681b9718f830c2b6a1b11ab0a7faf9465b320"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:11:06+00:00",
@@ -13261,7 +14559,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T01:11:06+00:00",
-        "draft_updated_at": "2026-10-15T01:11:06+00:00"
+        "draft_updated_at": "2026-10-15T01:11:06+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2020-JWEIA.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -13291,7 +14597,7 @@
     "custom": {
       "publication_ref": "ref-zhou2020-RE",
       "order": 56,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "74H4VLG2",
@@ -13354,7 +14660,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhou2020-RE.md",
         "review_path": "wechat/articles/review/ref-zhou2020-RE.review.md",
         "issues": [],
@@ -13397,10 +14703,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2020-RE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "92b548fc5361b8d6ef8ba104a40905469272ab52171e736598dcf7a1220414dc",
+              "current_article_sha256": "335ea64f47c18634a44d62b7bde520f79959fdc2043fbc53e04994735a1acb84",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "e6bc886dc59bd62d49a0be449e151ee68cc563a39b5aacdfcd2f30b700ac8f9e"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:17:12+00:00",
@@ -13514,7 +14850,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T01:17:12+00:00",
-        "draft_updated_at": "2026-10-15T01:17:12+00:00"
+        "draft_updated_at": "2026-10-15T01:17:12+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhou2020-RE.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -13544,7 +14888,7 @@
     "custom": {
       "publication_ref": "ref-hu2019-JOFAS",
       "order": 57,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "I4I82574",
@@ -13613,7 +14957,7 @@
     "custom": {
       "publication_ref": "ref-peng2019-JWEIA",
       "order": 58,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "HPU9VCE6",
@@ -13750,7 +15094,7 @@
     "custom": {
       "publication_ref": "ref-lin2019-E",
       "order": 60,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "F6KEY453",
@@ -13949,7 +15293,7 @@
     "custom": {
       "publication_ref": "ref-li2018-AE",
       "order": 63,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "YJN53AF9",
@@ -14014,7 +15358,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2018-AE.md",
         "review_path": "wechat/articles/review/ref-li2018-AE.review.md",
         "issues": [],
@@ -14057,10 +15401,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and20-check official readback only. A zero-formula introduction records non-applicability, not rendered formulas. Official JPEG processing is not claimed pixel-identical. Scientific review and actual phone preview remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2018-AE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "8f755ba64c7d0404fb853dc49ca949d828f7449a4a8d8229382865985a3313d2",
+              "current_article_sha256": "49280b4a3bb84220ff43287bcac6257a360771e65df1d882df3c0cfbf6b0f2d3",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "56e48a5614e7e803c9b28c751ee905f3c456d6571669554a1402ea24056d80fd"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T16:39:03+00:00",
@@ -14253,7 +15627,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T16:39:03+00:00",
-        "draft_updated_at": "2026-10-14T16:39:03+00:00"
+        "draft_updated_at": "2026-10-14T16:39:03+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2018-AE.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -14348,7 +15730,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-xiao2018-KXJSYGC.md",
         "review_path": "wechat/articles/review/ref-xiao2018-KXJSYGC.review.md",
         "issues": [],
@@ -14390,10 +15772,40 @@
               "cover_preview": false
             },
             "scope": "Actual official draft creation and individual readback only. Existing independent scientific evidence remains untouched; actual mobile preview and publication are not performed."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-xiao2018-KXJSYGC.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "7113be9487749ad8de7f3de3950a8fbdf5e21b94f9f2203a2b55930e9ac1a464",
+              "current_article_sha256": "7113be9487749ad8de7f3de3950a8fbdf5e21b94f9f2203a2b55930e9ac1a464",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "55b51525c4e5ea0f2f8a808f5c92f4f230f40f2b89ddca1cd0ffda8ab059fd3e"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T14:11:54+00:00",
@@ -14581,7 +15993,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T14:11:54+00:00",
-        "draft_updated_at": "2026-10-14T14:11:54+00:00"
+        "draft_updated_at": "2026-10-14T14:11:54+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-xiao2018-KXJSYGC.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -14610,7 +16030,7 @@
     "custom": {
       "publication_ref": "ref-zhou2017-E",
       "order": 65,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "DRCNU3JT",
@@ -14677,7 +16097,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-zhou2017-E.md",
         "review_path": "wechat/articles/review/ref-zhou2017-E.review.md",
         "issues": [],
@@ -14720,10 +16140,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2017-E.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "6467001699e0461e062296352ff6e78e53f3aa3eb44c1dcef83f461a03d20f4b",
+              "current_article_sha256": "cd1181ab0e098b56c1ddf921e16e6de603e415324b7daf2188eb31617689f6d4",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "1d2d7bafe6687af50ca3681c8fdcc3871bf3ea4dbd8cca461557beb392fd1084"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T01:16:29+00:00",
@@ -14837,7 +16287,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T01:16:29+00:00",
-        "draft_updated_at": "2026-10-15T01:16:29+00:00"
+        "draft_updated_at": "2026-10-15T01:16:29+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-zhou2017-E.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -14932,7 +16390,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2017-BS.md",
         "review_path": "wechat/articles/review/ref-li2017-BS.review.md",
         "issues": [],
@@ -14975,10 +16433,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and official readback only; body-image official JPEG processing is recorded explicitly, not claimed pixel-identical. Existing scientific review and actual phone preview remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2017-BS.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "f8b79c6f66a8122ab45d2e6d61d8b30ee466d246ff28ba9fd322aa5985811760",
+              "current_article_sha256": "f8b79c6f66a8122ab45d2e6d61d8b30ee466d246ff28ba9fd322aa5985811760",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "191f4d4409f5aff167eb2ef87952204efee6b7aa41434f50be7994dad9aa00c8"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T14:59:49+00:00",
@@ -15189,7 +16677,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T14:59:49+00:00",
-        "draft_updated_at": "2026-10-14T14:59:49+00:00"
+        "draft_updated_at": "2026-10-14T14:59:49+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2017-BS.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -15219,7 +16715,7 @@
     "custom": {
       "publication_ref": "ref-li2017-AS",
       "order": 67,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "NJ4KP6WJ",
@@ -15283,7 +16779,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2017-AS.md",
         "review_path": "wechat/articles/review/ref-li2017-AS.review.md",
         "issues": [],
@@ -15326,10 +16822,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and20-check official readback only. A zero-formula introduction records non-applicability, not rendered formulas. Official JPEG processing is not claimed pixel-identical. Scientific review and actual phone preview remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2017-AS.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "4b9cdd366efd5479d6dc24e7badf1688d2cc2bfa6f4014f83b974dec58908635",
+              "current_article_sha256": "627bcf5edae77e4bdd957d9e978ae1839c1d6214c2757c9cc1d5d65cea370781",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "92a3cf89f77b50e17b461ef524ca8f6988d8f66bc4f634aff796252e3f48c874"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T16:39:44+00:00",
@@ -15516,7 +17042,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T16:39:44+00:00",
-        "draft_updated_at": "2026-10-14T16:39:44+00:00"
+        "draft_updated_at": "2026-10-14T16:39:44+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2017-AS.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -15612,7 +17146,7 @@
     "custom": {
       "publication_ref": "ref-li2013-RE",
       "order": 69,
-      "research_family": "海上漂浮风电",
+      "research_family": "海洋能源结构",
       "subdirection": "一体化分析",
       "legacy_bibliography": {
         "zotero_key": "U5FHR599",
@@ -15675,7 +17209,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2013-RE.md",
         "review_path": "wechat/articles/review/ref-li2013-RE.review.md",
         "issues": [],
@@ -15718,10 +17252,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and20-check official readback only. A zero-formula introduction records non-applicability, not rendered formulas. Official JPEG processing is not claimed pixel-identical. Scientific review and actual phone preview remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2013-RE.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "651c95f3e421049c5c2f4b1293029c0132facd68acbcdf14fb94286e023dc1f5",
+              "current_article_sha256": "f3714b40580702cb45ef4178452cdadd474f41162c1ade5c65167de024dfda6a",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": true,
+            "backend_updated": false,
+            "fingerprint": "571bc28ee2caa5e79c67facc0358928decbd1e3f1f18c0f630fd6ea3c2fc936c"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T16:38:22+00:00",
@@ -15937,7 +17501,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T16:38:22+00:00",
-        "draft_updated_at": "2026-10-14T16:38:22+00:00"
+        "draft_updated_at": "2026-10-14T16:38:22+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2013-RE.terminology-20261017.review.md",
+          "backend_update_needed": true,
+          "backend_synced": false,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -16030,7 +17602,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2012-JWEIA.md",
         "review_path": "wechat/articles/review/ref-li2012-JWEIA.review.md",
         "issues": [],
@@ -16073,10 +17645,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and official readback only; body-image official JPEG processing is recorded explicitly, not claimed pixel-identical. Existing scientific review and actual phone preview remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2012-JWEIA.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "0cdea004951878199a905815ff5484c49b35a5c4d996b0711befe5453ec11aec",
+              "current_article_sha256": "0cdea004951878199a905815ff5484c49b35a5c4d996b0711befe5453ec11aec",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "28cdd68edcea034af44a7b711731cd9b6f56d106226f90bbc4d85ece91d8ba65"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，作者保留、AI声明每篇唯一。正文图以批准原件上传，官方JPEG重压缩/等比缩放与像素同一分开记录；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T14:58:03+00:00",
@@ -16287,7 +17889,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T14:58:03+00:00",
-        "draft_updated_at": "2026-10-14T14:58:03+00:00"
+        "draft_updated_at": "2026-10-14T14:58:03+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2012-JWEIA.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -16381,7 +17991,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2012-GCLX.md",
         "review_path": "wechat/articles/review/ref-li2012-GCLX.review.md",
         "issues": [],
@@ -16424,10 +18034,40 @@
               "cover_preview": false
             },
             "scope": "Actual create and20-check official readback only. A zero-formula introduction records non-applicability, not rendered formulas. Official JPEG processing is not claimed pixel-identical. Scientific review and actual phone preview remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2012-GCLX.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": true
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "e17ce8522be0a3db962f4c1b53abf1fef7634da090ce919f0050730daa6e143c",
+              "current_article_sha256": "e17ce8522be0a3db962f4c1b53abf1fef7634da090ce919f0050730daa6e143c",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "3d75f9be5959adbb324e902f562dffca84769fc379a67a289d53ee8e75e7cd16"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口已创建一份草稿并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。批准原图未经本地修改上传，官方JPEG处理与像素同一区分记录；实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-14T16:40:32+00:00",
@@ -16645,7 +18285,15 @@
           }
         ],
         "draft_created_at": "2026-10-14T16:40:32+00:00",
-        "draft_updated_at": "2026-10-14T16:40:32+00:00"
+        "draft_updated_at": "2026-10-14T16:40:32+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2012-GCLX.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "passed",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {
@@ -16738,7 +18386,7 @@
       },
       "wechat": {
         "selected": true,
-        "status": "draft_created",
+        "status": "awaiting_review",
         "path": "wechat/articles/draft-public-safe/ref-li2010-WAS.md",
         "review_path": "wechat/articles/review/ref-li2010-WAS.review.md",
         "issues": [],
@@ -16781,10 +18429,42 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "terminology_review_20261017": {
+            "recorded_at": "2026-10-17T10:24:57+00:00",
+            "review_path": "wechat/articles/review/ref-li2010-WAS.terminology-20261017.review.md",
+            "scope": "Completed local first-level naming migration review only; existing scientific review reused through exact equivalence. No new PDF audit, live operation, publication approval, or automatic refresh of previous approval.",
+            "checks": {
+              "classification_mapping": true,
+              "scientific_content_equivalence": true,
+              "existing_source_identity_reused": true,
+              "existing_facts_evidence_reused": true,
+              "public_safety": true,
+              "registered_subdirection_title": true,
+              "mathjax_svg_render": true,
+              "rendered_body_equivalence": true,
+              "offline_preflight": false
+            },
+            "equivalence": {
+              "baseline_commit": "3730fa1121ce1db55716657fddd47640fd96b0e5",
+              "baseline_article_sha256": "5f781578dfe95abe79b45e961325275506bd2d19e2b0bb3f722675181703a8bd",
+              "current_article_sha256": "5f781578dfe95abe79b45e961325275506bd2d19e2b0bb3f722675181703a8bd",
+              "main_title_compatibility_commit": null
+            },
+            "retained_manual_acceptance": {
+              "basis": "Owner confirmed completed light/dark mobile acceptance; retain only its original applicable scope. Unchanged renderer, formulas, figures and cover do not trigger repeat acceptance.",
+              "new_acceptance_claimed": false
+            },
+            "remaining_nonvisual_items": [
+              "Historical review does not approve body-image upload"
+            ],
+            "pending_backend_update": false,
+            "backend_updated": false,
+            "fingerprint": "eb6f9738428098fbacb4be4e719b48d65dbb4338c33a7af992648d15cd856c90"
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:37:54+00:00",
@@ -16898,7 +18578,15 @@
           }
         ],
         "draft_created_at": "2026-10-15T09:37:54+00:00",
-        "draft_updated_at": "2026-10-15T09:37:54+00:00"
+        "draft_updated_at": "2026-10-15T09:37:54+00:00",
+        "terminology_migration": {
+          "status": "local_review_complete",
+          "review_path": "wechat/articles/review/ref-li2010-WAS.terminology-20261017.review.md",
+          "backend_update_needed": false,
+          "backend_synced": null,
+          "preflight": "blocked_existing_upload_permission",
+          "manual_acceptance": "retain_owner_confirmed_scope_no_repeat"
+        }
       },
       "content_production": "included",
       "source_audit": {

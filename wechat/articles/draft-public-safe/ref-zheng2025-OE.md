@@ -9,7 +9,7 @@
 - 期刊: Ocean Engineering
 - 年份: 2025
 - DOI: https://doi.org/10.1016/j.oceaneng.2025.121336
-- WOEAI 相关方向: 海上漂浮风电 / 一体化分析
+- WOEAI 相关方向: 海洋能源结构 / 一体化分析
 
 ## 摘要
 

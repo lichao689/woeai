@@ -227,19 +227,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -260,7 +260,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE.cover-equivalence.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE.reader-batch04-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -608,19 +608,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -640,7 +640,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE-structural.cover-equivalence.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2026-OE-structural.reader-batch04-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -742,19 +742,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -774,7 +774,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2026-RE.cover-equivalence.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2026-RE.reader-batch04-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -987,19 +987,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -1020,7 +1020,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2025-POF.cover-equivalence.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-he2025-POF.reader-batch04-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -1122,19 +1122,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -1154,7 +1154,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-yang2025-JBE.cover-equivalence.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-yang2025-JBE.reader-batch04-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -1367,19 +1367,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -1400,7 +1400,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-OE.cover-equivalence.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-OE.reader-batch04-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -1507,19 +1507,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -1539,7 +1539,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-QHDXXB.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2025-QHDXXB.reader-batch04-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -1641,19 +1641,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -1673,7 +1673,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2025-JBE.cover-equivalence.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-tang2025-JBE.reader-batch04-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -1997,19 +1997,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -2029,7 +2029,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2025-SCS.cover-equivalence.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2025-SCS.reader-batch04-20261018.review.md"
           },
           {
             "label": "审核记录",

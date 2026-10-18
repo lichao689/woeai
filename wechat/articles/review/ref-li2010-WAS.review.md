@@ -16,6 +16,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
+body_images_upload_approved: true
 ---
 
 # ref-li2010-WAS 本地科学正文与公众号稿自查
@@ -104,3 +105,7 @@ rtd_page_checked: false
 RTD仅插入顶部封面块；MD仅变更H1和方向元数据，使数值风洞主题明确，摘要、科学正文、作者、原图、公式及AI声明逐字节不变。原分类和改动精确记录，逆变换恢复checkpoint02。 主review只增补封面路径、历史状态说明及本次范围记录，Li另改方向；所有旧事实证据与许可／预览布尔均保留。题录同步另作源证据纠正：PDF file page 1支持Chao Li与Q.S. Li均为通讯作者；保留旧注册表值作为历史，不修改远端Zotero。
 
 当前仍为本地网站接入候选；正式正文图上传未批准，不为通过preflight填入授权。作者字段、手机浅深色预览和后台状态不因封面采用改变；完整全站门禁、实际视口检查及后续main／草稿写入授权均独立处理。
+
+## 2026-10-18 本轮原草稿图片授权
+
+用户已明确授权制作清单旧稿规则推广及既有草稿更新。本批新增上传1幅既有批准公共原图，其余图片、封面和原文链接复用。该字段只记录本轮上传授权，不追改历史版权/手机状态，不授权新建、发布或群发。定向内容证据见`ref-li2010-WAS.reader-batch07-20261018.review.md`。共享review的权限记录改变不构成RTD重新审核，原RTD awaiting_audit状态和旧证据保持。

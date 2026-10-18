@@ -7970,19 +7970,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -8002,7 +8002,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2018-AE.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2018-AE.reader-batch07-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -8105,19 +8105,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -8137,7 +8137,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-xiao2018-KXJSYGC.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-xiao2018-KXJSYGC.reader-batch07-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -8244,19 +8244,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -8276,7 +8276,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2017-E.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhou2017-E.reader-batch07-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -8383,19 +8383,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -8415,7 +8415,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2017-BS.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2017-BS.reader-batch07-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -8522,19 +8522,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -8554,7 +8554,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2017-AS.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2017-AS.reader-batch07-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -8768,19 +8768,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -8800,7 +8800,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2013-RE.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2013-RE.reader-batch07-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -8907,19 +8907,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -8939,7 +8939,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2012-JWEIA.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2012-JWEIA.reader-batch07-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -9042,19 +9042,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -9074,7 +9074,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2012-GCLX.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2012-GCLX.reader-batch07-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -9181,19 +9181,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -9213,7 +9213,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2010-WAS.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2010-WAS.reader-batch07-20261018.review.md"
           },
           {
             "label": "审核记录",

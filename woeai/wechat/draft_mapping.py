@@ -1,4 +1,4 @@
-"""Strict reader for the user-approved minimal public draft correspondence table."""
+"""Strict local-only draft correspondence; no public or generated-view fallback."""
 from __future__ import annotations
 
 import json
@@ -11,33 +11,35 @@ def unique_object(pairs: list[tuple[str, Any]]) -> dict[str, Any]:
     result: dict[str, Any] = {}
     for key, value in pairs:
         if key in result:
-            raise ValueError("Duplicate field in draft mapping")
+            raise ValueError("Duplicate field in private draft mapping")
         result[key] = value
     return result
 
 
-def load_public_draft_mapping(path: Path, known_refs: set[str]) -> dict[str, dict[str, Any]]:
+def load_private_draft_mapping(path: Path) -> dict[str, dict[str, Any]]:
     if not path.exists():
         return {}
-    rows = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_object)
-    if not isinstance(rows, list):
-        raise ValueError("Public draft mapping must be an array")
-    records: dict[str, dict[str, Any]] = {}
-    targets: set[str] = set()
-    for record in rows:
+    records = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_object)
+    if not isinstance(records, dict) or any(not isinstance(item, dict) for item in records.values()):
+        raise ValueError("Private draft records must map publication references to objects")
+    allowed = {"media_id", "wechat_draft_media_id", "created_at", "updated_at", "article_index", "app_id"}
+    confirmed_targets: set[tuple[str, str, int]] = set()
+    for ref, record in records.items():
+        target = record.get("media_id", record.get("wechat_draft_media_id", ""))
         if (
-            not isinstance(record, dict)
-            or set(record) != {"publication_ref", "wechat_draft_media_id"}
-            or not isinstance(record["publication_ref"], str)
-            or record["publication_ref"] not in known_refs
-            or not isinstance(record["wechat_draft_media_id"], str)
-            or re.fullmatch(r"[A-Za-z0-9_-]{1,512}", record["wechat_draft_media_id"]) is None
+            re.fullmatch(r"ref-[A-Za-z0-9_-]+", ref) is None
+            or set(record) - allowed
+            or any(not isinstance(value, str) for key, value in record.items() if key != "article_index")
+            or not isinstance(target, str)
+            or re.fullmatch(r"[A-Za-z0-9_-]{1,512}", target) is None
+            or ("article_index" in record and (type(record["article_index"]) is not int or record["article_index"] < 0))
+            or ("app_id" in record and re.fullmatch(r"wx[0-9a-f]{16}", record["app_id"]) is None)
+            or ("media_id" in record and "wechat_draft_media_id" in record and record["media_id"] != record["wechat_draft_media_id"])
         ):
-            raise ValueError("Invalid public draft mapping schema or publication reference")
-        ref = record["publication_ref"]
-        target = record["wechat_draft_media_id"]
-        if ref in records or target in targets:
-            raise ValueError("Duplicate publication reference or draft identifier")
-        targets.add(target)
-        records[ref] = record
+            raise ValueError("Invalid private draft mapping schema")
+        if "app_id" in record and "article_index" in record:
+            binding = (record["app_id"], target, record["article_index"])
+            if binding in confirmed_targets:
+                raise ValueError("Duplicate confirmed article target in private draft mapping")
+            confirmed_targets.add(binding)
     return records

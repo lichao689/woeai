@@ -56,14 +56,10 @@ API_HEADERS = {"Zotero-API-Version": "3"}
 API_LIMIT = 100
 
 CSL_STYLE_ID = "http://www.zotero.org/styles/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01"
-CSL_SOURCE_PATH = Path(
-    "/Users/lichao/Drive/Myfiles/96 常用备份/SoftConfig/zotero/"
-    "jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcFav-01.csl"
-)
-CSL_INSTALLED_PATH = Path(
-    "/Users/lichao/Zotero/styles/"
-    "jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01.csl"
-)
+# Local configuration is never included in the committed bibliography snapshot.
+CSL_SOURCE_PATH: Path | None = None
+CSL_INSTALLED_PATH = Path.home() / "Zotero/styles" / (CSL_STYLE_ID.rsplit("/", 1)[-1] + ".csl")
+
 CSL_SHA256 = "fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1"
 
 # Constants and pure text helpers now live in woeai.publications.textutils.
@@ -188,7 +184,8 @@ def paginated(path: str, params: dict[str, Any] | None = None) -> list[dict[str,
 
 
 def read_style_sha256() -> str | None:
-    for path in (CSL_INSTALLED_PATH, CSL_SOURCE_PATH):
+    candidates = (CSL_SOURCE_PATH,) if CSL_SOURCE_PATH is not None else (CSL_INSTALLED_PATH,)
+    for path in candidates:
         if path.exists():
             return hashlib.sha256(path.read_bytes()).hexdigest()
     return None
@@ -843,8 +840,7 @@ def snapshot(
         },
         "csl_style": {
             "id": CSL_STYLE_ID,
-            "source_path": str(CSL_SOURCE_PATH),
-            "installed_path": str(CSL_INSTALLED_PATH),
+            "source": "local-csl-style",
             "sha256": read_style_sha256(),
         },
         "anchor_rule": "ref-{first-author}{year}-{journal-initialism}; collisions append deterministic title token",
@@ -939,9 +935,12 @@ def write_outputs(args: argparse.Namespace) -> None:
 
 
 def main() -> int:
+    global CSL_SOURCE_PATH
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dry-run", action="store_true", help="Read Zotero and report without writing files")
+    parser.add_argument("--csl-style", type=Path, help="Private local CSL file; omitted paths use the installed style")
     args = parser.parse_args()
+    CSL_SOURCE_PATH = args.csl_style.expanduser() if args.csl_style is not None else None
     try:
         write_outputs(args)
     except (ZoteroError, ValueError, OSError) as exc:

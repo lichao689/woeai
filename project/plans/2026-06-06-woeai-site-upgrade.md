@@ -1,4 +1,3 @@
-<!-- /autoplan restore point: /Users/lichao/.gstack/projects/lichao689-woeai/main-autoplan-restore-20260606-121604.md -->
 # WOEAI Site Upgrade Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
@@ -19,7 +18,7 @@
 
 ### Repository Shape
 
-This is a docs-only website repository at `/Volumes/WorkSSD/codes/woeai`.
+This is a docs-only website repository; resolve its root from the selected local checkout.
 
 Core files:
 
@@ -138,7 +137,7 @@ Deletion note: if the team wants to preserve `usage.html` or `api.html` for old 
 
 ## Global Execution Rules
 
-- Run every command from the repository root: `/Volumes/WorkSSD/codes/woeai`.
+- Run every command from the repository root: `<repository-root>`.
 - Use small commits after each completed task. Do not mix unrelated content, tooling, and visual changes in one commit.
 - Never invent recruitment terms, student outcomes, grant details, partner claims, publication metadata, or current openings.
 - If a public claim cannot be sourced from existing repository content or the source packet, either omit it, mark the section as updating, or ask the site owner.
@@ -1159,7 +1158,7 @@ Use the Phase 0 benchmark decision:
 
 **Review date:** 2026-06-06
 
-**Restore point:** `/Users/lichao/.gstack/projects/lichao689-woeai/main-autoplan-restore-20260606-121604.md`
+**Restore point:** `configured private local source`
 
 **User-confirmed premise:** the website upgrade should optimize for `招生 Recruitment` first, `技术合作 Technical collaboration` second, and `学术可信度 Academic credibility` third.
 

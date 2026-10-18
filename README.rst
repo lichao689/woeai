@@ -53,14 +53,28 @@ Repository Map
 Local Checks
 ------------
 
+Development and content production use the existing primary local checkout.
+Prepare its Python and MathJax dependencies without reading publication credentials:
+
+.. code-block:: bash
+
+   ./scripts/setup-local-workflow.sh
+   bash
+   source scripts/local-workflow-env.sh
+
+See `the local workflow guide <project/guides/local-workflow.md>`_ for dependency
+pinning, checks, private caches and the separate historical migration record.
+
 Use the repository-owned check script before committing changes:
 
 .. code-block:: bash
 
    ./scripts/check-docs.sh
 
-The script creates a temporary virtual environment, installs
-``docs/requirements.txt``, and runs Sphinx with warnings treated as failures.
+The script prepares a virtual environment, installs ``docs/requirements.txt``,
+runs the checks and builds Sphinx with warnings treated as failures. Its default
+environment and output are temporary; the sourced local environment selects
+``.venv`` and ``docs/_build/html`` in this checkout instead.
 
 Site Build ID
 -------------

@@ -58,7 +58,7 @@ from woeai.wechat.review import (  # noqa: E402,F401
     parse_title as parse_title_text,
 )
 from woeai.wechat.runtime_config import ConfigurationError, effective_app_id, load_account, require_supported_source
-from woeai.wechat.draft_mapping import load_public_draft_mapping
+from woeai.wechat.draft_mapping import load_private_draft_mapping
 
 CONFIG_PATH = Path.home() / ".config/woeai/wechat_official_account.env"
 RUNNER_CONFIG_PATH = Path.home() / ".config/woeai/wechat_runner.env"
@@ -103,7 +103,7 @@ class ArticleContext:
     existing_media_id: str
     theme: str
     math_renderer: str
-    article_index: int | None = 0
+    article_index: int | None = None
     draft_mapping_source: str = "private"
     draft_mapping_app_id: str = ""
 
@@ -124,20 +124,21 @@ def wechat_rejected_ip(payload: dict[str, Any]) -> str | None:
     if not isinstance(message, str):
         return None
     match = re.fullmatch(
-        r"invalid ip ([0-9A-Fa-f:.]+)(?: ipv6 ([0-9A-Fa-f:.]+))?, not in whitelist"
-        r"(?: rid: [A-Za-z0-9_-]+)?", message
+        r"invalid ip ([0-9A-Fa-f:.]{2,45})(?: ipv6 ([0-9A-Fa-f:.]{2,45}))?, not in whitelist"
+        r"(?: rid: [A-Za-z0-9_-]{1,128})?", message
     )
     if not match:
         return None
     try:
         address = ipaddress.ip_address(match[1])
+        normalized = address.ipv4_mapped or address if isinstance(address, ipaddress.IPv6Address) else address
         if match[2]:
             mapped = ipaddress.IPv6Address(match[2])
-            if mapped != address and mapped.ipv4_mapped != address:
+            if (mapped.ipv4_mapped or mapped) != normalized:
                 return None
     except ValueError:
         return None
-    return str(address)
+    return str(normalized)
 
 
 def safe_error_summary(exc: Exception) -> dict[str, Any]:
@@ -763,60 +764,20 @@ def private_drafts_path(backlog_path: Path) -> Path | None:
 
 def read_private_drafts(backlog_path: Path) -> dict[str, dict[str, Any]]:
     path = private_drafts_path(backlog_path)
-    if path is None or not path.exists():
-        return {}
-    records = json.loads(path.read_text(encoding="utf-8"))
-    if not isinstance(records, dict) or any(not isinstance(item, dict) for item in records.values()):
-        raise ValueError("Private draft records must map publication references to objects")
-    allowed = {"media_id", "wechat_draft_media_id", "created_at", "updated_at", "article_index", "app_id"}
-    for ref, record in records.items():
-        if (
-            re.fullmatch(r"ref-[A-Za-z0-9_-]+", ref) is None
-            or set(record) - allowed
-            or any(not isinstance(value, str) for key, value in record.items() if key != "article_index")
-            or ("article_index" in record and (type(record["article_index"]) is not int or record["article_index"] < 0))
-            or ("app_id" in record and re.fullmatch(r"wx[0-9a-f]{16}", record["app_id"]) is None)
-            or ("media_id" in record and "wechat_draft_media_id" in record
-                and record["media_id"] != record["wechat_draft_media_id"])
-        ):
-            raise ValueError("Invalid private draft mapping schema")
-    return records
+    return load_private_draft_mapping(path) if path is not None else {}
 
 
 def existing_draft_media_id(backlog_path: Path, publication_ref: str) -> str:
     return resolve_draft_mapping(backlog_path, publication_ref)["media_id"]
 
 
-def read_public_drafts(backlog_path: Path) -> dict[str, dict[str, Any]]:
-    private_path = private_drafts_path(backlog_path)
-    if private_path is None:
-        return {}
-    path = private_path.parent.parent / "data/draft-map.json"
-    return load_public_draft_mapping(path, set(read_backlog_publication_refs(backlog_path)))
-
-
 def resolve_draft_mapping(backlog_path: Path, publication_ref: str) -> dict[str, Any]:
     private = read_private_drafts(backlog_path)
-    public = read_public_drafts(backlog_path)
     record = private.get(publication_ref, {})
-    source = "private" if publication_ref in private else "none"
-    media_id = record.get("media_id", record.get("wechat_draft_media_id", ""))
-    if source == "private" and (not isinstance(media_id, str) or not media_id.strip()):
-        raise ValueError("Private draft media_id must be a nonempty string")
-    if source == "none":
-        if publication_ref in public:
-            record = public[publication_ref]
-            source = "public"
-            media_id = record["wechat_draft_media_id"]
-    if not media_id and find_registry_root(backlog_path) is None:
-        # Compatibility for a standalone pre-registry checkout, never for a
-        # generated view in a registry-backed repository.
-        media_id = read_backlog_item(backlog_path, publication_ref).get("wechat_draft_media_id", "")
-        source = "legacy" if media_id else "none"
-    # A private override does not turn an unverified public article index into 0.
-    default_index = None if publication_ref in public else 0
-    return {"media_id": media_id, "article_index": record.get("article_index", default_index),
-            "source": source, "app_id": record.get("app_id", "")}
+    return {"media_id": record.get("media_id", record.get("wechat_draft_media_id", "")),
+            "article_index": record.get("article_index"),
+            "source": "private" if publication_ref in private else "none",
+            "app_id": record.get("app_id", "")}
 
 
 def registered_publication(backlog_path: Path, publication_ref: str) -> tuple[Path, list[dict[str, Any]], dict[str, Any]]:
@@ -1065,7 +1026,7 @@ def command_token_check(args: argparse.Namespace) -> int:
         json.dumps(
             {
                 "ok": True,
-                "stage": "access_token_available",
+                "stage": "access_token_cached" if token.get("from_cache") else "access_token_fetched",
                 "from_cache": bool(token.get("from_cache")),
                 "network_verified": token.get("network_verified") is True and token.get("from_cache") is False,
                 "expires_at": token.get("expires_at"),
@@ -1166,7 +1127,9 @@ def command_content_source_plan(args: argparse.Namespace) -> int:
     return 0
 
 
-def fetch_remote_draft_article(token: str, media_id: str, article_index: int = 0) -> dict[str, Any]:
+def fetch_remote_draft_article(token: str, media_id: str, article_index: int | None = None) -> dict[str, Any]:
+    if type(article_index) is not int or article_index < 0:
+        raise ConfigurationError("draft_article_index_unverified")
     response = api_post_json(DRAFT_GET_URL, token, {"media_id": media_id})
     if "news_item" not in response:
         raise WeChatError("draft_get", response)
@@ -1191,7 +1154,7 @@ def audit_remote_content_source(token: str, ctx: ArticleContext) -> dict[str, An
             "needs_update": True,
             "message": "private draft records have no media_id",
         }
-    article = fetch_remote_draft_article(token, ctx.existing_media_id, getattr(ctx, "article_index", 0))
+    article = fetch_remote_draft_article(token, ctx.existing_media_id, getattr(ctx, "article_index", None))
     remote_url = str(article.get("content_source_url", ""))
     matches = remote_url == ctx.content_source_url
     return {
@@ -1237,10 +1200,8 @@ def command_audit_content_source(args: argparse.Namespace) -> int:
 def require_draft_account(ctx: ArticleContext) -> str:
     account = load_account(WECHAT_ROOT / ".local/account.json")
     expected = ctx.draft_mapping_app_id
-    if ctx.draft_mapping_source == "public" or (not expected and ctx.publication_ref in read_public_drafts(ctx.backlog_path)):
-        expected = account.get("public_draft_mapping_app_id", "")
-        if not expected:
-            raise ConfigurationError("draft_account_unbound")
+    if ctx.existing_media_id and (ctx.draft_mapping_source != "private" or not expected):
+        raise ConfigurationError("draft_account_unbound")
     if expected and account.get("app_id") != expected:
         raise ConfigurationError("account_mismatch")
     return account.get("app_id", "")

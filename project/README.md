@@ -10,7 +10,8 @@ sources and assets remain under `wechat/`.
 - [Contributor guide](../AGENTS.md): task entry points, public safety, and checks
 - [Project vocabulary](../CONTEXT.md): public terminology and semantic constraints
 - [Domain guide](guides/domain.md): how to explore project documentation
-- [Cloud WeChat workflow](guides/cloud-wechat-workflow.md): credential-free setup
+- [Local workflow](guides/local-workflow.md): primary-checkout setup, checks and private caches
+- [Shared offline setup](guides/cloud-wechat-workflow.md): existing tools with historical cloud names
 - [Publication workflow registry](guides/publication-registry.md) and [generated progress](publication-progress.md): one bibliography, independent RTD/WeChat workflows
 - [Homepage content guide](guides/homepage-content.md): page roles, homepage writing, site boundaries
 - [Paper sources and evidence](guides/paper-sources-and-evidence.md): source acquisition, evidence records, figure extraction

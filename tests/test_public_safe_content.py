@@ -22,34 +22,53 @@ def load_checker():
 
 
 class PublicSafeContentTests(unittest.TestCase):
-    def test_only_approved_public_mapping_snapshot_gets_backend_id_exception(self):
-        approved = (ROOT / "wechat/data/draft-map.json").read_bytes()
+    def test_real_backend_correspondence_has_no_public_path_exception(self):
+        for relative in ["data/draft-map.json", "data/other.json"]:
+            with self.subTest(relative=relative), tempfile.TemporaryDirectory() as tmpdir:
+                root = Path(tmpdir); wechat = root / "wechat"
+                path = wechat / relative; path.parent.mkdir(parents=True)
+                path.write_text('[{"publication_ref":"ref-example","wechat_draft_media_id":"synthetic-draft"}]')
+                result, _stdout, stderr = self.run_checker(root, wechat)
+                self.assertEqual(result, 1)
+                self.assertIn("private backend data", stderr)
+                self.assertNotIn("synthetic-draft", stderr)
+
+    def test_backend_mapping_never_allows_secret_fields(self):
         with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            wechat_root = root / "wechat"
-            path = wechat_root / "data/draft-map.json"
-            path.parent.mkdir(parents=True)
-            path.write_bytes(approved)
-            result, _stdout, stderr = self.run_checker(root, wechat_root)
-            self.assertEqual(result, 0, stderr)
-            copied = wechat_root / "data/other.json"
-            copied.write_bytes(approved)
-            result, _stdout, stderr = self.run_checker(root, wechat_root)
+            root = Path(tmpdir); wechat = root / "wechat"
+            path = wechat / "data/draft-map.json"; path.parent.mkdir(parents=True)
+            path.write_text('[{"publication_ref":"ref-example","wechat_draft_media_id":"fake-draft","access_token":"FAKE_ONLY_VALUE_LONG"}]')
+            result, _stdout, stderr = self.run_checker(root, wechat)
             self.assertEqual(result, 1)
             self.assertIn("private backend data", stderr)
-
-    def test_public_mapping_exception_does_not_allow_extra_secret_fields(self):
-        with tempfile.TemporaryDirectory() as tmpdir:
-            root = Path(tmpdir)
-            wechat_root = root / "wechat"
-            path = wechat_root / "data/draft-map.json"
-            path.parent.mkdir(parents=True)
-            path.write_text('[{"publication_ref":"ref-example","wechat_draft_media_id":"fake-draft","access_token":"FAKE_ONLY_VALUE_LONG"}]')
-            result, _stdout, stderr = self.run_checker(root, wechat_root)
-            self.assertEqual(result, 1)
-            self.assertIn("unapproved public draft mapping", stderr)
             self.assertIn("possible secret pattern", stderr)
             self.assertNotIn("FAKE_ONLY_VALUE_LONG", stderr)
+
+    def test_machine_paths_are_private_but_public_contact_information_remains_valid(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir); wechat = root / "wechat"; wechat.mkdir()
+            path = wechat / "workflow.md"
+            for value in ["/Users/synthetic/styles/author.csl", "/Volumes/synthetic/repo/plan.md", "/home/synthetic/restore/plan.md"]:
+                path.write_text(value)
+                result, _stdout, stderr = self.run_checker(root, wechat)
+                self.assertEqual(result, 1)
+                self.assertIn("private machine path", stderr)
+                self.assertNotIn(value, stderr)
+            path.write_text("Author: Chao Li; DOI: 10.3390/app12083729; contact: public@example.org; path example: /Users/.../source.csl")
+            result, _stdout, stderr = self.run_checker(root, wechat)
+            self.assertEqual(result, 0, stderr)
+
+    def test_ignored_runtime_dependencies_are_not_public_sources(self):
+        with tempfile.TemporaryDirectory() as tmpdir:
+            root = Path(tmpdir); wechat = root / "wechat"
+            path = wechat / "runtime/node_modules/synthetic/package.json"; path.parent.mkdir(parents=True)
+            path.write_text('{"build_source":"/Users/synthetic/build/file.xsl"}')
+            result, _stdout, stderr = self.run_checker(root, wechat)
+            self.assertEqual(result, 0, stderr)
+            public = wechat / "data/package.json"; public.parent.mkdir(); public.write_text(path.read_text())
+            result, _stdout, stderr = self.run_checker(root, wechat)
+            self.assertEqual(result, 1)
+            self.assertIn("private machine path", stderr)
 
     def run_checker(self, root: Path, wechat_root: Path, *extra_roots: Path) -> tuple[int, str, str]:
         checker = load_checker()

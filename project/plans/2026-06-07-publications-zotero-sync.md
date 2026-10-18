@@ -19,8 +19,8 @@ Goal: update the RTD website's journal-paper list from the local Zotero public p
 
 Use the user's installed Zotero CSL style as the citation renderer:
 
-- Source file: `/Users/lichao/Drive/Myfiles/96 常用备份/SoftConfig/zotero/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcFav-01.csl`
-- Installed style file: `/Users/lichao/Zotero/styles/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01.csl`
+- Source file: `configured private local source`
+- Installed style file: `configured private local source`
 - CSL id: `http://www.zotero.org/styles/jm-chinese-std-gb-t-7714-2015-numeric-chinese-lcfav-01`
 - SHA256: `fde99536c18e025299488fe4f65cd6269172d2274e1b48e877e64b24cd52aef1`
 

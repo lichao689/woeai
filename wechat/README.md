@@ -351,8 +351,12 @@ Do not put these commands into the offline content-check sequence:
 - `python3 wechat/tools/wechat_draft.py config-check` reads the private
   credential file to validate its shape without printing secrets. Run only
   when the user has explicitly authorized WeChat API configuration testing.
-- `python3 wechat/tools/wechat_draft.py token-check` reads private credentials,
-  requests or reuses an access token, and caches it outside the repository.
+- `python3 wechat/tools/wechat_draft.py token-check` reuses an unexpired local
+  cache without reading AppSecret or contacting WeChat (`access_token_cached`,
+  `network_verified: false`). Without a usable cache it reads private credentials,
+  requests and caches a token (`access_token_fetched`). This verifies only the
+  token request, not draft API permissions. `--force-refresh` remains an explicit
+  option; do not delete a cache or refresh automatically for diagnostics.
   It may contact WeChat and requires explicit authorization to test the API.
   It must never print the token.
 - `python3 wechat/tools/wechat_draft.py ip-check` is optional network

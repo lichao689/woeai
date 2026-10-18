@@ -95,11 +95,11 @@ as part of stage-one setup. No live operation is performed by these scripts.
 
 The optional `wechat/.local/account.json` is ignored by Git. It requires
 `app_id` (the account's `wx` plus 16 hexadecimal characters) and
-`credential_source` (`legacy-file` or `network-secret`), and optionally accepts
-`public_draft_mapping_app_id` for a confirmed binding of the approved public
-draft table to its account. Keep actual account IDs
-and all unapproved draft metadata private; never put AppSecret, tokens or extra fields in this
-file. No real account example belongs in the public repository.
+`credential_source` (`legacy-file` or `network-secret`). Keep actual account IDs
+and all draft metadata private; never put AppSecret, tokens or arbitrary fields in
+this file. No real account example belongs in the public repository. The legacy
+`public_draft_mapping_app_id` field is accepted for configuration compatibility
+only; it no longer selects or authorizes any public correspondence table.
 
 `python wechat/tools/wechat_draft.py account-check` validates only this nonsecret
 configuration. It prints presence/source status, without displaying the AppID,
@@ -137,39 +137,28 @@ actual allowed destination and egress, and explicit authorization for live tests
 Never supply an AppSecret in chat or assume an ordinary environment value has
 proxy protection.
 
-Private draft overrides belong in `wechat/.local/registry-drafts.json`, mapping each
-`ref-...` to an object with `media_id` and optional `created_at` / `updated_at`
-strings, an optional confirmed nonnegative integer `article_index`, and an
-optional private `app_id` binding. The legacy key `wechat_draft_media_id` is accepted; if both ID keys are
-present they must agree. Unknown fields are rejected before use or writeback.
-Restore only authorized nonsecret mapping data, retain existing records, and
-keep the file private (0600). Do not fabricate IDs or create replacement drafts
-to compensate for a missing mapping. Successful writes keep the mapping out of
-the public registry and generated backlog. Legacy private records retain the
-existing index-zero convention only for references outside the approved public
-table. Private overrides of any approved public reference must confirm an index;
-copying an ID into private storage does not confirm zero.
+Draft correspondence belongs only in ignored `wechat/.local/registry-drafts.json`.
+Each `ref-...` maps to a nonempty `media_id`, optional historical `created_at` /
+`updated_at` strings, and a privately confirmed nonnegative integer `article_index`
+and `app_id` before live use of an existing target. The legacy ID key
+`wechat_draft_media_id` is accepted only when it agrees with `media_id`. Unknown
+fields, duplicate JSON keys and duplicate confirmed article targets fail closed.
+Two articles in one draft may share a draft ID only with distinct confirmed indices.
 
-The user's 2026-10-07 exception authorizes only the 17-record public array in
-`wechat/data/draft-map.json`, with exactly `publication_ref` and
-`wechat_draft_media_id` per item. The safety checker pins the approved file's
-SHA-256; even changes at that path need renewed approval and a reviewed digest
-update. All other backend data remains private. The runtime validates registered
-references, unique refs/IDs and the exact schema. Private records override the
-public table; corrupt private overrides fail instead of silently selecting a
-different draft.
+The old public correspondence file and its safety-check exemption are removed.
+Runtime lookup never reads it or a generated backlog. A fresh clone without
+private records cannot infer the target; restore authorized records, never create
+replacement drafts to compensate. Copying an ID does not confirm index zero or
+account ownership. An existing target's private account binding must match the
+selected account configuration, and its index must be explicit before credentials
+or networking. Successful writeback preserves both.
 
-The public source has no confirmed article indices. Its dry-run reports
-`action: update`, `article_index: null`, and `article_index_verified: false`;
-it never guesses zero. Before live use, the account owner must confirm the
-target article index and place it in an ignored private override with the same
-draft ID and the account's private `app_id`. Public-source use (including an
-unbound private override for a public ref) also requires
-`public_draft_mapping_app_id` to match the selected `app_id`. Mismatches and
-unknown indices stop before credentials or networking. A successful writeback
-preserves the selected index and private account binding. Migration and local
-lookup do not verify remote existence, current contents, account membership,
-or permission to update; Network secret remains disabled as described above.
+The public [mapping example](../../wechat/data/registry-drafts.example.json) contains
+empty placeholders and is deliberately unusable until populated privately from
+verified records. Keep private files at 0600; do not put AppSecret or tokens in
+mapping files. Migration and local lookup are not live verification or delivery
+authorization. Network-secret remains disabled as described above. Removing the
+current public file does not rewrite prior Git history or remove external copies.
 
 CLI failures use allowlisted diagnostic fields instead of raw exceptions or API
 responses. `wechat_rejected_ip` is emitted only for an integer 40164 with a complete

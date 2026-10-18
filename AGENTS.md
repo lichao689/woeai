@@ -54,12 +54,18 @@ guide and channel inputs. Confirm scope before changing either channel standard.
 2. Read [CONTEXT.md](CONTEXT.md) for project vocabulary and semantic constraints.
    Maintain it when the task changes that vocabulary. Consult relevant ADRs in
    `docs/adr/` if present, and report conflicts rather than silently replacing them.
-3. Choose the task branch below. This guide is the project rule source;
-   `claude.md` and `gemini.md` are full mirrors and must stay byte-identical.
+3. Choose the task branch below. `AGENTS.md` is the single agent entry point;
+   maintain detailed rules in the linked authorities rather than full copies.
    Repository guidance does not grant permission to access credentials, upload,
    create remote drafts, commit, push, or publish beyond the user's authorization.
 
 ## Repository navigation
+
+Use the user's existing primary local WOEAI checkout for ongoing work. Do not
+create another checkout or select a cloud environment unless explicitly requested.
+Prepare the local runtime with `./scripts/setup-local-workflow.sh`; in bash,
+source `scripts/local-workflow-env.sh`. The historically named cloud scripts
+remain shared offline setup/check tools. See the [local workflow guide](project/guides/local-workflow.md).
 
 - `docs/`: public website sources, data, and Sphinx dependencies.
 - `wechat/`: article content, evidence reviews, assets, and existing workflows.
@@ -124,11 +130,13 @@ guide and channel inputs. Confirm scope before changing either channel standard.
 - Detailed procedures are in
   [paper-sources-and-evidence.md](project/guides/paper-sources-and-evidence.md);
   the bullets below are the binding summary.
-- Use the authorized source files actually available in the current workspace.
-  Check ignored `wechat/.local/` sources and their manifests before requesting
-  another copy; journal files may be under `journal-papers/<ZoteroKey>/source.pdf`
-  or `<publication_ref>/source.pdf`. File counts and machine paths are inventory,
-  not permanent project rules. A clone alone does not restore private sources.
+- ChatGPT Library is the primary store for authorized paper sources; local PDFs
+  are caches. Check Library records, later complete versions and ignored
+  `wechat/.local/` cache manifests before requesting another copy. A missing or
+  different-hash cache is not evidence that the user never supplied the paper.
+  Verify identity and completeness; prefer the user's later complete version,
+  preserving earlier versions and disclosed differences. A clone does not restore
+  private sources. Follow the source guide for acquisition and version selection.
 - Verify the paper identity, source version, reuse status, and manifest before
   relying on a PDF. Keep original/source SHA-256 and downloaded-copy SHA-256
   separately labelled; a library transfer hash is not proof of byte identity to
@@ -136,7 +144,7 @@ guide and channel inputs. Confirm scope before changing either channel standard.
 - Use Zotero metadata/attachment records when accessible; the Desktop Local API
   requires the user's actual desktop and is not a cloud prerequisite. Missing
   source evidence is a blocker for full-paper work, never a license to invent it.
-  Follow the paper skill's attachment priority and source-acquisition record.
+  Follow the source guide's version priority and acquisition record.
   Zotero write credentials are only for explicitly requested Zotero item changes;
   ordinary paper reading and page generation use read-only sources and must not
   read those credentials. Handle any credential access through authorized secure
@@ -169,20 +177,18 @@ compatibility views, not additional authorities. After registry edits run
 `python3 tools/publications/registry.py --write` and `--check`. Keep private draft
 IDs in ignored operational storage, never the public registry.
 
-An explicit user approval on 2026-10-07 permits the 17 existing draft mappings
-in `wechat/data/draft-map.json` to be public. This is the sole exception to the
-private draft-ID rule: each array item contains only `publication_ref` and
-`wechat_draft_media_id`. The approved snapshot is pinned by the public-safety
-checker. No account IDs, article indices, timestamps, image paths, API responses,
-credentials, tokens, or other private metadata are approved for this table.
-Changes to the approved records require renewed authorization. Do not copy this
-table into the public registry, backlog, article/review files, or other paths.
+Draft correspondence lives only in ignored `wechat/.local/registry-drafts.json`;
+there is no public mapping or generated-backlog fallback. The former public-table
+exception is retired. Never commit actual draft IDs, article indices or account
+bindings, including in examples or review evidence. A fresh clone cannot recover
+private correspondence from Git.
 
-Runtime lookup prefers ignored private records and falls back to this public
-table. Missing or invalid mappings must not silently create a replacement
-draft. Public records have no confirmed article index; never infer zero.
-Live use requires a privately confirmed account binding and article index;
-offline `update` planning alone does not verify either or authorize a live call.
+Missing or invalid mappings must not silently create a replacement draft. Existing
+targets require a privately confirmed account binding and actual article index;
+an absent index never implies zero. Restore and verify authorized private records
+before live work. Offline planning does not verify current platform state or
+authorize credentials, uploads or draft operations. Current-file cleanup does not
+erase prior public history; history changes need separate authorization.
 
 ## Content production selection
 
@@ -264,8 +270,8 @@ Run from the repository root; inspect script help/source before adding flags.
 
 - **All edits:** `python3 scripts/check-public-safe-content.py` and
   `git diff --check`; inspect the full diff for private material and scope.
-- **Guidance:** verify linked files and commands exist; run
-  `cmp AGENTS.md claude.md` and `cmp AGENTS.md gemini.md` after syncing mirrors.
+- **Guidance:** verify linked files and commands exist, and keep `AGENTS.md`
+  as the single agent entry point with links to each rule's authority.
 - **WeChat-only text/review/assets:** check Markdown image/link paths and evidence
   records. When preparing rendered content, run
   `python3 wechat/tools/wechat_draft.py dry-run --publication-ref <publication_ref>`

@@ -69,6 +69,7 @@ class RuntimeSafetyTests(unittest.TestCase):
         code, output = self.cli("token-check")
         self.assertEqual(code, 0)
         self.assertTrue(output["from_cache"])
+        self.assertEqual(output["stage"], "access_token_cached")
         self.assertFalse(output["network_verified"])
         self.assertNotIn("FAKE_CACHED_TOKEN", json.dumps(output))
         self.http.assert_not_called()
@@ -82,6 +83,7 @@ class RuntimeSafetyTests(unittest.TestCase):
         code, output = self.cli("token-check", "--force-refresh")
         self.assertEqual(code, 0)
         self.assertFalse(output["from_cache"])
+        self.assertEqual(output["stage"], "access_token_fetched")
         self.assertTrue(output["network_verified"])
         self.assertNotIn("FAKE_", json.dumps(output))
         self.http.assert_called_once()
@@ -91,6 +93,9 @@ class RuntimeSafetyTests(unittest.TestCase):
         for code, message, expected in [
             (40164, valid, "192.0.2.1"),
             (40164, "invalid ip 2001:db8::1, not in whitelist rid: synthetic-id", "2001:db8::1"),
+            (40164, "invalid ip ::ffff:192.0.2.1, not in whitelist", "192.0.2.1"),
+            (40164, "invalid ip ::ffff:192.0.2.1 ipv6 ::ffff:192.0.2.1, not in whitelist", "192.0.2.1"),
+            (40164, valid.replace("synthetic-id", "x" * 1000), None),
             (40013, valid, None), ("40164", valid, None), (True, valid, None),
             (40164, valid + " secret=FAKE_ONLY", None),
             (40164, valid.replace("192.0.2.1", "999.1.1.1"), None),

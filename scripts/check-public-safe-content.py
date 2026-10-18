@@ -3,7 +3,6 @@
 
 from __future__ import annotations
 
-import hashlib
 import re
 import sys
 from pathlib import Path
@@ -11,10 +10,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 SCAN_ROOTS = [ROOT / "wechat", ROOT / "docs/source/paper-notes", ROOT / "docs/data", ROOT / "project/research", ROOT / "project/plans"]
-SCAN_ROOTS.append(ROOT / '.agents/skills/wechat-paper')
-# Explicit user approval covers exactly this 17-record, two-field snapshot.
-# Future mapping changes require fresh approval and a reviewed digest update.
-APPROVED_DRAFT_MAP_SHA256 = "8605522556f090dd0d49acc34ca800af802e827b91aa266dc35fdb26e928a7a2"
+SCAN_ROOTS.extend([ROOT / 'project/guides', ROOT / 'project/archive', ROOT / '.agents/skills/wechat-paper'])
 
 SECRET_PATTERNS = [
     ("appsecret", re.compile(r"(?i)appsecret['\"]?\s*[:=]\s*['\"]?[A-Za-z0-9_-]{8,}")),
@@ -182,6 +178,7 @@ TEXT_SUFFIXES = {".json", ".md", ".rst", ".txt", ".yaml", ".yml"}
 TEXT_FILENAMES = {".env"}
 
 IGNORED_DIR_NAMES = {
+    "node_modules",
     ".local",
     "private",
     "review-notes",
@@ -286,22 +283,25 @@ def rtd_deep_dive_layout_findings(path: Path, text: str) -> list[str]:
     return findings
 
 
+MACHINE_PATH_PATTERN = re.compile(
+    r"(?<![A-Za-z0-9])/(?:Users|home|Volumes)/([^/\s`'\"<>]+)/[^\s`'\"<>]*"
+)
+PATH_PLACEHOLDERS = {"...", "user", "username", "example", "volume", "drive", "$USER", "${USER}"}
+
+
 def scan_path(path: Path, root: Path) -> list[str]:
     findings: list[str] = []
     text = path.read_text(encoding="utf-8")
-    approved_draft_map = False
-    if path.resolve() == (ROOT / "wechat/data/draft-map.json").resolve():
-        approved_draft_map = hashlib.sha256(path.read_bytes()).hexdigest() == APPROVED_DRAFT_MAP_SHA256
-        if not approved_draft_map:
-            findings.append("wechat/data/draft-map.json:1: unapproved public draft mapping")
+    for match in MACHINE_PATH_PATTERN.finditer(text):
+        if match[1] not in PATH_PLACEHOLDERS:
+            line_no = text.count("\n", 0, match.start()) + 1
+            findings.append(f"{path.relative_to(ROOT).as_posix()}:{line_no}: private machine path")
     for label, pattern in SECRET_PATTERNS:
         for match in pattern.finditer(text):
             line_no = text.count("\n", 0, match.start()) + 1
             rel = path.relative_to(ROOT).as_posix()
             findings.append(f"{rel}:{line_no}: possible secret pattern ({label})")
     for match in private_backend_matches(text):
-        if approved_draft_map and match.group("field").lower() == "wechat_draft_media_id":
-            continue
         line_no = text.count("\n", 0, match.start()) + 1
         rel = path.relative_to(ROOT).as_posix()
         # Never print the matched value, including for backend response blobs.

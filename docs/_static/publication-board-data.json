@@ -2242,19 +2242,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -2271,10 +2271,6 @@
           {
             "label": "公众号草稿源文件",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-chen2024-POF.md"
-          },
-          {
-            "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-POF.cover-equivalence.review.md"
           },
           {
             "label": "审核记录",
@@ -3122,19 +3118,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -3151,10 +3147,6 @@
           {
             "label": "公众号草稿源文件",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-li2024-POF.md"
-          },
-          {
-            "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-li2024-POF.cover-equivalence.review.md"
           },
           {
             "label": "审核记录",
@@ -3256,19 +3248,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -3286,10 +3278,6 @@
           {
             "label": "公众号草稿源文件",
             "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/draft-public-safe/ref-chen2024-JCP.md"
-          },
-          {
-            "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-chen2024-JCP.cover-equivalence.review.md"
           },
           {
             "label": "审核记录",

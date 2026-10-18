@@ -5585,62 +5585,24 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-14T11:20:06+00:00",
-            "review_path": "wechat/articles/review/ref-chen2024-POF.cover-equivalence.review.md",
+            "recorded_at": "2026-10-18T10:16:02.509583+00:00",
+            "review_path": "project/research/2026-10-18-reader-rollout-batch02.review.md",
             "checks": {
               "source_identity": true,
               "facts": true,
               "public_safety": true,
-              "editorial_taxonomy": true,
-              "exact_direction_field": true,
-              "ai_disclosure_once_at_end": true,
-              "author_fields_unchanged": true,
-              "scientific_content_equivalence": true,
               "offline_preflight": true,
-              "mathjax_svg_render": true,
               "formula_preview": false,
               "figure_preview": false,
               "cover_preview": false
             },
-            "scope": "Independent scoped editorial and cover-route review; all baseline scientific content and source evidence retained through demonstrated equivalence. Final WeChat cover is selected separately from the unchanged RTD cover. New-cover preflight and dry-run passed; body-only academic-clean MathJax SVG output is the independently reviewed content version. No new PDF audit, phone visual acceptance or backend success is asserted here; live operations require their own official readback evidence.",
-            "equivalence": {
-              "baseline_commit": "86bc3ed2354c9e5d296f9b9326bd601f65eede24",
-              "published_content_commit": "264aa01354516784bd51973ae1c9021723e81d8f",
-              "article_sha256": "c124987536ef8b561bc7b739d8770dc11a27c0865f0df1b3dc062f3eb4311bb3",
-              "scientific_review_before_sha256": "6bebaa62d6e19bc08de0128de8167533e78b13b15c54aa3e1afe3f604bc949d5",
-              "scientific_review_after_sha256": "de37ebe93f701e39aa933687ea77b6949107e0bb8c07b228a91dfc49b26b50b4",
-              "new_wechat_cover_path": "wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383-20261014-v5.png",
-              "new_wechat_cover_sha256": "4e107919ed4a97c7903c0d506e321f55f4ba77f8320730682d296ecf80a4fc6f",
-              "original_rtd_cover_path": "wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383.png",
-              "original_rtd_cover_sha256": "550b8519836a240d29ac86bd2fcd697f3319c83eeac41ded73a9a06ed5a32beb"
-            },
-            "offline_counts": {
-              "body_images": 5,
-              "formula_svg": 14
-            },
-            "fingerprint": "af0f1c991229799d58f64287ca71355750c1ef1c3b527678cb5bc7bdd932e426"
+            "scope": "Prior complete scientific source audit and figure calibration retained; current figure-role review found no need to add images. Explicit association and reading-only guides, with original scientific interpretation retained in body; no new full-PDF audit, backend success or phone preview.",
+            "fingerprint": "59d63606356dbbeb8e92875e42caa7dfa5b7595beead868e604e1100ef65ac19"
           },
           "draft_created": {
-            "recorded_at": "2026-10-14T11:18:57+00:00",
-            "operation": "update",
-            "readback_at": "2026-10-14T11:36:00+00:00",
-            "receipt_path": "project/research/2026-10-14-existing17-official-draft-readback.json",
-            "receipt_file_sha256": "d1a72d2f58a0ee4e641e6267d845f22753845d3c475d46656623fbc863009c48",
-            "receipt_entry_sha256": "fb2f39bbec7ce7a77b7a87b2cbbfdfc4ec68870f698e6d934bb708460f507f97",
-            "submitted_input_fingerprint": "959811ae77669635360eef2b6ad7de1981d54aec0090dee974fea2919b5d0030",
-            "submitted_input_fingerprint_kind": "official_executor_body_delivery_input",
-            "checks": {
-              "official_existing_draft_update": true,
-              "final_combined_readback": true,
-              "body_matches_canonical_revision": true,
-              "approved_cover_full_pixels_match": true,
-              "author_preserved": true,
-              "ai_disclosure_unique_at_end": true,
-              "formula_preview": false,
-              "figure_preview": false,
-              "cover_preview": false
-            },
-            "scope": "Verified official existing-draft update only. Scientific verification and actual mobile preview remain independent; prior draft evidence is archived intact."
+            "fingerprint": "a0e776d2c9472403f4c65021a8ea981456cc3644a0803954ab3f91dddac03e6a",
+            "recorded_at": "2026-10-18T10:24:57+00:00",
+            "operation": "update"
           },
           "awaiting_review_before_20261014_editorial_cover_integration": {
             "recorded_at": "2026-10-06T06:40:54+00:00",
@@ -5699,6 +5661,90 @@
             "pending_backend_update": false,
             "backend_updated": false,
             "fingerprint": "a064847c9d34362fc55900a963b2a35a82303335056e25113ab5b72e13820f77"
+          },
+          "awaiting_review_before_reader_batch02_20261018": {
+            "recorded_at": "2026-10-14T11:20:06+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-POF.cover-equivalence.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "editorial_taxonomy": true,
+              "exact_direction_field": true,
+              "ai_disclosure_once_at_end": true,
+              "author_fields_unchanged": true,
+              "scientific_content_equivalence": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Independent scoped editorial and cover-route review; all baseline scientific content and source evidence retained through demonstrated equivalence. Final WeChat cover is selected separately from the unchanged RTD cover. New-cover preflight and dry-run passed; body-only academic-clean MathJax SVG output is the independently reviewed content version. No new PDF audit, phone visual acceptance or backend success is asserted here; live operations require their own official readback evidence.",
+            "equivalence": {
+              "baseline_commit": "86bc3ed2354c9e5d296f9b9326bd601f65eede24",
+              "published_content_commit": "264aa01354516784bd51973ae1c9021723e81d8f",
+              "article_sha256": "c124987536ef8b561bc7b739d8770dc11a27c0865f0df1b3dc062f3eb4311bb3",
+              "scientific_review_before_sha256": "6bebaa62d6e19bc08de0128de8167533e78b13b15c54aa3e1afe3f604bc949d5",
+              "scientific_review_after_sha256": "de37ebe93f701e39aa933687ea77b6949107e0bb8c07b228a91dfc49b26b50b4",
+              "new_wechat_cover_path": "wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383-20261014-v5.png",
+              "new_wechat_cover_sha256": "4e107919ed4a97c7903c0d506e321f55f4ba77f8320730682d296ecf80a4fc6f",
+              "original_rtd_cover_path": "wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383.png",
+              "original_rtd_cover_sha256": "550b8519836a240d29ac86bd2fcd697f3319c83eeac41ded73a9a06ed5a32beb"
+            },
+            "offline_counts": {
+              "body_images": 5,
+              "formula_svg": 14
+            },
+            "fingerprint": "af0f1c991229799d58f64287ca71355750c1ef1c3b527678cb5bc7bdd932e426"
+          },
+          "draft_created_before_reader_batch02_20261018": {
+            "recorded_at": "2026-10-14T11:18:57+00:00",
+            "operation": "update",
+            "readback_at": "2026-10-14T11:36:00+00:00",
+            "receipt_path": "project/research/2026-10-14-existing17-official-draft-readback.json",
+            "receipt_file_sha256": "d1a72d2f58a0ee4e641e6267d845f22753845d3c475d46656623fbc863009c48",
+            "receipt_entry_sha256": "fb2f39bbec7ce7a77b7a87b2cbbfdfc4ec68870f698e6d934bb708460f507f97",
+            "submitted_input_fingerprint": "959811ae77669635360eef2b6ad7de1981d54aec0090dee974fea2919b5d0030",
+            "submitted_input_fingerprint_kind": "official_executor_body_delivery_input",
+            "checks": {
+              "official_existing_draft_update": true,
+              "final_combined_readback": true,
+              "body_matches_canonical_revision": true,
+              "approved_cover_full_pixels_match": true,
+              "author_preserved": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Verified official existing-draft update only. Scientific verification and actual mobile preview remain independent; prior draft evidence is archived intact."
+          },
+          "reader_batch02_delivery_20261018": {
+            "recorded_at": "2026-10-18T10:24:48.089940+00:00",
+            "operation": "update_existing_reader_batch02",
+            "receipt_path": "project/research/2026-10-18-reader-rollout-batch02.safe.json",
+            "receipt_file_sha256": "380a76b55d35990938a993dc7c871971b9f908341713cb025b1a62063c3e82e5",
+            "source_sha256": "dc700e32666bc7546d7b67670f0ffdea8cb474e9c54d917f8370e080042cb348",
+            "submitted_input_fingerprint": "a0e776d2c9472403f4c65021a8ea981456cc3644a0803954ab3f91dddac03e6a",
+            "checks": {
+              "existing_target_identity": true,
+              "approved_title_and_digest": true,
+              "untouched_metadata_preserved": true,
+              "full_approved_text_matches": true,
+              "formulas_and_geometry_match": true,
+              "formula_color_contract": true,
+              "image_identities_alts_and_count_match": true,
+              "existing_image_urls_exactly_preserved": true,
+              "body_links_match_existing_platform_behavior": true,
+              "cover_reference_preserved": true,
+              "original_link_preserved": true,
+              "unique_ai_statement_at_end": true,
+              "all_other_articles_unchanged": true,
+              "catalog_count_unchanged": true,
+              "current_source_matches_submitted": true
+            },
+            "scope": "Current figure-group/read-guide revision and exact existing-draft update/readback only. Existing scientific audit retained; no new full-source audit or actual mobile preview."
           }
         },
         "latest_published_url": "",
@@ -5716,14 +5762,14 @@
           "wechat_draft_created_at": "2026-06-18T18:38:00+08:00"
         },
         "draft_created_at": "2026-06-18T18:38:00+08:00",
-        "draft_updated_at": "2026-10-14T11:18:57+00:00",
+        "draft_updated_at": "2026-10-18T10:24:57+00:00",
         "historical_draft_evidence": {
           "source": "wechat/backlog/selected-papers.yml (pre-migration)",
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。\n2026-10-18 旧稿规则推广第二批：保留已清楚的问题与原选图，修正显式图组/读图信息呈现；待本轮既有草稿同步及手机预览。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-13T03:25:21+00:00",
@@ -7350,62 +7396,24 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-14T11:20:06+00:00",
-            "review_path": "wechat/articles/review/ref-li2024-POF.cover-equivalence.review.md",
+            "recorded_at": "2026-10-18T10:16:06.425123+00:00",
+            "review_path": "project/research/2026-10-18-reader-rollout-batch02.review.md",
             "checks": {
               "source_identity": true,
               "facts": true,
               "public_safety": true,
-              "editorial_taxonomy": true,
-              "exact_direction_field": true,
-              "ai_disclosure_once_at_end": true,
-              "author_fields_unchanged": true,
-              "scientific_content_equivalence": true,
               "offline_preflight": true,
-              "mathjax_svg_render": true,
               "formula_preview": false,
               "figure_preview": false,
               "cover_preview": false
             },
-            "scope": "Independent scoped editorial and cover-route review; all baseline scientific content and source evidence retained through demonstrated equivalence. Final WeChat cover is selected separately from the unchanged RTD cover. New-cover preflight and dry-run passed; body-only academic-clean MathJax SVG output is the independently reviewed content version. No new PDF audit, phone visual acceptance or backend success is asserted here; live operations require their own official readback evidence.",
-            "equivalence": {
-              "baseline_commit": "86bc3ed2354c9e5d296f9b9326bd601f65eede24",
-              "published_content_commit": "264aa01354516784bd51973ae1c9021723e81d8f",
-              "article_sha256": "4ba2751ac7c59edb19ba96cad506db76fa2b68a46a8296111d3ea1f40b5feedd",
-              "scientific_review_before_sha256": "6d3e3b3535204792d147034d3c773f292f6da2a9e3e12dcc2e446eefb41e0d5e",
-              "scientific_review_after_sha256": "873d16eac010fe09164af1408013130c0e2e661a64c2ac0c4b8c4c44f16327dc",
-              "new_wechat_cover_path": "wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-20261014-v5.png",
-              "new_wechat_cover_sha256": "071748abc30f39e9e0491d180df583ee88d066d95e9369b8c0eda398c07bffff",
-              "original_rtd_cover_path": "wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png",
-              "original_rtd_cover_sha256": "33145c5bc11d9185e3114330702ceaad78f6bf52d18287649540affa2dbfbec1"
-            },
-            "offline_counts": {
-              "body_images": 4,
-              "formula_svg": 40
-            },
-            "fingerprint": "eb3041284d2a0eeea3139e38527a145fd303f64ecd44bb8418e59ee55ecacb93"
+            "scope": "Prior complete scientific source audit and figure calibration retained; current figure-role review found no need to add images. Explicit association and reading-only guides, with original scientific interpretation retained in body; no new full-PDF audit, backend success or phone preview.",
+            "fingerprint": "f8beb49dc85c919d9da207491c70034c7469866befd497485352a806f84c5c6a"
           },
           "draft_created": {
-            "recorded_at": "2026-10-14T11:22:53+00:00",
-            "operation": "update",
-            "readback_at": "2026-10-14T11:36:05+00:00",
-            "receipt_path": "project/research/2026-10-14-existing17-official-draft-readback.json",
-            "receipt_file_sha256": "d1a72d2f58a0ee4e641e6267d845f22753845d3c475d46656623fbc863009c48",
-            "receipt_entry_sha256": "b17dd4a30888e70dd55c7ccc922ce0c46055cb3da4f2b8baad76a9fec065a73e",
-            "submitted_input_fingerprint": "2b5f6ad2975ee0f65fe0d8a58071ce2b1c03c7c1cd77fdfe8a09bfde0745d651",
-            "submitted_input_fingerprint_kind": "official_executor_body_delivery_input",
-            "checks": {
-              "official_existing_draft_update": true,
-              "final_combined_readback": true,
-              "body_matches_canonical_revision": true,
-              "approved_cover_full_pixels_match": true,
-              "author_preserved": true,
-              "ai_disclosure_unique_at_end": true,
-              "formula_preview": false,
-              "figure_preview": false,
-              "cover_preview": false
-            },
-            "scope": "Verified official existing-draft update only. Scientific verification and actual mobile preview remain independent; prior draft evidence is archived intact."
+            "fingerprint": "6295544ccbca8068630c78a94a4d8ab2a772b9cf812c6da86992a7e47d21198e",
+            "recorded_at": "2026-10-18T10:28:00+00:00",
+            "operation": "update"
           },
           "awaiting_review_before_20261014_editorial_cover_integration": {
             "recorded_at": "2026-10-06T05:52:28+00:00",
@@ -7464,6 +7472,90 @@
             "pending_backend_update": false,
             "backend_updated": false,
             "fingerprint": "4ceb8e27dbc45a4ef6df0e7bba15f7d6a0695441d757ca09d6d86820e01a53c3"
+          },
+          "awaiting_review_before_reader_batch02_20261018": {
+            "recorded_at": "2026-10-14T11:20:06+00:00",
+            "review_path": "wechat/articles/review/ref-li2024-POF.cover-equivalence.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "editorial_taxonomy": true,
+              "exact_direction_field": true,
+              "ai_disclosure_once_at_end": true,
+              "author_fields_unchanged": true,
+              "scientific_content_equivalence": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Independent scoped editorial and cover-route review; all baseline scientific content and source evidence retained through demonstrated equivalence. Final WeChat cover is selected separately from the unchanged RTD cover. New-cover preflight and dry-run passed; body-only academic-clean MathJax SVG output is the independently reviewed content version. No new PDF audit, phone visual acceptance or backend success is asserted here; live operations require their own official readback evidence.",
+            "equivalence": {
+              "baseline_commit": "86bc3ed2354c9e5d296f9b9326bd601f65eede24",
+              "published_content_commit": "264aa01354516784bd51973ae1c9021723e81d8f",
+              "article_sha256": "4ba2751ac7c59edb19ba96cad506db76fa2b68a46a8296111d3ea1f40b5feedd",
+              "scientific_review_before_sha256": "6d3e3b3535204792d147034d3c773f292f6da2a9e3e12dcc2e446eefb41e0d5e",
+              "scientific_review_after_sha256": "873d16eac010fe09164af1408013130c0e2e661a64c2ac0c4b8c4c44f16327dc",
+              "new_wechat_cover_path": "wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-20261014-v5.png",
+              "new_wechat_cover_sha256": "071748abc30f39e9e0491d180df583ee88d066d95e9369b8c0eda398c07bffff",
+              "original_rtd_cover_path": "wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png",
+              "original_rtd_cover_sha256": "33145c5bc11d9185e3114330702ceaad78f6bf52d18287649540affa2dbfbec1"
+            },
+            "offline_counts": {
+              "body_images": 4,
+              "formula_svg": 40
+            },
+            "fingerprint": "eb3041284d2a0eeea3139e38527a145fd303f64ecd44bb8418e59ee55ecacb93"
+          },
+          "draft_created_before_reader_batch02_20261018": {
+            "recorded_at": "2026-10-14T11:22:53+00:00",
+            "operation": "update",
+            "readback_at": "2026-10-14T11:36:05+00:00",
+            "receipt_path": "project/research/2026-10-14-existing17-official-draft-readback.json",
+            "receipt_file_sha256": "d1a72d2f58a0ee4e641e6267d845f22753845d3c475d46656623fbc863009c48",
+            "receipt_entry_sha256": "b17dd4a30888e70dd55c7ccc922ce0c46055cb3da4f2b8baad76a9fec065a73e",
+            "submitted_input_fingerprint": "2b5f6ad2975ee0f65fe0d8a58071ce2b1c03c7c1cd77fdfe8a09bfde0745d651",
+            "submitted_input_fingerprint_kind": "official_executor_body_delivery_input",
+            "checks": {
+              "official_existing_draft_update": true,
+              "final_combined_readback": true,
+              "body_matches_canonical_revision": true,
+              "approved_cover_full_pixels_match": true,
+              "author_preserved": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Verified official existing-draft update only. Scientific verification and actual mobile preview remain independent; prior draft evidence is archived intact."
+          },
+          "reader_batch02_delivery_20261018": {
+            "recorded_at": "2026-10-18T10:27:49.462636+00:00",
+            "operation": "update_existing_reader_batch02",
+            "receipt_path": "project/research/2026-10-18-reader-rollout-batch02.safe.json",
+            "receipt_file_sha256": "380a76b55d35990938a993dc7c871971b9f908341713cb025b1a62063c3e82e5",
+            "source_sha256": "712a87d30210955686558b086f455d8cf3ee6d6298ce7ea535a719439a6b77a4",
+            "submitted_input_fingerprint": "6295544ccbca8068630c78a94a4d8ab2a772b9cf812c6da86992a7e47d21198e",
+            "checks": {
+              "existing_target_identity": true,
+              "approved_title_and_digest": true,
+              "untouched_metadata_preserved": true,
+              "full_approved_text_matches": true,
+              "formulas_and_geometry_match": true,
+              "formula_color_contract": true,
+              "image_identities_alts_and_count_match": true,
+              "existing_image_urls_exactly_preserved": true,
+              "body_links_match_existing_platform_behavior": true,
+              "cover_reference_preserved": true,
+              "original_link_preserved": true,
+              "unique_ai_statement_at_end": true,
+              "all_other_articles_unchanged": true,
+              "catalog_count_unchanged": true,
+              "current_source_matches_submitted": true
+            },
+            "scope": "Current figure-group/read-guide revision and exact existing-draft update/readback only. Existing scientific audit retained; no new full-source audit or actual mobile preview."
           }
         },
         "latest_published_url": "",
@@ -7485,14 +7577,14 @@
           "wechat_draft_created_at": "2026-06-10T12:12:10+08:00"
         },
         "draft_created_at": "2026-06-10T12:12:10+08:00",
-        "draft_updated_at": "2026-10-14T11:22:53+00:00",
+        "draft_updated_at": "2026-10-18T10:28:00+00:00",
         "historical_draft_evidence": {
           "source": "wechat/backlog/selected-papers.yml (pre-migration)",
           "status": "ready_to_publish",
           "content_version": "unknown",
           "preview_confirmed": false
         },
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。\n2026-10-18 旧稿规则推广第二批：保留已清楚的问题与原选图，修正显式图组/读图信息呈现；待本轮既有草稿同步及手机预览。",
         "confirmed_draft_update_history": [
           {
             "event_at": "2026-10-12T14:18:00+00:00",
@@ -7818,40 +7910,19 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-14T11:20:06+00:00",
-            "review_path": "wechat/articles/review/ref-chen2024-JCP.cover-equivalence.review.md",
+            "recorded_at": "2026-10-18T10:16:00.386500+00:00",
+            "review_path": "project/research/2026-10-18-reader-rollout-batch02.review.md",
             "checks": {
               "source_identity": true,
               "facts": true,
               "public_safety": true,
-              "editorial_taxonomy": true,
-              "exact_direction_field": true,
-              "ai_disclosure_once_at_end": true,
-              "author_fields_unchanged": true,
-              "scientific_content_equivalence": true,
               "offline_preflight": true,
-              "mathjax_svg_render": true,
               "formula_preview": false,
               "figure_preview": false,
               "cover_preview": false
             },
-            "scope": "Independent scoped editorial and cover-route review; all baseline scientific content and source evidence retained through demonstrated equivalence. Final WeChat cover is selected separately from the unchanged RTD cover. New-cover preflight and dry-run passed; body-only academic-clean MathJax SVG output is the independently reviewed content version. No new PDF audit, phone visual acceptance or backend success is asserted here; live operations require their own official readback evidence.",
-            "equivalence": {
-              "baseline_commit": "86bc3ed2354c9e5d296f9b9326bd601f65eede24",
-              "published_content_commit": "264aa01354516784bd51973ae1c9021723e81d8f",
-              "article_sha256": "cd88085b83c56be10a00fc701e443e329ec7079e0e691f97d0b405c56082c98b",
-              "scientific_review_before_sha256": "2d56bf3b71e26f992399d6f1b7a1195b12ad0da9a3087f6592a24e5f8a1b8f85",
-              "scientific_review_after_sha256": "547137d61133f536cc758e3dcac0cb5e99ee3a1f5da3f28fc640ecef11696943",
-              "new_wechat_cover_path": "wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-20261014-badge.png",
-              "new_wechat_cover_sha256": "38454c83607a00b333d375424a14d3f7103f7371c4fbee088e2c28c03144bf1f",
-              "original_rtd_cover_path": "wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png",
-              "original_rtd_cover_sha256": "eddb9ab8a43ecb5439c8968dd28f62d89a1074bd4d81db91019919fabe1793d0"
-            },
-            "offline_counts": {
-              "body_images": 5,
-              "formula_svg": 23
-            },
-            "fingerprint": "4fba5c750ca5dd4621a2fc45585cdda35ffa92537f199441effbf8cf97124f8e"
+            "scope": "Prior complete scientific source audit and figure calibration retained; current figure-role review found no need to add images. Explicit association and reading-only guides, with original scientific interpretation retained in body; no new full-PDF audit, backend success or phone preview.",
+            "fingerprint": "7aec51b5175ffcaf0ba8da26182fef8140e5fa63696b7cd372c4d5ebcdd698d0"
           },
           "previous_awaiting_review_before_cover_v2": {
             "recorded_at": "2026-10-07",
@@ -7868,26 +7939,9 @@
             "fingerprint": "1c7958043e4ba5dad918811fd8460d849fc53907938508611d4ba90cc0d2793d"
           },
           "draft_created": {
-            "recorded_at": "2026-10-14T10:43:49+00:00",
-            "operation": "update",
-            "readback_at": "2026-10-14T11:35:38+00:00",
-            "receipt_path": "project/research/2026-10-14-existing17-official-draft-readback.json",
-            "receipt_file_sha256": "d1a72d2f58a0ee4e641e6267d845f22753845d3c475d46656623fbc863009c48",
-            "receipt_entry_sha256": "64d90454343fc036b21f998b7e7202fc6cf2d6f54e461cfcb7199719e9b1482f",
-            "submitted_input_fingerprint": "388cf22edf59ef54951dfef79f589ccf69591aa73d023338fc8ee97ea6cd56d8",
-            "submitted_input_fingerprint_kind": "official_executor_body_delivery_input",
-            "checks": {
-              "official_existing_draft_update": true,
-              "final_combined_readback": true,
-              "body_matches_canonical_revision": true,
-              "approved_cover_full_pixels_match": true,
-              "author_preserved": true,
-              "ai_disclosure_unique_at_end": true,
-              "formula_preview": false,
-              "figure_preview": false,
-              "cover_preview": false
-            },
-            "scope": "Verified official existing-draft update only. Scientific verification and actual mobile preview remain independent; prior draft evidence is archived intact."
+            "fingerprint": "c91bd0e669d1c7556964972a453a90a607ade5bcfa928072c5d249bcbf6827a3",
+            "recorded_at": "2026-10-18T10:19:52+00:00",
+            "operation": "update"
           },
           "previous_awaiting_review_before_natural_edit": {
             "recorded_at": "2026-10-11T13:36:01+00:00",
@@ -7984,6 +8038,90 @@
             "pending_backend_update": false,
             "backend_updated": false,
             "fingerprint": "9ee30f198cf0ddeca67a9f3d653c92d364083f03ca8a5cfa32b55a9b5c19e263"
+          },
+          "awaiting_review_before_reader_batch02_20261018": {
+            "recorded_at": "2026-10-14T11:20:06+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.cover-equivalence.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "editorial_taxonomy": true,
+              "exact_direction_field": true,
+              "ai_disclosure_once_at_end": true,
+              "author_fields_unchanged": true,
+              "scientific_content_equivalence": true,
+              "offline_preflight": true,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Independent scoped editorial and cover-route review; all baseline scientific content and source evidence retained through demonstrated equivalence. Final WeChat cover is selected separately from the unchanged RTD cover. New-cover preflight and dry-run passed; body-only academic-clean MathJax SVG output is the independently reviewed content version. No new PDF audit, phone visual acceptance or backend success is asserted here; live operations require their own official readback evidence.",
+            "equivalence": {
+              "baseline_commit": "86bc3ed2354c9e5d296f9b9326bd601f65eede24",
+              "published_content_commit": "264aa01354516784bd51973ae1c9021723e81d8f",
+              "article_sha256": "cd88085b83c56be10a00fc701e443e329ec7079e0e691f97d0b405c56082c98b",
+              "scientific_review_before_sha256": "2d56bf3b71e26f992399d6f1b7a1195b12ad0da9a3087f6592a24e5f8a1b8f85",
+              "scientific_review_after_sha256": "547137d61133f536cc758e3dcac0cb5e99ee3a1f5da3f28fc640ecef11696943",
+              "new_wechat_cover_path": "wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-20261014-badge.png",
+              "new_wechat_cover_sha256": "38454c83607a00b333d375424a14d3f7103f7371c4fbee088e2c28c03144bf1f",
+              "original_rtd_cover_path": "wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png",
+              "original_rtd_cover_sha256": "eddb9ab8a43ecb5439c8968dd28f62d89a1074bd4d81db91019919fabe1793d0"
+            },
+            "offline_counts": {
+              "body_images": 5,
+              "formula_svg": 23
+            },
+            "fingerprint": "4fba5c750ca5dd4621a2fc45585cdda35ffa92537f199441effbf8cf97124f8e"
+          },
+          "draft_created_before_reader_batch02_20261018": {
+            "recorded_at": "2026-10-14T10:43:49+00:00",
+            "operation": "update",
+            "readback_at": "2026-10-14T11:35:38+00:00",
+            "receipt_path": "project/research/2026-10-14-existing17-official-draft-readback.json",
+            "receipt_file_sha256": "d1a72d2f58a0ee4e641e6267d845f22753845d3c475d46656623fbc863009c48",
+            "receipt_entry_sha256": "64d90454343fc036b21f998b7e7202fc6cf2d6f54e461cfcb7199719e9b1482f",
+            "submitted_input_fingerprint": "388cf22edf59ef54951dfef79f589ccf69591aa73d023338fc8ee97ea6cd56d8",
+            "submitted_input_fingerprint_kind": "official_executor_body_delivery_input",
+            "checks": {
+              "official_existing_draft_update": true,
+              "final_combined_readback": true,
+              "body_matches_canonical_revision": true,
+              "approved_cover_full_pixels_match": true,
+              "author_preserved": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Verified official existing-draft update only. Scientific verification and actual mobile preview remain independent; prior draft evidence is archived intact."
+          },
+          "reader_batch02_delivery_20261018": {
+            "recorded_at": "2026-10-18T10:19:52.381846+00:00",
+            "operation": "update_existing_reader_batch02",
+            "receipt_path": "project/research/2026-10-18-reader-rollout-batch02.safe.json",
+            "receipt_file_sha256": "380a76b55d35990938a993dc7c871971b9f908341713cb025b1a62063c3e82e5",
+            "source_sha256": "8cc9e30f16f513c6e57aea205ed89de6fe3c0850b78bf8a3701070133a9334e1",
+            "submitted_input_fingerprint": "c91bd0e669d1c7556964972a453a90a607ade5bcfa928072c5d249bcbf6827a3",
+            "checks": {
+              "existing_target_identity": true,
+              "approved_title_and_digest": true,
+              "untouched_metadata_preserved": true,
+              "full_approved_text_matches": true,
+              "formulas_and_geometry_match": true,
+              "formula_color_contract": true,
+              "image_identities_alts_and_count_match": true,
+              "existing_image_urls_exactly_preserved": true,
+              "body_links_match_existing_platform_behavior": true,
+              "cover_reference_preserved": true,
+              "original_link_preserved": true,
+              "unique_ai_statement_at_end": true,
+              "all_other_articles_unchanged": true,
+              "catalog_count_unchanged": true,
+              "current_source_matches_submitted": true
+            },
+            "scope": "Current figure-group/read-guide revision and exact existing-draft update/readback only. Existing scientific audit retained; no new full-source audit or actual mobile preview."
           }
         },
         "latest_published_url": "",
@@ -8005,7 +8143,7 @@
           "wechat_draft_created_at": "2026-06-10T20:04:58+08:00"
         },
         "draft_created_at": "2026-06-10T20:04:58+08:00",
-        "draft_updated_at": "2026-10-14T10:43:49+00:00",
+        "draft_updated_at": "2026-10-18T10:19:52+00:00",
         "historical_draft_evidence": {
           "source": "wechat/backlog/selected-papers.yml (pre-migration)",
           "status": "ready_to_publish",
@@ -8021,7 +8159,7 @@
             "resolution": "unresolved"
           }
         ],
-        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
+        "revision_note": "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。\n2026-10-18 旧稿规则推广第二批：保留已清楚的问题与原选图，修正显式图组/读图信息呈现；待本轮既有草稿同步及手机预览。",
         "previous_confirmed_draft_update": {
           "event_at": "2026-10-06T17:51:36+00:00",
           "reported_at": "2026-10-06T17:52:00+00:00",

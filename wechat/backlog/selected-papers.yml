@@ -88,10 +88,10 @@ items:
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
+    revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。\n2026-10-18 旧稿规则推广第二批：保留已清楚的问题与原选图，修正显式图组/读图信息呈现；待本轮既有草稿同步及手机预览。"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T12:12:10+08:00"
-    wechat_draft_updated_at: "2026-10-14T11:22:53+00:00"
+    wechat_draft_updated_at: "2026-10-18T10:28:00+00:00"
   - publication_ref: ref-chen2024-JCP
     zotero_key: "Y76UWP9R"
     title: "A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation"
@@ -103,10 +103,10 @@ items:
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
+    revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。\n2026-10-18 旧稿规则推广第二批：保留已清楚的问题与原选图，修正显式图组/读图信息呈现；待本轮既有草稿同步及手机预览。"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:04:58+08:00"
-    wechat_draft_updated_at: "2026-10-14T10:43:49+00:00"
+    wechat_draft_updated_at: "2026-10-18T10:19:52+00:00"
   - publication_ref: ref-wang2024-ES
     zotero_key: "3HGIR6QR"
     title: "A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES"
@@ -268,10 +268,10 @@ items:
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
+    revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。\n2026-10-18 旧稿规则推广第二批：保留已清楚的问题与原选图，修正显式图组/读图信息呈现；待本轮既有草稿同步及手机预览。"
     publication_history: []
     wechat_draft_created_at: "2026-06-18T18:38:00+08:00"
-    wechat_draft_updated_at: "2026-10-14T11:18:57+00:00"
+    wechat_draft_updated_at: "2026-10-18T10:24:57+00:00"
   - publication_ref: ref-tang2024-POF
     zotero_key: "FVGTMSEA"
     title: "Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework"

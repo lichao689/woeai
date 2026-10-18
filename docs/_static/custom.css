@@ -239,8 +239,10 @@
 .woeai-home-page .section-intro { font-size: 15px; color: var(--home-muted); max-width: 780px; margin: -8px 0 28px; }
 .woeai-home-page .direction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .woeai-home-page .direction-card { min-width: 0; border: 1px solid var(--home-line); background: white; }
-.woeai-home-page .direction-image { height: 222px; display: flex; align-items: center; justify-content: center; padding: 20px; background: #edf2f2; border-bottom: 1px solid var(--home-line); }
-.woeai-home-page .direction-image img { max-height: 100%; width: 100%; object-fit: contain; }
+.woeai-home-page .direction-figure { border-bottom: 1px solid var(--home-line); background: #fafbf8; }
+.woeai-home-page .direction-image { width: 100%; aspect-ratio: 1440 / 811; }
+.woeai-home-page .direction-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.woeai-home-page .direction-figure figcaption { padding: 10px 20px 12px; font-size: 11px; line-height: 1.6; color: var(--home-muted); }
 .woeai-home-page .direction-body { padding: 28px 30px 24px; }
 .woeai-home-page .card-index { font-size: 10px; letter-spacing: .1em; color: var(--home-muted); margin-bottom: 8px; }
 .woeai-home-page .direction-body h3 { font-size: 25px; margin: 0 0 12px; }
@@ -308,7 +310,6 @@
     .woeai-home-page .section-heading h2 { font-size: 26px; }
     .woeai-home-page .home-section { padding: 42px 0; }
     .woeai-home-page .direction-body { padding: 22px; }
-    .woeai-home-page .direction-image { height: 190px; }
     .woeai-home-page .direction-body h3 { font-size: 23px; }
     .woeai-home-page .application-grid { gap: 22px; }
     .woeai-home-page .application-grid h3 { font-size: 18px; }
@@ -337,7 +338,6 @@
     .woeai-home-page .hero-platform figcaption { font-size: 9px; }
     .woeai-home-page .visual-note { font-size: 10px; bottom: 1px; max-width: 48%; }
     .woeai-home-page .direction-grid, .woeai-home-page .work-grid, .woeai-home-page .application-grid, .woeai-home-page .contact-section { grid-template-columns: 1fr; }
-    .woeai-home-page .direction-image { height: 200px; }
     .woeai-home-page .direction-body > p:not(.card-index), .woeai-home-page .work-body > p:not(.work-tag):not(.work-venue), .woeai-home-page .application-grid p, .woeai-home-page .contact-copy > p:not(.eyebrow), .woeai-home-page .section-intro { font-size: 16px; }
     .woeai-home-page .work-venue { min-height: 0; }
     .woeai-home-page .work-card figure img { height: 200px; }

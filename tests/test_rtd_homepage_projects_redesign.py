@@ -65,6 +65,18 @@ class RTDHomepageProjectsRedesignTests(unittest.TestCase):
         self.assertNotIn('招生与联系', index)
         self.assertTrue((SOURCE / 'Recruitment.rst').is_file())
 
+    def test_direction_concepts_are_explicitly_illustrative_in_both_languages(self) -> None:
+        chinese = read(INDEX)
+        english = read(SOURCE / '_templates/en-home.html')
+        for name in ('research-structural-wind-concept-v1.webp', 'research-marine-structures-concept-v1.webp'):
+            self.assertEqual(chinese.count(name), 1)
+            self.assertEqual(english.count(name), 1)
+            self.assertTrue((ROOT / 'docs/_static/home' / name).is_file())
+        self.assertEqual(chinese.count('AI 生成的科研概念示意 · 非研究数据</figcaption>'), 2)
+        self.assertEqual(english.count('AI-generated research concept · not research data</figcaption>'), 2)
+        self.assertIn('aspect-ratio: 1440 / 811', read(ROOT / 'docs/_static/custom.css'))
+        self.assertNotIn('实验室', chinese)
+
     def test_projects_page_is_removed_from_navigation_and_source_tree(self) -> None:
         index = read(INDEX)
 

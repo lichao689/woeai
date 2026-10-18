@@ -16,6 +16,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
+body_images_upload_approved: true
 ---
 
 # ref-zhang2023-ES 本地制作与来源记录
@@ -118,3 +119,7 @@ rtd_page_checked: false
 RTD仅插入顶部采用封面块；公众号MD及全部33幅原图逐字节保持已审checkpoint01。主review仅增补两渠道封面路径及本段范围记录，既有事实、作者和许可／预览布尔不变；可精确逆变换还原三份已审文本。
 
 当前是本地网站接入候选，不将封面采用视为正文图上传、草稿创建、main推送或发布批准。完整全站标准门禁与实际桌面／390px视口另验；真实手机浅深色、后台与发布均未执行，不标记verified或可发布。
+
+## 2026-10-18 本轮原草稿图片授权
+
+用户已明确授权制作清单旧稿规则推广及既有草稿更新。本批新增上传2幅既有批准公共原图，其余图片、封面和原文链接复用。该字段只记录本轮上传授权，不追改历史版权/手机状态，不授权新建、发布或群发。定向内容证据见`ref-zhang2023-ES.reader-batch05-20261018.review.md`。共享review的权限记录改变不构成RTD重新审核，原RTD awaiting_audit状态和旧证据保持。

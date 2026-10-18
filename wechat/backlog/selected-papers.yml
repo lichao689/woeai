@@ -121,7 +121,7 @@ items:
     revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:06:35+08:00"
-    wechat_draft_updated_at: "2026-10-14T11:21:54+00:00"
+    wechat_draft_updated_at: "2026-10-18T11:36:14+00:00"
   - publication_ref: ref-tang2025-JBE
     zotero_key: "4BCF65NB"
     title: "Training and application of graph neural networks for predicting structural responses targeted at tall building structures"
@@ -226,7 +226,7 @@ items:
     revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:05:45+08:00"
-    wechat_draft_updated_at: "2026-10-14T11:03:46+00:00"
+    wechat_draft_updated_at: "2026-10-18T11:36:15+00:00"
   - publication_ref: ref-chen2022-JWEIA
     zotero_key: "DD8PJ6PS"
     title: "Consistency improved random flow generation method for large eddy simulation of atmospheric boundary layer"
@@ -286,7 +286,7 @@ items:
     revision_note: "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
     publication_history: []
     wechat_draft_created_at: "2026-10-15T09:39:08+00:00"
-    wechat_draft_updated_at: "2026-10-15T09:39:08+00:00"
+    wechat_draft_updated_at: "2026-10-18T11:36:13+00:00"
   - publication_ref: ref-he2024-JBE
     zotero_key: "YMKXLNSP"
     title: "Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper"
@@ -331,7 +331,7 @@ items:
     revision_note: "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；待准确目标下的后台同步。既有正文图上传许可缺口仍保留。\n2026-10-17 既有草稿分类标签同步及官方回读19/19通过；复用既有媒体，零上传/新建/发布。当前来源SHA匹配冻结源稿。"
     publication_history: []
     wechat_draft_created_at: "2026-10-15T09:36:25+00:00"
-    wechat_draft_updated_at: "2026-10-15T09:36:25+00:00"
+    wechat_draft_updated_at: "2026-10-18T11:36:16+00:00"
   - publication_ref: ref-zhang2023-S
     zotero_key: "TYK2GQCU"
     title: "Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra"
@@ -346,7 +346,7 @@ items:
     revision_note: "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
     publication_history: []
     wechat_draft_created_at: "2026-10-15T10:15:49+00:00"
-    wechat_draft_updated_at: "2026-10-15T10:15:49+00:00"
+    wechat_draft_updated_at: "2026-10-18T11:36:17+00:00"
   - publication_ref: ref-wang2023-JWEIA
     zotero_key: "GKUAVJEK"
     title: "Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method"
@@ -361,7 +361,7 @@ items:
     revision_note: "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
     publication_history: []
     wechat_draft_created_at: "2026-10-15T01:33:04+00:00"
-    wechat_draft_updated_at: "2026-10-15T01:33:04+00:00"
+    wechat_draft_updated_at: "2026-10-18T11:36:18+00:00"
   - publication_ref: ref-zheng2023-JRSE
     zotero_key: "TQ9RNRCC"
     title: "Wind tunnel and wave flume testing on directionality dynamic responses of a 10 MW Y-shaped semi-submersible wind turbine"
@@ -391,7 +391,7 @@ items:
     revision_note: "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
     publication_history: []
     wechat_draft_created_at: "2026-10-15T10:17:05+00:00"
-    wechat_draft_updated_at: "2026-10-15T10:17:05+00:00"
+    wechat_draft_updated_at: "2026-10-18T11:36:19+00:00"
   - publication_ref: ref-feng2023-HKXYGC
     zotero_key: "FT67Z85H"
     title: "基于数值风洞试验的核电厂微地形风场分析与验证"
@@ -406,7 +406,7 @@ items:
     revision_note: "官方接口已创建一份草稿并逐篇回读确认正文、封面、作者、来源链接和末尾唯一AI声明。末次全目录复核中断，不宣称全目录最终完整；实际手机浅色/深色预览及发布尚未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
     publication_history: []
     wechat_draft_created_at: "2026-10-14T13:55:28+00:00"
-    wechat_draft_updated_at: "2026-10-14T13:55:28+00:00"
+    wechat_draft_updated_at: "2026-10-18T11:36:19+00:00"
   - publication_ref: ref-zhao2023-GYJZ
     zotero_key: "R2C3HY74"
     title: "基于首次超越破坏的输电塔强风易损性分析"
@@ -421,7 +421,7 @@ items:
     revision_note: "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。平台移除正文知网超链接，提交版本有证据，正文和首发版本匹配，底部RTD原文链接正常；不宣称返回的知网href保留。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
     publication_history: []
     wechat_draft_created_at: "2026-10-15T01:11:46+00:00"
-    wechat_draft_updated_at: "2026-10-15T01:11:46+00:00"
+    wechat_draft_updated_at: "2026-10-18T11:36:20+00:00"
   - publication_ref: ref-yang2022-AS
     zotero_key: "WUGUPVR4"
     title: "Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses"

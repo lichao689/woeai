@@ -16,6 +16,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
+body_images_upload_approved: true
 ---
 
 # ref-zheng2023-MS 内容与证据自查记录
@@ -104,3 +105,7 @@ rtd_page_checked: false
 本次RTD仅增加顶部封面指令，精确删除新增块即恢复checkpoint02 RST `3748fca0b440403609ff73436abfebb2eb38cbfee5085689b04641069a390063`；公众号MD `a11ac4465fd30c402b6946f23e670316206a439cf38bd05392ae3e6c06dfebe7` 与18原图逐字节不变，作者与唯一AI声明不变。主review只新增两封面路径并保留历史补记，不更改上传许可或任何实际预览标志。
 
 当前仅为独立网站接入候选。正式公众号正文图上传未批准，官方preflight/dry-run应继续阻断；不为通过门禁补造许可。用户封面采用不等于后台写入、手机预览、main推送或发布批准。RTD全站构建、浏览器和公众号后续验收各自独立记录。
+
+## 2026-10-18 本轮原草稿图片授权
+
+用户已明确授权制作清单旧稿规则推广及既有草稿更新。本批新增上传2幅既有批准公共原图，其余图片、封面和原文链接复用。该字段只记录本轮上传授权，不追改历史版权/手机状态，不授权新建、发布或群发。定向内容证据见`ref-zheng2023-MS.reader-batch05-20261018.review.md`。共享review的权限记录改变不构成RTD重新审核，原RTD awaiting_audit状态和旧证据保持。

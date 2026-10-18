@@ -28,10 +28,10 @@ items:
     publication_mode: "first_publish"
     previous_published_url: ""
     latest_published_url: ""
-    revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
+    revision_note: "现有原草稿的正文与17张批准封面均已由官方接口更新并逐篇最终只读回核；作者设置保持，AI声明每篇唯一。实际手机浅色/深色预览尚未执行，未发布。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。\n2026-10-18 旧稿规则推广首批：保留清楚的问题/摘要/结尾，补原图13/18并纠正图14读图行；待本轮准确原草稿同步及手机预览。\n2026-10-18 首批BE规则推广已更新准确原草稿一次并官方回查通过；新增两图，保留原封面与原文链接。无新建/发布/群发，实际手机预览待人工。"
     publication_history: []
     wechat_draft_created_at: "2026-06-10T20:06:05+08:00"
-    wechat_draft_updated_at: "2026-10-14T11:04:25+00:00"
+    wechat_draft_updated_at: "2026-10-18T10:06:36+00:00"
   - publication_ref: ref-he2026-OE
     zotero_key: "4FX43CFT"
     title: "Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks"

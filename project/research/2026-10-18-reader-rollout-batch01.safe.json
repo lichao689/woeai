@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "publication_ref": "ref-zhao2026-BE",
+      "title": "数值风洞 | 卫星影像怎样转成风环境计算可用的城市几何？",
+      "checked_at": "2026-10-18T10:05:09.935574+00:00",
+      "operation": "update_existing_reader_batch01",
+      "ok": true,
+      "checks": {
+        "existing_target_identity": true,
+        "approved_title_and_digest": true,
+        "untouched_metadata_preserved": true,
+        "full_approved_text_matches": true,
+        "formulas_and_geometry_match": true,
+        "formula_color_contract": true,
+        "image_identities_alts_and_count_match": true,
+        "existing_image_urls_exactly_preserved": true,
+        "body_links_match_existing_platform_behavior": true,
+        "cover_reference_preserved": true,
+        "original_link_preserved": true,
+        "unique_ai_statement_at_end": true,
+        "all_other_articles_unchanged": true,
+        "catalog_count_unchanged": true,
+        "current_source_matches_submitted": true
+      },
+      "source_sha256": "be205d17b5865ead87b3357efae24ebe7aa4bcafd99d8bbcbdc5fb8ac1bbedb1",
+      "submitted_input_fingerprint": "cd86eab6668bb8e929dbeb76d56fd6a51cbb94ecc70d48157270f14478c14e73",
+      "submitted_body_sha256": "6b6c879edb5d62ad1676d53e676fe8230654b151e6f9c8ae04bb3de38f817cba",
+      "readback_body_sha256": "78aa5d18ba3c395d9b6708fac7453aa19392dd966c3c5a46c433bd7405a3a69a",
+      "body_images": 6,
+      "formula_svgs": 17,
+      "new_body_image_uploads": 2,
+      "platform_cdn_derivatives": 2,
+      "platform_processing_scope": "New uploaded image URLs may become HTTPS and size /640 instead of upload URL /0; same CDN image identifier and query retained. URL derivative identity does not assert full pixel identity.",
+      "draft_count_before": 47,
+      "draft_count_after": 47,
+      "other_articles_checked": 46,
+      "new_drafts": 0,
+      "cover_uploaded": false,
+      "actual_phone_preview": false,
+      "published": false,
+      "mass_sent": false,
+      "external_doi_anchor_removed_by_platform": false,
+      "doi_visible_text_preserved": true,
+      "update_requests_total": 1,
+      "acknowledged_at": "2026-10-18T10:04:57.129627+00:00",
+      "authorization_scope": "Owner authorized staged rule rollout to included existing introductions; content independently reviewed in this batch, not a previously user-previewed v2."
+    }
+  ],
+  "scope": "BE source and exact existing draft only; original cover/media and bottom source link retained; no duplicate, phone preview or publication."
+}

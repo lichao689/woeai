@@ -362,19 +362,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -395,7 +395,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BS.cover-equivalence.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zhao2026-BS.reader-v2-20261018.review.md"
           },
           {
             "label": "审核记录",
@@ -4309,19 +4309,19 @@
             "key": "formula_preview",
             "label": "公式预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "figure_preview",
             "label": "插图预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           },
           {
             "key": "cover_preview",
             "label": "封面预览",
             "value": false,
-            "stage": "draft_created"
+            "stage": "awaiting_review"
           }
         ],
         "gaps": [
@@ -4341,7 +4341,7 @@
           },
           {
             "label": "待审核阶段证据",
-            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2023-JRSE.integration.review.md"
+            "url": "https://github.com/lichao689/woeai/blob/main/wechat/articles/review/ref-zheng2023-JRSE.reader-v2-20261018.review.md"
           },
           {
             "label": "审核记录",

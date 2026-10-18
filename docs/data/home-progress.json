@@ -1,0 +1,67 @@
+{
+  "ref-zhao2026-BE": {
+    "zh": {
+      "heading": "卫星影像如何生成可计算的城市几何？",
+      "problem": "城市尺度 CFD 所需的建筑轮廓和高度仍需逐片区整理。",
+      "contribution": "连接立体卫星影像识别、测高与轮廓规则化，生成 LoD1 城市几何；几何精度不等同于风场精度。"
+    },
+    "en": {
+      "heading": "Turning satellite imagery into CFD-ready city geometry",
+      "problem": "Preparing building footprints and heights remains a substantial step before urban CFD.",
+      "contribution": "Stereo-image recognition, height estimation and footprint regularisation produce LoD1 geometry. Geometry accuracy does not establish wind-field accuracy."
+    },
+    "evidence": "docs/source/paper-notes/ref-zhao2026-BE.rst"
+  },
+  "ref-he2026-OE": {
+    "zh": {
+      "heading": "液舱加了立柱，频率和阻尼怎样变化？",
+      "problem": "立柱会同时改变液体晃荡频率与耗能，不能只按数量判断阻尼。",
+      "contribution": "以经实验对照的数值模型建立参数数据库，拟合频率与阻尼的等效模型；属于跨领域减振基础研究。"
+    },
+    "en": {
+      "heading": "How do internal poles change tank frequency and damping?",
+      "problem": "Internal poles alter both sloshing frequency and dissipation; pole count alone does not determine damping.",
+      "contribution": "Experiment-compared simulations support a parameter database and equivalent frequency/damping models. This is cross-domain vibration-control foundational research."
+    },
+    "evidence": "docs/source/paper-notes/ref-he2026-OE.rst"
+  },
+  "ref-zhao2026-BS": {
+    "zh": {
+      "heading": "城市风场，如何更快预测？",
+      "problem": "全城市高分辨率模拟的计算成本高。",
+      "contribution": "以分块 CFD 建立预计算数据库，对照气象站实测数据，并连接 WebGIS 可视化。"
+    },
+    "en": {
+      "heading": "Reusing CFD for urban wind assessment",
+      "problem": "Repeated high-resolution city-scale simulations are computationally costly.",
+      "contribution": "A precomputed CFD database connects rapid wind-field estimation with station measurements and WebGIS visualisation."
+    },
+    "evidence": "docs/source/paper-notes/ref-zhao2026-BS.rst"
+  },
+  "ref-he2026-OE-structural": {
+    "zh": {
+      "heading": "钢筋混凝土浮式平台如何兼顾动力与强度？",
+      "problem": "浮式平台的主尺度、系泊与材料选择相互影响，只比较运动响应不足以判断结构方案。",
+      "contribution": "连接模块化混凝土半潜平台的主尺度优化、长期动力分析与整体强度评估；局部节点仍需进一步细化。"
+    },
+    "en": {
+      "heading": "Connecting floating-platform dynamics and structural strength",
+      "problem": "Platform dimensions, mooring and material choices interact; motion response alone cannot establish a structural design.",
+      "contribution": "A modular concrete semi-submersible concept connects dimension optimisation, long-term dynamics and overall strength assessment. Local details require further design."
+    },
+    "evidence": "docs/source/paper-notes/ref-he2026-OE-structural.rst"
+  },
+  "ref-zheng2025-OE": {
+    "zh": {
+      "heading": "怎样为浮式风机确定等效静力波浪荷载？",
+      "problem": "简化设计波未必能保留平台长期应力响应，结构设计需要兼顾精度与计算成本。",
+      "contribution": "比较以长期特征荷载和应力分量为目标的等效方法，联合水压力、系泊与塔底荷载，给出不同设计阶段的精度与成本取舍。"
+    },
+    "en": {
+      "heading": "Choosing equivalent static wave loads for a floating turbine",
+      "problem": "A simplified design wave may not preserve long-term platform stresses, while detailed response calculations are costly.",
+      "contribution": "Equivalent-load approaches target long-term characteristic loads or stress components, combining pressure, mooring and tower-base loads to compare accuracy and effort."
+    },
+    "evidence": "docs/source/paper-notes/ref-zheng2025-OE.rst"
+  }
+}

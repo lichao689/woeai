@@ -208,7 +208,7 @@
 .woeai-home-page p { margin: 0 0 18px; font-size: inherit; line-height: inherit; }
 .woeai-home-page figure { margin: 0; }
 .woeai-home-page img { max-width: 100%; height: auto; }
-.woeai-home-page h1, .woeai-home-page h2, .woeai-home-page h3 { font-family: inherit; color: var(--home-ink); line-height: 1.4; font-weight: 650; }
+.woeai-home-page h1, .woeai-home-page h2, .woeai-home-page h3, .woeai-home-page h4 { font-family: inherit; color: var(--home-ink); line-height: 1.4; font-weight: 650; }
 .woeai-home-page .home-main { max-width: 1280px; margin: auto; padding: 0 40px; }
 .woeai-home-page .home-hero { display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; gap: 6%; padding: 74px 0 78px; }
 .woeai-home-page .eyebrow { font-size: 11px; letter-spacing: .13em; font-weight: 650; color: var(--home-blue); margin-bottom: 15px; line-height: 1.6; }
@@ -258,7 +258,7 @@
 .woeai-home-page .work-body { padding: 23px 24px 18px; display: flex; flex-direction: column; flex: 1; }
 .woeai-home-page .work-tag { font-size: 11px; font-weight: 650; color: var(--home-blue); margin-bottom: 3px; }
 .woeai-home-page .work-venue { font-size: 11px; color: var(--home-muted); line-height: 1.6; min-height: 36px; margin-bottom: 12px; }
-.woeai-home-page .work-body h3 { font-size: 20px; margin: 0 0 16px; line-height: 1.5; }
+.woeai-home-page .work-body h3, .woeai-home-page .work-body h4 { font-size: 20px; margin: 0 0 16px; line-height: 1.5; }
 .woeai-home-page .work-body > p:not(.work-tag):not(.work-venue) { font-size: 14px; color: var(--home-muted); line-height: 1.8; margin-bottom: 12px; }
 .woeai-home-page .work-body strong { color: var(--home-ink); font-size: 12px; margin-right: 7px; }
 .woeai-home-page .work-links { display: flex; justify-content: space-between; gap: 12px; padding-top: 12px; margin-top: auto; border-top: 1px solid var(--home-line); }
@@ -464,7 +464,7 @@ body.wy-body-for-nav { background: var(--home-paper); color: var(--home-ink); fo
 .woeai-home-page .english-hero-diagram .visual-note { max-width: 100%; bottom: 0; margin: 0; position: static; padding-top: 9px; }
 html[lang="en"] .woeai-home-page .hero-copy h1 { letter-spacing: -.04em; }
 html[lang="en"] .woeai-home-page .hero-position { font-size: clamp(25px, 2.1vw, 32px); line-height: 1.4; letter-spacing: -.03em; }
-html[lang="en"] .woeai-home-page .work-body h3 { font-size: 23px; }
+html[lang="en"] .woeai-home-page .work-body h3, html[lang="en"] .woeai-home-page .work-body h4 { font-size: 23px; }
 html[lang="en"] .woeai-home-page .work-body h3 a { color: var(--home-ink); }
 html[lang="en"] .woeai-home-page .contact-copy h2 { line-height: 1.35; }
 @media (max-width: 1100px) { .site-header { gap: 14px; } .site-nav { gap: 12px; } }
@@ -527,3 +527,10 @@ html[lang="zh-CN"] .woeai-home-page .hero-copy .hero-intro {
         font-size: clamp(21px, 6.1vw, 26px); line-height: 1.7; margin-bottom: 22px;
     }
 }
+
+/* Recent progress reuses the existing three-column publication cards. */
+.woeai-home-page .progress-family + .progress-family { margin-top: 36px; }
+.woeai-home-page .progress-family-title { margin: 24px 0 20px; font-size: 25px; }
+.woeai-home-page .paper-source .paper-citation { font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
+
+.woeai-home-page .work-links { flex-wrap: wrap; }

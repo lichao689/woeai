@@ -23,25 +23,22 @@ class EnglishSiteTests(unittest.TestCase):
         self.assertEqual(len(site.SELECTED), 6)
         self.assertTrue({r[0] for r in site.SELECTED}.issubset({r['ref'] for r in rows}))
 
-    def test_home_cards_preserve_coauthor_sources_below_contributions(self):
-        rows = {row['ref']: row for row in site.records(self.app)}
-        slots = ''.join(f'<div class="paper-record-slot" data-publication-ref="{ref}"></div>' for ref, _, _ in site.SELECTED)
-        rendered = site.chinese_home_records(self.app, slots)
-        self.assertNotIn('paper-record-slot', rendered)
-        self.assertEqual(rendered.count('<details class="paper-record">'), 6)
-        for ref, _, _ in site.SELECTED:
-            self.assertIn('Chao Li', rows[ref]['authors'])
-            self.assertIn(rows[ref]['authors'], rendered)
-            self.assertIn(rows[ref]['journal'], rendered)
-        with self.assertRaises(ValueError):
-            site.chinese_home_records(self.app, '')
+    def test_home_cards_share_dates_and_show_full_references_without_folding(self):
+        context = {}
+        site.page_context(self.app, 'en/index', '', context, None)
+        rendered = context['recent_progress']
+        self.assertEqual(rendered.count('class="work-card"'), 6)
+        self.assertEqual(rendered.count('class="paper-citation"'), 6)
+        self.assertNotIn('<details', rendered)
+        self.assertNotIn('Paper title & authors', rendered)
+        self.assertIn('ref-zhang2025-CSICM', rendered)
 
     def test_group_identity_and_contact_advice_remain_distinct_from_admissions(self):
         template = (ROOT / 'docs/source/_templates/en-home.html').read_text()
         self.assertIn('id="profile-name">Research group', template)
         self.assertIn('Group leader</strong> Chao Li · Professor · PhD Supervisor', template)
-        self.assertLess(template.index('{{ item.deck }}'), template.index('{{ item.journal }}'))
-        self.assertIn('{{ item.authors }}', template)
+        self.assertIn('{{ recent_progress|safe }}', template)
+        self.assertNotIn('SELECTED RESEARCH', template)
         join = (ROOT / 'docs/source/en/JoinUs.rst').read_text()
         self.assertIn('International Master’s and PhD applicants', join)
         self.assertIn('not school admission requirements', join)

@@ -2,6 +2,7 @@
 import json
 from html import escape
 from pathlib import Path
+from woeai.publications.homepage import render_home_progress
 from woeai.publications.taxonomy import RESEARCH_FAMILY_EN, RESEARCH_SUBDIRECTION_EN
 
 SELECTED = (
@@ -29,6 +30,8 @@ def records(app):
     return result
 
 def source_read(app, docname, source):
+    if docname in ("index", "en/index"):
+        app.env.note_dependency(str(Path(app.confdir).parent / "data/home-progress.json"))
     if docname == "index":
         app.env.note_dependency(str(Path(app.confdir).parent / "data/publications.json"))
         return
@@ -49,27 +52,7 @@ def source_read(app, docname, source):
                       f":doc:`Chinese reading notes </paper-notes/{row['ref']}>` · "
                       f":ref:`Publication record <en-{row['ref']}>`\n")
 
-def chinese_home_records(app, body):
-    by_ref = {row["ref"]: row for row in records(app)}
-    for ref, _, _ in SELECTED:
-        row = by_ref[ref]
-        slot = f'<div class="paper-record-slot" data-publication-ref="{ref}"></div>'
-        if body.count(slot) != 1:
-            raise ValueError(f"Expected one selected-paper slot: {ref}")
-        bibliography = (
-            '<div class="paper-source"><p class="work-venue">'
-            + escape(str(row["year"])) + ' · ' + escape(row["journal"])
-            + '</p><details class="paper-record"><summary>原论文题目与作者</summary>'
-            + '<p class="paper-title">' + escape(row["title"]) + '</p>'
-            + '<p class="work-authors">' + escape(row["authors"]) + '</p></details></div>'
-        )
-        body = body.replace(slot, bibliography)
-    return body
-
-
 def page_context(app, pagename, templatename, context, doctree):
-    if pagename == "index":
-        context["body"] = chinese_home_records(app, context["body"])
     english = pagename.startswith("en/")
     pairs = {"index":"en/index", "Research":"en/Research", "Publications":"en/Publications", "Recruitment":"en/JoinUs", "search":"en/Search"}
     pairs.update({value:key for key,value in list(pairs.items())})
@@ -82,6 +65,8 @@ def page_context(app, pagename, templatename, context, doctree):
     if english:
         by_ref = {x["ref"]:x for x in records(app)}
         context["english_highlights"] = [dict(by_ref[ref], heading=heading, deck=deck) for ref,heading,deck in SELECTED]
+        if pagename == "en/index":
+            context["recent_progress"] = render_home_progress(Path(app.confdir).resolve().parents[1], english=True)
         description = "Research group studying structural wind engineering, floating offshore wind and AI-supported engineering methods. Group leader: Chao Li."
         context["metatags"] = context.get("metatags", "") + f'<meta name="description" content="{escape(description, quote=True)}">'
     if pagename == "en/index":

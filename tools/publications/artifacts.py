@@ -37,6 +37,7 @@ from woeai.publications import (  # noqa: E402
     RESEARCH_FAMILY_ORDER,
     RESEARCH_SUBDIRECTION_ORDER,
 )
+from woeai.publications.homepage import render_home_progress
 from woeai.publications.registry import load_registry, workflow_verified  # noqa: E402
 from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers  # noqa: E402,F401
 
@@ -333,7 +334,9 @@ def artifact_integrity_problems(root: Path) -> list[dict[str, str]]:
 
 def generated_blocks(root: Path) -> dict[str, str]:
     return {
-        LATEST_MARKER: render_latest_paper_notes(root, limit=3),
+        LATEST_MARKER: (".. raw:: html\n\n" + "\n".join("   " + line for line in render_home_progress(root).splitlines()) + "\n"
+                        if (root / "docs/data/publications.json").exists()
+                        else render_latest_paper_notes(root, limit=3)),
     }
 
 

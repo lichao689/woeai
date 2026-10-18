@@ -8,7 +8,7 @@
      <h1 id="profile-name">AI 赋能<span class="hero-title-subject">风与海洋工程</span></h1>
      <h2 class="hero-position">融合物理规律与人工智能<br>揭示风与海洋作用机理<br>探索建筑与能源结构设计</h2>
      <p class="hero-intro">本课题组围绕工程结构抗风与海洋能源结构，结合数值模拟、物理试验和 AI 方法，研究环境荷载、结构响应与工程优化。</p>
-     <div class="hero-actions"><a class="home-button primary" href="#selected-work">浏览代表成果 <span aria-hidden="true">↗</span></a><a class="home-button secondary" href="#research-lines">研究方向</a><a class="text-link" href="#join-contact">交流与合作 <span aria-hidden="true">→</span></a></div>
+     <div class="hero-actions"><a class="home-button primary" href="#selected-work">近期学术进展 <span aria-hidden="true">↗</span></a><a class="home-button secondary" href="#research-lines">研究方向</a><a class="text-link" href="#join-contact">交流与合作 <span aria-hidden="true">→</span></a></div>
      <div class="group-lead"><p><strong>课题组负责人</strong> 李朝 · 教授 · 博士生导师</p><a class="profile-link" href="https://homepage.hit.edu.cn/lichao">负责人官方主页 <span aria-hidden="true">↗</span></a></div>
     </div>
     <div class="english-hero-diagram" aria-label="风与海洋工程科研概念示意">
@@ -30,12 +30,66 @@
 
 .. raw:: html
 
-   <section id="selected-work" class="home-section" aria-labelledby="work-heading"><div class="section-heading"><div><p class="eyebrow">SELECTED RESEARCH</p><h2 id="work-heading">精选研究：问题与贡献</h2></div><a class="text-link" href="Publications.html">完整学术成果 <span aria-hidden="true">↗</span></a></div><p class="section-intro">围绕课题组的研究问题，选取李朝参与的六项合著论文。作者与来源按原论文保留，论文精解提供研究内容的延伸阅读。</p><div class="work-grid"><article class="work-card"><figure><img src="_static/home/urban-wind.webp" width="986" height="840" alt="城市微尺度风场 WebGIS 可视化，原文图25" loading="lazy" decoding="async"><figcaption>城市微尺度风场 WebGIS 可视化，原文图25</figcaption></figure><div class="work-body"><p class="work-tag">数值风洞</p><h3>城市风场，如何更快预测？</h3><p><strong>问题</strong> 全城市高分辨率模拟的计算成本高。</p><p><strong>贡献</strong> 以分块 CFD 建立预计算数据库，对照气象站实测数据，并连接 WebGIS 可视化。</p><div class="paper-record-slot" data-publication-ref="ref-zhao2026-BS"></div><div class="work-links"><a href="paper-notes/ref-zhao2026-BS.html">论文精解 <span aria-hidden="true">→</span></a><a href="https://doi.org/10.1007/s12273-025-1379-7">原论文 <span aria-hidden="true">↗</span></a></div></div></article>
-   <article class="work-card"><figure><img src="_static/home/turbulent-inflow.webp" width="1120" height="447" alt="两种入流工况下的涡结构对比，原文图30" loading="lazy" decoding="async"><figcaption>两种入流工况下的涡结构对比，原文图30</figcaption></figure><div class="work-body"><p class="work-tag">数值风洞</p><h3>为大涡模拟生成更可信的入流</h3><p><strong>问题</strong> 入流相干性和质量平衡会影响模拟质量。</p><p><strong>贡献</strong> 提出 CMRFG 入流湍流生成方法，结合流场统计与压力脉动分析进行验证。</p><div class="paper-record-slot" data-publication-ref="ref-chen2024-JCP"></div><div class="work-links"><a href="paper-notes/ref-chen2024-JCP.html">论文精解 <span aria-hidden="true">→</span></a><a href="https://doi.org/10.1016/j.jcp.2023.112706">原论文 <span aria-hidden="true">↗</span></a></div></div></article>
-   <article class="work-card"><figure><img src="_static/home/structural-graph.webp" width="1120" height="453" alt="高层建筑结构模型与结构图表示，原文图1" loading="lazy" decoding="async"><figcaption>高层建筑结构模型与结构图表示，原文图1</figcaption></figure><div class="work-body"><p class="work-tag">结构抗风</p><h3>把高层建筑结构表示成图</h3><p><strong>问题</strong> 反复调用有限元分析限制了结构优化效率。</p><p><strong>贡献</strong> 以结构图、楼层特征增强与工程知识损失函数构建图神经网络响应代理模型。</p><div class="paper-record-slot" data-publication-ref="ref-tang2025-JBE"></div><div class="work-links"><a href="paper-notes/ref-tang2025-JBE.html">论文精解 <span aria-hidden="true">→</span></a><a href="https://doi.org/10.1016/j.jobe.2025.112131">原论文 <span aria-hidden="true">↗</span></a></div></div></article>
-   <article class="work-card"><figure><img src="_static/home/long-term-design.webp" width="1120" height="250" alt="两类半潜式平台的Pareto设计结果对比，原文图23" loading="lazy" decoding="async"><figcaption>两类半潜式平台的Pareto设计结果对比，原文图23</figcaption></figure><div class="work-body"><p class="work-tag">一体化分析</p><h3>把长期服役需求纳入平台选型</h3><p><strong>问题</strong> 单一设计工况难以反映长期成本与疲劳的取舍。</p><p><strong>贡献</strong> 连接降阶动力模型、长期环境与多目标优化，比较两类半潜式下部结构方案。</p><div class="paper-record-slot" data-publication-ref="ref-zhou2023-AE"></div><div class="work-links"><a href="paper-notes/ref-zhou2023-AE.html">论文精解 <span aria-hidden="true">→</span></a><a href="https://doi.org/10.1016/j.apenergy.2023.121941">原论文 <span aria-hidden="true">↗</span></a></div></div></article>
-   <article class="work-card"><figure><img src="_static/home/concrete-platform.webp" width="891" height="739" alt="钢筋混凝土半潜式平台概念，原文图7" loading="lazy" decoding="async"><figcaption>钢筋混凝土半潜式平台概念，原文图7</figcaption></figure><div class="work-body"><p class="work-tag">混凝土浮体</p><h3>钢筋混凝土浮式平台如何设计？</h3><p><strong>问题</strong> 平台主尺度、动力性能与结构强度需要协调。</p><p><strong>贡献</strong> 提出模块化半潜平台概念，结合长期动力优化和整体强度评价；局部节点仍需细化。</p><div class="paper-record-slot" data-publication-ref="ref-he2026-OE-structural"></div><div class="work-links"><a href="paper-notes/ref-he2026-OE-structural.html">论文精解 <span aria-hidden="true">→</span></a><a href="https://doi.org/10.1016/j.oceaneng.2025.123951">原论文 <span aria-hidden="true">↗</span></a></div></div></article>
-   <article class="work-card"><figure><img src="_static/home/wind-wave-test.webp" width="1120" height="376" alt="风洞—波浪水槽缩尺试验模型与布置，原文图7" loading="lazy" decoding="async"><figcaption>风洞—波浪水槽缩尺试验模型与布置，原文图7</figcaption></figure><div class="work-body"><p class="work-tag">一体化分析</p><h3>风浪来向如何改变浮式风机响应？</h3><p><strong>问题</strong> Y形平台并非在所有方向下具有相同动力响应。</p><p><strong>贡献</strong> 开展 10 MW 风机的 1:70 风洞—波浪水槽模型试验，并与 OpenFAST 模型比较。</p><div class="paper-record-slot" data-publication-ref="ref-zheng2023-JRSE"></div><div class="work-links"><a href="paper-notes/ref-zheng2023-JRSE.html">论文精解 <span aria-hidden="true">→</span></a><a href="https://doi.org/10.1063/5.0131279">原论文 <span aria-hidden="true">↗</span></a></div></div></article></div>
+   <section id="selected-work" class="home-section" aria-labelledby="progress-heading"><span id="latest-progress"></span><div class="section-heading"><div><p class="eyebrow">LATEST ACADEMIC PROGRESS</p><h2 id="progress-heading">近期学术进展</h2></div><a class="text-link" href="PublicationsByYear.html">按年份浏览全部论文 ↗</a></div><p class="section-intro">两个研究方向各展示按发表日期倒序的最新三篇论文；同日沿用论文库顺序。原论文作者与来源保持不变，论文解读与原始研究相区分。</p>
+
+.. BEGIN GENERATED LATEST PAPER NOTES
+
+.. raw:: html
+
+   <div class="progress-family" data-research-family="工程结构抗风"><h3 class="progress-family-title">工程结构抗风</h3><div class="work-grid">
+   <article class="work-card" data-publication-ref="ref-zhao2026-BE" data-publication-date="2026-06">
+   <figure><img src="_static/home/progress-ref-zhao2026-BE.png" alt="卫星影像如何生成可计算的城市几何？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
+   <div class="work-body"><p class="work-tag">2026-06 · 工程结构抗风</p><h4>卫星影像如何生成可计算的城市几何？</h4>
+   <p><strong>问题</strong> 城市尺度 CFD 所需的建筑轮廓和高度仍需逐片区整理。</p><p><strong>贡献</strong> 连接立体卫星影像识别、测高与轮廓规则化，生成 LoD1 城市几何；几何精度不等同于风场精度。</p>
+   <div class="paper-source"><p class="work-venue">2026 · Building and Environment</p><p class="paper-citation">Zhao Peisheng; Li Chao; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. Building and Environment, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: 7.6 (Q1). 中科院分区: 1.</p></div><div class="work-links"><a href="Publications.html#ref-zhao2026-be">论文记录 →</a>
+   <a href="paper-notes/ref-zhao2026-BE.html">论文精解 →</a>
+   <a href="https://doi.org/10.1016/j.buildenv.2026.114811">原论文 ↗</a>
+   </div></div></article>
+   <article class="work-card" data-publication-ref="ref-he2026-OE" data-publication-date="2026-04">
+   <figure><img src="_static/home/progress-ref-he2026-OE.png" alt="液舱加了立柱，频率和阻尼怎样变化？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
+   <div class="work-body"><p class="work-tag">2026-04 · 工程结构抗风</p><h4>液舱加了立柱，频率和阻尼怎样变化？</h4>
+   <p><strong>问题</strong> 立柱会同时改变液体晃荡频率与耗能，不能只按数量判断阻尼。</p><p><strong>贡献</strong> 以经实验对照的数值模型建立参数数据库，拟合频率与阻尼的等效模型；属于跨领域减振基础研究。</p>
+   <div class="paper-source"><p class="work-venue">2026 · Ocean Engineering</p><p class="paper-citation">He Xin; Li Chao; Chen Lingwei; Hu Gang; Ou Jinping, Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks[J]. Ocean Engineering, 2026, 353: 124728. https://doi.org/10.1016/j.oceaneng.2026.124728. 中科院分区: 2.</p></div><div class="work-links"><a href="Publications.html#ref-he2026-oe">论文记录 →</a>
+   <a href="paper-notes/ref-he2026-OE.html">论文精解 →</a>
+   <a href="https://doi.org/10.1016/j.oceaneng.2026.124728">原论文 ↗</a>
+   </div></div></article>
+   <article class="work-card" data-publication-ref="ref-zhao2026-BS" data-publication-date="2026-02">
+   <figure><img src="_static/home/progress-ref-zhao2026-BS.png" alt="城市风场，如何更快预测？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
+   <div class="work-body"><p class="work-tag">2026-02 · 工程结构抗风</p><h4>城市风场，如何更快预测？</h4>
+   <p><strong>问题</strong> 全城市高分辨率模拟的计算成本高。</p><p><strong>贡献</strong> 以分块 CFD 建立预计算数据库，对照气象站实测数据，并连接 WebGIS 可视化。</p>
+   <div class="paper-source"><p class="work-venue">2026 · Building Simulation</p><p class="paper-citation">Zhao Peisheng; Li Chao; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. Building Simulation, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: 5.9 (Q1). 中科院分区: 1.</p></div><div class="work-links"><a href="Publications.html#ref-zhao2026-bs">论文记录 →</a>
+   <a href="paper-notes/ref-zhao2026-BS.html">论文精解 →</a>
+   <a href="https://doi.org/10.1007/s12273-025-1379-7">原论文 ↗</a>
+   </div></div></article>
+   </div></div>
+   <div class="progress-family" data-research-family="海洋能源结构"><h3 class="progress-family-title">海洋能源结构</h3><div class="work-grid">
+   <article class="work-card" data-publication-ref="ref-he2026-OE-structural" data-publication-date="2026-02">
+   <figure><img src="_static/home/progress-ref-he2026-OE-structural.png" alt="钢筋混凝土浮式平台如何兼顾动力与强度？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
+   <div class="work-body"><p class="work-tag">2026-02 · 海洋能源结构</p><h4>钢筋混凝土浮式平台如何兼顾动力与强度？</h4>
+   <p><strong>问题</strong> 浮式平台的主尺度、系泊与材料选择相互影响，只比较运动响应不足以判断结构方案。</p><p><strong>贡献</strong> 连接模块化混凝土半潜平台的主尺度优化、长期动力分析与整体强度评估；局部节点仍需进一步细化。</p>
+   <div class="paper-source"><p class="work-venue">2026 · Ocean Engineering</p><p class="paper-citation">He Weiwen; Li Chao; Zheng Shunyun; Zhou Shengtao; Liu Shangpei; Ou Jinping, Structural design and optimization of a novel semi-submersible floating offshore wind turbine platform using reinforced concrete[J]. Ocean Engineering, 2026, 346: 123951. https://doi.org/10.1016/j.oceaneng.2025.123951. 影响因子: 5.5 (Q1). 中科院分区: 2.</p></div><div class="work-links"><a href="Publications.html#ref-he2026-oe-structural">论文记录 →</a>
+   <a href="paper-notes/ref-he2026-OE-structural.html">论文精解 →</a>
+   <a href="https://doi.org/10.1016/j.oceaneng.2025.123951">原论文 ↗</a>
+   </div></div></article>
+   <article class="work-card" data-publication-ref="ref-zhang2025-CSICM" data-publication-date="2025-12">
+   <div class="work-body"><p class="work-tag">2025-12 · 海洋能源结构</p><h4>On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom</h4>
+   <div class="paper-source"><p class="work-venue">2025 · Case Studies in Construction Materials</p><p class="paper-citation">Zhang Dongqin; Zhong Xi; Wei Kai; Zheng Shunyun; Li Chao; Hu Gang; Zhang Jize, On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom[J]. Case Studies in Construction Materials, 2025, 23: e05031. https://doi.org/10.1016/j.cscm.2025.e05031. 中科院分区: 2.</p></div><div class="work-links"><a href="Publications.html#ref-zhang2025-csicm">论文记录 →</a>
+   <a href="https://doi.org/10.1016/j.cscm.2025.e05031">原论文 ↗</a>
+   </div></div></article>
+   <article class="work-card" data-publication-ref="ref-zheng2025-OE" data-publication-date="2025-07">
+   <figure><img src="_static/home/progress-ref-zheng2025-OE.png" alt="怎样为浮式风机确定等效静力波浪荷载？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
+   <div class="work-body"><p class="work-tag">2025-07 · 海洋能源结构</p><h4>怎样为浮式风机确定等效静力波浪荷载？</h4>
+   <p><strong>问题</strong> 简化设计波未必能保留平台长期应力响应，结构设计需要兼顾精度与计算成本。</p><p><strong>贡献</strong> 比较以长期特征荷载和应力分量为目标的等效方法，联合水压力、系泊与塔底荷载，给出不同设计阶段的精度与成本取舍。</p>
+   <div class="paper-source"><p class="work-venue">2025 · Ocean Engineering</p><p class="paper-citation">Zheng Shunyun; Liu Shangpei; Li Chao; Wang Xiaolu; Ou Jinping, Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine[J]. Ocean Engineering, 2025, 332: 121336. https://doi.org/10.1016/j.oceaneng.2025.121336. 影响因子: 5.5 (Q1). 中科院分区: 2. 引用次数: 2.</p></div><div class="work-links"><a href="Publications.html#ref-zheng2025-oe">论文记录 →</a>
+   <a href="paper-notes/ref-zheng2025-OE.html">论文精解 →</a>
+   <a href="https://doi.org/10.1016/j.oceaneng.2025.121336">原论文 ↗</a>
+   </div></div></article>
+   </div></div>
+
+.. END GENERATED LATEST PAPER NOTES
+
+.. raw:: html
+
    </section>
 
 .. raw:: html
@@ -47,23 +101,6 @@
      <article><span class="application-number">02</span><h3>结构风荷载与风振</h3><p>高层建筑风致响应、气动外形优化，以及风洞试验与风振分析。</p><a href="EngineeringApplications.html#engineering-enterprise-project-evidence">公开项目证据 →</a></article>
      <article><span class="application-number">03</span><h3>城市与场址风环境</h3><p>城市微尺度风场、复杂地形与工程场址风环境评估。</p><a href="Research.html#building-wind-project-support">数值风洞项目记录 →</a></article>
     </div>
-   </section>
-
-.. raw:: html
-
-   <section id="latest-progress" class="home-section latest-section" aria-labelledby="latest-heading"><div class="section-heading"><div><p class="eyebrow">LATEST ACADEMIC PROGRESS</p><h2 id="latest-heading">近期学术进展</h2></div><a class="text-link" href="PublicationsByYear.html">按年份浏览全部论文 ↗</a></div><p class="section-intro">按论文年份倒序展示三篇论文精解；同年沿用论文库的既有排序。</p><div class="latest-list">
-
-.. BEGIN GENERATED LATEST PAPER NOTES
-
-- 2026 | 工程结构抗风 / 数值风洞: :doc:`数值风洞 | 我们如何用预计算 CFD 数据库加速城市微尺度风环境预测 <paper-notes/ref-zhao2026-BS>`
-- 2026 | 工程结构抗风 / 数值风洞: :doc:`数值风洞 | 如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-BE>`
-- 2026 | 工程结构抗风 / 结构抗风: :doc:`结构抗风 | 用内置矩形立柱提升液舱阻尼器设计效率 <paper-notes/ref-he2026-OE>`
-
-.. END GENERATED LATEST PAPER NOTES
-
-.. raw:: html
-
-   </div>
    </section>
 
 .. raw:: html

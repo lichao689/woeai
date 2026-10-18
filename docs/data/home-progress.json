@@ -10,7 +10,16 @@
       "problem": "Preparing building footprints and heights remains a substantial step before urban CFD.",
       "contribution": "Stereo-image recognition, height estimation and footprint regularisation produce LoD1 geometry. Geometry accuracy does not establish wind-field accuracy."
     },
-    "evidence": "docs/source/paper-notes/ref-zhao2026-BE.rst"
+    "evidence": {
+      "path": "wechat/articles/draft-public-safe/ref-zhao2026-BE.md",
+      "problem": [
+        "研究问题与解决思路"
+      ],
+      "contribution": [
+        "从影像识别到规则化建筑模型，需要哪些处理？",
+        "几何重建之后，风环境计算还要检查什么？"
+      ]
+    }
   },
   "ref-he2026-OE": {
     "zh": {
@@ -23,7 +32,17 @@
       "problem": "Internal poles alter both sloshing frequency and dissipation; pole count alone does not determine damping.",
       "contribution": "Experiment-compared simulations support a parameter database and equivalent frequency/damping models. This is cross-domain vibration-control foundational research."
     },
-    "evidence": "docs/source/paper-notes/ref-he2026-OE.rst"
+    "evidence": {
+      "path": "wechat/articles/draft-public-safe/ref-he2026-OE.md",
+      "problem": [
+        "研究问题与解决思路"
+      ],
+      "contribution": [
+        "研究问题与解决思路",
+        "先把自由液面算清楚，再建立等效模型",
+        "怎样把液舱参数用于结构初步设计？"
+      ]
+    }
   },
   "ref-zhao2026-BS": {
     "zh": {
@@ -36,7 +55,17 @@
       "problem": "Repeated high-resolution city-scale simulations are computationally costly.",
       "contribution": "A precomputed CFD database connects rapid wind-field estimation with station measurements and WebGIS visualisation."
     },
-    "evidence": "docs/source/paper-notes/ref-zhao2026-BS.rst"
+    "evidence": {
+      "path": "wechat/articles/draft-public-safe/ref-zhao2026-BS.md",
+      "problem": [
+        "研究问题与解决思路"
+      ],
+      "contribution": [
+        "从“每次重算”改为“先算好、再查询”",
+        "与气象站实测比，误差有多大？",
+        "能用在哪里，还缺什么？"
+      ]
+    }
   },
   "ref-he2026-OE-structural": {
     "zh": {
@@ -49,7 +78,16 @@
       "problem": "Platform dimensions, mooring and material choices interact; motion response alone cannot establish a structural design.",
       "contribution": "A modular concrete semi-submersible concept connects dimension optimisation, long-term dynamics and overall strength assessment. Local details require further design."
     },
-    "evidence": "docs/source/paper-notes/ref-he2026-OE-structural.rst"
+    "evidence": {
+      "path": "wechat/articles/draft-public-safe/ref-he2026-OE-structural.md",
+      "problem": [
+        "研究问题与解决思路"
+      ],
+      "contribution": [
+        "把平台尺度、系泊与成本放进同一优化过程",
+        "概念设计结论怎样进入后续结构设计？"
+      ]
+    }
   },
   "ref-zheng2025-OE": {
     "zh": {
@@ -62,6 +100,38 @@
       "problem": "A simplified design wave may not preserve long-term platform stresses, while detailed response calculations are costly.",
       "contribution": "Equivalent-load approaches target long-term characteristic loads or stress components, combining pressure, mooring and tower-base loads to compare accuracy and effort."
     },
-    "evidence": "docs/source/paper-notes/ref-zheng2025-OE.rst"
+    "evidence": {
+      "path": "wechat/articles/draft-public-safe/ref-zheng2025-OE.md",
+      "problem": [
+        "研究问题与解决思路"
+      ],
+      "contribution": [
+        "以长期载荷或应力为目标，怎样构造等效工况？",
+        "初步设计和详细设计应怎样选择路线？"
+      ]
+    }
+  },
+  "ref-zheng2025-QHDXXB": {
+    "zh": {
+      "heading": "中心与偏心半潜风机，怎样比较动力响应？",
+      "problem": "平台运动较小并不代表机组与系泊荷载更小，中心与偏心方案需要系统比较。",
+      "contribution": "以同一10 MW风机开展1∶70风浪模型试验，比较两种完整方案的平台、机组和系泊响应；仅覆盖两类典型海况，不把差异单独归因于偏心布置。"
+    },
+    "en": {
+      "heading": "Comparing central and offset semi-submersible wind turbines",
+      "problem": "Smaller platform motions do not necessarily mean smaller turbine or mooring loads; central and offset layouts need a system-level comparison.",
+      "contribution": "Wind-wave model tests at 1:70 scale compare platform, turbine and mooring responses for two complete 10 MW designs in two representative sea states; differences cannot be attributed to turbine offset alone."
+    },
+    "evidence": {
+      "path": "wechat/articles/draft-public-safe/ref-zheng2025-QHDXXB.md",
+      "problem": [
+        "研究问题与解决思路"
+      ],
+      "contribution": [
+        "研究问题与解决思路",
+        "先让两套方案可比，再校准模型",
+        "两个海况下，机组响应排序发生反转"
+      ]
+    }
   }
 }

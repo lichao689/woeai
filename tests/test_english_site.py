@@ -38,6 +38,7 @@ class EnglishSiteTests(unittest.TestCase):
         template = (ROOT / 'docs/source/_templates/en-home.html').read_text()
         self.assertIn('id="profile-name">WOEAI Lab', template)
         self.assertIn('WIND AND OCEAN ENGINEERING WITH AI LABORATORY', template)
+        self.assertIn('Understanding wind and ocean environmental actions', template)
         self.assertIn('Laboratory lead</strong> Chao Li · Professor · PhD Supervisor', template)
         self.assertNotIn('Research group', template)
         self.assertNotIn('Group leader', template)

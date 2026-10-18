@@ -18,6 +18,16 @@ EXPECTED = {
 }
 
 class HomepageProgressTests(unittest.TestCase):
+    def test_every_selected_card_has_problem_and_contribution_in_both_languages(self):
+        for english, labels in [(False, ("问题", "贡献")), (True, ("Problem", "Contribution"))]:
+            rendered = render_home_progress(ROOT, english=english)
+            for refs in EXPECTED.values():
+                for ref in refs:
+                    with self.subTest(english=english, publication_ref=ref):
+                        card = rendered.split(f'data-publication-ref="{ref}"', 1)[1].split("</article>", 1)[0]
+                        for label in labels:
+                            self.assertIn(f"<strong>{label}</strong>", card)
+
     def test_latest_three_per_family_only_include_produced_reviewed_introductions(self):
         groups = recent_publications(load_registry(ROOT), ROOT)
         self.assertEqual({family: [r["custom"]["publication_ref"] for r in rows] for family, rows in groups}, EXPECTED)
@@ -116,6 +126,94 @@ class HomepageProgressTests(unittest.TestCase):
             refs.append(ref)
         manifest.write_text(json.dumps({"publication_refs": refs}))
         return row
+
+    def render_fixture(self, root, ref="future-reviewed"):
+        """A future, reviewed candidate with traceable bilingual card copy."""
+        row = self.candidate(root, ref)
+        row["custom"]["legacy_bibliography"].update(
+            title="A reviewed study", year=2025, publicationTitle="Journal",
+            rendered="Author. A reviewed study. Journal, 2025.")
+        article = root / row["custom"]["wechat"]["path"]
+        article.write_text("# A reviewed study\n\n## Question\nA specific research question.\n\n## Results\nA bounded experimental comparison.\n")
+        row["custom"]["wechat"]["evidence"]["content_review"]["fingerprint"] = workflow_fingerprint(row, "wechat", root)
+        (root / "docs/data/publications.json").write_text(json.dumps([row]))
+        annotation = {
+            "zh": {"heading": "研究比较", "problem": "现有方案需要比较。", "contribution": "试验比较两种方案，仅适用于测试工况。"},
+            "en": {"heading": "Comparing designs", "problem": "None of the simplified designs has been compared under these conditions.",
+                   "contribution": "Experiments compare two designs within the tested conditions."},
+            "evidence": {"path": row["custom"]["wechat"]["path"],
+                         "problem": ["Question"], "contribution": ["Results"]},
+        }
+        return row, annotation
+
+    def test_incomplete_future_card_fails_instead_of_rendering_or_replacing_it(self):
+        cases = {
+            "missing-card": ("annotation", lambda a: None),
+            "missing-en": ("en", lambda a: a.pop("en")),
+            "empty-problem": ("zh.problem", lambda a: a["zh"].update(problem=" ")),
+            "empty-contribution": ("en.contribution", lambda a: a["en"].update(contribution="")),
+            "placeholder": ("en.problem", lambda a: a["en"].update(problem="TODO")),
+            "missing-source": ("evidence", lambda a: a.pop("evidence")),
+            "wrong-paper": ("evidence.path", lambda a: a["evidence"].update(path="wechat/articles/draft-public-safe/another-paper.md")),
+            "missing-locator": ("evidence.contribution", lambda a: a["evidence"].update(contribution=[])),
+            "nonexistent-locator": ("evidence.problem", lambda a: a["evidence"].update(problem=["Invented section"])),
+        }
+        for name, (field, mutate) in cases.items():
+            with self.subTest(case=name), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                row, annotation = self.render_fixture(root)
+                if name == "missing-card":
+                    annotations = {}
+                else:
+                    mutate(annotation)
+                    annotations = {"future-reviewed": annotation}
+                (root / "docs/data/home-progress.json").write_text(json.dumps(annotations))
+                self.assertEqual(recent_publications([row], root)[0][1], [row])
+                for english in (False, True):
+                    with self.assertRaisesRegex(ValueError, "future-reviewed.*" + field):
+                        render_home_progress(root, english=english)
+
+    def test_future_reviewed_card_uses_the_same_complete_bilingual_contract(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            _, annotation = self.render_fixture(root)
+            (root / "docs/data/home-progress.json").write_text(json.dumps({"future-reviewed": annotation}))
+            for english, language in [(False, "zh"), (True, "en")]:
+                rendered = render_home_progress(root, english=english)
+                self.assertEqual(rendered.count('class="work-card"'), 1)
+                self.assertIn(annotation[language]["problem"], rendered)
+                self.assertIn(annotation[language]["contribution"], rendered)
+                self.assertNotIn('evidence', rendered)
+                self.assertNotIn('Question', rendered)
+
+    def test_placeholder_and_invisible_copy_cannot_pass_as_complete(self):
+        for value in ("\u200b\ufeff", "...", "TBD", "N/A", "待补", "待确认", "[贡献待补充]"):
+            with self.subTest(value=value), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                _, annotation = self.render_fixture(root)
+                annotation["zh"]["contribution"] = value
+                (root / "docs/data/home-progress.json").write_text(json.dumps({"future-reviewed": annotation}))
+                with self.assertRaisesRegex(ValueError, "future-reviewed.*zh.contribution"):
+                    render_home_progress(root)
+
+    def test_newest_eligible_paper_with_missing_copy_is_not_replaced_by_fourth(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            rows, annotations = [], {}
+            for year in (2023, 2024, 2025, 2026):
+                ref = f"future-{year}"
+                row, annotation = self.render_fixture(root, ref)
+                row["issued"] = {"date-parts": [[year]]}
+                row["custom"]["wechat"]["evidence"]["content_review"]["fingerprint"] = workflow_fingerprint(row, "wechat", root)
+                rows.append(row)
+                if year != 2026:
+                    annotations[ref] = annotation
+            (root / "docs/data/publications.json").write_text(json.dumps(rows))
+            (root / "docs/data/home-progress.json").write_text(json.dumps(annotations))
+            self.assertEqual([r["custom"]["publication_ref"] for r in recent_publications(rows, root)[0][1]],
+                             ["future-2026", "future-2025", "future-2024"])
+            with self.assertRaisesRegex(ValueError, "future-2026.*annotation"):
+                render_home_progress(root)
 
     def test_filter_precedes_limit_and_never_fills_with_unproduced_articles(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -6,7 +6,7 @@
     <div class="hero-copy">
      <p class="eyebrow"><span class="cn">风与海洋工程人工智能实验室</span><span class="en">WOEAI LAB</span></p>
      <h1 id="profile-name">AI 赋能<span class="hero-title-subject">风与海洋工程</span></h1>
-     <h2 class="hero-position">融合物理规律与人工智能<br>揭示风与海洋作用机理<br>探索建筑与能源结构设计</h2>
+     <h2 class="hero-position">融合物理规律与人工智能<br>揭示风与海洋环境作用机理<br>探索建筑与能源结构设计</h2>
      <p class="hero-intro">WOEAI 实验室是围绕工程结构抗风与海洋能源结构开展工作的研究团队，结合数值模拟、物理试验和 AI 方法，研究环境荷载、结构响应与工程优化。</p>
      <div class="hero-actions"><a class="home-button primary" href="#selected-work">近期学术进展 <span aria-hidden="true">↗</span></a><a class="home-button secondary" href="#research-lines">研究方向</a><a class="text-link" href="#join-contact">交流与合作 <span aria-hidden="true">→</span></a></div>
      <div class="group-lead"><p><strong>实验室负责人 李朝</strong> 教授 · 博士生导师</p><a class="profile-link" href="https://homepage.hit.edu.cn/lichao">负责人官方主页 <span aria-hidden="true">↗</span></a></div>
@@ -80,8 +80,9 @@
    <a href="https://doi.org/10.1016/j.oceaneng.2025.121336">原论文 ↗</a>
    </div></div></article>
    <article class="work-card" data-publication-ref="ref-zheng2025-QHDXXB" data-publication-date="2025-06-11">
-   <figure><img src="_static/home/progress-ref-zheng2025-QHDXXB.png?v=8430c4147aa4" alt="中心与偏心布置半潜风机动力特性的模型试验" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
-   <div class="work-body"><p class="work-tag">2025-06-11 · 海洋能源结构</p><h4>中心与偏心布置半潜风机动力特性的模型试验</h4>
+   <figure><img src="_static/home/progress-ref-zheng2025-QHDXXB.png?v=8430c4147aa4" alt="中心与偏心半潜风机，怎样比较动力响应？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
+   <div class="work-body"><p class="work-tag">2025-06-11 · 海洋能源结构</p><h4>中心与偏心半潜风机，怎样比较动力响应？</h4>
+   <p><strong>问题</strong> 平台运动较小并不代表机组与系泊荷载更小，中心与偏心方案需要系统比较。</p><p><strong>贡献</strong> 以同一10 MW风机开展1∶70风浪模型试验，比较两种完整方案的平台、机组和系泊响应；仅覆盖两类典型海况，不把差异单独归因于偏心布置。</p>
    <div class="paper-source"><p class="work-venue">2025 · 清华大学学报（自然科学版）</p><p class="paper-citation">郑舜云; 周盛涛; 石兵; 李朝; 胡钢; 曾宇; 李利孝, 中心与偏心布置半潜风机动力特性的模型试验[J]. 清华大学学报（自然科学版）, 2025: 1～14.</p></div><div class="work-links"><a href="Publications.html#ref-zheng2025-qhdxxb">论文记录 →</a>
    <a href="paper-notes/ref-zheng2025-QHDXXB.html">论文精解 →</a>
    <a href="https://doi.org/10.16511/j.cnki.qhdxxb.2025.27.037">原论文 ↗</a>

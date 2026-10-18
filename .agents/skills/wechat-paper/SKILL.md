@@ -25,9 +25,12 @@ description: Create or revise a source-backed WOEAI WeChat paper introduction, r
 2. Read authorized sources and make a fact/evidence card. For editorial revisions, identify which
    existing source audit is being reused; never relabel it as a new PDF audit. Missing necessary
    sources stop the dependent work. Do not read credentials or contact WeChat during content work.
+   Before drafting, fill the existing engineering narrative evidence card in
+   [paper-review.md](templates/paper-review.md), including the main reader and reading goal.
 3. Draft or revise using the bundled body template and writing standards. Keep the front problem
    section distinct from the engineering-value ending. Merge the old closing prose as needed;
    retain important conditions beside their evidence, original figures, abstract and final AI line.
+   Use the card's argument to plan and check the prose, not to impose fixed sections.
 4. Apply the natural-writing workflow and checklist. Record the engineering-value argument,
    source-backed potential uses, editorial inferences and retained scientific conditions in a
    separate language review when preserving historical audit records.

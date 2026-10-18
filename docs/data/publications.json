@@ -6745,43 +6745,40 @@
         "issues": [],
         "evidence": {
           "awaiting_review": {
-            "recorded_at": "2026-10-15T08:40:47+00:00",
-            "review_path": "wechat/articles/review/ref-he2024-JBE.integration.review.md",
+            "recorded_at": "2026-10-18T03:44:46.929738+00:00",
+            "review_path": "wechat/articles/review/ref-he2024-JBE.reader-20261018.review.md",
             "checks": {
               "source_identity": true,
               "facts": true,
               "public_safety": true,
-              "offline_preflight": false,
+              "editorial_reader_goals": true,
+              "offline_preflight": true,
               "mathjax_svg_render": true,
               "formula_preview": false,
               "figure_preview": false,
               "cover_preview": false
             },
-            "scope": "C2 scientific body and original images preserved. Li title/direction and He/Zhao direction punctuation changes have exact inverse. Official direct MathJax SVG rendering passed; preflight and dry-run remain blocked by absent image-upload approval. No backend or mobile preview.",
-            "fingerprint": "87f02611c3a8a13921a79b436bad6b1bd0a8d4b7e49615f234832469f9675a45"
+            "scope": "Actual current reader revision review after user approval and source reading; reuses the prior full scientific audit with current claim/figure/equation checks. This is a new scoped review, not a rehash of historical approval. Real phone preview remains pending.",
+            "fingerprint": "25400c07050139d5ace68226d2d031bb56b5b825b755ec56b4365460d0163853"
           },
           "draft_created": {
-            "recorded_at": "2026-10-15T09:40:24+00:00",
-            "operation": "create",
-            "readback_at": "2026-10-15T09:40:27+00:00",
-            "receipt_path": "project/research/2026-10-15-seventeen-official-draft-readbacks.json",
-            "receipt_file_sha256": "c503ebd171c10f79c6fb62e7be6dfe0431c6ff99ed0f8ad039e324760ba3ec27",
-            "receipt_entry_sha256": "1bfcae283265bfce7a1a0b724f2e7ba69c029f678b0446ae74c00bfa8535e012",
-            "submitted_input_fingerprint": "87f02611c3a8a13921a79b436bad6b1bd0a8d4b7e49615f234832469f9675a45",
-            "submitted_input_fingerprint_kind": "workflow_fingerprint",
+            "recorded_at": "2026-10-18T03:44:46.929738+00:00",
+            "operation": "update",
+            "review_path": "wechat/articles/review/ref-he2024-JBE.reader-20261018.review.md",
+            "source_markdown_sha256": "368625883d56f4350b9199472a8832ff575a145bfa4d24629f63db0d82f4a000",
             "checks": {
-              "official_draft_create": true,
-              "individual_known_draft_readback": true,
-              "body_text_and_formula_metadata_match": true,
-              "body_source_images_uploaded_unchanged": true,
-              "approved_cover_material_full_pixels_match": true,
-              "author_preserved": true,
-              "ai_disclosure_unique_at_end": true,
+              "official_existing_draft_update": true,
+              "official_readback_verified": true,
+              "full_body_text_matches": true,
+              "formula_metadata_and_geometry_match": true,
+              "original_cover_and_four_images_preserved": true,
+              "other_drafts_unchanged": true,
               "formula_preview": false,
               "figure_preview": false,
               "cover_preview": false
             },
-            "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+            "scope": "One acknowledged update of the existing article body followed by official read-only verification. Existing cover material and four body image URLs retained, zero uploads and no new draft. Fingerprint identifies the newly reviewed source/evidence; it is not a renewed historical approval or phone acceptance.",
+            "fingerprint": "25400c07050139d5ace68226d2d031bb56b5b825b755ec56b4365460d0163853"
           },
           "terminology_review_20261017": {
             "recorded_at": "2026-10-17T10:24:57+00:00",
@@ -6814,10 +6811,49 @@
             "pending_backend_update": false,
             "backend_updated": false,
             "fingerprint": "4874fd0aba94df7cfc3f5a23a56ebc10a2ddb2b24b6757a16cbf6a7e4d96d447"
+          },
+          "awaiting_review_before_reader_revision_20261018": {
+            "recorded_at": "2026-10-15T08:40:47+00:00",
+            "review_path": "wechat/articles/review/ref-he2024-JBE.integration.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "offline_preflight": false,
+              "mathjax_svg_render": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "C2 scientific body and original images preserved. Li title/direction and He/Zhao direction punctuation changes have exact inverse. Official direct MathJax SVG rendering passed; preflight and dry-run remain blocked by absent image-upload approval. No backend or mobile preview.",
+            "fingerprint": "87f02611c3a8a13921a79b436bad6b1bd0a8d4b7e49615f234832469f9675a45"
+          },
+          "draft_created_before_reader_revision_20261018": {
+            "recorded_at": "2026-10-15T09:40:24+00:00",
+            "operation": "create",
+            "readback_at": "2026-10-15T09:40:27+00:00",
+            "receipt_path": "project/research/2026-10-15-seventeen-official-draft-readbacks.json",
+            "receipt_file_sha256": "c503ebd171c10f79c6fb62e7be6dfe0431c6ff99ed0f8ad039e324760ba3ec27",
+            "receipt_entry_sha256": "1bfcae283265bfce7a1a0b724f2e7ba69c029f678b0446ae74c00bfa8535e012",
+            "submitted_input_fingerprint": "87f02611c3a8a13921a79b436bad6b1bd0a8d4b7e49615f234832469f9675a45",
+            "submitted_input_fingerprint_kind": "workflow_fingerprint",
+            "checks": {
+              "official_draft_create": true,
+              "individual_known_draft_readback": true,
+              "body_text_and_formula_metadata_match": true,
+              "body_source_images_uploaded_unchanged": true,
+              "approved_cover_material_full_pixels_match": true,
+              "author_preserved": true,
+              "ai_disclosure_unique_at_end": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
           }
         },
         "latest_published_url": "",
-        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。",
+        "revision_note": "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。\n2026-10-18 用户认可单篇阅读表达试稿后，正式源稿与原公众号草稿正文同步；封面四图和原文链接保留。官方回查通过，其余草稿不变；未做实际手机预览或发布。",
         "confirmed_draft_creation_history": [
           {
             "event_at": "2026-10-15T09:40:24+00:00",
@@ -6931,7 +6967,7 @@
           }
         ],
         "draft_created_at": "2026-10-15T09:40:24+00:00",
-        "draft_updated_at": "2026-10-15T09:40:24+00:00",
+        "draft_updated_at": "2026-10-18T03:44:46.929738+00:00",
         "terminology_migration": {
           "status": "unchanged_backend_verified",
           "review_path": "wechat/articles/review/ref-he2024-JBE.terminology-20261017.review.md",

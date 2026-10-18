@@ -9,6 +9,7 @@ wechat_author: He Xin
 wechat_cover_image: wechat/assets/public-safe/ref-he2024-JBE/cover-wechat-900x383-20261015-v5.png
 rtd_cover_image: wechat/assets/public-safe/ref-he2024-JBE/cover-wechat-900x383-20261015-v5.png
 source_checked: true
+body_images_upload_approved: true
 copyright_checked: false
 public_safety_checked: false
 formula_preview_checked: false
@@ -90,3 +91,7 @@ rtd_page_checked: false
 RTD仅插入顶部封面块；公众号MD只将方向元数据的全角冒号改为规范的半角冒号与空格，科学正文及全部原图逐字节不变。 主review只增补封面路径、历史状态说明及本次范围记录，Li另改方向；所有旧事实证据与许可／预览布尔均保留。
 
 当前仍为本地网站接入候选；正式正文图上传未批准，不为通过preflight填入授权。作者字段、手机浅深色预览和后台状态不因封面采用改变；完整全站门禁、实际视口检查及后续main／草稿写入授权均独立处理。
+
+## 2026-10-18 用户批准的单篇阅读表达修订
+
+完整试稿经用户审阅后获准同步到本篇源稿及对应原公众号草稿；四幅已批准原图与封面不变。本轮独立记录见 [ref-he2024-JBE.reader-20261018.review.md](ref-he2024-JBE.reader-20261018.review.md)。新增正文图授权字段仅记录本次明确许可，未改写前述历史制作状态；实际交付优先复用原有图片URL与封面引用，不新增素材上传。所有历史科学核验与预览记录保留，实际手机预览不因此更新为通过。RTD正文未改，未重新计算其待审核凭证。

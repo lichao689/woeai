@@ -27,10 +27,15 @@ description: Create or revise a source-backed WOEAI WeChat paper introduction, r
    sources stop the dependent work. Do not read credentials or contact WeChat during content work.
    Before drafting, fill the existing engineering narrative evidence card in
    [paper-review.md](templates/paper-review.md), including the main reader and reading goal.
+   Review the original figures against that argument and fill the existing image-use record
+   with their evidence roles and selection/omission reasons, following writing standards section 7.
 3. Draft or revise using the bundled body template and writing standards. Keep the front problem
    section distinct from the engineering-value ending. Merge the old closing prose as needed;
    retain important conditions beside their evidence, original figures, abstract and final AI line.
    Use the card's argument to plan and check the prose, not to impose fixed sections.
+   Place selected figures where the argument needs them; the body template's sample image group
+   does not limit their number. Introduce what to inspect before each figure and explain the finding
+   and its place in the argument afterward, separately from the caption.
 4. Apply the natural-writing workflow and checklist. Record the engineering-value argument,
    source-backed potential uses, editorial inferences and retained scientific conditions in a
    separate language review when preserving historical audit records.

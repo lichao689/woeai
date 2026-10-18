@@ -1,42 +1,112 @@
 """Latest homepage papers are selected by publication date in both languages."""
-from copy import deepcopy
 from html import escape
 from pathlib import Path
 import unittest
+import json
+import tempfile
 
 from woeai.publications.homepage import recent_publications, render_home_progress, publication_date
-from woeai.publications.registry import load_registry
+from woeai.publications.registry import load_registry, workflow_fingerprint
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {
     "工程结构抗风": ["ref-zhao2026-BE", "ref-he2026-OE", "ref-zhao2026-BS"],
-    "海洋能源结构": ["ref-he2026-OE-structural", "ref-zhang2025-CSICM", "ref-zheng2025-OE"],
+    "海洋能源结构": ["ref-he2026-OE-structural", "ref-zheng2025-OE", "ref-zheng2025-QHDXXB"],
 }
 
 class HomepageProgressTests(unittest.TestCase):
-    def test_latest_three_per_family_include_papers_without_reading_notes(self):
-        groups = recent_publications(load_registry(ROOT))
+    def test_latest_three_per_family_only_include_produced_reviewed_introductions(self):
+        groups = recent_publications(load_registry(ROOT), ROOT)
         self.assertEqual({family: [r["custom"]["publication_ref"] for r in rows] for family, rows in groups}, EXPECTED)
 
     def test_date_precision_and_stable_ties_do_not_follow_manual_highlight_order(self):
-        rows = load_registry(ROOT)
-        base = deepcopy(rows[0])
-        candidates = []
-        for ref, issued, date, order in [
-            ("year-only", [2025], "2025", 0),
-            ("early", [2025], "2025/2/1", 1),
-            ("late", [2025], "2025-12-02", 20),
-            ("same-date", [2025], "2025/12/2", 21),
-            ("explicit", [2025, 12, 3], "2025/1", 99),
-        ]:
-            row = deepcopy(base)
-            row["issued"] = {"date-parts": [issued]}
-            row["custom"].update(publication_ref=ref, order=order)
-            row["custom"]["legacy_bibliography"]["date"] = date
-            candidates.append(row)
-        groups = recent_publications(list(reversed(candidates)))
-        self.assertEqual([r["custom"]["publication_ref"] for r in groups[0][1]], ["explicit", "late", "same-date"])
-        self.assertEqual(publication_date(candidates[0]), (2025, 0, 0))
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            candidates = []
+            for ref, issued, date, order in [
+                ("year-only", [2025], "2025", 0),
+                ("early", [2025], "2025/2/1", 1),
+                ("late", [2025], "2025-12-02", 20),
+                ("same-date", [2025], "2025/12/2", 21),
+                ("explicit", [2025, 12, 3], "2025/1", 99),
+            ]:
+                candidates.append(self.candidate(root, ref, issued, date, order))
+            groups = recent_publications(list(reversed(candidates)), root)
+            self.assertEqual([r["custom"]["publication_ref"] for r in groups[0][1]],
+                             ["explicit", "late", "same-date"])
+            self.assertEqual(publication_date(candidates[0]), (2025, 0, 0))
+
+    def candidate(self, root, ref, issued=None, date="2025", order=0, selected=True):
+        """A produced public article reviewed without uploading or phone preview."""
+        article = f"wechat/articles/draft-public-safe/{ref}.md"
+        review = f"wechat/articles/review/{ref}.md"
+        for path, content in [(article, "# Reviewed introduction"), (review, "# Content review"),
+                              (".agents/skills/wechat-paper/references/writing-standards.md", "Writing rules"),
+                              (".agents/skills/wechat-paper/references/natural-scientific-writing.md", "Style rules")]:
+            target = root / path
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(content)
+        evidence = {"recorded_at": "2026-10-18", "review_path": review,
+                    "checks": {"source_identity": True, "facts": True, "public_safety": True,
+                               "formula_preview": False, "figure_preview": False, "cover_preview": False}}
+        row = {"id": ref, "issued": {"date-parts": [issued or [2025]]}, "custom": {
+            "publication_ref": ref, "order": order, "research_family": "工程结构抗风",
+            "legacy_bibliography": {"date": date}, "content_production": "included",
+            "source": {"status": "verified", "sha256": "a" * 64},
+            "wechat": {"status": "awaiting_review", "path": article, "review_path": review,
+                       "latest_published_url": "", "evidence": {"content_review": evidence}}}}
+        evidence["fingerprint"] = workflow_fingerprint(row, "wechat", root)
+        manifest = root / "docs/data/home-progress-selection.json"
+        manifest.parent.mkdir(parents=True, exist_ok=True)
+        refs = json.loads(manifest.read_text())["publication_refs"] if manifest.exists() else []
+        if selected:
+            refs.append(ref)
+        manifest.write_text(json.dumps({"publication_refs": refs}))
+        return row
+
+    def test_filter_precedes_limit_and_never_fills_with_unproduced_articles(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            older = self.candidate(root, "eligible-older", [2024], "2024", 1)
+            newer = self.candidate(root, "eligible-newer", [2025], "2025", 2)
+            invalid = []
+            for case in ("pending", "planned", "missing-body", "empty-body", "stale", "missing-review", "failed-check"):
+                row = self.candidate(root, case, [2026], "2026")
+                workflow = row["custom"]["wechat"]
+                if case == "pending":
+                    row["custom"]["content_production"] = "pending"
+                elif case == "planned":
+                    workflow["status"] = "planned"
+                elif case == "missing-body":
+                    (root / workflow["path"]).unlink()
+                elif case == "empty-body":
+                    (root / workflow["path"]).write_text(" ")
+                elif case == "stale":
+                    (root / workflow["path"]).write_text("Changed after review")
+                elif case == "missing-review":
+                    (root / workflow["review_path"]).unlink()
+                else:
+                    workflow["evidence"]["content_review"]["checks"]["facts"] = False
+                invalid.append(row)
+            groups = recent_publications(invalid + [older, newer], root)
+            self.assertEqual([r["custom"]["publication_ref"] for r in groups[0][1]],
+                             ["eligible-newer", "eligible-older"])
+            self.assertEqual(groups[1][1], [])
+
+    def test_produced_content_needs_neither_public_url_nor_phone_preview_or_draft_id(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            row = self.candidate(root, "reviewed")
+            for status in ("awaiting_review", "draft_created", "ready_to_publish", "published"):
+                with self.subTest(status=status):
+                    row["custom"]["wechat"]["status"] = status
+                    self.assertEqual(recent_publications([row], root)[0][1], [row])
+
+    def test_new_produced_external_interpretation_is_not_automatically_selected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            row = self.candidate(root, "external", selected=False)
+            self.assertEqual(recent_publications([row], root)[0][1], [])
 
     def test_both_languages_keep_sources_and_never_link_missing_notes(self):
         for english in [False, True]:
@@ -47,21 +117,17 @@ class HomepageProgressTests(unittest.TestCase):
             self.assertNotIn('<details', rendered)
             self.assertNotIn('<summary', rendered)
             self.assertNotIn('原论文题目与作者', rendered)
-            for _, rows in recent_publications(load_registry(ROOT)):
+            for _, rows in recent_publications(load_registry(ROOT), ROOT):
                 for row in rows:
                     bib = row["custom"]["legacy_bibliography"]
                     self.assertIn(escape(bib["title"]), rendered)
                     self.assertIn(escape(bib["rendered"]), rendered)
                     self.assertIn("https://doi.org/" + bib["doi"], rendered)
             self.assertNotIn('paper-notes/ref-zhang2025-CSICM.html', rendered)
-            self.assertIn('Publications.html#' + ('en-' if english else '') + 'ref-zhang2025-csicm', rendered)
+            self.assertNotIn('data-publication-ref="ref-zhang2025-CSICM"', rendered)
+            self.assertIn('data-publication-ref="ref-zheng2025-QHDXXB"', rendered)
             self.assertNotIn('en/highlights/ref-zhao2026-BE', rendered)
             self.assertNotIn('source_audit', rendered)
-            unreviewed = rendered.split('data-publication-ref="ref-zhang2025-CSICM"', 1)[1].split('</article>', 1)[0]
-            self.assertNotIn('<figure', unreviewed)
-            self.assertNotIn('<strong>Problem', unreviewed)
-            self.assertNotIn('<strong>问题', unreviewed)
-            self.assertNotIn('Chinese reading notes', unreviewed)
 
 if __name__ == "__main__":
     unittest.main()

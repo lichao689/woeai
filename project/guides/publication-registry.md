@@ -166,3 +166,25 @@ The existing registry and compatibility data still use bibliographic synchroniza
 修改决策时同步镜像，生成器和草稿读取器只将纳入制作的记录放进制作队列。
 旧数据缺少该字段时允许读取历史 selected；本仓库 75 篇均显式登记，新条目应写 pending。
 Zotero 书目刷新保留该决策，不从作者顺序重算。看板增加独立列及筛选，不增加编辑功能。
+
+
+## 首页内容资格
+
+首页编辑选择、制作决策、内容审校、后台草稿与正式发布是不同事实。
+`docs/data/home-progress-selection.json` 固定明确选择的候选范围；初始44篇来自
+2026-10-18 当日 `content_production = included` 的既有记录，作为兼容范围，
+不代表本组主导或所有权，不改写任何状态。新增与外部解读默认不入名单，维护者须明确选择。
+`included` 仅是决定制作；`planned` / `drafting` 不能凭该决策进入首页。
+
+`wechat_content_reviewed(record, root)` 判断当前可用内容：来源身份已核验，
+对应 `wechat/articles/draft-public-safe/<publication_ref>.md` 为非空公开正文，
+状态进入 `awaiting_review` / `draft_created` / `ready_to_publish` / `published`，
+且存在有日期、有公开 review、`source_identity` / `facts` / `public_safety` 全为 true
+并匹配当前 `workflow_fingerprint` 的内容证据。内容证据允许存于现有不同命名阶段，
+不能只认固定 `awaiting_review` 键；历史阶段只有仍匹配当前字节才可使用。
+公开路径及实际依赖须有效，指纹失效则排除，不机械重算凭证。
+
+首页资格不要求 `workflow_verified()` 的真实预览验收、不要求 `published`、发布 URL
+或私有草稿 ID；构建不访问后台与私有映射。`draft_created` 只表示真实草稿操作，
+不能替代当前内容审校，更不能声明手机已预览或已发布。首页先做完整资格过滤，再分方向、
+按论文发表日期倒序各取最多三篇，不足不补；中英文使用同一筛选器。

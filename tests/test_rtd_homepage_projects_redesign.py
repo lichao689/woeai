@@ -42,7 +42,7 @@ class RTDHomepageProjectsRedesignTests(unittest.TestCase):
         self.assertNotIn('精选研究：问题与贡献', index)
         self.assertIn('Kriging 代理模型', index)
         self.assertIn('图神经网络结合结构连接关系', index)
-        self.assertIn('两个研究方向各展示按发表日期倒序的最新三篇论文', index)
+        self.assertIn('从已完成公众号解读的候选论文中，两个研究方向各按发表日期倒序展示最多三篇', index)
         self.assertIn("教授 · 博士生导师", index)
         self.assertIn("揭示风与海洋作用机理<br>探索建筑与能源结构设计</h2>", index)
         self.assertIn('href="https://homepage.hit.edu.cn/lichao"', index)

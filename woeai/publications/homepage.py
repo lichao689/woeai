@@ -4,7 +4,7 @@ import json
 from html import escape
 from pathlib import Path
 
-from woeai.publications.registry import load_registry
+from woeai.publications.registry import load_registry, wechat_content_reviewed
 from woeai.publications.taxonomy import RESEARCH_FAMILY_EN, RESEARCH_FAMILY_ORDER
 from woeai.publications.textutils import parse_date
 
@@ -20,14 +20,23 @@ def publication_date(record):
     return date if date[0] else legacy
 
 
-def recent_publications(records):
-    """Return three latest public papers per family, including uncatalogued notes."""
-    ordered = sorted(records, key=lambda row: (
-        tuple(-part for part in publication_date(row)),
-        row["custom"]["order"], row["custom"]["publication_ref"],
-    ))
-    return [(family, [row for row in ordered if row["custom"]["research_family"] == family][:3])
-            for family in RESEARCH_FAMILY_ORDER]
+def recent_publications(records, root: Path):
+    """Filter explicitly selected, produced introductions before grouping and ranking."""
+    selection = json.loads((root / 'docs/data/home-progress-selection.json').read_text())
+    selected = set(selection['publication_refs'])
+    eligible = [row for row in records
+                if row['custom']['publication_ref'] in selected
+                and row['custom'].get('content_production') == 'included'
+                and wechat_content_reviewed(row, root)]
+    groups = []
+    for family in RESEARCH_FAMILY_ORDER:
+        rows = [row for row in eligible if row['custom']['research_family'] == family]
+        rows.sort(key=lambda row: (
+            tuple(-part for part in publication_date(row)),
+            row['custom']['order'], row['custom']['publication_ref'],
+        ))
+        groups.append((family, rows[:3]))
+    return groups
 
 
 def render_home_progress(root: Path, *, english=False):
@@ -35,7 +44,7 @@ def render_home_progress(root: Path, *, english=False):
     prefix = "../" if english else ""
     annotations = json.loads((root / "docs/data/home-progress.json").read_text())
     parts = []
-    for family, rows in recent_publications(load_registry(root)):
+    for family, rows in recent_publications(load_registry(root), root):
         label = RESEARCH_FAMILY_EN[family] if english else family
         parts.append(f'<div class="progress-family" data-research-family="{escape(family)}">'
                      f'<h3 class="progress-family-title">{escape(label)}</h3><div class="work-grid">')

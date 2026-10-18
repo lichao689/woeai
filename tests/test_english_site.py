@@ -31,7 +31,8 @@ class EnglishSiteTests(unittest.TestCase):
         self.assertEqual(rendered.count('class="paper-citation"'), 6)
         self.assertNotIn('<details', rendered)
         self.assertNotIn('Paper title & authors', rendered)
-        self.assertIn('ref-zhang2025-CSICM', rendered)
+        self.assertNotIn('ref-zhang2025-CSICM', rendered)
+        self.assertIn('ref-zheng2025-QHDXXB', rendered)
 
     def test_group_identity_and_contact_advice_remain_distinct_from_admissions(self):
         template = (ROOT / 'docs/source/_templates/en-home.html').read_text()

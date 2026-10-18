@@ -32,6 +32,7 @@ def records(app):
 def source_read(app, docname, source):
     if docname in ("index", "en/index"):
         app.env.note_dependency(str(Path(app.confdir).parent / "data/home-progress.json"))
+        app.env.note_dependency(str(Path(app.confdir).parent / "data/home-progress-selection.json"))
     if docname == "index":
         app.env.note_dependency(str(Path(app.confdir).parent / "data/publications.json"))
         return

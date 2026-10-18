@@ -30,7 +30,7 @@
 
 .. raw:: html
 
-   <section id="selected-work" class="home-section" aria-labelledby="progress-heading"><span id="latest-progress"></span><div class="section-heading"><div><p class="eyebrow">LATEST ACADEMIC PROGRESS</p><h2 id="progress-heading">近期学术进展</h2></div><a class="text-link" href="PublicationsByYear.html">按年份浏览全部论文 ↗</a></div><p class="section-intro">两个研究方向各展示按发表日期倒序的最新三篇论文；同日沿用论文库顺序。原论文作者与来源保持不变，论文解读与原始研究相区分。</p>
+   <section id="selected-work" class="home-section" aria-labelledby="progress-heading"><span id="latest-progress"></span><div class="section-heading"><div><p class="eyebrow">LATEST ACADEMIC PROGRESS</p><h2 id="progress-heading">近期学术进展</h2></div><a class="text-link" href="PublicationsByYear.html">按年份浏览全部论文 ↗</a></div><p class="section-intro">从已完成公众号解读的候选论文中，两个研究方向各按发表日期倒序展示最多三篇；同日沿用论文库顺序。原论文作者与来源保持不变，论文解读与原始研究相区分。</p>
 
 .. BEGIN GENERATED LATEST PAPER NOTES
 
@@ -71,11 +71,6 @@
    <a href="paper-notes/ref-he2026-OE-structural.html">论文精解 →</a>
    <a href="https://doi.org/10.1016/j.oceaneng.2025.123951">原论文 ↗</a>
    </div></div></article>
-   <article class="work-card" data-publication-ref="ref-zhang2025-CSICM" data-publication-date="2025-12">
-   <div class="work-body"><p class="work-tag">2025-12 · 海洋能源结构</p><h4>On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom</h4>
-   <div class="paper-source"><p class="work-venue">2025 · Case Studies in Construction Materials</p><p class="paper-citation">Zhang Dongqin; Zhong Xi; Wei Kai; Zheng Shunyun; Li Chao; Hu Gang; Zhang Jize, On structural loads and responses of monopile offshore wind turbines under typhoons: Numerical case study of Super Typhoon Chan-hom[J]. Case Studies in Construction Materials, 2025, 23: e05031. https://doi.org/10.1016/j.cscm.2025.e05031. 中科院分区: 2.</p></div><div class="work-links"><a href="Publications.html#ref-zhang2025-csicm">论文记录 →</a>
-   <a href="https://doi.org/10.1016/j.cscm.2025.e05031">原论文 ↗</a>
-   </div></div></article>
    <article class="work-card" data-publication-ref="ref-zheng2025-OE" data-publication-date="2025-07">
    <figure><img src="_static/home/progress-ref-zheng2025-OE.png" alt="怎样为浮式风机确定等效静力波浪荷载？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
    <div class="work-body"><p class="work-tag">2025-07 · 海洋能源结构</p><h4>怎样为浮式风机确定等效静力波浪荷载？</h4>
@@ -83,6 +78,12 @@
    <div class="paper-source"><p class="work-venue">2025 · Ocean Engineering</p><p class="paper-citation">Zheng Shunyun; Liu Shangpei; Li Chao; Wang Xiaolu; Ou Jinping, Evaluating equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine[J]. Ocean Engineering, 2025, 332: 121336. https://doi.org/10.1016/j.oceaneng.2025.121336. 影响因子: 5.5 (Q1). 中科院分区: 2. 引用次数: 2.</p></div><div class="work-links"><a href="Publications.html#ref-zheng2025-oe">论文记录 →</a>
    <a href="paper-notes/ref-zheng2025-OE.html">论文精解 →</a>
    <a href="https://doi.org/10.1016/j.oceaneng.2025.121336">原论文 ↗</a>
+   </div></div></article>
+   <article class="work-card" data-publication-ref="ref-zheng2025-QHDXXB" data-publication-date="2025-06-11">
+   <div class="work-body"><p class="work-tag">2025-06-11 · 海洋能源结构</p><h4>中心与偏心布置半潜风机动力特性的模型试验</h4>
+   <div class="paper-source"><p class="work-venue">2025 · 清华大学学报（自然科学版）</p><p class="paper-citation">郑舜云; 周盛涛; 石兵; 李朝; 胡钢; 曾宇; 李利孝, 中心与偏心布置半潜风机动力特性的模型试验[J]. 清华大学学报（自然科学版）, 2025: 1～14.</p></div><div class="work-links"><a href="Publications.html#ref-zheng2025-qhdxxb">论文记录 →</a>
+   <a href="paper-notes/ref-zheng2025-QHDXXB.html">论文精解 →</a>
+   <a href="https://doi.org/10.16511/j.cnki.qhdxxb.2025.27.037">原论文 ↗</a>
    </div></div></article>
    </div></div>
 

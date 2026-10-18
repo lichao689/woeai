@@ -217,6 +217,44 @@ def _supplemental_sources_valid(source: dict[str, Any]) -> bool:
     return True
 
 
+def wechat_content_reviewed(record: dict[str, Any], root: Path) -> bool:
+    """Current public content review, independent of upload, preview and release."""
+    custom = record['custom']
+    workflow = custom.get('wechat', {})
+    source = custom.get('source', {})
+    if workflow.get('status') not in {'awaiting_review', 'draft_created', 'ready_to_publish', 'published'}:
+        return False
+    if source.get('status') != 'verified' or not SHA256.fullmatch(source.get('sha256', '')):
+        return False
+    if not _supplemental_sources_valid(source):
+        return False
+    article = workflow.get('path')
+    expected = f"wechat/articles/draft-public-safe/{custom['publication_ref']}.md"
+    if article != expected or not _board_file(root, article, 'wechat/articles/draft-public-safe/', '.md'):
+        return False
+    try:
+        if not _public_path(root, article).read_text(encoding='utf-8').strip():
+            return False
+        if any(not _wechat_specification_path(root, path).is_file() for path in WECHAT_SPECIFICATIONS):
+            return False
+        fingerprint = workflow_fingerprint(record, 'wechat', root)
+        for evidence in workflow.get('evidence', {}).values():
+            if not isinstance(evidence, dict) or not evidence.get('recorded_at'):
+                continue
+            if not all(evidence.get('checks', {}).get(key) is True
+                       for key in ('source_identity', 'facts', 'public_safety')):
+                continue
+            review = _board_file(root, evidence.get('review_path'), 'wechat/articles/review/', '.md')
+            if not review or evidence.get('fingerprint') != fingerprint:
+                continue
+            dependencies = _referenced_files(root, {article, review})
+            if all(_public_path(root, path).is_file() for path in dependencies):
+                return True
+    except (ValueError, OSError):
+        return False
+    return False
+
+
 def workflow_verified(record: dict[str,Any], channel: str, root: Path) -> bool:
     workflow=record['custom'][channel]; source=record['custom'].get('source',{})
     required=tuple(key for key, _label in BOARD_CHECKS[channel])

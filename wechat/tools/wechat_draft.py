@@ -957,6 +957,11 @@ def validate_context(ctx: ArticleContext) -> list[dict[str, Any]]:
     for image in ctx.body_images:
         if not image.path.exists():
             problems.append({"kind": "missing_image", "alt": image.alt, "path": repo_relative(image.path)})
+    if ctx.article_path.exists():
+        from woeai.wechat.figures import parse_figure_groups
+
+        _, figure_findings = parse_figure_groups(ctx.article_path.read_text(encoding="utf-8"))
+        problems.extend({"kind": "figure_group", "message": finding} for finding in figure_findings)
     try:
         checker = load_public_safety_checker()
         findings = checker.collect_findings([ctx.article_path, ctx.review_path])

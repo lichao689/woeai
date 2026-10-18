@@ -41,6 +41,7 @@ from woeai.wechat.options import (  # noqa: E402,F401
     validate_math_renderer,
     validate_theme,
 )
+from woeai.wechat.figures import FigureGroup, parse_figure_groups  # noqa: E402
 
 
 BASE_STYLES = {
@@ -456,6 +457,27 @@ def flush_list(
         list_items.clear()
 
 
+def render_figure_group(
+    group: FigureGroup,
+    markdown_file: Path,
+    embed_images: bool,
+    styles: dict[str, str],
+    math_renderer: str,
+) -> str:
+    """Both explicit and compatible historical figures use the same template."""
+    source = inline_image_src(markdown_file, group.source, embed_images)
+    return "\n".join([
+        f'<section data-figure-number="{html.escape(group.number, quote=True)}">',
+        f'<img src="{html.escape(source, quote=True)}" alt="{html.escape(group.alt, quote=True)}" '
+        f'style="{html.escape(styles["img"], quote=True)}">',
+        styled("p", render_inline(group.title, styles=styles, math_renderer=math_renderer),
+               "caption_title", styles=styles),
+        styled("p", render_inline(group.guide, styles=styles, math_renderer=math_renderer),
+               "caption_body", styles=styles),
+        "</section>",
+    ])
+
+
 def render_markdown(
     markdown_file: Path,
     embed_images: bool,
@@ -465,17 +487,30 @@ def render_markdown(
 ) -> str:
     styles = theme_styles(theme)
     math_renderer = validate_math_renderer(math_renderer)
-    lines = markdown_file.read_text(encoding="utf-8").splitlines()
+    text = markdown_file.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    groups, findings = parse_figure_groups(text)
+    if findings:
+        raise ValueError("\n".join(findings))
+    figures = {group.start: group for group in groups}
+    skip_until = 0
     output: list[str] = []
     paragraph: list[str] = []
     list_items: list[str] = []
     ordered = False
     in_math = False
     math_lines: list[str] = []
-    previous_was_image = False
-    caption_explanation_pending = False
 
-    for line in lines:
+    for index, line in enumerate(lines):
+        if index < skip_until:
+            continue
+        if index in figures:
+            flush_paragraph(paragraph, output, styles, math_renderer)
+            flush_list(list_items, output, ordered, styles, math_renderer)
+            group = figures[index]
+            output.append(render_figure_group(group, markdown_file, embed_images, styles, math_renderer))
+            skip_until = group.end
+            continue
         stripped = line.strip()
 
         if in_math:
@@ -491,8 +526,6 @@ def render_markdown(
             flush_paragraph(paragraph, output, styles, math_renderer)
             flush_list(list_items, output, ordered, styles, math_renderer)
             in_math = True
-            previous_was_image = False
-            caption_explanation_pending = False
             continue
 
         if not stripped:
@@ -500,7 +533,7 @@ def render_markdown(
             flush_list(list_items, output, ordered, styles, math_renderer)
             continue
 
-        image_match = re.match(r"!\[(.*?)\]\((.*?)\)", stripped)
+        image_match = re.fullmatch(r"!\[(.*?)\]\((.*?)\)", stripped)
         if image_match:
             flush_paragraph(paragraph, output, styles, math_renderer)
             flush_list(list_items, output, ordered, styles, math_renderer)
@@ -509,8 +542,6 @@ def render_markdown(
                 f'<img src="{html.escape(inline_image_src(markdown_file, src, embed_images), quote=True)}" '
                 f'alt="{html.escape(alt, quote=True)}" style="{html.escape(styles["img"], quote=True)}">'
             )
-            previous_was_image = True
-            caption_explanation_pending = False
             continue
 
         if stripped.startswith("# "):
@@ -525,8 +556,6 @@ def render_markdown(
                         styles=styles,
                     )
                 )
-            previous_was_image = False
-            caption_explanation_pending = False
             continue
 
         if stripped.startswith("## "):
@@ -540,8 +569,6 @@ def render_markdown(
                     styles=styles,
                 )
             )
-            previous_was_image = False
-            caption_explanation_pending = False
             continue
 
         if stripped.startswith("### "):
@@ -555,8 +582,6 @@ def render_markdown(
                     styles=styles,
                 )
             )
-            previous_was_image = False
-            caption_explanation_pending = False
             continue
 
         unordered_match = re.match(r"[-*]\s+(.*)", stripped)
@@ -568,35 +593,10 @@ def render_markdown(
                 flush_list(list_items, output, ordered, styles, math_renderer)
             ordered = this_ordered
             list_items.append((ordered_match or unordered_match).group(1))
-            previous_was_image = False
-            caption_explanation_pending = False
             continue
 
         flush_list(list_items, output, ordered, styles, math_renderer)
-        if previous_was_image and re.match(r"^(Figure|Fig\.)\s*\d+|^图\s*\d+", stripped):
-            output.append(
-                styled(
-                    "p",
-                    render_inline(stripped, styles=styles, math_renderer=math_renderer),
-                    "caption_title",
-                    styles=styles,
-                )
-            )
-            previous_was_image = False
-            caption_explanation_pending = True
-        elif caption_explanation_pending:
-            output.append(
-                styled(
-                    "p",
-                    render_inline(stripped, styles=styles, math_renderer=math_renderer),
-                    "caption_body",
-                    styles=styles,
-                )
-            )
-            caption_explanation_pending = False
-        else:
-            paragraph.append(stripped)
-            previous_was_image = False
+        paragraph.append(stripped)
 
     flush_paragraph(paragraph, output, styles, math_renderer)
     flush_list(list_items, output, ordered, styles, math_renderer)

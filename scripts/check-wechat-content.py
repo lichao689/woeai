@@ -9,6 +9,7 @@ sys.path.insert(0, str(ROOT))
 
 from woeai.publications.registry import load_registry
 from woeai.wechat.editorial import article_structure_findings, article_title_findings
+from woeai.wechat.figures import parse_figure_groups
 
 
 def main() -> int:
@@ -24,6 +25,8 @@ def main() -> int:
         try:
             text = article.read_text(encoding='utf-8')
             findings = article_structure_findings(text)
+            _, figure_findings = parse_figure_groups(text)
+            findings += figure_findings
             if article.resolve() in subdirections:
                 findings += article_title_findings(text, subdirections[article.resolve()])
         except OSError as error:

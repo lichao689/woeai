@@ -466,6 +466,44 @@ the WeChat backend mobile preview before publishing a theme for the first time.
 
 Recommended default for paper explainers: `academic-clean`.
 
+### Figure groups
+
+New articles associate each paper image with its original figure number, title
+and reading guide explicitly. The number after `figure` is the positive integer
+from the original paper. Keep exactly three blank-line-separated paragraphs:
+
+```markdown
+::: figure 17
+
+![论文图 17 三个波向的响应幅值算子比较](../../assets/public-safe/<publication_ref>/fig17.png)
+
+论文图 17 三个波向的响应幅值算子比较
+
+上排为平台运动，下排为塔底荷载和机舱加速度；横轴均为波周期。
+
+:::
+```
+
+The image alt must exactly match the title. Preserve original subfigure labels
+in both, for example `（原图子图d–f）`; do not renumber selected figures. A guide
+may wrap across source lines within its one paragraph. Put scientific findings,
+conditions and adjoining prose outside the block. Writing rules remain owned by
+the bundled writing standards; this section owns the syntax and diagnostics.
+
+Both explicit groups and historical image/title/guide sequences render through
+one template using the existing theme's `img`, `caption_title`, and `caption_body`
+styles. Historical `图N`, `Fig. N`, `Figure N`, and `论文图 N` forms are recognized
+only after a standalone image with the same alt/title and a following guide
+paragraph. Generic/formula images and ordinary figure references in prose are
+not groups. Ambiguous historical sequences report a diagnostic instead of
+silently consuming a different title or a heading as the guide.
+
+Selected-article checks, rendering, and draft `preflight`/`dry-run` validation
+report missing fields, mismatched numbers/alt, or unclosed blocks with source
+line numbers. No credentials or live calls are needed for these checks. They
+verify structure, not figure reuse rights, scientific meaning, old approval, or
+actual WeChat phone rendering. Existing articles are not migrated automatically.
+
 ## Backlog State Model
 
 Use `wechat/backlog/selected-papers.yml` to track selected papers and publication state.

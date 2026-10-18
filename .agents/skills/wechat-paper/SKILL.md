@@ -40,7 +40,9 @@ description: Create or revise a source-backed WOEAI WeChat paper introduction, r
    source-backed potential uses, editorial inferences and retained scientific conditions in a
    separate language review when preserving historical audit records.
 5. Check the selected article(s), render offline and inspect the result. With an already available
-   runtime, run from the repository root:
+   runtime, run from the repository root. New figures use the explicit figure block in the body
+   template; the checks diagnose missing/mismatched titles or guides with source line numbers.
+   Historical captions remain compatible; do not bulk-migrate old articles or renew their approval:
 
    ```bash
    python3 scripts/check-public-safe-content.py

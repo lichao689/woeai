@@ -16,6 +16,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
+body_images_upload_approved: true
 ---
 
 # ref-zhao2023-BS 内容及来源自查
@@ -88,6 +89,10 @@ rtd_page_checked: false
 完整独立科学源审与checkpoint02最小差异复核已通过：22页、14编号式、17图、3数值表及2符号缩写表、80参考文献；EMD均值横线、图12/16角度约定和IOA定义省略提示已经独立复核，源式与数值不变。 本次只核查科学内容等价、来源和封面绑定，不能称重新完成一次全文PDF独立审计。上述未完成／待审说法按历史保留，当前范围由本段补充。
 
 用户已明确采用此版封面，本地独立视觉验收通过，实际900×383 PNG SHA-256 `3fe6abed84d7fb86c46ba1f84629bfd429fc6f23c3a76c4252df6eeed5a8cf89`。细节见 [ref-zhao2023-BS.cover-brief.md](ref-zhao2023-BS.cover-brief.md)。封面只作概念示意，不冒充原始试验照片或计算输出；采用不等于后台、手机或发布验收。
+
+## 2026-10-18 本轮原草稿图片上传授权
+
+用户已明确授权将新规则分批推广到制作清单中的既有导读，并更新原有微信草稿。本篇在独立内容与规范复核通过后可上传两幅既有批准公共原图4/7；原四幅图、封面及底部原文链接复用。新增的`body_images_upload_approved`只记录本轮明确上传授权，不追改历史版权审查或手机预览状态，不授权新建重复草稿、发布或群发。定向内容证据见同目录`ref-zhao2023-BS.reader-batch03-20261018.review.md`；原科学审核保留。
 
 RTD插入顶部封面块并删除一条过时的“本地未完成封面及独立审核”操作状态句，科学正文不变；MD仅规范方向元数据的冒号与空格，科学正文及全部原图逐字节不变。两项可逆还原checkpoint02。 主review只增补封面路径、历史状态说明及本次范围记录，Li另改方向；所有旧事实证据与许可／预览布尔均保留。题录同步另作源证据纠正：PDF file page 1仅Chao Li有通讯标记，不给Xiao Yiqing添加通讯身份；保留旧注册表值作为历史，不修改远端Zotero。
 

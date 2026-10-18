@@ -316,7 +316,7 @@ items:
     revision_note: "官方接口各创建一次并逐篇回读通过20项检查，保留作者与末尾唯一AI声明。原图未在本地修改；官方JPEG处理与像素同一区分记录。实际手机浅色/深色预览及发布未执行。\n2026-10-17 本地分类名称及写作规范更新，当前源稿待复核；保留历史草稿与审核凭证，未重算旧审批指纹，未更新公众号后台。\n2026-10-17 本次命名迁移离线等价、映射、标题和渲染复核已完成；本篇源稿未变，本轮无需后台正文更新。既有正文图上传许可缺口仍保留。\n2026-10-17 官方完整目录最终回查确认本篇原稿保持不变；本轮无正文更新。"
     publication_history: []
     wechat_draft_created_at: "2026-10-15T09:43:11+00:00"
-    wechat_draft_updated_at: "2026-10-15T09:43:11+00:00"
+    wechat_draft_updated_at: "2026-10-18T10:50:23+00:00"
   - publication_ref: ref-zheng2023-MS
     zotero_key: "5GPZ54VV"
     title: "Efficient optimization design method of jacket structures for offshore wind turbines"

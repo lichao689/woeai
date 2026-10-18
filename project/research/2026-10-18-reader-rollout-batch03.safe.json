@@ -1,0 +1,51 @@
+{
+  "results": [
+    {
+      "publication_ref": "ref-zhao2023-BS",
+      "title": "数值风洞 | 台风路径算对了，为什么街道风速仍可能算错？",
+      "checked_at": "2026-10-18T10:50:23.588850+00:00",
+      "operation": "update_existing_reader_batch03",
+      "ok": true,
+      "checks": {
+        "existing_target_identity": true,
+        "approved_title_and_digest": true,
+        "untouched_metadata_preserved": true,
+        "full_approved_text_matches": true,
+        "formulas_and_geometry_match": true,
+        "formula_color_contract": true,
+        "image_identities_alts_and_count_match": true,
+        "existing_image_urls_exactly_preserved": true,
+        "body_links_match_existing_platform_behavior": true,
+        "cover_reference_preserved": true,
+        "original_link_preserved": true,
+        "unique_ai_statement_at_end": true,
+        "all_other_articles_unchanged": true,
+        "catalog_count_unchanged": true,
+        "current_source_matches_submitted": true
+      },
+      "source_sha256": "331095f15404ca436b6d3205c206ca8f85afce2cfca32cee52b6176256c9d7b2",
+      "submitted_input_fingerprint": "4dfb0fd4e9f18c47370ed364db2e2e351ecd61662766b13b30748607ba865183",
+      "submitted_body_sha256": "1d2d0816a86e9af769b9ce60b8e3b4b0c08f641dbfd6ee628db1bcc3fa3af66d",
+      "readback_body_sha256": "0aaabf7b45d23d7c6bd0774e6896f40043d79a6da7a54a61d39e021177c11357",
+      "body_images": 6,
+      "formula_svgs": 9,
+      "new_body_image_uploads": 2,
+      "platform_cdn_derivatives": 2,
+      "platform_processing_scope": "New uploaded image URLs may become HTTPS and size /640 instead of upload URL /0; same CDN image identifier and query retained. URL derivative identity does not assert full pixel identity.",
+      "draft_count_before": 47,
+      "draft_count_after": 47,
+      "other_articles_checked": 46,
+      "new_drafts": 0,
+      "cover_uploaded": false,
+      "actual_phone_preview": false,
+      "published": false,
+      "mass_sent": false,
+      "external_doi_anchor_removed_by_platform": true,
+      "doi_visible_text_preserved": true,
+      "update_requests_total": 1,
+      "acknowledged_at": "2026-10-18T10:48:45.786350+00:00",
+      "authorization_scope": "Owner explicitly authorized staged improvements to included existing introductions; no actual phone-preview acceptance."
+    }
+  ],
+  "scope": "Zhao2023 BS exact original draft only; two approved existing full original images uploaded, original cover and bottom link retained; no duplicate, actual phone preview or publication."
+}

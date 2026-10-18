@@ -281,6 +281,25 @@
               "current_source_matches_submitted": true
             },
             "scope": "Current included article rule rollout, with prior scientific audit retained and new figure pages checked. Actual existing-draft update/readback only; no new full-source audit, phone preview or publication."
+          },
+          "reader_current_spec_review_20261018": {
+            "recorded_at": "2026-10-18T12:00:46.470055+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BE.reader-current-20261018.review.md",
+            "receipt_path": "project/research/2026-10-18-reader-rollout-final-read-only.safe.json",
+            "source_sha256": "be205d17b5865ead87b3357efae24ebe7aa4bcafd99d8bbcbdc5fb8ac1bbedb1",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "current_reader_rules_review": true,
+              "official_read_only_source_and_presentation": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "New independent current-spec review of unchanged delivered content. Historical draft_created fingerprint/time and old reviews retained; no automatic rehash, API rewrite, new full-source audit or phone preview.",
+            "fingerprint": "f3684d55d082698dcedcc831de03a76209ce46b206b4aac5c78261813d8190be",
+            "receipt_file_sha256": "9f8708dbfcda6a9904182d227fe6a73af7fddf79e79c6616581c1e801dbe1592"
           }
         },
         "latest_published_url": "",
@@ -1318,6 +1337,25 @@
               "current_source_matches_submitted": true
             },
             "scope": "Official update and full readback of the approved v2 only. Previous scientific audit retained, no automatic renewal of old approval; phone light/dark previews and publication remain unperformed."
+          },
+          "reader_current_spec_review_20261018": {
+            "recorded_at": "2026-10-18T12:00:46.470055+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.reader-current-20261018.review.md",
+            "receipt_path": "project/research/2026-10-18-reader-rollout-final-read-only.safe.json",
+            "source_sha256": "2bf41ddff82fee212646a9f9fb25dedcf7b7b3a8bb85dc66915b10f091bca6a3",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "current_reader_rules_review": true,
+              "official_read_only_source_and_presentation": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "New independent current-spec review of unchanged delivered content. Historical draft_created fingerprint/time and old reviews retained; no automatic rehash, API rewrite, new full-source audit or phone preview.",
+            "fingerprint": "767ae12f12ca02a3a72a4cbcb391a7428b13b17dd945bd6f35b04ed2e23f7095",
+            "receipt_file_sha256": "9f8708dbfcda6a9904182d227fe6a73af7fddf79e79c6616581c1e801dbe1592"
           }
         },
         "latest_published_url": "",
@@ -7516,6 +7554,27 @@
               "cover_preview": false
             },
             "scope": "Actual create and individual official readback only. Non-applicable formulas and platform JPEG/link processing remain explicitly bounded in the receipt. Phone preview, scientific verification and publication remain independent."
+          },
+          "reader_retained_current_spec_20261018": {
+            "recorded_at": "2026-10-18T12:00:46.470055+00:00",
+            "review_path": "wechat/articles/review/ref-he2024-JBE.reader-retained-20261018.review.md",
+            "receipt_path": "project/research/2026-10-18-reader-rollout-final-read-only.safe.json",
+            "source_sha256": "368625883d56f4350b9199472a8832ff575a145bfa4d24629f63db0d82f4a000",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "current_reader_rules_review": true,
+              "offline_preflight": true,
+              "compatible_groups_offline_rendering": true,
+              "official_read_only_source_and_presentation": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "New independent current-spec review and official read-only verification of retained compatible groups. No API update, no renewal or rehash of historical draft_created approval, no new full-source audit or phone preview.",
+            "fingerprint": "661d5d8a4cdf8a70e7ab7b43ab8725b5c2fee3e0980db9fbd6cf48e1d5501a93",
+            "receipt_file_sha256": "9f8708dbfcda6a9904182d227fe6a73af7fddf79e79c6616581c1e801dbe1592"
           }
         },
         "latest_published_url": "",
@@ -11266,6 +11325,25 @@
               "current_source_matches_submitted": true
             },
             "scope": "Official update and full readback of the approved v2 only. Previous scientific audit retained, no automatic renewal of old approval; phone light/dark previews and publication remain unperformed."
+          },
+          "reader_current_spec_review_20261018": {
+            "recorded_at": "2026-10-18T12:00:46.470055+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-JRSE.reader-current-20261018.review.md",
+            "receipt_path": "project/research/2026-10-18-reader-rollout-final-read-only.safe.json",
+            "source_sha256": "fb8787a6de255d2ab798adb8541c772622fde4a672847ca4dd47143b34aa85c4",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "current_reader_rules_review": true,
+              "official_read_only_source_and_presentation": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "scope": "New independent current-spec review of unchanged delivered content. Historical draft_created fingerprint/time and old reviews retained; no automatic rehash, API rewrite, new full-source audit or phone preview.",
+            "fingerprint": "506fe154380991032c329e28e1bf25052c24e3fb5450ebfd49a0d6ac895ce5ff",
+            "receipt_file_sha256": "9f8708dbfcda6a9904182d227fe6a73af7fddf79e79c6616581c1e801dbe1592"
           }
         },
         "latest_published_url": "",

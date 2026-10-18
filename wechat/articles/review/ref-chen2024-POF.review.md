@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: true
-wechat_cover_image: wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383.png
+cover_image: wechat/assets/public-safe/ref-chen2024-POF/cover.png
 ---
 
 # ref-chen2024-POF 原文核验记录
@@ -24,7 +23,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-chen2024-POF.md`
 - RTD正文: `docs/source/paper-notes/ref-chen2024-POF.rst`
-- 封面素材: `wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383.png`
+- 历史封面素材（Git 4e4148c）: `wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383.png`
 - 论文图 1 不同入流湍流施加方法示意图: `wechat/assets/public-safe/ref-chen2024-POF/fig01.png`
 - 论文图 7 压力系数均值和标准差剖面沿 X 方向的对比: `wechat/assets/public-safe/ref-chen2024-POF/fig07.png`
 - 论文图 11 湍流特性 NMAE 沿 X 方向的变化: `wechat/assets/public-safe/ref-chen2024-POF/fig11.png`

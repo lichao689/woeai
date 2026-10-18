@@ -8,7 +8,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhou2023-AE/cover-wechat-900x383-imagegen-v1.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhou2023-AE/cover.png
    :alt: 用长期动力优化评价浮式风机下部结构
    :align: center
    :width: 100%

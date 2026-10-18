@@ -75,6 +75,28 @@
             "fingerprint": "70626ed1bb68f2f73430d237d221a22660a51c318019a7c75d911d9aab959862"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "d6f7dd359b849907e980faf342ad55f18c19b3d5c938fe1ffde9e417b14cd7ff"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "4f9fffed51abd0a987015b5c8e5570366d7f34595dd6e3a81bcd53bad0f5b908"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-zhao2026-BE.cover-equivalence.review.md",
             "checks": {
@@ -98,17 +120,6 @@
               "scientific_review_after_sha256": "83ab3a8bd11940a9d66f68d7e4e5b3ab42dd8b7c5dc3c2bdd5551e7cdfd91399"
             },
             "fingerprint": "9f3c6550233977acf9973095ba0a49fc1966c1cb61c18c404446a4dd40534a53"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:45:33+00:00",
-            "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
-            "fingerprint": "4f9fffed51abd0a987015b5c8e5570366d7f34595dd6e3a81bcd53bad0f5b908"
           }
         },
         "review_path": "wechat/articles/review/ref-zhao2026-BE.review.md"
@@ -300,6 +311,20 @@
             "scope": "New independent current-spec review of unchanged delivered content. Historical draft_created fingerprint/time and old reviews retained; no automatic rehash, API rewrite, new full-source audit or phone preview.",
             "fingerprint": "f3684d55d082698dcedcc831de03a76209ce46b206b4aac5c78261813d8190be",
             "receipt_file_sha256": "9f8708dbfcda6a9904182d227fe6a73af7fddf79e79c6616581c1e801dbe1592"
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "40e64784949efb78813e7ce94d833e9c34bcec3f99034e5e47d850e93e23f8ac"
           }
         },
         "latest_published_url": "",
@@ -602,6 +627,28 @@
             "fingerprint": "062a95bf035bc204125111e03fabb8d5907dba2af8d6bcbbc3536538d02eec1a"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "577ca10f137706cc231bb1d09f146cbdd0d25d67b3559e363c827953500fa974"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "a232c137b5570a1756abca096307d462ed774b58c8da3b66c9ee5dd86c2e996e"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-he2026-OE.cover-equivalence.review.md",
             "checks": {
@@ -625,17 +672,6 @@
               "scientific_review_after_sha256": "71543dce0840ba11c54a83f0d9b4efa09ac5a3af7e90d5c0ca4009525b212fd9"
             },
             "fingerprint": "3949868cf8ece796414823976eddc2f89d489c6f5b6efae6dee2adef24732218"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
-            "review_path": "wechat/articles/review/ref-he2026-OE.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "a232c137b5570a1756abca096307d462ed774b58c8da3b66c9ee5dd86c2e996e"
           }
         },
         "review_path": "wechat/articles/review/ref-he2026-OE.review.md"
@@ -811,6 +847,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "57d86524b26c29208e90b67bcdc79cf76a5540f3c5b0e71f19868e7d63c01817"
           }
         },
         "latest_published_url": "",
@@ -1107,6 +1157,39 @@
             "fingerprint": "8e90a292452b7375cc07ba4cb9434500d1a495ef05dd6b7ed559d3d7a18b15a0"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "bdcbc525acf5e3bb12b81cdf11b9f030b8f7ffe155eafc57b50ec72914875660"
+          },
+          "verified_before_20261012_cover": {
+            "recorded_at": "2026-10-06T07:25:10+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
+            "fingerprint": "24b14175fabecc6b0159c34ac489e1753c876edf39106aab6a69791f9df5bcd3"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-12T09:13:41+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Non-content revalidation against 2ebce34: source identity, bibliography, RTD body, guide and all 31 prior assets remain byte-identical. Inherits the 2026-10-06 full-paper audit; no new full-PDF audit. Only a WeChat cover and shared review notes changed; old evidence retained.",
+            "fingerprint": "42c303570f50db15be0515a54d0645d7de7050030bc08b2226d8e6298bd1ac4c"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-zhao2026-BS.cover-equivalence.review.md",
             "checks": {
@@ -1130,28 +1213,6 @@
               "scientific_review_after_sha256": "43875eff65b53027cae44e56fdc398af244142ad08bee1493edf23323d2ca5b5"
             },
             "fingerprint": "6b4e5670160bedd6fa717ef96c4d9f17ef28eb9baa4db03982b9f6bcf23296f4"
-          },
-          "verified_before_20261012_cover": {
-            "recorded_at": "2026-10-06T07:25:10+00:00",
-            "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained.",
-            "fingerprint": "24b14175fabecc6b0159c34ac489e1753c876edf39106aab6a69791f9df5bcd3"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-12T09:13:41+00:00",
-            "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Non-content revalidation against 2ebce34: source identity, bibliography, RTD body, guide and all 31 prior assets remain byte-identical. Inherits the 2026-10-06 full-paper audit; no new full-PDF audit. Only a WeChat cover and shared review notes changed; old evidence retained.",
-            "fingerprint": "42c303570f50db15be0515a54d0645d7de7050030bc08b2226d8e6298bd1ac4c"
           }
         },
         "review_path": "wechat/articles/review/ref-zhao2026-BS.review.md"
@@ -1356,6 +1417,20 @@
             "scope": "New independent current-spec review of unchanged delivered content. Historical draft_created fingerprint/time and old reviews retained; no automatic rehash, API rewrite, new full-source audit or phone preview.",
             "fingerprint": "767ae12f12ca02a3a72a4cbcb391a7428b13b17dd945bd6f35b04ed2e23f7095",
             "receipt_file_sha256": "9f8708dbfcda6a9904182d227fe6a73af7fddf79e79c6616581c1e801dbe1592"
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "2b3d3638b2b79d965d313c4cbb92ba8f886e3114fd44d4231b30ed83cc25d8d0"
           }
         },
         "latest_published_url": "",
@@ -1731,6 +1806,30 @@
             "fingerprint": "5be5ece417948665a483246fa0bbe4c33b4a83e1ad5556caa143d761c6aae65e"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "d0b057ee40b8aa9be8ee3eab166785aa5ed9436941568361e047e5a7c3398239"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T08:43:00+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "source_fidelity": true,
+              "engineering_facts": false
+            },
+            "scope": "Source-verified full-paper translation. Author conclusions are presented within overall concept-design scope; local stress concentrations and node detailing remain for later design optimization. Original Table 16 and pitch-limit values are preserved. No independent engineering safety certification.",
+            "fingerprint": "8a16b5aadd8dc59eb23d18021c3f6e9a47f667f883afdcdaa105a0b28bda63bd"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-he2026-OE-structural.cover-equivalence.review.md",
             "checks": {
@@ -1754,19 +1853,6 @@
               "scientific_review_after_sha256": "f83bedb11afa3282b10cf73387234e2810a3edd98df18f4af9fd547b06c9613f"
             },
             "fingerprint": "8feef72e11fe506f57899a29ab7d9b5bc6ab29311ffe05b2317d4c0f3c730cd2"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T08:43:00+00:00",
-            "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true,
-              "source_fidelity": true,
-              "engineering_facts": false
-            },
-            "scope": "Source-verified full-paper translation. Author conclusions are presented within overall concept-design scope; local stress concentrations and node detailing remain for later design optimization. Original Table 16 and pitch-limit values are preserved. No independent engineering safety certification.",
-            "fingerprint": "8a16b5aadd8dc59eb23d18021c3f6e9a47f667f883afdcdaa105a0b28bda63bd"
           }
         },
         "review_path": "wechat/articles/review/ref-he2026-OE-structural.review.md"
@@ -1986,6 +2072,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "5be6f848bbe01a7de6c9ed8d42cd8f2133b8439e1f9177c86c201c46a77254ea"
           }
         },
         "latest_published_url": "",
@@ -2269,6 +2369,28 @@
             "fingerprint": "59753dc3593e1962da6773861d3ded4fe31ebc59c7be86d7ad12e9d2ed96763d"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-tang2026-RE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "e185fb7a4450520564045c3e0573e8be8903f4f0ab2427edbd50e06d71fb72ae"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "116bcb99c8e29c4e8fd15adee48229a04f61f461477558c2d2bc707259bcbf85"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-tang2026-RE.cover-equivalence.review.md",
             "checks": {
@@ -2292,17 +2414,6 @@
               "scientific_review_after_sha256": "75642af942dd9727d642ad5767f7d86d8fbcfbca5d4c68c9732810b64b1afb42"
             },
             "fingerprint": "fd02f509497108fe1d3c6846b91f78e4591e988914746bad66563d08dda6502f"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:45:33+00:00",
-            "review_path": "wechat/articles/review/ref-tang2026-RE.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
-            "fingerprint": "116bcb99c8e29c4e8fd15adee48229a04f61f461477558c2d2bc707259bcbf85"
           }
         },
         "review_path": "wechat/articles/review/ref-tang2026-RE.review.md"
@@ -2477,6 +2588,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-tang2026-RE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "6d36ddf5e3686d22dfdb2f4ef1afd0e3f0c847a1f002834d32ff85f821d5dede"
           }
         },
         "latest_published_url": "",
@@ -2829,6 +2954,28 @@
             "fingerprint": "2c7e85bd129e4334cff1974aef7ac3099eb4932458da32f14be1063d0977e5ad"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-he2025-POF.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "f5f89f5045d714ed0da8dd1304f0a826b23c2333a7015300adbb4f7e24de99e4"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "ba1fe6823ea16c30291c795d6a57f343e52c8ec2115336896d4153717d810f59"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-he2025-POF.cover-equivalence.review.md",
             "checks": {
@@ -2852,17 +2999,6 @@
               "scientific_review_after_sha256": "c3dc315de5a4efde23b72b5a12530da4a163953de713cdcc44690843b9c3f283"
             },
             "fingerprint": "00a998e6283c150294e36926fa619ec7daba20e09cc1e549d2c2f3962fecfc73"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
-            "review_path": "wechat/articles/review/ref-he2025-POF.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "ba1fe6823ea16c30291c795d6a57f343e52c8ec2115336896d4153717d810f59"
           }
         },
         "review_path": "wechat/articles/review/ref-he2025-POF.review.md"
@@ -3037,6 +3173,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-he2025-POF.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "96fbd30ee5953138c33629613a4a3166591c40161249e32a0063d599a1370661"
           }
         },
         "latest_published_url": "",
@@ -3330,6 +3480,28 @@
             "fingerprint": "b04e5e7b02b681e3dbac3dde83f809025f5b075faa5ba1bb3c9c7e23caf9a64c"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-yang2025-JBE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "595eeb55eab955f7c18bf9b1c902307319b8817b93f6746d8c63efcd15d58a87"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Exhaustive original-paper translation and all scientific figures independently reviewed; source inconsistencies and limitations retained.",
+            "fingerprint": "7bf6372ab631b8b5e80ceeb0ae9f06cef8f55de1a0666ae7466974e974610605"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-yang2025-JBE.cover-equivalence.review.md",
             "checks": {
@@ -3353,17 +3525,6 @@
               "scientific_review_after_sha256": "cdd56474f029c490e8d34bc95ba35244ce115b61c39971d728a94effcfc339a0"
             },
             "fingerprint": "fd15abcf6e88133685d62d6750b49443138f0229d7e5b9df776eab88c377364f"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:45:33+00:00",
-            "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Exhaustive original-paper translation and all scientific figures independently reviewed; source inconsistencies and limitations retained.",
-            "fingerprint": "7bf6372ab631b8b5e80ceeb0ae9f06cef8f55de1a0666ae7466974e974610605"
           }
         },
         "review_path": "wechat/articles/review/ref-yang2025-JBE.review.md"
@@ -3538,6 +3699,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-yang2025-JBE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "781a7f334c27c77ce52c3a06ea9a40789c87bf14fd96c57a293d8848456e3ce1"
           }
         },
         "latest_published_url": "",
@@ -3902,6 +4077,28 @@
             "fingerprint": "ba06ab63ec3933988216fe3be29fa4f65fc5b90dcd8311d16f689998ccb04602"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-OE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "813259dc0df79ec051e89ece6449a78cc58d04dc66b808e465ad11cbd1be4794"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "acd23ff447b395977270c17060e8590a22b214440f9017011d9664e9d844ff47"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-zheng2025-OE.cover-equivalence.review.md",
             "checks": {
@@ -3925,17 +4122,6 @@
               "scientific_review_after_sha256": "42d5b90b373bd1880cc23171e0f7558ae813d4d06c5ea47caaf39223cd053451"
             },
             "fingerprint": "7653e8e9ffb5d051fa3e75f5f2a0f0f8ca3ba2b8d36841096d8cff1d4fdbad9b"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:45:33+00:00",
-            "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
-            "fingerprint": "acd23ff447b395977270c17060e8590a22b214440f9017011d9664e9d844ff47"
           }
         },
         "review_path": "wechat/articles/review/ref-zheng2025-OE.review.md"
@@ -4144,6 +4330,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-OE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "94208818c3c971e07081d03a5b7284fd76a63bccb2ecab3a05f97d73436d4ad5"
           }
         },
         "latest_published_url": "",
@@ -4596,6 +4796,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "0fdbbf8c8433328245636c4dddc6ae7d80f13b217eb5411770fce043812fe32e"
           }
         },
         "latest_published_url": "",
@@ -4817,6 +5031,28 @@
             "fingerprint": "fd5c7cca63a3f0e3db2443d5697e4b446613e66458374d9e8b816a1eecc61ca8"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-tang2025-JBE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "5b94571420a2636b92e5c9164fa1a7f8b913631c1b64e881bd8aca68a0f33f12"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "ae4fe6d7ab6a343717b81112bf9c03adc679411da97fefeb9889fe84778a0384"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-tang2025-JBE.cover-equivalence.review.md",
             "checks": {
@@ -4840,17 +5076,6 @@
               "scientific_review_after_sha256": "b480044bc1d36fce7f0e611c3c9d2d3adad0eec422af45c6f026fdabebb4e561"
             },
             "fingerprint": "73d9eaf146afb5983e5ac6aecbc3f0b3606d0b3638545362a17b2c3cd02136a9"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
-            "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Full source translation and every source figure independently reviewed; original inconsistencies explicitly preserved. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "ae4fe6d7ab6a343717b81112bf9c03adc679411da97fefeb9889fe84778a0384"
           }
         },
         "review_path": "wechat/articles/review/ref-tang2025-JBE.review.md"
@@ -5025,6 +5250,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-tang2025-JBE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "801c8689bf01f481b45e8d8c358dcce6a9a59e472332d4fb1fec229f312e6aa9"
           }
         },
         "latest_published_url": "",
@@ -5446,6 +5685,28 @@
             "fingerprint": "7101303ebe934dae7efae2f1b3cf4c8465187216823c78852cdc0d34876be182"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2025-SCS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "5d9b180854eb8145ecd1e2f5126aae456f089cf3e0b69ff47e8ece199a65af6c"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Exhaustive original-paper translation and all scientific figures independently reviewed; source inconsistencies and limitations retained.",
+            "fingerprint": "28c1f24f4c4ff50bce2a9f85238c83ba6530026baa09d84af05ce5134738c434"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-zhao2025-SCS.cover-equivalence.review.md",
             "checks": {
@@ -5469,17 +5730,6 @@
               "scientific_review_after_sha256": "f0eecef19abba22ded4bb0825c18cde383204fe71895dcb6b8aaa77dbcae64b0"
             },
             "fingerprint": "3b991dc6e4aa3477810ff3e94f5606aa07f0d9b87087fba19d22776f269908c6"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:45:33+00:00",
-            "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Exhaustive original-paper translation and all scientific figures independently reviewed; source inconsistencies and limitations retained.",
-            "fingerprint": "28c1f24f4c4ff50bce2a9f85238c83ba6530026baa09d84af05ce5134738c434"
           }
         },
         "review_path": "wechat/articles/review/ref-zhao2025-SCS.review.md"
@@ -5654,6 +5904,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2025-SCS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "529384a9b4675ee7dd6a2c2b7d49ddf72079c9ca1bc046cf8ccc930b26c7cd37"
           }
         },
         "latest_published_url": "",
@@ -6009,6 +6273,28 @@
         "issues": [],
         "evidence": {
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-POF.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "b23d1034c2e1c27fd27999edd7ef884f3b1220b641c0b508dc8f0e0fd050059f"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Previously verified full text retained; all 24 source figures independently recalibrated and inspected. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "b200a4c16d1037c50dd760a356069aef8784f6f922d48bccbccd7e31f00d4da7"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-POF.cover-equivalence.review.md",
             "checks": {
@@ -6032,17 +6318,6 @@
               "scientific_review_after_sha256": "de37ebe93f701e39aa933687ea77b6949107e0bb8c07b228a91dfc49b26b50b4"
             },
             "fingerprint": "30ddb74c65c49f96eedb4afc8ccad21b902ece91630ef4ba6790efd5d32cb7bc"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
-            "review_path": "wechat/articles/review/ref-chen2024-POF.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Previously verified full text retained; all 24 source figures independently recalibrated and inspected. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "b200a4c16d1037c50dd760a356069aef8784f6f922d48bccbccd7e31f00d4da7"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2024-POF.review.md"
@@ -6215,6 +6490,20 @@
               "current_source_matches_submitted": true
             },
             "scope": "Current figure-group/read-guide revision and exact existing-draft update/readback only. Existing scientific audit retained; no new full-source audit or actual mobile preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-POF.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": false,
+              "facts": false,
+              "public_safety": false,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "4973a41ce2fa69cbec1edb8973eb777289f66d895b4916379679a9487fbc7f87"
           }
         },
         "latest_published_url": "",
@@ -6631,6 +6920,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-tang2024-POF.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "b791c4aa841b73dbc729c83602a5ccca723855e5fa149e0ab92516d37f8d7851"
           }
         },
         "latest_published_url": "",
@@ -6923,6 +7226,28 @@
             "fingerprint": "212fa88e8f52488122c508c16b8e0bee3d7aa750a8eb270f72f48da69510e6db"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-wang2024-ES.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "952632215ff773b7114b54b82253a9f2c46274b7df853ac50f851a5534743c69"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "5e996822236b8c58fd2036cf167fb24ace5d08bf9e6e051e11a3d26f3b394a84"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-wang2024-ES.cover-equivalence.review.md",
             "checks": {
@@ -6946,17 +7271,6 @@
               "scientific_review_after_sha256": "35305b06836967ac798ca13b6617bdd8d7d6fd837d78b1fec67ef384e03acb6f"
             },
             "fingerprint": "0a3dc5e9066092114d8ad209004e28b5612c8463a4d15d3f679551797ead8b2d"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:45:33+00:00",
-            "review_path": "wechat/articles/review/ref-wang2024-ES.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
-            "fingerprint": "5e996822236b8c58fd2036cf167fb24ace5d08bf9e6e051e11a3d26f3b394a84"
           }
         },
         "review_path": "wechat/articles/review/ref-wang2024-ES.review.md"
@@ -7131,6 +7445,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-wang2024-ES.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "21d690b790408b4e9517cc9d8355491990aacb1ddb463373e519ea20af74e89c"
           }
         },
         "latest_published_url": "",
@@ -7575,6 +7903,20 @@
             "scope": "New independent current-spec review and official read-only verification of retained compatible groups. No API update, no renewal or rehash of historical draft_created approval, no new full-source audit or phone preview.",
             "fingerprint": "661d5d8a4cdf8a70e7ab7b43ab8725b5c2fee3e0980db9fbd6cf48e1d5501a93",
             "receipt_file_sha256": "9f8708dbfcda6a9904182d227fe6a73af7fddf79e79c6616581c1e801dbe1592"
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-he2024-JBE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "865f5f512fbebe2f97f527cd0c8dfd7207811fe20d67863f3273ccc92b588be7"
           }
         },
         "latest_published_url": "",
@@ -7937,6 +8279,28 @@
             "fingerprint": "cb24418a243df754f845f25bb9423920df22396996d7dbd10956007a0fc8fee4"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2024-POF.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "43e34f21a704776cb24c0363dc51d124e9a3c39d95d3cf418a31a387b02f05f0"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "79082fa4ff050015cc8fb233a7a2a0fffb9422f1f4914c8eee19cc5c96dc17ab"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-li2024-POF.cover-equivalence.review.md",
             "checks": {
@@ -7960,17 +8324,6 @@
               "scientific_review_after_sha256": "873d16eac010fe09164af1408013130c0e2e661a64c2ac0c4b8c4c44f16327dc"
             },
             "fingerprint": "b1c0155b1b9dd6bafaf1f11ba85c1b50cfff5663da44611b0105e4e10d3214a3"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
-            "review_path": "wechat/articles/review/ref-li2024-POF.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Complete Chinese source reconstruction and every original figure independently verified; source discrepancies retained; no backend preview or publication claim. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "79082fa4ff050015cc8fb233a7a2a0fffb9422f1f4914c8eee19cc5c96dc17ab"
           }
         },
         "review_path": "wechat/articles/review/ref-li2024-POF.review.md"
@@ -8143,6 +8496,20 @@
               "current_source_matches_submitted": true
             },
             "scope": "Current figure-group/read-guide revision and exact existing-draft update/readback only. Existing scientific audit retained; no new full-source audit or actual mobile preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2024-POF.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": false,
+              "facts": false,
+              "public_safety": false,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "902083ddfd3f098faf57b9679e2fe1496db803f57879cc11001086ab795c4f75"
           }
         },
         "latest_published_url": "",
@@ -8440,6 +8807,39 @@
             "fingerprint": "ddf229dd8759e9e2351281167fb198f9f18d0afac580690abfce8da7db03ad63"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "1a68349ab4abdb32c77664025d595d5d09177809c4d6fd7e273da565d6b5c038"
+          },
+          "previous_verified_before_cover_v2": {
+            "recorded_at": "2026-10-06T09:01:19+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full 31-page main paper plus 3-page Appendix A and 4-page Appendix B; independent paragraph and pixel-math audit, 95 equations, 35 figures, 5 tables, 58 main and 6 appendix references. Source discrepancies explicitly annotated; no silent corrections.",
+            "fingerprint": "136ec21c8bcbbee8d3309bdcdb3ae2041400f5ce5bb2a84fe4446641b6f39b8d"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-11T13:36:01+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Cover-only update: user-selected generated v2. Original full-paper text, appendices, equations, tables, scientific figures and references unchanged; carry forward the 2026-10-06 full-coverage audit. Live old-version HTML and all36 image bytes verified on2026-10-11; new cover deployment pending.",
+            "fingerprint": "d2d037199b913afbdca4fd8c5146113964ef3b7e7d4e573b78b362a7358e2797"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-chen2024-JCP.cover-equivalence.review.md",
             "checks": {
@@ -8463,28 +8863,6 @@
               "scientific_review_after_sha256": "547137d61133f536cc758e3dcac0cb5e99ee3a1f5da3f28fc640ecef11696943"
             },
             "fingerprint": "7c6b7ba0fbb2c13a76a2e4e3394bf7900ec37bed86518c6a340dcfbd6d6d8777"
-          },
-          "previous_verified_before_cover_v2": {
-            "recorded_at": "2026-10-06T09:01:19+00:00",
-            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Full 31-page main paper plus 3-page Appendix A and 4-page Appendix B; independent paragraph and pixel-math audit, 95 equations, 35 figures, 5 tables, 58 main and 6 appendix references. Source discrepancies explicitly annotated; no silent corrections.",
-            "fingerprint": "136ec21c8bcbbee8d3309bdcdb3ae2041400f5ce5bb2a84fe4446641b6f39b8d"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-11T13:36:01+00:00",
-            "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Cover-only update: user-selected generated v2. Original full-paper text, appendices, equations, tables, scientific figures and references unchanged; carry forward the 2026-10-06 full-coverage audit. Live old-version HTML and all36 image bytes verified on2026-10-11; new cover deployment pending.",
-            "fingerprint": "d2d037199b913afbdca4fd8c5146113964ef3b7e7d4e573b78b362a7358e2797"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2024-JCP.review.md"
@@ -8709,6 +9087,20 @@
               "current_source_matches_submitted": true
             },
             "scope": "Current figure-group/read-guide revision and exact existing-draft update/readback only. Existing scientific audit retained; no new full-source audit or actual mobile preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-chen2024-JCP.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": false,
+              "facts": false,
+              "public_safety": false,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "02b99f63e4dc7c97995f487a158b2827c10ca1f5f96d86e56fae28e058354845"
           }
         },
         "latest_published_url": "",
@@ -9126,6 +9518,28 @@
             "fingerprint": "2528aebf168d4e84b6144f1e89044d4692c39d3b647f33ebc6e17228c8c26a32"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2023-AE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "de07142209f98f5e0bac14689554df09acbd14d4162e615de0605314303fedd8"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "6dfcd99c1793c6c3b80ae09ad5f4a081f95001d86698b75130c8905b05f26ef3"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-zhou2023-AE.cover-equivalence.review.md",
             "checks": {
@@ -9149,17 +9563,6 @@
               "scientific_review_after_sha256": "511927a0b13cbe951bfb03dd0ab9829b21c3b5a99572abd5ac998e0ac3a41c60"
             },
             "fingerprint": "d72fa2a429824531b5ba8afa44727cc800f4edb91a87e4251e1602d5f92825fc"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
-            "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Full source translation and every original figure independently reviewed; source discrepancies remain disclosed. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "6dfcd99c1793c6c3b80ae09ad5f4a081f95001d86698b75130c8905b05f26ef3"
           }
         },
         "review_path": "wechat/articles/review/ref-zhou2023-AE.review.md"
@@ -9368,6 +9771,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2023-AE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "4eccf036a667fee9d31febd7554d6306cf00a9424540be0f585d0058240a23b2"
           }
         },
         "latest_published_url": "",
@@ -9786,6 +10203,20 @@
               "current_source_matches_submitted": true
             },
             "scope": "Current six-figure introduction and exact original-draft update/readback. Prior scientific audit retained; no new full-source audit or actual phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-BS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "6adbd283996f906fc477c6c771cd7c312b59c99eb673ff926a47176d8d29a22d"
           }
         },
         "latest_published_url": "",
@@ -10253,6 +10684,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-MS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "84d4cae73094fe5b35fe45546ec2df503d8c5c3fa83b18148498ca9a0b3f8a9f"
           }
         },
         "latest_published_url": "",
@@ -10601,6 +11046,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-S.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "a79e2742aeddb521c2d9729fcf1ed6a2ebe27074993aed588331f17c94b2c29b"
           }
         },
         "latest_published_url": "",
@@ -10948,6 +11407,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-wang2023-JWEIA.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "1628f4ba0a38c7129551e02c9d2c2879bdbaea6fa267604fb017f1026b565534"
           }
         },
         "latest_published_url": "",
@@ -11344,6 +11817,20 @@
             "scope": "New independent current-spec review of unchanged delivered content. Historical draft_created fingerprint/time and old reviews retained; no automatic rehash, API rewrite, new full-source audit or phone preview.",
             "fingerprint": "506fe154380991032c329e28e1bf25052c24e3fb5450ebfd49a0d6ac895ce5ff",
             "receipt_file_sha256": "9f8708dbfcda6a9904182d227fe6a73af7fddf79e79c6616581c1e801dbe1592"
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-JRSE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "7dffa16a506b5944a0e13dab3a2dde7ef9593a5bccf99aee059e2948c1a252bc"
           }
         },
         "latest_published_url": "",
@@ -11691,6 +12178,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-ES.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "b3fcc6c2d1645f576337f3d9ebc29079943564d8537e9030264dca98bca56ca7"
           }
         },
         "latest_published_url": "",
@@ -12103,6 +12604,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-feng2023-HKXYGC.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "6d9ed303600d28e2160517ead13e6906a6b3c73230480155f8a78abb5faabb8a"
           }
         },
         "latest_published_url": "",
@@ -12563,6 +13078,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "2494c353fa07732af8a0fa3efae8bc477f7d7f36a5553ee8dbcd25e12476d701"
           }
         },
         "latest_published_url": "",
@@ -13001,6 +13530,28 @@
             "fingerprint": "1bcd144dc058ab35cfc0ee3f5f8e295387edb8449f5b251b3dbd9f98e2d139b1"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-chen2022-JWEIA.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "3b8088b3b275acf4e0719417ac27e2b1f82b6955a1920c55da0ec3a8c5bb59ec"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:45:33+00:00",
+            "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
+            "fingerprint": "f899f2e56e83738b1fea9ce0782f44d732c51f8932598195303bdf279597f231"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-chen2022-JWEIA.cover-equivalence.review.md",
             "checks": {
@@ -13024,17 +13575,6 @@
               "scientific_review_after_sha256": "875a11b00f4c7131c18e2d640aa55454fcbb3dbd9107f811cc91655a5694a2d3"
             },
             "fingerprint": "334b4bb350e00d740afb0f9a79496b9192953747f0bcf6320af34b357cfed372"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:45:33+00:00",
-            "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Previously independently verified full text and figures retained; original email strings unchanged, only seven total mailto boundary spaces across five papers independently checked.",
-            "fingerprint": "f899f2e56e83738b1fea9ce0782f44d732c51f8932598195303bdf279597f231"
           }
         },
         "review_path": "wechat/articles/review/ref-chen2022-JWEIA.review.md"
@@ -13209,6 +13749,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-chen2022-JWEIA.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "2369094f35927a0c031b32a27f56c3375ec34a49273dc647df9dd6c2943dddd4"
           }
         },
         "latest_published_url": "",
@@ -13494,6 +14048,28 @@
             "fingerprint": "609119ff98fc3024c2ab10c0e802e00700dd9bab08be7456b121f8cc0b512a5e"
           },
           "verified": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2022-SOS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true,
+              "non_content_equivalence": true
+            },
+            "fingerprint": "016755932a3257c7fa2dfd02cc8c7490882faebe735b6dcea895cf83bf90edfc"
+          },
+          "verified_before_20261014_wechat_cover_integration": {
+            "recorded_at": "2026-10-06T07:25:11+00:00",
+            "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
+            "checks": {
+              "source_identity": true,
+              "full_paper_coverage": true,
+              "public_safety": true
+            },
+            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
+            "fingerprint": "79f2f7c7f26fcb2486cdeff51aff4efcacf79ccce901c4401ffd946bb607bd2c"
+          },
+          "verified_before_cover_single_source_20261018": {
             "recorded_at": "2026-10-14T11:20:06+00:00",
             "review_path": "wechat/articles/review/ref-li2022-SOS.cover-equivalence.review.md",
             "checks": {
@@ -13517,17 +14093,6 @@
               "scientific_review_after_sha256": "9a0d3ae924a7f392b4de2d1a503f0e3670ed7939ee4237c575977478e65cc487"
             },
             "fingerprint": "74a0ee272f76205e86657255346db3a3fec10192720fe9734137bc5454ffb96b"
-          },
-          "verified_before_20261014_wechat_cover_integration": {
-            "recorded_at": "2026-10-06T07:25:11+00:00",
-            "review_path": "wechat/articles/review/ref-li2022-SOS.review.md",
-            "checks": {
-              "source_identity": true,
-              "full_paper_coverage": true,
-              "public_safety": true
-            },
-            "scope": "Full source translation, every reference and every original figure independently reviewed; source discrepancies explicitly retained. Guide-only clarification preserves original scientific nomenclature placement; prior article, review and asset bytes unchanged from publication baseline.",
-            "fingerprint": "79f2f7c7f26fcb2486cdeff51aff4efcacf79ccce901c4401ffd946bb607bd2c"
           }
         },
         "review_path": "wechat/articles/review/ref-li2022-SOS.review.md"
@@ -13736,6 +14301,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2022-SOS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "071d1d48f9cdd31710c6f1bf282e4e5b3babc3c8a40a061314a27d1ca8732982"
           }
         },
         "latest_published_url": "",
@@ -14500,6 +15079,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-yang2022-AS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": false,
+              "facts": false,
+              "public_safety": false,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "93f5f0642b7ea7453bc920c328a58ed1c0f025fec762e68fff1e7d536f7c4c49"
           }
         },
         "latest_published_url": "",
@@ -14916,6 +15509,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-EFM.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "173b70f7e1333ba0037380d6bfe88ef3e4fa409e46b86092349db42fe4a39494"
           }
         },
         "latest_published_url": "",
@@ -15261,6 +15868,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-AR.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "4ec7bd83eb4e3fd6d61ff7ca8bb96522d26585fa8064652326e4c0f4800a5630"
           }
         },
         "latest_published_url": "",
@@ -15808,6 +16429,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2021-OE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "fe0c4f1c5f4b7a89683e30a68c17863462fe8e8665e2b6eab44832fcb9c53205"
           }
         },
         "latest_published_url": "",
@@ -16153,6 +16788,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-TYNXB.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "3911553e97ae304b4cdea61b462a793f8bdb75e06cfafcfcecb7218d0bc663ca"
           }
         },
         "latest_published_url": "",
@@ -16570,6 +17219,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2020-JWEIA.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "b2f1d58bb90510d7f9bb61475d9542473665d9797feb34b1f1e024c7f0b30638"
           }
         },
         "latest_published_url": "",
@@ -16948,6 +17611,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2020-RE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "981492ba414c592e348f6a3562999a82080c7be44957c841887f90bf6785b6d0"
           }
         },
         "latest_published_url": "",
@@ -17733,6 +18410,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2018-AE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "67f93bc93ba1f5f1f6aae25ff17f1abf64f65fb51c8f55f79b8b2eca5dbc71d9"
           }
         },
         "latest_published_url": "",
@@ -18157,6 +18848,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-xiao2018-KXJSYGC.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "97835354fabe1e2952f74e83d67c900c82a2113e9ad2ff93d9aee4f7edf6cc00"
           }
         },
         "latest_published_url": "",
@@ -18612,6 +19317,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2017-E.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "767cd90dfc931c9ce6096870f7b3f8d1bb53ea0a3653e179fe8db4cb1a0c3f17"
           }
         },
         "latest_published_url": "",
@@ -18958,6 +19677,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2017-BS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "6643044dd337e01f6479484ec53397d337c528cde6074392cb3148f8ef203082"
           }
         },
         "latest_published_url": "",
@@ -19434,6 +20167,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2017-AS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "2610d6c1c6cb88b9798cbf67cbd082a24a903776fc121f0b9b51c3109fb99f8b"
           }
         },
         "latest_published_url": "",
@@ -19951,6 +20698,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2013-RE.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "49158ab9e6e7228ac0cce5e738c2fdd2ab24d7e307a2f1273ab9bcdc18debe40"
           }
         },
         "latest_published_url": "",
@@ -20397,6 +21158,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2012-JWEIA.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "8e2218fdefbc7e66200784ded15fa75c378459a81e8fadf3f95ccd082615df15"
           }
         },
         "latest_published_url": "",
@@ -20839,6 +21614,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2012-GCLX.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "ac8819f0107a8ea1283a6b8c4153eaab80f275471e03591a68dce12192862456"
           }
         },
         "latest_published_url": "",
@@ -21289,6 +22078,20 @@
               "final_catalog_target_matches": true
             },
             "scope": "Current revision and exact original-draft update/readback, with final whole-catalog guard; no renewed full-source audit or phone preview."
+          },
+          "cover_single_source_equivalence_20261018": {
+            "recorded_at": "2026-10-18T15:49:03.072941+00:00",
+            "review_path": "wechat/articles/review/ref-li2010-WAS.cover-single-source-20261018.review.md",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "c235bc89c87d34793ceda907349aa9cfd81c2f972dd6b5777030efa7238c5ed6"
           }
         },
         "latest_published_url": "",

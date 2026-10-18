@@ -1,12 +1,15 @@
 """Registry-backed recent papers for the two language versions of the homepage."""
 
 import json
+import hashlib
+import shutil
 from html import escape
 from pathlib import Path
 
 from woeai.publications.registry import load_registry, wechat_content_reviewed
 from woeai.publications.taxonomy import RESEARCH_FAMILY_EN, RESEARCH_FAMILY_ORDER
 from woeai.publications.textutils import parse_date
+from woeai.wechat.review import find_review_cover
 
 
 def publication_date(record):
@@ -58,7 +61,9 @@ def render_home_progress(root: Path, *, english=False):
             record_url = f'Publications.html#{"en-" if english else ""}{ref.lower()}'
             parts.append(f'<article class="work-card" data-publication-ref="{escape(ref)}" data-publication-date="{date}">')
             image = f"home/progress-{ref}.png"
-            if (root / "docs/_static" / image).is_file():
+            cover = find_review_cover(root / custom["wechat"]["review_path"], root=root)
+            if cover is not None:
+                image += "?v=" + hashlib.sha256(cover.read_bytes()).hexdigest()[:12]
                 caption = "AI-generated reading-note cover · not research data" if english else "AI 生成的论文解读封面 · 非研究数据"
                 parts.append(f'<figure><img src="{prefix}_static/{image}" alt="{escape(heading)}" width="900" height="383" loading="lazy" decoding="async">'
                              f'<figcaption>{escape(caption)}</figcaption></figure>')
@@ -85,3 +90,22 @@ def render_home_progress(root: Path, *, english=False):
             parts.append('</div></div></article>')
         parts.append('</div></div>')
     return "\n".join(parts)
+
+
+def copy_home_progress_covers(root: Path, outdir: Path):
+    """Generate homepage derivatives directly in Sphinx output, never in source."""
+    destination = outdir / "_static/home"
+    destination.mkdir(parents=True, exist_ok=True)
+    current = set()
+    for _, rows in recent_publications(load_registry(root), root):
+        for row in rows:
+            custom = row["custom"]
+            cover = find_review_cover(root / custom["wechat"]["review_path"], root=root)
+            if cover is None:
+                continue
+            name = f"progress-{custom['publication_ref']}.png"
+            shutil.copyfile(cover, destination / name)
+            current.add(name)
+    for path in destination.glob("progress-*.png"):
+        if path.name not in current:
+            path.unlink()

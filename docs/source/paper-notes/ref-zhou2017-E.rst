@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhou2017-E/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhou2017-E/cover.png
    :alt: 一体化分析 | 同向风浪也看朝向 / Y形平台响应的方向效应
    :width: 900px
    :align: center

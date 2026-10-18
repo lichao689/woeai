@@ -1,7 +1,5 @@
 ---
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-li2017-BS/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-li2017-BS/cover-wechat-900x383-20261014-v5.png
 publication_ref: ref-li2017-BS
 doi: 10.1007/s12273-017-0348-1
 research_family: 工程结构抗风
@@ -17,6 +15,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
+cover_image: wechat/assets/public-safe/ref-li2017-BS/cover.png
 ---
 
 # ref-li2017-BS 内容制作记录

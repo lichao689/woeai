@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-20261014-badge.png
-rtd_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png
+cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover.png
 ---
 
 # ref-chen2024-JCP 原文核验记录
@@ -24,7 +23,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-chen2024-JCP.md`
 - RTD正文: `docs/source/paper-notes/ref-chen2024-JCP.rst`
-- 封面素材: `wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png`
+- 历史封面素材（Git 4e4148c）: `wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png`
 - 论文图 7 CMRFG 方法流程图: `wechat/assets/public-safe/ref-chen2024-JCP/fig-07-cmrfg-workflow.png`
 - 论文图 4 SW1 至 SW4 工况流场统计脉动: `wechat/assets/public-safe/ref-chen2024-JCP/fig-04-statistical-flow-fluctuations.png`
 - 论文图 17 不同空间间距下的 Y 方向空间相干函数对比: `wechat/assets/public-safe/ref-chen2024-JCP/fig-17-spatial-coherence-validation.png`

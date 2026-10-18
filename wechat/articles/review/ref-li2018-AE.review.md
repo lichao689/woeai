@@ -1,8 +1,7 @@
 ---
 publication_ref: ref-li2018-AE
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-li2018-AE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-li2018-AE/cover-wechat-900x383-20261014-v5.png
+cover_image: wechat/assets/public-safe/ref-li2018-AE/cover.png
 ---
 
 # ref-li2018-AE 内容与证据审阅记录

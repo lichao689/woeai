@@ -5,7 +5,7 @@ LES 高层建筑人工压力脉动抑制方法对比：论文精解
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-chen2024-POF/cover-wechat-900x383.png
+.. image:: ../../../wechat/assets/public-safe/ref-chen2024-POF/cover.png
    :alt: LES 高层建筑风荷载评估中人工压力脉动抑制方法对比
    :align: center
    :width: 100%

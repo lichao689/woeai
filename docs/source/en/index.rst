@@ -1,7 +1,7 @@
 :orphan:
 
-WOEAI | Research group
-======================
+WOEAI | WOEAI Lab
+=================
 
 .. toctree::
    :hidden:

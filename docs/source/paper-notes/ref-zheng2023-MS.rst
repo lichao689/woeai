@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zheng2023-MS/cover-wechat-900x383-20261015-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zheng2023-MS/cover.png
    :alt: 一体化分析 | 导管架如何高效减重 / 代理优化后再查局部疲劳
    :width: 900px
    :align: center

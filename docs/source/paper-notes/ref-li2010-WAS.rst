@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-li2010-WAS/cover-wechat-900x383-20261015-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-li2010-WAS/cover.png
    :alt: 数值风洞 | 数值风洞怎样更可靠 / 与物理风洞对照检验
    :align: center
    :width: 100%

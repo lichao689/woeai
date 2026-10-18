@@ -39,10 +39,10 @@
   ```
 
 - 在“精简版微信公众号文章：...”下一行必须立即放置对应微信公众号封面图。封面图应来自
-  `wechat/assets/public-safe/<publication_ref>/cover-wechat...`，RST 中使用相对路径：
+  `wechat/assets/public-safe/<publication_ref>/cover.png`（与公众号共用，由当前review的`cover_image`选择），RST 中使用相对路径：
 
   ```rst
-  .. image:: ../../../wechat/assets/public-safe/<publication_ref>/cover-wechat-900x383.png
+  .. image:: ../../../wechat/assets/public-safe/<publication_ref>/cover.png
      :alt: 中文封面说明
      :align: center
      :width: 100%
@@ -165,7 +165,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/<publication_ref>/cover-wechat-900x383.png
+.. image:: ../../../wechat/assets/public-safe/<publication_ref>/cover.png
    :alt: 中文封面说明
    :align: center
    :width: 100%
@@ -218,7 +218,7 @@
 自查表必须包含：
 
 - PDF 总页数与正文页范围。
-- 顶部封面图：确认“精简版微信公众号文章：...”后立即是 `cover-wechat...` 图片。
+- 顶部封面图：确认“精简版微信公众号文章：...”后立即是 该篇唯一 `cover.png` 图片。
 - 处理过的章节列表，逐项写出“已翻译 / 不适用 / 缺源文件”。
 - 图号覆盖：例如 `Fig. 1-12 all included`，或列出缺失图号与原因。
 - 表号覆盖：例如 `Table 1-5 all included`，或列出缺失表号与原因。

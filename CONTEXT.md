@@ -5,12 +5,24 @@ This context defines the public-facing language for the WOEAI research group web
 ## Language
 
 **WOEAI Full Name**:
-The canonical expanded English name is `Wind and Ocean Engineering with AI (WOEAI)`. Use it on first mention in public identity surfaces, then use `WOEAI` in short navigation, buttons, and repeated prose. In body copy, `AI-enabled wind and ocean engineering` can describe the research approach when a sentence needs a natural descriptive phrase rather than the brand name.
+The canonical expanded English name is `Wind and Ocean Engineering with AI (WOEAI)`. This expands the website brand; the approved research-team name is defined under Laboratory Name below. Use it on first mention in public identity surfaces, then use `WOEAI` in short navigation, buttons, and repeated prose. In body copy, `AI-enabled wind and ocean engineering` can describe the research approach when a sentence needs a natural descriptive phrase rather than the brand name.
 _Avoid_: ampersand-form expansions, empowered-by-AI phrasing as the canonical name
 
+**Laboratory Name**:
+The approved public name of the team: `风与海洋工程人工智能实验室` in Chinese and
+`Wind and Ocean Engineering with AI Laboratory` in English, with `WOEAI` serving as both
+the brand and the abbreviation. `WOEAI 实验室` is the short in-prose reference and
+`WOEAI LAB` is the display label. The name expands WOEAI rather than introducing a second
+acronym. This is a research team, not an institutional laboratory: the name must not carry
+`重点`, `国家`, or `中心`, and first public mention should not imply an organisational unit,
+a facility, or a formal establishment.
+_Avoid_: inventing a second acronym such as WOSL or WOEL, 风与海洋工程智能实验室 (reads as a
+smart-building lab), AI 赋能风与海洋工程实验室 (empowered-by-AI phrasing as an institution name),
+institutional-laboratory wording
+
 **Group-led Website Narrative**:
-The homepage presents the research group's questions, related research, collaboration and joining routes. Display Chao Li (李朝), Professor and PhD Supervisor (教授 · 博士生导师), as group leader rather than the homepage's main subject. WOEAI remains the existing website brand; do not invent a formal group name, membership or size. A curated publication record is not proof that every paper was produced by the current group. Preserve original authorship and sources, and distinguish published research from the site's scholarly explanations of it.
-_Avoid_: invented group roster, relabelling all curated papers as group-owned research, presenting reading notes as original findings
+The homepage presents the laboratory's questions, related research, collaboration and joining routes. Display Chao Li (李朝), Professor and PhD Supervisor (教授 · 博士生导师), as laboratory lead rather than the homepage's main subject. `WOEAI` remains the website brand and the approved Laboratory Name supplies the formal identity; do not invent additional names, membership or size. A curated publication record is not proof that every paper was produced by the current team. Preserve original authorship and sources, and distinguish published research from the site's scholarly explanations of it.
+_Avoid_: invented team roster, relabelling all curated papers as team-owned research, presenting reading notes as original findings
 
 **Public Journal Paper**:
 A journal article that belongs to the group leader's curated public research publication record and is suitable for the website's journal-paper list. It is narrower than the broader research library and broader than only first-author or corresponding-author papers. Teaching-reform and ideological-and-political-course-construction papers are not Public Journal Papers; place them under the Teaching Reform Publication section instead.
@@ -336,3 +348,7 @@ Public label: `内容制作`. Values: `pending` (待确认), `included` (制作)
 The decision is independent of verification and publication; exclusion preserves bibliography,
 existing outputs and audit history, and is not a completed task. The compatibility field
 `custom.wechat.selected` mirrors `included`. No single-channel options are supported.
+
+
+**Single Current Paper Cover**:
+Each produced paper keeps one current approved source at `wechat/assets/public-safe/<publication_ref>/cover.png`, selected by the current review note's `cover_image`. WeChat, RTD and the bilingual homepage share those bytes. Historical channel-specific fields and cover prose are audit context, never fallback selectors. Homepage derivatives are generated directly in Sphinx output and are not maintained as extra source files. Retired tracked covers leave the working tree but remain recoverable through Git; scientific figures, PDFs and audit records are preserved. Fingerprint renewal requires documented non-content equivalence checks and never upgrades stale scientific review, phone preview or publication.

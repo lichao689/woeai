@@ -1,11 +1,4 @@
-"""Review-note parsing shared across WeChat article tools.
-
-The review note (``wechat/articles/review/<ref>.review.md``) carries
-front-matter metadata and a 封面素材 cover reference. Parsing these was
-duplicated across ``markdown_to_rtd.py`` and ``wechat_draft.py`` with drifting
-contracts (one returned None for a missing cover, the other raised); both now
-import from here and apply their own error policy on top.
-"""
+"""Shared review metadata and one canonical current cover for both channels."""
 
 from __future__ import annotations
 
@@ -16,11 +9,6 @@ from typing import Literal
 # Repo root: woeai/wechat/review.py -> parents[2]
 _REPO_ROOT = Path(__file__).resolve().parents[2]
 
-_COVER_RE = re.compile(r"-\s+封面素材:\s+`([^`]+)`")
-_COVER_FRONT_MATTER_KEYS = {
-    "rtd": ("rtd_cover_image", "wechat_cover_image", "cover_image"),
-    "wechat": ("wechat_cover_image", "rtd_cover_image", "cover_image"),
-}
 
 
 def parse_title(markdown_text: str) -> str:
@@ -66,22 +54,24 @@ def resolve_repo_path(value: str) -> Path:
 
 
 def find_review_cover(
-    review_path: Path, *, channel: Literal["rtd", "wechat"] = "rtd"
+    review_path: Path, *, channel: Literal["rtd", "wechat"] = "rtd", root: Path | None = None
 ) -> Path | None:
-    """Find a review cover, preferring the requested channel.
+    """Return the one current public cover; channel is retained for caller compatibility.
 
-    Fall back to the other channel, cover_image, then the 封面素材 line.
-    The default preserves the historical RTD-first order. Returns None when
-    no cover is recorded; callers that require one should raise on None.
+    Historical channel fields and prose are audit context, never fallback selectors.
     """
     front = parse_front_matter(review_path)
-    for key in _COVER_FRONT_MATTER_KEYS[channel]:
-        if front.get(key):
-            return resolve_repo_path(front[key])
-    if not review_path.exists():
+    value = front.get("cover_image")
+    if not value:
         return None
-    text = review_path.read_text(encoding="utf-8")
-    match = _COVER_RE.search(text)
-    if match:
-        return resolve_repo_path(match.group(1))
-    return None
+    ref = front.get("publication_ref", "")
+    expected = f"wechat/assets/public-safe/{ref}/cover.png"
+    if not re.fullmatch(r"ref-[A-Za-z0-9_-]+", ref) or value != expected:
+        raise ValueError("Cover must use the paper's canonical public path")
+    if front.get("wechat_cover_image") or front.get("rtd_cover_image"):
+        raise ValueError("Retired channel cover selectors must be removed")
+    base = (root or _REPO_ROOT).resolve()
+    cover = base / expected
+    if cover.resolve() != cover or not cover.is_file():
+        raise ValueError("Canonical cover is missing or redirected")
+    return cover

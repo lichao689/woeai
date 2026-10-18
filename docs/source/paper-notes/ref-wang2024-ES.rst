@@ -7,7 +7,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-imagegen-v1.png
+.. image:: ../../../wechat/assets/public-safe/ref-wang2024-ES/cover.png
    :alt: 让 LES 入流按目标风场自动收敛
    :align: center
    :width: 100%

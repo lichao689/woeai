@@ -7,7 +7,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v5b-pub-line-route.png
+.. image:: ../../../wechat/assets/public-safe/ref-yang2025-JBE/cover.png
    :alt: 高层建筑二维矢量响应极值研究封面
    :align: center
    :width: 100%

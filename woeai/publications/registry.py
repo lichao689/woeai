@@ -143,8 +143,7 @@ def _referenced_files(root: Path, paths: set[str]) -> set[str]:
         text = source.read_text(encoding='utf-8')
         relative = re.findall(r'^\s*\.\. (?:\|[^|]+\| )?(?:image|figure|include)::\s*(\S+)\s*$', text, re.M)
         relative += re.findall(r'!\[[^\]]*\]\(([^)]+)\)', text)
-        absolute = re.findall(r'^(?:rtd_cover_image|wechat_cover_image|cover_image):\s*["\']?([^\s"\']+)', text, re.M)
-        absolute += re.findall(r'封面素材[^`\n]*`([^`]+)`', text)
+        absolute = re.findall(r'^cover_image:\s*["\']?([^\s"\']+)', text, re.M)
         for target, base in [(v, source.parent) for v in relative] + [(v, root) for v in absolute]:
             url = urlsplit(target)
             if url.scheme or url.netloc:

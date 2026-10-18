@@ -34,7 +34,10 @@ class RTDHomepageProjectsRedesignTests(unittest.TestCase):
         self.assertIn('id="profile-name">AI 赋能<span class="hero-title-subject">风与海洋工程</span>', index)
         self.assertNotIn('融合物理机理与人工智能，探索建筑与能源结构的分析与设计。', index)
         self.assertIn('<h2 class="hero-position">融合物理规律与人工智能<br>揭示风与海洋作用机理<br>探索建筑与能源结构设计</h2>', index)
-        self.assertIn('课题组负责人</strong> 李朝 · 教授 · 博士生导师', index)
+        self.assertIn('<strong>实验室负责人 李朝</strong> 教授 · 博士生导师', index)
+        self.assertNotIn('课题组', index)
+        self.assertIn('风与海洋工程人工智能实验室', index)
+        self.assertIn('<span class="en">WOEAI LAB</span>', index)
         self.assertNotIn('id="profile-name">李朝', index)
         self.assertNotIn('paper-record-slot', index)
         self.assertEqual(index.count('class="paper-citation"'), 6)
@@ -65,17 +68,25 @@ class RTDHomepageProjectsRedesignTests(unittest.TestCase):
         self.assertNotIn('招生与联系', index)
         self.assertTrue((SOURCE / 'Recruitment.rst').is_file())
 
-    def test_direction_concepts_are_explicitly_illustrative_in_both_languages(self) -> None:
+    def test_direction_cards_are_text_led_in_both_languages(self) -> None:
+        """The two research lines lead with their argument, not with a picture.
+
+        The 1440x811 concept renders were dropped from both homepages: at card
+        width they carried more visual weight than the research statement they
+        were meant to support, and they pushed the argument below the fold. Each
+        card now opens with its ``card-index`` label, and the stylesheet no
+        longer carries rules for a figure that no longer exists.
+        """
         chinese = read(INDEX)
         english = read(SOURCE / '_templates/en-home.html')
-        for name in ('research-structural-wind-concept-v1.webp', 'research-marine-structures-concept-v1.webp'):
-            self.assertEqual(chinese.count(name), 1)
-            self.assertEqual(english.count(name), 1)
-            self.assertTrue((ROOT / 'docs/_static/home' / name).is_file())
-        self.assertEqual(chinese.count('AI 生成的科研概念示意 · 非研究数据</figcaption>'), 2)
-        self.assertEqual(english.count('AI-generated research concept · not research data</figcaption>'), 2)
-        self.assertIn('aspect-ratio: 1440 / 811', read(ROOT / 'docs/_static/custom.css'))
-        self.assertNotIn('实验室', chinese)
+        for label, text in (('index.rst', chinese), ('en-home.html', english)):
+            with self.subTest(source=label):
+                self.assertNotIn('direction-figure', text)
+                self.assertNotIn('direction-image', text)
+                self.assertNotIn('research-structural-wind-concept-v1.webp', text)
+                self.assertNotIn('research-marine-structures-concept-v1.webp', text)
+                self.assertEqual(text.count('class="card-index"'), 2)
+        self.assertNotIn('direction-image', read(ROOT / 'docs/_static/custom.css'))
 
     def test_projects_page_is_removed_from_navigation_and_source_tree(self) -> None:
         index = read(INDEX)

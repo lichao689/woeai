@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-yang2022-AS/cover-wechat-900x383-20261015-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-yang2022-AS/cover.png
    :alt: 结构抗风 | 等效风荷载该看哪一层 / 位移弯矩剪力分别等效
    :align: center
    :width: 100%

@@ -5,7 +5,7 @@ Y形半潜式漂浮风机平台安装朝向的重要性：基于代理模型的�
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhou2020-RE/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhou2020-RE/cover.png
    :alt: 一体化分析 | 平台朝向为何重要 / 用代理模型比较长期响应
    :width: 900px
    :align: center

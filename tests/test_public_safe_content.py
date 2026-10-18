@@ -512,7 +512,7 @@ class PublicSafeContentTests(unittest.TestCase):
                 "示例论文精解\n"
                 "============\n\n"
                 "精简版微信公众号文章：待发布\n\n"
-                ".. image:: ../../../wechat/assets/public-safe/ref-example/cover-wechat.png\n\n"
+                ".. image:: ../../../wechat/assets/public-safe/ref-example/cover.png\n\n"
                 "1 结论\n"
                 "------\n\n"
                 "Conclusion.\n\n"
@@ -538,7 +538,7 @@ class PublicSafeContentTests(unittest.TestCase):
             with self.subTest(title=title):
                 text = (
                     "精简版微信公众号文章：待发布\n\n"
-                    ".. image:: ../../../wechat/assets/public-safe/ref-example/cover-wechat.png\n\n"
+                    ".. image:: ../../../wechat/assets/public-safe/ref-example/cover.png\n\n"
                     "5 结论\n------\n\nConclusion.\n\n"
                     f"{title}\n{'-' * 20}\n\nScientific definitions.\n\n"
                     "参考文献\n--------\n\n- Reference.\n"
@@ -565,7 +565,7 @@ class PublicSafeContentTests(unittest.TestCase):
                 "示例论文精解\n"
                 "============\n\n"
                 "精简版微信公众号文章：待发布\n\n"
-                ".. image:: ../../../wechat/assets/public-safe/ref-example/cover-wechat.png\n\n"
+                ".. image:: ../../../wechat/assets/public-safe/ref-example/cover.png\n\n"
                 "1 结论\n"
                 "------\n\n"
                 "Conclusion.\n\n"

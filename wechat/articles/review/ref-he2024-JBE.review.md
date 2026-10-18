@@ -6,8 +6,6 @@ subdirection: 结构抗风
 publication_mode: first_publish
 wechat_status: drafting
 wechat_author: He Xin
-wechat_cover_image: wechat/assets/public-safe/ref-he2024-JBE/cover-wechat-900x383-20261015-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-he2024-JBE/cover-wechat-900x383-20261015-v5.png
 source_checked: true
 body_images_upload_approved: true
 copyright_checked: false
@@ -17,6 +15,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
+cover_image: wechat/assets/public-safe/ref-he2024-JBE/cover.png
 ---
 
 # ref-he2024-JBE 内容与来源自查

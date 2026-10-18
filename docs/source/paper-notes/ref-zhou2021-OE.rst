@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhou2021-OE/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhou2021-OE/cover.png
    :alt: 一体化分析 | 浮体参数谁更关键 / 成本模态与水动力分开看
    :width: 900px
    :align: center

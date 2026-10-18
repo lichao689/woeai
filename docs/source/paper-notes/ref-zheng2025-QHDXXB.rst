@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zheng2025-QHDXXB/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zheng2025-QHDXXB/cover.png
    :alt: 一体化分析 | 风机放哪更合适 / 中心偏心两方案试验
    :width: 900px
    :align: center

@@ -2,7 +2,7 @@
 import json
 from html import escape
 from pathlib import Path
-from woeai.publications.homepage import render_home_progress
+from woeai.publications.homepage import render_home_progress, copy_home_progress_covers
 from woeai.publications.taxonomy import RESEARCH_FAMILY_EN, RESEARCH_SUBDIRECTION_EN
 
 SELECTED = (
@@ -33,6 +33,9 @@ def source_read(app, docname, source):
     if docname in ("index", "en/index"):
         app.env.note_dependency(str(Path(app.confdir).parent / "data/home-progress.json"))
         app.env.note_dependency(str(Path(app.confdir).parent / "data/home-progress-selection.json"))
+        root = Path(app.confdir).resolve().parents[1]
+        for cover in (root / "wechat/assets/public-safe").glob("*/cover.png"):
+            app.env.note_dependency(str(cover))
     if docname == "index":
         app.env.note_dependency(str(Path(app.confdir).parent / "data/publications.json"))
         return
@@ -68,14 +71,20 @@ def page_context(app, pagename, templatename, context, doctree):
         context["english_highlights"] = [dict(by_ref[ref], heading=heading, deck=deck) for ref,heading,deck in SELECTED]
         if pagename == "en/index":
             context["recent_progress"] = render_home_progress(Path(app.confdir).resolve().parents[1], english=True)
-        description = "Research group studying structural wind engineering, floating offshore wind and AI-supported engineering methods. Group leader: Chao Li."
+        description = "WOEAI Lab studies structural wind engineering, floating offshore wind and AI-supported engineering methods. Laboratory lead: Chao Li."
         context["metatags"] = context.get("metatags", "") + f'<meta name="description" content="{escape(description, quote=True)}">'
     if pagename == "en/index":
         return "en-home.html"
     if pagename == "en/Search":
         return "en-search.html"
 
+def write_home_covers(app, exception):
+    if exception is None and app.builder.format == "html":
+        copy_home_progress_covers(Path(app.confdir).resolve().parents[1], Path(app.outdir))
+
+
 def setup(app):
     app.connect("source-read", source_read)
+    app.connect("build-finished", write_home_covers)
     app.connect("html-page-context", page_context)
     return {"parallel_read_safe": True, "parallel_write_safe": True}

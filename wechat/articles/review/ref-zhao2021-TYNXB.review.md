@@ -1,8 +1,7 @@
 ---
 publication_ref: ref-zhao2021-TYNXB
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-zhao2021-TYNXB/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-zhao2021-TYNXB/cover-wechat-900x383-20261014-v5.png
+cover_image: wechat/assets/public-safe/ref-zhao2021-TYNXB/cover.png
 ---
 
 # NWP/CFD 复杂地形风场：双渠道内容核对

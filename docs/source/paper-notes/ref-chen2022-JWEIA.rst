@@ -7,7 +7,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png
+.. image:: ../../../wechat/assets/public-safe/ref-chen2022-JWEIA/cover.png
    :alt: 数值风洞 LES 入流新方法封面图
    :align: center
    :width: 100%

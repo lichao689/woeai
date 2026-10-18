@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-li2022-SOS/cover-wechat-900x383-20261014-approved.png
-rtd_cover_image: wechat/assets/public-safe/ref-li2022-SOS/cover-wechat-900x383-imagegen-v1.png
+cover_image: wechat/assets/public-safe/ref-li2022-SOS/cover.png
 ---
 
 # ref-li2022-SOS 原文核验记录

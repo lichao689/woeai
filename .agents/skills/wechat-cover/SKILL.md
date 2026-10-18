@@ -18,8 +18,14 @@ use `wechat-paper` for article production and backend delivery permissions.
 
 A skill/specification/template maintenance request does not authorize image
 regeneration, article changes, a WeChat update or publication. Preserve existing
-assets and historical approvals; record migration pending rather than marking
-old images compliant. Earlier three-category labels in historical guidance and
+scientific assets and historical approvals. After an approved current cover is selected,
+keep one public source at `wechat/assets/public-safe/<publication_ref>/cover.png`,
+selected only by current review `cover_image`. Remove superseded tracked cover
+files from the working tree without rewriting Git history; protect unique
+uncommitted candidates before removal. Website copies are generated build
+outputs, not additional current sources. Preserve audit notes and private logs.
+Use documented non-content equivalence review for any fingerprint migration,
+never an automatic approval refresh. Earlier three-category labels in historical guidance and
 briefs need separate migration; do not copy them into new covers. Current article
 prefix rules belong to [writing standards](../wechat-paper/references/writing-standards.md).
 

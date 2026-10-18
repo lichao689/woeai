@@ -1,9 +1,8 @@
 ---
 publication_ref: ref-zheng2023-JRSE
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-zheng2023-JRSE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-zheng2023-JRSE/cover-wechat-900x383-20261014-v5.png
 wechat_author: Zheng Shunyun
+cover_image: wechat/assets/public-safe/ref-zheng2023-JRSE/cover.png
 ---
 
 # ref-zheng2023-JRSE 内容与证据审阅记录

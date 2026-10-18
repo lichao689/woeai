@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhang2023-S/cover-wechat-900x383-20261015-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhang2023-S/cover.png
    :alt: 结构抗风 | 从整塔测力到分段风载 / 广义风力谱约束荷载估计
    :align: center
    :width: 100%

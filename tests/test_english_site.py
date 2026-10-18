@@ -34,10 +34,13 @@ class EnglishSiteTests(unittest.TestCase):
         self.assertNotIn('ref-zhang2025-CSICM', rendered)
         self.assertIn('ref-zheng2025-QHDXXB', rendered)
 
-    def test_group_identity_and_contact_advice_remain_distinct_from_admissions(self):
+    def test_laboratory_identity_and_contact_advice_remain_distinct_from_admissions(self):
         template = (ROOT / 'docs/source/_templates/en-home.html').read_text()
-        self.assertIn('id="profile-name">Research group', template)
-        self.assertIn('Group leader</strong> Chao Li · Professor · PhD Supervisor', template)
+        self.assertIn('id="profile-name">WOEAI Lab', template)
+        self.assertIn('WIND AND OCEAN ENGINEERING WITH AI LABORATORY', template)
+        self.assertIn('Laboratory lead</strong> Chao Li · Professor · PhD Supervisor', template)
+        self.assertNotIn('Research group', template)
+        self.assertNotIn('Group leader', template)
         self.assertIn('{{ recent_progress|safe }}', template)
         self.assertNotIn('SELECTED RESEARCH', template)
         join = (ROOT / 'docs/source/en/JoinUs.rst').read_text()
@@ -46,6 +49,8 @@ class EnglishSiteTests(unittest.TestCase):
         self.assertIn('Academic contact', join)
         self.assertIn('Official application', join)
         self.assertIn('Application Portal', join)
+        self.assertIn('The laboratory lead is Chao Li', join)
+        self.assertNotIn('the group', join)
 
     def test_language_switch_only_claims_existing_pairs(self):
         for page, target, label in [('Research', 'en/Research', 'EN'), ('en/JoinUs', 'Recruitment', '中文'), ('paper-notes/ref-tang2025-JBE', 'en/index', 'EN home'), ('en/highlights/ref-tang2025-JBE', 'index', '中文首页')]:

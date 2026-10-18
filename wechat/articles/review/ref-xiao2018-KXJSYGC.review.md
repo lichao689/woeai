@@ -1,8 +1,7 @@
 ---
 publication_ref: ref-xiao2018-KXJSYGC
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-xiao2018-KXJSYGC/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-xiao2018-KXJSYGC/cover-wechat-900x383-20261014-v5.png
+cover_image: wechat/assets/public-safe/ref-xiao2018-KXJSYGC/cover.png
 ---
 
 # 复杂地形全风向风速比：双渠道核对

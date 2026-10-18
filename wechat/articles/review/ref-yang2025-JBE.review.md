@@ -16,8 +16,7 @@ wechat_backend_preview_checked: false
 rtd_page_checked: false
 rtd_full_paper_self_check: passed
 rtd_independent_review: awaiting_review
-wechat_cover_image: wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-yang2025-JBE/cover-wechat-900x383-imagegen-v5b-pub-line-route.png
+cover_image: wechat/assets/public-safe/ref-yang2025-JBE/cover.png
 ---
 
 # ref-yang2025-JBE 原文核验记录

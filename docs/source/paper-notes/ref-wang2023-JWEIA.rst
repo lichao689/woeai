@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-wang2023-JWEIA/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-wang2023-JWEIA/cover.png
    :alt: 数值风洞 | 湍流不只从入口来 / 合成体力维持边界层
    :width: 900px
    :align: center

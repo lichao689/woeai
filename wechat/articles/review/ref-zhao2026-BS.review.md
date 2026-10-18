@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-20261014-badge.png
-rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png
+cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover.png
 ---
 
 # ref-zhao2026-BS 原文核验记录
@@ -24,7 +23,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-zhao2026-BS.md`
 - RTD正文: `docs/source/paper-notes/ref-zhao2026-BS.rst`
-- 封面素材: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
+- 历史封面素材（Git 4e4148c）: `wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png`
 - 论文图 1 所提出框架的工作流程: `wechat/assets/public-safe/ref-zhao2026-BS/fig-01-workflow.png`
 - 论文图 2 深圳建筑分块划分示意图: `wechat/assets/public-safe/ref-zhao2026-BS/fig-02-block-division.png`
 - 论文图 21 气象自动站的位置与观测环境: `wechat/assets/public-safe/ref-zhao2026-BS/fig-21-stations.png`

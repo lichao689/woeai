@@ -186,3 +186,16 @@ zotero_api_key
 
 # Checkout-local formula runtime (lockfiles remain tracked)
 wechat/runtime/node_modules/
+
+### Local design-review artefacts ###
+# Homepage prototypes keep their HTML source, but the screenshots used for
+# review are regenerated on demand and must not reach the public repository.
+project/prototypes/**/*.png
+project/prototypes/**/*.jpg
+project/prototypes/**/*.webp
+
+# Assistant working memory for this checkout. Local notes, not site content.
+.workbuddy-ai/
+
+# Homepage cover copies exist only in Sphinx build output.
+docs/_static/home/progress-*.png

@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-li2018-AE/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-li2018-AE/cover.png
    :alt: 一体化分析 | 变桨曲线怎样选 / 用五个参数连接气动与寻优
    :width: 900px
    :align: center

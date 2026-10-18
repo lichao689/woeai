@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-tang2024-POF/cover-wechat-900x383-20261015-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-tang2024-POF/cover.png
    :alt: 数值风洞 | 粗网格能补回什么 / 移位窗口重建气象风场
    :align: center
    :width: 100%

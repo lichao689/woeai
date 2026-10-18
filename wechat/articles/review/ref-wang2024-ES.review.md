@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-imagegen-v1.png
+cover_image: wechat/assets/public-safe/ref-wang2024-ES/cover.png
 ---
 
 # ref-wang2024-ES 原文核验记录
@@ -24,7 +23,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-wang2024-ES.md`
 - RTD正文: `docs/source/paper-notes/ref-wang2024-ES.rst`
-- 封面素材: `wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-imagegen-v1.png`
+- 历史封面素材（Git 4e4148c）: `wechat/assets/public-safe/ref-wang2024-ES/cover-wechat-900x383-imagegen-v1.png`
 - 论文图 3 CWR 方法获得指定湍流大气边界层风场的示意图: `wechat/assets/public-safe/ref-wang2024-ES/fig-03-cwr-schematic.jpg`
 - 论文图 13 不同粗糙地形下湍流大气边界层风场的瞬时涡量: `wechat/assets/public-safe/ref-wang2024-ES/fig-13-rough-terrain-vorticity.jpg`
 - 论文图 19 建筑周围平均风场和流动结构: `wechat/assets/public-safe/ref-wang2024-ES/fig-19-building-flow-structures.jpg`

@@ -494,10 +494,10 @@ def fetch_access_token(force_refresh: bool = False) -> dict[str, Any]:
     return {**record, "from_cache": False, "network_verified": True}
 
 
-def parse_cover_path(review_path: Path) -> Path:
+def parse_cover_path(review_path: Path, *, root: Path | None = None) -> Path:
     # WeChat drafts require a cover; find_review_cover returns None when
     # absent, so surface that as an error here.
-    cover = find_review_cover(review_path, channel="wechat")
+    cover = find_review_cover(review_path, channel="wechat", root=root)
     if cover is None:
         raise RuntimeError(f"Cannot find cover image in {repo_relative(review_path)}")
     return cover

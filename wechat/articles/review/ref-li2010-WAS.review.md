@@ -6,8 +6,6 @@ subdirection: 数值风洞
 publication_mode: first_publish
 wechat_status: drafting
 wechat_author: Li Chao
-wechat_cover_image: wechat/assets/public-safe/ref-li2010-WAS/cover-wechat-900x383-20261015-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-li2010-WAS/cover-wechat-900x383-20261015-v5.png
 source_checked: true
 copyright_checked: false
 public_safety_checked: false
@@ -17,6 +15,7 @@ cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
 body_images_upload_approved: true
+cover_image: wechat/assets/public-safe/ref-li2010-WAS/cover.png
 ---
 
 # ref-li2010-WAS 本地科学正文与公众号稿自查

@@ -4,8 +4,11 @@ from pathlib import Path
 import unittest
 import json
 import tempfile
+import hashlib
 
-from woeai.publications.homepage import recent_publications, render_home_progress, publication_date
+from woeai.wechat.review import parse_front_matter
+
+from woeai.publications.homepage import recent_publications, render_home_progress, publication_date, copy_home_progress_covers
 from woeai.publications.registry import load_registry, workflow_fingerprint
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -18,6 +21,56 @@ class HomepageProgressTests(unittest.TestCase):
     def test_latest_three_per_family_only_include_produced_reviewed_introductions(self):
         groups = recent_publications(load_registry(ROOT), ROOT)
         self.assertEqual({family: [r["custom"]["publication_ref"] for r in rows] for family, rows in groups}, EXPECTED)
+
+    def test_homepage_covers_are_generated_from_the_single_current_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            outdir = Path(directory)
+            target = outdir / "_static/home"
+            target.mkdir(parents=True)
+            (target / "progress-retired.png").write_bytes(b"stale generated output")
+            (target / "other-image.png").write_bytes(b"unrelated output")
+            copy_home_progress_covers(ROOT, outdir)
+            self.assertFalse((target / "progress-retired.png").exists())
+            self.assertEqual((target / "other-image.png").read_bytes(), b"unrelated output")
+            for _, rows in recent_publications(load_registry(ROOT), ROOT):
+                for row in rows:
+                    ref = row["custom"]["publication_ref"]
+                    with self.subTest(publication_ref=ref):
+                        review = ROOT / row["custom"]["wechat"]["review_path"]
+                        cover = parse_front_matter(review)["cover_image"]
+                        self.assertEqual(cover, f"wechat/assets/public-safe/{ref}/cover.png")
+                        homepage = target / f"progress-{ref}.png"
+                        self.assertEqual(hashlib.sha256(homepage.read_bytes()).hexdigest(),
+                                         hashlib.sha256((ROOT / cover).read_bytes()).hexdigest())
+                        self.assertFalse((ROOT / "docs/_static/home" / homepage.name).exists())
+        for english in (False, True):
+            rendered = render_home_progress(ROOT, english=english)
+            self.assertEqual(rendered.count('<figure>'), 6)
+            self.assertEqual(rendered.count('.png?v='), 6)
+
+    def test_each_produced_paper_has_only_one_current_cover_source(self):
+        rows = [r for r in load_registry(ROOT)
+                if any((ROOT / "wechat/assets/public-safe" / r["custom"]["publication_ref"]).glob("cover*.png"))]
+        for row in rows:
+            ref = row["custom"]["publication_ref"]
+            folder = ROOT / "wechat/assets/public-safe" / ref
+            with self.subTest(publication_ref=ref):
+                images = sorted(p.name for p in folder.glob("cover*")
+                                if p.is_file() and p.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp", ".svg"})
+                self.assertEqual(images, ["cover.png"])
+                front = parse_front_matter(ROOT / row["custom"]["wechat"]["review_path"])
+                self.assertNotIn("wechat_cover_image", front)
+                self.assertNotIn("rtd_cover_image", front)
+                self.assertEqual(front["cover_image"], f"wechat/assets/public-safe/{ref}/cover.png")
+
+    def test_cover_migration_did_not_approve_previously_stale_content(self):
+        stale = {"ref-chen2024-POF", "ref-li2024-POF", "ref-chen2024-JCP", "ref-yang2022-AS"}
+        for row in load_registry(ROOT):
+            if row["custom"]["publication_ref"] in stale:
+                checks = row["custom"]["wechat"]["evidence"]["cover_single_source_equivalence_20261018"]["checks"]
+                self.assertFalse(checks["facts"])
+                self.assertFalse(checks["public_safety"])
+                self.assertFalse(checks["figure_preview"])
 
     def test_date_precision_and_stable_ties_do_not_follow_manual_highlight_order(self):
         with tempfile.TemporaryDirectory() as directory:

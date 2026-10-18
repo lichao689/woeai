@@ -5,7 +5,7 @@ CMRFG 相干性改进且质量平衡的 LES 入流湍流生成方法论文精解
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-chen2024-JCP/cover-wechat-900x383-imagegen-v2.png
+.. image:: ../../../wechat/assets/public-safe/ref-chen2024-JCP/cover.png
    :alt: 数值风洞 CMRFG 入流湍流生成方法封面图
    :align: center
    :width: 100%

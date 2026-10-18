@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-he2025-POF/cover-wechat-900x383-imagegen-v1.png
+.. image:: ../../../wechat/assets/public-safe/ref-he2025-POF/cover.png
    :alt: 植入式立柱调谐液体阻尼器的非线性晃荡与高层建筑减振
    :align: center
    :width: 100%

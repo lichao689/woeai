@@ -1,9 +1,8 @@
 ---
 publication_ref: ref-zhou2021-OE
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-zhou2021-OE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-zhou2021-OE/cover-wechat-900x383-20261014-v5.png
 wechat_author: Zhou Shengtao
+cover_image: wechat/assets/public-safe/ref-zhou2021-OE/cover.png
 ---
 
 # ref-zhou2021-OE 内容与证据审阅记录

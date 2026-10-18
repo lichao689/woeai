@@ -1,7 +1,7 @@
 Research
 ========
 
-Our research group studies how wind and ocean actions affect built and energy structures, and how these responses can inform engineering design. Two research fields share methods in mechanics, numerical simulation, physical testing and AI.
+Our laboratory studies how wind and ocean actions affect built and energy structures, and how these responses can inform engineering design. Two research fields share methods in mechanics, numerical simulation, physical testing and AI.
 
 Structural Wind Engineering
 ---------------------------

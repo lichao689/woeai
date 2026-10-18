@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-he2024-JBE/cover-wechat-900x383-20261015-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-he2024-JBE/cover.png
    :alt: 结构抗风 | 消防水箱怎样减振 / 液体晃荡与结构双向耦合
    :align: center
    :width: 100%

@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v2.png
+cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover.png
 ---
 
 # ref-tang2025-JBE 原文核验记录
@@ -24,7 +23,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-tang2025-JBE.md`
 - RTD正文: `docs/source/paper-notes/ref-tang2025-JBE.rst`
-- 封面素材: `wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v2.png`
+- 历史封面素材（Git 4e4148c）: `wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v2.png`
 - 论文图 1 建筑结构模型的结构图表示（不同颜色表示不同标准层）: `wechat/assets/public-safe/ref-tang2025-JBE/fig-01-structural-graph.jpg`
 - 论文图 4 数据生成: `wechat/assets/public-safe/ref-tang2025-JBE/fig-04-data-generation.jpg`
 - 论文图 6 TBGNN 架构: `wechat/assets/public-safe/ref-tang2025-JBE/fig-06-tbgnn-architecture.jpg`

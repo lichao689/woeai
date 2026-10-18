@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-li2012-GCLX/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-li2012-GCLX/cover.png
    :alt: 数值风洞 | 风大还要看多常见 / 行人风环境的概率评估
    :width: 900px
    :align: center

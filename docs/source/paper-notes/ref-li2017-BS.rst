@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-li2017-BS/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-li2017-BS/cover.png
    :alt: 数值风洞 | 入流不同风场不同 / 山地城市两种方法比较
    :width: 900px
    :align: center

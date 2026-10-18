@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhao2021-AR/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhao2021-AR/cover.png
    :alt: 数值风洞 | 风场边界怎样衔接 / 中微尺度嵌套松弛处理
    :width: 900px
    :align: center

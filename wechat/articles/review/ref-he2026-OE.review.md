@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-he2026-OE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-he2026-OE/cover-wechat-900x383-imagegen-v1.png
+cover_image: wechat/assets/public-safe/ref-he2026-OE/cover.png
 ---
 
 # ref-he2026-OE 原文核验记录
@@ -24,7 +23,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-he2026-OE/cover-wechat-900x383-im
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-he2026-OE.md`
 - RTD正文: `docs/source/paper-notes/ref-he2026-OE.rst`
-- 封面素材: `wechat/assets/public-safe/ref-he2026-OE/cover-wechat-900x383-imagegen-v1.png`
+- 历史封面素材（Git 4e4148c）: `wechat/assets/public-safe/ref-he2026-OE/cover-wechat-900x383-imagegen-v1.png`
 - 论文图 7 内置矩形立柱 TLD 示意图: `wechat/assets/public-safe/ref-he2026-OE/fig-07-built-in-rectangular-pole-tld.jpg`
 - 论文图 12 不同立柱位置下的流场速度分布: `wechat/assets/public-safe/ref-he2026-OE/fig-12-pole-position-flow-field.jpg`
 - 论文图 14 不同立柱数量下的流场特征对比: `wechat/assets/public-safe/ref-he2026-OE/fig-14-flow-field-pole-counts.jpg`

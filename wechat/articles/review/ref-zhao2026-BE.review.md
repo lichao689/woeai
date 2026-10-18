@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-imagegen-v1.png
+cover_image: wechat/assets/public-safe/ref-zhao2026-BE/cover.png
 ---
 
 # ref-zhao2026-BE 原文核验记录
@@ -24,7 +23,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-zhao2026-BE.md`
 - RTD正文: `docs/source/paper-notes/ref-zhao2026-BE.rst`
-- 封面素材: `wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-imagegen-v1.png`
+- 历史封面素材（Git 4e4148c）: `wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-imagegen-v1.png`
 - 论文图 1 所提出框架的整体流程: `wechat/assets/public-safe/ref-zhao2026-BE/fig-01-workflow.png`
 - 论文图 2 GF-7 的 MUX 与 PAN 数据集: `wechat/assets/public-safe/ref-zhao2026-BE/fig-02-gf7-dataset.png`
 - 论文图 10 三维建筑几何的局部视图: `wechat/assets/public-safe/ref-zhao2026-BE/fig-10-local-geometry.png`

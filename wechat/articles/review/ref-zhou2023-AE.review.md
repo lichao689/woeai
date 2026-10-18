@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-zhou2023-AE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-zhou2023-AE/cover-wechat-900x383-imagegen-v1.png
+cover_image: wechat/assets/public-safe/ref-zhou2023-AE/cover.png
 ---
 
 # ref-zhou2023-AE 原文核验记录
@@ -24,7 +23,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-zhou2023-AE/cover-wechat-900x383-
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-zhou2023-AE.md`
 - RTD正文: `docs/source/paper-notes/ref-zhou2023-AE.rst`
-- 封面素材: `wechat/assets/public-safe/ref-zhou2023-AE/cover-wechat-900x383-imagegen-v1.png`
+- 历史封面素材（Git 4e4148c）: `wechat/assets/public-safe/ref-zhou2023-AE/cover-wechat-900x383-imagegen-v1.png`
 - 论文图 1 自由度和全局坐标系定义: `wechat/assets/public-safe/ref-zhou2023-AE/fig-01-dof-coordinate.jpg`
 - 论文图 7 所研究浮式风机的平台构型与系泊布置: `wechat/assets/public-safe/ref-zhou2023-AE/fig-07-platform-mooring-layout.jpg`
 - 论文图 19 不同环境输入得到的 Pareto 前沿对比: `wechat/assets/public-safe/ref-zhou2023-AE/fig-19-pareto-environmental-inputs.jpg`

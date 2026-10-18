@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png
+cover_image: wechat/assets/public-safe/ref-tang2026-RE/cover.png
 ---
 
 # ref-tang2026-RE 原文核验记录
@@ -24,7 +23,7 @@ rtd_cover_image: wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-
 
 - 公众号正文: `wechat/articles/draft-public-safe/ref-tang2026-RE.md`
 - RTD正文: `docs/source/paper-notes/ref-tang2026-RE.rst`
-- 封面素材: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png`
+- 历史封面素材（Git 4e4148c）: `wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png`
 - 论文图 6 风场快照的时间超分辨率流程: `wechat/assets/public-safe/ref-tang2026-RE/fig-06-temporal-super-resolution.jpg`
 - 论文图 1 基于步长的稀疏操作示意图: `wechat/assets/public-safe/ref-tang2026-RE/fig-01-stride-sparse-operation.jpg`
 - 论文图 4 所提出 WTT-SRST 的详细结构与各模块架构: `wechat/assets/public-safe/ref-tang2026-RE/fig-04-wtt-srst-framework.jpg`

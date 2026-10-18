@@ -255,7 +255,8 @@ def rtd_deep_dive_layout_findings(path: Path, text: str) -> list[str]:
     if (
         next_content_index >= len(lines)
         or not lines[next_content_index].lstrip().startswith(".. image::")
-        or "cover-wechat" not in lines[next_content_index]
+        or lines[next_content_index].split("::", 1)[-1].strip()
+        != f"../../../wechat/assets/public-safe/{path.stem}/cover.png"
     ):
         findings.append(
             f"{rel}:{wechat_line_index + 1}: RTD paper deep-dive missing top WeChat cover image "

@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhao2023-BS/cover-wechat-900x383-20261015-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhao2023-BS/cover.png
    :alt: 数值风洞 | 台风来时街道风怎么算 / 气象与城市流场单向嵌套
    :align: center
    :width: 100%

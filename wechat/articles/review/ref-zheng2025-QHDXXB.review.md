@@ -1,8 +1,6 @@
 ---
 publication_ref: ref-zheng2025-QHDXXB
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-zheng2025-QHDXXB/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-zheng2025-QHDXXB/cover-wechat-900x383-20261014-v5.png
 research_family: 海上漂浮风电
 subdirection: 一体化分析
 publication_mode: first_publish
@@ -16,6 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
+cover_image: wechat/assets/public-safe/ref-zheng2025-QHDXXB/cover.png
 ---
 
 # 中心与偏心布置半潜风机：双渠道制作记录

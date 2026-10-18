@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-tang2026-RE/cover-wechat-900x383-imagegen-v5-b-pub-line-no-dot.png
+.. image:: ../../../wechat/assets/public-safe/ref-tang2026-RE/cover.png
    :alt: 城市风能风场时间超分辨率论文封面
    :align: center
    :width: 100%

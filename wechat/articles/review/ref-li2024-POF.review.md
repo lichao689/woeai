@@ -15,8 +15,7 @@ cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
 rtd_coverage_status: complete_pending_independent_review
-wechat_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png
+cover_image: wechat/assets/public-safe/ref-li2024-POF/cover.png
 ---
 
 # ref-li2024-POF 原文核验记录

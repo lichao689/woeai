@@ -6,8 +6,6 @@ subdirection: 一体化分析
 publication_mode: first_publish
 wechat_status: drafting
 wechat_author: Zheng Shunyun
-wechat_cover_image: wechat/assets/public-safe/ref-zheng2023-MS/cover-wechat-900x383-20261015-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-zheng2023-MS/cover-wechat-900x383-20261015-v5.png
 source_checked: true
 copyright_checked: false
 public_safety_checked: false
@@ -17,6 +15,7 @@ cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
 body_images_upload_approved: true
+cover_image: wechat/assets/public-safe/ref-zheng2023-MS/cover.png
 ---
 
 # ref-zheng2023-MS 内容与证据自查记录

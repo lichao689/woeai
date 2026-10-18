@@ -7,7 +7,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-tang2025-JBE/cover-wechat-900x383-v2.png
+.. image:: ../../../wechat/assets/public-safe/ref-tang2025-JBE/cover.png
    :alt: 图神经网络预测高层建筑结构响应的研究封面
    :align: center
    :width: 100%

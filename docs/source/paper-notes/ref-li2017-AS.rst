@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-li2017-AS/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-li2017-AS/cover.png
    :alt: 一体化分析 | 阻尼器该调给谁 / 区分平台运动与塔筒振动
    :width: 900px
    :align: center

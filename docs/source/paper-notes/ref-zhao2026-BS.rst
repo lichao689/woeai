@@ -7,7 +7,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhao2026-BS/cover-wechat-900x383-v2.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhao2026-BS/cover.png
    :alt: 基于预计算 CFD 数据库的城市微尺度风环境快速预测框架
    :align: center
    :width: 100%

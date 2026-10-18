@@ -5,7 +5,7 @@ NWP/CFD 嵌套的复杂地形风场模拟：论文精解
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhao2021-TYNXB/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhao2021-TYNXB/cover.png
    :alt: 数值风洞：天气来风接入山地
    :width: 900px
    :align: center

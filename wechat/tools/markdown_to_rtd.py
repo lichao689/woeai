@@ -326,7 +326,7 @@ def convert_markdown_to_rst(
         "",
     ]
     output.extend(heading(title, "="))
-    emit_cover(output, find_review_cover(review_path, channel="rtd"), rst_path, title)
+    emit_cover(output, find_review_cover(review_path, root=REPO_ROOT), rst_path, title)
 
     idx = 0
     if lines and lines[0].startswith("# "):

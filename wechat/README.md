@@ -37,23 +37,30 @@ Platform metadata such as cover image, draft media ID, and WeChat bottom
 `阅读原文` / `content_source_url` belongs in the review note or backlog, not in
 the reader-facing Markdown body.
 
-### Channel-specific review covers
+### One current cover source
 
-WeChat draft preparation prefers `wechat_cover_image`; the legacy RTD converter
-prefers `rtd_cover_image`. `find_review_cover` defaults to `channel="rtd"` for
-existing callers. If the requested channel's field is absent or blank, retain
-the compatibility fallback: the other channel's field, then `cover_image`,
-then the `封面素材` line. With no recorded cover, RTD remains optional and the
-WeChat draft entrypoint raises an error. A recorded path does not fall back
-merely because its file is missing; delivery checks must report that failure.
+Each paper has one approved current cover: `wechat/assets/public-safe/<publication_ref>/cover.png`.
+Its current review note selects it with the single `cover_image` field. WeChat,
+RTD and the bilingual homepage share that source; `wechat_cover_image`,
+`rtd_cover_image` and historical `封面素材` prose are never fallback selectors.
+A missing, redirected or noncanonical current path fails rather than reviving an old image.
+Historical audit text is evidence about its Git baseline, not a second active source.
 
-Cover selection does not change verification fingerprints. The current RTD
-fingerprint includes the shared review and the whole per-paper public asset
-folder, so a WeChat-only cover addition can invalidate existing RTD verification.
-Retain the prior scientific audit and perform an explicitly documented,
-non-content equivalence check before renewing verification. If that check has
-not been completed, report RTD as `awaiting_audit`; do not silently refresh the
-fingerprint or claim a new full-paper audit or phone preview.
+Sphinx generates homepage copies directly under its output `_static/home/`;
+those bytes are reproducible output, never hand-maintained source assets under
+`docs/_static/home/progress-*.png`. Keep only the approved current source in the
+working tree. Delete recoverable tracked superseded covers normally, preserving
+Git history; unique uncommitted candidates need recovery protection first.
+Do not delete scientific figures, PDFs, audit notes, private journals or backups.
+
+Cover or review changes invalidate old fingerprints. Retain the prior scientific
+audit and perform an explicitly documented non-content equivalence check before
+renewing verification: compare bibliography, source identities, scientific prose,
+figures and applicable rules, and record the approved cover's identity and scope.
+Add separate migration review/evidence; preserve old fingerprints. An already
+stale record cannot become approved through migration. This is not a new PDF
+full-paper audit, backend phone preview or publication. Channel statuses and
+backend history do not change merely because local paths were unified.
 
 For WOEAI website links embedded in WeChat draft API payloads, prefer the Read
 the Docs project domain `https://woeai.readthedocs.io/zh-cn/latest/`. The

@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhao2023-GYJZ/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhao2023-GYJZ/cover.png
    :alt: 结构抗风 | 抗风不只看风速 / 输电塔首次超越易损性分析
    :width: 900px
    :align: center

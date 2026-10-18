@@ -7,7 +7,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhao2026-BE/cover-wechat-900x383-imagegen-v1.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhao2026-BE/cover.png
    :alt: 卫星影像转化为 CFD 城市几何的研究封面
    :align: center
    :width: 100%

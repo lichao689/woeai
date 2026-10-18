@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhang2023-ES/cover-wechat-900x383-20261015-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhang2023-ES/cover.png
    :alt: 结构抗风 | 四处位移反推塔身风力 / 模态识别重构等效荷载
    :align: center
    :width: 100%

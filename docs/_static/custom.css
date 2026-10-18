@@ -239,11 +239,7 @@
 .woeai-home-page .section-intro { font-size: 15px; color: var(--home-muted); max-width: 780px; margin: -8px 0 28px; }
 .woeai-home-page .direction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 .woeai-home-page .direction-card { min-width: 0; border: 1px solid var(--home-line); background: white; }
-.woeai-home-page .direction-figure { border-bottom: 1px solid var(--home-line); background: #fafbf8; }
-.woeai-home-page .direction-image { width: 100%; aspect-ratio: 1440 / 811; }
-.woeai-home-page .direction-image img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.woeai-home-page .direction-figure figcaption { padding: 10px 20px 12px; font-size: 11px; line-height: 1.6; color: var(--home-muted); }
-.woeai-home-page .direction-body { padding: 28px 30px 24px; }
+.woeai-home-page .direction-body { padding: 30px 30px 26px; }
 .woeai-home-page .card-index { font-size: 10px; letter-spacing: .1em; color: var(--home-muted); margin-bottom: 8px; }
 .woeai-home-page .direction-body h3 { font-size: 25px; margin: 0 0 12px; }
 .woeai-home-page .direction-body > p:not(.card-index) { color: var(--home-muted); font-size: 15px; }
@@ -508,7 +504,7 @@ html[lang="zh-CN"] .woeai-home-page .hero-copy #profile-name {
     line-height: 1.24; letter-spacing: .015em; margin-bottom: 26px;
 }
 html[lang="zh-CN"] .woeai-home-page .hero-copy .hero-position {
-    font-size: clamp(24px, 2.1vw, 29px); font-weight: 500;
+    font-size: clamp(21px, 1.8vw, 24px); font-weight: 500;
     line-height: 1.65; letter-spacing: .015em; color: #294958;
     margin-bottom: 24px;
 }
@@ -534,3 +530,110 @@ html[lang="zh-CN"] .woeai-home-page .hero-copy .hero-intro {
 .woeai-home-page .paper-source .paper-citation { font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
 
 .woeai-home-page .work-links { flex-wrap: wrap; }
+
+/* ==========================================================================
+   Homepage design v2 (2026-10-18)
+   Supersedes the homepage layout block above. Scope stays on
+   `.woeai-home-page` so the RTD reader shell is untouched. Two rules govern
+   the whole section: alternate tonal bands instead of shadows, and a three
+   step spacing rhythm instead of one uniform section padding.
+   ========================================================================== */
+
+:root {
+    --home-accent: #a4632c;
+    --home-band: #ffffff;
+}
+
+/* --- Rhythm: 88px sections, alternating paper/white bands --------------- */
+.woeai-home-page .home-section { padding: 88px 0; border-top: 0; }
+.woeai-home-page #research-lines,
+.woeai-home-page #applications {
+    background: var(--home-band);
+    box-shadow: 0 0 0 100vmax var(--home-band);
+    clip-path: inset(0 -100vmax);
+}
+.woeai-home-page .home-main { max-width: 1240px; }
+
+/* --- Hero --------------------------------------------------------------- */
+.woeai-home-page .home-hero { padding: 84px 0 76px; gap: 5%; }
+.woeai-home-page .eyebrow .en { margin-left: .9em; font-weight: 500; }
+.woeai-home-page .hero-copy h1 { letter-spacing: .01em; }
+.woeai-home-page .hero-position { letter-spacing: 0; }
+.woeai-home-page .group-lead {
+    margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--home-line);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; max-width: 34em;
+}
+.woeai-home-page .group-lead .profile-link { margin-top: 0; }
+.woeai-home-page .english-hero-diagram { border: 1px solid var(--home-line); background: var(--home-band); padding: 12px; }
+.woeai-home-page .english-hero-diagram img { border: 0; }
+
+/* --- Research directions ------------------------------------------------ */
+/* Without the concept figures the two cards are pure text, so they must at
+   least agree on a bottom edge: the grid stretches both to the taller one and
+   the CTA is pinned to the bottom, which keeps the two links on one baseline. */
+.woeai-home-page .direction-grid { align-items: stretch; }
+.woeai-home-page .direction-card { display: flex; flex-direction: column; }
+.woeai-home-page .direction-body { padding: 22px 24px 24px; display: flex; flex-direction: column; flex: 1; }
+.woeai-home-page .card-index { font-size: 11px; letter-spacing: .1em; color: var(--home-accent); font-weight: 650; }
+.woeai-home-page .direction-body h3 { font-size: 24px; margin: 6px 0 10px; }
+.woeai-home-page .direction-body > .text-link { margin-top: auto; padding-top: 22px; }
+.woeai-home-page .direction-tags li { font-size: 13px; padding: 4px 12px; }
+.woeai-home-page .method-strip { margin-top: 28px; padding: 20px 26px; }
+
+/* --- Recent progress: publication cards -------------------------------- */
+.woeai-home-page .progress-family-title { font-size: 24px; margin: 8px 0 18px; }
+.woeai-home-page .progress-family + .progress-family { margin-top: 48px; }
+.woeai-home-page .work-card figure { padding: 0; border-bottom: 1px solid var(--home-line); }
+.woeai-home-page .work-card figure img { height: auto; aspect-ratio: 900 / 383; object-fit: contain; object-position: center; }
+.woeai-home-page .work-card figcaption { padding: 8px 18px 10px; margin: 0; font-size: 11px; min-height: 0; border-top: 1px solid var(--home-line); }
+.woeai-home-page .work-body { padding: 20px 20px 16px; }
+.woeai-home-page .work-body h4 { font-size: 18px; margin: 4px 0 12px; line-height: 1.55; }
+.woeai-home-page .work-body > p:not(.work-tag):not(.work-venue) { font-size: 14px; }
+.woeai-home-page .work-tag { font-size: 11px; letter-spacing: .04em; }
+.woeai-home-page .paper-source { margin-top: 12px; }
+.woeai-home-page .paper-source .paper-citation { font-size: 11.5px; line-height: 1.65; color: #6a7a82; }
+.woeai-home-page .work-links { gap: 14px; }
+.woeai-home-page .work-links a { font-size: 13px; }
+/* Keep a visible top edge when an eligible paper has no approved cover. */
+.woeai-home-page .work-card:not(:has(> figure)) { border-top: 3px solid var(--home-blue); }
+
+/* --- Engineering applications ------------------------------------------- */
+.woeai-home-page .application-grid article { border-top: 1px solid var(--home-ink); padding-top: 18px; }
+.woeai-home-page .application-number { color: var(--home-accent); font-size: 13px; letter-spacing: .06em; margin-bottom: 10px; }
+.woeai-home-page .application-grid h3 { font-size: 20px; }
+
+/* --- Contact: dark closing band ----------------------------------------- */
+.woeai-home-page #join-contact {
+    background: var(--home-blue); color: #fff;
+    padding: 80px 0 84px;
+    box-shadow: 0 0 0 100vmax var(--home-blue);
+    clip-path: inset(0 -100vmax);
+}
+.woeai-home-page #join-contact .eyebrow { color: #9fc7d3; }
+.woeai-home-page #join-contact h2 { color: #fff; }
+.woeai-home-page #join-contact .contact-copy > p:not(.eyebrow) { color: #d5e3e6; }
+.woeai-home-page #join-contact .contact-email { color: #fff; }
+.woeai-home-page #join-contact .contact-details > p { color: #c3d7dc; }
+.woeai-home-page #join-contact .contact-channels { border-top: 1px solid #3a7285; padding-top: 22px; }
+.woeai-home-page #join-contact .contact-channels a { color: #e2eef1; }
+.woeai-home-page #join-contact .contact-channels img { background: #fff; padding: 6px; }
+.woeai-home-page #join-contact .contact-channels figcaption { color: #b9d0d6; }
+.woeai-home-page #join-contact .home-button { border-color: #6fa2b1; color: #fff; }
+.woeai-home-page #join-contact .home-button:hover { background: #1d657c; color: #fff; }
+.woeai-home-page #join-contact .home-button.primary { background: #fff; border-color: #fff; color: var(--home-blue); }
+.woeai-home-page #join-contact .home-button.primary:hover { background: #e6eeef; color: var(--home-blue); }
+
+/* --- Footer -------------------------------------------------------------- */
+.woeai-home-page .home-footer { padding: 34px 5.55% 38px; }
+
+@media (max-width: 1100px) {
+    .woeai-home-page .home-section { padding: 72px 0; }
+}
+@media (max-width: 900px) {
+    .woeai-home-page .home-hero { padding: 48px 0 52px; }
+    .woeai-home-page .home-section { padding: 56px 0; }
+    .woeai-home-page .eyebrow .en { display: block; margin-left: 0; margin-top: 5px; font-size: 10px; }
+}
+@media (max-width: 560px) {
+    .woeai-home-page #join-contact { padding: 52px 0 56px; }
+}

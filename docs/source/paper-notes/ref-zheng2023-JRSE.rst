@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zheng2023-JRSE/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-zheng2023-JRSE/cover.png
    :alt: 一体化分析 | 风浪换向响应会变 / 十兆瓦浮式风机缩尺试验
    :width: 900px
    :align: center

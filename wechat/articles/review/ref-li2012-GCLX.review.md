@@ -1,8 +1,7 @@
 ---
 publication_ref: ref-li2012-GCLX
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-li2012-GCLX/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-li2012-GCLX/cover-wechat-900x383-20261014-v5.png
+cover_image: wechat/assets/public-safe/ref-li2012-GCLX/cover.png
 ---
 
 # 行人风环境超越阈值概率：双渠道内容核对

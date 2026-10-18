@@ -7,7 +7,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-he2026-OE/cover-wechat-900x383-imagegen-v1.png
+.. image:: ../../../wechat/assets/public-safe/ref-he2026-OE/cover.png
    :alt: 用内置矩形立柱提升液舱阻尼器设计效率
    :align: center
    :width: 100%

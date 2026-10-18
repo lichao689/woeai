@@ -7,7 +7,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-he2026-OE-structural/cover-wechat-900x383-v2.png
+.. image:: ../../../wechat/assets/public-safe/ref-he2026-OE-structural/cover.png
    :alt: 用钢筋混凝土优化半潜式风机平台
    :align: center
    :width: 100%

@@ -11,6 +11,7 @@ copyright_checked: false
 public_safety_checked: false
 formula_preview_checked: false
 figure_preview_checked: false
+cover_image: wechat/assets/public-safe/<publication_ref>/cover.png
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false

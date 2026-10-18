@@ -1,8 +1,7 @@
 ---
 publication_ref: ref-li2013-RE
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-li2013-RE/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-li2013-RE/cover-wechat-900x383-20261014-v5.png
+cover_image: wechat/assets/public-safe/ref-li2013-RE/cover.png
 ---
 
 # ref-li2013-RE 内容与证据审阅记录

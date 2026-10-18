@@ -1,8 +1,6 @@
 ---
 publication_ref: ref-yang2022-AS
 wechat_author: Junhui Yang
-wechat_cover_image: wechat/assets/public-safe/ref-yang2022-AS/cover-wechat-900x383-20261015-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-yang2022-AS/cover-wechat-900x383-20261015-v5.png
 research_family: 工程结构抗风
 subdirection: 结构抗风
 publication_mode: first_publish
@@ -16,6 +14,7 @@ cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
 body_images_upload_approved: true
+cover_image: wechat/assets/public-safe/ref-yang2022-AS/cover.png
 ---
 
 # 基于响应的等效静力风荷载：来源补全与制作记录

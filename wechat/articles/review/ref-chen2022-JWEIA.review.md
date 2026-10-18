@@ -14,8 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
-wechat_cover_image: wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-chen2022-JWEIA/cover-wechat-900x383-imagegen-v2-selected.png
+cover_image: wechat/assets/public-safe/ref-chen2022-JWEIA/cover.png
 ---
 
 # ref-chen2022-JWEIA 原文核验记录

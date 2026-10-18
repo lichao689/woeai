@@ -7,8 +7,6 @@ publication_mode: first_publish
 wechat_status: drafting
 wechat_author: Li Chao
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-li2020-JWEIA/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-li2020-JWEIA/cover-wechat-900x383-20261014-v5.png
 source_checked: true
 copyright_checked: true
 public_safety_checked: false
@@ -17,6 +15,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
+cover_image: wechat/assets/public-safe/ref-li2020-JWEIA/cover.png
 ---
 
 # ref-li2020-JWEIA 内容制作记录

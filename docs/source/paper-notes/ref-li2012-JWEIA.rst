@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-li2012-JWEIA/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-li2012-JWEIA/cover.png
    :alt: 数值风洞 | 下击暴流怎样扩散 / 用变尺度修正风速模型
    :width: 900px
    :align: center

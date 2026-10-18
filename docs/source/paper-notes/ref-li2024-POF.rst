@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-li2024-POF/cover-wechat-900x383-v2.png
+.. image:: ../../../wechat/assets/public-safe/ref-li2024-POF/cover.png
    :alt: 用矢量势随机流生成无散湍流
    :align: center
    :width: 100%

@@ -7,7 +7,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-zhao2025-SCS/cover-wechat-900x383-v2.png
+.. image:: ../../../wechat/assets/public-safe/ref-zhao2025-SCS/cover.png
    :alt: 用 3D Gaussian Splatting 重建城市建筑几何
    :align: center
    :width: 100%

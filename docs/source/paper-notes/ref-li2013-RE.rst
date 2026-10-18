@@ -5,7 +5,7 @@
 
 精简版微信公众号文章：待发布
 
-.. image:: ../../../wechat/assets/public-safe/ref-li2013-RE/cover-wechat-900x383-20261014-v5.png
+.. image:: ../../../wechat/assets/public-safe/ref-li2013-RE/cover.png
    :alt: 一体化分析 | 功率为何算高了 / 高攻角流动的涡结构检验
    :width: 900px
    :align: center

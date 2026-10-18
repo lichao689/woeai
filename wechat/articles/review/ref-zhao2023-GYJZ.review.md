@@ -1,8 +1,6 @@
 ---
 publication_ref: ref-zhao2023-GYJZ
 body_images_upload_approved: true
-wechat_cover_image: wechat/assets/public-safe/ref-zhao2023-GYJZ/cover-wechat-900x383-20261014-v5.png
-rtd_cover_image: wechat/assets/public-safe/ref-zhao2023-GYJZ/cover-wechat-900x383-20261014-v5.png
 research_family: 工程结构抗风
 subdirection: 结构抗风
 publication_mode: first_publish
@@ -16,6 +14,7 @@ figure_preview_checked: false
 cover_image_checked: false
 wechat_backend_preview_checked: false
 rtd_page_checked: false
+cover_image: wechat/assets/public-safe/ref-zhao2023-GYJZ/cover.png
 ---
 
 # 输电塔首次超越易损性：双渠道制作记录

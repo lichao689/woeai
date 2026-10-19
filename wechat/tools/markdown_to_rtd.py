@@ -114,9 +114,10 @@ def escape_rtd_doc_label(value: str) -> str:
 def parse_publications_citation(publication_ref: str, publications_path: Path | None = None) -> str:
     """Return the Publications.rst citation paragraph truncated at the DOI.
 
-    Returns an empty string when the anchor or paragraph is missing, so
-    temporary or test articles without a Publications entry simply omit the
-    citation section.
+    Each entry is a ``pub-entry`` container holding a meta line, an optional
+    Chinese title line, and the citation itself under ``pub-source``. Returns an
+    empty string when the anchor or citation is missing, so temporary or test
+    articles without a Publications entry simply omit the citation section.
     """
     source = publications_path or PUBLICATIONS_RST
     if not source.exists():
@@ -128,10 +129,15 @@ def parse_publications_citation(publication_ref: str, publications_path: Path | 
         idx += 1
     if idx >= len(lines):
         return ""
+    # Walk forward to this entry's citation paragraph. The meta and title
+    # blocks in between must not leak into the citation text.
+    source_marker = ".. container:: pub-source"
+    while idx < len(lines) and lines[idx].strip() != source_marker:
+        idx += 1
+    if idx >= len(lines):
+        return ""
     idx += 1
-    # Skip blank lines and any deep-dive title line (a bullet item starting
-    # with "* ") that now appears between the anchor and the [N] citation.
-    while idx < len(lines) and (not lines[idx].strip() or lines[idx].strip().startswith("* ")):
+    while idx < len(lines) and not lines[idx].strip():
         idx += 1
     citation_lines: list[str] = []
     while idx < len(lines) and lines[idx].strip():

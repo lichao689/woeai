@@ -35,49 +35,67 @@ def publication_anchors(text: str) -> set[str]:
     return set(re.findall(r"^\.\. _(ref-[^:]+):$", text, flags=re.M))
 
 
-def canonical_publication_anchors(text: str) -> set[str]:
-    """Anchors that have a corresponding [N] citation.
+def pub_blocks(text: str) -> list[dict[str, str]]:
+    """Split a generated publications page into its ``pub-entry`` blocks.
 
-    A deep-dive title line may appear between the anchor block and
-    the [N] citation, so the pattern allows non-anchor lines in between.
+    Each block holds ``meta`` (``[N] · year · direction`` in the thematic view,
+    a ``:ref:`` link in the chronological one), an optional ``title`` and the
+    citation ``source``. Keeping the citation in its own block is what makes the
+    page scannable, so the tests read the same three parts.
+    """
+    blocks: list[dict[str, str]] = []
+    current: dict[str, str] = {}
+    field = None
+    for line in text.splitlines():
+        stripped = line.strip()
+        marker = re.fullmatch(r"\.\. container:: pub-(entry|meta|title|source)", stripped)
+        if marker:
+            if marker.group(1) == "entry":
+                if current:
+                    blocks.append(current)
+                current = {}
+            field = marker.group(1)
+            continue
+        if field and stripped:
+            current.setdefault(field, stripped)
+    if current:
+        blocks.append(current)
+    return blocks
+
+
+def canonical_publication_anchors(text: str) -> set[str]:
+    """Anchors that have a corresponding publication block.
+
+    Anchor aliases may stack before one entry, so the last label before the
+    block is the canonical one.
     """
     anchors: set[str] = set()
-    pattern = re.compile(
-        r"(?P<label_block>(?:^\.\. _ref-[^:]+:\n\n)+)(?:(?!^\.\. _ref-).*\n)*?\[\d+\] ",
-        flags=re.M,
-    )
-    for match in pattern.finditer(text):
-        labels = re.findall(r"^\.\. _(ref-[^:]+):$", match.group("label_block"), flags=re.M)
-        if labels:
-            anchors.add(labels[-1])
+    last_anchor: str | None = None
+    for line in text.splitlines():
+        stripped = line.strip()
+        label = re.fullmatch(r"\.\. _(ref-[^:]+):", stripped)
+        if label:
+            last_anchor = label.group(1)
+            continue
+        if last_anchor and re.match(r"^(?::ref:`)?\[\d+\]", stripped):
+            anchors.add(last_anchor)
     return anchors
-
 
 
 def research_ref_targets(text: str) -> list[str]:
     return re.findall(r":ref:`\[\d+\] <(ref-[^>]+)>`", text)
 
 
-def normalize_publication_entry(line: str) -> str:
-    # Strip :ref: wrapper from the chronological view's [N] links.
-    line = re.sub(r"^:ref:`\[(\d+)\] <ref-[^>]+>`", r"[\1]", line)
-    # Strip inline deep-dive title links (:doc:`title <paper-notes/ref-xxx>`)
-    # that appear only in the thematic view, so both views compare equal.
-    line = re.sub(r" :doc:`[^`]+ <paper-notes/[^>]+>` ", " ", line)
-    return line
-
-
 def publication_entries(text: str) -> list[str]:
-    entries = re.findall(r"^(?:\[\d+\]|:ref:`\[\d+\] <ref-[^>]+>`).+$", text, flags=re.M)
-    return [normalize_publication_entry(entry) for entry in entries]
+    return [block["source"] for block in pub_blocks(text) if "source" in block]
 
 
 def publication_numbers(text: str) -> list[int]:
     numbers: list[int] = []
-    for line in re.findall(r"^(?:\[\d+\]|:ref:`\[\d+\] <ref-[^>]+>`).+$", text, flags=re.M):
-        match = re.match(r"^(?:\[(\d+)\]|:ref:`\[(\d+)\] <ref-[^>]+>`)", line)
+    for block in pub_blocks(text):
+        match = re.match(r"^(?::ref:`)?\[(\d+)\]", block.get("meta", ""))
         if match:
-            numbers.append(int(match.group(1) or match.group(2)))
+            numbers.append(int(match.group(1)))
     return numbers
 
 
@@ -85,13 +103,14 @@ def publication_number_years(text: str) -> dict[int, int]:
     years: dict[int, int] = {}
     current_year = 0
     for line in text.splitlines():
-        if re.fullmatch(r"\d{4}", line):
-            current_year = int(line)
+        stripped = line.strip()
+        if re.fullmatch(r"\d{4}", stripped):
+            current_year = int(stripped)
             continue
-        if line == "更早 Earlier":
+        if stripped == "更早 Earlier":
             current_year = 0
             continue
-        match = re.match(r"^(?::ref:`)?\[(\d+)\]", line)
+        match = re.match(r"^(?::ref:`)?\[(\d+)\]", stripped)
         if match:
             years[int(match.group(1))] = current_year
     return years

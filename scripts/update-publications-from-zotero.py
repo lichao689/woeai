@@ -626,6 +626,7 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             "- :student-first-author:`学生第一作者` 表示该论文第一作者为团队在校或毕业学生。",
             "- 作者姓名后的 ``*`` 表示通讯作者。",
+            "- 方括号内为全部发表文献的连续编号，跨研究方向连续，不随本页分组重排。",
             "",
         ]
     )
@@ -728,6 +729,44 @@ def paper_deep_dive_toctree(
     ]
 
 
+def publication_entry_block(
+    item: dict[str, Any],
+    meta_text: str,
+    deep_dive: tuple[str, str] | None = None,
+) -> list[str]:
+    """Render one publication as a scannable three-part block.
+
+    The bibliography string is the audited artifact, so it is never recomposed:
+    the block only lifts the ``[N]`` prefix out into a meta line and, when a
+    reading note exists, the Chinese title into its own line. Everything else
+    stays byte-for-byte the same citation.
+    """
+    number = item["publication_number"]
+    citation = rendered_entry(item, number)
+    prefix = f"[{number}] "
+    citation_body = citation[len(prefix):] if citation.startswith(prefix) else citation
+    lines = [
+        ".. container:: pub-entry",
+        "",
+        "   .. container:: pub-meta",
+        "",
+        f"      {meta_text}",
+        "",
+    ]
+    if deep_dive:
+        pub_ref, dd_title = deep_dive
+        lines.extend(
+            [
+                "   .. container:: pub-title",
+                "",
+                f"      :doc:`{dd_title} <paper-notes/{pub_ref}>`",
+                "",
+            ]
+        )
+    lines.extend(["   .. container:: pub-source", "", f"      {citation_body}", ""])
+    return lines
+
+
 def build_publications_rst(
     items: list[dict[str, Any]], research_map: dict[str, dict[str, str]]
 ) -> str:
@@ -748,25 +787,20 @@ def build_publications_rst(
                     continue
                 for anchor in publication_anchor_targets(item):
                     sections.extend([f".. _{anchor}:", ""])
-                entry = rendered_entry(item, item["publication_number"])
-                dd = deep_dive_titles.get(item["key"])
-                if dd:
-                    pub_ref, dd_title = dd
-                    number = f"[{item['publication_number']}] "
-                    year = extract_year(item["data"].get("date"))
-                    initialism = journal_initialism(item["data"].get("publicationTitle"))
-                    link_text = paper_deep_dive_citation_link_text(year, dd_title, initialism)
-                    dd_link = f":doc:`{link_text} <paper-notes/{pub_ref}>` "
-                    entry = entry.replace(number, number + dd_link, 1)
-                sections.extend([entry, ""])
+                year = extract_year(item["data"].get("date"))
+                meta_text = f"[{item['publication_number']}] · {year} · {subdirection}"
+                sections.extend(
+                    publication_entry_block(
+                        item, meta_text, deep_dive_titles.get(item["key"])
+                    )
+                )
     return "\n".join(sections).rstrip() + "\n"
 
 
-def research_full_entry(item: dict[str, Any]) -> str:
-    entry = rendered_entry(item, item["publication_number"])
-    number = f"[{item['publication_number']}]"
-    linked_number = f":ref:`{number} <{item['anchor']}>`"
-    return entry.replace(number, linked_number, 1)
+def research_full_entry(item: dict[str, Any]) -> list[str]:
+    number = item["publication_number"]
+    linked_number = f":ref:`[{number}] <{item['anchor']}>`"
+    return publication_entry_block(item, linked_number)
 
 
 def build_publications_by_year_rst(items: list[dict[str, Any]]) -> str:
@@ -784,6 +818,7 @@ def build_publications_by_year_rst(items: list[dict[str, Any]]) -> str:
         "",
         "- :student-first-author:`学生第一作者` 表示该论文第一作者为团队在校或毕业学生。",
         "- 作者姓名后的 ``*`` 表示通讯作者。",
+        "- 方括号内为全部发表文献的连续编号，跨研究方向连续，不随本页分组重排。",
         "",
     ]
     current_section: int | None = None
@@ -795,7 +830,7 @@ def build_publications_by_year_rst(items: list[dict[str, Any]]) -> str:
             current_section = section_key
             title = str(section_key) if section_key else EARLIER_PUBLICATIONS_TITLE
             sections.extend([title, "~" * 12, ""])
-        sections.extend([research_full_entry(item), ""])
+        sections.extend(research_full_entry(item))
     return "\n".join(sections).rstrip() + "\n"
 
 

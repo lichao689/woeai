@@ -198,7 +198,7 @@ project/prototypes/**/*.webp
 .workbuddy-ai/
 
 # Homepage cover copies exist only in Sphinx build output.
-docs/_static/home/progress-*.png
+docs/_static/home/progress-*.webp
 
 # Screenshot/metric dumps from local review passes (not site content).
 project/prototypes/**/reader/

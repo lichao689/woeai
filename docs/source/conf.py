@@ -42,6 +42,18 @@ html_static_path = ['../_static']
 html_css_files = ['custom.css']
 html_js_files = ['doi-new-tab.js', 'site-navigation.js']
 
+# -- MathJax: vendored instead of an overseas CDN -------------------------
+# 42 of 44 paper-note pages render LaTeX with MathJax. The Sphinx default
+# (cdn.jsdelivr.net) added a second overseas dependency on top of the Cloudflare
+# edge and was measured from Guangzhou at 1.2 s best case and 7.3 s worst case,
+# with formulas invisible until it finished. The bundle is now served from our
+# own _static, so every request shares one origin.
+mathjax_path = 'mathjax/tex-mml-chtml.js'
+# ``chtml.fontURL`` is not set here: MathJax writes it verbatim into the page's
+# @font-face rules, and a static value would be page-relative and 404 on every
+# nested paper-note page. The mathjax_vendored extension injects the correct
+# root-relative path per page (see its module docstring).
+
 html_logo = "../_static/logoGroup.png"  # Logo 文件需放置于 _static 目录
 html_title = "Wind and Ocean Engineering with AI"
 
@@ -123,6 +135,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 extensions.append('english_site')
 # Reader-page headings follow the homepage: English eyebrow, Chinese h1.
 extensions.append('page_eyebrow')
+# Vendored MathJax needs its fontURL rewritten per page depth (see module docstring).
+extensions.append('mathjax_vendored')
 
 # Every Chinese note and English highlight receives checked registry citation text.
 extensions.append("paper_citations")

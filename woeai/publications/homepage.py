@@ -2,11 +2,12 @@
 
 import json
 import hashlib
-import shutil
 import re
 import unicodedata
 from html import escape
 from pathlib import Path
+
+from PIL import Image
 
 from woeai.publications.registry import load_registry, wechat_content_reviewed
 from woeai.publications.taxonomy import RESEARCH_FAMILY_EN, RESEARCH_FAMILY_ORDER
@@ -112,7 +113,7 @@ def render_home_progress(root: Path, *, english=False):
             date = "-".join(f"{part:02d}" for part in publication_date(row) if part)
             record_url = f'Publications.html#{"en-" if english else ""}{ref.lower()}'
             parts.append(f'<article class="work-card" data-publication-ref="{escape(ref)}" data-publication-date="{date}">')
-            image = f"home/progress-{ref}.png"
+            image = f"home/progress-{ref}.webp"
             cover = find_review_cover(root / custom["wechat"]["review_path"], root=root)
             if cover is not None:
                 image += "?v=" + hashlib.sha256(cover.read_bytes()).hexdigest()[:12]
@@ -143,6 +144,22 @@ def render_home_progress(root: Path, *, english=False):
     return "\n".join(parts)
 
 
+# The six homepage cards dominate the first-screen payload. The review covers
+# ship as 900x383 PNG (~360–480 KB each, 2.5 MB for the section); re-encoding to
+# WebP cuts that to ~30–60 KB. The edge serving this site is 160 ms away from
+# mainland China, so removing two megabytes off the critical path is worth the
+# conversion step.
+COVER_WEBP_QUALITY = 85
+
+
+def _write_webp(source: Path, target: Path) -> None:
+    """Encode a review cover as WebP, keeping its dimensions and alpha."""
+    with Image.open(source) as handle:
+        if handle.mode not in ("RGB", "RGBA"):
+            handle = handle.convert("RGB")
+        handle.save(target, "WEBP", quality=COVER_WEBP_QUALITY, method=6)
+
+
 def copy_home_progress_covers(root: Path, outdir: Path):
     """Generate homepage derivatives directly in Sphinx output, never in source."""
     destination = outdir / "_static/home"
@@ -154,9 +171,10 @@ def copy_home_progress_covers(root: Path, outdir: Path):
             cover = find_review_cover(root / custom["wechat"]["review_path"], root=root)
             if cover is None:
                 continue
-            name = f"progress-{custom['publication_ref']}.png"
-            shutil.copyfile(cover, destination / name)
+            name = f"progress-{custom['publication_ref']}.webp"
+            _write_webp(cover, destination / name)
             current.add(name)
-    for path in destination.glob("progress-*.png"):
+    # Remove stale derivatives of both the old and the current extension.
+    for path in list(destination.glob("progress-*.webp")) + list(destination.glob("progress-*.png")):
         if path.name not in current:
             path.unlink()

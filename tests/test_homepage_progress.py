@@ -4,7 +4,8 @@ from pathlib import Path
 import unittest
 import json
 import tempfile
-import hashlib
+
+from PIL import Image, ImageChops, ImageStat
 
 from woeai.wechat.review import parse_front_matter
 
@@ -37,10 +38,13 @@ class HomepageProgressTests(unittest.TestCase):
             outdir = Path(directory)
             target = outdir / "_static/home"
             target.mkdir(parents=True)
+            # Stale derivatives of both the retired PNG extension and the current WebP one.
             (target / "progress-retired.png").write_bytes(b"stale generated output")
+            (target / "progress-retired.webp").write_bytes(b"stale generated output")
             (target / "other-image.png").write_bytes(b"unrelated output")
             copy_home_progress_covers(ROOT, outdir)
             self.assertFalse((target / "progress-retired.png").exists())
+            self.assertFalse((target / "progress-retired.webp").exists())
             self.assertEqual((target / "other-image.png").read_bytes(), b"unrelated output")
             for _, rows in recent_publications(load_registry(ROOT), ROOT):
                 for row in rows:
@@ -49,14 +53,23 @@ class HomepageProgressTests(unittest.TestCase):
                         review = ROOT / row["custom"]["wechat"]["review_path"]
                         cover = parse_front_matter(review)["cover_image"]
                         self.assertEqual(cover, f"wechat/assets/public-safe/{ref}/cover.png")
-                        homepage = target / f"progress-{ref}.png"
-                        self.assertEqual(hashlib.sha256(homepage.read_bytes()).hexdigest(),
-                                         hashlib.sha256((ROOT / cover).read_bytes()).hexdigest())
+                        homepage = target / f"progress-{ref}.webp"
+                        self.assertTrue(homepage.is_file(), "cover derivative must be generated as WebP")
+                        with Image.open(ROOT / cover) as source, Image.open(homepage) as derivative:
+                            self.assertEqual(derivative.format, "WEBP")
+                            self.assertEqual(derivative.size, source.size)
+                            # WebP is lossy, so compare mean absolute pixel error rather
+                            # than bytes: it must stay a re-encode of this cover, not a
+                            # different or corrupted image. q=85 measures 3.0–4.3 here.
+                            difference = ImageChops.difference(
+                                derivative.convert("RGBA"), source.convert("RGBA"))
+                            self.assertLess(max(ImageStat.Stat(difference).mean), 8)
+                        self.assertLess(homepage.stat().st_size, (ROOT / cover).stat().st_size)
                         self.assertFalse((ROOT / "docs/_static/home" / homepage.name).exists())
         for english in (False, True):
             rendered = render_home_progress(ROOT, english=english)
             self.assertEqual(rendered.count('<figure>'), 6)
-            self.assertEqual(rendered.count('.png?v='), 6)
+            self.assertEqual(rendered.count('.webp?v='), 6)
 
     def test_each_produced_paper_has_only_one_current_cover_source(self):
         rows = [r for r in load_registry(ROOT)

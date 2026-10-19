@@ -92,10 +92,11 @@ class RTDHomepageProjectsRedesignTests(unittest.TestCase):
         index = read(INDEX)
 
         self.assertFalse(PROJECTS.exists())
-        self.assertNotIn("\n   Projects\n", index)
-        self.assertIn("\n   Research\n", index)
-        self.assertIn("\n   EngineeringApplications\n", index)
-        self.assertIn("\n   Publications\n", index)
+        self.assertNotIn("\n   Projects", index)
+        # Sidebar labels are Chinese-only; the bilingual h1 stays on each page.
+        self.assertIn("\n   科研方向 <Research>\n", index)
+        self.assertIn("\n   工程应用 <EngineeringApplications>\n", index)
+        self.assertIn("\n   学术成果 <Publications>\n", index)
 
     def test_project_evidence_migrated_to_receiving_pages(self) -> None:
         research = read(RESEARCH)

@@ -1,0 +1,18 @@
+{# Reader pages: render the article, then one closing call to action.
+   The CTA must live inside the article body (``div[itemprop=articleBody]``),
+   not after ``block content`` — that block wraps the theme's prev/next bar and
+   copyright footer, so a CTA placed there lands below the footer and outside
+   ``.rst-content`` (which is what styles it). #}
+{% extends '!page.html' %}
+{% block body %}{{ super() }}
+{%- if pagename not in ('Recruitment', 'en/JoinUs', 'search', 'en/Search', 'EngineeringApplications', 'About') and not pagename.startswith('paper-notes/') and not pagename.startswith('en/highlights/') %}
+<div class="page-cta">
+  <p>{{ 'Research questions, engineering problems or a research path — an email is enough to start.' if is_english else '研究问题、工程问题或申请意向，都可以从一封邮件开始。' }}</p>
+  <a class="home-button primary" href="{% if is_english %}{{ pathto('en/JoinUs') }}{% else %}{{ pathto('Recruitment') }}{% endif %}">{{ 'Join Us' if is_english else '加入团队' }} →</a>
+  {%- if is_english %}
+  <a class="home-button secondary" href="mailto:lichaosz@qq.com">Research enquiries ↗</a>
+  {%- else %}
+  <a class="home-button secondary" href="{{ pathto('EngineeringApplications') }}#discuss-an-engineering-problem">工程合作 →</a>
+  {%- endif %}
+</div>
+{%- endif %}{% endblock %}

@@ -199,3 +199,11 @@ project/prototypes/**/*.webp
 
 # Homepage cover copies exist only in Sphinx build output.
 docs/_static/home/progress-*.png
+
+# Screenshot/metric dumps from local review passes (not site content).
+project/prototypes/**/reader/
+
+# Local review tooling (screenshots, probes, measurement scripts).
+project/prototypes/**/shoot-*.js
+project/prototypes/**/probe-*.js
+project/prototypes/**/preview-*.js

@@ -117,10 +117,10 @@
    :hidden:
    :maxdepth: 2
 
-   首页 Home <self>
-   Research
-   EngineeringApplications
-   Publications
-   Teaching
-   Recruitment
-   About
+   首页 <self>
+   科研方向 <Research>
+   工程应用 <EngineeringApplications>
+   学术成果 <Publications>
+   教育教学 <Teaching>
+   招生与申请 <Recruitment>
+   关于本站 <About>

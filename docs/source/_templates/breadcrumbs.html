@@ -1,3 +1,8 @@
+{# Breadcrumb trail only. The current page title is deliberately omitted: every
+   reader page repeats it as the h1 immediately below, and printing it twice was
+   the most common "looks unfinished" note in the page review. #}
 {% if is_english %}
-<ul class="wy-breadcrumbs"><li><a href="{{ pathto('en/index') }}">Home</a> »</li>{% if pagename.startswith('en/highlights/') %}<li><a href="{{ pathto('en/Research') }}">Research</a> »</li>{% endif %}<li>{{ title|striptags }}</li></ul><hr>
-{% else %}{% include '!breadcrumbs.html' %}{% endif %}
+<ul class="wy-breadcrumbs"><li><a href="{{ pathto(site_home) }}">Home</a></li>{% for doc in parents %}{% if doc.link and not loop.first %}<li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>{% endif %}{% endfor %}</ul><hr>
+{% else %}
+<ul class="wy-breadcrumbs"><li><a href="{{ pathto(site_home) }}">首页</a></li>{% for doc in parents %}{% if doc.link and not loop.first %}<li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>{% endif %}{% endfor %}</ul><hr>
+{% endif %}

@@ -1,3 +1,5 @@
+.. _discuss-an-engineering-problem:
+
 工程应用 Engineering Applications
 =================================
 

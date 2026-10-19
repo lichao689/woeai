@@ -36,6 +36,7 @@ Each rule has one authoritative file; others link to it instead of restating it.
 | Covers | `.agents/skills/wechat-cover/` |
 | RTD structure, coverage and audit | `project/guides/paper-deep-dive-rst.md` |
 | RTD translation quality | `project/guides/rtd-translation-style.md` |
+| Complete reading-page citations and real rendered checks | `project/guides/paper-citations.md` |
 | Website pages | `project/guides/homepage-content.md` |
 | Registry states | `project/guides/publication-registry.md` |
 

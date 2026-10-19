@@ -4951,7 +4951,8 @@
         "visual_scope": "Prior independent scientific visual scope is retained exactly as recorded in the main review; figure-board or native-byte checks are not relabelled as a separate full-pixel audit. Final browser, build and actual WeChat phone acceptance remain separate.",
         "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.review.md",
         "integration_review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.integration.review.md"
-      }
+      },
+      "citation_note": "2025年网络首发稿；所列页码为首发稿页码，不代表已核实的最终卷期页码。"
     },
     "DOI": "10.16511/j.cnki.qhdxxb.2025.27.037"
   },
@@ -12904,7 +12905,7 @@
         "date": "2023",
         "title": "基于首次超越破坏的输电塔强风易损性分析",
         "publicationTitle": "工业建筑",
-        "doi": "21213/dfdg234",
+        "doi": "",
         "creators": [
           "赵子涵",
           "肖凯",
@@ -13092,6 +13093,22 @@
               "cover_preview": false
             },
             "fingerprint": "2494c353fa07732af8a0fa3efae8bc477f7d7f36a5553ee8dbcd25e12476d701"
+          },
+          "citation_metadata_correction_20261019": {
+            "recorded_at": "2026-10-19",
+            "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.citation-metadata-20261019.review.md",
+            "scope": "Source-backed removal of unsupported DOI only; original scientific evidence preserved.",
+            "removed_unverified_doi": "21213/dfdg234",
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "79f3fab590ae009cfd3e5fb93b7c525abfcbc8a65a522638b215b62de65e824e"
           }
         },
         "latest_published_url": "",
@@ -13242,9 +13259,9 @@
         "visual_scope": "Prior independent scientific visual scope is retained exactly as recorded in the main review; figure-board or native-byte checks are not relabelled as a separate full-pixel audit. Final browser, build and actual WeChat phone acceptance remain separate.",
         "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.review.md",
         "integration_review_path": "wechat/articles/review/ref-zhao2023-GYJZ.integration.review.md"
-      }
-    },
-    "DOI": "21213/dfdg234"
+      },
+      "citation_note": "2023年网络首发稿（首发日期2023-02-27）；所列页码为首发稿正文页码，不代表已核实的最终卷期页码。"
+    }
   },
   {
     "id": "NLWWLBHY",

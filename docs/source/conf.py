@@ -6,7 +6,7 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.19-0042'
+release = '2026.10.19-1135'
 version = '2026.10.19'
 
 # -- SEO Meta Tags
@@ -123,3 +123,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 extensions.append('english_site')
 # Reader-page headings follow the homepage: English eyebrow, Chinese h1.
 extensions.append('page_eyebrow')
+
+# Every Chinese note and English highlight receives checked registry citation text.
+extensions.append("paper_citations")

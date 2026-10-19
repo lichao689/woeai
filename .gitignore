@@ -207,3 +207,6 @@ project/prototypes/**/reader/
 project/prototypes/**/shoot-*.js
 project/prototypes/**/probe-*.js
 project/prototypes/**/preview-*.js
+
+# Locked development-only reading-page browser checks.
+tests/browser/node_modules/

@@ -58,7 +58,7 @@ class WeChatToolTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
-            article = root / "ref-example.md"
+            article = root / "ref-yang2025-JBE.md"
             review = root / "ref-example.review.md"
             output = root / "ref-example.rst"
             article.write_text(
@@ -133,7 +133,7 @@ class WeChatToolTests(unittest.TestCase):
 
         with tempfile.TemporaryDirectory() as tmpdir:
             root = Path(tmpdir)
-            article = root / "ref-example.md"
+            article = root / "ref-yang2025-JBE.md"
             review = root / "ref-example.review.md"
             output = root / "ref-example.rst"
             article.write_text(
@@ -155,15 +155,20 @@ class WeChatToolTests(unittest.TestCase):
         self.assertNotIn("点击阅读原文", rst)
         self.assertIn("延伸阅读", rst)
 
+    def test_markdown_to_rtd_never_silently_omits_an_unregistered_citation(self):
+        converter = load_script(ROOT / "wechat/tools/markdown_to_rtd.py", "woeai_missing_citation_gate")
+        with self.assertRaisesRegex(ValueError, "ref-nonexistent-paper"):
+            converter.emit_citation_section([], "ref-nonexistent-paper")
+
     def test_markdown_to_rtd_citation_truncates_at_doi(self) -> None:
         converter = load_script(ROOT / "wechat/tools/markdown_to_rtd.py", "woeai_markdown_to_rtd_citation_test")
 
         citation = converter.parse_publications_citation("ref-yang2025-JBE")
-        missing = converter.parse_publications_citation("ref-nonexistent-paper")
+        with self.assertRaisesRegex(ValueError, "ref-nonexistent-paper"):
+            converter.parse_publications_citation("ref-nonexistent-paper")
 
         self.assertTrue(citation.endswith("https://doi.org/10.1016/j.jobe.2025.113635."))
         self.assertNotIn("影响因子", citation)
-        self.assertEqual(missing, "")
 
     def test_markdown_to_rtd_related_navigation_strips_title_prefix(self) -> None:
         converter = load_script(ROOT / "wechat/tools/markdown_to_rtd.py", "woeai_markdown_to_rtd_nav_label_test")

@@ -29,7 +29,8 @@ PUBLICATIONS_RST = REPO_ROOT / "docs/source/Publications.rst"
 # entry it refers to does not exist on RTD.
 TITLE_CATEGORY_PREFIX = re.compile(r"^(?:数值风洞|结构抗风|漂浮风电)\s*\|\s*")
 CLOSING_SENTENCE_ANCHOR = "点击阅读原文"
-DOI_TRUNCATE = re.compile(r"^(.*?https://doi\.org/\S+)")
+
+from woeai.publications.citations import citation_for_ref
 
 from woeai.wechat.backlog import BacklogPaper, parse_backlog_papers, rank_against_target  # noqa: E402,F401
 from woeai.wechat.review import (  # noqa: E402,F401
@@ -112,42 +113,13 @@ def escape_rtd_doc_label(value: str) -> str:
 
 
 def parse_publications_citation(publication_ref: str, publications_path: Path | None = None) -> str:
-    """Return the Publications.rst citation paragraph truncated at the DOI.
+    """Return checked registry citation text, independent of Publications layout.
 
-    Each entry is a ``pub-entry`` container holding a meta line, an optional
-    Chinese title line, and the citation itself under ``pub-source``. Returns an
-    empty string when the anchor or citation is missing, so temporary or test
-    articles without a Publications entry simply omit the citation section.
+    The legacy path argument identifies a project root only; rendered RST is
+    never parsed as bibliographic authority. Missing metadata is a hard error.
     """
-    source = publications_path or PUBLICATIONS_RST
-    if not source.exists():
-        return ""
-    lines = source.read_text(encoding="utf-8").splitlines()
-    anchor = f".. _{publication_ref}:"
-    idx = 0
-    while idx < len(lines) and lines[idx].strip() != anchor:
-        idx += 1
-    if idx >= len(lines):
-        return ""
-    # Walk forward to this entry's citation paragraph. The meta and title
-    # blocks in between must not leak into the citation text.
-    source_marker = ".. container:: pub-source"
-    while idx < len(lines) and lines[idx].strip() != source_marker:
-        idx += 1
-    if idx >= len(lines):
-        return ""
-    idx += 1
-    while idx < len(lines) and not lines[idx].strip():
-        idx += 1
-    citation_lines: list[str] = []
-    while idx < len(lines) and lines[idx].strip():
-        citation_lines.append(lines[idx].strip())
-        idx += 1
-    citation = " ".join(citation_lines)
-    if not citation:
-        return ""
-    match = DOI_TRUNCATE.match(citation)
-    return match.group(1) if match else citation
+    root = publications_path.resolve().parents[2] if publications_path is not None else REPO_ROOT
+    return citation_for_ref(root, publication_ref)
 
 
 def emit_citation_section(
@@ -156,13 +128,6 @@ def emit_citation_section(
     publications_path: Path | None = None,
 ) -> None:
     citation = parse_publications_citation(publication_ref, publications_path)
-    if not citation:
-        print(
-            f"warning: no Publications citation anchor for {publication_ref}; "
-            "RTD citation section omitted",
-            file=sys.stderr,
-        )
-        return
     if output and output[-1] != "":
         output.append("")
     output.extend(heading("完整引用", "-"))

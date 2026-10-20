@@ -200,6 +200,38 @@ Live runs upload the approved cover image, upload every approved body image,
 replace local Markdown image paths with WeChat image URLs in the submitted HTML,
 and then create or update the WeChat draft.
 
+### Existing draft title-prefix changes
+
+For an explicitly authorized direction-prefix-only migration, keep the approved
+cover's secondary label and all scientific body bytes. The WeChat title H1 uses
+`custom.research_family`; the website's independent `custom.rtd.public_title`
+does not change. Use the dedicated command, which defaults to an offline plan:
+
+```sh
+python3 wechat/tools/wechat_draft.py update-title --publication-ref <publication_ref>
+# Only after explicit authorization for the existing draft title change:
+python3 wechat/tools/wechat_draft.py update-title --publication-ref <publication_ref> --live
+```
+
+This command requires the existing private account binding and verified article
+index, never assumes index zero, never creates a draft and never uploads images.
+It accepts the exact old secondary-prefix title or the already-migrated primary
+prefix with the same question. It reads the current remote article twice,
+refuses unexpected titles or concurrent changes, and sends the same remote body,
+cover/crop and metadata with only the title changed. Read-only preview/thumbnail
+URLs are omitted from the update payload. It reads back and compares every
+non-title article field except the platform-generated preview URL, including
+body HTML, cover IDs/URLs, crop information, author, digest and original link.
+
+The official API provides no atomic compare-and-swap; avoid simultaneous backend
+editing during the operation. A changed readback, permission error or uncertain
+network outcome stops the action. Keep minimal safe receipts in ignored local
+storage; inspect uncertain outcomes before any retry. Never substitute a normal
+`update-draft`, which uploads assets and replaces the rendered body, for this
+operation. A verified title update does not renew scientific review, preview or
+publication status. Title/standard migrations preserve old evidence and require
+separate actual non-content comparisons before adding any current evidence.
+
 By default, the API payload sets WeChat's bottom `content_source_url` to the
 current paper's RTD deep-dive page:
 `https://woeai.readthedocs.io/zh-cn/latest/paper-notes/<publication_ref>.html`.

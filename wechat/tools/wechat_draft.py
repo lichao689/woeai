@@ -108,6 +108,17 @@ class ArticleContext:
     draft_mapping_app_id: str = ""
 
 
+@dataclass(frozen=True)
+class DraftTitleTarget:
+    publication_ref: str
+    expected_title: str
+    title: str
+    existing_media_id: str
+    article_index: int | None
+    draft_mapping_source: str
+    draft_mapping_app_id: str
+
+
 class WeChatError(RuntimeError):
     def __init__(self, stage: str, payload: dict[str, Any]):
         self.stage = stage
@@ -1197,7 +1208,7 @@ def command_audit_content_source(args: argparse.Namespace) -> int:
     return 0 if summary["ok"] else 1
 
 
-def require_draft_account(ctx: ArticleContext) -> str:
+def require_draft_account(ctx: ArticleContext | DraftTitleTarget) -> str:
     account = load_account(WECHAT_ROOT / ".local/account.json")
     expected = ctx.draft_mapping_app_id
     if ctx.existing_media_id and (ctx.draft_mapping_source != "private" or not expected):
@@ -1207,9 +1218,78 @@ def require_draft_account(ctx: ArticleContext) -> str:
     return account.get("app_id", "")
 
 
-def require_draft_article_index(ctx: ArticleContext) -> None:
+def require_draft_article_index(ctx: ArticleContext | DraftTitleTarget) -> None:
     if type(ctx.article_index) is not int or ctx.article_index < 0:
         raise ConfigurationError("draft_article_index_unverified")
+
+
+def build_title_target(publication_ref: str) -> DraftTitleTarget:
+    from woeai.wechat.editorial import article_title_findings
+
+    backlog = WECHAT_ROOT / "backlog/selected-papers.yml"
+    root, _records, record = registered_publication(backlog, publication_ref)
+    custom = record["custom"]
+    text = (root / custom["wechat"]["path"]).read_text(encoding="utf-8")
+    if article_title_findings(text, custom["research_family"]):
+        raise RuntimeError("Local title must use its registered primary family")
+    title = parse_title_text(text)
+    mapping = resolve_draft_mapping(backlog, publication_ref)
+    if not mapping["media_id"]:
+        raise RuntimeError("Cannot update title without an existing private draft mapping")
+    target = DraftTitleTarget(publication_ref, custom["subdirection"] + " | " + title.split(" | ", 1)[1],
+                              title, mapping["media_id"], mapping["article_index"], mapping["source"], mapping["app_id"])
+    require_draft_account(target)
+    require_draft_article_index(target)
+    return target
+
+
+def command_update_title(args: argparse.Namespace) -> int:
+    from woeai.wechat.title_update import TitleUpdateError, update_title
+
+    summary = {"ok": True, "stage": "title_plan", "publication_ref": args.publication_ref,
+               "will_read_credentials": args.live, "will_contact_wechat": args.live,
+               "will_create_draft": False, "will_upload_images": False}
+    attempted = False
+    acknowledged = False
+    try:
+        target = build_title_target(args.publication_ref)
+        summary.update(title=target.title, expected_remote_title=target.expected_title)
+        if not args.live:
+            print(json.dumps(summary, ensure_ascii=False, indent=2))
+            return 0
+        token = fetch_access_token(force_refresh=False)["access_token"]
+
+        def read():
+            return fetch_remote_draft_article(token, target.existing_media_id, target.article_index)
+
+        def write(article):
+            nonlocal attempted, acknowledged
+            attempted = True
+            response = api_post_json(DRAFT_UPDATE_URL, token,
+                {"media_id": target.existing_media_id, "index": target.article_index, "articles": article})
+            error_code = response.get("errcode")
+            if not ((type(error_code) is int and error_code == 0)
+                    or (type(error_code) is str and error_code == "0")):
+                raise WeChatError("draft_update", response)
+            acknowledged = True
+
+        result = update_title(read, write, expected_title=target.expected_title, desired_title=target.title)
+        summary.update(stage="title_verified", **result)
+    except Exception as error:
+        summary.update(safe_error_summary(error))
+        summary.pop("wechat_rejected_ip", None)
+        summary.update(ok=False, stage="title_update_stopped", write_attempted=attempted,
+                       write_acknowledged=acknowledged,
+                       outcome="verification_failed" if acknowledged else "uncertain" if attempted else "not_attempted")
+        if (isinstance(error, WeChatError) and error.stage == "draft_update"
+                and type(summary.get("errcode")) is int and summary["errcode"] != 0):
+            summary["outcome"] = "rejected"
+        if isinstance(error, TitleUpdateError):
+            summary["reason"] = error.code
+        print(json.dumps(summary, ensure_ascii=False, indent=2))
+        return 1
+    print(json.dumps(summary, ensure_ascii=False, indent=2))
+    return 0
 
 
 def command_create_or_update(args: argparse.Namespace) -> int:
@@ -1367,6 +1447,10 @@ def build_parser() -> argparse.ArgumentParser:
     create.add_argument("--new-copy", action="store_true", help="Create a new copy even if a draft media_id exists")
     create.set_defaults(update=False)
 
+    title = sub.add_parser("update-title", help="Preserve the remote article and change only its direction prefix")
+    title.add_argument("--publication-ref", required=True)
+    title.add_argument("--live", action="store_true", help="Live: update only an existing mapped draft title")
+
     update = sub.add_parser("update-draft", help="Live: upload assets and update the existing draft")
     update.add_argument("--publication-ref", default=DEFAULT_REF)
     update.add_argument("--theme", default=DEFAULT_THEME, choices=AVAILABLE_THEMES)
@@ -1380,6 +1464,8 @@ def main(argv: list[str] | None = None) -> int:
     parser = build_parser()
     args = parser.parse_args(argv)
     try:
+        if args.command == "update-title":
+            return command_update_title(args)
         if args.command == "account-check":
             return command_account_check(args)
         if args.command == "config-check":

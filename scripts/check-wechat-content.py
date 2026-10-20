@@ -16,8 +16,8 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('articles', type=Path, nargs='+')
     args = parser.parse_args()
-    subdirections = {
-        (ROOT / row['custom']['wechat']['path']).resolve(): row['custom']['subdirection']
+    research_families = {
+        (ROOT / row['custom']['wechat']['path']).resolve(): row['custom']['research_family']
         for row in load_registry(ROOT)
     }
     failed = False
@@ -27,8 +27,8 @@ def main() -> int:
             findings = article_structure_findings(text)
             _, figure_findings = parse_figure_groups(text)
             findings += figure_findings
-            if article.resolve() in subdirections:
-                findings += article_title_findings(text, subdirections[article.resolve()])
+            if article.resolve() in research_families:
+                findings += article_title_findings(text, research_families[article.resolve()])
         except OSError as error:
             findings = [error.strerror or 'Cannot read article']
         for finding in findings:

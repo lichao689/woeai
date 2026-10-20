@@ -55,16 +55,18 @@ class EngineeringEndingTests(unittest.TestCase):
 
 
 class RegistryTitleTests(unittest.TestCase):
-    def test_title_matches_its_own_subdirection_not_just_a_valid_label(self):
+    def test_title_uses_its_own_primary_family_and_rejects_secondary_prefixes(self):
         from woeai.wechat.editorial import article_title_findings
-        expected = '一体化分析'
-        self.assertEqual(article_title_findings('# 一体化分析 | 平台怎样比较？\n', expected), [])
-        for title in ('# 平台怎样比较？', '# 漂浮风电 | 平台怎样比较？',
-                      '# 混凝土浮体 | 平台怎样比较？'):
+        self.assertEqual(article_title_findings('# 海洋能源结构 | 平台怎样比较？\n', '海洋能源结构'), [])
+        self.assertEqual(article_title_findings('# 工程结构抗风 | 风压怎样比较？\n', '工程结构抗风'), [])
+        for title in ('# 平台怎样比较？', '# 一体化分析 | 平台怎样比较？',
+                      '# 混凝土浮体 | 平台怎样比较？', '# 工程结构抗风 | 平台怎样比较？',
+                      '# 海洋能源结构 | ', '# 海洋能源结构 | 平台怎样比较？\n# 海洋能源结构 | 重复标题'):
             with self.subTest(title=title):
-                self.assertTrue(article_title_findings(title + '\n', expected))
+                self.assertTrue(article_title_findings(title + '\n', '海洋能源结构'))
+        self.assertTrue(article_title_findings('# 一体化分析 | 平台怎样比较？\n', '一体化分析'))
 
-    def test_every_existing_article_h1_matches_its_registry_subdirection(self):
+    def test_every_existing_article_h1_matches_its_registry_primary_family(self):
         from woeai.publications.registry import load_registry
         from woeai.wechat.editorial import article_title_findings
         checked = 0
@@ -74,7 +76,7 @@ class RegistryTitleTests(unittest.TestCase):
             if not path.is_file():
                 continue
             with self.subTest(publication_ref=custom['publication_ref']):
-                self.assertEqual(article_title_findings(path.read_text(), custom['subdirection']), [])
+                self.assertEqual(article_title_findings(path.read_text(), custom['research_family']), [])
             checked += 1
         self.assertGreater(checked, 0)
 
@@ -97,10 +99,12 @@ class RegistryTitleTests(unittest.TestCase):
             registry = root / 'docs/data/publications.json'
             registry.parent.mkdir(parents=True)
             registry.write_text(json.dumps([{'custom': {
-                'publication_ref': 'example', 'subdirection': '一体化分析',
+                'publication_ref': 'example', 'research_family': '海洋能源结构', 'subdirection': '一体化分析',
                 'wechat': {'path': 'wechat/articles/draft-public-safe/example.md'},
             }}]))
-            cases = [('# 一体化分析 | 平台怎样比较？', 0),
+            cases = [('# 海洋能源结构 | 平台怎样比较？', 0),
+                     ('# 工程结构抗风 | 平台怎样比较？', 1),
+                     ('# 一体化分析 | 平台怎样比较？', 1),
                      ('# 平台怎样比较？', 1),
                      ('# 漂浮风电 | 平台怎样比较？', 1),
                      ('# 混凝土浮体 | 平台怎样比较？', 1)]
@@ -112,7 +116,7 @@ class RegistryTitleTests(unittest.TestCase):
                     with patch.object(checker, 'ROOT', root), patch.object(sys, 'argv', ['check-wechat-content.py', str(article)]), redirect_stderr(stderr), redirect_stdout(io.StringIO()):
                         self.assertEqual(checker.main(), expected_exit)
                     if expected_exit:
-                        self.assertIn('custom.subdirection', stderr.getvalue())
+                        self.assertIn('custom.research_family', stderr.getvalue())
                     self.assertEqual(article.read_bytes(), before)
 
 

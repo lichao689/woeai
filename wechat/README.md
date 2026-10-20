@@ -217,7 +217,9 @@ This command requires the existing private account binding and verified article
 index, never assumes index zero, never creates a draft and never uploads images.
 It accepts the exact old secondary-prefix title or the already-migrated primary
 prefix with the same question. It reads the current remote article twice,
-refuses unexpected titles or concurrent changes, and sends the same remote body,
+ignoring only the platform-regenerated read-only preview `url` in both comparisons;
+thumbnail URLs and original links remain checked. It refuses unexpected titles
+or concurrent changes, and sends the same remote body,
 cover/crop and metadata with only the title changed. Read-only preview/thumbnail
 URLs are omitted from the update payload. It reads back and compares every
 non-title article field except the platform-generated preview URL, including

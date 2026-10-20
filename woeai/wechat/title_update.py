@@ -9,6 +9,12 @@ class TitleUpdateError(RuntimeError):
         super().__init__(code)
 
 
+def _article_state(article):
+    # The platform regenerates this read-only preview URL on each draft/get.
+    # Thumbnail URLs, original links, body and cover/crop fields remain checked.
+    return {key: value for key, value in article.items() if key != 'url'}
+
+
 def update_title(read_article, write_article, *, expected_title, desired_title):
     """Read twice, write once, then verify; never render or upload any content."""
     before = read_article()
@@ -17,7 +23,8 @@ def update_title(read_article, write_article, *, expected_title, desired_title):
     if before.get('title') not in {expected_title, desired_title}:
         raise TitleUpdateError('remote_title_conflict')
     current = read_article()
-    if current != before:
+    before_state = _article_state(before)
+    if _article_state(current) != before_state:
         raise TitleUpdateError('remote_article_changed')
     if current['title'] == desired_title:
         return {'updated': False, 'title_verified': True, 'non_title_unchanged': True}
@@ -28,8 +35,6 @@ def update_title(read_article, write_article, *, expected_title, desired_title):
     after = read_article()
     if after.get('title') != desired_title:
         raise TitleUpdateError('title_readback_failed', write_attempted=True)
-    before_fields = {key: value for key, value in before.items() if key not in {'title', 'url'}}
-    after_fields = {key: value for key, value in after.items() if key not in {'title', 'url'}}
-    if after_fields != before_fields:
+    if _article_state(after) != {**before_state, 'title': desired_title}:
         raise TitleUpdateError('non_title_readback_changed', write_attempted=True)
     return {'updated': True, 'title_verified': True, 'non_title_unchanged': True}

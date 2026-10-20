@@ -36,6 +36,22 @@ class TitleUpdateTests(unittest.TestCase):
         self.assertNotIn('thumb_url', writes[0])
         self.assertEqual(before['title'], 'Secondary | Same question?')
 
+    def test_platform_generated_preview_url_may_change_between_reads(self):
+        from woeai.wechat.title_update import update_title
+        before = self.article()
+        current = {**before, 'url': 'second-platform-preview-placeholder'}
+        after = {**before, 'title': 'Primary | Same question?', 'url': 'third-platform-preview-placeholder'}
+        reads = iter([before, current, after])
+        writes = []
+        result = update_title(lambda: copy.deepcopy(next(reads)), writes.append,
+                              expected_title='Secondary | Same question?', desired_title='Primary | Same question?')
+        self.assertTrue(result['title_verified'])
+        self.assertTrue(result['non_title_unchanged'])
+        self.assertEqual(len(writes), 1)
+        self.assertNotIn('url', writes[0])
+        self.assertEqual(writes[0]['content'], before['content'])
+        self.assertEqual(writes[0]['cover_info'], {'crop': 'unchanged'})
+
     def test_missing_body_or_cover_never_writes_a_partial_replacement(self):
         from woeai.wechat.title_update import update_title
         for field in ('content', 'thumb_media_id'):
@@ -63,7 +79,9 @@ class TitleUpdateTests(unittest.TestCase):
         before = self.article()
         cases = [([{**before, 'title': 'User changed this question'}], 'remote_title_conflict'),
                  ([before, {**before, 'content': '<p>Newer user edit</p>'}], 'remote_article_changed'),
-                 ([before, {**before, 'cover_info': {'crop': 'user-changed'}}], 'remote_article_changed')]
+                 ([before, {**before, 'cover_info': {'crop': 'user-changed'}}], 'remote_article_changed'),
+                 ([before, {**before, 'thumb_url': 'https://example.org/new-cover'}], 'remote_article_changed'),
+                 ([before, {**before, 'content_source_url': 'https://example.org/new-paper'}], 'remote_article_changed')]
         for replies, error in cases:
             with self.subTest(error=error):
                 reads = iter(replies)

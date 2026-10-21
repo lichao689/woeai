@@ -4,7 +4,7 @@ Apply after parsing, before Sphinx collects the table of contents. Docutils has
 already assigned IDs from the legacy RST headings; changing those source strings
 would shift unrelated numeric anchors. The exact document/title allowlist below
 owns Chinese display labels for both body headings and real toctrees. English
-pages, paper titles, scientific abbreviations and existing numbers are unchanged.
+pages, paper titles, scientific abbreviations are unchanged. Body counters are generated separately.
 """
 from docutils import nodes
 from sphinx.transforms import SphinxTransform
@@ -26,13 +26,13 @@ CHINESE_TITLES = {
         "技术致谢 Acknowledgements": "技术致谢"
     },
     "Teaching": {
-        "1 教学工作 Teaching": "1 教学工作",
-        "1.1 本科生 Undergraduate": "1.1 本科生",
-        "1.2 研究生 Graduate": "1.2 研究生",
-        "1.3 教改探索 Teaching Reform Exploration": "1.3 教改探索",
-        "2 学生培养 Student Training": "2 学生培养",
-        "2.1 博士生 PhD Students": "2.1 博士生",
-        "2.2 硕士生 Master Students": "2.2 硕士生"
+        "教学工作 Teaching": "教学工作",
+        "本科生 Undergraduate": "本科生",
+        "研究生 Graduate": "研究生",
+        "教改探索 Teaching Reform Exploration": "教改探索",
+        "学生培养 Student Training": "学生培养",
+        "博士生 PhD Students": "博士生",
+        "硕士生 Master Students": "硕士生"
     },
     "PublicationsByYear": {
         "按年份倒序浏览学术成果 Publications by Year": "按年份倒序浏览学术成果",

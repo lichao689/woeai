@@ -51,7 +51,7 @@ def source_read(app, docname, source):
         source[0] = source[0].replace(".. ENGLISH PUBLICATIONS", "\n".join(parts))
     elif docname.startswith("en/highlights/"):
         row = next(x for x in rows if x["ref"] == docname.rsplit("/", 1)[1])
-        source[0] += (f"\nSource paper\n------------\n\n{row['authors']}. **{row['title']}**. {row['journal']} ({row['year']}).\n\n"
+        source[0] += (f"\n.. rst-class:: unnumbered-reference\n\nSource paper\n------------\n\n{row['authors']}. **{row['title']}**. {row['journal']} ({row['year']}).\n\n"
                       f"`Read the paper (DOI) <https://doi.org/{row['doi']}>`__ · "
                       f":doc:`Chinese reading notes </paper-notes/{row['ref']}>` · "
                       f":ref:`Publication record <en-{row['ref']}>`\n")

@@ -1,30 +1,30 @@
 教育教学 Teaching
 =================
 
-1 教学工作 Teaching
+教学工作 Teaching
 -------------------
 
-1.1 本科生 Undergraduate
+本科生 Undergraduate
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 **工程流体力学 Engineering Fluid Mechanics**，土木工程专业，春季学期，32学时，2018年-至今。
 
-1.2 研究生 Graduate
+研究生 Graduate
 ~~~~~~~~~~~~~~~~~~~
 
 **风工程 Wind Engineering**，土木工程专业，春季学期，32学时，2014年-至今。
 
 **结构风洞试验 Wind Tunnel Testing for Civil Structures**，土木工程专业，春季学期，16学时，2022年-至今。
 
-1.3 教改探索 Teaching Reform Exploration
+教改探索 Teaching Reform Exploration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **李朝**; 于洪涛; 邹笃建, 中国共产党精神谱系视域下土木工程课程思政建设的探索与实践[J]. **大学**, 2024, (651): 110～114.
 
-2 学生培养 Student Training
+学生培养 Student Training
 ---------------------------
 
-2.1 博士生 PhD Students
+博士生 PhD Students
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 - 周盛涛(Zhou Shengtao)，2021，博士学位论文：基于快速动力响应分析的半潜式风机下部结构主尺寸优化；去向：风电企业。
@@ -39,7 +39,7 @@
 - 丁意恒(Ding Yihang)，在读。
 - 裴若鹏(Pei Ruopeng)，在读。
 
-2.2 硕士生 Master Students
+硕士生 Master Students
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - 王一鸣(Wang Yiming)，2023，硕士学位论文：基于高频天平风洞试验的高层建筑非线性振型响应分析。

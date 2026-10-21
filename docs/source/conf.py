@@ -6,7 +6,7 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.21-1129'
+release = '2026.10.21-1220'
 version = '2026.10.21'
 
 # -- SEO Meta Tags
@@ -143,3 +143,6 @@ extensions.append("paper_citations")
 
 # Translate after parsing so existing numeric and named anchors remain stable.
 extensions.append("chinese_navigation")
+
+# Body-only H2/H3 counters, after global navigation labels are collected.
+extensions.append("body_section_numbering")

@@ -348,8 +348,8 @@ class UpdatePublicationsFromZoteroTests(unittest.TestCase):
     def test_student_training_section_is_sorted_by_graduation_date(self) -> None:
         section = self.updater.student_training_section()
 
-        self.assertIn("2.1 博士生 PhD Students", section)
-        self.assertIn("2.2 硕士生 Master Students", section)
+        self.assertIn("博士生 PhD Students", section)
+        self.assertIn("硕士生 Master Students", section)
         self.assertIn("周盛涛(Zhou Shengtao)，2021，博士学位论文：基于快速动力响应分析的半潜式风机下部结构主尺寸优化；去向：风电企业。", section)
         self.assertLess(section.index("周盛涛(Zhou Shengtao)，2021"), section.index("郑舜云(Zheng Shunyun)，2024-11"))
         self.assertLess(section.index("陈铃伟(Chen Lingwei)，2025-09"), section.index("何欣(He Xin)，在读"))

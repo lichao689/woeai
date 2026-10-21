@@ -263,18 +263,10 @@ def render_current_student_line(record: dict[str, Any]) -> str:
 
 
 def student_training_section() -> str:
-    """Render the numbered H3 subsections (2.1/2.2) of the student-training area.
-
-    Each entry in ``DEGREE_THESIS_GROUPS`` becomes a numbered subsection title
-    such as ``2.1 博士生 PhD Students``. The PhD subsection is followed by the
-    current doctoral students (在读). This produces only the H3 subsections; the
-    enclosing ``2 学生培养 Student Training`` H2 heading is emitted by
-    ``build_teaching_rst`` so the section can be reassembled in one place.
-    """
+    """Render unnumbered H3 student groups; Sphinx owns body counters."""
     sections: list[str] = []
-    for index, (group_key, group_title) in enumerate(DEGREE_THESIS_GROUPS, start=1):
-        numbered_title = f"2.{index} {group_title}"
-        sections.extend([numbered_title, _underline(numbered_title, "~"), ""])
+    for group_key, group_title in DEGREE_THESIS_GROUPS:
+        sections.extend([group_title, _underline(group_title, "~"), ""])
         records = iter_degree_theses(group_key)
         if not records:
             raise ZoteroError(f"Degree thesis group {group_key} has no records.")
@@ -403,11 +395,11 @@ def build_teaching_rst(teaching_reform_items: list[dict[str, Any]]) -> str:
     """Assemble the full Teaching page RST."""
     courses = load_teaching_courses()
     page_title = "教育教学 Teaching"
-    teaching_title = "1 教学工作 Teaching"
-    training_title = "2 学生培养 Student Training"
-    undergraduate_title = "1.1 本科生 Undergraduate"
-    graduate_title = "1.2 研究生 Graduate"
-    reform_numbered_title = "1.3 教改探索 Teaching Reform Exploration"
+    teaching_title = "教学工作 Teaching"
+    training_title = "学生培养 Student Training"
+    undergraduate_title = "本科生 Undergraduate"
+    graduate_title = "研究生 Graduate"
+    reform_title = "教改探索 Teaching Reform Exploration"
     sections: list[str] = [
         page_title,
         _underline(page_title, "="),
@@ -419,8 +411,8 @@ def build_teaching_rst(teaching_reform_items: list[dict[str, Any]]) -> str:
         "",
         courses_subsection(graduate_title, courses["graduate"]),
         "",
-        reform_numbered_title,
-        _underline(reform_numbered_title, "~"),
+        reform_title,
+        _underline(reform_title, "~"),
         "",
     ]
     for item in teaching_reform_items:

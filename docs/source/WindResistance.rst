@@ -3,6 +3,6 @@
 结构抗风 Structural Wind Resistance
 ===================================
 
-结构抗风内容现在并入 :ref:`research-direction-structural-wind`。公开一级方向使用 `工程结构抗风`。
+结构抗风内容现在并入 :ref:`research-direction-structural-wind`。公开一级方向使用 `结构风工程`。
 
 请阅读 :ref:`research-direction-structural-wind`。

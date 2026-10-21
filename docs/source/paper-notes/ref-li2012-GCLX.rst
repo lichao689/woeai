@@ -27,7 +27,7 @@
 
 **英文题名：** Numerical Evaluation of Pedestrian Wind Environment Using Threshold Exceedance Probability Approach。
 
-**WOEAI 相关方向：** 工程结构抗风 / 数值风洞。
+**WOEAI 相关方向：** 结构风工程 / 数值风洞。
 
 本页按原顺序完整整理中文论文正文、公式、图表和参考文献，首页英文摘要另行翻译。文中有关规范、技术发展和评估标准的表述属于原论文发表时的讨论，不表示当前规范要求；独立校核注不作为作者勘误。
 

@@ -1,4 +1,4 @@
-# <工程结构抗风|海洋能源结构> | <这篇论文回答的具体问题或取舍>
+# <结构风工程|海洋能源结构> | <这篇论文回答的具体问题或取舍>
 
 <!-- 规则入口：[writing-standards.md](../references/writing-standards.md)；[自然写作指南](../references/natural-scientific-writing.md)。 交付前删除本说明。 -->
 

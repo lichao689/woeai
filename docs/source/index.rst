@@ -7,7 +7,7 @@
      <p class="eyebrow"><span class="cn">风与海洋工程人工智能实验室</span><span class="en">WOEAI LAB</span></p>
      <h1 id="profile-name">AI 赋能<span class="hero-title-subject">风与海洋工程</span></h1>
      <h2 class="hero-position">融合物理规律与人工智能<br>揭示风与海洋环境作用机理<br>探索建筑与能源结构设计</h2>
-     <p class="hero-intro">WOEAI 实验室是围绕工程结构抗风与海洋能源结构开展工作的研究团队，结合数值模拟、物理试验和 AI 方法，研究环境荷载、结构响应与工程优化。</p>
+     <p class="hero-intro">WOEAI 实验室是围绕结构风工程与海洋能源结构开展工作的研究团队，结合数值模拟、物理试验和 AI 方法，研究环境荷载、结构响应与工程优化。</p>
      <div class="hero-actions"><a class="home-button primary" href="#selected-work">近期学术进展 <span aria-hidden="true">↗</span></a><a class="home-button secondary" href="#research-lines">研究方向</a><a class="text-link" href="#join-contact">交流与合作 <span aria-hidden="true">→</span></a></div>
      <div class="group-lead"><p><strong>实验室负责人 李朝</strong> 教授 · 博士生导师</p><a class="profile-link" href="https://homepage.hit.edu.cn/lichao">负责人官方主页 <span aria-hidden="true">↗</span></a></div>
     </div>
@@ -22,7 +22,7 @@
    <section id="research-lines" class="home-section" aria-labelledby="research-heading">
     <div class="section-heading"><div><p class="eyebrow">RESEARCH DIRECTIONS</p><h2 id="research-heading">两条研究主线</h2></div><a class="text-link" href="Research.html">研究脉络与项目 <span aria-hidden="true">↗</span></a></div>
     <div class="direction-grid">
-     <article class="direction-card"><div class="direction-body"><p class="card-index">01 / STRUCTURAL WIND ENGINEERING</p><h3>工程结构抗风</h3><p>从城市与复杂地形风场出发，研究风荷载、结构响应、气动优化与减振控制。</p><ul class="direction-tags"><li>数值风洞</li><li>结构抗风</li></ul><p class="direction-method"><strong>AI 方法与工程价值</strong> 图神经网络结合结构连接关系、构件参数与荷载预测高层建筑响应，支持结构方案的高效比较。<a href="paper-notes/ref-tang2025-JBE.html">研究证据 →</a></p><a class="text-link" href="Research.html#research-direction-structural-wind">探索工程结构抗风 <span aria-hidden="true">→</span></a></div></article>
+     <article class="direction-card"><div class="direction-body"><p class="card-index">01 / STRUCTURAL WIND ENGINEERING</p><h3>结构风工程</h3><p>从城市与复杂地形风场出发，研究风荷载、结构响应、气动优化与减振控制。</p><ul class="direction-tags"><li>数值风洞</li><li>结构抗风</li></ul><p class="direction-method"><strong>AI 方法与工程价值</strong> 图神经网络结合结构连接关系、构件参数与荷载预测高层建筑响应，支持结构方案的高效比较。<a href="paper-notes/ref-tang2025-JBE.html">研究证据 →</a></p><a class="text-link" href="Research.html#research-direction-structural-wind">探索结构风工程 <span aria-hidden="true">→</span></a></div></article>
      <article class="direction-card"><div class="direction-body"><p class="card-index">02 / MARINE ENERGY STRUCTURES</p><h3>海洋能源结构</h3><p>当前聚焦浮式风电，连接风机、平台、系泊与海洋环境，研究耦合动力响应、平台结构设计和系统优化。</p><ul class="direction-tags"><li>一体化分析</li><li>混凝土浮体</li><li>数值水池</li></ul><p class="direction-method"><strong>数据驱动方法与工程价值</strong> Kriging 代理模型结合多目标优化，减少长期风浪响应的重复计算，用于比较平台成本与疲劳性能的取舍。<a href="paper-notes/ref-zhou2023-AE.html">研究证据 →</a></p><a class="text-link" href="Research.html#research-direction-floating-wind">探索海洋能源结构 <span aria-hidden="true">→</span></a></div></article>
     </div>
     <div class="method-strip"><strong>横向方法支撑 / AI + 工程验证</strong><p>图神经网络、智能几何建模、超分辨率重建与代理模型，与理论分析、数值模拟和物理试验相结合。</p></div>
@@ -36,10 +36,10 @@
 
 .. raw:: html
 
-   <div class="progress-family" data-research-family="工程结构抗风"><h3 class="progress-family-title">工程结构抗风</h3><div class="work-grid">
+   <div class="progress-family" data-research-family="结构风工程"><h3 class="progress-family-title">结构风工程</h3><div class="work-grid">
    <article class="work-card" data-publication-ref="ref-zhao2026-BE" data-publication-date="2026-06">
    <figure><img src="_static/home/progress-ref-zhao2026-BE.webp?v=8884fe3cf3ff" alt="卫星影像如何生成可计算的城市几何？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
-   <div class="work-body"><p class="work-tag">2026-06 · 工程结构抗风</p><h4>卫星影像如何生成可计算的城市几何？</h4>
+   <div class="work-body"><p class="work-tag">2026-06 · 结构风工程</p><h4>卫星影像如何生成可计算的城市几何？</h4>
    <p><strong>问题</strong> 城市尺度 CFD 所需的建筑轮廓和高度仍需逐片区整理。</p><p><strong>贡献</strong> 连接立体卫星影像识别、测高与轮廓规则化，生成 LoD1 城市几何；几何精度不等同于风场精度。</p>
    <div class="paper-source"><p class="work-venue">2026 · Building and Environment</p><p class="paper-citation">Zhao Peisheng; Li Chao; Chen Lingwei; Wang Jinghan; Wang Sirou; Wang Xiaolu, A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment[J]. Building and Environment, 2026: 114811. https://doi.org/10.1016/j.buildenv.2026.114811. 影响因子: 7.6 (Q1). 中科院分区: 1.</p></div><div class="work-links"><a href="Publications.html#ref-zhao2026-be">论文记录 →</a>
    <a href="paper-notes/ref-zhao2026-BE.html">论文精解 →</a>
@@ -47,7 +47,7 @@
    </div></div></article>
    <article class="work-card" data-publication-ref="ref-he2026-OE" data-publication-date="2026-04">
    <figure><img src="_static/home/progress-ref-he2026-OE.webp?v=86aa7894cb03" alt="液舱加了立柱，频率和阻尼怎样变化？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
-   <div class="work-body"><p class="work-tag">2026-04 · 工程结构抗风</p><h4>液舱加了立柱，频率和阻尼怎样变化？</h4>
+   <div class="work-body"><p class="work-tag">2026-04 · 结构风工程</p><h4>液舱加了立柱，频率和阻尼怎样变化？</h4>
    <p><strong>问题</strong> 立柱会同时改变液体晃荡频率与耗能，不能只按数量判断阻尼。</p><p><strong>贡献</strong> 以经实验对照的数值模型建立参数数据库，拟合频率与阻尼的等效模型；属于跨领域减振基础研究。</p>
    <div class="paper-source"><p class="work-venue">2026 · Ocean Engineering</p><p class="paper-citation">He Xin; Li Chao; Chen Lingwei; Hu Gang; Ou Jinping, Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks[J]. Ocean Engineering, 2026, 353: 124728. https://doi.org/10.1016/j.oceaneng.2026.124728. 中科院分区: 2.</p></div><div class="work-links"><a href="Publications.html#ref-he2026-oe">论文记录 →</a>
    <a href="paper-notes/ref-he2026-OE.html">论文精解 →</a>
@@ -55,7 +55,7 @@
    </div></div></article>
    <article class="work-card" data-publication-ref="ref-zhao2026-BS" data-publication-date="2026-02">
    <figure><img src="_static/home/progress-ref-zhao2026-BS.webp?v=33cd5e451d02" alt="城市风场，如何更快预测？" width="900" height="383" loading="lazy" decoding="async"><figcaption>AI 生成的论文解读封面 · 非研究数据</figcaption></figure>
-   <div class="work-body"><p class="work-tag">2026-02 · 工程结构抗风</p><h4>城市风场，如何更快预测？</h4>
+   <div class="work-body"><p class="work-tag">2026-02 · 结构风工程</p><h4>城市风场，如何更快预测？</h4>
    <p><strong>问题</strong> 全城市高分辨率模拟的计算成本高。</p><p><strong>贡献</strong> 以分块 CFD 建立预计算数据库，对照气象站实测数据，并连接 WebGIS 可视化。</p>
    <div class="paper-source"><p class="work-venue">2026 · Building Simulation</p><p class="paper-citation">Zhao Peisheng; Li Chao; Yang Chao; Han Zhichen; Chen Lingwei; Hu Gang; Li Lixiao; Wang Xiaolu, A fast prediction framework for urban microscale wind environment based on precomputed CFD database[J]. Building Simulation, 2026, 19(2): 333～357. https://doi.org/10.1007/s12273-025-1379-7. 影响因子: 5.9 (Q1). 中科院分区: 1.</p></div><div class="work-links"><a href="Publications.html#ref-zhao2026-bs">论文记录 →</a>
    <a href="paper-notes/ref-zhao2026-BS.html">论文精解 →</a>

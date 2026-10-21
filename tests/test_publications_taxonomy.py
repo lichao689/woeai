@@ -19,14 +19,29 @@ from woeai.publications import (
 class ResearchTaxonomyTests(unittest.TestCase):
     def test_has_exactly_two_families_in_fixed_order(self) -> None:
         self.assertEqual(
-            RESEARCH_FAMILY_ORDER, ("工程结构抗风", "海洋能源结构")
+            RESEARCH_FAMILY_ORDER, ("结构风工程", "海洋能源结构")
         )
 
     def test_wind_resistance_family_subdirections(self) -> None:
         self.assertEqual(
-            RESEARCH_SUBDIRECTION_ORDER["工程结构抗风"],
+            RESEARCH_SUBDIRECTION_ORDER["结构风工程"],
             ("数值风洞", "结构抗风"),
         )
+
+    def test_current_family_name_and_english_translation_reach_generated_views(self):
+        from pathlib import Path
+        from woeai.publications.taxonomy import RESEARCH_FAMILY_EN
+        from woeai.publications.registry import load_registry, generated_views
+        from woeai.publications.homepage import render_home_progress
+        root = Path(__file__).resolve().parents[1]
+        self.assertEqual(RESEARCH_FAMILY_EN['结构风工程'], 'Structural Wind Engineering')
+        self.assertNotIn('工程结构抗风', RESEARCH_FAMILY_EN)
+        for path, text in generated_views(root, load_registry(root)).items():
+            with self.subTest(path=path):
+                self.assertNotIn('工程结构抗风', text)
+        self.assertIn('结构风工程', render_home_progress(root))
+        self.assertIn('Structural Wind Engineering', render_home_progress(root, english=True))
+        self.assertNotIn('工程结构抗风', render_home_progress(root, english=True))
 
     def test_floating_wind_family_subdirections(self) -> None:
         self.assertEqual(

@@ -27,7 +27,7 @@
 
 **英文题名：** Computational Fluid Dynamic Approach to Calculate Wind Speed Ratio over Complex Terrain。
 
-**WOEAI 相关方向：** 工程结构抗风 / 数值风洞。
+**WOEAI 相关方向：** 结构风工程 / 数值风洞。
 
 本页完整整理中文原文，保留公式、图表、段落、引用及限制；末页英文摘要按原顺序另译。原始公式与文字的疑点用独立校核注指出，不将编辑判断写成作者勘误。
 

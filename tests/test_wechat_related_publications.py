@@ -29,7 +29,7 @@ class PublishedNavigationTests(unittest.TestCase):
             patcher.start()
             self.addCleanup(patcher.stop)
 
-    def paper(self, ref, *, published=False, sub='数值风洞', family='工程结构抗风', year=2026, url=None):
+    def paper(self, ref, *, published=False, sub='数值风洞', family='结构风工程', year=2026, url=None):
         url = url or 'https://mp.weixin.qq.com/s/' + ref
         workflow = {'selected': True, 'status': 'awaiting_review', 'issues': [], 'evidence': {},
                     'path': f'wechat/articles/draft-public-safe/{ref}.md',

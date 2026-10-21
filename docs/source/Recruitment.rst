@@ -6,7 +6,7 @@
 研究与培养
 ----------
 
-研究围绕 **工程结构抗风** 和 **海洋能源结构** 两条主线，结合理论分析、数值模拟、物理试验和 AI 方法。研究方向、项目脉络见 :doc:`Research`，论文与中文精解见 :doc:`Publications`。
+研究围绕 **结构风工程** 和 **海洋能源结构** 两条主线，结合理论分析、数值模拟、物理试验和 AI 方法。研究方向、项目脉络见 :doc:`Research`，论文与中文精解见 :doc:`Publications`。
 
 近年学生第一作者成果包括 :ref:`高层建筑图神经网络响应预测 <ref-tang2025-JBE>`、:ref:`3D Gaussian Splatting 城市建筑几何重建 <ref-zhao2025-SCS>` 和 :ref:`预计算 CFD 数据库城市风环境预测 <ref-zhao2026-BS>`。课程与公开学位论文记录见 :doc:`Teaching`。
 

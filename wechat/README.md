@@ -146,7 +146,7 @@ gate for independent RTD pages. Do not run the converter over a full-paper page.
 
 ## Research Families
 
-- `工程结构抗风`
+- `结构风工程`
 - `海洋能源结构`
 
 ## Public Boundary
@@ -252,6 +252,26 @@ historical inputs or retroactively certify an earlier failed update. Never subst
 operation. A verified title update does not renew scientific review, preview or
 publication status. Title/standard migrations preserve old evidence and require
 separate actual non-content comparisons before adding any current evidence.
+
+For an explicitly authorized platform-formatting run, add
+`--allow-platform-formatting` to the live `update-title` command. Without that
+flag the strict comparison above remains unchanged. The opt-in permits only:
+
+- HTML `img` closing syntax (trailing whitespace/slash). The complete remaining
+  raw body and parsed image attributes must be identical; no text, image URL,
+  attribute, formula, SVG or other HTML cleanup is accepted.
+- A changed `thumb_url` when cover material ID, crop and display configuration
+  remain strictly identical, and both exact official CDN URLs return identical
+  file bytes and decoded full RGBA pixels. No redirects, credentials in URLs,
+  fallback protocol/host, unreadable images or unknown equivalence are accepted.
+
+Each opt-in readback stores a separate private `platform-equivalence` proof while
+retaining all original field differences. Other metadata and same-draft articles
+remain strict. The title target may accept the retired primary prefix solely as
+exact historical input with the same hook, account and index; generators emit
+only the current registered family. New evidence never fills missing historical
+snapshots or proves an earlier operation. Requests still change only the title:
+remote body, including existing direction metadata, is preserved as read.
 
 By default, the API payload sets WeChat's bottom `content_source_url` to the
 current paper's RTD deep-dive page:

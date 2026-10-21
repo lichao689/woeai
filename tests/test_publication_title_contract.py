@@ -50,7 +50,7 @@ class PublicationTitleContractTests(unittest.TestCase):
                 self.assertTrue(self.problems("ref-new", family, direction, title))
                 self.assertTrue(self.problems(ref, family, direction, title + " changed"))
                 self.assertTrue(self.problems(ref, family, "数值水池", title))
-                self.assertTrue(self.problems(ref, "工程结构抗风", "数值风洞", title))
+                self.assertTrue(self.problems(ref, "结构风工程", "数值风洞", title))
 
     def test_legacy_refs_can_adopt_their_correct_canonical_prefix(self):
         for ref, (family, direction, _) in artifacts.LEGACY_RTD_PUBLIC_TITLES.items():

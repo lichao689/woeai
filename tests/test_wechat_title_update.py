@@ -361,6 +361,52 @@ class TitleCommandTests(unittest.TestCase):
         path = self.local / 'title-updates' / summary['receipt_id'] / 'other-articles-3-differences.json'
         self.assertFalse(json.loads(path.read_text())['all_protected_equal'])
 
+    def test_renamed_family_accepts_exact_old_primary_title_with_same_hook_only(self):
+        import json
+        registry = self.workspace / 'docs/data/publications.json'
+        rows = json.loads(registry.read_text())
+        rows[0]['custom']['research_family'] = '结构风工程'
+        rows[0]['custom']['subdirection'] = '数值风洞'
+        registry.write_text(json.dumps(rows))
+        self.article.write_text('# 结构风工程 | Same question?\n\nUnchanged body.\n')
+        self.remote['title'] = '工程结构抗风 | Same question?'
+        code, summary = self.invoke('--live', api=self.backend())
+        self.assertEqual(code, 0)
+        self.assertEqual(self.remote['title'], '结构风工程 | Same question?')
+        self.assertTrue(summary['write_acknowledged'])
+        self.remote['title'] = '工程结构抗风 | Different question?'
+        self.writes.clear()
+        code, summary = self.invoke('--live', api=self.backend())
+        self.assertEqual(code, 1)
+        self.assertEqual(summary['reason'], 'remote_title_conflict')
+        self.assertFalse(summary['write_attempted'])
+        self.assertEqual(self.writes, [])
+
+    def test_explicit_formatting_flag_saves_bounded_proof_in_private_receipt(self):
+        import json, io
+        from PIL import Image
+        from unittest.mock import patch
+        image = io.BytesIO(); Image.new('RGB', (2, 2), 'blue').save(image, format='PNG')
+        self.remote['content'] += '<img src="https://example.org/fixture.png">'
+        self.remote['thumb_url'] = 'http://mmbiz.qpic.cn/fixture-before/0?wx_fmt=png'
+        backend = self.backend()
+        def api(url, token, payload, *, observer=None):
+            response = backend(url, token, payload, observer=observer)
+            if url == self.tool.DRAFT_UPDATE_URL:
+                self.remote['content'] = self.remote['content'].replace('fixture.png">', 'fixture.png"  />')
+                self.remote['thumb_url'] = 'http://mmbiz.qpic.cn/fixture-after/0?wx_fmt=png'
+            return response
+        with patch('woeai.wechat.title_equivalence.read_cover_image', return_value=image.getvalue()) as fetch:
+            code, summary = self.invoke('--live', '--allow-platform-formatting', api=api)
+        self.assertEqual(code, 0)
+        self.assertTrue(summary['platform_equivalence_used'])
+        self.assertTrue(summary['evidence_complete'])
+        self.assertEqual(fetch.call_count, 2)
+        folder = self.local / 'title-updates' / summary['receipt_id']
+        proof = json.loads((folder / 'platform-equivalence.json').read_text())
+        self.assertTrue(proof['body']['equivalent'])
+        self.assertTrue(proof['cover']['pixels_equal'])
+
     def test_missing_mapping_never_creates_a_replacement(self):
         self.set_mapping(None)
         code, summary = self.invoke('--live')

@@ -19,7 +19,7 @@ class PublicationBoardTests(unittest.TestCase):
             'issued': {'date-parts': [[2026]]}, 'DOI': '10.1016/j.buildenv.2026.114811',
             'custom': {
                 'publication_ref': 'ref-zhao2026-BE',
-                'research_family': '工程结构抗风', 'subdirection': '数值风洞',
+                'research_family': '结构风工程', 'subdirection': '数值风洞',
                 'source': {'status': 'unregistered'},
                 'rtd': {'path': 'docs/source/paper-notes/ref-zhao2026-BE.rst',
                         'status': 'awaiting_audit', 'kind': 'legacy_intro', 'issues': [], 'evidence': {}},

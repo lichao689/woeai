@@ -58,9 +58,10 @@ class RegistryTitleTests(unittest.TestCase):
     def test_title_uses_its_own_primary_family_and_rejects_secondary_prefixes(self):
         from woeai.wechat.editorial import article_title_findings
         self.assertEqual(article_title_findings('# 海洋能源结构 | 平台怎样比较？\n', '海洋能源结构'), [])
-        self.assertEqual(article_title_findings('# 工程结构抗风 | 风压怎样比较？\n', '工程结构抗风'), [])
+        self.assertEqual(article_title_findings('# 结构风工程 | 风压怎样比较？\n', '结构风工程'), [])
+        self.assertTrue(article_title_findings('# 工程结构抗风 | 风压怎样比较？\n', '结构风工程'))
         for title in ('# 平台怎样比较？', '# 一体化分析 | 平台怎样比较？',
-                      '# 混凝土浮体 | 平台怎样比较？', '# 工程结构抗风 | 平台怎样比较？',
+                      '# 混凝土浮体 | 平台怎样比较？', '# 结构风工程 | 平台怎样比较？',
                       '# 海洋能源结构 | ', '# 海洋能源结构 | 平台怎样比较？\n# 海洋能源结构 | 重复标题'):
             with self.subTest(title=title):
                 self.assertTrue(article_title_findings(title + '\n', '海洋能源结构'))
@@ -103,7 +104,7 @@ class RegistryTitleTests(unittest.TestCase):
                 'wechat': {'path': 'wechat/articles/draft-public-safe/example.md'},
             }}]))
             cases = [('# 海洋能源结构 | 平台怎样比较？', 0),
-                     ('# 工程结构抗风 | 平台怎样比较？', 1),
+                     ('# 结构风工程 | 平台怎样比较？', 1),
                      ('# 一体化分析 | 平台怎样比较？', 1),
                      ('# 平台怎样比较？', 1),
                      ('# 漂浮风电 | 平台怎样比较？', 1),

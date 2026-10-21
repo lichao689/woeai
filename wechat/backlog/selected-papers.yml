@@ -5,7 +5,7 @@ items:
   - publication_ref: ref-zhao2026-BS
     zotero_key: "CGKPKZ8I"
     title: "A fast prediction framework for urban microscale wind environment based on precomputed CFD database"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2026
     repost_priority: "high"
@@ -20,7 +20,7 @@ items:
   - publication_ref: ref-zhao2026-BE
     zotero_key: "RLAA46YB"
     title: "A novel framework for urban geometry rapid reconstruction utilizing high-resolution stereo satellite imagery for wind environment assessment"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2026
     repost_priority: "high"
@@ -35,7 +35,7 @@ items:
   - publication_ref: ref-he2026-OE
     zotero_key: "4FX43CFT"
     title: "Numerical research on the impact of built-in rectangular poles on the dynamic characteristics of rectangular liquid tanks"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "结构抗风"
     original_year: 2026
     repost_priority: "high"
@@ -50,7 +50,7 @@ items:
   - publication_ref: ref-tang2026-RE
     zotero_key: "XM44D697"
     title: "A novel framework for temporal super-resolution of wind in urban energy applications"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2026
     repost_priority: "high"
@@ -65,7 +65,7 @@ items:
   - publication_ref: ref-zhao2025-SCS
     zotero_key: "V6PLJENN"
     title: "A novel framework utilizing 3D Gaussian Splatting to construct building geometry for urban wind simulations"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2025
     repost_priority: "high"
@@ -80,7 +80,7 @@ items:
   - publication_ref: ref-li2024-POF
     zotero_key: "2YG78T62"
     title: "A novel vector potential random flow generation method for synthesizing divergence-free homogeneous isotropic turbulence with arbitrary spectra"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2024
     repost_priority: "high"
@@ -95,7 +95,7 @@ items:
   - publication_ref: ref-chen2024-JCP
     zotero_key: "Y76UWP9R"
     title: "A coherence-improved and mass-balanced inflow turbulence generation method for large eddy simulation"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2024
     repost_priority: "high"
@@ -110,7 +110,7 @@ items:
   - publication_ref: ref-wang2024-ES
     zotero_key: "3HGIR6QR"
     title: "A new controllable weak recycling inflow turbulence generator for evaluating wind effects on building in LES"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2024
     repost_priority: "high"
@@ -125,7 +125,7 @@ items:
   - publication_ref: ref-tang2025-JBE
     zotero_key: "4BCF65NB"
     title: "Training and application of graph neural networks for predicting structural responses targeted at tall building structures"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "结构抗风"
     original_year: 2025
     repost_priority: "high"
@@ -140,7 +140,7 @@ items:
   - publication_ref: ref-yang2025-JBE
     zotero_key: "YZ2D62NB"
     title: "Statistical extremes of 2D vectorial response for wind-excited tall buildings"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "结构抗风"
     original_year: 2025
     repost_priority: "high"
@@ -155,7 +155,7 @@ items:
   - publication_ref: ref-he2025-POF
     zotero_key: "ES37XMDV"
     title: "Numerical investigation of nonlinear sloshing features and vibration mitigation efficiency of the implanted pole tuned liquid damper"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "结构抗风"
     original_year: 2025
     repost_priority: "medium"
@@ -230,7 +230,7 @@ items:
   - publication_ref: ref-chen2022-JWEIA
     zotero_key: "DD8PJ6PS"
     title: "Consistency improved random flow generation method for large eddy simulation of atmospheric boundary layer"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2022
     repost_priority: "medium"
@@ -260,7 +260,7 @@ items:
   - publication_ref: ref-chen2024-POF
     zotero_key: "78XMAPMX"
     title: "Comparing methods for reducing artificial pressure fluctuations using large eddy simulation in high-rise building wind load assessment"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2024
     repost_priority: ""
@@ -275,7 +275,7 @@ items:
   - publication_ref: ref-tang2024-POF
     zotero_key: "FVGTMSEA"
     title: "Super-resolution reconstruction of wind fields with a swin-transformer-based deep learning framework"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2024
     repost_priority: ""
@@ -290,7 +290,7 @@ items:
   - publication_ref: ref-he2024-JBE
     zotero_key: "YMKXLNSP"
     title: "Numerical research on nonlinear liquid sloshing and vibration control performance of tuned liquid damper"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "结构抗风"
     original_year: 2024
     repost_priority: ""
@@ -305,7 +305,7 @@ items:
   - publication_ref: ref-zhao2023-BS
     zotero_key: "FVQQHCGS"
     title: "Multiscale simulation of the urban wind environment under typhoon weather conditions"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2023
     repost_priority: ""
@@ -335,7 +335,7 @@ items:
   - publication_ref: ref-zhang2023-S
     zotero_key: "TYK2GQCU"
     title: "Estimation of dynamic wind forces on a steel lattice tower based on generalized wind force spectra"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "结构抗风"
     original_year: 2023
     repost_priority: ""
@@ -350,7 +350,7 @@ items:
   - publication_ref: ref-wang2023-JWEIA
     zotero_key: "GKUAVJEK"
     title: "Large eddy simulation of turbulent atmospheric boundary layer flow based on a synthetic volume forcing method"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2023
     repost_priority: ""
@@ -380,7 +380,7 @@ items:
   - publication_ref: ref-zhang2023-ES
     zotero_key: "QN2824VG"
     title: "Reconstruction of dynamic wind forces on a transmission steel lattice tower using aeroelastic wind tunnel test data"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "结构抗风"
     original_year: 2023
     repost_priority: ""
@@ -395,7 +395,7 @@ items:
   - publication_ref: ref-feng2023-HKXYGC
     zotero_key: "FT67Z85H"
     title: "基于数值风洞试验的核电厂微地形风场分析与验证"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2023
     repost_priority: ""
@@ -410,7 +410,7 @@ items:
   - publication_ref: ref-zhao2023-GYJZ
     zotero_key: "R2C3HY74"
     title: "基于首次超越破坏的输电塔强风易损性分析"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "结构抗风"
     original_year: 2023
     repost_priority: ""
@@ -425,7 +425,7 @@ items:
   - publication_ref: ref-yang2022-AS
     zotero_key: "WUGUPVR4"
     title: "Research on Equivalent Static Load of High-Rise/Towering Structures Based on Wind-Induced Responses"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "结构抗风"
     original_year: 2022
     repost_priority: ""
@@ -440,7 +440,7 @@ items:
   - publication_ref: ref-zhao2021-EFM
     zotero_key: "3VYYMGTH"
     title: "Multiscale modelling of planetary boundary layer flow over complex terrain: implementation under near-neutral conditions"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2021
     repost_priority: ""
@@ -455,7 +455,7 @@ items:
   - publication_ref: ref-zhao2021-AR
     zotero_key: "VEJ6LL7P"
     title: "New consideration of lateral boundary treatment for meso- and micro-scale nested PBL simulations over complex terrain"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2021
     repost_priority: ""
@@ -485,7 +485,7 @@ items:
   - publication_ref: ref-zhao2021-TYNXB
     zotero_key: "JGSIKX3F"
     title: "基于NWP/CFD嵌套的复杂地形风场模拟研究"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2021
     repost_priority: ""
@@ -500,7 +500,7 @@ items:
   - publication_ref: ref-li2020-JWEIA
     zotero_key: "3ZY69PVB"
     title: "RANS simulation of horizontal homogeneous atmospheric boundary layer over rough terrains by an enriched canopy drag model"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2020
     repost_priority: ""
@@ -545,7 +545,7 @@ items:
   - publication_ref: ref-xiao2018-KXJSYGC
     zotero_key: "YF5RIBAN"
     title: "复杂地形下基于计算流体动力学的风速比计算"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2018
     repost_priority: ""
@@ -575,7 +575,7 @@ items:
   - publication_ref: ref-li2017-BS
     zotero_key: "77THBZDM"
     title: "Effects of inflow conditions on mountainous/urban wind environment simulation"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2017
     repost_priority: ""
@@ -620,7 +620,7 @@ items:
   - publication_ref: ref-li2012-JWEIA
     zotero_key: "2ND9BWQV"
     title: "A revised empirical model and CFD simulations for 3D axisymmetric steady-state flows of downbursts and impinging jets"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2012
     repost_priority: ""
@@ -635,7 +635,7 @@ items:
   - publication_ref: ref-li2012-GCLX
     zotero_key: "LASEFQSH"
     title: "基于超越阈值概率的行人风环境数值评估"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2012
     repost_priority: ""
@@ -650,7 +650,7 @@ items:
   - publication_ref: ref-li2010-WAS
     zotero_key: "9N6EYMBU"
     title: "Large eddy simulation of wind loads on a long-span spatial lattice roof"
-    research_family: "工程结构抗风"
+    research_family: "结构风工程"
     subdirection: "数值风洞"
     original_year: 2010
     repost_priority: ""

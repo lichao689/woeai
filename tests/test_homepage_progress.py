@@ -14,7 +14,7 @@ from woeai.publications.registry import load_registry, workflow_fingerprint
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {
-    "工程结构抗风": ["ref-zhao2026-BE", "ref-he2026-OE", "ref-zhao2026-BS"],
+    "结构风工程": ["ref-zhao2026-BE", "ref-he2026-OE", "ref-zhao2026-BS"],
     "海洋能源结构": ["ref-he2026-OE-structural", "ref-zheng2025-OE", "ref-zheng2025-QHDXXB"],
 }
 
@@ -126,7 +126,7 @@ class HomepageProgressTests(unittest.TestCase):
                     "checks": {"source_identity": True, "facts": True, "public_safety": True,
                                "formula_preview": False, "figure_preview": False, "cover_preview": False}}
         row = {"id": ref, "issued": {"date-parts": [issued or [2025]]}, "custom": {
-            "publication_ref": ref, "order": order, "research_family": "工程结构抗风",
+            "publication_ref": ref, "order": order, "research_family": "结构风工程",
             "legacy_bibliography": {"date": date}, "content_production": "included",
             "source": {"status": "verified", "sha256": "a" * 64},
             "wechat": {"status": "awaiting_review", "path": article, "review_path": review,

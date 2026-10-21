@@ -1,7 +1,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const board = require('../../docs/_static/publication-board.js');
-const paper = (ref, rtd, wechat, extra={}) => ({ref,title:'Wind loading',doi:'10.1000/wind',year:2026,family:'工程结构抗风',subdirection:'数值风洞',rtd:{status:rtd,verification_current:rtd==='verified'},wechat:{status:wechat,verification_current:wechat==='published'},...extra});
+const paper = (ref, rtd, wechat, extra={}) => ({ref,title:'Wind loading',doi:'10.1000/wind',year:2026,family:'结构风工程',subdirection:'数值风洞',rtd:{status:rtd,verification_current:rtd==='verified'},wechat:{status:wechat,verification_current:wechat==='published'},...extra});
 test('independent tracks preserve unknown, audit and publication boundaries', () => {
   assert.equal(board.columnFor(paper('a','awaiting_audit','draft_created').rtd,'rtd'),'review');
   assert.equal(board.columnFor(paper('a','awaiting_audit','draft_created').wechat,'wechat'),'review');
@@ -15,7 +15,7 @@ test('search, year, direction, exact state, track and unfinished combine without
   const original = JSON.stringify(papers);
   assert.deepEqual(board.filterPapers(papers,{track:'rtd',unfinished:true}).map(p=>p.ref),['b','c']);
   assert.deepEqual(board.filterPapers(papers,{track:'wechat',unfinished:true}).map(p=>p.ref),['a','c']);
-  assert.deepEqual(board.filterPapers(papers,{track:'rtd',query:'  WIND ',year:'2026',direction:'工程结构抗风',status:'verified'}).map(p=>p.ref),['a']);
+  assert.deepEqual(board.filterPapers(papers,{track:'rtd',query:'  WIND ',year:'2026',direction:'结构风工程',status:'verified'}).map(p=>p.ref),['a']);
   assert.deepEqual(board.filterPapers(papers,{track:'rtd',query:'HTTPS://DOI.ORG/10.1000/OCEAN',direction:'混凝土浮体'}).map(p=>p.ref),['c']);
   assert.equal(board.filterPapers(papers,{query:'missing'}).length,0);
   assert.equal(board.filterPapers(papers,{}).length,3);

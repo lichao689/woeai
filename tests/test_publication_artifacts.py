@@ -43,13 +43,13 @@ class PublicationArtifactsTests(unittest.TestCase):
             "items:\n"
             "  - publication_ref: ref-complete\n"
             "    title: 数值风洞 | Backlog Title\n"
-            "    research_family: 工程结构抗风\n"
+            "    research_family: 结构风工程\n"
             "    subdirection: 数值风洞\n"
             "    original_year: 2026\n"
             "    wechat_status: ready_to_publish\n"
             "  - publication_ref: ref-missing-rtd\n"
             "    title: 数值风洞 | Missing RTD\n"
-            "    research_family: 工程结构抗风\n"
+            "    research_family: 结构风工程\n"
             "    subdirection: 数值风洞\n"
             "    original_year: 2025\n"
             "    wechat_status: drafting\n",
@@ -93,7 +93,7 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.assertIn("Markdown Title", latest)
         self.assertIn("paper-notes/ref-complete", latest)
         self.assertNotIn("ref-missing-rtd", latest)
-        self.assertIn("工程结构抗风", area)
+        self.assertIn("结构风工程", area)
         self.assertIn("数值风洞", area)
         missing = next(row for row in diagnostics if row["publication_ref"] == "ref-missing-rtd")
         self.assertIn("docs/source/paper-notes/ref-missing-rtd.rst", missing["missing"])
@@ -107,7 +107,7 @@ class PublicationArtifactsTests(unittest.TestCase):
                 "issued": {"date-parts": [[2026]]},
                 "custom": {
                     "publication_ref": "ref-complete",
-                    "research_family": "工程结构抗风",
+                    "research_family": "结构风工程",
                     "subdirection": "数值风洞",
                     "order": 4,
                     "rtd": {
@@ -250,7 +250,7 @@ class PublicationArtifactsTests(unittest.TestCase):
             self.artifacts.BacklogPaper(
                 "ref-complete",
                 "Shared Backlog Title",
-                "工程结构抗风",
+                "结构风工程",
                 "数值风洞",
                 2026,
                 "",
@@ -278,7 +278,7 @@ class PublicationArtifactsTests(unittest.TestCase):
         fragment_text = (root / "docs/source/_paper-notes-fragment.rst").read_text(encoding="utf-8")
         self.assertEqual(write_result, 0)
         self.assertEqual(check_result, 0)
-        self.assertIn("- 2026 | 工程结构抗风 / 数值风洞", index_text)
+        self.assertIn("- 2026 | 结构风工程 / 数值风洞", index_text)
         # The fragment no longer owns a top-level hidden toctree; the
         # Publications generator emits paper-note toctrees under each research
         # subdirection instead.
@@ -334,7 +334,7 @@ class PublicationArtifactsTests(unittest.TestCase):
         self.assertIn("paper_note_title_missing_prefix", kinds)
         flagged = next(p for p in problems if p["kind"] == "paper_note_title_missing_prefix")
         self.assertEqual(flagged["publication_ref"], "ref-complete")
-        self.assertEqual(flagged["research_family"], "工程结构抗风")
+        self.assertEqual(flagged["research_family"], "结构风工程")
 
     def test_paper_note_title_with_redundant_suffix_is_flagged(self) -> None:
         # The "论文精解" suffix is redundant (it already heads the section) and

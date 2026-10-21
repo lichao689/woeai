@@ -14,7 +14,7 @@
     "custom": {
       "publication_ref": "ref-zhao2026-BE",
       "order": 0,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "RLAA46YB",
@@ -341,6 +341,22 @@
               "cover_preview": false
             },
             "fingerprint": "54acefd4041de37053eabb7c9afbb3a6033989e6f69b7f56f9ed79061b190e8b"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "a98a568a514a9310a134c2b176b4cf4c5fbfa6b2833b99892606970b2169fb90"
           }
         },
         "latest_published_url": "",
@@ -583,7 +599,7 @@
     "custom": {
       "publication_ref": "ref-he2026-OE",
       "order": 1,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "4FX43CFT",
@@ -893,6 +909,22 @@
               "cover_preview": false
             },
             "fingerprint": "4e1491b9e405c24248d17b93ebcdad4afae00c1cff3425978870cbc9627da3d6"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "16e84b6124f702a21b9a80b75602f1c064945ea5f90e801fd99dbecc2f125eeb"
           }
         },
         "latest_published_url": "",
@@ -1126,7 +1158,7 @@
     "custom": {
       "publication_ref": "ref-zhao2026-BS",
       "order": 2,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "CGKPKZ8I",
@@ -1479,6 +1511,22 @@
               "cover_preview": false
             },
             "fingerprint": "40f621766d8c8dafa39a5080160ee916c8a276ae24b19d45a3c285f63e4cd487"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2026-BS.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "1f3e306b7dd7e92b072e5ebf52d22b5138c9bb7c448681347f79687c704befad"
           }
         },
         "latest_published_url": "",
@@ -1710,7 +1758,7 @@
     "custom": {
       "publication_ref": "ref-huang2026-JWEIA",
       "order": 3,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "IBLEEY34",
@@ -2150,6 +2198,22 @@
               "cover_preview": false
             },
             "fingerprint": "4133fb3753a86255950c5d961d5c02d2a46081b8ff4232f88d7552a265cd40b4"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-he2026-OE-structural.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "e23c804271b27488d566ae9aa931243370a2f6c7d9079e79c80b2217af514371"
           }
         },
         "latest_published_url": "",
@@ -2372,7 +2436,7 @@
     "custom": {
       "publication_ref": "ref-tang2026-RE",
       "order": 5,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "XM44D697",
@@ -2682,6 +2746,22 @@
               "cover_preview": false
             },
             "fingerprint": "0c5c56cf608ed289bb7c3964ad5b140f9252fe013ef31547a4057a6077cd7d8d"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-tang2026-RE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "6aea21b189f63f2d7002ab049ef3f12005e893392f696369295225b255672998"
           }
         },
         "latest_published_url": "",
@@ -2974,7 +3054,7 @@
     "custom": {
       "publication_ref": "ref-he2025-POF",
       "order": 7,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "ES37XMDV",
@@ -3283,6 +3363,22 @@
               "cover_preview": false
             },
             "fingerprint": "05e1961fefcfc1642047e42ca1ffaf8ced917cd43137c3d46d99233423e17162"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-he2025-POF.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "6db2ea43ca2aa5874a034d795a1859d92e27dde595b776c89106a86c5a441536"
           }
         },
         "latest_published_url": "",
@@ -3514,7 +3610,7 @@
     "custom": {
       "publication_ref": "ref-yang2025-JBE",
       "order": 8,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "YZ2D62NB",
@@ -3825,6 +3921,22 @@
               "cover_preview": false
             },
             "fingerprint": "d144dfb80e28f090529a4b058f598a25fd13fea61da4e8c1b6a625795ef3248a"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-yang2025-JBE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "45b8b4ac515163c4e112494adbc0cdaa7cc7d65e79728e6dbf6f1096629adce6"
           }
         },
         "latest_published_url": "",
@@ -4058,7 +4170,7 @@
     "custom": {
       "publication_ref": "ref-wang2025-POF",
       "order": 9,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "Y9QYBEKI",
@@ -4472,6 +4584,22 @@
               "cover_preview": false
             },
             "fingerprint": "2fe70f575d2e98bf0bbd7a7dc7dc102f1b8534fba15b1f809ad0abe73990c5dc"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-OE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "718dcef34f9de745fae7d1a17a22f785bfce49dd467641a0a799c0d2e3640b87"
           }
         },
         "latest_published_url": "",
@@ -4954,6 +5082,22 @@
               "cover_preview": false
             },
             "fingerprint": "f7b2831bd7c1357e09611757cd765b6c8532f20f96535de9474931b3088d090b"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2025-QHDXXB.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "be02d6f30f3606037e14ec33de492d3c2adfdcea5bf9e41b6fe0fe9f6d2c7dc5"
           }
         },
         "latest_published_url": "",
@@ -5115,7 +5259,7 @@
     "custom": {
       "publication_ref": "ref-tang2025-JBE",
       "order": 12,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "4BCF65NB",
@@ -5425,6 +5569,22 @@
               "cover_preview": false
             },
             "fingerprint": "055c5dd6f7c068e91c9f7be17b7b6ba1b689be7579df0fb83d46442cd9cc613d"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:25+00:00",
+            "review_path": "wechat/articles/review/ref-tang2025-JBE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "a75c854d8b9b2c27f37b5f8d1c84471d2778741f5a9bcb7dcd6e5e38edbabac4"
           }
         },
         "latest_published_url": "",
@@ -5717,7 +5877,7 @@
     "custom": {
       "publication_ref": "ref-yan2025-POF",
       "order": 14,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "6KEYN5GF",
@@ -5786,7 +5946,7 @@
     "custom": {
       "publication_ref": "ref-zhao2025-SCS",
       "order": 15,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "V6PLJENN",
@@ -6095,6 +6255,22 @@
               "cover_preview": false
             },
             "fingerprint": "510c45dfb14dc7df457822eb3af12f1bd300c89499cf3f5d017f1b30d9fa159e"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2025-SCS.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "cfe6aa40d4ef3408008d6de98132ae8f1aea014cc7510bfdff36e33076957352"
           }
         },
         "latest_published_url": "",
@@ -6399,7 +6575,7 @@
     "custom": {
       "publication_ref": "ref-chen2024-POF",
       "order": 17,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "78XMAPMX",
@@ -6910,7 +7086,7 @@
     "custom": {
       "publication_ref": "ref-tang2024-POF",
       "order": 18,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "FVGTMSEA",
@@ -7127,6 +7303,22 @@
               "cover_preview": false
             },
             "fingerprint": "44b0f746171d82a1d8694b843a96eb83199647db0467d7abf348d66b283cc954"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-tang2024-POF.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "4689c6fef72615e127d9bf13b3484eaaa51d59ccb47658dbaa0288a320c7d6c9"
           }
         },
         "latest_published_url": "",
@@ -7288,7 +7480,7 @@
     "custom": {
       "publication_ref": "ref-liu2024-JWEIA",
       "order": 19,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "UXCUW2AL",
@@ -7358,7 +7550,7 @@
     "custom": {
       "publication_ref": "ref-wang2024-ES",
       "order": 20,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "3HGIR6QR",
@@ -7668,6 +7860,22 @@
               "cover_preview": false
             },
             "fingerprint": "49a47f70274b856c29c7938564e5db6966149bdc882a1be5ddeba63bbde65807"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-wang2024-ES.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "9ab653b603a9b0a5ed7e0e805311de0b045b2c6f3f4692dadcc4c1382c8ffc7a"
           }
         },
         "latest_published_url": "",
@@ -7915,7 +8123,7 @@
     "custom": {
       "publication_ref": "ref-he2024-JBE",
       "order": 21,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "YMKXLNSP",
@@ -8142,6 +8350,22 @@
               "cover_preview": false
             },
             "fingerprint": "e16af535685d1ab98499c9d8f6368c457eb8633e702db36419d5dfb9bae69e7d"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-he2024-JBE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "dd4a83376a9b84c2effa1ffa2cda151ca8e2b436d95502d8860b6cf9239e778e"
           }
         },
         "latest_published_url": "",
@@ -8303,7 +8527,7 @@
     "custom": {
       "publication_ref": "ref-jiang2024-POF",
       "order": 22,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "68N5CKGN",
@@ -8442,7 +8666,7 @@
     "custom": {
       "publication_ref": "ref-li2024-POF",
       "order": 24,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "2YG78T62",
@@ -8951,7 +9175,7 @@
     "custom": {
       "publication_ref": "ref-chen2024-JCP",
       "order": 25,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "Y76UWP9R",
@@ -9612,7 +9836,7 @@
     "custom": {
       "publication_ref": "ref-liu2024-E",
       "order": 26,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "WSTSZ48A",
@@ -10026,6 +10250,22 @@
               "cover_preview": false
             },
             "fingerprint": "7553f4a82329d6e87a5e9401877f418fc989638b34339766a14e9c85a527c681"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2023-AE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "d2a8e0867be710cc8b1eaa081ebf91c151f7f0ae141a3c355c9dd152ed4a1e5c"
           }
         },
         "latest_published_url": "",
@@ -10257,7 +10497,7 @@
     "custom": {
       "publication_ref": "ref-zhao2023-BS",
       "order": 28,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "FVQQHCGS",
@@ -10474,6 +10714,22 @@
               "cover_preview": false
             },
             "fingerprint": "a283252d5509523fe407bb7ff56c9d40b7c9c6843012d13deddb5e0022b4af8c"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-BS.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "b26c9da184b47aa66442465c27a533a0777748b10a1871acecd80d98a985ddfb"
           }
         },
         "latest_published_url": "",
@@ -10651,7 +10907,7 @@
     "custom": {
       "publication_ref": "ref-zhang2023-JWEIA",
       "order": 29,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "F83EIB5E",
@@ -10971,6 +11227,22 @@
               "cover_preview": false
             },
             "fingerprint": "1459b1df15b31688d33f2e60e414129c30828709363808cf2f26dcc0f4302e9c"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-MS.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "d153dddd58c05bebbd1262741f1f63bb187029014360fb6f9f3721b25bcf365d"
           }
         },
         "latest_published_url": "",
@@ -11132,7 +11404,7 @@
     "custom": {
       "publication_ref": "ref-zhang2023-S",
       "order": 31,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "TYK2GQCU",
@@ -11349,6 +11621,22 @@
               "cover_preview": false
             },
             "fingerprint": "f56afc218777ce04df449a64e12574d49518d3000edde6d951b779f374138e4e"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-S.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "0539476d421cece14e75008a406090d18870aaf00e756ee122d003288e299fa1"
           }
         },
         "latest_published_url": "",
@@ -11510,7 +11798,7 @@
     "custom": {
       "publication_ref": "ref-wang2023-JWEIA",
       "order": 32,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "GKUAVJEK",
@@ -11726,6 +12014,22 @@
               "cover_preview": false
             },
             "fingerprint": "a2181fcdc9882a70560c2d0fb2b574e0cdbde71aac6dc611c589ff22f2960866"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-wang2023-JWEIA.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "0f38e109eb6248ccb066675d0cff0acfb8976d26c9f8301a801ad996f30ff501"
           }
         },
         "latest_published_url": "",
@@ -12152,6 +12456,22 @@
               "cover_preview": false
             },
             "fingerprint": "f5803d952126b7ba1d7da82df79644708cd17610bdf9c5a12e741fc8b8a34c84"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zheng2023-JRSE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "87187fa042050335cf78124cc1ca33ebc4cca795c33ae479b15cbd52bac4a705"
           }
         },
         "latest_published_url": "",
@@ -12312,7 +12632,7 @@
     "custom": {
       "publication_ref": "ref-zhang2023-ES",
       "order": 34,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "QN2824VG",
@@ -12529,6 +12849,22 @@
               "cover_preview": false
             },
             "fingerprint": "b9493cc9ab731e7a14bc28461826180c658baeac948d92a146ddea6ac2f35808"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhang2023-ES.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "6037f549298617f9f059fbc988e8e0629df07f21f47200c12beb78be0710d7ba"
           }
         },
         "latest_published_url": "",
@@ -12758,7 +13094,7 @@
     "custom": {
       "publication_ref": "ref-feng2023-HKXYGC",
       "order": 36,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "FT67Z85H",
@@ -12971,6 +13307,22 @@
               "cover_preview": false
             },
             "fingerprint": "fa5e9036e6ef9d991fb83515a490944fa2a5afa99fdb870497c6b9dc95d3679e"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-feng2023-HKXYGC.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "060b5f545dee2d51dd22709df26d32d3492535a0eaec5b68c150673f9c882bb6"
           }
         },
         "latest_published_url": "",
@@ -13246,7 +13598,7 @@
     "custom": {
       "publication_ref": "ref-zhao2023-GYJZ",
       "order": 37,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "R2C3HY74",
@@ -13477,6 +13829,22 @@
               "cover_preview": false
             },
             "fingerprint": "3fb7eddacd7820069590da2e4ae00214a282b1e11ac2291c79bb50c64f145101"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2023-GYJZ.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "cc64ae1c8cf6a6efb3e7979ac33e2fce47fff25c8a311fa1f522df9124bae3ac"
           }
         },
         "latest_published_url": "",
@@ -13712,7 +14080,7 @@
     "custom": {
       "publication_ref": "ref-gao2022-BE",
       "order": 39,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "IPVYARZP",
@@ -13782,7 +14150,7 @@
     "custom": {
       "publication_ref": "ref-hu2022-SCHM",
       "order": 40,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "DH7XTK83",
@@ -13853,7 +14221,7 @@
     "custom": {
       "publication_ref": "ref-chen2022-JWEIA",
       "order": 41,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "DD8PJ6PS",
@@ -14164,6 +14532,22 @@
               "cover_preview": false
             },
             "fingerprint": "7f7a68cc916131c5c7af250d6fcab7e19df5fee935611c5ae3218facfa619681"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-chen2022-JWEIA.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "a1917fda57ced27ed3379f8dec7fa9b8df2e171d28f159d9558341ffa3b85f55"
           }
         },
         "latest_published_url": "",
@@ -14732,6 +15116,22 @@
               "cover_preview": false
             },
             "fingerprint": "d158d53e91e13bb4c36cb9ed53ea0fe3e6c2bcad62018761687f25f88c1a7f9c"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2022-SOS.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "4f7cda8844d54746c48cfacec9e600fa1a1ffde21e24d5ca585385445156049a"
           }
         },
         "latest_published_url": "",
@@ -14963,7 +15363,7 @@
     "custom": {
       "publication_ref": "ref-wang2022-POF",
       "order": 43,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "F73D398X",
@@ -15168,7 +15568,7 @@
     "custom": {
       "publication_ref": "ref-zhang2022-ES",
       "order": 46,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "F9AB6YN4",
@@ -15236,7 +15636,7 @@
     "custom": {
       "publication_ref": "ref-lin2022-JWEIA",
       "order": 47,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "93A562VW",
@@ -15308,7 +15708,7 @@
     "custom": {
       "publication_ref": "ref-yang2022-AS",
       "order": 48,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "WUGUPVR4",
@@ -15671,7 +16071,7 @@
     "custom": {
       "publication_ref": "ref-wang2021-ABE",
       "order": 49,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "SXU5CL43",
@@ -15740,7 +16140,7 @@
     "custom": {
       "publication_ref": "ref-zhao2021-EFM",
       "order": 50,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "3VYYMGTH",
@@ -15956,6 +16356,22 @@
               "cover_preview": false
             },
             "fingerprint": "0946a29323b48f0a7ea3efb9058983b257e6df3e538529390ea3c1ddef45ed23"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-EFM.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "208c9646bd2e3b1cd241c0e1917effa2592e960c7ac23568a95b372e496bf6f6"
           }
         },
         "latest_published_url": "",
@@ -16116,7 +16532,7 @@
     "custom": {
       "publication_ref": "ref-zhao2021-AR",
       "order": 51,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "VEJ6LL7P",
@@ -16331,6 +16747,22 @@
               "cover_preview": false
             },
             "fingerprint": "4c0108cb6e23a960ac9a8f1b2bf006e39a73c990267cd9beeba9460e04088f1b"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-AR.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "d162ac003f7e8f035891779a19c2ff82f705e395d3e2a9a251ba98f3233065d0"
           }
         },
         "latest_published_url": "",
@@ -16588,7 +17020,7 @@
     "custom": {
       "publication_ref": "ref-lin2021-JWEIA",
       "order": 52,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "5G6YFN8Y",
@@ -16908,6 +17340,22 @@
               "cover_preview": false
             },
             "fingerprint": "4ec32c89c67b5f9464f9da81490ad7e880eeea40e49b84faab5e7b8d5338f520"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2021-OE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "c6ddc0c56bee3bebeaef7ea1619d688a9778c7015afa707bafc51ed2626eeba1"
           }
         },
         "latest_published_url": "",
@@ -17068,7 +17516,7 @@
     "custom": {
       "publication_ref": "ref-zhao2021-TYNXB",
       "order": 54,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "JGSIKX3F",
@@ -17283,6 +17731,22 @@
               "cover_preview": false
             },
             "fingerprint": "77963bba9cc130a273ce5f68b6593a0ef7f2fae635935c5a75af60ffa4cf7a82"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhao2021-TYNXB.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "10e73ce42f154e53077b8d52b2c68a0dfd61aa4f4186e4313a47ccc84be9000e"
           }
         },
         "latest_published_url": "",
@@ -17515,7 +17979,7 @@
     "custom": {
       "publication_ref": "ref-li2020-JWEIA",
       "order": 55,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "3ZY69PVB",
@@ -17730,6 +18194,22 @@
               "cover_preview": false
             },
             "fingerprint": "0a240661ddb88396a63132e58af10cd66c03df9f8bc1b219e787dfad2e650ec9"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2020-JWEIA.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "ca2e329978cb72c26936dab5c928b160ea2ec4af4f6b062391c393c1d4810cb9"
           }
         },
         "latest_published_url": "",
@@ -18138,6 +18618,22 @@
               "cover_preview": false
             },
             "fingerprint": "7ca4b2248766b7a18670d9a87ff65538a93a91d15f229828bd04d452b9350ce5"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2020-RE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "0c173d4db6e20282a18c3d36f03025f43e418b2ac9050fdd5d3381d4d8babe79"
           }
         },
         "latest_published_url": "",
@@ -18434,7 +18930,7 @@
     "custom": {
       "publication_ref": "ref-li2019-JWEIA",
       "order": 59,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "WHSVAKCD",
@@ -18571,7 +19067,7 @@
     "custom": {
       "publication_ref": "ref-zhou2019-WHLGDXXB",
       "order": 61,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "DNXNTCJ9",
@@ -18636,7 +19132,7 @@
     "custom": {
       "publication_ref": "ref-hu2018-EJMBF",
       "order": 62,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "C75QWNRE",
@@ -18953,6 +19449,22 @@
               "cover_preview": false
             },
             "fingerprint": "295ec3fd8339e5b538c981a84e79a2f5efbc68526d2012d716b17c8dbf12abe1"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2018-AE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "1d61e3f27dde2f93c4acb637bbf2a4b39c81fa7bdf09d3076045ec5df3772a77"
           }
         },
         "latest_published_url": "",
@@ -19192,7 +19704,7 @@
     "custom": {
       "publication_ref": "ref-xiao2018-KXJSYGC",
       "order": 64,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "YF5RIBAN",
@@ -19407,6 +19919,22 @@
               "cover_preview": false
             },
             "fingerprint": "bf6fd1b30d386df61d2a28b8e5b83633c625a059f9923ec420a8ad6ce7fdb3c3"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-xiao2018-KXJSYGC.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "fc50492afee71b0ba9c96895975b9261f37cfb7bb2b1920200103577f977384e"
           }
         },
         "latest_published_url": "",
@@ -19892,6 +20420,22 @@
               "cover_preview": false
             },
             "fingerprint": "3a1d960ededbbd53bc600880ddf54d6e3b9eb27cfbaa8f1cb95d9fc62bd4d427"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-zhou2017-E.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "44a5771d8393f265062870567d43c4dc8689b294355aa2ba0d21ce45b473ceda"
           }
         },
         "latest_published_url": "",
@@ -20052,7 +20596,7 @@
     "custom": {
       "publication_ref": "ref-li2017-BS",
       "order": 66,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "77THBZDM",
@@ -20268,6 +20812,22 @@
               "cover_preview": false
             },
             "fingerprint": "e36a0164cba5ec59df931d10a94021fdfa22a6735773af0e5a8e86a295ad1fb9"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2017-BS.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "f304951b82d026bc51bd104baa20981f923a67667adaf01f62b99bb6562bd669"
           }
         },
         "latest_published_url": "",
@@ -20774,6 +21334,22 @@
               "cover_preview": false
             },
             "fingerprint": "1b4c31cda91dc62a7a64a7d399fd1c28767d6b88991fd195b34744f7c6133664"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2017-AS.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "a5360cf1a34a06b0260afff2ace234a530b0b3767df074899bbcc675575e6178"
           }
         },
         "latest_published_url": "",
@@ -21007,7 +21583,7 @@
     "custom": {
       "publication_ref": "ref-pei2013-MPE",
       "order": 68,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "D5KH2XJN",
@@ -21321,6 +21897,22 @@
               "cover_preview": false
             },
             "fingerprint": "e54834814ae87ae47bfddd40581cc9b6cdf808bccc8e9caeccd7d5466d7b1b6d"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2013-RE.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "12e4301c6ea80cd7852d8698a220401b006fadde2b38edc8b6d40ee3c5f2d7a2"
           }
         },
         "latest_published_url": "",
@@ -21583,7 +22175,7 @@
     "custom": {
       "publication_ref": "ref-li2012-JWEIA",
       "order": 70,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "2ND9BWQV",
@@ -21797,6 +22389,22 @@
               "cover_preview": false
             },
             "fingerprint": "c75e85cd025b3b31fbc2c6f7b099921736227d1f1cbfd77128bf35a6e0623c62"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2012-JWEIA.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "79732d5d73c4594cbc5b7fd9d777e8e50da6945c6b9913b141e1d8cb73890ea1"
           }
         },
         "latest_published_url": "",
@@ -22054,7 +22662,7 @@
     "custom": {
       "publication_ref": "ref-li2012-GCLX",
       "order": 71,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "LASEFQSH",
@@ -22269,6 +22877,22 @@
               "cover_preview": false
             },
             "fingerprint": "1c3f37bc67a548afe76e264dfeecc7796d611b981cf491a85233efd8af1736ad"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2012-GCLX.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "cf072a7a52deb220af61b08b00cf3ce37f91d902c9e46f093a4e23e4a64ccaf2"
           }
         },
         "latest_published_url": "",
@@ -22532,7 +23156,7 @@
     "custom": {
       "publication_ref": "ref-li2010-WAS",
       "order": 72,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "9N6EYMBU",
@@ -22749,6 +23373,22 @@
               "cover_preview": false
             },
             "fingerprint": "612b1305e8d0d2fc116ee580053c75831a3fd8ad5f00c42ab983e449b75c9974"
+          },
+          "family_name_20261021": {
+            "recorded_at": "2026-10-21T01:49:26+00:00",
+            "review_path": "wechat/articles/review/ref-li2010-WAS.family-name-20261021.review.md",
+            "scope": "current primary family label rename only; scientific bytes and rendered output preserved outside exact direction labels",
+            "prior_content_review_current": true,
+            "checks": {
+              "source_identity": true,
+              "facts": true,
+              "public_safety": true,
+              "non_content_equivalence": true,
+              "formula_preview": false,
+              "figure_preview": false,
+              "cover_preview": false
+            },
+            "fingerprint": "624ca6a19bfe31784523f54d3a11fe1a143b435d8adb0a2170160e3f1b346a2f"
           }
         },
         "latest_published_url": "",
@@ -22926,7 +23566,7 @@
     "custom": {
       "publication_ref": "ref-teng2010-GCKZYGJGZ",
       "order": 73,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "结构抗风",
       "legacy_bibliography": {
         "zotero_key": "KPY4XV4Z",
@@ -22991,7 +23631,7 @@
     "custom": {
       "publication_ref": "ref-xiao2009-HNLGDXXB",
       "order": 74,
-      "research_family": "工程结构抗风",
+      "research_family": "结构风工程",
       "subdirection": "数值风洞",
       "legacy_bibliography": {
         "zotero_key": "SC8R2QZE",

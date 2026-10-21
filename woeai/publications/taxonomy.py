@@ -10,9 +10,9 @@ here so the taxonomy cannot drift.
 
 from __future__ import annotations
 
-RESEARCH_FAMILY_ORDER = ("工程结构抗风", "海洋能源结构")
+RESEARCH_FAMILY_ORDER = ("结构风工程", "海洋能源结构")
 RESEARCH_SUBDIRECTION_ORDER = {
-    "工程结构抗风": ("数值风洞", "结构抗风"),
+    "结构风工程": ("数值风洞", "结构抗风"),
     "海洋能源结构": (
         "一体化分析",
         "混凝土浮体",
@@ -22,7 +22,7 @@ RESEARCH_SUBDIRECTION_ORDER = {
 
 # Display translations of the same taxonomy; these do not introduce categories.
 RESEARCH_FAMILY_EN = {
-    "工程结构抗风": "Structural Wind Engineering",
+    "结构风工程": "Structural Wind Engineering",
     "海洋能源结构": "Marine Energy Structures",
 }
 RESEARCH_SUBDIRECTION_EN = {
@@ -32,3 +32,6 @@ RESEARCH_SUBDIRECTION_EN = {
     "混凝土浮体": "Concrete Floating Structures",
     "数值水池": "Numerical Wave Basin",
 }
+
+# Accepted only as exact historical draft-title input, never a generated category.
+RESEARCH_FAMILY_PREVIOUS_NAMES = {"结构风工程": ("工程结构抗风",)}

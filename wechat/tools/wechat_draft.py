@@ -22,7 +22,7 @@ import stat
 import sys
 import tempfile
 import time
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -117,6 +117,7 @@ class DraftTitleTarget:
     article_index: int | None
     draft_mapping_source: str
     draft_mapping_app_id: str
+    additional_expected_titles: tuple[str, ...] = ()
 
 
 class WeChatError(RuntimeError):
@@ -1248,6 +1249,9 @@ def build_title_target(publication_ref: str) -> DraftTitleTarget:
         raise RuntimeError("Cannot update title without an existing private draft mapping")
     target = DraftTitleTarget(publication_ref, custom["subdirection"] + " | " + title.split(" | ", 1)[1],
                               title, mapping["media_id"], mapping["article_index"], mapping["source"], mapping["app_id"])
+    from woeai.publications.taxonomy import RESEARCH_FAMILY_PREVIOUS_NAMES
+    target = replace(target, additional_expected_titles=tuple(prefix + " | " + title.split(" | ", 1)[1]
+        for prefix in RESEARCH_FAMILY_PREVIOUS_NAMES.get(custom["research_family"], ())))
     require_draft_account(target)
     require_draft_article_index(target)
     return target
@@ -1330,8 +1334,11 @@ def command_update_title(args: argparse.Namespace) -> int:
                     or (type(error_code) is str and error_code == "0")):
                 raise WeChatError("draft_update", response)
 
-        result = update_title(read, write, expected_title=target.expected_title, desired_title=target.title,
-                              observe=evidence.record)
+        from woeai.wechat.title_equivalence import read_cover_image
+        result = update_title(read, write, expected_title=(target.expected_title, *target.additional_expected_titles),
+                              desired_title=target.title, observe=evidence.record,
+                              allow_platform_formatting=args.allow_platform_formatting,
+                              fetch_cover_image=read_cover_image if args.allow_platform_formatting else None)
         if not other_articles_unchanged:
             raise TitleUpdateError("other_articles_readback_changed", write_attempted=attempted)
         summary.update(stage="title_verified", **result)
@@ -1517,6 +1524,8 @@ def build_parser() -> argparse.ArgumentParser:
     title = sub.add_parser("update-title", help="Preserve the remote article and change only its direction prefix")
     title.add_argument("--publication-ref", required=True)
     title.add_argument("--live", action="store_true", help="Live: update only an existing mapped draft title")
+    title.add_argument("--allow-platform-formatting", action="store_true",
+                       help="Requires explicit approval: exact img closing syntax and proven identical-cover URL changes only")
 
     update = sub.add_parser("update-draft", help="Live: upload assets and update the existing draft")
     update.add_argument("--publication-ref", default=DEFAULT_REF)

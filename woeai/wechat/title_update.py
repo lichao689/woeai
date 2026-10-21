@@ -53,14 +53,16 @@ def comparison(before, after, *, title_change=False):
             "all_protected_equal": all(c["permitted"] for c in changes)}
 
 
-def update_title(read_article, write_article, *, expected_title, desired_title, observe=None):
+def update_title(read_article, write_article, *, expected_title, desired_title, observe=None,
+                 allow_platform_formatting=False, fetch_cover_image=None):
     """Read twice, snapshot before writing once, then explain the readback."""
     observe = observe or (lambda event, value: None)
     before = read_article()
     observe("before-article", before)
     if any(not isinstance(before.get(key), str) or not before[key] for key in ("title", "content", "thumb_media_id")):
         raise TitleUpdateError("incomplete_remote_article")
-    if before.get("title") not in {expected_title, desired_title}:
+    previous_titles = (expected_title,) if isinstance(expected_title, str) else tuple(expected_title)
+    if before.get("title") not in {*previous_titles, desired_title}:
         raise TitleUpdateError("remote_title_conflict")
     current = read_article()
     observe("prewrite-article", current)
@@ -78,9 +80,31 @@ def update_title(read_article, write_article, *, expected_title, desired_title, 
     after = read_article()
     observe("after-article", after)
     postwrite = comparison(current, after, title_change=True)
+    if allow_platform_formatting:
+        from woeai.wechat.title_equivalence import image_closing_equivalence, cover_url_equivalence
+        proof = {"body": {"checked": False}, "cover": {"checked": False}}
+        candidates = {"/content", "/thumb_url"}
+        unknown = [c for c in postwrite["differences"] if not c["permitted"] and c["path"] not in candidates]
+        if not unknown:
+            for change in postwrite["differences"]:
+                if change["path"] == "/content":
+                    proof["body"] = {"checked": True, **image_closing_equivalence(current.get("content"), after.get("content"))}
+                    change["permitted"] = proof["body"]["equivalent"]
+                    change["equivalence_reason"] = proof["body"]["reason"]
+            body_ok = not any(c["path"] == "/content" and not c["permitted"] for c in postwrite["differences"])
+            for change in postwrite["differences"]:
+                if body_ok and change["path"] == "/thumb_url" and fetch_cover_image is not None:
+                    proof["cover"] = {"checked": True, **cover_url_equivalence(current.get("thumb_url"), after.get("thumb_url"), fetch_cover_image)}
+                    change["permitted"] = proof["cover"]["equivalent"]
+                    change["equivalence_reason"] = proof["cover"]["reason"]
+        observe("platform-equivalence", proof)
+        postwrite["all_protected_equal"] = all(c["permitted"] for c in postwrite["differences"])
     observe("postwrite-differences", postwrite)
     if after.get("title") != desired_title:
         raise TitleUpdateError("title_readback_failed", write_attempted=True)
     if not postwrite["all_protected_equal"]:
         raise TitleUpdateError("non_title_readback_changed", write_attempted=True)
-    return {"updated": True, "title_verified": True, "non_title_unchanged": True}
+    result = {"updated": True, "title_verified": True, "non_title_unchanged": True}
+    if allow_platform_formatting:
+        result["platform_equivalence_used"] = any(c.get("equivalence_reason") for c in postwrite["differences"])
+    return result

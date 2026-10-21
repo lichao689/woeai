@@ -1,6 +1,6 @@
 id: building-structural-wind-resistance
-label_cn: 工程结构抗风
-label_en: Engineering Structural Wind Resistance
+label_cn: 结构风工程
+label_en: Structural Wind Engineering
 subdirections:
   - id: numerical-wind-tunnel-and-turbulent-inflow
     label_cn: 数值风洞
@@ -13,4 +13,4 @@ subdirections:
     label_cn: 结构抗风
     includes:
       - 风致振动控制与流动控制
-      - 历史输电塔线及工程结构抗风证据
+      - 历史输电塔线及结构风工程证据

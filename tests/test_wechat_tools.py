@@ -65,7 +65,7 @@ class WeChatToolTests(unittest.TestCase):
                 "# 示例标题\n\n"
                 "## 论文信息\n\n"
                 "- DOI: https://doi.org/10.1000/example\n"
-                "- WOEAI 相关方向: 工程结构抗风\n\n"
+                "- WOEAI 相关方向: 结构风工程\n\n"
                 "## 摘要\n\n"
                 "Plain text.\n",
                 encoding="utf-8",
@@ -75,7 +75,7 @@ class WeChatToolTests(unittest.TestCase):
             with contextlib.redirect_stderr(io.StringIO()):
                 rst = converter.convert_markdown_to_rst(article, review, output)
 
-        self.assertIn("- WOEAI 相关方向: 工程结构抗风\n\n摘要\n--", rst)
+        self.assertIn("- WOEAI 相关方向: 结构风工程\n\n摘要\n--", rst)
         self.assertIn(".. role:: student-first-author", rst)
         self.assertIn("Plain text.", rst)
 
@@ -100,17 +100,17 @@ class WeChatToolTests(unittest.TestCase):
                 "items:\n"
                 "  - publication_ref: ref-target\n"
                 "    title: Target\n"
-                "    research_family: 工程结构抗风\n"
+                "    research_family: 结构风工程\n"
                 "    subdirection: 数值风洞\n"
                 "    original_year: 2026\n"
                 "  - publication_ref: ref-published\n"
                 "    title: Published\n"
-                "    research_family: 工程结构抗风\n"
+                "    research_family: 结构风工程\n"
                 "    subdirection: 数值风洞\n"
                 "    original_year: 2025\n"
                 "  - publication_ref: ref-missing-rtd\n"
                 "    title: Missing RTD\n"
-                "    research_family: 工程结构抗风\n"
+                "    research_family: 结构风工程\n"
                 "    subdirection: 数值风洞\n"
                 "    original_year: 2024\n",
                 encoding="utf-8",
@@ -139,7 +139,7 @@ class WeChatToolTests(unittest.TestCase):
             article.write_text(
                 "# 结构抗风 | 示例标题\n\n"
                 "正文段落。\n\n"
-                "如果你对工程结构抗风 / 海洋能源结构方向的研究生学习或工程合作感兴趣，"
+                "如果你对结构风工程 / 海洋能源结构方向的研究生学习或工程合作感兴趣，"
                 "点击阅读原文查看本文网页版，并从 WOEAI 主页了解更多。\n\n"
                 "## 延伸阅读\n\n"
                 "- [WOEAI | 主页](https://woeai.readthedocs.io/zh-cn/latest/)\n",
@@ -184,12 +184,12 @@ class WeChatToolTests(unittest.TestCase):
                 "items:\n"
                 "  - publication_ref: ref-target\n"
                 "    title: Target\n"
-                "    research_family: 工程结构抗风\n"
+                "    research_family: 结构风工程\n"
                 "    subdirection: 数值风洞\n"
                 "    original_year: 2026\n"
                 "  - publication_ref: ref-published\n"
                 "    title: Published\n"
-                "    research_family: 工程结构抗风\n"
+                "    research_family: 结构风工程\n"
                 "    subdirection: 数值风洞\n"
                 "    original_year: 2025\n",
                 encoding="utf-8",
@@ -270,18 +270,18 @@ class WeChatToolTests(unittest.TestCase):
         draft = load_script(ROOT / "wechat/tools/wechat_draft.py", "woeai_wechat_draft_related_test")
 
         papers = [
-            draft.BacklogPaper("ref-target", "Target", "工程结构抗风", "数值风洞", 2026, "", 0),
+            draft.BacklogPaper("ref-target", "Target", "结构风工程", "数值风洞", 2026, "", 0),
             draft.BacklogPaper(
                 "ref-published",
                 "Published",
-                "工程结构抗风",
+                "结构风工程",
                 "数值风洞",
                 2025,
                 "https://mp.weixin.qq.com/s/published",
                 1,
                 published_title="公众号已发布文章", publication_verified=True,
             ),
-            draft.BacklogPaper("ref-unpublished", "Unpublished", "工程结构抗风", "数值风洞", 2024, "", 2),
+            draft.BacklogPaper("ref-unpublished", "Unpublished", "结构风工程", "数值风洞", 2024, "", 2),
         ]
 
         with mock.patch.object(draft, "parse_backlog_papers", return_value=papers), mock.patch.object(

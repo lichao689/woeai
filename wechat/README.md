@@ -144,6 +144,20 @@ introduction after verifying that its target is not an independent deep dive.
 It is not part of new article production, and its `--check` is not a quality
 gate for independent RTD pages. Do not run the converter over a full-paper page.
 
+## Standalone account introduction
+
+The opening article is maintained separately from journal-paper records at
+[woeai-opening.md](articles/introductions/woeai-opening.md). Its existing title,
+recruitment invitation, signature, links and approved illustration stay independent
+of paper-title generation. Update this source before rendering its offline preview;
+backend changes require the explicitly authorized existing-draft procedure and a
+verified private mapping. Do not register it as a paper or create a replacement.
+
+This is a five-section account introduction, not a paper explainer. Preserve its
+approved concept-image caption and existing layout when synchronizing the local
+HTML; paper-only figure/reading-guide and publication-registry checks do not apply.
+
+
 ## Research Families
 
 - `结构风工程`

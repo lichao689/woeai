@@ -1,0 +1,65 @@
+{
+  "Research": {
+    "id1": "数值风洞",
+    "id2": "结构抗风",
+    "research-project": "科研项目",
+    "structural-wind-engineering": "结构风工程",
+    "id3": "一体化分析",
+    "id4": "混凝土浮体",
+    "id5": "数值水池",
+    "id6": "图示资料",
+    "floating-wind-project-support": "科研项目",
+    "marine-energy-structures": "海洋能源结构",
+    "research": "科研方向"
+  },
+  "EngineeringApplications": {
+    "id2": "数值风洞",
+    "id3": "结构抗风",
+    "id1": "结构风工程",
+    "id5": "一体化分析",
+    "id6": "混凝土浮体",
+    "id7": "数值水池",
+    "id4": "海洋能源结构",
+    "application-scenarios": "应用场景",
+    "id8": "结构风工程方向",
+    "id9": "海洋能源结构方向",
+    "enterprise-project-evidence": "企业项目证据",
+    "id10": "工程问题交流",
+    "engineering-applications": "工程应用"
+  },
+  "About": {
+    "id1": "本站不主动收集的信息",
+    "id2": "托管平台日志",
+    "id3": "邮件和微信联系",
+    "id4": "第三方视频嵌入",
+    "id5": "信息最小化提示",
+    "id6": "信息更正和删除",
+    "id7": "政策更新",
+    "privacy-notice": "隐私说明",
+    "copyright-citation": "版权与引用",
+    "acknowledgements": "技术致谢",
+    "about-this-site": "关于本站"
+  },
+  "Teaching": {
+    "undergraduate": "1.1 本科生",
+    "graduate": "1.2 研究生",
+    "teaching-reform-exploration": "1.3 教改探索",
+    "id1": "1 教学工作",
+    "phd-students": "2.1 博士生",
+    "master-students": "2.2 硕士生",
+    "student-training": "2 学生培养",
+    "teaching": "教育教学"
+  },
+  "PublicationsByYear": {
+    "id1": "2026",
+    "id2": "2025",
+    "id3": "2024",
+    "id4": "2023",
+    "id5": "2022",
+    "id6": "2021",
+    "id7": "2020",
+    "id8": "2019",
+    "earlier": "更早",
+    "publications-by-year": "按年份倒序浏览学术成果"
+  }
+}

@@ -31,7 +31,7 @@ jobs:
       - name: Build docs with warnings as errors
         run: ./scripts/check-docs.sh
 
-      - name: Check every rendered paper citation in Chromium
+      - name: Check rendered citations and navigation in Chromium
         env:
           PYTHON_BIN: /tmp/woeai-docs-venv/bin/python
         run: |
@@ -39,3 +39,4 @@ jobs:
           tests/browser/node_modules/.bin/playwright install --with-deps chromium
           node --test tests/browser/citation-check.test.cjs
           node tests/browser/check-paper-citations.cjs /tmp/woeai-sphinx-html
+          node tests/browser/check-navigation.cjs /tmp/woeai-sphinx-html

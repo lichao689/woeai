@@ -609,13 +609,13 @@ def page_header(items_by_key: dict[str, dict[str, Any]]) -> str:
             "",
             ".. container:: publication-view-banner",
             "",
-            "   :doc:`按年份倒序浏览学术成果 Publications by Year <PublicationsByYear>`：按发表年份倒序浏览完整期刊论文清单。",
+            "   :doc:`按年份倒序浏览学术成果 <PublicationsByYear>`：按发表年份倒序浏览完整期刊论文清单。",
             "",
             ".. toctree::",
             "   :hidden:",
             "   :maxdepth: 1",
             "",
-            "   按年份倒序浏览 Publications by Year <PublicationsByYear>",
+            "   按年份倒序浏览 <PublicationsByYear>",
             "",
             # Keep this no-op include as a guard against the old top-level
             # paper-notes toctree shape. Per-direction paper-note toctrees are

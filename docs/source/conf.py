@@ -6,7 +6,7 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.21-1108'
+release = '2026.10.21-1129'
 version = '2026.10.21'
 
 # -- SEO Meta Tags
@@ -140,3 +140,6 @@ extensions.append('mathjax_vendored')
 
 # Every Chinese note and English highlight receives checked registry citation text.
 extensions.append("paper_citations")
+
+# Translate after parsing so existing numeric and named anchors remain stable.
+extensions.append("chinese_navigation")

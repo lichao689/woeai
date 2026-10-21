@@ -143,7 +143,7 @@ class PublicationsResearchViewTests(unittest.TestCase):
         subdirection_section = section_between(text, "数值风洞", ("结构抗风",))
         self.assertIn(".. toctree::", subdirection_section)
         self.assertIn("如何把卫星影像转成 CFD 可用城市几何 <paper-notes/ref-zhao2026-BE>", subdirection_section)
-        self.assertIn("按年份倒序浏览学术成果 Publications by Year <PublicationsByYear>", text)
+        self.assertIn("按年份倒序浏览学术成果 <PublicationsByYear>", text)
         self.assertNotIn("学术进展 Academic Progress", research_text)
         self.assertNotIn("paper-notes/", research_text)
         deprecated_year_doc = "PublicationsBy" + "Research"

@@ -227,8 +227,27 @@ body HTML, cover IDs/URLs, crop information, author, digest and original link.
 
 The official API provides no atomic compare-and-swap; avoid simultaneous backend
 editing during the operation. A changed readback, permission error or uncertain
-network outcome stops the action. Keep minimal safe receipts in ignored local
-storage; inspect uncertain outcomes before any retry. Never substitute a normal
+network outcome stops the action. Authorized live title operations now save
+credential-excluded snapshots under ignored `wechat/.local/title-updates/<receipt_id>/`:
+the two GET responses immediately before a write, the actual UTF-8 JSON request
+body, the update response, the raw GET response after the write, and typed field
+differences (including same-draft other articles). Artifacts are immutable, mode
+0600, inside a mode-0700 directory, with timestamped SHA-256 entries in a private
+manifest. No endpoint URL containing the API token is recorded. Credential keys,
+known token values and credential-bearing URLs are redacted; the manifest marks
+redactions and whether exact transport text was retained. Unparseable response
+text is conservatively omitted and marked incomplete rather than risking unknown
+credential leakage. Public output contains
+only the receipt identifier and safe status, never raw snapshots or private URLs.
+
+A request snapshot must succeed before sending. A known ACK is retained even if
+saving its response fails; incomplete evidence, unknown changes, body HTML changes
+(including whitespace), cover material/URL/crop/display changes, metadata changes
+or other-article changes stop the operation. Only the existing top-level read-only
+preview `url` exception remains. Evidence completeness is independent of success;
+a failed verification can have a complete diagnostic record. Inspect uncertain
+outcomes before any retry. Saving later snapshots does not reconstruct missing
+historical inputs or retroactively certify an earlier failed update. Never substitute a normal
 `update-draft`, which uploads assets and replaces the rendered body, for this
 operation. A verified title update does not renew scientific review, preview or
 publication status. Title/standard migrations preserve old evidence and require

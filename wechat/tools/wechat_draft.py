@@ -414,7 +414,7 @@ def api_get_json(url: str, params: dict[str, str]) -> dict[str, Any]:
     return json.loads(body)
 
 
-def api_post_json(url: str, token: str, payload: dict[str, Any]) -> dict[str, Any]:
+def api_post_json(url: str, token: str, payload: dict[str, Any], *, observer=None) -> dict[str, Any]:
     request_url = f"{url}?{urlencode({'access_token': token})}"
     data = json.dumps(payload, ensure_ascii=False).encode("utf-8")
     req = Request(
@@ -426,8 +426,18 @@ def api_post_json(url: str, token: str, payload: dict[str, Any]) -> dict[str, An
         },
         method="POST",
     )
-    with urlopen(req, timeout=60) as resp:
-        body = resp.read().decode("utf-8")
+    if observer:
+        observer("request", data.decode("utf-8"))
+        observer("sending", None)
+    try:
+        with urlopen(req, timeout=60) as resp:
+            body = resp.read().decode("utf-8")
+    except HTTPError as error:
+        if observer:
+            observer("http-error", error.read().decode("utf-8", errors="replace"))
+        raise
+    if observer:
+        observer("response", body)
     return json.loads(body)
 
 
@@ -1138,10 +1148,10 @@ def command_content_source_plan(args: argparse.Namespace) -> int:
     return 0
 
 
-def fetch_remote_draft_article(token: str, media_id: str, article_index: int | None = None) -> dict[str, Any]:
+def fetch_remote_draft_article(token: str, media_id: str, article_index: int | None = None, *, observer=None) -> dict[str, Any]:
     if type(article_index) is not int or article_index < 0:
         raise ConfigurationError("draft_article_index_unverified")
-    response = api_post_json(DRAFT_GET_URL, token, {"media_id": media_id})
+    response = api_post_json(DRAFT_GET_URL, token, {"media_id": media_id}, **({"observer": observer} if observer else {}))
     if "news_item" not in response:
         raise WeChatError("draft_get", response)
     news_items = response.get("news_item") or []
@@ -1244,13 +1254,18 @@ def build_title_target(publication_ref: str) -> DraftTitleTarget:
 
 
 def command_update_title(args: argparse.Namespace) -> int:
-    from woeai.wechat.title_update import TitleUpdateError, update_title
+    from woeai.wechat.title_update import TitleUpdateError, comparison, update_title
+    from woeai.wechat.title_evidence import PrivateTitleEvidence
 
     summary = {"ok": True, "stage": "title_plan", "publication_ref": args.publication_ref,
                "will_read_credentials": args.live, "will_contact_wechat": args.live,
                "will_create_draft": False, "will_upload_images": False}
     attempted = False
     acknowledged = False
+    evidence = None
+    responses = {}
+    reads = 0
+    other_articles_unchanged = True
     try:
         target = build_title_target(args.publication_ref)
         summary.update(title=target.title, expected_remote_title=target.expected_title)
@@ -1258,22 +1273,67 @@ def command_update_title(args: argparse.Namespace) -> int:
             print(json.dumps(summary, ensure_ascii=False, indent=2))
             return 0
         token = fetch_access_token(force_refresh=False)["access_token"]
+        evidence = PrivateTitleEvidence(WECHAT_ROOT / ".local/title-updates", target.publication_ref,
+                                        forbidden=(token,))
+
+        def transport(stage):
+            def observe(event, body):
+                nonlocal attempted, acknowledged
+                if event == "sending":
+                    if stage == "update":
+                        evidence.record("write-pending", {"state": "write_pending"})
+                        attempted = True
+                    return
+                if event == "response":
+                    try:
+                        parsed = json.loads(body)
+                    except ValueError:
+                        parsed = None
+                    if stage == "update":
+                        code = parsed.get("errcode") if isinstance(parsed, dict) else None
+                        acknowledged = (type(code) is int and code == 0) or (type(code) is str and code == "0")
+                    else:
+                        responses[stage] = parsed
+                evidence.record(stage + "-" + event, body, raw_json=True)
+            return observe
+
+        def other_articles(left, right):
+            if len(left) != len(right):
+                return {"all_protected_equal": False, "differences": [{"path": "/news_item", "category": "article_count"}]}
+            changes = []
+            for index, (before, after) in enumerate(zip(left, right)):
+                if index != target.article_index:
+                    for change in comparison(before, after)["differences"]:
+                        changes.append({**change, "article_position": index})
+            return {"all_protected_equal": all(c["permitted"] for c in changes), "differences": changes}
 
         def read():
-            return fetch_remote_draft_article(token, target.existing_media_id, target.article_index)
+            nonlocal reads, other_articles_unchanged
+            reads += 1
+            article = fetch_remote_draft_article(token, target.existing_media_id, target.article_index,
+                                                 observer=transport("read-" + str(reads)))
+            if reads in {2, 3}:
+                baseline = responses["read-1" if reads == 2 else "read-2"]["news_item"]
+                report = other_articles(baseline, responses["read-" + str(reads)]["news_item"])
+                evidence.record("other-articles-" + str(reads) + "-differences", report)
+                other_articles_unchanged = report["all_protected_equal"]
+                if reads == 2 and not other_articles_unchanged:
+                    raise TitleUpdateError("remote_other_articles_changed")
+            return article
 
         def write(article):
-            nonlocal attempted, acknowledged
-            attempted = True
             response = api_post_json(DRAFT_UPDATE_URL, token,
-                {"media_id": target.existing_media_id, "index": target.article_index, "articles": article})
+                {"media_id": target.existing_media_id, "index": target.article_index, "articles": article},
+                observer=transport("update"))
             error_code = response.get("errcode")
             if not ((type(error_code) is int and error_code == 0)
                     or (type(error_code) is str and error_code == "0")):
                 raise WeChatError("draft_update", response)
-            acknowledged = True
 
-        result = update_title(read, write, expected_title=target.expected_title, desired_title=target.title)
+        result = update_title(read, write, expected_title=target.expected_title, desired_title=target.title,
+                              observe=evidence.record)
+        if not other_articles_unchanged:
+            raise TitleUpdateError("other_articles_readback_changed", write_attempted=attempted)
         summary.update(stage="title_verified", **result)
     except Exception as error:
         summary.update(safe_error_summary(error))
@@ -1286,10 +1346,17 @@ def command_update_title(args: argparse.Namespace) -> int:
             summary["outcome"] = "rejected"
         if isinstance(error, TitleUpdateError):
             summary["reason"] = error.code
-        print(json.dumps(summary, ensure_ascii=False, indent=2))
-        return 1
+    summary.update(write_attempted=attempted, write_acknowledged=acknowledged)
+    if evidence:
+        summary.update(receipt_id=evidence.receipt_id, evidence_complete=evidence.complete)
+        try:
+            evidence.record("result", summary)
+        except Exception:
+            summary.update(ok=False, stage="title_update_stopped", reason="evidence_finalize_failed",
+                           write_attempted=attempted, write_acknowledged=acknowledged, evidence_complete=False,
+                           outcome="verification_failed" if acknowledged else "uncertain" if attempted else "not_attempted")
     print(json.dumps(summary, ensure_ascii=False, indent=2))
-    return 0
+    return 0 if summary["ok"] else 1
 
 
 def command_create_or_update(args: argparse.Namespace) -> int:

@@ -52,6 +52,22 @@ class TitleUpdateTests(unittest.TestCase):
         self.assertEqual(writes[0]['content'], before['content'])
         self.assertEqual(writes[0]['cover_info'], {'crop': 'unchanged'})
 
+    def test_readback_checks_types_body_bytes_and_unknown_fields_without_normalization(self):
+        from woeai.wechat.title_update import update_title, TitleUpdateError
+        before = self.article()
+        for changes, expected_path in [({'show_cover_pic': True}, '/show_cover_pic'),
+                                       ({'content': before['content'] + ' '}, '/content'),
+                                       ({'unexpected_setting': 1}, '/unexpected_setting')]:
+            after = {**before, 'title': 'Primary | Same question?', **changes}
+            reads = iter([before, before, after]); records = {}; writes = []
+            with self.subTest(path=expected_path), self.assertRaises(TitleUpdateError):
+                update_title(lambda: copy.deepcopy(next(reads)), writes.append,
+                             expected_title=before['title'], desired_title=after['title'],
+                             observe=lambda event, data: records.update({event: copy.deepcopy(data)}))
+            differences = records['postwrite-differences']['differences']
+            self.assertTrue(any(d['path'] == expected_path and not d['permitted'] for d in differences))
+            self.assertEqual(len(writes), 1)
+
     def test_missing_body_or_cover_never_writes_a_partial_replacement(self):
         from woeai.wechat.title_update import update_title
         for field in ('content', 'thumb_media_id'):
@@ -159,20 +175,65 @@ class TitleCommandTests(unittest.TestCase):
         return code, json.loads(output.getvalue())
 
     def backend(self, response=None, changed_readback=False):
-        def api(url, token, payload):
+        def api(url, token, payload, *, observer=None):
+            import json
+            if observer:
+                observer('request', json.dumps(payload))
+                observer('sending', None)
+            def respond(value):
+                if observer: observer('response', json.dumps(value))
+                return value
             if url == self.tool.DRAFT_GET_URL:
-                return {'news_item': [{'title': 'Different article'}, copy.deepcopy(self.remote)]}
+                return respond({'news_item': [{'title': 'Different article'}, copy.deepcopy(self.remote)]})
             self.assertEqual(url, self.tool.DRAFT_UPDATE_URL)
             self.assertEqual(payload['index'], 1)
             self.assertEqual(payload['media_id'], 'fake-existing-draft')
             self.writes.append(copy.deepcopy(payload['articles']))
             if response is not None:
-                return response
+                return respond(response)
             self.remote.update(payload['articles'])
             if changed_readback:
                 self.remote['content'] = '<p>Changed after request</p>'
-            return {'errcode': 0}
+            return respond({'errcode': 0})
         return api
+
+    def test_private_evidence_removes_credentials_in_keys_and_urls_and_refuses_symlinks(self):
+        import json, tempfile
+        from pathlib import Path
+        from woeai.wechat.title_evidence import PrivateTitleEvidence
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            evidence = PrivateTitleEvidence(root / 'private', 'ref-example', forbidden=('real-test-token',))
+            evidence.record('response', {'accessToken': 'unrelated-secret-value',
+                'content': '<img src="https://example.org/img?access_token=real-test-token">',
+                'message': 'request real-test-token was rejected'})
+            text = (evidence.directory / 'response.json').read_text()
+            self.assertNotIn('real-test-token', text)
+            self.assertNotIn('unrelated-secret-value', text)
+            self.assertNotIn('https://example.org/img', text)
+            manifest = json.loads((evidence.directory / 'manifest.json').read_text())
+            self.assertTrue(manifest['artifacts']['response']['credential_redactions'])
+            link = root / 'linked'
+            link.symlink_to(root / 'private', target_is_directory=True)
+            with self.assertRaisesRegex(RuntimeError, 'private_evidence_symlink'):
+                PrivateTitleEvidence(link, 'ref-example')
+
+    def test_private_evidence_redacts_mixed_case_and_userinfo_urls_and_omits_malformed_json(self):
+        import tempfile, json
+        from pathlib import Path
+        from woeai.wechat.title_evidence import PrivateTitleEvidence
+        with tempfile.TemporaryDirectory() as directory:
+            evidence = PrivateTitleEvidence(Path(directory) / 'private', 'ref-example')
+            evidence.record('uppercase', {'url': 'HTTPS://example.org/?access_token=fixture-new-secret'})
+            evidence.record('userinfo', {'url': 'https://fixture-user:fixture-password@example.org/private'})
+            evidence.record('malformed', '{"access_token":"fixture-malformed-secret",', raw_json=True)
+            for path in evidence.directory.iterdir():
+                value = path.read_text()
+                for secret in ('fixture-new-secret', 'fixture-user', 'fixture-password', 'fixture-malformed-secret'):
+                    self.assertNotIn(secret, value)
+            manifest = json.loads((evidence.directory / 'manifest.json').read_text())
+            self.assertFalse(manifest['artifacts']['malformed']['exact_transport_text'])
+            self.assertFalse(manifest['artifacts']['malformed']['source_json_valid'])
 
     def test_command_defaults_offline_without_touching_credentials_or_article(self):
         before = self.article.read_bytes()
@@ -185,6 +246,57 @@ class TitleCommandTests(unittest.TestCase):
         self.assertNotIn('media_id', summary)
         self.assertEqual(self.article.read_bytes(), before)
 
+    def test_live_command_saves_exact_transport_and_field_differences_privately(self):
+        import json
+        import stat
+        from unittest.mock import patch
+        original = copy.deepcopy(self.remote)
+        original['url'] = 'https://mp.weixin.qq.com/s?tempkey=test-only'
+        self.remote = copy.deepcopy(original)
+        def backend(request, timeout):
+            payload = json.loads(request.data)
+            class Response:
+                def __enter__(self): return self
+                def __exit__(self, *args): pass
+                def read(inner):
+                    if '/draft/get?' in request.full_url:
+                        return json.dumps({'news_item': [{'title': 'Other'}, self.remote]}).encode()
+                    self.writes.append(copy.deepcopy(payload))
+                    self.remote.update(payload['articles'])
+                    self.remote['content'] += ' '
+                    self.remote['cover_info']['crop'] = 'platform-changed'
+                    return b'{"errcode":0}'
+            return Response()
+        with patch.object(self.tool, 'urlopen', side_effect=backend):
+            import contextlib, io
+            output = io.StringIO()
+            with patch.object(self.tool, 'WECHAT_ROOT', self.workspace / 'wechat'), \
+                 patch.object(self.tool, 'fetch_access_token', return_value={'access_token': 'test-only'}), \
+                 contextlib.redirect_stdout(output):
+                code = self.tool.main(['update-title', '--publication-ref', 'ref-example', '--live'])
+        summary = json.loads(output.getvalue())
+        self.assertEqual(code, 1)
+        self.assertEqual(summary['outcome'], 'verification_failed')
+        self.assertTrue(summary['write_acknowledged'])
+        self.assertTrue(summary['evidence_complete'])
+        folder = self.local / 'title-updates' / summary['receipt_id']
+        manifest = json.loads((folder / 'manifest.json').read_text())
+        request = json.loads((folder / 'update-request.json').read_text())
+        self.assertEqual(request['articles']['content'], original['content'])
+        self.assertEqual(request, self.writes[0])
+        self.assertEqual(json.loads((folder / 'read-2-response.json').read_text())['news_item'][1]['content'], original['content'])
+        self.assertEqual(json.loads((folder / 'read-3-response.json').read_text())['news_item'][1]['content'], original['content'] + ' ')
+        changes = json.loads((folder / 'postwrite-differences.json').read_text())['differences']
+        self.assertIn('/content', [d['path'] for d in changes])
+        self.assertIn('/cover_info/crop', [d['path'] for d in changes])
+        self.assertTrue(any(d['category'] == 'cover_crop' for d in changes))
+        self.assertTrue(manifest['artifacts'])
+        for artifact in folder.iterdir():
+            self.assertEqual(stat.S_IMODE(artifact.stat().st_mode), 0o600)
+            self.assertNotIn('test-only', artifact.read_text())
+        self.assertEqual(stat.S_IMODE(folder.stat().st_mode), 0o700)
+        self.assertNotIn('Latest backend edit', output.getvalue())
+
     def test_live_command_preserves_the_bound_nonzero_article(self):
         original = copy.deepcopy(self.remote)
         before = self.article.read_bytes()
@@ -192,6 +304,8 @@ class TitleCommandTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertTrue(summary['title_verified'])
         self.assertTrue(summary['non_title_unchanged'])
+        self.assertTrue(summary['write_attempted'])
+        self.assertTrue(summary['write_acknowledged'])
         self.assertEqual(len(self.writes), 1)
         self.assertEqual({k:v for k,v in self.remote.items() if k != 'title'},
                          {k:v for k,v in original.items() if k != 'title'})
@@ -208,6 +322,44 @@ class TitleCommandTests(unittest.TestCase):
             self.assertEqual(summary['configuration_error'], expected)
             self.assertEqual(summary['outcome'], 'not_attempted')
             self.assertFalse(summary['write_attempted'])
+
+    def test_failed_request_snapshot_prevents_write_and_failed_ack_snapshot_never_retries(self):
+        from unittest.mock import patch
+        from woeai.wechat.title_evidence import PrivateTitleEvidence
+        record = PrivateTitleEvidence.record
+        for stage, outcome, count in [('update-request', 'not_attempted', 0),
+                                      ('update-response', 'verification_failed', 1)]:
+            self.writes.clear()
+            self.remote['title'] = '混凝土浮体 | Same question?'
+            def fail(evidence, name, value, **kwargs):
+                if name == stage: raise OSError('fixture disk failure')
+                return record(evidence, name, value, **kwargs)
+            with self.subTest(stage=stage), patch.object(PrivateTitleEvidence, 'record', new=fail):
+                code, summary = self.invoke('--live', api=self.backend())
+            self.assertEqual(code, 1)
+            self.assertEqual(summary['outcome'], outcome)
+            self.assertEqual(len(self.writes), count)
+            self.assertFalse(summary['evidence_complete'])
+
+    def test_other_article_change_is_explained_and_stops_after_one_write(self):
+        def api(url, token, payload, *, observer=None):
+            import json
+            observer('request', json.dumps(payload)); observer('sending', None)
+            if url == self.tool.DRAFT_UPDATE_URL:
+                self.writes.append(copy.deepcopy(payload))
+                self.remote.update(payload['articles'])
+                result = {'errcode': 0}
+            else:
+                result = {'news_item': [{'title': 'Changed other article' if self.writes else 'Other'}, copy.deepcopy(self.remote)]}
+            observer('response', json.dumps(result)); return result
+        import json
+        code, summary = self.invoke('--live', api=api)
+        self.assertEqual(code, 1)
+        self.assertEqual(summary['reason'], 'other_articles_readback_changed')
+        self.assertEqual(summary['outcome'], 'verification_failed')
+        self.assertEqual(len(self.writes), 1)
+        path = self.local / 'title-updates' / summary['receipt_id'] / 'other-articles-3-differences.json'
+        self.assertFalse(json.loads(path.read_text())['all_protected_equal'])
 
     def test_missing_mapping_never_creates_a_replacement(self):
         self.set_mapping(None)

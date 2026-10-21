@@ -37,7 +37,7 @@ class RTDHomepageProjectsRedesignTests(unittest.TestCase):
         self.assertIn('<strong>实验室负责人 李朝</strong> 教授 · 博士生导师', index)
         self.assertNotIn('课题组', index)
         self.assertIn('风与海洋工程人工智能实验室', index)
-        self.assertIn('<span class="en">WOEAI LAB</span>', index)
+        self.assertNotIn('<span class="en">WOEAI LAB</span>', index)
         self.assertNotIn('id="profile-name">李朝', index)
         self.assertNotIn('paper-record-slot', index)
         self.assertEqual(index.count('class="paper-citation"'), 6)

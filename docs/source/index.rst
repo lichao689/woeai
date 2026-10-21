@@ -4,7 +4,7 @@
 
    <section class="home-hero" aria-labelledby="profile-name">
     <div class="hero-copy">
-     <p class="eyebrow"><span class="cn">风与海洋工程人工智能实验室</span><span class="en">WOEAI LAB</span></p>
+     <p class="eyebrow"><span class="cn">风与海洋工程人工智能实验室</span></p>
      <h1 id="profile-name">AI 赋能<span class="hero-title-subject">风与海洋工程</span></h1>
      <h2 class="hero-position">融合物理规律与人工智能<br>揭示风与海洋环境作用机理<br>探索建筑与能源结构设计</h2>
      <p class="hero-intro">WOEAI 实验室是围绕结构风工程与海洋能源结构开展工作的研究团队，结合数值模拟、物理试验和 AI 方法，研究环境荷载、结构响应与工程优化。</p>
@@ -20,17 +20,17 @@
 .. raw:: html
 
    <section id="research-lines" class="home-section" aria-labelledby="research-heading">
-    <div class="section-heading"><div><p class="eyebrow">RESEARCH DIRECTIONS</p><h2 id="research-heading">两条研究主线</h2></div><a class="text-link" href="Research.html">研究脉络与项目 <span aria-hidden="true">↗</span></a></div>
+    <div class="section-heading"><div><h2 id="research-heading">两条研究主线</h2></div><a class="text-link" href="Research.html">研究脉络与项目 <span aria-hidden="true">↗</span></a></div>
     <div class="direction-grid">
-     <article class="direction-card"><div class="direction-body"><p class="card-index">01 / STRUCTURAL WIND ENGINEERING</p><h3>结构风工程</h3><p>从城市与复杂地形风场出发，研究风荷载、结构响应、气动优化与减振控制。</p><ul class="direction-tags"><li>数值风洞</li><li>结构抗风</li></ul><p class="direction-method"><strong>AI 方法与工程价值</strong> 图神经网络结合结构连接关系、构件参数与荷载预测高层建筑响应，支持结构方案的高效比较。<a href="paper-notes/ref-tang2025-JBE.html">研究证据 →</a></p><a class="text-link" href="Research.html#research-direction-structural-wind">探索结构风工程 <span aria-hidden="true">→</span></a></div></article>
-     <article class="direction-card"><div class="direction-body"><p class="card-index">02 / MARINE ENERGY STRUCTURES</p><h3>海洋能源结构</h3><p>当前聚焦浮式风电，连接风机、平台、系泊与海洋环境，研究耦合动力响应、平台结构设计和系统优化。</p><ul class="direction-tags"><li>一体化分析</li><li>混凝土浮体</li><li>数值水池</li></ul><p class="direction-method"><strong>数据驱动方法与工程价值</strong> Kriging 代理模型结合多目标优化，减少长期风浪响应的重复计算，用于比较平台成本与疲劳性能的取舍。<a href="paper-notes/ref-zhou2023-AE.html">研究证据 →</a></p><a class="text-link" href="Research.html#research-direction-floating-wind">探索海洋能源结构 <span aria-hidden="true">→</span></a></div></article>
+     <article class="direction-card"><div class="direction-body"><p class="card-index">01</p><h3>结构风工程</h3><p>从城市与复杂地形风场出发，研究风荷载、结构响应、气动优化与减振控制。</p><ul class="direction-tags"><li>数值风洞</li><li>结构抗风</li></ul><p class="direction-method"><strong>AI 方法与工程价值</strong> 图神经网络结合结构连接关系、构件参数与荷载预测高层建筑响应，支持结构方案的高效比较。<a href="paper-notes/ref-tang2025-JBE.html">研究证据 →</a></p><a class="text-link" href="Research.html#research-direction-structural-wind">探索结构风工程 <span aria-hidden="true">→</span></a></div></article>
+     <article class="direction-card"><div class="direction-body"><p class="card-index">02</p><h3>海洋能源结构</h3><p>当前聚焦浮式风电，连接风机、平台、系泊与海洋环境，研究耦合动力响应、平台结构设计和系统优化。</p><ul class="direction-tags"><li>一体化分析</li><li>混凝土浮体</li><li>数值水池</li></ul><p class="direction-method"><strong>数据驱动方法与工程价值</strong> Kriging 代理模型结合多目标优化，减少长期风浪响应的重复计算，用于比较平台成本与疲劳性能的取舍。<a href="paper-notes/ref-zhou2023-AE.html">研究证据 →</a></p><a class="text-link" href="Research.html#research-direction-floating-wind">探索海洋能源结构 <span aria-hidden="true">→</span></a></div></article>
     </div>
     <div class="method-strip"><strong>横向方法支撑 / AI + 工程验证</strong><p>图神经网络、智能几何建模、超分辨率重建与代理模型，与理论分析、数值模拟和物理试验相结合。</p></div>
    </section>
 
 .. raw:: html
 
-   <section id="selected-work" class="home-section" aria-labelledby="progress-heading"><span id="latest-progress"></span><div class="section-heading"><div><p class="eyebrow">LATEST ACADEMIC PROGRESS</p><h2 id="progress-heading">近期学术进展</h2></div><a class="text-link" href="PublicationsByYear.html">按年份浏览全部论文 ↗</a></div><p class="section-intro">从已完成公众号解读的候选论文中，两个研究方向各按发表日期倒序展示最多三篇；同日沿用论文库顺序。原论文作者与来源保持不变，论文解读与原始研究相区分。</p>
+   <section id="selected-work" class="home-section" aria-labelledby="progress-heading"><span id="latest-progress"></span><div class="section-heading"><div><h2 id="progress-heading">近期学术进展</h2></div><a class="text-link" href="PublicationsByYear.html">按年份浏览全部论文 ↗</a></div><p class="section-intro">从已完成公众号解读的候选论文中，两个研究方向各按发表日期倒序展示最多三篇；同日沿用论文库顺序。原论文作者与来源保持不变，论文解读与原始研究相区分。</p>
 
 .. BEGIN GENERATED LATEST PAPER NOTES
 
@@ -98,7 +98,7 @@
 .. raw:: html
 
    <section id="applications" class="home-section applications" aria-labelledby="applications-heading">
-    <div class="section-heading"><div><p class="eyebrow">ENGINEERING APPLICATIONS</p><h2 id="applications-heading">研究连接哪些工程问题</h2></div><a class="text-link" href="EngineeringApplications.html">应用场景与项目证据 <span aria-hidden="true">↗</span></a></div>
+    <div class="section-heading"><div><h2 id="applications-heading">研究连接哪些工程问题</h2></div><a class="text-link" href="EngineeringApplications.html">应用场景与项目证据 <span aria-hidden="true">↗</span></a></div>
     <div class="application-grid">
      <article><span class="application-number">01</span><h3>浮式风机与平台设计</h3><p>系统分析与优化、混凝土浮式基础方案，以及风浪联合模型试验。</p><a href="Research.html#floating-wind-project-support">浮式风机项目记录 →</a></article>
      <article><span class="application-number">02</span><h3>结构风荷载与风振</h3><p>高层建筑风致响应、气动外形优化，以及风洞试验与风振分析。</p><a href="EngineeringApplications.html#engineering-enterprise-project-evidence">公开项目证据 →</a></article>
@@ -109,7 +109,7 @@
 .. raw:: html
 
    <section id="join-contact" class="home-section contact-section" aria-labelledby="contact-heading">
-    <div class="contact-copy"><p class="eyebrow">CONNECT & COLLABORATE</p><h2 id="contact-heading">交流与合作</h2><p>欢迎有志于风工程、海洋工程与 AI 工程方法研究的学生和青年研究人员加入实验室交流。也欢迎围绕具体工程问题开展研究合作与技术讨论。</p><div class="contact-paths"><a class="home-button primary" href="Recruitment.html">加入团队 <span aria-hidden="true">→</span></a><a class="home-button secondary" href="EngineeringApplications.html#discuss-an-engineering-problem">工程合作 <span aria-hidden="true">→</span></a></div></div>
+    <div class="contact-copy"><h2 id="contact-heading">交流与合作</h2><p>欢迎有志于风工程、海洋工程与 AI 工程方法研究的学生和青年研究人员加入实验室交流。也欢迎围绕具体工程问题开展研究合作与技术讨论。</p><div class="contact-paths"><a class="home-button primary" href="Recruitment.html">加入团队 <span aria-hidden="true">→</span></a><a class="home-button secondary" href="EngineeringApplications.html#discuss-an-engineering-problem">工程合作 <span aria-hidden="true">→</span></a></div></div>
     <div class="contact-details"><a class="contact-email" href="mailto:lichaosz@qq.com">lichaosz@qq.com <span aria-hidden="true">↗</span></a><p>申请咨询请简述教育背景、研究兴趣及申请类型。<br>工程交流请说明应用场景、问题与可公开程度。</p><div class="contact-channels"><figure><img src="_static/lcWeChatMatrixCode01.png" width="116" height="116" loading="lazy" alt="李朝的公开微信联系二维码"><figcaption>微信联系</figcaption></figure><div><a href="https://homepage.hit.edu.cn/lichao">官方个人主页 ↗</a><a href="https://winddee.cn">winddee.cn ↗</a><a href="About.html">关于本站与隐私说明 →</a></div></div></div>
    </section>
 

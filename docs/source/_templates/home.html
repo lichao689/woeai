@@ -16,7 +16,7 @@
   {% include 'brand-header.html' %}
   <main id="main-content" class="home-main" tabindex="-1">{% block home_body %}{{ body }}{% endblock %}</main>
   <footer class="home-footer">
-    <div><a class="footer-brand" href="{{ pathto(site_home) }}">WOEAI</a><p>Wind and Ocean Engineering with AI Laboratory</p></div>
+    <div><a class="footer-brand" href="{{ pathto(site_home) }}">WOEAI</a><p>{{ 'Wind and Ocean Engineering with AI Laboratory' if is_english else '风与海洋工程人工智能实验室' }}</p></div>
     <p>{{ 'WOEAI Lab website for academic and engineering exchange. It does not represent an institution.' if is_english else '本站用于学术成果展示与工程应用交流，<br>不代表任何组织或机构的官方立场。'|safe }}</p>
     <div><a href="{{ pathto('About') }}">{{ 'About & privacy (Chinese)' if is_english else '本站说明与隐私' }}</a><p>© {{ copyright|e }} · Sphinx / Read the Docs</p></div>
   </footer>

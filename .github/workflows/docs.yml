@@ -40,3 +40,13 @@ jobs:
           node --test tests/browser/citation-check.test.cjs
           node tests/browser/check-paper-citations.cjs /tmp/woeai-sphinx-html
           node tests/browser/check-navigation.cjs /tmp/woeai-sphinx-html
+          node tests/browser/check-anchor-flows.cjs /tmp/woeai-sphinx-html
+          node tests/browser/check-anchor-navigation.cjs /tmp/woeai-sphinx-html /tmp/woeai-anchor-audit.json
+
+      - name: Save complete anchor coverage ledger
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: anchor-navigation-audit
+          path: /tmp/woeai-anchor-audit*.json
+          if-no-files-found: warn

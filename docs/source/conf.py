@@ -6,7 +6,7 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.21-1220'
+release = '2026.10.21-1433'
 version = '2026.10.21'
 
 # -- SEO Meta Tags
@@ -40,7 +40,7 @@ html_theme = 'sphinx_rtd_theme'
 # Add custom CSS file
 html_static_path = ['../_static']
 html_css_files = ['custom.css']
-html_js_files = ['doi-new-tab.js', 'site-navigation.js']
+html_js_files = ['doi-new-tab.js', 'site-navigation.js', 'anchor-navigation.js']
 
 # -- MathJax: vendored instead of an overseas CDN -------------------------
 # 42 of 44 paper-note pages render LaTeX with MathJax. The Sphinx default

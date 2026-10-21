@@ -26,7 +26,7 @@
 {% block menu %}
 {% if is_english %}
 <ul>{% for page,label in [('en/Research','Research'),('en/Publications','Publications'),('en/JoinUs','Join Us'),('en/Search','Search')] %}<li class="toctree-l1{% if pagename == page %} current{% endif %}"><a class="reference internal" href="{{ pathto(page) }}">{{ label }}</a></li>{% endfor %}</ul>
-<p class="caption"><span class="caption-text">Research highlights</span></p>
-<ul>{% for item in english_highlights %}<li class="toctree-l1"><a class="reference internal" href="{{ pathto('en/highlights/' ~ item.ref) }}">{{ item.heading }}</a></li>{% endfor %}</ul>
+<p class="caption" id="research-highlights-navigation"><span class="caption-text">Research highlights</span></p>
+<ul role="group" aria-labelledby="research-highlights-navigation">{% for item in english_highlights %}<li class="toctree-l2"><a class="reference internal" href="{{ pathto('en/highlights/' ~ item.ref) }}">{{ item.heading }}</a></li>{% endfor %}</ul>
 {% else %}{{ super() }}{% endif %}
 {% endblock %}

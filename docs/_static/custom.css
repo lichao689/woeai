@@ -166,6 +166,7 @@
     --home-line: #d8e0df;
     --site-font: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
     --site-header-height: 104px;
+    --anchor-gap: 22px;
 }
 
 /* Homepage content keeps its own display layout. */
@@ -329,6 +330,10 @@
 }
 @media (prefers-reduced-motion: reduce) { .woeai-home-page a { transition: none; } }
 
+/* RTD's body/html overflow:hidden creates a false scroll container for sticky
+   elements. clip preserves horizontal containment without changing that root. */
+html, body { overflow-x: clip; }
+
 /* Shared site navigation, independent of the RTD document body. */
 .site-header {
     position: sticky; top: 0; z-index: 60;
@@ -348,7 +353,7 @@
 .site-mobile-navigation { display: none; }
 .site-skip { position: fixed; top: -100px; left: 24px; z-index: 80; padding: 10px 18px; background: white; color: var(--home-blue); }
 .site-skip:focus { top: 12px; }
-.woeai-home-page [id] { scroll-margin-top: calc(var(--site-header-height) + 20px); }
+.woeai-home-page [id] { scroll-margin-top: calc(var(--site-header-height) + var(--anchor-gap)); }
 
 /* RTD reader shell: retain nested sidebar, breadcrumbs, search and article. */
 body.wy-body-for-nav { background: var(--home-paper); color: var(--home-ink); font-family: var(--site-font); }
@@ -364,15 +369,20 @@ body.wy-body-for-nav { background: var(--home-paper); color: var(--home-ink); fo
 .wy-body-for-nav .wy-menu-vertical a:hover { background: #eaf0ef; color: var(--home-blue); }
 .wy-body-for-nav .wy-menu-vertical li.current > a, .wy-body-for-nav .wy-menu-vertical li.current li.current > a { background: #e4eeed; color: var(--home-blue); border: 0; }
 .wy-body-for-nav .wy-menu-vertical li.current, .wy-body-for-nav .wy-menu-vertical li.current ul { background: transparent; }
-.wy-body-for-nav .wy-menu-vertical li.toctree-l1 > a { font-weight: 550; }
-/* Override RTD's more specific depth colors/padding without copying its tree. */
-.wy-body-for-nav .wy-menu-vertical li a { background: transparent !important; }
+/* Levels come from the Sphinx tree/group, independently of current selection. */
+.wy-body-for-nav .wy-menu-vertical li.toctree-l1 { --toc-indent: 30px; }
+.wy-body-for-nav .wy-menu-vertical li.toctree-l2 { --toc-indent: 46px; }
+.wy-body-for-nav .wy-menu-vertical li.toctree-l3 { --toc-indent: 60px; }
+.wy-body-for-nav .wy-menu-vertical li.toctree-l4 { --toc-indent: 72px; }
+.wy-body-for-nav .wy-menu-vertical li a { position: relative; padding-left: var(--toc-indent, 30px) !important; background: transparent !important; }
+.wy-body-for-nav .wy-menu-vertical li.toctree-l1 > a { font-size: 14px; font-weight: 650; }
+.wy-body-for-nav .wy-menu-vertical li.toctree-l2 > a { font-size: 13px; font-weight: 500; }
+.wy-body-for-nav .wy-menu-vertical li.toctree-l3 > a,
+.wy-body-for-nav .wy-menu-vertical li.toctree-l4 > a { font-size: 12.5px; font-weight: 450; }
 .wy-body-for-nav .wy-menu-vertical li.current > a { background: #e4eeed !important; }
 .wy-body-for-nav .wy-menu-vertical li a:hover { background: #eaf0ef !important; }
-.wy-body-for-nav .wy-menu-vertical li.toctree-l2 > a { padding-left: 22px !important; }
-.wy-body-for-nav .wy-menu-vertical li.toctree-l3 > a { padding-left: 32px !important; }
-.wy-body-for-nav .wy-menu-vertical li.toctree-l4 > a { padding-left: 42px !important; }
-.wy-body-for-nav .wy-menu-vertical button.toctree-expand { color: var(--home-blue); }
+.wy-body-for-nav .wy-menu-vertical button.toctree-expand { position: absolute; left: calc(var(--toc-indent, 30px) - 27px); top: 7px; width: 24px; min-height: 28px; margin: 0; color: var(--home-blue); }
+.wy-body-for-nav .wy-menu-vertical .caption { color: var(--home-muted); font-size: 14px; font-weight: 650; padding-left: 30px; }
 .wy-body-for-nav .wy-nav-content-wrap { margin-left: 0; background: transparent; min-width: 0; min-height: 0; }
 .wy-body-for-nav .wy-nav-content { max-width: 900px !important; padding: 32px 40px 72px; margin: 0 auto; background: transparent; }
 .wy-body-for-nav .rst-content, .wy-body-for-nav .rst-content h1, .wy-body-for-nav .rst-content h2, .wy-body-for-nav .rst-content h3, .wy-body-for-nav .rst-content h4, .wy-body-for-nav .rst-content .btn { font-family: var(--site-font); }
@@ -385,7 +395,7 @@ body.wy-body-for-nav { background: var(--home-paper); color: var(--home-ink); fo
 .wy-body-for-nav .rst-content a:visited { color: #365e70; }
 .wy-body-for-nav .rst-content a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .wy-body-for-nav a:focus-visible, .wy-body-for-nav button:focus-visible, .wy-body-for-nav input:focus-visible { outline: 3px solid #167e9f; outline-offset: 3px; }
-.wy-body-for-nav .rst-content [id] { scroll-margin-top: calc(var(--site-header-height) + 22px); }
+.wy-body-for-nav .rst-content [id] { scroll-margin-top: calc(var(--site-header-height) + var(--anchor-gap)); }
 .wy-body-for-nav .rst-content .wy-breadcrumbs { font-size: 12px; color: var(--home-muted); padding-bottom: 0; margin: 0 0 16px; }
 .wy-body-for-nav .rst-content footer { color: var(--home-muted); font-size: 13px; }
 .wy-body-for-nav .rst-content footer p { font-size: 12px; overflow-wrap: anywhere; }
@@ -428,7 +438,7 @@ body.wy-body-for-nav { background: var(--home-paper); color: var(--home-ink); fo
     .wy-body-for-nav .rst-content h1 { font-size: 27px; line-height: 1.6; margin-top: 20px; }
     .wy-body-for-nav .rst-content h2 { font-size: 23px; line-height: 1.6; }
     .wy-body-for-nav .rst-content h3 { font-size: 19px; }
-    .wy-body-for-nav .rst-content [id] { scroll-margin-top: calc(var(--site-header-height) + 70px); }
+    .wy-body-for-nav .rst-content [id] { scroll-margin-top: calc(var(--site-header-height) + 50px + var(--anchor-gap)); }
     .wy-body-for-nav .reader-backdrop:not([hidden]) { display: block; position: fixed; inset: calc(var(--site-header-height) + 50px) 0 0; z-index: 48; width: 100%; border: 0; border-radius: 0; background: #152d3b24; }
 }
 

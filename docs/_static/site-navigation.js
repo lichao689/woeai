@@ -19,7 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (backdrop) backdrop.hidden = !open;
         if (open) {
             if (siteMenu) siteMenu.open = false;
-            if (!sidebar.contains(document.activeElement)) sidebar.querySelector('input')?.focus();
+            if (!sidebar.contains(document.activeElement)) {
+                // Hosted RTD opens its search dialog when this input receives
+                // focus. Opening contents should start at the current link.
+                const initial = sidebar.querySelector('.wy-menu-vertical a.current, .wy-menu-vertical li.current > a')
+                    || sidebar.querySelector('.reader-home-link');
+                initial?.focus({preventScroll: true});
+                if (initial?.closest('.wy-menu-vertical')) initial.scrollIntoView();
+            }
         } else if (sidebar.contains(document.activeElement)) {
             toggle.focus();
         }
@@ -34,7 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     siteMenu?.addEventListener('toggle', () => { if (siteMenu.open) closeReader(); });
     document.addEventListener('click', event => {
-        if (siteMenu?.open && !siteMenu.contains(event.target)) siteMenu.open = false;
+        const link = event.target.closest('a[href]');
+        if (siteMenu?.open && (!siteMenu.contains(event.target) || link)) siteMenu.open = false;
+        if (link?.closest('.wy-menu-vertical')) closeReader();
     });
     document.addEventListener('keydown', event => {
         if (event.key === 'Escape') {

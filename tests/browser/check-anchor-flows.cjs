@@ -9,6 +9,13 @@ async function expectPosition(page,fragment,headingText){
   await frames(page);const measure=await geometry(page,{fragment,headingIndex});
   assert.ok(measure.error<=3&&Math.abs(measure.headerTop)<=1,JSON.stringify(measure));return measure;
 }
+async function expectTopicTop(page){
+  assert.ok(page.url().endsWith('/StructuralWindEngineering.html'),'topic entry has no fragment');
+  assert.equal(await page.evaluate(()=>scrollY),0,'new document opens at its natural top');
+  assert.ok(await page.locator('.document h1').isVisible(),'topic identity is visible');
+  assert.match(await page.locator('.document h1').textContent(),/结构风工程/);
+  return {passed:true,scrollY:0};
+}
 async function main(){
  const root=path.resolve(process.argv[2]||'/tmp/woeai-sphinx-html'),results=[];
  const server=http.createServer((q,s)=>{const f=path.resolve(root,'.'+new URL(q.url,'http://local').pathname);if(path.relative(root,f).startsWith('..')){s.writeHead(403).end();return;}
@@ -19,10 +26,10 @@ async function main(){
   const page=await browser.newPage({viewport:{width,height:900}});
   await page.goto(origin+'/index.html');await settle(page);
   await page.locator('.direction-card a[href="StructuralWindEngineering.html"]').click();await settle(page);
-  results.push({width,case:'cross-page-card',...await expectPosition(page,'research-direction-structural-wind','结构风工程')});
+  results.push({width,case:'cross-page-card',...await expectTopicTop(page)});
   await page.goto(origin+'/Research.html#research-direction-structural-wind');
   await page.waitForURL('**/StructuralWindEngineering.html');await settle(page);
-  results.push({width,case:'legacy-cross-page-alias',...await expectPosition(page,'research-direction-structural-wind','结构风工程')});
+  results.push({width,case:'legacy-cross-page-alias',...await expectTopicTop(page)});
   await page.goto(origin+'/Research.html#id2');
   await page.waitForURL('**/StructuralWindEngineering.html#structural-wind-resistance');await settle(page);
   await page.reload();await settle(page);results.push({width,case:'refresh-with-hash',...await expectPosition(page,'structural-wind-resistance','2 结构抗风')});

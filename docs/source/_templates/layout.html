@@ -1,6 +1,7 @@
 {# Extend the RTD shell: leave document rendering and its nested toctree intact. #}
 {% extends '!layout.html' %}
 {% block extrabody %}
+  <span class="page-kind-marker" data-page="{{ pagename }}" hidden></span>
   <a class="site-skip" href="#reader-main">{{ 'Skip to content' if is_english else '跳到主要内容' }}</a>
   {% include 'brand-header.html' %}
   <button class="reader-backdrop" type="button" aria-label="{{ 'Close contents' if is_english else '关闭阅读目录' }}" hidden></button>

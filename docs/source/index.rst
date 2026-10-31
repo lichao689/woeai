@@ -8,7 +8,7 @@
      <h1 id="profile-name">AI 赋能<span class="hero-title-subject">风与海洋工程</span></h1>
      <h2 class="hero-position">融合物理规律与人工智能<br>揭示风与海洋环境作用机理<br>探索建筑与能源结构设计</h2>
      <p class="hero-intro">WOEAI 实验室是围绕结构风工程与海洋能源结构开展工作的研究团队，结合数值模拟、物理试验和 AI 方法，研究环境荷载、结构响应与工程优化。</p>
-     <div class="hero-actions"><a class="home-button primary" href="#selected-work">近期学术进展 <span aria-hidden="true">↗</span></a><a class="home-button secondary" href="#research-lines">研究方向</a><a class="text-link" href="#join-contact">交流与合作 <span aria-hidden="true">→</span></a></div>
+     <div class="hero-actions"><a class="home-button primary" href="#research-lines">探索研究方向 <span aria-hidden="true">→</span></a><a class="home-button secondary" href="#join-contact">交流与合作</a></div>
      <div class="group-lead"><p><strong>实验室负责人 李朝</strong> 教授 · 博士生导师</p><a class="profile-link" href="https://homepage.hit.edu.cn/lichao">负责人官方主页 <span aria-hidden="true">↗</span></a></div>
     </div>
     <div class="english-hero-diagram" aria-label="风与海洋工程科研概念示意">
@@ -100,9 +100,9 @@
    <section id="applications" class="home-section applications" aria-labelledby="applications-heading">
     <div class="section-heading"><div><h2 id="applications-heading">研究连接哪些工程问题</h2></div><a class="text-link" href="EngineeringApplications.html">应用场景与项目证据 <span aria-hidden="true">↗</span></a></div>
     <div class="application-grid">
-     <article><span class="application-number">01</span><h3>浮式风机与平台设计</h3><p>系统分析与优化、混凝土浮式基础方案，以及风浪联合模型试验。</p><a href="MarineEnergyStructures.html#floating-wind-project-support">浮式风机项目记录 →</a></article>
-     <article><span class="application-number">02</span><h3>结构风荷载与风振</h3><p>高层建筑风致响应、气动外形优化，以及风洞试验与风振分析。</p><a href="EngineeringApplications.html#engineering-enterprise-project-evidence">公开项目证据 →</a></article>
-     <article><span class="application-number">03</span><h3>城市与场址风环境</h3><p>城市微尺度风场、复杂地形与工程场址风环境评估。</p><a href="StructuralWindEngineering.html#building-wind-project-support">数值风洞项目记录 →</a></article>
+     <article><h3>浮式风机与平台设计</h3><p>系统分析与优化、混凝土浮式基础方案，以及风浪联合模型试验。</p><a href="MarineEnergyStructures.html#floating-wind-project-support">浮式风机项目记录 →</a></article>
+     <article><h3>结构风荷载与风振</h3><p>高层建筑风致响应、气动外形优化，以及风洞试验与风振分析。</p><a href="EngineeringApplications.html#engineering-enterprise-project-evidence">公开项目证据 →</a></article>
+     <article><h3>城市与场址风环境</h3><p>城市微尺度风场、复杂地形与工程场址风环境评估。</p><a href="StructuralWindEngineering.html#building-wind-project-support">数值风洞项目记录 →</a></article>
     </div>
    </section>
 

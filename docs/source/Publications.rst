@@ -7,6 +7,10 @@
 
    :doc:`按年份倒序浏览学术成果 <PublicationsByYear>`：按发表年份倒序浏览完整期刊论文清单。
 
+.. raw:: html
+
+   <div class="publication-browser-slot"></div>
+
 .. toctree::
    :hidden:
    :maxdepth: 1

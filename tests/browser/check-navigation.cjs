@@ -50,6 +50,7 @@ async function assertResearchStates(page, origin, width) {
     const link=menu.locator('.toctree-l2 > a').filter({hasText:new RegExp('^'+name+'$')});
     assert.ok(await link.isVisible());
     await link.click();
+    await page.waitForLoadState('domcontentloaded');
     assert.ok(page.url().endsWith('/'+doc+'.html'),'family opens its topic page');
     if(width<900)await toggle.click();
     assert.ok(await menu.getByRole('link',{name:child,exact:true}).isVisible(),'topic navigation reveals subdirection');
@@ -119,6 +120,50 @@ async function assertBodyNumbering(page, origin) {
   }
 }
 
+async function assertReaderPresentation(page, origin, width) {
+  for (const route of ['index.html', 'en/index.html']) {
+    await page.goto(origin + '/' + route);
+    const geometry = await page.evaluate(() => {
+      const hero = document.querySelector('.home-hero');
+      const visual = document.querySelector('.english-hero-diagram');
+      return {
+        columns: getComputedStyle(hero).gridTemplateColumns.split(' ').length,
+        heroWidth: hero.getBoundingClientRect().width,
+        visualWidth: visual.getBoundingClientRect().width,
+        overflow: document.documentElement.scrollWidth > innerWidth + 1,
+      };
+    });
+    assert.equal(geometry.overflow, false, route + ' has no horizontal overflow');
+    if (width < 900) {
+      assert.equal(geometry.columns, 1, route + ' mobile hero is one column');
+      assert.ok(geometry.visualWidth > geometry.heroWidth * .95, route + ' mobile visual is full width');
+    }
+  }
+  await page.goto(origin + '/Publications.html');
+  assert.equal(await page.locator('.pub-entry:visible').count(), 75, 'all Chinese records start visible');
+  await page.locator('#publication-query').fill('satellite');
+  const filtered = await page.locator('.pub-entry:visible').count();
+  assert.ok(filtered > 0 && filtered < 75, 'Chinese keyword filter reduces results');
+  await page.locator('.publication-filter-reset').click();
+  assert.equal(await page.locator('.pub-entry:visible').count(), 75, 'reset restores Chinese records');
+  await page.locator('#publication-notes-only').check();
+  assert.ok(await page.locator('.pub-entry:visible').count() > 0, 'reading-note filter has results');
+  await page.goto(origin + '/en/Publications.html');
+  assert.equal(await page.locator('.pub-entry:visible').count(), 75, 'all English records start visible');
+  await page.locator('#publication-query').fill('graph neural');
+  assert.ok(await page.locator('.pub-entry:visible').count() > 0, 'English keyword filter has results');
+  await page.goto(origin + '/paper-notes/ref-tang2025-JBE.html');
+  assert.equal(await page.locator('.paper-note-lead').count(), 1, 'paper cover and contents share the lead');
+  const contents = page.locator('.paper-note-lead .contents > ul');
+  if (width < 900) {
+    assert.equal(await contents.isHidden(), true, 'mobile paper contents starts collapsed');
+    await page.locator('.paper-contents-toggle').click();
+    assert.equal(await contents.isVisible(), true, 'mobile paper contents expands');
+  } else {
+    assert.equal(await contents.isVisible(), true, 'desktop paper contents stays visible');
+  }
+}
+
 async function main() {
   const outdir=path.resolve(process.argv[2] || '/tmp/woeai-sphinx-html');
   const types={'.html':'text/html; charset=utf-8','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml','.woff2':'font/woff2','.png':'image/png'};
@@ -167,13 +212,14 @@ async function main() {
         assert.equal(actual,title,'Research#'+fragment+' keeps its semantic destination');
       }
       await assertBodyNumbering(page,origin);
+      await assertReaderPresentation(page,origin,width);
       await page.goto(origin+'/en/Research.html');
       const english=await page.locator('.wy-menu-vertical a.reference').allTextContents();
       assert.deepEqual(english.slice(0,4),['Research','Publications','Join Us','Search']);
       assert.ok(english.length>4,'English highlights retained');
       assert.ok(await page.getByRole('heading',{name:/^1 AI across both fields/}).isVisible());
     }
-    console.log('PASS: Chinese sidebar raw labels; desktop/mobile default/collapse/expand/drawer; other Chinese menus; anchors; body H2/H3, exclusions and accessible prefixes; English sidebar.');
+    console.log('PASS: navigation, anchors, body numbering, bilingual home geometry, publication filters and paper-note contents at desktop/mobile widths.');
   } finally {if(browser)await browser.close();await new Promise(r=>server.close(r));}
 }
 if(require.main===module)main().catch(error=>{console.error(error);process.exitCode=1;});

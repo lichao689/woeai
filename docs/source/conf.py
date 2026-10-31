@@ -6,7 +6,7 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.31-1858'
+release = '2026.10.31-2103'
 version = '2026.10.31'
 
 # -- SEO Meta Tags
@@ -121,6 +121,13 @@ def _add_research_navigation_assets(app, pagename, templatename, context, doctre
         app.add_js_file('research-navigation.js', loading_method='defer')
 
 
+def _add_reader_presentation_assets(app, pagename, templatename, context, doctree):
+    if pagename in ('Publications', 'PublicationsByYear', 'en/Publications'):
+        app.add_js_file('publication-browser.js', loading_method='defer')
+    if pagename.startswith('paper-notes/'):
+        app.add_js_file('paper-note-reader.js', loading_method='defer')
+
+
 def setup(app):
     # Sphinx 9.0.4's Chinese search uses english-stemmer.js but emits the
     # nonexistent ChineseStemmer constructor. Register a matching constructor
@@ -134,6 +141,7 @@ def setup(app):
     app.connect('html-page-context', _add_publication_board_assets)
     app.connect('html-page-context', _select_home_template)
     app.connect('html-page-context', _add_research_navigation_assets)
+    app.connect('html-page-context', _add_reader_presentation_assets)
 
 # Local bilingual presentation, sharing the publication registry and site shell.
 import sys

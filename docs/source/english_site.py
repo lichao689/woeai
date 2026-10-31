@@ -46,8 +46,17 @@ def source_read(app, docname, source):
     if docname == "en/Publications":
         parts = []
         for row in rows:
-            parts.append(f".. _en-{row['ref']}:\n\n**{row['title']}**\n\n{row['authors']}. {row['journal']} ({row['year']}).\n\n{row['family']} / {row['topic']}. " +
-                         (f"`DOI <https://doi.org/{row['doi']}>`__" if row['doi'] else "") + "\n")
+            doi = f"`DOI <https://doi.org/{row['doi']}>`__" if row['doi'] else ""
+            parts.append(
+                f".. _en-{row['ref']}:\n\n"
+                ".. container:: pub-entry\n\n"
+                "   .. container:: pub-meta\n\n"
+                f"      {row['year']} · {row['family']} / {row['topic']}\n\n"
+                "   .. container:: pub-title\n\n"
+                f"      **{row['title']}**\n\n"
+                "   .. container:: pub-source\n\n"
+                f"      {row['authors']}. **{row['journal']}** ({row['year']}). {doi}\n"
+            )
         source[0] = source[0].replace(".. ENGLISH PUBLICATIONS", "\n".join(parts))
     elif docname.startswith("en/highlights/"):
         row = next(x for x in rows if x["ref"] == docname.rsplit("/", 1)[1])

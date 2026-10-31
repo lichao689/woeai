@@ -1,8 +1,6 @@
 :orphan:
 
 结构抗风 Structural Wind Resistance
-===================================
+==============================================================
 
-结构抗风内容现在并入 :ref:`research-direction-structural-wind`。公开一级方向使用 `结构风工程`。
-
-请阅读 :ref:`research-direction-structural-wind`。
+请阅读 :ref:`research-direction-structural-wind` 专题页，或返回 :doc:`研究方向总览 <Research>`。

@@ -61,5 +61,19 @@
     "id8": "2019",
     "earlier": "更早",
     "publications-by-year": "按年份倒序浏览学术成果"
+  },
+  "StructuralWindEngineering": {
+    "structural-wind-engineering": "结构风工程",
+    "numerical-wind-tunnel": "数值风洞",
+    "structural-wind-resistance": "结构抗风",
+    "research-project": "科研项目"
+  },
+  "MarineEnergyStructures": {
+    "marine-energy-structures": "海洋能源结构",
+    "floating-wind-integrated-analysis": "一体化分析",
+    "concrete-floating-structures": "混凝土浮体",
+    "numerical-wave-basin": "数值水池",
+    "floating-wind-figures": "图示资料",
+    "research-project": "科研项目"
   }
 }

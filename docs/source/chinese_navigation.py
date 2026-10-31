@@ -15,6 +15,12 @@ CHINESE_TITLES = {
         "科研项目 Research Project": "科研项目",
         "海洋能源结构 Marine Energy Structures": "海洋能源结构"
     },
+    "StructuralWindEngineering": {
+        "科研项目 Research Project": "科研项目"
+    },
+    "MarineEnergyStructures": {
+        "科研项目 Research Project": "科研项目"
+    },
     "EngineeringApplications": {
         "应用场景 Application Scenarios": "应用场景",
         "企业项目证据 Enterprise Project Evidence": "企业项目证据",

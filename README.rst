@@ -111,6 +111,8 @@ Key Paths
   and navigation.
 - ``docs/source/EngineeringApplications.rst``: engineering applications journey.
 - ``docs/source/Research.rst``: research overview and direction hub.
+- ``docs/source/StructuralWindEngineering.rst`` and
+  ``docs/source/MarineEnergyStructures.rst``: the two research topic pages.
 - ``docs/source/Publications.rst``: academic-output proof.
 - ``docs/source/Teaching.rst``: teaching and education proof.
 - ``docs/requirements.txt``: documentation build dependencies.

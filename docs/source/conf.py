@@ -6,8 +6,8 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.21-1433'
-version = '2026.10.21'
+release = '2026.10.31-1730'
+version = '2026.10.31'
 
 # -- SEO Meta Tags
 html_meta = {
@@ -114,6 +114,11 @@ def _select_home_template(app, pagename, templatename, context, doctree):
         return 'home.html'
 
 
+def _add_research_navigation_assets(app, pagename, templatename, context, doctree):
+    if pagename == 'Research':
+        app.add_js_file('research-navigation.js', loading_method='defer')
+
+
 def setup(app):
     # Sphinx 9.0.4's Chinese search uses english-stemmer.js but emits the
     # nonexistent ChineseStemmer constructor. Register a matching constructor
@@ -126,6 +131,7 @@ def setup(app):
     app.add_search_language(ChineseSearchWithEnglishStemmer)
     app.connect('html-page-context', _add_publication_board_assets)
     app.connect('html-page-context', _select_home_template)
+    app.connect('html-page-context', _add_research_navigation_assets)
 
 # Local bilingual presentation, sharing the publication registry and site shell.
 import sys

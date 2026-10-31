@@ -10,9 +10,8 @@ INDEX = SOURCE / "index.rst"
 CONF = SOURCE / "conf.py"
 PROJECTS = SOURCE / "Projects.rst"
 RESEARCH = SOURCE / "Research.rst"
-# The two former direction pages were first merged into a ResearchDirections
-# page, then inlined into Research.rst itself; their anchors and project
-# records now live directly in Research.rst.
+WIND_RESEARCH = SOURCE / "StructuralWindEngineering.rst"
+MARINE_RESEARCH = SOURCE / "MarineEnergyStructures.rst"
 ENGINEERING = SOURCE / "EngineeringApplications.rst"
 
 
@@ -99,20 +98,32 @@ class RTDHomepageProjectsRedesignTests(unittest.TestCase):
         self.assertIn("\n   学术成果 <Publications>\n", index)
 
     def test_project_evidence_migrated_to_receiving_pages(self) -> None:
-        research = read(RESEARCH)
+        wind = read(WIND_RESEARCH)
+        marine = read(MARINE_RESEARCH)
         engineering = read(ENGINEERING)
 
-        # Both direction anchors now live directly in Research.rst.
-        self.assertIn(".. _building-wind-project-support:", research)
-        self.assertIn(".. _floating-wind-project-support:", research)
+        # Cross-references now land on the corresponding topic page.
+        self.assertIn(".. _building-wind-project-support:", wind)
+        self.assertIn(".. _floating-wind-project-support:", marine)
         self.assertIn(".. _engineering-enterprise-project-evidence:", engineering)
 
-        self.assertIn("数值大气湍流边界层生成方法的改进与验证", research)
-        self.assertIn("考虑风致荷载及响应的高层建筑气动外形优化研究", research)
-        self.assertIn("面向多设计阶段的浮式风机系统一体化分析与优化方法", research)
-        self.assertIn("柱稳型海上浮式风机基础的关键技术开发", research)
+        self.assertIn("数值大气湍流边界层生成方法的改进与验证", wind)
+        self.assertIn("考虑风致荷载及响应的高层建筑气动外形优化研究", wind)
+        self.assertIn("面向多设计阶段的浮式风机系统一体化分析与优化方法", marine)
+        self.assertIn("柱稳型海上浮式风机基础的关键技术开发", marine)
         self.assertIn("微地形下输电线路微尺度台风风场特性及模型研究", engineering)
         self.assertIn("钢筋混凝土半潜式浮力风机系统的风浪联合模型试验研究", engineering)
+
+    def test_research_hub_nests_two_topic_pages_and_home_links_directly(self) -> None:
+        hub = read(RESEARCH)
+        self.assertIn("结构风工程 <StructuralWindEngineering>", hub)
+        self.assertIn("海洋能源结构 <MarineEnergyStructures>", hub)
+        self.assertNotIn("代表性证据包括", hub)
+        self.assertNotIn(".. figure::", hub)
+        for doc, label in [(WIND_RESEARCH, "research-direction-structural-wind"),
+                           (MARINE_RESEARCH, "research-direction-floating-wind")]:
+            self.assertIn(f".. _{label}:", read(doc))
+            self.assertIn(f'href="{doc.stem}.html"', read(INDEX))
 
     def test_legacy_projects_references_are_removed_from_public_sources(self) -> None:
         for filename, text in public_source_texts().items():

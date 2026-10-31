@@ -3,6 +3,8 @@
    the most common "looks unfinished" note in the page review. #}
 {% if is_english %}
 <ul class="wy-breadcrumbs"><li><a href="{{ pathto(site_home) }}">Home</a></li>{% for doc in parents %}{% if doc.link and not loop.first %}<li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>{% endif %}{% endfor %}</ul><hr>
+{% elif pagename in ['StructuralWindEngineering', 'MarineEnergyStructures'] %}
+<ul class="wy-breadcrumbs"><li><a href="{{ pathto(site_home) }}">首页</a></li><li><a href="{{ pathto('Research') }}">研究方向</a></li></ul><hr>
 {% else %}
 <ul class="wy-breadcrumbs"><li><a href="{{ pathto(site_home) }}">首页</a></li>{% for doc in parents %}{% if doc.link and not loop.first %}<li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>{% endif %}{% endfor %}</ul><hr>
 {% endif %}

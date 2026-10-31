@@ -22,8 +22,8 @@
    <section id="research-lines" class="home-section" aria-labelledby="research-heading">
     <div class="section-heading"><div><h2 id="research-heading">两条研究主线</h2></div><a class="text-link" href="Research.html">研究脉络与项目 <span aria-hidden="true">↗</span></a></div>
     <div class="direction-grid">
-     <article class="direction-card"><div class="direction-body"><p class="card-index">01</p><h3>结构风工程</h3><p>从城市与复杂地形风场出发，研究风荷载、结构响应、气动优化与减振控制。</p><ul class="direction-tags"><li>数值风洞</li><li>结构抗风</li></ul><p class="direction-method"><strong>AI 方法与工程价值</strong> 图神经网络结合结构连接关系、构件参数与荷载预测高层建筑响应，支持结构方案的高效比较。<a href="paper-notes/ref-tang2025-JBE.html">研究证据 →</a></p><a class="text-link" href="Research.html#research-direction-structural-wind">探索结构风工程 <span aria-hidden="true">→</span></a></div></article>
-     <article class="direction-card"><div class="direction-body"><p class="card-index">02</p><h3>海洋能源结构</h3><p>当前聚焦浮式风电，连接风机、平台、系泊与海洋环境，研究耦合动力响应、平台结构设计和系统优化。</p><ul class="direction-tags"><li>一体化分析</li><li>混凝土浮体</li><li>数值水池</li></ul><p class="direction-method"><strong>数据驱动方法与工程价值</strong> Kriging 代理模型结合多目标优化，减少长期风浪响应的重复计算，用于比较平台成本与疲劳性能的取舍。<a href="paper-notes/ref-zhou2023-AE.html">研究证据 →</a></p><a class="text-link" href="Research.html#research-direction-floating-wind">探索海洋能源结构 <span aria-hidden="true">→</span></a></div></article>
+     <article class="direction-card"><div class="direction-body"><p class="card-index">01</p><h3>结构风工程</h3><p>从城市与复杂地形风场出发，研究风荷载、结构响应、气动优化与减振控制。</p><ul class="direction-tags"><li>数值风洞</li><li>结构抗风</li></ul><p class="direction-method"><strong>AI 方法与工程价值</strong> 图神经网络结合结构连接关系、构件参数与荷载预测高层建筑响应，支持结构方案的高效比较。<a href="paper-notes/ref-tang2025-JBE.html">研究证据 →</a></p><a class="text-link" href="StructuralWindEngineering.html">探索结构风工程 <span aria-hidden="true">→</span></a></div></article>
+     <article class="direction-card"><div class="direction-body"><p class="card-index">02</p><h3>海洋能源结构</h3><p>当前聚焦浮式风电，连接风机、平台、系泊与海洋环境，研究耦合动力响应、平台结构设计和系统优化。</p><ul class="direction-tags"><li>一体化分析</li><li>混凝土浮体</li><li>数值水池</li></ul><p class="direction-method"><strong>数据驱动方法与工程价值</strong> Kriging 代理模型结合多目标优化，减少长期风浪响应的重复计算，用于比较平台成本与疲劳性能的取舍。<a href="paper-notes/ref-zhou2023-AE.html">研究证据 →</a></p><a class="text-link" href="MarineEnergyStructures.html">探索海洋能源结构 <span aria-hidden="true">→</span></a></div></article>
     </div>
     <div class="method-strip"><strong>横向方法支撑 / AI + 工程验证</strong><p>图神经网络、智能几何建模、超分辨率重建与代理模型，与理论分析、数值模拟和物理试验相结合。</p></div>
    </section>
@@ -100,9 +100,9 @@
    <section id="applications" class="home-section applications" aria-labelledby="applications-heading">
     <div class="section-heading"><div><h2 id="applications-heading">研究连接哪些工程问题</h2></div><a class="text-link" href="EngineeringApplications.html">应用场景与项目证据 <span aria-hidden="true">↗</span></a></div>
     <div class="application-grid">
-     <article><span class="application-number">01</span><h3>浮式风机与平台设计</h3><p>系统分析与优化、混凝土浮式基础方案，以及风浪联合模型试验。</p><a href="Research.html#floating-wind-project-support">浮式风机项目记录 →</a></article>
+     <article><span class="application-number">01</span><h3>浮式风机与平台设计</h3><p>系统分析与优化、混凝土浮式基础方案，以及风浪联合模型试验。</p><a href="MarineEnergyStructures.html#floating-wind-project-support">浮式风机项目记录 →</a></article>
      <article><span class="application-number">02</span><h3>结构风荷载与风振</h3><p>高层建筑风致响应、气动外形优化，以及风洞试验与风振分析。</p><a href="EngineeringApplications.html#engineering-enterprise-project-evidence">公开项目证据 →</a></article>
-     <article><span class="application-number">03</span><h3>城市与场址风环境</h3><p>城市微尺度风场、复杂地形与工程场址风环境评估。</p><a href="Research.html#building-wind-project-support">数值风洞项目记录 →</a></article>
+     <article><span class="application-number">03</span><h3>城市与场址风环境</h3><p>城市微尺度风场、复杂地形与工程场址风环境评估。</p><a href="StructuralWindEngineering.html#building-wind-project-support">数值风洞项目记录 →</a></article>
     </div>
    </section>
 

@@ -18,17 +18,22 @@ async function main(){
  for(const width of [1440,390]){
   const page=await browser.newPage({viewport:{width,height:900}});
   await page.goto(origin+'/index.html');await settle(page);
-  await page.locator('.direction-card a[href="Research.html#research-direction-structural-wind"]').click();await settle(page);
-  results.push({width,case:'cross-page-card-alias',...await expectPosition(page,'research-direction-structural-wind','1 结构风工程')});
-  await page.reload();await settle(page);results.push({width,case:'refresh-with-hash',...await expectPosition(page,'research-direction-structural-wind','1 结构风工程')});
+  await page.locator('.direction-card a[href="StructuralWindEngineering.html"]').click();await settle(page);
+  results.push({width,case:'cross-page-card',...await expectPosition(page,'research-direction-structural-wind','结构风工程')});
+  await page.goto(origin+'/Research.html#research-direction-structural-wind');
+  await page.waitForURL('**/StructuralWindEngineering.html');await settle(page);
+  results.push({width,case:'legacy-cross-page-alias',...await expectPosition(page,'research-direction-structural-wind','结构风工程')});
+  await page.goto(origin+'/Research.html#id2');
+  await page.waitForURL('**/StructuralWindEngineering.html#structural-wind-resistance');await settle(page);
+  await page.reload();await settle(page);results.push({width,case:'refresh-with-hash',...await expectPosition(page,'structural-wind-resistance','2 结构抗风')});
   if(width<900){
     await page.locator('.reader-toggle').click();
     assert.ok(await page.locator('.wy-nav-side').evaluate(sidebar=>sidebar.contains(document.activeElement)&&document.activeElement.tagName==='A'),'drawer opens on navigation, not the hosted search popup');
   }
-  const button=page.locator('.toctree-l2 > a[href="#structural-wind-engineering"] button');
-  if(!await page.locator('.wy-menu-vertical a[href="#id2"]').isVisible())await button.click();
-  await page.locator('.wy-menu-vertical a[href="#id2"]').click();
-  results.push({width,case:'same-page-click',...await expectPosition(page,'id2','1.2 结构抗风')});
+  const button=page.locator('.toctree-l2 > a[href="#"] button');
+  if(!await page.locator('.wy-menu-vertical a[href="#structural-wind-resistance"]').isVisible())await button.click();
+  await page.locator('.wy-menu-vertical a[href="#structural-wind-resistance"]').click();
+  results.push({width,case:'same-page-click',...await expectPosition(page,'structural-wind-resistance','2 结构抗风')});
   if(width<900)await page.locator('.reader-toggle').click();
   const before=await page.evaluate(()=>scrollY);await button.click();await button.click();await frames(page);
   assert.ok(Math.abs(await page.evaluate(()=>scrollY)-before)<2,'expansion itself must not scroll article');

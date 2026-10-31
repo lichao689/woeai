@@ -44,13 +44,19 @@ async function assertResearchStates(page, origin, width) {
   await root.locator('button.toctree-expand').click();
   assert.ok(!await menu.getByRole('link',{name:'结构风工程',exact:true}).isVisible(),'collapsed root hides children');
   await root.locator('button.toctree-expand').click();
-  for (const [name,child] of [['结构风工程','数值风洞'],['海洋能源结构','混凝土浮体']]) {
+  for (const [name,doc,child] of [['结构风工程','StructuralWindEngineering','数值风洞'],['海洋能源结构','MarineEnergyStructures','混凝土浮体']]) {
+    await page.goto(origin+'/Research.html');
+    if(width<900)await toggle.click();
     const link=menu.locator('.toctree-l2 > a').filter({hasText:new RegExp('^'+name+'$')});
     assert.ok(await link.isVisible());
-    await link.locator('button.toctree-expand').click();
-    assert.ok(await menu.getByRole('link',{name:child,exact:true}).isVisible(),'expanded family reveals subdirection');
+    await link.click();
+    assert.ok(page.url().endsWith('/'+doc+'.html'),'family opens its topic page');
+    if(width<900)await toggle.click();
+    assert.ok(await menu.getByRole('link',{name:child,exact:true}).isVisible(),'topic navigation reveals subdirection');
     await assertChineseMenu(page);
+    assert.equal(await page.locator('.site-nav a[aria-current="page"]').textContent(),'研究方向');
   }
+  await page.goto(origin+'/Research.html');
   for (const id of ['research-direction-structural-wind','structural-wind-engineering',
     'building-wind-project-support','research-project','marine-energy-structures','floating-wind-project-support']) {
     assert.ok(await page.evaluate(id=>!!document.getElementById(id),id),'existing anchor retained: '+id);
@@ -63,7 +69,9 @@ async function assertResearchStates(page, origin, width) {
 
 async function assertBodyNumbering(page, origin) {
   const cases = [
-    ['Research',['1 结构风工程','2 海洋能源结构']],
+    ['Research',[]],
+    ['StructuralWindEngineering',['1 数值风洞','2 结构抗风','3 科研项目']],
+    ['MarineEnergyStructures',['1 一体化分析','2 混凝土浮体','3 数值水池','4 图示资料','5 科研项目']],
     ['Teaching',['1 教学工作','2 学生培养']],
     ['EngineeringApplications',['1 应用场景','2 企业项目证据','3 工程问题交流']],
     ['About',['1 隐私说明','2 版权与引用','3 技术致谢']],
@@ -89,11 +97,6 @@ async function assertBodyNumbering(page, origin) {
     const links=await page.locator('.wy-menu-vertical a.reference').allTextContents();
     for(const text of links)assert.doesNotMatch(text.trim(),/^\d+(?:\.\d+)*\s+/,'global navigation has no section counters');
     assert.ok(!await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1),doc+' has no horizontal overflow');
-    if(doc==='Research') {
-      const h3=await headingTexts('.document h3');
-      assert.deepEqual(h3.slice(0,2),['1.1 数值风洞','1.2 结构抗风']);
-      assert.ok(await page.getByRole('heading',{name:/^1\.1 数值风洞/}).isVisible());
-    }
     if(doc==='Teaching')assert.deepEqual(await headingTexts('.document h3'),['1.1 本科生','1.2 研究生','1.3 教改探索','2.1 博士生','2.2 硕士生']);
     if(doc==='EngineeringApplications')assert.deepEqual(await headingTexts('.document h4'),['数值风洞','结构抗风','一体化分析','混凝土浮体','数值水池']);
   }
@@ -133,6 +136,7 @@ async function main() {
       for(const [doc, expected] of Object.entries(anchors)) {
         await page.goto(origin+'/'+doc+'.html');
         for(const [id,title] of Object.entries(expected)) {
+          if(doc==='Research' && id!=='research')continue; // Moved sections are checked through their old URLs below.
           const actual=await page.evaluate(id=>{
             const section=document.getElementById(id);
             const heading=section?.querySelector('h1,h2,h3,h4')?.cloneNode(true);
@@ -141,6 +145,18 @@ async function main() {
           },id);
           assert.equal(actual,title,doc+'#'+id+' must retain its original destination');
         }
+      }
+      for(const [fragment,title] of Object.entries(anchors.Research)) {
+        if(fragment==='research')continue;
+        await page.goto(origin+'/Research.html#'+fragment);
+        await page.waitForFunction(()=>!location.pathname.endsWith('/Research.html'));
+        const actual=await page.evaluate(()=>{
+          const target=location.hash?document.getElementById(decodeURIComponent(location.hash.slice(1))):document.querySelector('.document h1');
+          const heading=target?.closest('section')?.querySelector('h1,h2,h3,h4')?.cloneNode(true);
+          heading?.querySelectorAll('.body-section-number,.headerlink').forEach(n=>n.remove());
+          return heading?.textContent.trim();
+        });
+        assert.equal(actual,title,'Research#'+fragment+' keeps its semantic destination');
       }
       await assertBodyNumbering(page,origin);
       await page.goto(origin+'/en/Research.html');

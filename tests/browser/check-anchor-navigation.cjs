@@ -98,7 +98,8 @@ async function hierarchy(page,origin,width,colorScheme){
   const result=[];
   for(const route of ['Research.html','en/Research.html']){
     await page.goto(origin+'/'+route);if(width<900)await page.locator('.reader-toggle').click();
-    if(route==='Research.html')await page.locator('.toctree-l2 > a[href="#structural-wind-engineering"] button').click();
+    // Research now lists two topic pages as leaves; no second-level expander
+    // exists on the overview. Their default visible labels establish hierarchy.
     const styles=await page.locator('.wy-menu-vertical li > a').evaluateAll(links=>links.map(a=>({
       depth:Number(a.parentElement.className.match(/toctree-l(\d+)/)?.[1]),font:parseFloat(getComputedStyle(a).fontSize),weight:Number(getComputedStyle(a).fontWeight),indent:parseFloat(getComputedStyle(a).paddingLeft),color:getComputedStyle(a).color,visible:!!a.getClientRects().length,clipped:a.scrollWidth>a.clientWidth+1,
     })));

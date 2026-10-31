@@ -64,16 +64,25 @@
   },
   "StructuralWindEngineering": {
     "structural-wind-engineering": "结构风工程",
-    "numerical-wind-tunnel": "数值风洞",
-    "structural-wind-resistance": "结构抗风",
     "research-project": "科研项目"
   },
   "MarineEnergyStructures": {
     "marine-energy-structures": "海洋能源结构",
-    "floating-wind-integrated-analysis": "一体化分析",
-    "concrete-floating-structures": "混凝土浮体",
-    "numerical-wave-basin": "数值水池",
-    "floating-wind-figures": "技术详情：系统分析框架",
     "research-project": "科研项目"
+  },
+  "NumericalWindTunnel": {
+    "numerical-wind-tunnel": "数值风洞"
+  },
+  "StructuralWindResistance": {
+    "structural-wind-resistance": "结构抗风"
+  },
+  "IntegratedAnalysis": {
+    "integrated-analysis": "一体化分析"
+  },
+  "ConcreteFloatingStructures": {
+    "concrete-floating-structures": "混凝土浮体"
+  },
+  "NumericalWaveBasin": {
+    "numerical-wave-basin": "数值水池"
   }
 }

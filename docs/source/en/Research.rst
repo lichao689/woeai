@@ -45,7 +45,7 @@ These six concise accounts retain the original papers' scope and link to full bi
 
 .. toctree::
    :hidden:
-   :maxdepth: 2
+   :maxdepth: 3
 
    StructuralWindEngineering
    MarineEnergyStructures

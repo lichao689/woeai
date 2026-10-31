@@ -85,6 +85,49 @@ class EnglishSiteTests(unittest.TestCase):
         for page in ['en/StructuralWindEngineering', 'en/MarineEnergyStructures']:
             self.assertIn(f'href="{page}.html"', home)
 
+    def test_second_level_research_pairs_and_parent_breadcrumbs(self):
+        templates = Environment(loader=FileSystemLoader(ROOT / 'docs/source/_templates'))
+        for topic, parent in [('NumericalWindTunnel', 'StructuralWindEngineering'),
+                              ('StructuralWindResistance', 'StructuralWindEngineering'),
+                              ('IntegratedAnalysis', 'MarineEnergyStructures'),
+                              ('ConcreteFloatingStructures', 'MarineEnergyStructures'),
+                              ('NumericalWaveBasin', 'MarineEnergyStructures')]:
+            for english in (False, True):
+                prefix = 'en/' if english else ''
+                page = prefix + topic
+                context = {}
+                site.page_context(self.app, page, '', context, None)
+                self.assertEqual(context['language_target'], topic if english else 'en/' + topic)
+                self.assertEqual(context['language_label'], '中文' if english else 'EN')
+                shell = dict(is_english=english, pagename=page, site_home=prefix + 'index',
+                             pathto=lambda target: target + '.html', parents=[])
+                links = templates.get_template('brand-links.html').render(**shell)
+                self.assertIn(f'href="{prefix}Research.html" aria-current="page"', links)
+                self.assertEqual(links.count('aria-current="page"'), 1)
+                trail = templates.get_template('breadcrumbs.html').render(**shell)
+                self.assertIn(f'href="{prefix}Research.html"', trail)
+                self.assertIn(f'href="{prefix}{parent}.html"', trail)
+                self.assertNotIn(f'href="{page}.html"', trail)
+
+    def test_compatibility_script_loads_only_on_overview_and_first_level_pages(self):
+        import ast
+        from unittest.mock import Mock
+        tree = ast.parse((ROOT / 'docs/source/conf.py').read_text())
+        callback = next(node for node in tree.body if isinstance(node, ast.FunctionDef)
+                        and node.name == '_add_research_navigation_assets')
+        namespace = {}
+        exec(compile(ast.Module(body=[callback], type_ignores=[]), '<conf callback>', 'exec'), namespace)
+        for prefix in ('', 'en/'):
+            for page in ('Research', 'StructuralWindEngineering', 'MarineEnergyStructures',
+                         'NumericalWindTunnel', 'StructuralWindResistance', 'IntegratedAnalysis',
+                         'ConcreteFloatingStructures', 'NumericalWaveBasin', 'index'):
+                app = Mock()
+                namespace['_add_research_navigation_assets'](app, prefix + page, '', {}, None)
+                if page in ('Research', 'StructuralWindEngineering', 'MarineEnergyStructures'):
+                    app.add_js_file.assert_called_once_with('research-navigation.js', loading_method='defer')
+                else:
+                    app.add_js_file.assert_not_called()
+
     def test_sources_gain_original_citation_and_explicit_chinese_link(self):
         text = ['Preview\n=======\n']
         site.source_read(self.app, 'en/highlights/ref-tang2025-JBE', text)

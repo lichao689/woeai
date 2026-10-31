@@ -31,16 +31,17 @@ async function main(){
   await page.waitForURL('**/StructuralWindEngineering.html');await settle(page);
   results.push({width,case:'legacy-cross-page-alias',...await expectTopicTop(page)});
   await page.goto(origin+'/Research.html#id2');
-  await page.waitForURL('**/StructuralWindEngineering.html#structural-wind-resistance');await settle(page);
-  await page.reload();await settle(page);results.push({width,case:'refresh-with-hash',...await expectPosition(page,'structural-wind-resistance','3.2 结构抗风')});
+  await page.waitForURL('**/StructuralWindResistance.html');await settle(page);
+  await page.goto(origin+'/StructuralWindResistance.html#structural-wind-resistance-methods');await settle(page);
+  await page.reload();await settle(page);results.push({width,case:'refresh-with-hash',...await expectPosition(page,'structural-wind-resistance-methods','1 方法与创新')});
   if(width<900){
     await page.locator('.reader-toggle').click();
     assert.ok(await page.locator('.wy-nav-side').evaluate(sidebar=>sidebar.contains(document.activeElement)&&document.activeElement.tagName==='A'),'drawer opens on navigation, not the hosted search popup');
   }
-  const button=page.locator('.toctree-l2 > a[href="#"] button');
-  if(!await page.locator('.wy-menu-vertical a[href="#structural-wind-resistance"]').isVisible())await button.click();
-  await page.locator('.wy-menu-vertical a[href="#structural-wind-resistance"]').click();
-  results.push({width,case:'same-page-click',...await expectPosition(page,'structural-wind-resistance','3.2 结构抗风')});
+  const button=page.locator('.toctree-l3 > a[href="#"] button');
+  if(!await page.locator('.wy-menu-vertical a[href="#structural-wind-resistance-methods"]').isVisible())await button.click();
+  await page.locator('.wy-menu-vertical a[href="#structural-wind-resistance-methods"]').click();
+  results.push({width,case:'same-page-click',...await expectPosition(page,'structural-wind-resistance-methods','1 方法与创新')});
   if(width<900)await page.locator('.reader-toggle').click();
   const before=await page.evaluate(()=>scrollY);await button.click();await button.click();await frames(page);
   assert.ok(Math.abs(await page.evaluate(()=>scrollY)-before)<2,'expansion itself must not scroll article');
@@ -66,9 +67,19 @@ async function main(){
     assert.equal(await page.locator('.site-language').getAttribute('href'),'en/'+topic+'.html');
     results.push({width,case:'bilingual-topic-and-legacy',legacy,passed:true});
   }
-  for(const [legacy,target] of [['id8','floating-wind-dimensions-figure'],['id9','concrete-floater-design-figure'],['id10','floating-wind-coupling-figure']]){
+  for(const doc of ['NumericalWindTunnel','StructuralWindResistance','IntegratedAnalysis','ConcreteFloatingStructures','NumericalWaveBasin']) {
+    await page.goto(origin+'/'+doc+'.html');await settle(page);
+    assert.ok(!await page.locator('.document h2').allTextContents().then(texts=>texts.some(t=>/研究背景|核心问题/.test(t))),'opening has no background/question headings');
+    await page.locator('.site-language').click();await settle(page);
+    assert.ok(page.url().endsWith('/en/'+doc+'.html'));
+    assert.equal(await page.locator('.wy-breadcrumbs a').count(),3,'home, research, parent family');
+    await page.locator('.site-language').click();await settle(page);
+    assert.ok(page.url().endsWith('/'+doc+'.html'));
+    results.push({width,case:'subdirection-language-round-trip',doc,passed:true});
+  }
+  for(const [legacy,doc,target] of [['id8','IntegratedAnalysis','floating-wind-dimensions-figure'],['id9','ConcreteFloatingStructures','concrete-floater-design-figure'],['id10','IntegratedAnalysis','floating-wind-coupling-figure']]){
     await page.goto(origin+'/Research.html#'+legacy);
-    await page.waitForURL('**/MarineEnergyStructures.html#'+target);await settle(page);
+    await page.waitForURL('**/'+doc+'.html#'+target);await settle(page);
     assert.ok(await page.locator('.research-technical').evaluate(e=>e.open),'bookmarked technical figure is disclosed');
     const figure=page.locator('#'+target).locator('..');
     assert.ok(await figure.locator('img').isVisible());

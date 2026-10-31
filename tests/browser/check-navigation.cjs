@@ -44,7 +44,7 @@ async function assertResearchStates(page, origin, width) {
   await root.locator('button.toctree-expand').click();
   assert.ok(!await menu.getByRole('link',{name:'结构风工程',exact:true}).isVisible(),'collapsed root hides children');
   await root.locator('button.toctree-expand').click();
-  for (const [name,doc,child] of [['结构风工程','StructuralWindEngineering','研究背景'],['海洋能源结构','MarineEnergyStructures','研究背景']]) {
+  for (const [name,doc,child] of [['结构风工程','StructuralWindEngineering','数值风洞'],['海洋能源结构','MarineEnergyStructures','一体化分析']]) {
     await page.goto(origin+'/Research.html');
     if(width<900)await toggle.click();
     const link=menu.locator('.toctree-l2 > a').filter({hasText:new RegExp('^'+name+'$')});
@@ -70,18 +70,24 @@ async function assertResearchStates(page, origin, width) {
 async function assertBodyNumbering(page, origin) {
   const cases = [
     ['Research',[]],
-    ['StructuralWindEngineering',['1 研究背景','2 核心问题','3 方法与创新','4 代表成果与验证','5 仍待解决的问题','6 论文与项目']],
-    ['MarineEnergyStructures',['1 研究背景','2 核心问题','3 方法与创新','4 代表成果与验证','5 仍待解决的问题','6 论文与项目']],
+    ['StructuralWindEngineering',['1 科研项目']],
+    ['MarineEnergyStructures',['1 科研项目']],
     ['Teaching',['1 教学工作','2 学生培养']],
     ['EngineeringApplications',['1 应用场景','2 企业项目证据','3 工程问题交流']],
     ['About',['1 隐私说明','2 版权与引用','3 技术致谢']],
     ['Recruitment',['1 研究与培养','2 申请类型与公开信息','3 如何联系']],
     ['en/Research',['1 AI across both fields','2 Research highlights']],
-    ['en/StructuralWindEngineering',['1 Background','2 Research questions','3 Methods and contributions','4 Evidence in practice','5 Open questions','6 Publications and projects']],
-    ['en/MarineEnergyStructures',['1 Background','2 Research questions','3 Methods and contributions','4 Evidence in practice','5 Open questions','6 Publications and projects']],
+    ['en/StructuralWindEngineering',['1 Project support']],
+    ['en/MarineEnergyStructures',['1 Project support']],
     ['en/JoinUs',['1 Research fit','2 Academic contact','3 Official application']],
     ['en/highlights/ref-chen2024-JCP',['1 The problem','2 The contribution','3 Engineering significance','Source paper']],
   ];
+  for(const prefix of ['', 'en/']) {
+    for(const doc of ['NumericalWindTunnel','StructuralWindResistance','IntegratedAnalysis','ConcreteFloatingStructures','NumericalWaveBasin']) {
+      const labels=prefix ? ['Methods and contributions',...(doc==='NumericalWaveBasin'?[]:['Evidence in practice']),'Open questions','Publications and projects'] : ['方法与创新',...(doc==='NumericalWaveBasin'?[]:['代表成果与验证']),'仍待解决的问题','论文与项目',...(doc==='IntegratedAnalysis'?['技术详情：系统分析框架']:doc==='ConcreteFloatingStructures'?['技术详情：混凝土平台框架']:[])];
+      cases.push([prefix+doc,labels.map((label,i)=>(i+1)+' '+label)]);
+    }
+  }
   const headingTexts=async selector=>page.locator(selector).evaluateAll(nodes=>nodes.map(e=>{
     const copy=e.cloneNode(true);copy.querySelectorAll('.headerlink').forEach(n=>n.remove());return copy.textContent.trim();
   }));

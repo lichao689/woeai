@@ -14,7 +14,7 @@
 - **数值风洞**：湍动入流、城市几何与风场重建。
 - **结构抗风**：荷载与响应预测、气动优化与减振控制。
 
-:doc:`进入结构风工程专题 <StructuralWindEngineering>`：从研究背景、关键问题读到 CMRFG 入流、城市 CFD 数据库与图神经网络三项代表研究。
+:doc:`进入结构风工程专题 <StructuralWindEngineering>`：分别进入数值风洞与结构抗风，了解各自的问题、方法和研究证据。
 
 .. raw:: html
 
@@ -28,7 +28,7 @@
 - **混凝土浮体**：平台方案、主尺度和结构强度的协同设计。
 - **数值水池**：波浪与结构相互作用的支撑方法和待验证问题。
 
-:doc:`进入海洋能源结构专题 <MarineEnergyStructures>`：了解长期浮体优化、混凝土平台设计与 1:70 风浪联合试验的证据和适用范围。
+:doc:`进入海洋能源结构专题 <MarineEnergyStructures>`：分别进入一体化分析、混凝土浮体与数值水池，了解各自的问题与验证边界。
 
 .. rubric:: 方法与工程联系
 
@@ -38,7 +38,7 @@
 
 .. toctree::
    :hidden:
-   :maxdepth: 2
+   :maxdepth: 3
 
    结构风工程 <StructuralWindEngineering>
    海洋能源结构 <MarineEnergyStructures>

@@ -6,7 +6,7 @@ project = 'Wind and Ocean Engineering with AI'
 copyright = '2026, Chao Li'
 author = 'Chao Li'
 
-release = '2026.10.31-1802'
+release = '2026.10.31-1858'
 version = '2026.10.31'
 
 # -- SEO Meta Tags
@@ -115,7 +115,9 @@ def _select_home_template(app, pagename, templatename, context, doctree):
 
 
 def _add_research_navigation_assets(app, pagename, templatename, context, doctree):
-    if pagename in ('Research', 'en/Research'):
+    if pagename in ('Research', 'en/Research', 'StructuralWindEngineering',
+                    'en/StructuralWindEngineering', 'MarineEnergyStructures',
+                    'en/MarineEnergyStructures'):
         app.add_js_file('research-navigation.js', loading_method='defer')
 
 

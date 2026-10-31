@@ -60,7 +60,13 @@ def page_context(app, pagename, templatename, context, doctree):
     english = pagename.startswith("en/")
     pairs = {"index":"en/index", "Research":"en/Research", "Publications":"en/Publications", "Recruitment":"en/JoinUs", "search":"en/Search",
              "StructuralWindEngineering":"en/StructuralWindEngineering",
-             "MarineEnergyStructures":"en/MarineEnergyStructures"}
+             "MarineEnergyStructures":"en/MarineEnergyStructures",
+             "NumericalWindTunnel":"en/NumericalWindTunnel",
+             "StructuralWindResistance":"en/StructuralWindResistance",
+             "IntegratedAnalysis":"en/IntegratedAnalysis",
+             "ConcreteFloatingStructures":"en/ConcreteFloatingStructures",
+             "NumericalWaveBasin":"en/NumericalWaveBasin",
+             }
     pairs.update({value:key for key,value in list(pairs.items())})
     paired = pagename in pairs
     context.update(is_english=english, site_home="en/index" if english else "index",

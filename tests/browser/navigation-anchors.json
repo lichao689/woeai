@@ -7,7 +7,7 @@
     "id3": "一体化分析",
     "id4": "混凝土浮体",
     "id5": "数值水池",
-    "id6": "图示资料",
+    "id6": "技术详情：系统分析框架",
     "floating-wind-project-support": "科研项目",
     "marine-energy-structures": "海洋能源结构",
     "research": "科研方向"
@@ -73,7 +73,7 @@
     "floating-wind-integrated-analysis": "一体化分析",
     "concrete-floating-structures": "混凝土浮体",
     "numerical-wave-basin": "数值水池",
-    "floating-wind-figures": "图示资料",
+    "floating-wind-figures": "技术详情：系统分析框架",
     "research-project": "科研项目"
   }
 }

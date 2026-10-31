@@ -1,85 +1,190 @@
 .. _research-direction-floating-wind:
+
 .. _floating-offshore-wind-turbine:
 
 海洋能源结构 Marine Energy Structures
-==============================================================
+=================================================================
 
 :doc:`研究方向总览 <Research>` · :doc:`结构风工程 <StructuralWindEngineering>`
 
-海洋能源结构方向当前公开研究聚焦浮式风电及其关联基础问题，关注浮式风机系统、浮式混凝土平台、风浪流环境作用、数值水池的分析、试验与优化，以及结构优化和运动/振动控制。该方向连接海洋环境作用、结构动力学、数值优化、物理模型试验和工程系统设计。
+从风浪耦合作用，到能够核对的浮式系统设计。
+
+.. contents:: 本页导读
+   :local:
+   :depth: 2
+
+研究背景
+------------------------------
+
+浮式风机由转子、塔架、平台和系泊共同组成，在变化的海洋环境中工作。一个运动指标更好，不一定意味着另一处荷载、疲劳或结构强度也更有利。研究因此需要同时考虑长期海况、系统动力学、材料与构造，并用适当的物理证据检查数值预测。
+
+核心问题
+------------------------------
+
+- 平台尺度与系泊怎样共同改变长期成本—疲劳权衡？
+- 混凝土浮体如何从动力性能较好的概念，走向能够承载的结构评估？
+- 不同运动与部件荷载各自对应怎样的不利风浪来向？
+
+方法与创新
+------------------------------
 
 .. _floating-wind-integrated-analysis:
 
 一体化分析
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-该子方向关注风机、平台与系泊系统的耦合动力学、长期响应、荷载传递、优化和试验验证。固定式支撑结构与风机气动论文作为关联基础研究，保留其真实研究对象，不视作浮式整机验证。
-
-代表性证据包括：
-
-- :ref:`Long-term dynamic optimization of floating wind turbine substructure designs <ref-zhou2023-AE>`；
-- :ref:`Global sensitivity study on the semisubmersible substructure of a floating wind turbine <ref-zhou2021-OE>`；
-- :ref:`Importance of platform mounting orientation of Y-shaped semi-submersible floating wind turbines <ref-zhou2020-RE>`；
-- :ref:`Equivalent static wave loads for a delta-shaped semi-submersible 10-MW wind turbine <ref-zheng2025-OE>`；
-- :ref:`Wind tunnel and wave flume testing for a 10 MW Y-shaped semi-submersible wind turbine <ref-zheng2023-JRSE>`。
-
-关联基础研究：:ref:`Efficient optimization design method of fixed-bottom jacket structures <ref-zheng2023-MS>`。
+风机—平台—系泊耦合模型、降阶动力学和代理辅助优化，将长期海况接入设计比较；风浪联合模型试验提供物理对照。
 
 .. _concrete-floating-structures:
 
 混凝土浮体
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-该子方向关注半潜式浮式平台、浮式混凝土基础、混凝土与钢支撑结构对比、局部浮力基础方案和结构设计优化。
-
-代表性证据包括：
-
-- :ref:`Reinforced-concrete semi-submersible platform structural design and optimization <ref-he2026-OE-structural>`；
-- :ref:`Concrete and steel support structure comparison for a Y-shaped semi-submersible floating wind turbine <ref-li2022-SOS>`。
-
+将平台几何、材料与系泊放在同一评估过程中，再把方案带入结构强度检查；概念优化与局部构造设计是不同阶段。
 
 .. _numerical-wave-basin:
 
 数值水池
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-该子方向关注数值造波、波流传播与吸收、自由面水动力建模及水池方法验证。物理风洞—浪槽联合试验与浮式风机耦合动力响应研究按其主要问题归入一体化分析；仅使用水动力软件不构成本方向的论文归类依据。
+数值造波、传播吸收与自由面建模为相互作用分析提供支撑。方法是否可信，取决于边界、网格与基准验证；本页不把尚无对应成果证据的问题写成已完成突破。
 
-.. _floating-wind-figures:
+.. figure:: ../_static/research/research-method-marine-zh.svg
+   :figclass: research-method
+   :width: 100%
+   :alt: 从输入到验证与设计的原创方法示意，非研究数据。
 
-图示资料
-------------------------
+   原创方法说明图，非研究数据。流程概括不同论文的方法，不表示同一平台已完成整条验证链，也不表示数值性能或已完成工程。
 
-.. _floating-wind-dimensions-figure:
+代表成果与验证
+------------------------------
 
-.. figure:: ../_static/sea_floating_wind_turbine_optimization.png
-   :alt: 浮式风机基础的主尺寸优化
-   :align: center
+以下三个研究故事连接具体问题、方法与验证证据，并说明适用边界。科研图保留完整比例与图例，可点击查看大图。
 
-   浮式风机基础的主尺寸优化
+.. _story-ref-zhou2023-AE:
 
-.. _concrete-floater-design-figure:
+长期优化：比较成本与疲劳的取舍
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: ../_static/concrete_structure_floating_wind_turbine_optimization.png
-   :alt: 混凝土结构浮式风机基础结构的设计与优化
-   :align: center
+**问题**　平台主尺度与系泊配置共同影响制造成本和疲劳。面对大量风浪组合，怎样以可承受的计算量比较不同构型，而非只挑各自一个固定方案？
 
-   混凝土结构浮式风机基础结构的设计与优化
+**创新**　把降阶动力模型、代表性海况采样与 Kriging 代理模型串联，通过 NSGA-II 搜索制造成本、塔底疲劳与导缆孔疲劳之间的 Pareto 折中，比较优化后的方案集合。
 
-.. _floating-wind-coupling-figure:
+**验证与发现**　降阶响应与 OpenFAST 对比后，用于方形和 Y 形钢制半潜式方案。长期环境和平台—系泊参数改变成本—疲劳前沿；方形方案的塔底疲劳更有利，而部分 Y 形方案的系泊疲劳较低。
 
-.. figure:: ../_static/multiphysics_multibody_model_floating_wind_turbine_optimization.png
-   :alt: 多物理场多体动力学分析模型
-   :align: center
+**适用边界**　制造成本不是全生命周期成本。这是受场址、风机、成本口径与约束限定的概念筛选，论文未校核船体强度；不能据一个指标宣称普遍最优平台。
 
-   浮式风机系统多物理场多体动力学分析模型
+.. figure:: ../../wechat/assets/public-safe/ref-zhou2023-AE/fig07.png
+   :figclass: research-evidence
+   :width: 100%
+   :alt: 所比较的方形（上）与 Y 形（下）钢制半潜平台及系泊布置。每排包括平台几何、俯视系泊和锚链剖面，明确比较对象与边界。原论文图7。
+
+   所比较的方形（上）与 Y 形（下）钢制半潜平台及系泊布置。每排包括平台几何、俯视系泊和锚链剖面，明确比较对象与边界。原论文图7。
+
+   来源：Zhou 等，Applied Energy (2023)，`原论文 <https://doi.org/10.1016/j.apenergy.2023.121941>`__。
+
+.. figure:: ../../wechat/assets/public-safe/ref-zhou2023-AE/fig23.png
+   :figclass: research-evidence
+   :width: 100%
+   :alt: 方形与 Y 形方案的成本—疲劳 Pareto 集合及投影：蓝色空心圆为方形，绿色点为 Y 形；四面板保留制造成本、塔底与导缆孔疲劳的不同取舍，结论限于本文算例。原论文图23。
+
+   方形与 Y 形方案的成本—疲劳 Pareto 集合及投影：蓝色空心圆为方形，绿色点为 Y 形；四面板保留制造成本、塔底与导缆孔疲劳的不同取舍，结论限于本文算例。原论文图23。
+
+   来源：Zhou 等，Applied Energy (2023)，`原论文 <https://doi.org/10.1016/j.apenergy.2023.121941>`__。
+
+:doc:`阅读全文与图表 <paper-notes/ref-zhou2023-AE>` · :ref:`完整论文记录 <ref-zhou2023-AE>`
+
+.. _story-ref-he2026-OE-structural:
+
+混凝土平台：连接长期响应与结构强度
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**问题**　材料选择改变平台质量、响应与成本。平台本体更便宜，不代表整个浮式系统更优；选出的动力方案也需要承担荷载的结构评估。
+
+**创新**　提出模块化钢筋混凝土半潜平台概念，以降阶模型和 NSGA-II 探索主尺度、系泊与成本—疲劳权衡，再对选定方案进行包含预应力筋的有限元分析。
+
+**验证与发现**　在论文风机、海况与成本假设下，选定方案相较 OO-Star 的数值比较显示较低累计塔底/导缆孔疲劳和估算建造成本；预应力改善整体应力分布。结果强调系泊疲劳与系统成本应一起考虑。
+
+**适用边界**　这是数值评估的概念设计，不是已建平台或认证设计。局部应力峰值不能与整体应力范围混同；节点、应力集中及后续缩尺试验仍需工作，成本估算不是工程报价。
+
+.. figure:: ../../wechat/assets/public-safe/ref-he2026-OE-structural/fig07.png
+   :figclass: research-evidence
+   :width: 100%
+   :alt: 模块化钢筋混凝土半潜平台概念，由圆柱、方柱与圆板组合而成。图为论文设计方案，不是已建工程。原论文图7。
+
+   模块化钢筋混凝土半潜平台概念，由圆柱、方柱与圆板组合而成。图为论文设计方案，不是已建工程。原论文图7。
+
+   来源：He 等，Ocean Engineering (2026)，`原论文 <https://doi.org/10.1016/j.oceaneng.2025.123951>`__。
+
+.. figure:: ../../wechat/assets/public-safe/ref-he2026-OE-structural/fig16.png
+   :figclass: research-evidence
+   :width: 100%
+   :alt: 塔底疲劳、导缆孔疲劳与总建造成本的多目标优化结果；颜色区分不同代数的候选方案，四面板展示概念设计权衡，不能解读为任意场址下的保证成本。原论文图16。
+
+   塔底疲劳、导缆孔疲劳与总建造成本的多目标优化结果；颜色区分不同代数的候选方案，四面板展示概念设计权衡，不能解读为任意场址下的保证成本。原论文图16。
+
+   来源：He 等，Ocean Engineering (2026)，`原论文 <https://doi.org/10.1016/j.oceaneng.2025.123951>`__。
+
+:doc:`阅读全文与图表 <paper-notes/ref-he2026-OE-structural>` · :ref:`完整论文记录 <ref-he2026-OE-structural>`
+
+.. _story-ref-zheng2023-JRSE:
+
+1:70 风浪试验：不利来向取决于响应
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**问题**　Y 形半潜平台和系泊具有方向性。改变风浪来向可能同时改变平台运动、塔底荷载与机舱加速度，不能只看一个位移指标。
+
+**创新**　面向 10 MW 参考机组开展 1:70 风洞—波浪水槽联合试验，通过推力匹配和风浪输入标定，比较三个来向下静水、单风、单浪与风浪联合响应，并与 OpenFAST 对照。
+
+**验证与发现**　规则波响应的试验与模拟总体呈现一致趋势。不利来向随波周期和响应指标变化，说明运动、上部结构荷载与系泊应在系统层面评估。
+
+**适用边界**　这是实验室缩尺试验，不是海上实机验证。试验风浪同向、转子迎风；推力匹配不复现全部气动与控制效应，自由衰减数据亦参与模型标定，不能称为完全独立盲验。
+
+.. figure:: ../../wechat/assets/public-safe/ref-zheng2023-JRSE/fig07.png
+   :figclass: research-evidence
+   :width: 100%
+   :alt: 风洞—波浪水槽中的 1:70 模型与等效截断系泊：(a)浮式风机，(b)带配重系泊线，(c)导缆点与弹簧。照片为实验室模型，不是海上实机。原论文图7。
+
+   风洞—波浪水槽中的 1:70 模型与等效截断系泊：(a)浮式风机，(b)带配重系泊线，(c)导缆点与弹簧。照片为实验室模型，不是海上实机。原论文图7。
+
+   来源：Zheng 等，Journal of Renewable and Sustainable Energy (2023)，`原论文 <https://doi.org/10.1063/5.0131279>`__。
+
+.. figure:: ../../wechat/assets/public-safe/ref-zheng2023-JRSE/fig17.jpg
+   :figclass: research-evidence
+   :width: 100%
+   :alt: 三波向下的平台运动、塔底荷载和机舱加速度响应幅值算子：线为模拟，点为试验；试验覆盖的原型尺度规则波周期为 5–21 秒，延伸曲线不是额外实测数据。不利来向依指标而变。原论文图17。
+
+   三波向下的平台运动、塔底荷载和机舱加速度响应幅值算子：线为模拟，点为试验；试验覆盖的原型尺度规则波周期为 5–21 秒，延伸曲线不是额外实测数据。不利来向依指标而变。原论文图17。
+
+   来源：Zheng 等，Journal of Renewable and Sustainable Energy (2023)，`原论文 <https://doi.org/10.1063/5.0131279>`__。
+
+:doc:`阅读全文与图表 <paper-notes/ref-zheng2023-JRSE>` · :ref:`完整论文记录 <ref-zheng2023-JRSE>`
+
+仍待解决的问题
+------------------------------
+
+概念方案还要走向节点细化、场址相关极值与疲劳评估，以及耦合模型验证。数值水池方法需要独立基准；固定式支撑与减振基础研究可以提供支撑，但不能代替浮式系统验证。本页证据限于所列半潜式算例，不扩展为所有平台类型或其他海洋能源技术的已完成成果。
+
+论文与项目
+------------------------------
+
+以下短标题便于浏览，不替换原论文题名；完整题名、作者、期刊与 DOI 保留在论文记录和精解详情中。
+
+- :ref:`长期动力优化 <ref-zhou2023-AE>`
+- :ref:`平台全局敏感性 <ref-zhou2021-OE>`
+- :ref:`Y 形平台安装朝向 <ref-zhou2020-RE>`
+- :ref:`等效静力波浪荷载 <ref-zheng2025-OE>`
+- :ref:`风洞—浪槽联合试验 <ref-zheng2023-JRSE>`
+- :ref:`固定式导管架优化（关联基础） <ref-zheng2023-MS>`
+- :ref:`混凝土浮体设计优化 <ref-he2026-OE-structural>`
+- :ref:`混凝土与钢支撑结构比较 <ref-li2022-SOS>`
 
 .. _floating-wind-project-support:
 
 科研项目 Research Project
-------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-海洋能源结构方向的政府和纵向项目记录支撑浮式风机系统分析、浮式混凝土平台、风浪联合模型试验、运动和振动控制等研究问题。
+以下公开项目记录支撑上述研究问题；年份和承担角色不表示项目仍在执行或存在当前合作关系。
 
 - 2022-2025 省级，面向多设计阶段的浮式风机系统一体化分析与优化方法，主持。
 - 2022-2025 省级，FRP-钢复合筋-海水海砂混凝土的半潜式风机基础结构设计方法，参与。
@@ -87,6 +192,46 @@
 - 2016-2018 市级，柱稳型海上浮式风机基础的关键技术开发，主持。
 - 2013-2015 市级，垂直轴风机的主/被动桨距控制策略优化研究，主持。
 
-企业委托项目证据见 :ref:`engineering-enterprise-project-evidence`。
+应用场景与企业委托项目证据见 :doc:`EngineeringApplications`。
 
-工程应用和企业委托项目证据见 :doc:`EngineeringApplications`。
+.. _floating-wind-figures:
+
+技术详情：系统分析框架
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+以下三张既有技术框图保留完整内容，适合放大阅读；方法框架本身不等于试验验证或已建平台。
+
+.. raw:: html
+
+   <details class="research-technical"><summary>展开三张系统分析与优化框图</summary>
+
+.. _floating-wind-dimensions-figure:
+
+.. figure:: ../_static/sea_floating_wind_turbine_optimization.png
+   :figclass: research-evidence
+   :width: 100%
+   :alt: 浮式风机基础的主尺寸优化
+
+   浮式风机基础的主尺寸优化。既有技术说明图，可点击放大。
+
+.. _concrete-floater-design-figure:
+
+.. figure:: ../_static/concrete_structure_floating_wind_turbine_optimization.png
+   :figclass: research-evidence
+   :width: 100%
+   :alt: 混凝土结构浮式风机基础结构的设计与优化
+
+   混凝土结构浮式风机基础结构的设计与优化。既有技术说明图，可点击放大。
+
+.. _floating-wind-coupling-figure:
+
+.. figure:: ../_static/multiphysics_multibody_model_floating_wind_turbine_optimization.png
+   :figclass: research-evidence
+   :width: 100%
+   :alt: 浮式风机系统多物理场多体动力学分析模型
+
+   浮式风机系统多物理场多体动力学分析模型。既有技术说明图，可点击放大。
+
+.. raw:: html
+
+   </details>

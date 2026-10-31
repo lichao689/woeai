@@ -47,6 +47,25 @@
     margin: 0;
 }
 
+.rst-content .research-evidence,
+.rst-content .research-method { margin: 1.8rem 0; }
+.rst-content .research-evidence img,
+.rst-content .research-method img { display: block; width: auto; max-width: 100%; height: auto; margin: 0 auto; }
+.rst-content .research-method img { max-height: 650px; }
+.rst-content .research-evidence figcaption,
+.rst-content .research-method figcaption { margin-top: .8rem; text-align: left; line-height: 1.7; }
+.rst-content .research-evidence .legend { font-size: .9em; }
+.rst-content .research-technical { border: 1px solid #9cb9bc; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+.rst-content .research-technical summary { cursor: pointer; font-weight: 650; line-height: 1.6; }
+.rst-content .research-technical summary:focus-visible { outline: 2px solid #41767f; outline-offset: 4px; }
+.rst-content:has(.research-method) .contents a,
+.rst-content:has(.research-method) h3 { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .rst-content .research-evidence figcaption,
+  .rst-content .research-method figcaption { font-size: .92rem; }
+  .rst-content .research-technical { padding: .7rem; }
+}
+
 .rst-content figure.paper-note-figure,
 .rst-content div.paper-note-figure,
 .rst-content a.paper-note-figure {

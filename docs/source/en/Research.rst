@@ -1,43 +1,37 @@
 Research
 ========
 
-Our laboratory studies how wind and ocean actions affect built and energy structures, and how these responses can inform engineering design. Two research fields share methods in mechanics, numerical simulation, physical testing and AI.
+WOEAI studies the path from wind and ocean conditions to structural response and design. Two research fields share numerical simulation, physical testing, mechanics and AI methods. Their engineering value depends on evidence and on the conditions under which a method has been tested.
 
-Structural Wind Engineering
----------------------------
+.. raw:: html
 
-**Numerical Wind Tunnel.** Urban and site wind environments, computational flow modelling and synthetic turbulent inflow form the basis for assessing aerodynamic actions. The work connects model inputs and flow physics to usable wind information.
+   <span id="structural-wind-engineering"></span>
 
-**Structural Wind Resistance.** Wind-induced structural response, aerodynamic design and vibration mitigation connect wind loading to structural performance. Graph-based response prediction is one method within this field.
+.. rubric:: Structural Wind Engineering
 
-**AI method and engineering value.** Graph neural networks represent structural connectivity, member properties and loads to support efficient response prediction and design comparison; see :doc:`the tall-building study <highlights/ref-tang2025-JBE>`.
+**More credible wind inputs, more useful structural predictions.** Numerical wind tunnels connect turbulent inflow and urban geometry to local wind conditions; structural wind resistance connects loading to response, aerodynamic design and vibration control.
 
-Selected examples: :doc:`urban wind estimation <highlights/ref-zhao2026-BS>`, :doc:`inflow turbulence <highlights/ref-chen2024-JCP>` and :doc:`graph-based structural response <highlights/ref-tang2025-JBE>`.
+:doc:`Explore structural wind engineering <StructuralWindEngineering>` through three studies: inflow generation, a reusable urban CFD database and graph-based structural response prediction.
 
-.. _floating-offshore-wind:
+.. raw:: html
 
-Marine Energy Structures
-------------------------
+   <span id="marine-energy-structures"></span><span id="floating-offshore-wind"></span>
 
-Current public evidence focuses on floating offshore wind and associated structural and aerodynamic foundations. The wider category name does not imply results in other ocean-energy technologies.
+.. rubric:: Marine Energy Structures
 
-**Integrated Analysis.** Coupled turbine, platform and mooring dynamics, long-term environmental loading and physical model tests support system-level design and comparison.
+**Connecting motion, strength and service-life performance.** Current public evidence focuses on floating offshore wind and associated structural and aerodynamic foundations. Integrated analysis and concrete floating structures are supported by numerical wave modelling and physical model tests.
 
-**Concrete Floating Structures.** Platform concepts, structural dimensions and strength assessment are considered together with dynamic response and design constraints.
-
-**Numerical Wave Basin.** Numerical modelling of wave–structure interaction supports the wider study of floating systems.
-
-**Data-driven method and engineering value.** Kriging surrogates combined with multiobjective optimisation reduce repeated long-term response calculations when comparing floater cost and fatigue trade-offs; see :doc:`the long-term optimisation study <highlights/ref-zhou2023-AE>`.
-
-Selected examples: :doc:`long-term design comparison <highlights/ref-zhou2023-AE>`, :doc:`concrete platform design <highlights/ref-he2026-OE-structural>` and :doc:`directional wind–wave testing <highlights/ref-zheng2023-JRSE>`.
+:doc:`Explore marine energy structures <MarineEnergyStructures>` through long-term floater optimisation, concrete-platform design and 1:70 wind–wave testing. The wider field name does not imply demonstrated results in other ocean-energy technologies.
 
 AI across both fields
 ---------------------
 
-Surrogate modelling and graph neural networks can reduce repeated computation and represent engineering relationships. Their usefulness depends on training coverage, physical consistency and independent validation. AI is a shared method across these two fields.
+Surrogate modelling and graph neural networks can reduce repeated computation and represent engineering relationships. Their usefulness depends on training coverage, physical consistency and independent validation. AI is a shared method, not a substitute for engineering verification.
 
 Research highlights
 -------------------
+
+These six concise accounts retain the original papers' scope and link to full bibliographic records and Chinese reading notes.
 
 .. toctree::
    :maxdepth: 1
@@ -48,3 +42,10 @@ Research highlights
    highlights/ref-zhou2023-AE
    highlights/ref-he2026-OE-structural
    highlights/ref-zheng2023-JRSE
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+
+   StructuralWindEngineering
+   MarineEnergyStructures

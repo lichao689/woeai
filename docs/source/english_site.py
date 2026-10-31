@@ -58,7 +58,9 @@ def source_read(app, docname, source):
 
 def page_context(app, pagename, templatename, context, doctree):
     english = pagename.startswith("en/")
-    pairs = {"index":"en/index", "Research":"en/Research", "Publications":"en/Publications", "Recruitment":"en/JoinUs", "search":"en/Search"}
+    pairs = {"index":"en/index", "Research":"en/Research", "Publications":"en/Publications", "Recruitment":"en/JoinUs", "search":"en/Search",
+             "StructuralWindEngineering":"en/StructuralWindEngineering",
+             "MarineEnergyStructures":"en/MarineEnergyStructures"}
     pairs.update({value:key for key,value in list(pairs.items())})
     paired = pagename in pairs
     context.update(is_english=english, site_home="en/index" if english else "index",

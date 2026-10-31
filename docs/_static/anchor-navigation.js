@@ -25,6 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
         catch { return null; }
         const target = document.getElementById(id);
         if (!target) return null;
+        // Technical figures may be tucked into native disclosure sections.
+        // An existing bookmark must reveal its target before measuring it.
+        for (let node = target.parentElement; node; node = node.parentElement) {
+            if (node.matches('details')) node.open = true;
+        }
         const label = target.getAttribute('aria-labelledby');
         if (label) {
             const heading = document.getElementById(label.split(/\s+/)[0]);

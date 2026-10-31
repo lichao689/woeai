@@ -1,7 +1,9 @@
 {# Breadcrumb trail only. The current page title is deliberately omitted: every
    reader page repeats it as the h1 immediately below, and printing it twice was
    the most common "looks unfinished" note in the page review. #}
-{% if is_english %}
+{% if pagename in ['en/StructuralWindEngineering', 'en/MarineEnergyStructures'] %}
+<ul class="wy-breadcrumbs"><li><a href="{{ pathto(site_home) }}">Home</a></li><li><a href="{{ pathto('en/Research') }}">Research</a></li></ul><hr>
+{% elif is_english %}
 <ul class="wy-breadcrumbs"><li><a href="{{ pathto(site_home) }}">Home</a></li>{% for doc in parents %}{% if doc.link and not loop.first %}<li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>{% endif %}{% endfor %}</ul><hr>
 {% elif pagename in ['StructuralWindEngineering', 'MarineEnergyStructures'] %}
 <ul class="wy-breadcrumbs"><li><a href="{{ pathto(site_home) }}">首页</a></li><li><a href="{{ pathto('Research') }}">研究方向</a></li></ul><hr>

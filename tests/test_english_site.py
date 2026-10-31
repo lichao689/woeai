@@ -3,6 +3,7 @@ import importlib.util
 from pathlib import Path
 from types import SimpleNamespace
 import unittest
+from jinja2 import Environment, FileSystemLoader
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('english_site', ROOT / 'docs/source/english_site.py')
@@ -54,11 +55,35 @@ class EnglishSiteTests(unittest.TestCase):
         self.assertNotIn('the group', join)
 
     def test_language_switch_only_claims_existing_pairs(self):
-        for page, target, label in [('Research', 'en/Research', 'EN'), ('en/JoinUs', 'Recruitment', '中文'), ('paper-notes/ref-tang2025-JBE', 'en/index', 'EN home'), ('en/highlights/ref-tang2025-JBE', 'index', '中文首页')]:
+        for page, target, label in [('Research', 'en/Research', 'EN'), ('en/JoinUs', 'Recruitment', '中文'), ('paper-notes/ref-tang2025-JBE', 'en/index', 'EN home'), ('en/highlights/ref-tang2025-JBE', 'index', '中文首页'),
+                                    ('StructuralWindEngineering', 'en/StructuralWindEngineering', 'EN'),
+                                    ('en/StructuralWindEngineering', 'StructuralWindEngineering', '中文'),
+                                    ('MarineEnergyStructures', 'en/MarineEnergyStructures', 'EN'),
+                                    ('en/MarineEnergyStructures', 'MarineEnergyStructures', '中文')]:
             context = {}
             site.page_context(self.app, page, '', context, None)
             self.assertEqual(context['language_target'], target)
             self.assertEqual(context['language_label'], label)
+
+    def test_english_topic_shell_and_home_links_are_synchronised(self):
+        templates = Environment(loader=FileSystemLoader(ROOT / 'docs/source/_templates'))
+        for page in ['en/StructuralWindEngineering', 'en/MarineEnergyStructures',
+                     'en/highlights/ref-tang2025-JBE']:
+            links = templates.get_template('brand-links.html').render(
+                is_english=True, pagename=page, pathto=lambda target: target + '.html')
+            self.assertIn('href="en/Research.html" aria-current="page"', links)
+            self.assertEqual(links.count('aria-current="page"'), 1)
+        for page in ['en/StructuralWindEngineering', 'en/MarineEnergyStructures']:
+            trail = templates.get_template('breadcrumbs.html').render(
+                is_english=True, pagename=page, site_home='en/index',
+                pathto=lambda target: target + '.html', parents=[])
+            self.assertIn('href="en/Research.html">Research</a>', trail)
+        home = templates.get_template('en-home.html').render(
+            is_english=True, pagename='en/index', site_home='en/index',
+            language_target='index', language_label='中文',
+            pathto=lambda target, *args: target + '.html', recent_progress='')
+        for page in ['en/StructuralWindEngineering', 'en/MarineEnergyStructures']:
+            self.assertIn(f'href="{page}.html"', home)
 
     def test_sources_gain_original_citation_and_explicit_chinese_link(self):
         text = ['Preview\n=======\n']

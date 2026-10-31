@@ -32,7 +32,7 @@ async function main(){
   results.push({width,case:'legacy-cross-page-alias',...await expectTopicTop(page)});
   await page.goto(origin+'/Research.html#id2');
   await page.waitForURL('**/StructuralWindEngineering.html#structural-wind-resistance');await settle(page);
-  await page.reload();await settle(page);results.push({width,case:'refresh-with-hash',...await expectPosition(page,'structural-wind-resistance','2 结构抗风')});
+  await page.reload();await settle(page);results.push({width,case:'refresh-with-hash',...await expectPosition(page,'structural-wind-resistance','3.2 结构抗风')});
   if(width<900){
     await page.locator('.reader-toggle').click();
     assert.ok(await page.locator('.wy-nav-side').evaluate(sidebar=>sidebar.contains(document.activeElement)&&document.activeElement.tagName==='A'),'drawer opens on navigation, not the hosted search popup');
@@ -40,7 +40,7 @@ async function main(){
   const button=page.locator('.toctree-l2 > a[href="#"] button');
   if(!await page.locator('.wy-menu-vertical a[href="#structural-wind-resistance"]').isVisible())await button.click();
   await page.locator('.wy-menu-vertical a[href="#structural-wind-resistance"]').click();
-  results.push({width,case:'same-page-click',...await expectPosition(page,'structural-wind-resistance','2 结构抗风')});
+  results.push({width,case:'same-page-click',...await expectPosition(page,'structural-wind-resistance','3.2 结构抗风')});
   if(width<900)await page.locator('.reader-toggle').click();
   const before=await page.evaluate(()=>scrollY);await button.click();await button.click();await frames(page);
   assert.ok(Math.abs(await page.evaluate(()=>scrollY)-before)<2,'expansion itself must not scroll article');
@@ -55,6 +55,25 @@ async function main(){
   for(const [route,title] of [['index.html','近期学术进展'],['en/index.html','Recent academic progress']]){
     await page.goto(origin+'/'+route+'#latest-progress');await settle(page);
     results.push({width,case:'historical-home-progress-alias',route,...await expectPosition(page,'latest-progress',title)});
+  }
+  for(const [legacy,topic] of [['structural-wind-engineering','StructuralWindEngineering'],['marine-energy-structures','MarineEnergyStructures'],['floating-offshore-wind','MarineEnergyStructures']]){
+    await page.goto(origin+'/en/Research.html#'+legacy);
+    await page.waitForURL('**/en/'+topic+'.html');await settle(page);
+    assert.ok(await page.locator('.document h1').isVisible());
+    const language=page.locator('.site-language');
+    assert.equal(await language.getAttribute('href'),'../'+topic+'.html');
+    await language.click();await settle(page);
+    assert.equal(await page.locator('.site-language').getAttribute('href'),'en/'+topic+'.html');
+    results.push({width,case:'bilingual-topic-and-legacy',legacy,passed:true});
+  }
+  for(const [legacy,target] of [['id8','floating-wind-dimensions-figure'],['id9','concrete-floater-design-figure'],['id10','floating-wind-coupling-figure']]){
+    await page.goto(origin+'/Research.html#'+legacy);
+    await page.waitForURL('**/MarineEnergyStructures.html#'+target);await settle(page);
+    assert.ok(await page.locator('.research-technical').evaluate(e=>e.open),'bookmarked technical figure is disclosed');
+    const figure=page.locator('#'+target).locator('..');
+    assert.ok(await figure.locator('img').isVisible());
+    assert.ok(await figure.locator('a.reference.internal').getAttribute('href'),'full-size image is linked');
+    results.push({width,case:'legacy-technical-figure-revealed',legacy,passed:true});
   }
   await page.close();
  }

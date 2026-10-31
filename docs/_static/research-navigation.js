@@ -20,13 +20,19 @@
         id9: 'MarineEnergyStructures.html#concrete-floater-design-figure',
         id10: 'MarineEnergyStructures.html#floating-wind-coupling-figure',
     };
+    const englishDestinations = {
+        'structural-wind-engineering': 'StructuralWindEngineering.html',
+        'marine-energy-structures': 'MarineEnergyStructures.html',
+        'floating-offshore-wind': 'MarineEnergyStructures.html',
+    };
     const followBookmark = () => {
-        if (!location.pathname.endsWith('/Research.html') || location.pathname.endsWith('/en/Research.html')) return;
+        if (!location.pathname.endsWith('/Research.html')) return;
+        const targets = location.pathname.endsWith('/en/Research.html') ? englishDestinations : destinations;
         let fragment;
         try { fragment = decodeURIComponent(location.hash.slice(1)); }
         catch { return; }
-        if (!Object.hasOwn(destinations, fragment)) return;
-        location.replace(new URL(destinations[fragment], location.href).href);
+        if (!Object.hasOwn(targets, fragment)) return;
+        location.replace(new URL(targets[fragment], location.href).href);
     };
     followBookmark();
     addEventListener('hashchange', followBookmark);

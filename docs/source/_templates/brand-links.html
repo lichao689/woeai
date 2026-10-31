@@ -1,6 +1,7 @@
 {% if is_english %}
+{% set section = 'en/Research' if pagename in ['en/StructuralWindEngineering', 'en/MarineEnergyStructures'] or pagename.startswith('en/highlights/') else pagename %}
 {% for page,label in [('en/Research','Research'),('en/Publications','Publications'),('en/JoinUs','Join Us'),('en/Search','Search')] %}
-<a href="{{ pathto(page) }}"{% if pagename == page %} aria-current="page"{% endif %}>{{ label }}</a>
+<a href="{{ pathto(page) }}"{% if section == page %} aria-current="page"{% endif %}>{{ label }}</a>
 {% endfor %}
 {% else %}
 {# One destination list shared by desktop and narrow-screen navigation. #}

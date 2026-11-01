@@ -98,7 +98,7 @@
 .. raw:: html
 
    <section id="applications" class="home-section applications" aria-labelledby="applications-heading">
-    <div class="section-heading"><div><h2 id="applications-heading">研究连接哪些工程问题</h2></div><a class="text-link" href="EngineeringApplications.html">应用场景与项目证据 <span aria-hidden="true">↗</span></a></div>
+    <div class="section-heading"><div><h2 id="applications-heading">工程问题连接</h2></div><a class="text-link" href="EngineeringApplications.html">应用场景与项目证据 <span aria-hidden="true">↗</span></a></div>
     <div class="application-grid">
      <article><h3>浮式风机与平台设计</h3><p>系统分析与优化、混凝土浮式基础方案，以及风浪联合模型试验。</p><a href="MarineEnergyStructures.html#floating-wind-project-support">浮式风机项目记录 →</a></article>
      <article><h3>结构风荷载与风振</h3><p>高层建筑风致响应、气动外形优化，以及风洞试验与风振分析。</p><a href="EngineeringApplications.html#engineering-enterprise-project-evidence">公开项目证据 →</a></article>

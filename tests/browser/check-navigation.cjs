@@ -134,6 +134,19 @@ async function assertReaderPresentation(page, origin, width) {
       };
     });
     assert.equal(geometry.overflow, false, route + ' has no horizontal overflow');
+    const cards = await page.evaluate(() => {
+      const all = [...document.querySelectorAll('.work-card')];
+      const box = (card) => card.getBoundingClientRect();
+      return {
+        count: all.length,
+        widths: new Set(all.map((card) => Math.round(box(card).width))).size,
+        rows: new Set(all.map((card) => Math.round(box(card).top))).size,
+      };
+    });
+    assert.equal(cards.count, 6, route + ' shows the six recent cards');
+    assert.equal(cards.widths, 1, route + ' recent cards share one column width');
+    assert.equal(cards.rows, width > 1100 ? 2 : width > 640 ? 4 : 6,
+                 route + ' recent cards use ' + (width > 1100 ? 'three' : width > 640 ? 'two' : 'one') + ' column layout');
     if (width < 900) {
       assert.equal(geometry.columns, 1, route + ' mobile hero is one column');
       assert.ok(geometry.visualWidth > geometry.heroWidth * .95, route + ' mobile visual is full width');
